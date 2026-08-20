@@ -1,17 +1,9 @@
-import nodemailer from "nodemailer";
-
-const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO_EMAIL } = process.env;
-
-const isEmailConfigured = Boolean(SMTP_HOST && SMTP_USER && SMTP_PASS);
-
-const transporter = isEmailConfigured
-  ? nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: Number(SMTP_PORT ?? 587),
-      secure: Number(SMTP_PORT ?? 587) === 465,
-      auth: { user: SMTP_USER, pass: SMTP_PASS },
-    })
-  : null;
+/**
+ * Sends transactional email via the Resend HTTP API instead of SMTP —
+ * Cloudflare Workers (where this app is deployed) can't open raw TCP/SMTP
+ * sockets the way nodemailer needs, but a plain fetch() call works fine.
+ */
+const { RESEND_API_KEY, RESEND_FROM_EMAIL, CONTACT_TO_EMAIL } = process.env;
 
 export async function sendNotificationEmail({
   subject,
@@ -23,22 +15,39 @@ export async function sendNotificationEmail({
   replyTo?: string;
 }) {
   const to = CONTACT_TO_EMAIL || "tangtriduc@triduccar.media";
+  // resend.dev is Resend's shared sandbox sender — works immediately with no
+  // domain verification, but only delivers to the account owner's own inbox.
+  // Once triduccar.media is verified in Resend, set RESEND_FROM_EMAIL to send
+  // from an @triduccar.media address and deliver to any recipient.
+  const from = RESEND_FROM_EMAIL || "Trí Đức Car Media <onboarding@resend.dev>";
 
-  if (!transporter) {
+  if (!RESEND_API_KEY) {
     console.warn(
-      "[email] SMTP not configured — skipping send. Set SMTP_HOST/SMTP_USER/SMTP_PASS in .env.local to enable real delivery.",
+      "[email] RESEND_API_KEY not configured — skipping send. Set it in .env.local / Cloudflare Pages env vars to enable real delivery.",
     );
     console.info("[email] Would have sent:", { to, subject, html });
     return { delivered: false as const };
   }
 
-  await transporter.sendMail({
-    from: `"Trí Đức Car Media — Website" <${SMTP_USER}>`,
-    to,
-    replyTo,
-    subject,
-    html,
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from,
+      to,
+      subject,
+      html,
+      reply_to: replyTo,
+    }),
   });
+
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`Resend API error (${res.status}): ${body}`);
+  }
 
   return { delivered: true as const };
 }
