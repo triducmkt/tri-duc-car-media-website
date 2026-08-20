@@ -4,6 +4,7 @@
   "name": "tri-duc-car-media",
   "compatibility_date": "2026-08-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -13,5 +14,9 @@
       "binding": "WORKER_SELF_REFERENCE",
       "service": "tri-duc-car-media"
     }
+  ],
+  "routes": [
+    { "pattern": "triduccar.media", "custom_domain": true },
+    { "pattern": "www.triduccar.media", "custom_domain": true }
   ]
 }

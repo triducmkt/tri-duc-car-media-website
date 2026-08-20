@@ -11,24 +11,23 @@
     "seed:ap-car-care": "node --env-file=.env.local scripts/seed-case-study-ap-car-care.mjs",
     "cf:build": "opennextjs-cloudflare build",
     "cf:preview": "opennextjs-cloudflare build && wrangler dev",
-    "cf:deploy": "opennextjs-cloudflare build && wrangler deploy"
+    "cf:deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "studio:deploy": "sanity deploy"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
-    "@sanity/vision": "^6.10.1",
     "lucide-react": "^1.33.0",
     "next": "16.3.1",
     "next-intl": "^4.13.7",
     "next-sanity": "^13.3.3",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "sanity": "^6.10.1",
-    "styled-components": "^6.5.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "^1.20.2",
     "@sanity/client": "^8.2.0",
+    "@sanity/vision": "^6.10.1",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
@@ -36,6 +35,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
+    "sanity": "^6.10.1",
+    "styled-components": "^6.5.3",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.124.0"

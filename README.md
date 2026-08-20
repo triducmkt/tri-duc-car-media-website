@@ -1,15 +1,18 @@
 # Trí Đức Car Media — website
 
 Website song ngữ (VI/EN) cho Trí Đức Car Media, xây bằng Next.js (App Router) +
-Sanity CMS, tập trung vào thương hiệu cá nhân của founder Tăng Trí Đức. Deploy
-lên **Cloudflare Pages** (miễn phí), domain `triduccar.media` quản lý qua
-Cloudflare DNS.
+Sanity CMS, tập trung vào thương hiệu cá nhân của founder Tăng Trí Đức.
+
+**Đang chạy trực tiếp tại:**
+- Website: https://triduccar.media (và https://www.triduccar.media)
+- Sanity Studio (quản trị nội dung): https://tri-duc-car-media.sanity.studio
+- Preview URL dự phòng: https://tri-duc-car-media.triduc-car-media.workers.dev
 
 ## Stack
 
 - Next.js 16 (App Router) + TypeScript + Tailwind CSS v4
 - [next-intl](https://next-intl.dev) — song ngữ `/vi` (mặc định) và `/en`, URL bản địa hoá (`/vi/dich-vu`, `/en/services`, ...)
-- [Sanity](https://www.sanity.io) — CMS cho Case study, Blog, Testimonial (Studio nhúng tại `/studio`)
+- [Sanity](https://www.sanity.io) — CMS cho Case study, Blog, Testimonial. Studio deploy **độc lập** tại sanity.studio (không nhúng trong app) — Cloudflare Workers free tier giới hạn 3 MiB/worker, không đủ chỗ cho UI Studio.
 - [Resend](https://resend.com) (HTTP API) — gửi email từ form Liên hệ & Đặt lịch tư vấn (`/api/contact`, `/api/booking`). Dùng HTTP thay vì SMTP vì Cloudflare Workers không mở được kết nối SMTP thô.
 - [OpenNext for Cloudflare](https://opennext.js.org/cloudflare) (`@opennextjs/cloudflare` + `wrangler`) — adapter build Next.js thành Cloudflare Worker.
 
@@ -32,7 +35,7 @@ npx tsc --noEmit
 
 Copy `.env.example` thành `.env.local` và điền:
 
-- `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET` — tạo project miễn phí tại https://www.sanity.io/manage, sau đó vào `/studio` trên site để thêm Case study / Blog / Testimonial. Nhớ thêm origin (`http://localhost:3000` khi dev, domain thật khi deploy) vào **API → CORS Origins** của project, có tick **Allow credentials**, nếu không `/studio` sẽ báo lỗi CORS.
+- `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET` — tạo project miễn phí tại https://www.sanity.io/manage. Studio đã deploy tại https://tri-duc-car-media.sanity.studio (CORS cho domain này được Sanity tự quản lý). Nếu chạy Studio cục bộ (`npx sanity dev`) thì cần tự thêm `http://localhost:3333` vào **API → CORS Origins**.
 - `SANITY_API_TOKEN` — chỉ cần nếu muốn chạy script import có sẵn (xem bên dưới); tạo tại **API → Tokens**, quyền **Editor**.
 - `RESEND_API_KEY`, `RESEND_FROM_EMAIL` — tài khoản Resend (free tier) dùng gửi email khi có người điền form. **Chưa cấu hình thì form vẫn chạy bình thường** — nội dung chỉ được log ra console thay vì gửi email thật, không lỗi. Chưa xác thực domain trong Resend thì để trống `RESEND_FROM_EMAIL`, hệ thống tự dùng địa chỉ sandbox `onboarding@resend.dev` (chỉ gửi được về đúng email đã tạo tài khoản Resend).
 - `CONTACT_TO_EMAIL` — email nhận thông báo (mặc định `tangtriduc@triduccar.media`).
@@ -58,30 +61,33 @@ npm run seed:ap-car-care
 ```
 
 Case study sẽ xuất hiện ngay tại `/vi/du-an` và `/en/case-studies`. Ảnh bìa
-chưa được tự động upload — vào `/studio` để gắn ảnh cho case study nếu muốn.
-Đây cũng là mẫu để soạn thêm case study khác: sao chép file script, đổi
-`_id`/`slug`/nội dung theo dự án mới.
+chưa được tự động upload — vào Studio (https://tri-duc-car-media.sanity.studio)
+để gắn ảnh cho case study nếu muốn. Đây cũng là mẫu để soạn thêm case study
+khác: sao chép file script, đổi `_id`/`slug`/nội dung theo dự án mới.
 
-## Deploy lên Cloudflare Pages
+## Deploy lên Cloudflare (đã setup xong — đây là ghi chú để deploy lại)
 
-Domain `triduccar.media` đã trỏ nameserver về Cloudflare, nên đây là đường đi
-tự nhiên và **miễn phí** (không cần mua hosting).
+Domain `triduccar.media` trỏ nameserver về Cloudflare, nên host trực tiếp
+trên **Cloudflare Workers** — miễn phí, không cần mua hosting riêng.
 
-1. Cài Wrangler CLI đã có sẵn trong `devDependencies`. Đăng nhập (mở trình
-   duyệt để bạn tự xác thực tài khoản Cloudflare — Claude không tự đăng nhập
-   giúp được bước này):
+**Website (Next.js Worker):**
+
+1. Đăng nhập Wrangler một lần (mở trình duyệt để bạn tự xác thực tài khoản
+   Cloudflare — Claude không tự đăng nhập giúp được bước này):
    ```bash
    npx wrangler login
    ```
-2. Build cho Cloudflare rồi deploy:
+2. Build + deploy:
    ```bash
    npm run cf:deploy
    ```
-   Lệnh này chạy `opennextjs-cloudflare build` (đóng gói Next.js thành
-   Cloudflare Worker) rồi `wrangler deploy`. Lần đầu chạy, Wrangler sẽ tạo
-   Worker tên `tri-duc-car-media` (khớp `wrangler.jsonc`) trên tài khoản
-   Cloudflare của bạn.
-3. Thêm biến môi trường cho Worker (không dùng `.env.local` ở production):
+   Chạy `opennextjs-cloudflare build` (đóng gói Next.js thành Cloudflare
+   Worker) rồi `wrangler deploy`. Domain `triduccar.media` /
+   `www.triduccar.media` đã được khai báo sẵn trong `wrangler.jsonc`
+   (`routes` với `custom_domain: true`) nên mỗi lần deploy sẽ tự cập nhật cả
+   2 domain, không cần thao tác gì thêm trên Dashboard.
+3. Biến môi trường production quản lý qua Worker secrets (khác với
+   `.env.local` chỉ dùng khi `next dev`):
    ```bash
    npx wrangler secret put NEXT_PUBLIC_SANITY_PROJECT_ID
    npx wrangler secret put NEXT_PUBLIC_SANITY_DATASET
@@ -90,20 +96,31 @@ tự nhiên và **miễn phí** (không cần mua hosting).
    npx wrangler secret put RESEND_FROM_EMAIL
    npx wrangler secret put CONTACT_TO_EMAIL
    ```
-   (hoặc nhập trong Cloudflare Dashboard → Workers & Pages → tên Worker →
-   **Settings → Variables and Secrets**).
-4. Gắn domain: Cloudflare Dashboard → **Workers & Pages** → chọn Worker
-   `tri-duc-car-media` → **Settings → Domains & Routes** → **Add** →
-   `triduccar.media` (và/hoặc `www.triduccar.media`). Cloudflare tự tạo DNS
-   record tương ứng vì domain đã cùng tài khoản.
-5. Nhớ thêm `https://triduccar.media` vào **CORS Origins** của project Sanity
-   (xem mục biến môi trường ở trên) để `/studio` hoạt động trên domain thật.
-6. Cập nhật code sau này: chạy lại `npm run cf:deploy` (hoặc gắn GitHub Action
-   / Cloudflare's Git integration để tự deploy mỗi lần push `main` — có thể
-   làm sau khi cần).
+   (hoặc nhập trong Cloudflare Dashboard → Workers & Pages → `tri-duc-car-media`
+   → **Settings → Variables and Secrets**). Đã set xong các biến Sanity +
+   `CONTACT_TO_EMAIL`; `RESEND_API_KEY`/`RESEND_FROM_EMAIL` còn để trống nên
+   form hiện chỉ log ra Worker logs thay vì gửi email thật — điền khi có tài
+   khoản Resend.
+
+**Lưu ý khi gắn custom domain lần đầu** (đã xử lý xong, chỉ cần nếu tạo lại
+Worker từ đầu): Wrangler **không tự ghi đè** DNS record đã tồn tại ở
+`triduccar.media`/`www.triduccar.media` — nếu có record cũ (A/CNAME, ví dụ
+CNAME parking của Namecheap) phải xoá thủ công trong Cloudflare Dashboard →
+DNS → Records trước, rồi `wrangler deploy` mới tạo được custom domain.
+
+**Sanity Studio (deploy độc lập, không nằm trong Worker):**
+
+```bash
+npx sanity login --provider google   # hoặc github / email tuỳ tài khoản
+npm run studio:deploy
+```
+
+Deploy lên `https://tri-duc-car-media.sanity.studio` — cấu hình hostname nằm
+ở `sanity.cli.ts`. Chạy lại `npm run studio:deploy` mỗi khi đổi schema trong
+`sanity/schemaTypes/`.
 
 **Kiểm thử trước khi deploy thật**: `npm run cf:build && npx wrangler dev`
-chạy toàn bộ app (kể cả `/api/*`, `/studio`) trên Workers runtime giả lập tại
+chạy toàn bộ app (kể cả `/api/*`) trên Workers runtime giả lập tại
 `http://localhost:8787` — dùng để phát hiện lỗi tương thích trước khi deploy.
 
 ## Deploy thay thế: Namecheap Shared/Stellar hosting (cPanel)

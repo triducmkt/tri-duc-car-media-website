@@ -41,6 +41,10 @@ yarn-error.log*
 /.open-next/
 /.wrangler/
 
+# sanity CLI build output (Studio deploy artifacts)
+/dist/
+/.sanity/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

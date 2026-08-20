@@ -15,6 +15,9 @@ const eslintConfig = defineConfig([
     // Cloudflare/OpenNext build output — generated, not source.
     ".open-next/**",
     ".wrangler/**",
+    // Sanity Studio CLI build output — generated, not source.
+    "dist/**",
+    ".sanity/**",
     // Not part of the website source — belongs to Claude Code's own skill tooling.
     ".claude/**",
   ]),
