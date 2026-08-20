@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "siteName": "Tri Duc Car Media",
+    "defaultTitle": "Tang Tri Duc | Tri Duc Car Media — Marketing & Growth Consulting for SMEs",
+    "defaultDescription": "Consulting, design and operation of Marketing - Sales - Customer Care systems for Vietnamese SMEs and household businesses, led by founder Tang Tri Duc."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About the Founder",
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "blog": "Insights",
+    "contact": "Contact",
+    "bookingCta": "Book a Consultation"
+  },
+  "footer": {
+    "tagline": "Free the owner. Elevate the business.",
+    "companyName": "Tri Duc Car Media",
+    "addressLabel": "Contact",
+    "phone": "076.991.8685",
+    "email": "tangtriduc@triduccar.media",
+    "linksHeading": "Navigate",
+    "servicesHeading": "Services",
+    "rights": "All rights reserved by Tri Duc Car Media.",
+    "madeWith": "Designed and operated by the Tri Duc Car Media team."
+  },
+  "home": {
+    "heroEyebrow": "Founder & Marketing–Sales Strategist for SMEs",
+    "heroName": "TANG TRI DUC",
+    "heroTagline": "Free the owner. Elevate the business.",
+    "heroSubline": "Building and standing beside SMEs as they design a real Marketing - Sales - Customer Care system, so owners no longer have to carry every task alone.",
+    "heroCtaPrimary": "Book a free consultation",
+    "heroCtaSecondary": "Explore services",
+    "heroStat1Value": "5+",
+    "heroStat1Label": "Comprehensive growth solution groups",
+    "heroStat2Value": "SME",
+    "heroStat2Label": "and household businesses nationwide",
+    "heroStat3Value": "1-1",
+    "heroStat3Label": "Direct guidance from the founder",
+    "servicesEyebrow": "Solutions",
+    "servicesHeading": "5 pillars for sustainable business growth",
+    "servicesSub": "From strategy to execution — every service is designed to free business owners from manual, day-to-day operations.",
+    "founderEyebrow": "Your partner",
+    "founderHeading": "Not just an agency. A strategic partner.",
+    "founderBody": "Tang Tri Duc personally advises and works alongside each business, rather than handing it off to junior staff. Rooted in the Automotive Services industry, Tri Duc Car Media now brings this model to SMEs across every sector in Vietnam.",
+    "founderCta": "Meet the founder",
+    "processEyebrow": "Process",
+    "processHeading": "How we work alongside your business",
+    "process1Title": "Diagnose & Advise",
+    "process1Body": "Assess the current state of Marketing - Sales - Customer Care and identify growth bottlenecks.",
+    "process2Title": "Design the system",
+    "process2Body": "Build SOPs, processes and digital platforms suited to your business size.",
+    "process3Title": "Implement & Train",
+    "process3Body": "Set up an in-house Marketing team and train staff to operate it in practice.",
+    "process4Title": "Support & Optimize",
+    "process4Body": "Track metrics and continuously optimize for sustainable, independent growth.",
+    "caseStudiesEyebrow": "Real results",
+    "caseStudiesHeading": "A selection of projects we've supported",
+    "caseStudiesCta": "View all case studies",
+    "testimonialsEyebrow": "What clients say",
+    "testimonialsHeading": "Trusted by SME business owners",
+    "ctaBannerHeading": "Ready to free yourself from manual operations?",
+    "ctaBannerBody": "Book a 1-1 consultation with Tang Tri Duc to assess your current state and design the right growth roadmap for your business.",
+    "ctaBannerButton": "Book a consultation now"
+  },
+  "services": {
+    "title": "Services",
+    "eyebrow": "Comprehensive solutions",
+    "heading": "Comprehensive growth solutions for your business",
+    "intro": "Five service groups designed to support your business through every stage: strategy, personal branding, standardized operations, and digital platform rollout.",
+    "ctaLabel": "Ask about this service",
+    "items": [
+      {
+        "title": "Marketing - Sales - Customer Care System Consulting & Deployment",
+        "description": "Build an integrated Marketing - Sales - Customer Care system so your business grows in a controlled way, instead of running disconnected, strategy-less marketing efforts."
+      },
+      {
+        "title": "Personal Branding for Business Owners",
+        "description": "Position and grow the business owner's personal brand — the most durable competitive asset in an era where customers trust people before products."
+      },
+      {
+        "title": "SOP Standardization & Team Training",
+        "description": "Systematize operating procedures (SOPs) and train teams for real-world execution, so the business runs steadily even without the owner's direct supervision."
+      },
+      {
+        "title": "In-house Marketing Department Setup & Support",
+        "description": "Build an in-house marketing team from the ground up: hiring, department structure, coordination workflows, and hands-on support through early-stage operations."
+      },
+      {
+        "title": "SME OS Digital Platform Rollout",
+        "description": "Deploy the SME OS digital platform to standardize operations, connect Marketing - Sales - Customer Care data, and build a foundation for long-term SME growth."
+      }
+    ]
+  },
+  "about": {
+    "title": "About the Founder",
+    "eyebrow": "Founder",
+    "name": "Tang Tri Duc",
+    "roleLine": "Founder — Tri Duc Car Media",
+    "heading": "Building and standing beside SMEs",
+    "quote": "Free the owner. Elevate the business.",
+    "bodyIntro": "Tang Tri Duc is the founder of Tri Duc Car Media — a firm that consults, provides, designs and operates Marketing, Communications, Sales and business optimization services for SMEs and household businesses in Vietnam.",
+    "body1Heading": "Rooted in Automotive Services",
+    "body1": "Starting with growth solutions for the Automotive Services industry, Tang Tri Duc built hands-on experience designing Marketing - Sales - Customer Care systems for small and medium businesses — where owners often have to wear every hat themselves.",
+    "body2Heading": "Expanding the model to every SME sector",
+    "body2": "From that foundation, Tri Duc Car Media grew into a comprehensive partner for SMEs and household businesses across many industries, guided by one consistent philosophy: every business needs a properly designed operating system, not an owner carrying everything alone.",
+    "body3Heading": "Approach",
+    "body3": "No off-the-shelf packages — every business is diagnosed individually, given its own roadmap, and supported directly by the founder at the moments that matter most.",
+    "valuesHeading": "Core values",
+    "value1Title": "Genuine partnership",
+    "value1Body": "No handing off to junior staff — the founder is directly involved in strategic advising.",
+    "value2Title": "Standardize to scale",
+    "value2Body": "Every solution is designed as a repeatable SOP, not dependent on any one person.",
+    "value3Title": "Sustainable growth",
+    "value3Body": "Long-term systems are prioritized over short-lived campaigns without foundation.",
+    "contactCta": "Book a conversation with Tri Duc"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "eyebrow": "Real results",
+    "heading": "Projects we've supported",
+    "intro": "A selection of examples showing how Tri Duc Car Media partners with businesses — full details are being finalized with each client.",
+    "readMore": "View details",
+    "backToList": "Back to case studies",
+    "empty": "Case studies are being updated. Please check back soon."
+  },
+  "blog": {
+    "title": "Insights",
+    "eyebrow": "Blog",
+    "heading": "Marketing - Sales insights for business owners",
+    "intro": "Practical knowledge on Marketing, Sales, Customer Care and running an SME.",
+    "readMore": "Read article",
+    "backToList": "Back to Insights",
+    "empty": "Articles are being updated. Please check back soon."
+  },
+  "booking": {
+    "title": "Book a Consultation",
+    "eyebrow": "Start your growth journey",
+    "heading": "Book a 1-1 consultation with Tang Tri Duc",
+    "intro": "Leave your details and the Tri Duc Car Media team will confirm a suitable consultation time within 24 business hours.",
+    "fields": {
+      "name": "Full name",
+      "phone": "Phone number",
+      "email": "Email",
+      "company": "Company / household business name",
+      "industry": "Industry",
+      "preferredTime": "Preferred consultation time",
+      "message": "What you need help with"
+    },
+    "submit": "Send booking request",
+    "submitting": "Sending...",
+    "successTitle": "Request sent successfully!",
+    "successBody": "Thank you. The Tri Duc Car Media team will contact you within 24 business hours.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Please try again later or contact us directly at 076.991.8685."
+  },
+  "contact": {
+    "title": "Contact",
+    "eyebrow": "Get in touch",
+    "heading": "Contact Tri Duc Car Media",
+    "intro": "Have a question about our services or want to collaborate? Send us a message.",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone number",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "successTitle": "Message sent!",
+    "successBody": "Thank you for reaching out. We'll get back to you as soon as possible.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Please try again later or email us directly at tangtriduc@triduccar.media."
+  },
+  "common": {
+    "skipToContent": "Skip to main content",
+    "languageSwitcher": "Language",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The page you're looking for doesn't exist or has moved.",
+    "notFoundCta": "Back to home"
+  }
+}

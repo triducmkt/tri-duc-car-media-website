@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "siteName": "Trí Đức Car Media",
+    "defaultTitle": "Tăng Trí Đức | Trí Đức Car Media — Tư vấn Marketing & Tăng trưởng cho SME",
+    "defaultDescription": "Tư vấn, thiết kế và vận hành hệ thống Marketing - Sales - CSKH cho SME & hộ kinh doanh Việt Nam, dẫn dắt bởi founder Tăng Trí Đức."
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về Founder",
+    "services": "Dịch vụ",
+    "caseStudies": "Dự án",
+    "blog": "Kiến thức",
+    "contact": "Liên hệ",
+    "bookingCta": "Đặt lịch tư vấn"
+  },
+  "footer": {
+    "tagline": "Giải phóng người chủ. Nâng tầm doanh nghiệp.",
+    "companyName": "Trí Đức Car Media",
+    "addressLabel": "Liên hệ",
+    "phone": "076.991.8685",
+    "email": "tangtriduc@triduccar.media",
+    "linksHeading": "Điều hướng",
+    "servicesHeading": "Dịch vụ",
+    "rights": "Bản quyền thuộc về Trí Đức Car Media.",
+    "madeWith": "Thiết kế & vận hành bởi đội ngũ Trí Đức Car Media."
+  },
+  "home": {
+    "heroEyebrow": "Founder & Chiến lược gia Marketing – Sales cho SME",
+    "heroName": "TĂNG TRÍ ĐỨC",
+    "heroTagline": "Giải phóng người chủ. Nâng tầm doanh nghiệp.",
+    "heroSubline": "Kiến tạo & đồng hành cùng SME xây dựng hệ thống Marketing - Sales - CSKH bài bản, để chủ doanh nghiệp không còn phải ôm việc một mình.",
+    "heroCtaPrimary": "Đặt lịch tư vấn miễn phí",
+    "heroCtaSecondary": "Xem dịch vụ",
+    "heroStat1Value": "5+",
+    "heroStat1Label": "Nhóm giải pháp tăng trưởng toàn diện",
+    "heroStat2Value": "SME",
+    "heroStat2Label": "& hộ kinh doanh trên toàn quốc",
+    "heroStat3Value": "1-1",
+    "heroStat3Label": "Đồng hành trực tiếp cùng founder",
+    "servicesEyebrow": "Giải pháp",
+    "servicesHeading": "5 trụ cột giúp doanh nghiệp bạn tăng trưởng bền vững",
+    "servicesSub": "Từ chiến lược đến vận hành — mỗi dịch vụ đều hướng tới một mục tiêu: giải phóng chủ doanh nghiệp khỏi việc vận hành thủ công.",
+    "founderEyebrow": "Người đồng hành",
+    "founderHeading": "Không thuê một agency. Bạn có một đối tác chiến lược.",
+    "founderBody": "Tăng Trí Đức trực tiếp tư vấn và đồng hành cùng từng doanh nghiệp, thay vì giao khoán cho đội ngũ junior. Xuất phát điểm từ ngành Dịch vụ & Ô tô, Trí Đức Car Media mở rộng mô hình sang mọi ngành SME tại Việt Nam.",
+    "founderCta": "Tìm hiểu về Founder",
+    "processEyebrow": "Quy trình",
+    "processHeading": "Cách chúng tôi đồng hành cùng doanh nghiệp bạn",
+    "process1Title": "Chẩn đoán & Tư vấn",
+    "process1Body": "Khảo sát thực trạng Marketing - Sales - CSKH, xác định điểm nghẽn tăng trưởng.",
+    "process2Title": "Thiết kế hệ thống",
+    "process2Body": "Xây dựng SOP, quy trình và nền tảng số phù hợp quy mô doanh nghiệp.",
+    "process3Title": "Triển khai & Đào tạo",
+    "process3Body": "Setup phòng Marketing in-house, đào tạo đội ngũ vận hành thực chiến.",
+    "process4Title": "Đồng hành & Tối ưu",
+    "process4Body": "Theo sát chỉ số, tối ưu liên tục để tăng trưởng bền vững, không phụ thuộc.",
+    "caseStudiesEyebrow": "Kết quả thực tế",
+    "caseStudiesHeading": "Một số dự án đã đồng hành",
+    "caseStudiesCta": "Xem tất cả dự án",
+    "testimonialsEyebrow": "Khách hàng nói gì",
+    "testimonialsHeading": "Được tin tưởng bởi các chủ doanh nghiệp SME",
+    "ctaBannerHeading": "Sẵn sàng giải phóng bản thân khỏi việc vận hành thủ công?",
+    "ctaBannerBody": "Đặt lịch tư vấn 1-1 cùng Tăng Trí Đức để đánh giá thực trạng và lộ trình tăng trưởng phù hợp cho doanh nghiệp bạn.",
+    "ctaBannerButton": "Đặt lịch tư vấn ngay"
+  },
+  "services": {
+    "title": "Dịch vụ",
+    "eyebrow": "Giải pháp toàn diện",
+    "heading": "Cung cấp giải pháp tăng trưởng toàn diện cho doanh nghiệp bạn",
+    "intro": "5 nhóm dịch vụ được thiết kế để đi cùng doanh nghiệp qua từng giai đoạn: từ chiến lược, xây dựng thương hiệu, chuẩn hoá vận hành đến triển khai nền tảng số.",
+    "ctaLabel": "Tư vấn dịch vụ này",
+    "items": [
+      {
+        "title": "Tư vấn & Triển khai Hệ thống Marketing - Sales - CSKH",
+        "description": "Xây dựng hệ thống Marketing - Sales - Chăm sóc khách hàng đồng bộ, giúp doanh nghiệp tăng trưởng có kiểm soát thay vì làm marketing rời rạc, thiếu chiến lược."
+      },
+      {
+        "title": "Xây dựng Thương hiệu Cá nhân cho Chủ doanh nghiệp",
+        "description": "Định vị và phát triển thương hiệu cá nhân của chủ doanh nghiệp — tài sản cạnh tranh bền vững nhất trong thời đại khách hàng tin người trước khi tin sản phẩm."
+      },
+      {
+        "title": "Chuẩn hóa SOP & Đào tạo Đội ngũ",
+        "description": "Hệ thống hoá quy trình vận hành (SOP) và đào tạo đội ngũ thực chiến, giúp doanh nghiệp vận hành ổn định dù chủ không trực tiếp giám sát."
+      },
+      {
+        "title": "Setup & Đồng hành Phòng Marketing In-house",
+        "description": "Xây dựng đội ngũ Marketing in-house từ đầu: tuyển dụng, cấu trúc phòng ban, quy trình phối hợp và đồng hành trong giai đoạn vận hành ban đầu."
+      },
+      {
+        "title": "Triển khai nền tảng số SME OS",
+        "description": "Ứng dụng nền tảng số SME OS để chuẩn hoá vận hành, kết nối dữ liệu Marketing - Sales - CSKH và tạo nền tảng tăng trưởng dài hạn cho SME."
+      }
+    ]
+  },
+  "about": {
+    "title": "Về Founder",
+    "eyebrow": "Founder & Nhà sáng lập",
+    "name": "Tăng Trí Đức",
+    "roleLine": "Founder — Trí Đức Car Media",
+    "heading": "Kiến tạo & đồng hành cùng SME",
+    "quote": "Giải phóng người chủ. Nâng tầm doanh nghiệp.",
+    "bodyIntro": "Tăng Trí Đức là người sáng lập Trí Đức Car Media — đơn vị tư vấn, cung cấp, thiết kế và vận hành dịch vụ Marketing, Truyền thông, Sales và tư vấn tối ưu kinh doanh cho SME & hộ kinh doanh tại Việt Nam.",
+    "body1Heading": "Xuất phát từ ngành Dịch vụ & Ô tô",
+    "body1": "Bắt đầu với các giải pháp tăng trưởng chuyên sâu cho ngành Dịch vụ & Ô tô, Tăng Trí Đức đúc kết kinh nghiệm thực chiến trong việc xây dựng hệ thống Marketing - Sales - CSKH cho doanh nghiệp vừa và nhỏ — nơi chủ doanh nghiệp thường phải kiêm nhiệm mọi vai trò.",
+    "body2Heading": "Mở rộng mô hình cho mọi ngành SME",
+    "body2": "Từ nền tảng đó, Trí Đức Car Media phát triển thành đối tác đồng hành toàn diện cho SME & hộ kinh doanh ở nhiều lĩnh vực khác nhau, với triết lý xuyên suốt: mỗi doanh nghiệp cần một hệ thống vận hành bài bản, không phải một chủ doanh nghiệp ôm đồm mọi việc.",
+    "body3Heading": "Cách tiếp cận",
+    "body3": "Không bán gói dịch vụ đóng khung — mỗi doanh nghiệp được chẩn đoán riêng, thiết kế lộ trình riêng, và đồng hành trực tiếp bởi founder trong những giai đoạn quan trọng nhất.",
+    "valuesHeading": "Giá trị cốt lõi",
+    "value1Title": "Đồng hành thực chất",
+    "value1Body": "Không giao khoán cho junior — founder trực tiếp tham gia tư vấn chiến lược.",
+    "value2Title": "Chuẩn hoá để nhân rộng",
+    "value2Body": "Mọi giải pháp đều hướng tới SOP có thể lặp lại, không phụ thuộc cá nhân.",
+    "value3Title": "Tăng trưởng bền vững",
+    "value3Body": "Ưu tiên hệ thống dài hạn hơn các chiến dịch ngắn hạn thiếu nền tảng.",
+    "contactCta": "Đặt lịch trò chuyện cùng Trí Đức"
+  },
+  "caseStudies": {
+    "title": "Dự án",
+    "eyebrow": "Kết quả thực tế",
+    "heading": "Các dự án đã đồng hành",
+    "intro": "Một số ví dụ minh hoạ cách Trí Đức Car Media đồng hành cùng doanh nghiệp — nội dung chi tiết sẽ được cập nhật cùng khách hàng.",
+    "readMore": "Xem chi tiết",
+    "backToList": "Quay lại danh sách dự án",
+    "empty": "Các dự án đang được cập nhật. Vui lòng quay lại sau."
+  },
+  "blog": {
+    "title": "Kiến thức",
+    "eyebrow": "Blog",
+    "heading": "Kiến thức Marketing - Sales cho chủ doanh nghiệp",
+    "intro": "Chia sẻ kiến thức thực chiến về Marketing, Sales, CSKH và vận hành doanh nghiệp SME.",
+    "readMore": "Đọc bài viết",
+    "backToList": "Quay lại Blog",
+    "empty": "Bài viết đang được cập nhật. Vui lòng quay lại sau."
+  },
+  "booking": {
+    "title": "Đặt lịch tư vấn",
+    "eyebrow": "Bắt đầu hành trình tăng trưởng",
+    "heading": "Đặt lịch tư vấn 1-1 cùng Tăng Trí Đức",
+    "intro": "Để lại thông tin, đội ngũ Trí Đức Car Media sẽ liên hệ xác nhận lịch tư vấn phù hợp với bạn trong vòng 24 giờ làm việc.",
+    "fields": {
+      "name": "Họ và tên",
+      "phone": "Số điện thoại",
+      "email": "Email",
+      "company": "Tên công ty / hộ kinh doanh",
+      "industry": "Lĩnh vực kinh doanh",
+      "preferredTime": "Thời gian mong muốn tư vấn",
+      "message": "Nhu cầu / vấn đề bạn đang gặp phải"
+    },
+    "submit": "Gửi yêu cầu đặt lịch",
+    "submitting": "Đang gửi...",
+    "successTitle": "Đã gửi yêu cầu thành công!",
+    "successBody": "Cảm ơn bạn. Đội ngũ Trí Đức Car Media sẽ liên hệ lại trong vòng 24 giờ làm việc.",
+    "errorTitle": "Có lỗi xảy ra",
+    "errorBody": "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua số điện thoại 076.991.8685."
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "eyebrow": "Kết nối với chúng tôi",
+    "heading": "Liên hệ Trí Đức Car Media",
+    "intro": "Bạn có câu hỏi về dịch vụ hoặc muốn hợp tác? Gửi lời nhắn cho chúng tôi.",
+    "phoneLabel": "Điện thoại",
+    "emailLabel": "Email",
+    "fields": {
+      "name": "Họ và tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "subject": "Chủ đề",
+      "message": "Lời nhắn"
+    },
+    "submit": "Gửi lời nhắn",
+    "submitting": "Đang gửi...",
+    "successTitle": "Đã gửi thành công!",
+    "successBody": "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm nhất có thể.",
+    "errorTitle": "Có lỗi xảy ra",
+    "errorBody": "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email tangtriduc@triduccar.media."
+  },
+  "common": {
+    "skipToContent": "Chuyển tới nội dung chính",
+    "languageSwitcher": "Ngôn ngữ",
+    "notFoundTitle": "Không tìm thấy trang",
+    "notFoundBody": "Trang bạn tìm không tồn tại hoặc đã được di chuyển.",
+    "notFoundCta": "Về trang chủ"
+  }
+}
