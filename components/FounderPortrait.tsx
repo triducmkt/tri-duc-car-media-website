@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const PHOTO_SRC = "/founder/tang-tri-duc.jpg";
+const PHOTO_SRC = "/founder/tang-tri-duc.png";
 
 export function FounderPortrait({
   className = "",

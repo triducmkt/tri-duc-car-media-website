@@ -29,6 +29,7 @@ npm run lint
 Copy `.env.example` thành `.env.local` và điền:
 
 - `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET` — tạo project miễn phí tại https://www.sanity.io/manage, sau đó vào `/studio` trên site để thêm Case study / Blog / Testimonial.
+- `SANITY_API_TOKEN` — chỉ cần nếu muốn chạy script import có sẵn (xem bên dưới); tạo tại **API → Tokens**, quyền **Editor**.
 - `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` — tài khoản email dùng để gửi thông báo khi có người điền form (Namecheap Private Email, Gmail App Password, v.v). **Chưa cấu hình thì form vẫn chạy bình thường** — nội dung sẽ chỉ được log ra console thay vì gửi email thật, không lỗi.
 - `CONTACT_TO_EMAIL` — email nhận thông báo (mặc định `tangtriduc@triduccar.media`).
 
@@ -38,9 +39,24 @@ Toàn bộ copy VI/EN trong `messages/vi.json` và `messages/en.json` là bản 
 soạn từ thông tin name card — nên đọc lại và chỉnh trước khi công khai chính
 thức, đặc biệt các trang Về Founder và Dịch vụ.
 
-Ảnh chân dung founder: bỏ file vào `public/founder/tang-tri-duc.jpg` (xem
+Ảnh chân dung founder: đã có tại `public/founder/tang-tri-duc.png` (xem
 `public/founder/README.md`) — site tự nhận diện, có fallback chữ lồng "TTĐ"
-trong lúc chưa có ảnh thật.
+nếu file bị thiếu.
+
+## Import case study có sẵn
+
+`scripts/seed-case-study-ap-car-care.mjs` tạo sẵn 1 case study "AP Car Care"
+(song ngữ, đầy đủ số liệu) trong Sanity. Sau khi đã tạo project Sanity và có
+`SANITY_API_TOKEN` (quyền Editor) trong `.env.local`, chạy:
+
+```bash
+npm run seed:ap-car-care
+```
+
+Case study sẽ xuất hiện ngay tại `/vi/du-an` và `/en/case-studies`. Ảnh bìa
+chưa được tự động upload — vào `/studio` để gắn ảnh cho case study nếu muốn.
+Đây cũng là mẫu để soạn thêm case study khác: sao chép file script, đổi
+`_id`/`slug`/nội dung theo dự án mới.
 
 ## Deploy lên Namecheap (Shared/Stellar — cPanel)
 
