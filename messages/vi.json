@@ -25,18 +25,6 @@
     "madeWith": "Thiết kế & vận hành bởi đội ngũ Trí Đức Car Media."
   },
   "home": {
-    "heroEyebrow": "Founder & Chiến lược gia Marketing – Sales cho SME",
-    "heroName": "TĂNG TRÍ ĐỨC",
-    "heroTagline": "Giải phóng người chủ. Nâng tầm doanh nghiệp.",
-    "heroSubline": "Kiến tạo & đồng hành cùng SME xây dựng hệ thống Marketing - Sales - CSKH bài bản, để chủ doanh nghiệp không còn phải ôm việc một mình.",
-    "heroCtaPrimary": "Đặt lịch tư vấn miễn phí",
-    "heroCtaSecondary": "Xem dịch vụ",
-    "heroStat1Value": "5+",
-    "heroStat1Label": "Nhóm giải pháp tăng trưởng toàn diện",
-    "heroStat2Value": "SME",
-    "heroStat2Label": "& hộ kinh doanh trên toàn quốc",
-    "heroStat3Value": "1-1",
-    "heroStat3Label": "Đồng hành trực tiếp cùng founder",
     "servicesEyebrow": "Giải pháp",
     "servicesHeading": "5 trụ cột giúp doanh nghiệp bạn tăng trưởng bền vững",
     "servicesSub": "Từ chiến lược đến vận hành — mỗi dịch vụ đều hướng tới một mục tiêu: giải phóng chủ doanh nghiệp khỏi việc vận hành thủ công.",
@@ -63,11 +51,55 @@
     "ctaBannerBody": "Đặt lịch tư vấn 1-1 cùng Tăng Trí Đức để đánh giá thực trạng và lộ trình tăng trưởng phù hợp cho doanh nghiệp bạn.",
     "ctaBannerButton": "Đặt lịch tư vấn ngay"
   },
+  "systemHero": {
+    "ariaLabel": "Giới thiệu",
+    "skip": "Bỏ qua, xem dịch vụ",
+    "open": {
+      "eyebrow": "TƯ VẤN MARKETING – SALES CHO SME",
+      "title": "Giải phóng người chủ",
+      "sub": "Hệ thống Marketing – Sales – CSKH bài bản, để doanh nghiệp chạy được khi bạn vắng mặt.",
+      "scrollHint": "CUỘN ĐỂ XEM"
+    },
+    "caps": [
+      {
+        "kicker": "NĂM ĐẦU TIÊN",
+        "title": "Lúc mới mở, bạn làm được hết.",
+        "body": "Ba việc. Bạn nhớ hết trong đầu, không cần ghi ra giấy."
+      },
+      {
+        "kicker": "RỒI MỌI THỨ LỚN LÊN",
+        "title": "Việc nhiều hơn. Người nhiều hơn.",
+        "body": "Và mọi sợi dây vẫn buộc về đúng một chỗ."
+      },
+      {
+        "title": "Doanh nghiệp bạn đang lớn. Nhưng bạn thì không rời đi được một ngày nào.",
+        "titleHtml": "Doanh nghiệp bạn đang lớn.<br/>Nhưng bạn thì <em>không rời đi được một ngày nào.</em>"
+      },
+      {
+        "kicker": "CHÚNG TÔI LÀM GÌ",
+        "title": "Không phải làm ít đi. Là để đúng việc về đúng chỗ.",
+        "body": "Quy trình, đội ngũ, phòng marketing và nền tảng số nhận lấy phần việc lặp lại.",
+        "counter": "việc còn buộc vào bạn"
+      },
+      {
+        "kicker": "CÒN LẠI BA VIỆC",
+        "title": "Đây mới là việc của một người chủ.",
+        "body": "Chiến lược. Đối tác. Những quyết định lớn. Phần còn lại đã có chỗ đứng của nó."
+      }
+    ],
+    "tasks": [
+      "Chốt đơn khách VIP", "Duyệt bài đăng", "Trả lời Zalo lúc 22h", "Xếp ca nhân viên",
+      "Khách phàn nàn", "Kiểm kho", "Gọi lại khách cũ", "Ký chi", "Đào tạo nhân viên mới",
+      "Chạy quảng cáo", "Chụp hình sản phẩm", "Nhắc công nợ", "Tuyển người",
+      "Họp nhà cung cấp", "Sửa giá bán", "Viết nội dung", "Xử lý đơn trễ", "Đổi lịch hẹn",
+      "Kiểm tra doanh thu", "Trả lời bình luận", "Đặt hàng nhập", "Gọi khách hẹn lại",
+      "Duyệt khuyến mãi", "Sửa quy trình", "Nhân viên xin nghỉ"
+    ],
+    "core": ["Chiến lược", "Đối tác", "Quyết định lớn"],
+    "satellites": ["SOP", "Đội ngũ", "Phòng MKT in-house", "SME OS"]
+  },
   "services": {
     "title": "Dịch vụ",
-    "eyebrow": "Giải pháp toàn diện",
-    "heading": "Cung cấp giải pháp tăng trưởng toàn diện cho doanh nghiệp bạn",
-    "intro": "5 nhóm dịch vụ được thiết kế để đi cùng doanh nghiệp qua từng giai đoạn: từ chiến lược, xây dựng thương hiệu, chuẩn hoá vận hành đến triển khai nền tảng số.",
     "ctaLabel": "Tư vấn dịch vụ này",
     "items": [
       {
@@ -91,6 +123,99 @@
         "description": "Ứng dụng nền tảng số SME OS để chuẩn hoá vận hành, kết nối dữ liệu Marketing - Sales - CSKH và tạo nền tảng tăng trưởng dài hạn cho SME."
       }
     ]
+  },
+  "diagnostic": {
+    "pageHeading": "Chụp X-quang doanh nghiệp bạn trong 90 giây",
+    "moduleNames": {
+      "MKT": "MARKETING",
+      "SALES": "SALES",
+      "CSKH": "CSKH",
+      "SOP": "VẬN HÀNH",
+      "DATA": "DỮ LIỆU"
+    },
+    "questions": [
+      {
+        "text": "Bạn có biết kênh nào đang mang về nhiều khách nhất không?",
+        "options": ["Biết rõ theo số liệu", "Áng chừng theo cảm nhận", "Chưa theo dõi"]
+      },
+      {
+        "text": "Khách hỏi giá rồi im lặng. Sau đó có ai chủ động gọi lại không?",
+        "options": ["Có, theo lịch cố định", "Tuỳ mình nhớ hay quên", "Gần như không"]
+      },
+      {
+        "text": "Khách nhắn Zalo lúc 21h, bao lâu thì có người trả lời?",
+        "options": ["Dưới 15 phút", "Sáng hôm sau", "Không chắc, tuỳ hôm"]
+      },
+      {
+        "text": "Nếu người chốt đơn giỏi nhất nghỉ tuần sau, bao lâu người mới làm được như vậy?",
+        "options": ["Dưới 2 tuần, có tài liệu sẵn", "Một tới ba tháng", "Không ai thay được"]
+      },
+      {
+        "text": "Mỗi khách hàng mới tốn bao nhiêu tiền để có được?",
+        "options": ["Biết con số cụ thể", "Áng chừng", "Chưa từng tính"]
+      },
+      {
+        "text": "Bạn có danh sách khách cũ để chủ động liên hệ khi cần không?",
+        "options": ["Có, đầy đủ và dùng thường xuyên", "Có nhưng nằm rải rác nhiều nơi", "Không có"]
+      }
+    ],
+    "notes": {
+      "CSKH": "<b>CSKH vừa chuyển đỏ.</b> Hãy nhìn khối MARKETING — nó vừa phải gánh thêm, vì bạn đang trả tiền quảng cáo để bù cho số khách rơi ra ở khâu chăm sóc.",
+      "DATA": "<b>DỮ LIỆU đỏ kéo theo hai khối.</b> MARKETING và SALES giờ đang chạy bằng cảm tính: không biết tiền đi đâu, cũng không biết nên tăng chỗ nào.",
+      "SOP": "<b>VẬN HÀNH đỏ làm SALES lung lay.</b> Doanh thu đang phụ thuộc vào đúng một người — người đó nghỉ là con số nghỉ theo.",
+      "SALES": "<b>SALES đỏ làm MARKETING đốt tiền.</b> Khách vẫn vào đều, nhưng dừng lại ở khâu chốt và không thành đơn.",
+      "MKT": "<b>MARKETING chập chờn.</b> Bạn đang mua khách mà chưa biết mua ở đâu rẻ nhất, nên khó tăng quy mô một cách an toàn."
+    },
+    "noteOk": "<b>Khối này đang xanh.</b> Giữ nguyên cách làm hiện tại và đừng đụng vào — hãy dồn sức cho chỗ đang đỏ.",
+    "coveringFor": "đang gánh thay",
+    "recommend": {
+      "MKT": {
+        "name": "Setup & đồng hành phòng Marketing in-house",
+        "why": "Điểm nghẽn nằm ở đầu phễu: cần một đội ngũ chạy đều thay vì thuê ngoài từng chiến dịch."
+      },
+      "SALES": {
+        "name": "Tư vấn & triển khai hệ thống Marketing – Sales – CSKH",
+        "why": "Khách đã vào nhưng rơi ở khâu chốt. Đây là chỗ sửa cho ra tiền nhanh nhất."
+      },
+      "CSKH": {
+        "name": "Triển khai nền tảng số SME OS",
+        "why": "Khách cũ đang rơi ra ngoài tầm mắt. Cần một chỗ ghi lại và tự nhắc chăm sóc."
+      },
+      "SOP": {
+        "name": "Chuẩn hoá SOP & đào tạo đội ngũ",
+        "why": "Doanh nghiệp đang chạy bằng trí nhớ của vài người. Cần viết ra để nhân rộng."
+      },
+      "DATA": {
+        "name": "Triển khai nền tảng số SME OS",
+        "why": "Không có số thì mọi quyết định đều là phỏng đoán. Nối dữ liệu ba khâu về một chỗ trước."
+      }
+    },
+    "legendGood": "ổn",
+    "legendWarn": "chập chờn",
+    "legendBad": "đứt",
+    "prepare": "CHUẨN BỊ QUÉT",
+    "prepareQ": "Hệ thống của bạn đang ở mức nào?",
+    "startBtn": "Bắt đầu quét",
+    "privacy": "Không lưu gì trên máy chủ. Bạn có thể dừng bất cứ lúc nào.",
+    "questionStep": "CÂU {current} / {total}",
+    "resultLbl": "KẾT QUẢ",
+    "bottleneck": "Điểm nghẽn lớn nhất: ",
+    "recoLbl": "BẮT ĐẦU TỪ ĐÂY",
+    "namePh": "Họ và tên",
+    "phonePh": "Số điện thoại / Zalo",
+    "submit": "Nhận bản chẩn đoán đầy đủ",
+    "sending": "Đang gửi…",
+    "microcopy": "Không chào hàng qua điện thoại. Trí Đức sẽ nhắn Zalo từ số 076.991.8685 hoặc email tangtriduc@triduccar.media trong 24 giờ làm việc.",
+    "again": "Làm lại từ đầu",
+    "sentOk": "Đã ghi nhận. Trí Đức sẽ liên hệ trong 24 giờ làm việc.",
+    "sentErr": "Chưa gửi được. Bạn gọi giúp 076.991.8685 hoặc thử lại sau ít phút.",
+    "recBadge": "Phù hợp với bạn"
+  },
+  "actionBar": {
+    "ariaLabel": "Liên hệ nhanh",
+    "call": "Gọi ngay",
+    "zalo": "Zalo",
+    "booking": "Đặt lịch"
   },
   "about": {
     "title": "Về Founder",

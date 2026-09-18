@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro, Inter } from "next/font/google";
+import { Be_Vietnam_Pro, Inter, Playfair_Display } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ActionBar } from "@/components/ActionBar";
 import "../globals.css";
 
 const inter = Inter({
@@ -18,6 +19,15 @@ const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
   weight: ["500", "600", "700", "800"],
   subsets: ["latin", "vietnamese"],
+});
+
+// Serif accent used by SystemHero (home) and Diagnostic (services) only —
+// exposed as --font-playfair and consumed through --td-serif in globals.css.
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  weight: ["500", "600", "700"],
+  subsets: ["latin", "vietnamese"],
+  display: "swap",
 });
 
 export function generateStaticParams() {
@@ -59,7 +69,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${beVietnamPro.variable} h-full antialiased`}
+      className={`${inter.variable} ${beVietnamPro.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-paper text-ink">
         <NextIntlClientProvider>
@@ -74,6 +84,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Footer />
+          <ActionBar />
         </NextIntlClientProvider>
       </body>
     </html>

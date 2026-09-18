@@ -51,6 +51,14 @@
   --font-display: var(--font-be-vietnam-pro);
 }
 
+/* Read by SystemHero (home hero) and Diagnostic (services) CSS modules only —
+   those components fall back to a literal font name when unset, so both must
+   resolve to the actual next/font variables here to render correctly. */
+:root {
+  --td-sans: var(--font-be-vietnam-pro);
+  --td-serif: var(--font-playfair);
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);
