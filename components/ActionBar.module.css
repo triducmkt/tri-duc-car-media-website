@@ -1,0 +1,31 @@
+/* Fixed bottom action bar — mobile only. */
+.bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: rgba(9, 18, 22, 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(233, 228, 215, 0.14);
+  padding-bottom: env(safe-area-inset-bottom);
+  font-family: var(--td-sans, "Be Vietnam Pro", system-ui, sans-serif);
+}
+.bar a {
+  padding: 0.85rem 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #e9e4d7;
+  border-right: 1px solid rgba(233, 228, 215, 0.14);
+}
+.bar a:last-child {
+  border-right: 0;
+  background: #d6a34a;
+  color: #14212a;
+  font-weight: 600;
+}
+.bar a:focus-visible { outline: 2px solid #e7c489; outline-offset: -3px; }
+@media (min-width: 900px) { .bar { display: none; } }

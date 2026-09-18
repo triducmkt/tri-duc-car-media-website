@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { Hero } from "@/components/home/Hero";
+import SystemHero from "@/components/home/SystemHero";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FounderIntro } from "@/components/home/FounderIntro";
 import { Process } from "@/components/home/Process";
@@ -23,8 +23,10 @@ export default async function HomePage({
 
   return (
     <>
-      <Hero />
-      <ServicesGrid />
+      <SystemHero skipHref="#tru-cot" />
+      <div id="tru-cot">
+        <ServicesGrid />
+      </div>
       <FounderIntro />
       <Process />
       <CaseStudiesPreview items={caseStudies} locale={locale} />

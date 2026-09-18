@@ -25,18 +25,6 @@
     "madeWith": "Designed and operated by the Tri Duc Car Media team."
   },
   "home": {
-    "heroEyebrow": "Founder & Marketing–Sales Strategist for SMEs",
-    "heroName": "TANG TRI DUC",
-    "heroTagline": "Free the owner. Elevate the business.",
-    "heroSubline": "Building and standing beside SMEs as they design a real Marketing - Sales - Customer Care system, so owners no longer have to carry every task alone.",
-    "heroCtaPrimary": "Book a free consultation",
-    "heroCtaSecondary": "Explore services",
-    "heroStat1Value": "5+",
-    "heroStat1Label": "Comprehensive growth solution groups",
-    "heroStat2Value": "SME",
-    "heroStat2Label": "and household businesses nationwide",
-    "heroStat3Value": "1-1",
-    "heroStat3Label": "Direct guidance from the founder",
     "servicesEyebrow": "Solutions",
     "servicesHeading": "5 pillars for sustainable business growth",
     "servicesSub": "From strategy to execution — every service is designed to free business owners from manual, day-to-day operations.",
@@ -63,11 +51,55 @@
     "ctaBannerBody": "Book a 1-1 consultation with Tang Tri Duc to assess your current state and design the right growth roadmap for your business.",
     "ctaBannerButton": "Book a consultation now"
   },
+  "systemHero": {
+    "ariaLabel": "Introduction",
+    "skip": "Skip, view services",
+    "open": {
+      "eyebrow": "MARKETING – SALES CONSULTING FOR SMES",
+      "title": "Free the owner",
+      "sub": "A real Marketing – Sales – Customer Care system, so your business keeps running when you're not there.",
+      "scrollHint": "SCROLL TO EXPLORE"
+    },
+    "caps": [
+      {
+        "kicker": "THE FIRST YEAR",
+        "title": "When you just started, you did it all.",
+        "body": "Three tasks. You held them all in your head — no need to write anything down."
+      },
+      {
+        "kicker": "THEN EVERYTHING GREW",
+        "title": "More work. More people.",
+        "body": "And every thread still ties back to the same one place."
+      },
+      {
+        "title": "Your business is growing. But you can't step away for even one day.",
+        "titleHtml": "Your business is growing.<br/>But you <em>can't step away for even one day.</em>"
+      },
+      {
+        "kicker": "WHAT WE DO",
+        "title": "Not about doing less. It's about putting the right work in the right place.",
+        "body": "Processes, a team, a marketing department and a digital platform take on the repeatable work.",
+        "counter": "tasks still tied to you"
+      },
+      {
+        "kicker": "THREE TASKS REMAIN",
+        "title": "This is the real work of an owner.",
+        "body": "Strategy. Partnerships. The big decisions. Everything else now has its own place to stand."
+      }
+    ],
+    "tasks": [
+      "Closing VIP deals", "Approving posts", "Replying on Zalo at 10pm", "Scheduling staff shifts",
+      "Handling complaints", "Checking inventory", "Calling back old customers", "Approving payments",
+      "Training new hires", "Running ads", "Shooting product photos", "Chasing invoices", "Hiring",
+      "Supplier meetings", "Adjusting prices", "Writing content", "Handling late orders",
+      "Rescheduling appointments", "Checking revenue", "Replying to comments", "Placing stock orders",
+      "Calling back leads", "Approving promotions", "Fixing processes", "Staff requesting leave"
+    ],
+    "core": ["Strategy", "Partnerships", "Big decisions"],
+    "satellites": ["SOP", "Team", "In-house marketing dept.", "SME OS"]
+  },
   "services": {
     "title": "Services",
-    "eyebrow": "Comprehensive solutions",
-    "heading": "Comprehensive growth solutions for your business",
-    "intro": "Five service groups designed to support your business through every stage: strategy, personal branding, standardized operations, and digital platform rollout.",
     "ctaLabel": "Ask about this service",
     "items": [
       {
@@ -91,6 +123,99 @@
         "description": "Deploy the SME OS digital platform to standardize operations, connect Marketing - Sales - Customer Care data, and build a foundation for long-term SME growth."
       }
     ]
+  },
+  "diagnostic": {
+    "pageHeading": "X-ray your business in 90 seconds",
+    "moduleNames": {
+      "MKT": "MARKETING",
+      "SALES": "SALES",
+      "CSKH": "CUSTOMER CARE",
+      "SOP": "OPERATIONS",
+      "DATA": "DATA"
+    },
+    "questions": [
+      {
+        "text": "Do you know which channel brings in the most customers?",
+        "options": ["We know exactly, backed by data", "Roughly, by gut feeling", "We don't track this"]
+      },
+      {
+        "text": "A customer asks for a price, then goes quiet. Does anyone follow up?",
+        "options": ["Yes, on a fixed schedule", "Depends on whether we remember", "Almost never"]
+      },
+      {
+        "text": "A customer messages on Zalo at 9pm. How long until someone replies?",
+        "options": ["Under 15 minutes", "The next morning", "Not sure, depends on the day"]
+      },
+      {
+        "text": "If your best closer quit next week, how long before someone new could match them?",
+        "options": ["Under 2 weeks — we have documentation", "One to three months", "No one could replace them"]
+      },
+      {
+        "text": "How much does it cost you to acquire one new customer?",
+        "options": ["We know the exact number", "Roughly", "We've never calculated it"]
+      },
+      {
+        "text": "Do you have a list of past customers to reach out to when needed?",
+        "options": ["Yes, complete and used regularly", "Yes, but scattered across many places", "No"]
+      }
+    ],
+    "notes": {
+      "CSKH": "<b>Customer Care just turned red.</b> Look at the MARKETING block — it's now carrying extra weight, because you're paying for ads to make up for customers slipping through at the care stage.",
+      "DATA": "<b>DATA is red, and it's dragging two blocks with it.</b> MARKETING and SALES are now running on gut feeling — no idea where the money goes, or where to scale up.",
+      "SOP": "<b>OPERATIONS is red, and it's shaking SALES.</b> Revenue depends on exactly one person — if they leave, the numbers leave with them.",
+      "SALES": "<b>SALES is red, and it's burning MARKETING's budget.</b> Customers keep coming in steadily, but they stall at closing and never become orders.",
+      "MKT": "<b>MARKETING is flickering.</b> You're buying customers without knowing where it's cheapest, so scaling up safely is hard."
+    },
+    "noteOk": "<b>This block is healthy.</b> Keep doing what you're doing and leave it alone — put your energy into what's red.",
+    "coveringFor": "covering for it",
+    "recommend": {
+      "MKT": {
+        "name": "In-house Marketing Department Setup & Support",
+        "why": "The bottleneck is at the top of the funnel: you need a team that runs consistently, instead of outsourcing campaign by campaign."
+      },
+      "SALES": {
+        "name": "Marketing – Sales – Customer Care System Consulting & Deployment",
+        "why": "Customers are coming in but stalling at closing. This is the fastest fix for revenue."
+      },
+      "CSKH": {
+        "name": "SME OS Digital Platform Rollout",
+        "why": "Past customers are falling out of sight. You need one place to record them and get reminded to follow up."
+      },
+      "SOP": {
+        "name": "SOP Standardization & Team Training",
+        "why": "The business is running on a few people's memory. It needs to be written down so it can scale."
+      },
+      "DATA": {
+        "name": "SME OS Digital Platform Rollout",
+        "why": "Without numbers, every decision is a guess. Connect the data from all three stages into one place first."
+      }
+    },
+    "legendGood": "healthy",
+    "legendWarn": "flickering",
+    "legendBad": "down",
+    "prepare": "READY TO SCAN",
+    "prepareQ": "Where does your system stand right now?",
+    "startBtn": "Start the scan",
+    "privacy": "Nothing is stored on our server. You can stop at any time.",
+    "questionStep": "QUESTION {current} / {total}",
+    "resultLbl": "RESULT",
+    "bottleneck": "Biggest bottleneck: ",
+    "recoLbl": "START HERE",
+    "namePh": "Full name",
+    "phonePh": "Phone number / Zalo",
+    "submit": "Get the full diagnosis",
+    "sending": "Sending…",
+    "microcopy": "No sales calls. Tri Duc will message you on Zalo from 076.991.8685 or email tangtriduc@triduccar.media within 24 business hours.",
+    "again": "Start over",
+    "sentOk": "Received. Tri Duc will be in touch within 24 business hours.",
+    "sentErr": "Couldn't send it. Please call 076.991.8685 or try again in a few minutes.",
+    "recBadge": "Recommended for you"
+  },
+  "actionBar": {
+    "ariaLabel": "Quick contact",
+    "call": "Call now",
+    "zalo": "Zalo",
+    "booking": "Book now"
   },
   "about": {
     "title": "About the Founder",
