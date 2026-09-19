@@ -1,15 +1,10 @@
 import { useTranslations } from "next-intl";
-import {
-  Megaphone,
-  UserRoundCheck,
-  ClipboardList,
-  Building2,
-  LayoutDashboard,
-} from "lucide-react";
+import { SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon } from "@/components/icons";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
 
-const icons = [Megaphone, UserRoundCheck, ClipboardList, Building2, LayoutDashboard];
+const icons = [SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon];
 
 export function ServicesGrid() {
   const t = useTranslations("home");
@@ -29,16 +24,15 @@ export function ServicesGrid() {
           {items.map((service, index) => {
             const Icon = icons[index % icons.length];
             return (
-              <div
-                key={service.title}
-                className="group flex flex-col gap-4 rounded-2xl bg-paper-soft p-7 ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-lg hover:shadow-black/5"
-              >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
-                  <Icon size={22} aria-hidden />
-                </span>
-                <h3 className="font-display text-lg font-semibold text-ink">{service.title}</h3>
-                <p className="text-sm leading-relaxed text-ink-muted">{service.description}</p>
-              </div>
+              <Reveal key={service.title} delay={index * 80}>
+                <div className="group flex h-full flex-col gap-4 rounded-2xl bg-paper-soft p-7 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-gold-500/30">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600">
+                    <Icon size={22} aria-hidden />
+                  </span>
+                  <h3 className="font-display text-lg font-semibold text-ink">{service.title}</h3>
+                  <p className="text-sm leading-relaxed text-ink-muted">{service.description}</p>
+                </div>
+              </Reveal>
             );
           })}
         </div>

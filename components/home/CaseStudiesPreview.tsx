@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { Reveal } from "@/components/Reveal";
 import type { CaseStudy } from "@/lib/sanity/types";
 
 export function CaseStudiesPreview({
@@ -28,8 +29,10 @@ export function CaseStudiesPreview({
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
-            <CaseStudyCard key={item._id} item={item} locale={locale} readMoreLabel={tCase("readMore")} />
+          {items.map((item, index) => (
+            <Reveal key={item._id} delay={index * 90}>
+              <CaseStudyCard item={item} locale={locale} readMoreLabel={tCase("readMore")} />
+            </Reveal>
           ))}
         </div>
       </Container>

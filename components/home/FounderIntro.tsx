@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
 import { FounderPortrait } from "@/components/FounderPortrait";
+import { Reveal } from "@/components/Reveal";
 
 export function FounderIntro() {
   const t = useTranslations("home");
@@ -10,9 +11,11 @@ export function FounderIntro() {
   return (
     <section className="bg-paper-soft py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-        <FounderPortrait className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/10 ring-1 ring-black/5" />
+        <Reveal>
+          <FounderPortrait className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/10 ring-1 ring-black/5" />
+        </Reveal>
 
-        <div className="flex flex-col items-start gap-6">
+        <Reveal delay={120} className="flex flex-col items-start gap-6">
           <SectionHeading
             eyebrow={t("founderEyebrow")}
             heading={t("founderHeading")}
@@ -21,7 +24,7 @@ export function FounderIntro() {
           <Button href="/about" variant="secondary">
             {t("founderCta")}
           </Button>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

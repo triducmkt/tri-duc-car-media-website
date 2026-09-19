@@ -24,6 +24,7 @@ export default async function HomePage({
   return (
     <>
       <SystemHero skipHref="#tru-cot" />
+      <div aria-hidden className="h-20 bg-gradient-to-b from-ink to-paper sm:h-28" />
       <div id="tru-cot">
         <ServicesGrid />
       </div>

@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ActionBar } from "@/components/ActionBar";
+import { MainContent } from "@/components/MainContent";
 import "../globals.css";
 
 const inter = Inter({
@@ -80,9 +81,7 @@ export default async function LocaleLayout({
             Skip to main content
           </a>
           <Header />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
+          <MainContent>{children}</MainContent>
           <Footer />
           <ActionBar />
         </NextIntlClientProvider>
