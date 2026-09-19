@@ -41,7 +41,12 @@ export default async function CaseStudiesPage({
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((item, index) => (
                 <Reveal key={item._id} delay={index * 90}>
-                  <CaseStudyCard item={item} locale={locale} readMoreLabel={t("readMore")} />
+                  <CaseStudyCard
+                    item={item}
+                    locale={locale}
+                    readMoreLabel={t("readMore")}
+                    ongoingLabel={t("ongoingBadge")}
+                  />
                 </Reveal>
               ))}
             </div>

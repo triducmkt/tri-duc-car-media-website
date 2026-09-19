@@ -11,6 +11,7 @@
     "seed:ap-car-care": "node --env-file=.env.local scripts/seed-case-study-ap-car-care.mjs",
     "seed:khang-vu": "node --env-file=.env.local scripts/seed-case-study-khang-vu-auto-care.mjs",
     "seed:apex": "node --env-file=.env.local scripts/seed-case-study-apex-autocare.mjs",
+    "seed:hoc-vien-detailing": "node --env-file=.env.local scripts/seed-case-study-hoc-vien-detailing.mjs",
     "cf:build": "opennextjs-cloudflare build",
     "cf:preview": "opennextjs-cloudflare build && wrangler dev",
     "cf:deploy": "opennextjs-cloudflare build && wrangler deploy",

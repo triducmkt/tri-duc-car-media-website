@@ -1,16 +1,17 @@
 /**
- * One-off import: creates the "Khang Vu Auto Care" case study in Sanity.
- *
- * No cover photo or logo is uploaded here — Khang Vu hasn't sent a real one
- * yet (the source report only carries Tri Duc Car Media's own template
- * photo, which isn't Khang Vu's actual storefront). The card/page fall back
- * to the standard placeholder until a real image is provided; re-run this
- * script (or add the image straight from /studio) once it is.
+ * One-off import: creates/updates the "Khang Vu Auto Care" case study in
+ * Sanity, uploading the client's real logo and a cover photo sourced from
+ * khangvuautocare.vn, with results through August 2026.
  *
  * Usage (Node 20+, no extra install needed):
  *   node --env-file=.env.local scripts/seed-case-study-khang-vu-auto-care.mjs
  */
+import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 import { createClient } from "@sanity/client";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const { NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET, SANITY_API_TOKEN } = process.env;
 
@@ -76,7 +77,7 @@ const bodyVi = [
   ),
   block("Định hướng tiếp theo", { style: "h3" }),
   block(
-    "Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương.",
+    "Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương. Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Khang Vũ Auto Care.",
   ),
 ];
 
@@ -109,9 +110,25 @@ const bodyEn = [
   ),
   block("What's next", { style: "h3" }),
   block(
-    "If July was about building the foundation, August showed the ability to expand reach and win new customers. September shifts focus to conversion: stronger follow/inbox calls to action, a before/after and customer-review content series, and deeper local search coverage around Binh Duong.",
+    "If July was about building the foundation, August showed the ability to expand reach and win new customers. September shifts focus to conversion: stronger follow/inbox calls to action, a before/after and customer-review content series, and deeper local search coverage around Binh Duong. Tri Duc Car Media still directly runs Khang Vu Auto Care's full media operation today.",
   ),
 ];
+
+async function uploadImage(filename, altVi, altEn) {
+  const filePath = path.join(__dirname, "assets", "khang-vu-auto-care", filename);
+  const buffer = await readFile(filePath);
+  const asset = await client.assets.upload("image", buffer, { filename });
+  return {
+    _type: "image",
+    asset: { _type: "reference", _ref: asset._id },
+    alt: { vi: altVi, en: altEn },
+  };
+}
+
+const [coverImage, clientLogo] = await Promise.all([
+  uploadImage("cover.png", "Khang Vũ Detailing Center về đêm", "Khang Vu Detailing Center storefront at night"),
+  uploadImage("logo.jpeg", "Logo Khang Vũ Auto Care", "Khang Vu Auto Care logo"),
+]);
 
 const doc = {
   _type: "caseStudy",
@@ -130,12 +147,39 @@ const doc = {
     vi: "Đồng hành cùng Khang Vũ Auto Care (Bình Dương) từ 07/2026: lượt xem Facebook tăng từ 292 lên hơn 20.000 chỉ sau 2 tháng, đồng bộ triển khai Facebook, TikTok và YouTube ngay từ tháng đầu tiên.",
     en: "Partnering with Khang Vu Auto Care (Binh Duong) since July 2026: Facebook views grew from 292 to over 20,000 in just 2 months, running Facebook, TikTok and YouTube together from month one.",
   },
+  isOngoing: true,
+  dataAsOf: "08/2026",
+  stats: [
+    {
+      _key: key(),
+      label: { vi: "Lượt xem Facebook", en: "Facebook views" },
+      value: "20.115",
+      note: { vi: "+1.068% so với T7/2026", en: "+1,068% vs. Jul 2026" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Lượt xem video TikTok", en: "TikTok video views" },
+      value: "4,8K",
+      note: { vi: "+64,3% so với T7/2026", en: "+64.3% vs. Jul 2026" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Lượt xem YouTube", en: "YouTube views" },
+      value: "3.840",
+      note: { vi: "+80% so với T7/2026", en: "+80% vs. Jul 2026" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Khối lượng nội dung T8", en: "Aug content output" },
+      value: "12/12",
+      note: { vi: "Bài viết hoàn thành đúng kế hoạch PRO", en: "Posts delivered on PRO plan target" },
+    },
+  ],
   body: { vi: bodyVi, en: bodyEn },
+  coverImage,
+  clientLogo,
   publishedAt: new Date().toISOString(),
 };
 
 const result = await client.createOrReplace(doc);
 console.log(`Done — case study created/updated: ${result._id}`);
-console.log(
-  "No cover image/logo uploaded — Khang Vu hasn't sent a real photo/logo yet. Add one from /studio, or re-run this script after adding an upload step, once received.",
-);

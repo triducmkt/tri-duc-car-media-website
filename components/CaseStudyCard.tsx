@@ -9,10 +9,12 @@ export function CaseStudyCard({
   item,
   locale,
   readMoreLabel,
+  ongoingLabel,
 }: {
   item: CaseStudy;
   locale: "vi" | "en";
   readMoreLabel: string;
+  ongoingLabel?: string;
 }) {
   const cover = item.coverImage ? urlForImage(item.coverImage).width(640).height(420).url() : null;
   const logo = item.clientLogo ? urlForImage(item.clientLogo).width(160).height(160).fit("max").url() : null;
@@ -39,6 +41,12 @@ export function CaseStudyCard({
         {logo ? (
           <span className="absolute bottom-3 left-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white/95 p-2 shadow-md">
             <Image src={logo} alt="" width={40} height={40} className="h-full w-full object-contain" />
+          </span>
+        ) : null}
+        {item.isOngoing && ongoingLabel ? (
+          <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-ink shadow-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+            {ongoingLabel}
           </span>
         ) : null}
       </div>

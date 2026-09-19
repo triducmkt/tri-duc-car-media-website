@@ -247,7 +247,10 @@
     "intro": "Một số ví dụ minh hoạ cách Trí Đức Car Media đồng hành cùng doanh nghiệp — nội dung chi tiết sẽ được cập nhật cùng khách hàng.",
     "readMore": "Xem chi tiết",
     "backToList": "Quay lại danh sách dự án",
-    "empty": "Các dự án đang được cập nhật. Vui lòng quay lại sau."
+    "empty": "Các dự án đang được cập nhật. Vui lòng quay lại sau.",
+    "ongoingBadge": "Đang đồng hành cùng Trí Đức Car Media",
+    "updatedThrough": "Số liệu cập nhật đến",
+    "resultsHeading": "Kết quả nổi bật"
   },
   "blog": {
     "title": "Kiến thức",

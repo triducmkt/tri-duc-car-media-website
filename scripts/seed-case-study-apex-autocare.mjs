@@ -75,7 +75,7 @@ const bodyVi = [
   ),
   block("Định hướng tiếp theo", { style: "h3" }),
   block(
-    "Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search).",
+    "Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search). Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Apex Autocare.",
   ),
 ];
 
@@ -106,7 +106,7 @@ const bodyEn = [
   ),
   block("What's next", { style: "h3" }),
   block(
-    "The first two months focused on building brand awareness in Rach Gia. The next phase shifts toward conversion: stronger calls to action in video, a steady before/after and customer-review content series, and deeper local search coverage.",
+    "The first two months focused on building brand awareness in Rach Gia. The next phase shifts toward conversion: stronger calls to action in video, a steady before/after and customer-review content series, and deeper local search coverage. Tri Duc Car Media still directly runs Apex Autocare's full media operation today.",
   ),
 ];
 
@@ -143,6 +143,34 @@ const doc = {
     vi: "Đồng hành cùng Apex Autocare (Rạch Giá, Kiên Giang) từ 07/2026: lượt xem Facebook tăng 289%, TikTok bắt đầu được thuật toán phân phối tới khách hàng mới, và từ khoá thương hiệu bắt đầu xuất hiện trong tìm kiếm địa phương.",
     en: "Partnering with Apex Autocare (Rach Gia, Kien Giang) since July 2026: Facebook views up 289%, TikTok content starting to reach new audiences via the algorithm, and branded search terms beginning to appear locally.",
   },
+  isOngoing: true,
+  dataAsOf: "08/2026",
+  stats: [
+    {
+      _key: key(),
+      label: { vi: "Lượt xem Facebook", en: "Facebook views" },
+      value: "9.084",
+      note: { vi: "+289% so với T7/2026", en: "+289% vs. Jul 2026" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Lượt xem ≥ 3 giây", en: "Views held 3+ seconds" },
+      value: "356",
+      note: { vi: "+889% so với T7/2026", en: "+889% vs. Jul 2026" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Lượt xem video TikTok", en: "TikTok video views" },
+      value: "1K+",
+      note: { vi: "+87,5% so với T7/2026", en: "+87.5% vs. Jul 2026" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Khối lượng nội dung T8", en: "Aug content output" },
+      value: "13/12",
+      note: { vi: "Bài viết vượt kế hoạch PRO", en: "Posts ahead of PRO plan target" },
+    },
+  ],
   body: { vi: bodyVi, en: bodyEn },
   coverImage,
   clientLogo,

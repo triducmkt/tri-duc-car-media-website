@@ -15,6 +15,12 @@ export type SanityImage = {
   alt?: LocalizedString;
 };
 
+export type CaseStudyStat = {
+  label: LocalizedString;
+  value: string;
+  note?: LocalizedString;
+};
+
 export type CaseStudy = {
   _id: string;
   slug: string;
@@ -22,6 +28,9 @@ export type CaseStudy = {
   clientName?: string;
   industry?: LocalizedString;
   summary: LocalizedString;
+  isOngoing?: boolean;
+  dataAsOf?: string;
+  stats?: CaseStudyStat[];
   body?: LocalizedBlockContent;
   coverImage?: SanityImage;
   clientLogo?: SanityImage;

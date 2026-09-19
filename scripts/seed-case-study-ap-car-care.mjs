@@ -1,5 +1,8 @@
 /**
- * One-off import: creates the "AP Car Care" case study in Sanity.
+ * One-off import: creates/updates the "AP Car Care" case study in Sanity,
+ * uploading the client's real logo and a cover photo sourced from
+ * apcarcare.vn, and refreshing the results with the latest figures from the
+ * "fanpage AP" tracking sheet (data through August 2026).
  *
  * Requires a real Sanity project with a write-capable API token (create one
  * at https://www.sanity.io/manage -> API -> Tokens -> "Editor" permission).
@@ -7,7 +10,12 @@
  * Usage (Node 20+, no extra install needed):
  *   node --env-file=.env.local scripts/seed-case-study-ap-car-care.mjs
  */
+import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 import { createClient } from "@sanity/client";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const { NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET, SANITY_API_TOKEN } = process.env;
 
@@ -70,16 +78,18 @@ const bodyVi = [
   block(
     "Chiến thuật chính: storytelling chiếm 80% nội dung kết hợp feedback thật, đẩy mạnh video ngắn TikTok & Reels để tăng reach tự nhiên, kết hợp combo ưu đãi cho khách mới và chương trình giới thiệu bạn bè (referral) cho khách cũ.",
   ),
-  block("Kết quả theo số liệu (T1/2024 → T6/2025)", { style: "h3" }),
-  block("Follower Fanpage tăng từ 12.465 lên 15.962 (+28%).", { listItem: "bullet" }),
-  block("Tiếp cận tự nhiên tăng từ 10.945 lên 53.659 — gấp gần 5 lần.", { listItem: "bullet" }),
-  block("Khách hàng mới tăng từ 226 lên 320 mỗi kỳ (+41,5%).", { listItem: "bullet" }),
+  block("Kết quả theo số liệu (T1/2024 → T8/2026)", { style: "h3" }),
+  block("Follower Fanpage tăng từ 12.465 lên 30.464 — gấp gần 2,5 lần (+144%).", { listItem: "bullet" }),
   block(
-    "Doanh thu trung bình tăng từ khoảng 526 triệu/tháng (12/2024) lên khoảng 836 triệu/tháng (T6/2025), tương đương +46% so với cùng kỳ năm trước; riêng T10/2025 ghi nhận doanh thu thực hơn 1 tỷ đồng.",
+    "Khách hàng mới bình quân/tháng tăng từ 226 lên 619 (+174%), riêng T8/2026 ghi nhận 619 khách mới cùng 2.293 lượt tương tác nội dung (+25% so với T7/2026).",
     { listItem: "bullet" },
   ),
   block(
-    "Tỉ lệ khách quay lại sau 6 tháng đạt khoảng 45%, cao gấp đôi so với trước khi triển khai chiến dịch — khách hàng trung thành hiện đóng góp khoảng 65% doanh thu.",
+    "Doanh thu trung bình/tháng tăng từ khoảng 724 triệu (T1/2024) lên khoảng 1,04 tỷ đồng (T8/2026), tương đương +44%.",
+    { listItem: "bullet" },
+  ),
+  block(
+    "Tổng lượt tiếp cận T8/2026 đạt 544.269 lượt (+15% so với đầu năm 2026), tổng lượt xem nội dung đạt hơn 1,5 triệu lượt/tháng.",
     { listItem: "bullet" },
   ),
   block(
@@ -104,7 +114,7 @@ const bodyVi = [
     listItem: "bullet",
   }),
   block(
-    "AP Car Care hiện đang mở rộng mảng đào tạo detailing chuyên nghiệp, duy trì đều đặn video ngắn để giữ reach tự nhiên cao, và triển khai dịch vụ chăm sóc xe tận nhà cho tệp khách bận rộn.",
+    "Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song mở rộng mảng đào tạo detailing chuyên nghiệp (Học viện Detailing Việt Nam) và dịch vụ chăm sóc xe tận nhà cho tệp khách bận rộn.",
   ),
 ];
 
@@ -127,16 +137,18 @@ const bodyEn = [
   block(
     "Core tactics: storytelling made up 80% of content, paired with genuine feedback; short-form TikTok and Reels videos drove organic reach; a first-visit bundle offer brought in new customers, and a referral voucher rewarded existing ones for introducing friends.",
   ),
-  block("Results by the numbers (Jan 2024 → Jun 2025)", { style: "h3" }),
-  block("Page followers grew from 12,465 to 15,962 (+28%).", { listItem: "bullet" }),
-  block("Organic reach grew from 10,945 to 53,659 — nearly a 5x increase.", { listItem: "bullet" }),
-  block("New customers grew from 226 to 320 per period (+41.5%).", { listItem: "bullet" }),
+  block("Results by the numbers (Jan 2024 → Aug 2026)", { style: "h3" }),
+  block("Page followers grew from 12,465 to 30,464 — nearly 2.5x (+144%).", { listItem: "bullet" }),
   block(
-    "Average monthly revenue grew from roughly 526 million VND (Dec 2024) to roughly 836 million VND (Jun 2025), a +46% year-over-year increase; October 2025 alone recorded actual revenue of over 1 billion VND.",
+    "Average monthly new customers grew from 226 to 619 (+174%); August 2026 alone recorded 619 new customers and 2,293 content interactions (+25% month-over-month).",
     { listItem: "bullet" },
   ),
   block(
-    "The 6-month repeat-customer rate reached roughly 45%, double the pre-campaign rate — loyal customers now account for about 65% of revenue.",
+    "Average monthly revenue grew from roughly 724 million VND (Jan 2024) to roughly 1.04 billion VND (Aug 2026), a +44% increase.",
+    { listItem: "bullet" },
+  ),
+  block(
+    "August 2026 reach hit 544,269 (+15% versus the start of the year), with total content views exceeding 1.5 million per month.",
     { listItem: "bullet" },
   ),
   block(
@@ -161,9 +173,25 @@ const bodyEn = [
     listItem: "bullet",
   }),
   block(
-    "AP Car Care is now expanding into professional detailing training, keeping up a steady cadence of short-form video to sustain organic reach, and rolling out an at-home car care service for busy customers.",
+    "Tri Duc Car Media still directly runs AP Car Care's full multi-channel media operation today, while also expanding into professional detailing training (Vietnam Detailing Academy) and an at-home car care service for busy customers.",
   ),
 ];
+
+async function uploadImage(filename, altVi, altEn) {
+  const filePath = path.join(__dirname, "assets", "ap-car-care", filename);
+  const buffer = await readFile(filePath);
+  const asset = await client.assets.upload("image", buffer, { filename });
+  return {
+    _type: "image",
+    asset: { _type: "reference", _ref: asset._id },
+    alt: { vi: altVi, en: altEn },
+  };
+}
+
+const [coverImage, clientLogo] = await Promise.all([
+  uploadImage("cover.jpg", "Dịch vụ phủ ceramic kính lái tại AP Car Care", "Windshield ceramic coating service at AP Car Care"),
+  uploadImage("logo.png", "Logo AP Car Care", "AP Car Care logo"),
+]);
 
 const doc = {
   _type: "caseStudy",
@@ -179,13 +207,42 @@ const doc = {
     en: "Automotive Detailing & Car Care",
   },
   summary: {
-    vi: "Đồng hành cùng hệ thống AP Car Care (2 chi nhánh Tân Phú & Quận 7) từ 08/2023 đến nay: xây dựng thương hiệu “Chăm xe như chăm người thân”, tăng 46% doanh thu và gấp đôi tỉ lệ khách quay lại chỉ sau hơn 1 năm triển khai marketing đa kênh.",
-    en: "Partnering with the AP Car Care system (2 branches in Tan Phu & District 7) since August 2023: building the “We care for your car like family” brand, growing revenue by 46% and doubling the repeat-customer rate within just over a year of multi-channel marketing.",
+    vi: "Đồng hành cùng hệ thống AP Car Care (2 chi nhánh Tân Phú & Quận 7) từ 08/2023 đến nay: xây dựng thương hiệu “Chăm xe như chăm người thân”, tăng follower gấp 2,5 lần và doanh thu trung bình tháng lên hơn 1 tỷ đồng.",
+    en: "Partnering with the AP Car Care system (2 branches in Tan Phu & District 7) since August 2023: building the “We care for your car like family” brand, growing followers 2.5x and average monthly revenue past 1 billion VND.",
   },
+  isOngoing: true,
+  dataAsOf: "08/2026",
+  stats: [
+    {
+      _key: key(),
+      label: { vi: "Follower Fanpage", en: "Page followers" },
+      value: "30.464",
+      note: { vi: "+144% so với T1/2024", en: "+144% vs. Jan 2024" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Khách mới/tháng", en: "New customers/month" },
+      value: "619",
+      note: { vi: "+174% so với T1/2024", en: "+174% vs. Jan 2024" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Doanh thu TB/tháng", en: "Avg. monthly revenue" },
+      value: "1,04 tỷ đ",
+      note: { vi: "+44% so với T1/2024", en: "+44% vs. Jan 2024" },
+    },
+    {
+      _key: key(),
+      label: { vi: "Lượt tiếp cận T8/2026", en: "Reach in Aug 2026" },
+      value: "544.269",
+      note: { vi: "+15% so với đầu năm 2026", en: "+15% vs. early 2026" },
+    },
+  ],
   body: { vi: bodyVi, en: bodyEn },
+  coverImage,
+  clientLogo,
   publishedAt: new Date().toISOString(),
 };
 
 const result = await client.createOrReplace(doc);
 console.log(`Done — case study created/updated: ${result._id}`);
-console.log("Cover image wasn't uploaded automatically — add one from the Studio (/studio) if you have a good hero photo of the branches.");
