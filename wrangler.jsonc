@@ -5,6 +5,12 @@
   "compatibility_date": "2026-08-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "workers_dev": true,
+  // Declaring this here makes wrangler deploy sync it on every deploy,
+  // overriding a stale value that had been set directly on the Worker
+  // outside of source control (an old team address that no longer exists).
+  "vars": {
+    "CONTACT_TO_EMAIL": "triducmkt@gmail.com"
+  },
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
