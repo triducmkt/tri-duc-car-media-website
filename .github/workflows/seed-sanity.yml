@@ -1,0 +1,52 @@
+name: Seed Sanity case studies
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Which case study seed script to run
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - ap-car-care
+          - khang-vu
+          - apex
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Seed AP Car Care
+        if: ${{ inputs.target == 'all' || inputs.target == 'ap-car-care' }}
+        run: npm run seed:ap-car-care
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+
+      - name: Seed Khang Vu Auto Care
+        if: ${{ inputs.target == 'all' || inputs.target == 'khang-vu' }}
+        run: npm run seed:khang-vu
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+
+      - name: Seed Apex Autocare
+        if: ${{ inputs.target == 'all' || inputs.target == 'apex' }}
+        run: npm run seed:apex
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}

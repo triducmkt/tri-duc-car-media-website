@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { urlForImage } from "@/lib/sanity/image";
+import { HubIcon } from "@/components/icons";
 import type { CaseStudy } from "@/lib/sanity/types";
 
 export function CaseStudyCard({
@@ -14,11 +15,12 @@ export function CaseStudyCard({
   readMoreLabel: string;
 }) {
   const cover = item.coverImage ? urlForImage(item.coverImage).width(640).height(420).url() : null;
+  const logo = item.clientLogo ? urlForImage(item.clientLogo).width(160).height(160).fit("max").url() : null;
 
   return (
     <Link
       href={{ pathname: "/case-studies/[slug]", params: { slug: item.slug } }}
-      className="group flex flex-col overflow-hidden rounded-2xl bg-paper-soft ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-lg hover:shadow-black/5"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-paper-soft ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-gold-500/30"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink">
         {cover ? (
@@ -31,15 +33,18 @@ export function CaseStudyCard({
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink-soft to-ink">
-            <span className="font-display text-sm font-semibold uppercase tracking-widest text-white/40">
-              Trí Đức Car Media
-            </span>
+            <HubIcon size={40} className="text-gold-500/30" aria-hidden />
           </div>
         )}
+        {logo ? (
+          <span className="absolute bottom-3 left-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white/95 p-2 shadow-md">
+            <Image src={logo} alt="" width={40} height={40} className="h-full w-full object-contain" />
+          </span>
+        ) : null}
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">
         {item.industry ? (
-          <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
+          <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">
             {item.industry[locale] || item.industry.vi}
           </span>
         ) : null}
@@ -49,7 +54,7 @@ export function CaseStudyCard({
         <p className="line-clamp-2 text-sm leading-relaxed text-ink-muted">
           {item.summary[locale] || item.summary.vi}
         </p>
-        <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-semibold text-brand-600">
+        <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-semibold text-gold-600">
           {readMoreLabel}
           <ArrowUpRight size={16} aria-hidden />
         </span>

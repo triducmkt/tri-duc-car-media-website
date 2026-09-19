@@ -18,6 +18,12 @@ export const caseStudy = defineType({
     defineField({ name: "summary", title: "Tóm tắt", type: "localizedText", validation: (r) => r.required() }),
     defineField({ name: "body", title: "Nội dung chi tiết", type: "localizedBlockContent" }),
     defineField({ name: "coverImage", title: "Ảnh bìa", type: "image", options: { hotspot: true } }),
+    defineField({
+      name: "clientLogo",
+      title: "Logo khách hàng",
+      description: "Hiển thị dạng huy hiệu nhỏ trên ảnh bìa và trang chi tiết — nên dùng ảnh nền trong suốt.",
+      type: "image",
+    }),
     defineField({ name: "publishedAt", title: "Ngày đăng", type: "datetime" }),
   ],
   preview: {
