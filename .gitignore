@@ -49,6 +49,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Claude Code tooling (not part of the website deliverable)
+# AI agent tooling (skills mirrors etc. — not part of the website deliverable)
 .claude/
+.agents/
 
