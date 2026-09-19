@@ -39,7 +39,10 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("[api/booking] failed to send email:", error);
-    return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
+    return NextResponse.json(
+      { ok: false, error: "send_failed", debug: error instanceof Error ? error.message : String(error) },
+      { status: 502 },
+    );
   }
 
   return NextResponse.json({ ok: true });
