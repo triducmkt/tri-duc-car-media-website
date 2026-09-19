@@ -126,7 +126,7 @@ async function uploadImage(filename, altVi, altEn) {
 }
 
 const [coverImage, clientLogo] = await Promise.all([
-  uploadImage("cover.png", "Khang Vũ Detailing Center về đêm", "Khang Vu Detailing Center storefront at night"),
+  uploadImage("cover.webp", "Mặt tiền Khang Vũ Detailing Center", "The Khang Vu Detailing Center storefront"),
   uploadImage("logo.jpeg", "Logo Khang Vũ Auto Care", "Khang Vu Auto Care logo"),
 ]);
 

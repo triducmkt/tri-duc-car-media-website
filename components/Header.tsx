@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -46,18 +47,20 @@ export function Header() {
       }`}
     >
       <Container className="flex h-18 items-center justify-between py-3">
-        <Link
-          href="/"
-          className="flex flex-col leading-tight"
-          onClick={() => setOpen(false)}
-        >
+        <Link href="/" onClick={() => setOpen(false)}>
           <span
-            className={`font-display text-lg font-bold tracking-tight transition-colors duration-300 ${
-              transparent ? "text-white" : "text-ink"
+            className={`inline-flex items-center rounded-lg transition-colors duration-300 ${
+              transparent ? "bg-white/90 px-2.5 py-1.5 shadow-sm" : ""
             }`}
           >
-            Trí Đức{" "}
-            <span className={transparent ? "text-gold-400" : "text-brand-500"}>Car Media</span>
+            <Image
+              src="/brand/logo-mark.png"
+              alt="Trí Đức Car Media"
+              width={208}
+              height={80}
+              priority
+              className="h-8 w-auto sm:h-9"
+            />
           </span>
         </Link>
 
