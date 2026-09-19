@@ -49,6 +49,7 @@
 
   --font-sans: var(--font-inter);
   --font-display: var(--font-be-vietnam-pro);
+  --font-serif: var(--font-playfair);
 }
 
 /* Read by SystemHero (home hero) and Diagnostic (services) CSS modules only —
@@ -68,6 +69,25 @@ body {
 ::selection {
   background: var(--color-brand-500);
   color: var(--color-paper);
+}
+
+/* Slow ambient rotation for FounderAura (About page) — the site-wide
+   prefers-reduced-motion rule below already freezes these. */
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes orbit-spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.animate-orbit-slow {
+  animation: orbit-spin 70s linear infinite;
+}
+.animate-orbit-slow-reverse {
+  animation: orbit-spin-reverse 95s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

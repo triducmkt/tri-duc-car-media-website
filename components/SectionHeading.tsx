@@ -6,12 +6,15 @@ export function SectionHeading({
   sub,
   align = "left",
   tone = "light",
+  serif = false,
 }: {
   eyebrow?: string;
   heading: string;
   sub?: string;
   align?: Align;
   tone?: "light" | "dark";
+  /** Use the Playfair Display accent font instead of the default display font. */
+  serif?: boolean;
 }) {
   const alignClass = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
   const subColor = tone === "dark" ? "text-white/70" : "text-ink-muted";
@@ -24,7 +27,9 @@ export function SectionHeading({
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h2
+        className={`${serif ? "font-serif" : "font-display"} text-3xl font-semibold tracking-tight sm:text-4xl`}
+      >
         {heading}
       </h2>
       {sub ? <p className={`text-base leading-relaxed sm:text-lg ${subColor}`}>{sub}</p> : null}

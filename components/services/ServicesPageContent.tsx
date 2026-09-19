@@ -2,18 +2,13 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import {
-  Megaphone,
-  UserRoundCheck,
-  ClipboardList,
-  Building2,
-  LayoutDashboard,
-} from "lucide-react";
+import { SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon } from "@/components/icons";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
+import { Reveal } from "@/components/Reveal";
 import Diagnostic from "@/components/services/Diagnostic";
 
-const icons = [Megaphone, UserRoundCheck, ClipboardList, Building2, LayoutDashboard];
+const icons = [SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon];
 
 // Which diagnostic bottleneck (see diagnosticLayout.ts → ModuleKey) each
 // services.items entry answers. Must stay in the same order as that list;
@@ -44,39 +39,50 @@ export function ServicesPageContent() {
         </Container>
       </section>
 
-      <section className="bg-paper py-20 sm:py-24">
+      <section className="bg-ink py-20 sm:py-24">
         <Container className="flex flex-col gap-6">
           {items.map((service, index) => {
             const Icon = icons[index % icons.length];
             const isRecommended = PACKAGE_KEYS[index] !== "" && PACKAGE_KEYS[index] === recommended;
             return (
-              <div
-                key={service.title}
-                className={`flex flex-col gap-5 rounded-2xl bg-paper-soft p-8 ring-1 sm:flex-row sm:items-start sm:gap-8 ${
-                  isRecommended ? "ring-2 ring-brand-500" : "ring-1 ring-black/5"
-                }`}
-              >
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-500/10 text-brand-600">
-                  <Icon size={26} aria-hidden />
-                </span>
-                <div className="flex flex-1 flex-col gap-3">
-                  <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
-                    0{index + 1}
+              <Reveal key={service.title} delay={index * 80}>
+                <div
+                  className={`flex flex-col gap-5 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 sm:flex-row sm:items-start sm:gap-8 ${
+                    isRecommended
+                      ? "bg-gold-500/[0.06] ring-2 ring-gold-500 shadow-lg shadow-gold-500/10"
+                      : "bg-white/[0.03] ring-1 ring-white/10 hover:ring-gold-500/30"
+                  }`}
+                >
+                  <span
+                    className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${
+                      isRecommended ? "bg-gold-500 text-ink" : "bg-gold-500/10 text-gold-400"
+                    }`}
+                  >
+                    <Icon size={26} aria-hidden />
                   </span>
-                  <h2 className="font-display text-xl font-semibold text-ink">{service.title}</h2>
-                  <p className="text-sm leading-relaxed text-ink-muted sm:text-base">
-                    {service.description}
-                  </p>
-                  {isRecommended && (
-                    <span className="inline-flex w-fit items-center rounded-full bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-600">
-                      {tDiag("recBadge")}
+                  <div className="flex flex-1 flex-col gap-3">
+                    <span className="font-serif text-xs font-semibold uppercase tracking-[0.14em] text-gold-400">
+                      0{index + 1}
                     </span>
-                  )}
-                  <Button href="/booking" variant="ghost" className="mt-2 self-start">
-                    {t("ctaLabel")}
-                  </Button>
+                    <h2 className="font-display text-xl font-semibold text-white">{service.title}</h2>
+                    <p className="text-sm leading-relaxed text-white/65 sm:text-base">
+                      {service.description}
+                    </p>
+                    {isRecommended && (
+                      <span className="inline-flex w-fit items-center rounded-full bg-gold-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink">
+                        {tDiag("recBadge")}
+                      </span>
+                    )}
+                    <Button
+                      href="/booking"
+                      variant="ghost"
+                      className="mt-2 self-start !text-white !ring-white/20 hover:!bg-white/10"
+                    >
+                      {t("ctaLabel")}
+                    </Button>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </Container>
