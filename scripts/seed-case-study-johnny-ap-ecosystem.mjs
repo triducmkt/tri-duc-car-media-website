@@ -77,6 +77,16 @@ const bodyVi = (imgs) => [
     "Trí Đức Car Media bắt đầu đồng hành cùng anh Johnny từ năm 2023, đúng giai đoạn AP hoàn thiện mảnh ghép cuối (AP Store) và chuẩn hoá lại toàn bộ hệ thống thành AP Corporation. Đây không phải một hợp đồng dịch vụ ngắn hạn, mà là một mối quan hệ tư vấn — đồng hành xuyên suốt nhiều năm, đi qua cả những giai đoạn thuận lợi lẫn khó khăn.",
   ),
 
+  block("Hệ sinh thái bao phủ toàn bộ ngành detailing & ô tô", { style: "h3" }),
+  block(
+    "Điều khiến AP khác biệt không chỉ là quy mô, mà là độ phủ: 5 mảnh ghép cộng lại bao trọn gần như toàn bộ hành trình một chiếc xe và cả một ngành nghề — chăm sóc/detailing (AP Car Care), phụ kiện & nâng cấp (AP Market), đào tạo nhân lực cho cả ngành detailing (AP Education — Học viện Detailing Việt Nam), bảo dưỡng/sửa chữa (AP Service), đến mua bán xe (AP Store). Ít có mô hình nào tại Việt Nam phủ đủ cả 5 lớp này trong cùng một hệ sinh thái, từ người dùng dịch vụ đến người được đào tạo để làm nghề.",
+  ),
+
+  block("Triết lý xuyên suốt: lấy con người làm trọng tâm, không chỉ khách hàng", { style: "h3" }),
+  block(
+    "Một trong những triết lý kinh doanh được anh Đức đề xuất và cùng anh Johnny kiên trì áp dụng triệt để vào hệ sinh thái AP suốt nhiều năm đồng hành: phục vụ tốt không dừng lại ở khách hàng, mà cả 3 nhóm đối tượng cốt lõi mà cả AP Car Care lẫn AP Education đều phải phục vụ song song — khách hàng (người dùng dịch vụ, học viên), đối tác (nhà cung cấp, đại lý nhượng quyền), và chính nhân viên trong hệ thống. Triết lý “3 đối tượng” này bổ sung cho hệ giá trị 3T-3D-3C mà AP đã công bố, đặt con người ở mọi vai trò làm trọng tâm thay vì chỉ tối ưu một chiều cho khách hàng — và là một mắt xích quan trọng giúp mô hình nhân bản ra nhiều chi nhánh mà vẫn giữ được chất lượng.",
+  ),
+
   block("“Giải phóng” một nhà sáng lập khỏi việc không thuộc vai trò của mình", { style: "h3" }),
   block(
     "Như phần lớn founder của các doanh nghiệp vừa và nhỏ đang tăng trưởng nhanh, giai đoạn đầu anh Johnny từng phải kiêm nhiệm rất nhiều việc lẽ ra thuộc về một bộ phận chuyên trách: tự lên ý tưởng nội dung, tự chỉnh sửa hình ảnh, tự theo dõi và trả lời tin nhắn trên fanpage, thậm chí tự mày mò chỉnh sửa website — bên cạnh vai trò điều hành toàn bộ hệ thống nhiều chi nhánh, nhiều mảng kinh doanh.",
@@ -135,6 +145,16 @@ const bodyEn = (imgs) => [
     "Tri Duc Car Media began partnering with Johnny in 2023, right as AP completed its final piece (AP Store) and standardized the whole system under AP Corporation. This has never been a short-term service contract — it's an ongoing advisory relationship spanning years, through both smooth stretches and hard ones.",
   ),
 
+  block("An ecosystem that covers the whole detailing & automotive industry", { style: "h3" }),
+  block(
+    "What sets AP apart isn't just scale, it's coverage: five arms together span nearly the entire journey of a car, and the entire trade around it — care/detailing (AP Car Care), accessories & upgrades (AP Market), training the industry's workforce (AP Education — Vietnam Detailing Academy), maintenance/repair (AP Service), and buying/selling cars (AP Store). Few models in Vietnam cover all five layers within one ecosystem, from the people who use the service to the people trained to perform it.",
+  ),
+
+  block("A philosophy that runs through everything: people first, not just customers", { style: "h3" }),
+  block(
+    "One business philosophy that Duc proposed and has worked with Johnny to apply rigorously across the AP ecosystem for years: serving well doesn't stop at customers. Both AP Car Care and AP Education must serve three core groups in parallel — customers (service users, students), partners (suppliers, franchise dealers), and the system's own employees. This “three audiences” philosophy complements the 3T-3D-3C values AP has published, putting people first in every role rather than optimizing one-sidedly for customers — and it's a key piece that lets the model replicate across branches without losing quality.",
+  ),
+
   block("Freeing a founder from work that wasn't his to do", { style: "h3" }),
   block(
     "Like most founders of fast-growing SMEs, in the early stage Johnny had to wear far more hats than a single person should: coming up with content ideas himself, editing photos himself, monitoring and replying to Fanpage messages himself, even tinkering with the website himself — on top of running an entire multi-branch, multi-business system.",
@@ -183,7 +203,7 @@ const bodyEn = (imgs) => [
   ),
 ];
 
-async function uploadImage(filename, altVi, altEn) {
+async function uploadImage(filename, altVi, altEn, hotspot) {
   const filePath = path.join(__dirname, "assets", "johnny-ap-ecosystem", filename);
   const buffer = await readFile(filePath);
   const asset = await client.assets.upload("image", buffer, { filename });
@@ -191,6 +211,7 @@ async function uploadImage(filename, altVi, altEn) {
     _type: "image",
     asset: { _type: "reference", _ref: asset._id },
     alt: { vi: altVi, en: altEn },
+    ...(hotspot ? { hotspot: { _type: "sanity.imageHotspot", ...hotspot } } : {}),
   };
 }
 
@@ -201,7 +222,15 @@ async function uploadPlain(filename) {
 }
 
 const [coverImage, clientLogo, ecosystemAsset, timelineAsset] = await Promise.all([
-  uploadImage("portrait.jpg", "CEO Johnny Lộc Nguyễn — Nhà sáng lập hệ sinh thái AP", "CEO Johnny Loc Nguyen — Founder of the AP ecosystem"),
+  // Portrait is a square headshot; the detail page crops covers to 16:9, so
+  // the hotspot pins the crop to his head/shoulders instead of the (default)
+  // vertical center, which was slicing through his forehead.
+  uploadImage(
+    "portrait.jpg",
+    "CEO Johnny Lộc Nguyễn — Nhà sáng lập hệ sinh thái AP",
+    "CEO Johnny Loc Nguyen — Founder of the AP ecosystem",
+    { x: 0.48, y: 0.2, height: 0.4, width: 0.5 },
+  ),
   uploadImage("logo.png", "Logo AP", "AP logo"),
   uploadPlain("ecosystem-diagram.png"),
   uploadPlain("timeline.png"),
@@ -213,8 +242,8 @@ const doc = {
   _type: "caseStudy",
   _id: "case-study-johnny-ap-ecosystem",
   title: {
-    vi: "Johnny Lộc Nguyễn — Giải phóng nhà sáng lập, xây dựng hệ sinh thái AP từ một trung tâm chăm sóc xe thành 5 thương hiệu",
-    en: "Johnny Loc Nguyen — Freeing a Founder, Building the AP Ecosystem From One Car Care Shop Into Five Brands",
+    vi: "Đồng hành cùng Mr Johnny Lộc Nguyễn — Giải phóng nhà sáng lập, phát triển từ một trung tâm chăm sóc xe thành một hệ sinh thái AP với 5 thương hiệu",
+    en: "Partnering with Mr. Johnny Loc Nguyen — Freeing a Founder, Growing From One Car Care Shop Into the Five-Brand AP Ecosystem",
   },
   slug: { _type: "slug", current: "johnny-loc-nguyen-he-sinh-thai-ap" },
   clientName: "Johnny Lộc Nguyễn — Hệ sinh thái AP",
