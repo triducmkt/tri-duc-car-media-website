@@ -40,7 +40,12 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[api/booking] failed to send email:", error);
     return NextResponse.json(
-      { ok: false, error: "send_failed", debug: error instanceof Error ? error.message : String(error) },
+      {
+        ok: false,
+        error: "send_failed",
+        debug: error instanceof Error ? error.message : String(error),
+        debugTo: process.env.CONTACT_TO_EMAIL || "(unset, using fallback)",
+      },
       { status: 502 },
     );
   }
