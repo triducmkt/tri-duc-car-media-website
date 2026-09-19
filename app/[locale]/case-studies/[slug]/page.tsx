@@ -1,12 +1,40 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
+import { TrendingUp, ExternalLink } from "lucide-react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/Container";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/Reveal";
 import { getCaseStudies, getCaseStudyBySlug } from "@/lib/sanity/queries";
 import { urlForImage } from "@/lib/sanity/image";
+import type { SanityImage } from "@/lib/sanity/types";
+
+function bodyComponents(locale: "vi" | "en"): PortableTextComponents {
+  return {
+    types: {
+      image: ({ value }: { value: SanityImage & { caption?: string } }) => {
+        const src = urlForImage(value).width(1400).url();
+        return (
+          <figure className="not-prose my-2 flex flex-col gap-2">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl ring-1 ring-black/5">
+              <Image
+                src={src}
+                alt={value.alt?.[locale] || value.alt?.vi || value.caption || ""}
+                fill
+                className="object-contain bg-paper-soft"
+                sizes="(min-width: 768px) 768px, 100vw"
+              />
+            </div>
+            {value.caption ? (
+              <figcaption className="text-center text-sm text-ink-muted">{value.caption}</figcaption>
+            ) : null}
+          </figure>
+        );
+      },
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const items = await getCaseStudies();
@@ -48,7 +76,7 @@ export default async function CaseStudyDetailPage({
         </Link>
 
         <Reveal className="flex flex-col gap-8">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             {logo ? (
               <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2 ring-1 ring-black/5">
                 <Image src={logo} alt="" width={48} height={48} className="h-full w-full object-contain" />
@@ -57,6 +85,12 @@ export default async function CaseStudyDetailPage({
             {item.industry ? (
               <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">
                 {item.industry[locale] || item.industry.vi}
+              </span>
+            ) : null}
+            {item.isOngoing ? (
+              <span className="flex items-center gap-1.5 rounded-full bg-paper-soft px-3 py-1 text-xs font-semibold text-ink ring-1 ring-black/5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+                {t("ongoingBadge")}
               </span>
             ) : null}
           </div>
@@ -68,6 +102,29 @@ export default async function CaseStudyDetailPage({
           <p className="text-lg leading-relaxed text-ink-muted">
             {item.summary[locale] || item.summary.vi}
           </p>
+
+          {item.dataAsOf ? (
+            <p className="-mt-4 text-sm font-medium text-ink-muted">
+              {t("updatedThrough")} {item.dataAsOf}
+            </p>
+          ) : null}
+
+          {item.links && item.links.length > 0 ? (
+            <div className="flex flex-wrap gap-2">
+              {item.links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 rounded-full border border-black/10 px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:border-gold-500/40 hover:text-gold-600"
+                >
+                  {link.label[locale] || link.label.vi}
+                  <ExternalLink size={13} aria-hidden />
+                </a>
+              ))}
+            </div>
+          ) : null}
 
           {cover ? (
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl ring-1 ring-black/5">
@@ -81,9 +138,36 @@ export default async function CaseStudyDetailPage({
             </div>
           ) : null}
 
+          {item.stats && item.stats.length > 0 ? (
+            <div className="flex flex-col gap-4">
+              <h2 className="font-display text-sm font-semibold uppercase tracking-wide text-ink-muted">
+                {t("resultsHeading")}
+              </h2>
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                {item.stats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col gap-1.5 rounded-2xl bg-paper-soft p-4 ring-1 ring-black/5"
+                  >
+                    <span className="font-display text-2xl font-bold text-ink sm:text-3xl">{stat.value}</span>
+                    <span className="text-xs leading-snug text-ink-muted">
+                      {stat.label[locale] || stat.label.vi}
+                    </span>
+                    {stat.note ? (
+                      <span className="mt-1 flex items-center gap-1 text-xs font-semibold text-gold-600">
+                        <TrendingUp size={13} aria-hidden />
+                        {stat.note[locale] || stat.note.vi}
+                      </span>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
           {body ? (
             <div className="prose prose-neutral max-w-none prose-headings:font-serif prose-a:text-gold-600 prose-strong:text-ink">
-              <PortableText value={body} />
+              <PortableText value={body} components={bodyComponents(locale)} />
             </div>
           ) : null}
         </Reveal>

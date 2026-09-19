@@ -20,12 +20,18 @@ export const localizedText = defineType({
   ],
 });
 
+const blockContentImage = {
+  type: "image" as const,
+  options: { hotspot: true },
+  fields: [{ name: "caption", title: "Chú thích ảnh", type: "string" }],
+};
+
 export const localizedBlockContent = defineType({
   name: "localizedBlockContent",
   title: "Localized rich text",
   type: "object",
   fields: [
-    defineField({ name: "vi", title: "Tiếng Việt", type: "array", of: [{ type: "block" }] }),
-    defineField({ name: "en", title: "English", type: "array", of: [{ type: "block" }] }),
+    defineField({ name: "vi", title: "Tiếng Việt", type: "array", of: [{ type: "block" }, blockContentImage] }),
+    defineField({ name: "en", title: "English", type: "array", of: [{ type: "block" }, blockContentImage] }),
   ],
 });

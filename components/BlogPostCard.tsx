@@ -31,9 +31,13 @@ export function BlogPostCard({
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink-soft to-ink">
-            <span className="font-display text-sm font-semibold uppercase tracking-widest text-white/40">
-              Trí Đức Car Media
-            </span>
+            <Image
+              src="/brand/logo-mark.png"
+              alt="Trí Đức Car Media"
+              width={208}
+              height={80}
+              className="h-8 w-auto opacity-40 brightness-0 invert"
+            />
           </div>
         )}
       </div>

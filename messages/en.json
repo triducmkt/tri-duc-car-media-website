@@ -247,7 +247,10 @@
     "intro": "A selection of examples showing how Tri Duc Car Media partners with businesses — full details are being finalized with each client.",
     "readMore": "View details",
     "backToList": "Back to case studies",
-    "empty": "Case studies are being updated. Please check back soon."
+    "empty": "Case studies are being updated. Please check back soon.",
+    "ongoingBadge": "Actively managed by Tri Duc Car Media",
+    "updatedThrough": "Data updated through",
+    "resultsHeading": "Key results"
   },
   "blog": {
     "title": "Insights",

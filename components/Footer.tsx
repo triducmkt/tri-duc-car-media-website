@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Mail, Phone } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -22,8 +23,14 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div className="flex flex-col gap-4 lg:col-span-1">
-          <span className="font-display text-lg font-bold tracking-tight text-white">
-            {t("companyName")}
+          <span className="inline-flex w-fit items-center rounded-lg bg-white px-3 py-2">
+            <Image
+              src="/brand/logo-mark.png"
+              alt={t("companyName")}
+              width={208}
+              height={80}
+              className="h-7 w-auto"
+            />
           </span>
           <p className="text-sm leading-relaxed text-white/60">{t("tagline")}</p>
         </div>
