@@ -14,7 +14,7 @@ export async function sendNotificationEmail({
   html: string;
   replyTo?: string;
 }) {
-  const to = CONTACT_TO_EMAIL || "tangtriduc@triduccar.media";
+  const to = CONTACT_TO_EMAIL || "triducmkt@gmail.com";
   // resend.dev is Resend's shared sandbox sender — works immediately with no
   // domain verification, but only delivers to the account owner's own inbox.
   // Once triduccar.media is verified in Resend, set RESEND_FROM_EMAIL to send
