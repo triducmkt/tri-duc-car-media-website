@@ -11,6 +11,7 @@ const caseStudyProjection = `{
   isOngoing,
   dataAsOf,
   stats,
+  links,
   body,
   coverImage,
   clientLogo,

@@ -171,6 +171,13 @@ const doc = {
       note: { vi: "Bài viết vượt kế hoạch PRO", en: "Posts ahead of PRO plan target" },
     },
   ],
+  links: [
+    {
+      _key: key(),
+      label: { vi: "Google Maps — Apex Autocare Rạch Giá", en: "Google Maps — Apex Autocare Rach Gia" },
+      url: "https://www.google.com/maps/search/?api=1&query=Apex+Autocare+F9+74-75+%C4%90%C6%B0%E1%BB%9Dng+3%2F2+Ph%C6%B0%E1%BB%9Dng+V%C4%A9nh+L%E1%BA%A1c+R%E1%BA%A1ch+Gi%C3%A1+Ki%C3%AAn+Giang",
+    },
+  ],
   body: { vi: bodyVi, en: bodyEn },
   coverImage,
   clientLogo,

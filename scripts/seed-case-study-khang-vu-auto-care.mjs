@@ -175,6 +175,19 @@ const doc = {
       note: { vi: "Bài viết hoàn thành đúng kế hoạch PRO", en: "Posts delivered on PRO plan target" },
     },
   ],
+  links: [
+    { _key: key(), label: { vi: "Website", en: "Website" }, url: "https://khangvuautocare.vn" },
+    {
+      _key: key(),
+      label: { vi: "Fanpage Facebook", en: "Facebook Page" },
+      url: "https://www.facebook.com/profile.php?id=61590660997434",
+    },
+    {
+      _key: key(),
+      label: { vi: "Google Maps", en: "Google Maps" },
+      url: "https://www.google.com/maps/search/?api=1&query=Khang+V%C5%A9+Detailing+Center+22+24+26+DV06C+%C4%90%C6%B0%E1%BB%9Dng+Na11+KDC+Vi%E1%BB%87t-Sing+Ph%C6%B0%E1%BB%9Dng+An+Ph%C3%BA+B%C3%ACnh+D%C6%B0%C6%A1ng",
+    },
+  ],
   body: { vi: bodyVi, en: bodyEn },
   coverImage,
   clientLogo,

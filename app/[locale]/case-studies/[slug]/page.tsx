@@ -1,13 +1,40 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { TrendingUp } from "lucide-react";
-import { PortableText } from "@portabletext/react";
+import { TrendingUp, ExternalLink } from "lucide-react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/Container";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/Reveal";
 import { getCaseStudies, getCaseStudyBySlug } from "@/lib/sanity/queries";
 import { urlForImage } from "@/lib/sanity/image";
+import type { SanityImage } from "@/lib/sanity/types";
+
+function bodyComponents(locale: "vi" | "en"): PortableTextComponents {
+  return {
+    types: {
+      image: ({ value }: { value: SanityImage & { caption?: string } }) => {
+        const src = urlForImage(value).width(1400).url();
+        return (
+          <figure className="not-prose my-2 flex flex-col gap-2">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl ring-1 ring-black/5">
+              <Image
+                src={src}
+                alt={value.alt?.[locale] || value.alt?.vi || value.caption || ""}
+                fill
+                className="object-contain bg-paper-soft"
+                sizes="(min-width: 768px) 768px, 100vw"
+              />
+            </div>
+            {value.caption ? (
+              <figcaption className="text-center text-sm text-ink-muted">{value.caption}</figcaption>
+            ) : null}
+          </figure>
+        );
+      },
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const items = await getCaseStudies();
@@ -82,6 +109,23 @@ export default async function CaseStudyDetailPage({
             </p>
           ) : null}
 
+          {item.links && item.links.length > 0 ? (
+            <div className="flex flex-wrap gap-2">
+              {item.links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 rounded-full border border-black/10 px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:border-gold-500/40 hover:text-gold-600"
+                >
+                  {link.label[locale] || link.label.vi}
+                  <ExternalLink size={13} aria-hidden />
+                </a>
+              ))}
+            </div>
+          ) : null}
+
           {cover ? (
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl ring-1 ring-black/5">
               <Image
@@ -123,7 +167,7 @@ export default async function CaseStudyDetailPage({
 
           {body ? (
             <div className="prose prose-neutral max-w-none prose-headings:font-serif prose-a:text-gold-600 prose-strong:text-ink">
-              <PortableText value={body} />
+              <PortableText value={body} components={bodyComponents(locale)} />
             </div>
           ) : null}
         </Reveal>

@@ -21,6 +21,11 @@ export type CaseStudyStat = {
   note?: LocalizedString;
 };
 
+export type CaseStudyLink = {
+  label: LocalizedString;
+  url: string;
+};
+
 export type CaseStudy = {
   _id: string;
   slug: string;
@@ -31,6 +36,7 @@ export type CaseStudy = {
   isOngoing?: boolean;
   dataAsOf?: string;
   stats?: CaseStudyStat[];
+  links?: CaseStudyLink[];
   body?: LocalizedBlockContent;
   coverImage?: SanityImage;
   clientLogo?: SanityImage;

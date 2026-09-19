@@ -52,6 +52,23 @@ export const caseStudy = defineType({
         }),
       ],
     }),
+    defineField({
+      name: "links",
+      title: "Liên kết thật (fanpage, website, Google Maps...)",
+      description: "Hiển thị dạng nút bấm để người đọc bấm vào kiểm tra trực tiếp — tăng độ tin cậy.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "link",
+          fields: [
+            defineField({ name: "label", title: "Nhãn", type: "localizedString", validation: (r) => r.required() }),
+            defineField({ name: "url", title: "URL", type: "url", validation: (r) => r.required() }),
+          ],
+          preview: { select: { title: "label.vi", subtitle: "url" } },
+        }),
+      ],
+    }),
     defineField({ name: "body", title: "Nội dung chi tiết", type: "localizedBlockContent" }),
     defineField({ name: "coverImage", title: "Ảnh bìa", type: "image", options: { hotspot: true } }),
     defineField({
