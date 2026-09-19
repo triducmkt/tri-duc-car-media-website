@@ -24,6 +24,7 @@ export type CaseStudy = {
   summary: LocalizedString;
   body?: LocalizedBlockContent;
   coverImage?: SanityImage;
+  clientLogo?: SanityImage;
   publishedAt: string;
 };
 

@@ -10,6 +10,7 @@ const caseStudyProjection = `{
   summary,
   body,
   coverImage,
+  clientLogo,
   publishedAt
 }`;
 
