@@ -3,8 +3,8 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemaTypes";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "";
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "0lzmbuzo";
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 
 // Deployed standalone via `npx sanity deploy` (not embedded in the Next.js
 // app) — Cloudflare Workers' 3 MiB free-tier size limit can't fit Sanity
