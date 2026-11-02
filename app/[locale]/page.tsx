@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import SystemHero from "@/components/home/SystemHero";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FreedomCalculator } from "@/components/home/FreedomCalculator";
+import { ProofEngine } from "@/components/home/ProofEngine";
 import { FounderIntro } from "@/components/home/FounderIntro";
 import { Process } from "@/components/home/Process";
 import { CaseStudiesPreview } from "@/components/home/CaseStudiesPreview";
@@ -27,6 +28,7 @@ export default async function HomePage({
       <SystemHero skipHref="#tinh-gio" />
       <div aria-hidden className="h-20 bg-gradient-to-b from-ink to-paper sm:h-28" />
       <FreedomCalculator />
+      <ProofEngine />
       <div id="tru-cot">
         <ServicesGrid />
       </div>

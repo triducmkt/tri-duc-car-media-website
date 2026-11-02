@@ -307,6 +307,41 @@
     "errTitle": "Couldn't send",
     "errBody": "Please call 076.991.8685 or try again in a few minutes."
   },
+  "proof": {
+    "eyebrow": "Living proof",
+    "heading": "Every point of light is a real result. Watch them grow.",
+    "legend": "Particle count scales with the real numbers",
+    "readCase": "Read the full story",
+    "ctaHeading": "Want your business to be the next point of light?",
+    "ctaZalo": "Message on Zalo — free 15-min diagnosis",
+    "ctaBook": "Book a 1-on-1",
+    "cases": [
+      {
+        "tag": "Car care · Binh Duong · 2 months",
+        "client": "Khang Vu Auto Care",
+        "before": "292",
+        "after": "20,000+",
+        "metric": "Facebook views, after 2 months",
+        "story": "From a near-silent fanpage to Facebook, TikTok and YouTube running in sync from month one — without the owner posting a thing."
+      },
+      {
+        "tag": "Car care & upgrades · Rach Gia · 2 months",
+        "client": "Apex Autocare",
+        "before": "100%",
+        "after": "+289%",
+        "metric": "growth in Facebook views",
+        "story": "The brand now shows up when locals search, and TikTok started pushing it to brand-new customers."
+      },
+      {
+        "tag": "AP ecosystem · Since 2023",
+        "client": "Johnny Loc Nguyen",
+        "before": "1 shop",
+        "after": "5 brands",
+        "metric": "Car Care · Market · Education · Service · Store",
+        "story": "Tri Duc stepped in as CMO so the founder could leave day-to-day operations and expand — now in Bac Ninh, aiming for 10 branches by 2030."
+      }
+    ]
+  },
   "actionBar": {
     "ariaLabel": "Quick contact",
     "call": "Call now",

@@ -24,15 +24,14 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div className="flex flex-col gap-4 lg:col-span-1">
-          <span className="inline-flex w-fit items-center rounded-lg bg-white px-3 py-2">
-            <Image
-              src="/brand/logo-mark.png"
-              alt={t("companyName")}
-              width={208}
-              height={65}
-              className="h-7 w-auto"
-            />
-          </span>
+          <Image
+            src="/brand/logo-light.svg"
+            alt={t("companyName")}
+            width={725}
+            height={256}
+            unoptimized
+            className="h-11 w-auto self-start"
+          />
           <p className="text-sm leading-relaxed text-white/60">{t("tagline")}</p>
         </div>
 

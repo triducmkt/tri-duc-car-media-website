@@ -100,3 +100,9 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ProofEngine case panel swap */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}

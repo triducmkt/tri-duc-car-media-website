@@ -48,20 +48,17 @@ export function Header() {
     >
       <Container className="flex h-18 items-center justify-between py-3">
         <Link href="/" onClick={() => setOpen(false)}>
-          <span
-            className={`inline-flex items-center rounded-lg transition-colors duration-300 ${
-              transparent ? "bg-white/90 px-2.5 py-1.5 shadow-sm" : ""
-            }`}
-          >
-            <Image
-              src="/brand/logo-mark.png"
-              alt="Trí Đức Car Media"
-              width={208}
-              height={65}
-              priority
-              className="h-8 w-auto sm:h-9"
-            />
-          </span>
+          {/* Vector logo (public/brand/logo*.svg) — stays razor-sharp at any
+              zoom/DPI; the light variant sits directly on the dark hero. */}
+          <Image
+            src={transparent ? "/brand/logo-light.svg" : "/brand/logo.svg"}
+            alt="Trí Đức Car Media"
+            width={725}
+            height={256}
+            priority
+            unoptimized
+            className="h-10 w-auto sm:h-11"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">

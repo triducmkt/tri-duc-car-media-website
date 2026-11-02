@@ -307,6 +307,41 @@
     "errTitle": "Chưa gửi được",
     "errBody": "Anh/chị gọi giúp 076.991.8685 hoặc thử lại sau ít phút."
   },
+  "proof": {
+    "eyebrow": "Bằng chứng sống",
+    "heading": "Mỗi đốm sáng là một kết quả thật. Xem chúng lớn lên.",
+    "legend": "Số đốm sáng tỉ lệ đúng với số liệu thật",
+    "readCase": "Xem câu chuyện đầy đủ",
+    "ctaHeading": "Muốn doanh nghiệp của anh/chị là đốm sáng tiếp theo?",
+    "ctaZalo": "Nhắn Zalo, chẩn đoán miễn phí 15 phút",
+    "ctaBook": "Đặt lịch gặp 1-1",
+    "cases": [
+      {
+        "tag": "Chăm sóc xe · Bình Dương · 2 tháng",
+        "client": "Khang Vũ Auto Care",
+        "before": "292",
+        "after": "20.000+",
+        "metric": "lượt xem Facebook, sau 2 tháng",
+        "story": "Từ một fanpage gần như im lặng, Khang Vũ có Facebook, TikTok và YouTube chạy đồng bộ ngay từ tháng đầu — chủ tiệm không phải tự đăng bài."
+      },
+      {
+        "tag": "Chăm sóc & nâng cấp xe · Rạch Giá · 2 tháng",
+        "client": "Apex Autocare",
+        "before": "100%",
+        "after": "+289%",
+        "metric": "tăng trưởng lượt xem Facebook",
+        "story": "Tên thương hiệu bắt đầu xuất hiện khi khách địa phương tìm kiếm, TikTok được thuật toán đẩy tới khách hàng mới."
+      },
+      {
+        "tag": "Hệ sinh thái AP · Từ 2023",
+        "client": "Johnny Lộc Nguyễn",
+        "before": "1 tiệm",
+        "after": "5 thương hiệu",
+        "metric": "Car Care · Market · Education · Service · Store",
+        "story": "Trí Đức trực tiếp làm CMO để nhà sáng lập rời khỏi vận hành, tập trung mở rộng — đã ra Bắc Ninh, hướng tới 10 chi nhánh vào 2030."
+      }
+    ]
+  },
   "actionBar": {
     "ariaLabel": "Liên hệ nhanh",
     "call": "Gọi ngay",
