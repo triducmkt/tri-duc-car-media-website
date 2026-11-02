@@ -153,6 +153,65 @@
       }
     ]
   },
+  "builder": {
+    "eyebrow": "Dịch vụ · Dựng đúng chỗ đang đau",
+    "heading": "Không cần mua cả 5 gói. Chọn việc đang làm anh chị mệt — hệ thống tự dựng lên.",
+    "sub": "Bấm vào những việc đang xảy ra ở tiệm hay công ty mình. Mỗi lựa chọn thêm một tầng vào hệ thống bên cạnh.",
+    "painsLabel": "Việc đang làm chủ doanh nghiệp mệt",
+    "pains": [
+      "Chạy quảng cáo tốn tiền mà khách không về",
+      "Khách nhắn tin, không ai trả lời kịp",
+      "Khách mua một lần rồi mất hút",
+      "Nhân viên mỗi người làm một kiểu",
+      "Chủ vắng mặt là tiệm chạy chậm lại",
+      "Khách chưa biết, chưa tin mình là ai",
+      "Không có người làm marketing ổn định",
+      "Số liệu rải rác, không biết kênh nào lời"
+    ],
+    "services": [
+      {
+        "name": "Hệ thống Marketing - Sales - CSKH",
+        "floor": "Marketing · Sales · CSKH",
+        "deliver": ["Hành trình khách từ quảng cáo → chốt đơn → quay lại", "Kịch bản tư vấn & chăm sóc khách cho nhân viên"]
+      },
+      {
+        "name": "Thương hiệu cá nhân người chủ",
+        "floor": "Thương hiệu người chủ",
+        "deliver": ["Định vị & câu chuyện riêng của người chủ", "Kế hoạch nội dung hằng tuần trên mạng xã hội"]
+      },
+      {
+        "name": "Chuẩn hoá SOP & đào tạo đội ngũ",
+        "floor": "Nền móng · SOP & đội ngũ",
+        "deliver": ["Bộ quy trình (SOP) cho từng vị trí", "Đào tạo thực chiến + kiểm tra cho nhân viên"]
+      },
+      {
+        "name": "Setup phòng Marketing in-house",
+        "floor": "Phòng Marketing riêng",
+        "deliver": ["Cơ cấu phòng, mô tả công việc, tuyển dụng", "Đồng hành vận hành giai đoạn đầu"]
+      },
+      {
+        "name": "Nền tảng số SME OS",
+        "floor": "Dữ liệu · SME OS",
+        "deliver": ["Khách, lịch hẹn, doanh thu về chung một nơi", "Báo cáo để chủ xem ngay trên điện thoại"]
+      }
+    ],
+    "towerLabel": "Hệ thống của anh chị",
+    "floors": "tầng",
+    "planHeading": "Lộ trình gợi ý · {n} tầng, xây từ nền móng lên",
+    "planEmpty": "Chọn ít nhất một việc ở trên để xem lộ trình.",
+    "because": "Vì:",
+    "ctaHeading": "Nhận lộ trình này kèm buổi chẩn đoán 15 phút miễn phí",
+    "namePh": "Tên anh/chị",
+    "phonePh": "Số điện thoại / Zalo",
+    "submit": "Gửi lộ trình cho tôi",
+    "sending": "Đang gửi…",
+    "note": "Chi phí & thời gian chốt sau buổi chẩn đoán.",
+    "zalo": "Nhắn Zalo ngay",
+    "okTitle": "Đã nhận lộ trình của anh/chị!",
+    "okBody": "Trí Đức sẽ gọi lại trong giờ làm việc để hẹn buổi chẩn đoán 15 phút.",
+    "errTitle": "Chưa gửi được",
+    "errBody": "Anh/chị gọi giúp 076.991.8685 hoặc nhắn Zalo nhé."
+  },
   "diagnostic": {
     "pageHeading": "Chụp X-quang doanh nghiệp bạn trong 90 giây",
     "moduleNames": {

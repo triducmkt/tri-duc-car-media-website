@@ -7,6 +7,7 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import Diagnostic from "@/components/services/Diagnostic";
+import { SystemBuilder } from "@/components/services/SystemBuilder";
 
 const icons = [SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon];
 
@@ -32,9 +33,11 @@ export function ServicesPageContent() {
 
   return (
     <>
-      <section className="bg-ink py-20 text-white sm:py-24">
+      <SystemBuilder />
+
+      <section className="border-t border-white/5 bg-ink py-20 text-white sm:py-24">
         <Container>
-          <h1 className="sr-only">{tDiag("pageHeading")}</h1>
+          <h2 className="sr-only">{tDiag("pageHeading")}</h2>
           <Diagnostic onSubmitLead={sendLead} onResult={setRecommended} />
         </Container>
       </section>

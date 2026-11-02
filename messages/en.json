@@ -153,6 +153,65 @@
       }
     ]
   },
+  "builder": {
+    "eyebrow": "Services · Built around what hurts",
+    "heading": "You don't need all 5 packages. Pick what's wearing you out — the system builds itself.",
+    "sub": "Tap what's happening in your shop or company. Each choice adds a floor to the system beside it.",
+    "painsLabel": "What's wearing the owner out",
+    "pains": [
+      "Ads cost money but customers don't come",
+      "Customers message, nobody replies in time",
+      "Customers buy once and disappear",
+      "Every staff member does it their own way",
+      "The shop slows down when the owner is away",
+      "People don't know or trust us yet",
+      "No steady person doing marketing",
+      "Scattered numbers, no idea which channel pays"
+    ],
+    "services": [
+      {
+        "name": "Marketing - Sales - Customer care system",
+        "floor": "Marketing · Sales · Care",
+        "deliver": ["Customer journey from ad → sale → return visit", "Consulting & care scripts for your staff"]
+      },
+      {
+        "name": "Owner's personal brand",
+        "floor": "Owner's brand",
+        "deliver": ["The owner's positioning & story", "A weekly social content plan"]
+      },
+      {
+        "name": "SOP standardisation & team training",
+        "floor": "Foundation · SOP & team",
+        "deliver": ["SOPs for every role", "Hands-on training + checks for staff"]
+      },
+      {
+        "name": "In-house marketing team setup",
+        "floor": "In-house marketing",
+        "deliver": ["Team structure, job descriptions, hiring", "Hands-on support through the first months"]
+      },
+      {
+        "name": "SME OS digital platform",
+        "floor": "Data · SME OS",
+        "deliver": ["Customers, bookings and revenue in one place", "Reports the owner reads on their phone"]
+      }
+    ],
+    "towerLabel": "Your system",
+    "floors": "floors",
+    "planHeading": "Suggested roadmap · {n} floors, built from the ground up",
+    "planEmpty": "Pick at least one item above to see your roadmap.",
+    "because": "Because:",
+    "ctaHeading": "Get this roadmap plus a free 15-minute diagnosis",
+    "namePh": "Your name",
+    "phonePh": "Phone / Zalo",
+    "submit": "Send me this roadmap",
+    "sending": "Sending…",
+    "note": "Cost & timeline agreed after the diagnosis.",
+    "zalo": "Message on Zalo",
+    "okTitle": "Roadmap received!",
+    "okBody": "Trí Đức will call back during working hours to book your 15-minute diagnosis.",
+    "errTitle": "Couldn't send",
+    "errBody": "Please call 076.991.8685 or message us on Zalo."
+  },
   "diagnostic": {
     "pageHeading": "X-ray your business in 90 seconds",
     "moduleNames": {
