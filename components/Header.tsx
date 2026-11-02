@@ -57,7 +57,7 @@ export function Header() {
               src="/brand/logo-mark.png"
               alt="Trí Đức Car Media"
               width={208}
-              height={80}
+              height={65}
               priority
               className="h-8 w-auto sm:h-9"
             />

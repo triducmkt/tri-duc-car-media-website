@@ -35,7 +35,7 @@ export function BlogPostCard({
               src="/brand/logo-mark.png"
               alt="Trí Đức Car Media"
               width={208}
-              height={80}
+              height={65}
               className="h-8 w-auto opacity-40 brightness-0 invert"
             />
           </div>

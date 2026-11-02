@@ -29,7 +29,7 @@ export function Footer() {
               src="/brand/logo-mark.png"
               alt={t("companyName")}
               width={208}
-              height={80}
+              height={65}
               className="h-7 w-auto"
             />
           </span>
