@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Mail, Phone } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/Container";
+import { ConsentSettingsButton } from "@/components/analytics/Tracker";
 
 const navItems = [
   { href: "/" as const, key: "home" as const },
@@ -92,7 +93,10 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {t("companyName")}. {t("rights")}
           </p>
-          <p>{t("madeWith")}</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <ConsentSettingsButton label={t("privacy")} />
+            <p>{t("madeWith")}</p>
+          </div>
         </Container>
       </div>
     </footer>

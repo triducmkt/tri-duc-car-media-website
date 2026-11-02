@@ -54,3 +54,24 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+
+      # Behaviour-tracking pipeline (see scripts/tracking/Code.gs and
+      # app/api/track). Same pattern as above: each value lives as a GitHub
+      # repo secret and is pushed to the Worker on every deploy; empty ones
+      # are skipped so the site keeps working (tracking just drops batches).
+      - name: Sync tracking secrets to the Cloudflare Worker
+        run: |
+          for name in TRACKING_WEBHOOK_URL TRACKING_TOKEN HEATMAP_KEY; do
+            value="${!name}"
+            if [ -n "$value" ]; then
+              echo "$value" | npx wrangler secret put "$name"
+            else
+              echo "$name repo secret not set yet — skipping sync."
+            fi
+          done
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TRACKING_WEBHOOK_URL: ${{ secrets.TRACKING_WEBHOOK_URL }}
+          TRACKING_TOKEN: ${{ secrets.TRACKING_TOKEN }}
+          HEATMAP_KEY: ${{ secrets.HEATMAP_KEY }}

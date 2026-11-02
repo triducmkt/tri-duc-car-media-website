@@ -22,7 +22,8 @@
     "linksHeading": "Navigate",
     "servicesHeading": "Services",
     "rights": "All rights reserved by Tri Duc Car Media.",
-    "madeWith": "Designed and operated by the Tri Duc Car Media team."
+    "madeWith": "Designed and operated by the Tri Duc Car Media team.",
+    "privacy": "Data privacy"
   },
   "home": {
     "servicesEyebrow": "Solutions",
@@ -404,5 +405,13 @@
     "notFoundTitle": "Page not found",
     "notFoundBody": "The page you're looking for doesn't exist or has moved.",
     "notFoundCta": "Back to home"
+  },
+  "tracking": {
+    "title": "Tri Duc uses data to improve this website",
+    "body": "With your consent we record how you use the site (pages viewed, time, click positions, scroll) together with your IP address and device type.",
+    "detailsToggle": "What we collect",
+    "details": "IP address and IP-based approximate location (city), browser, screen size, traffic source, pages viewed, time on page, scroll depth, clicks and hover per 1 cm cell, form/survey steps (never what you type). Used only internally by Tri Duc Car Media to improve the experience, never sold. Change your choice any time from the footer or request deletion at tangtriduc@triduccar.media.",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }

@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useTranslations } from "next-intl";
+import { trackEvent } from "@/lib/tracking/grid";
 import { InputField, TextareaField } from "@/components/forms/Field";
 import { FormStatus } from "@/components/forms/FormStatus";
 
@@ -26,9 +27,11 @@ export function BookingForm() {
       });
       if (!res.ok) throw new Error("request_failed");
       setStatus("success");
+      trackEvent("form_submit", { form: "booking", ok: true });
       form.reset();
     } catch {
       setStatus("error");
+      trackEvent("form_submit", { form: "booking", ok: false });
     }
   }
 

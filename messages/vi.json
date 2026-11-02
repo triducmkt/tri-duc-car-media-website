@@ -22,7 +22,8 @@
     "linksHeading": "Điều hướng",
     "servicesHeading": "Dịch vụ",
     "rights": "Bản quyền thuộc về Trí Đức Car Media.",
-    "madeWith": "Thiết kế & vận hành bởi đội ngũ Trí Đức Car Media."
+    "madeWith": "Thiết kế & vận hành bởi đội ngũ Trí Đức Car Media.",
+    "privacy": "Quyền riêng tư dữ liệu"
   },
   "home": {
     "servicesEyebrow": "Giải pháp",
@@ -404,5 +405,13 @@
     "notFoundTitle": "Không tìm thấy trang",
     "notFoundBody": "Trang bạn tìm không tồn tại hoặc đã được di chuyển.",
     "notFoundCta": "Về trang chủ"
+  },
+  "tracking": {
+    "title": "Trí Đức dùng dữ liệu để cải thiện website",
+    "body": "Với sự đồng ý của anh/chị, chúng tôi ghi nhận cách anh/chị dùng trang (trang đã xem, thời gian, vị trí click, độ cuộn) kèm địa chỉ IP và loại thiết bị.",
+    "detailsToggle": "Chi tiết dữ liệu thu thập",
+    "details": "Dữ liệu gồm: IP và vị trí ước tính theo IP (thành phố), trình duyệt, kích thước màn hình, nguồn truy cập, trang đã xem, thời gian ở trang, độ cuộn, click và rê chuột theo từng ô 1 cm, các bước điền form/khảo sát (không ghi nội dung anh/chị gõ). Dữ liệu chỉ dùng nội bộ Trí Đức Car Media để cải thiện trải nghiệm, không bán cho bên thứ ba. Anh/chị có thể đổi lựa chọn bất cứ lúc nào ở chân trang hoặc yêu cầu xoá qua tangtriduc@triduccar.media.",
+    "accept": "Đồng ý",
+    "decline": "Từ chối"
   }
 }

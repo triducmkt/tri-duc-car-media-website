@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import styles from "./Diagnostic.module.css";
+import { trackEvent } from "@/lib/tracking/grid";
 import {
   MODULE_LAYOUT, EDGES, DEPENDENCIES, PRIORITY, PACKAGE_FOR_MODULE, QUESTION_MODULES, OPTION_SCORES,
   type ModuleKey,
@@ -302,6 +303,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
   /* ---------------- logic ---------------- */
   const start = () => {
     scanRef.current = performance.now();
+    trackEvent("survey_start", { survey: "diagnostic" });
     setTimeout(() => { setPhase("quiz"); setQi(0); }, 700);
   };
 
@@ -322,12 +324,14 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
     });
 
     setResult({ score, key: worst });
+    trackEvent("survey_complete", { survey: "diagnostic", score: Math.round(score * 10) / 10, bottleneck: worst });
     setPhase("done");
     onResult?.(PACKAGE_FOR_MODULE[worst]);
   }, [onResult]);
 
   const answer = (score: number) => {
     const q = QUESTIONS[qi];
+    trackEvent("survey_answer", { survey: "diagnostic", question: qi + 1, module: q.m, score, option: q.o.find((o) => o[1] === score)?.[0] ?? "" });
     const list = (answersRef.current[q.m] = answersRef.current[q.m] || []);
     list.push(score);
     const m = modsRef.current.find((x) => x.k === q.m)!;
@@ -360,6 +364,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
         ? await onSubmitLead({ name, phone, score: result.score, bottleneck: result.key })
         : true;
       setSent(ok ? "ok" : "err");
+      trackEvent("form_submit", { form: "diagnostic", ok, score: result.score, bottleneck: result.key });
     } catch {
       setSent("err");
     } finally {

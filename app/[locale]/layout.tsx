@@ -9,6 +9,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ActionBar } from "@/components/ActionBar";
 import { MainContent } from "@/components/MainContent";
+import { Tracker } from "@/components/analytics/Tracker";
 import "../globals.css";
 
 const inter = Inter({
@@ -84,6 +85,7 @@ export default async function LocaleLayout({
           <MainContent>{children}</MainContent>
           <Footer />
           <ActionBar />
+          <Tracker />
         </NextIntlClientProvider>
       </body>
     </html>

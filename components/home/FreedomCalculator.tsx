@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Check, MessageCircle } from "lucide-react";
 import { Container } from "@/components/Container";
 import { FormStatus } from "@/components/forms/FormStatus";
+import { trackEvent } from "@/lib/tracking/grid";
 
 /** Hours/week each repetitive task typically takes an SME owner. Labels live in
  *  messages → freedom.tasks, in the same order. `on` = preselected so the
@@ -69,6 +70,14 @@ export function FreedomCalculator() {
   const days = Math.min(DAYS_IN_YEAR, Math.round((hours * 52) / 8));
   const yearly = hours * 52 * rate;
 
+  // Log each change of the calculator inputs (debounced) — no personal data.
+  const initial = useRef({ hours, rate });
+  useEffect(() => {
+    if (hours === initial.current.hours && rate === initial.current.rate) return;
+    const id = setTimeout(() => trackEvent("calculator_change", { hours, rate, days }), 800);
+    return () => clearTimeout(id);
+  }, [hours, rate, days]);
+
   const animHours = useCountUp(hours);
   const animDays = useCountUp(days);
   const animYearly = useCountUp(yearly, 800);
@@ -103,6 +112,7 @@ export function FreedomCalculator() {
         }),
       });
       setStatus(r.ok ? "ok" : "err");
+      trackEvent("form_submit", { form: "freedom_calculator", ok: r.ok, hours, rate });
     } catch {
       setStatus("err");
     }
