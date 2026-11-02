@@ -88,12 +88,19 @@ function setup() {
     }
   } catch (err) { /* Drive scope not granted */ }
 
-  SpreadsheetApp.getUi().alert('Đã thiết lập xong.\n\nTOKEN (dán vào secret TRACKING_TOKEN của website):\n' +
-    props.getProperty('TOKEN') + '\n\nTiếp theo: Deploy → New deployment → Web app → Execute as Me, Anyone.' + warn);
+  // Printed to the execution log — no blocking dialog: an alert() started from
+  // the editor waits for an OK click in the Sheet tab, so setup() looks stuck.
+  console.log('✅ Đã thiết lập xong.');
+  console.log('TOKEN (dán vào secret TRACKING_TOKEN): ' + props.getProperty('TOKEN'));
+  console.log('Tiếp theo: Triển khai → Tùy chọn triển khai mới → Ứng dụng web → Thực thi: Tôi, Truy cập: Bất kỳ ai.' + warn);
+  ss.toast('Đã thiết lập xong — TOKEN nằm trong Nhật ký thực thi của Apps Script.', '📊 Tracking', 10);
 }
 
+/** Run from the editor: the TOKEN appears in the execution log (and as a toast in the Sheet). */
 function showToken() {
-  SpreadsheetApp.getUi().alert('TOKEN: ' + PropertiesService.getScriptProperties().getProperty('TOKEN'));
+  var token = PropertiesService.getScriptProperties().getProperty('TOKEN');
+  console.log('TOKEN: ' + (token || '(chưa có — hãy chạy setup)'));
+  try { SpreadsheetApp.getActiveSpreadsheet().toast('TOKEN: ' + token, '📊 Tracking', 30); } catch (e) { /* no Sheet UI */ }
 }
 
 // ───────────────────────── ingest ─────────────────────────
