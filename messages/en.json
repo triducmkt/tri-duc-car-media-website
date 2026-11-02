@@ -484,7 +484,50 @@
     "successTitle": "Request sent successfully!",
     "successBody": "Thank you. The Tri Duc Car Media team will contact you within 24 business hours.",
     "errorTitle": "Something went wrong",
-    "errorBody": "Please try again later or contact us directly at 076.991.8685."
+    "errorBody": "Please try again later or contact us directly at 076.991.8685.",
+    "studio": {
+      "eyebrow": "1-1 session · Free",
+      "heading": "Pick a time that suits you. Trí Đức calls right then.",
+      "sub": "No long form: choose a format, day and time — leave your name and Zalo number, done.",
+      "step1": "1. Format",
+      "formats": [
+        { "label": "Zalo call", "detail": "15 minutes", "stub": "15'" },
+        { "label": "Google Meet", "detail": "30 minutes", "stub": "30'" },
+        { "label": "At your shop", "detail": "Inner HCMC", "stub": "1-1" }
+      ],
+      "step2": "2. Day",
+      "step3": "3. Time",
+      "eveningHint": "Busy all day? Pick {time} — after closing time.",
+      "step4": "4. Contact",
+      "namePh": "Your name",
+      "phonePh": "Zalo / phone number",
+      "more": "Add details (optional)",
+      "companyPh": "Shop / company name",
+      "messagePh": "What are you stuck on?",
+      "submit": "Hold this slot",
+      "sending": "Holding your slot…",
+      "flexible": "flexible, please call to arrange",
+      "confirmNote": "Trí Đức confirms on Zalo within the working day.",
+      "call": "Call now",
+      "trust": ["Free, no strings", "The founder advises you directly", "No boxed packages"],
+      "okTitle": "Your slot is held!",
+      "okBody": "Trí Đức will confirm the appointment on Zalo within the working day.",
+      "zaloAfter": "Message on Zalo",
+      "errTitle": "Couldn't hold the slot",
+      "errBody": "Please call 076.991.8685 or message us on Zalo.",
+      "ticket": {
+        "brand": "TRÍ ĐỨC CAR MEDIA",
+        "title": "1-1 CONSULTATION PASS",
+        "format": "FORMAT",
+        "date": "DAY",
+        "time": "TIME",
+        "guest": "GUEST",
+        "footer": "Advised directly by founder Tăng Trí Đức",
+        "stubBottom": "FREE",
+        "stamp": "SENT",
+        "backLine": "Free the owner"
+      }
+    }
   },
   "contact": {
     "title": "Contact",

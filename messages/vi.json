@@ -484,7 +484,50 @@
     "successTitle": "Đã gửi yêu cầu thành công!",
     "successBody": "Cảm ơn bạn. Đội ngũ Trí Đức Car Media sẽ liên hệ lại trong vòng 24 giờ làm việc.",
     "errorTitle": "Có lỗi xảy ra",
-    "errorBody": "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua số điện thoại 076.991.8685."
+    "errorBody": "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua số điện thoại 076.991.8685.",
+    "studio": {
+      "eyebrow": "Đặt lịch 1-1 · Miễn phí",
+      "heading": "Chọn giờ anh chị rảnh. Trí Đức gọi đúng giờ đó.",
+      "sub": "Không cần điền dài: chọn hình thức, ngày, giờ — để lại tên và số Zalo là xong.",
+      "step1": "1. Hình thức",
+      "formats": [
+        { "label": "Gọi Zalo", "detail": "15 phút", "stub": "15'" },
+        { "label": "Google Meet", "detail": "30 phút", "stub": "30'" },
+        { "label": "Gặp tại tiệm", "detail": "Nội thành TP.HCM", "stub": "1-1" }
+      ],
+      "step2": "2. Ngày",
+      "step3": "3. Khung giờ",
+      "eveningHint": "Bận cả ngày? Chọn {time} — sau giờ đóng tiệm.",
+      "step4": "4. Liên lạc",
+      "namePh": "Tên anh/chị",
+      "phonePh": "Số Zalo / điện thoại",
+      "more": "Thêm chi tiết (không bắt buộc)",
+      "companyPh": "Tên tiệm / công ty",
+      "messagePh": "Anh chị đang vướng chuyện gì?",
+      "submit": "Giữ lịch hẹn này",
+      "sending": "Đang giữ lịch…",
+      "flexible": "linh hoạt, gọi sắp xếp giúp",
+      "confirmNote": "Trí Đức nhắn Zalo xác nhận lịch trong ngày làm việc.",
+      "call": "Gọi ngay",
+      "trust": ["Miễn phí, không ràng buộc", "Founder trực tiếp tư vấn", "Không bán gói đóng khung"],
+      "okTitle": "Đã giữ lịch cho anh chị!",
+      "okBody": "Trí Đức sẽ nhắn Zalo xác nhận lịch hẹn trong ngày làm việc.",
+      "zaloAfter": "Nhắn Zalo cho nhanh",
+      "errTitle": "Chưa giữ được lịch",
+      "errBody": "Anh chị gọi giúp 076.991.8685 hoặc nhắn Zalo nhé.",
+      "ticket": {
+        "brand": "TRÍ ĐỨC CAR MEDIA",
+        "title": "VÉ HẸN TƯ VẤN 1-1",
+        "format": "HÌNH THỨC",
+        "date": "NGÀY",
+        "time": "GIỜ",
+        "guest": "KHÁCH",
+        "footer": "Founder Tăng Trí Đức tư vấn trực tiếp",
+        "stubBottom": "MIỄN PHÍ",
+        "stamp": "ĐÃ GỬI",
+        "backLine": "Giải phóng người chủ"
+      }
+    }
   },
   "contact": {
     "title": "Liên hệ",
