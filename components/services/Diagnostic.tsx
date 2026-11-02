@@ -34,7 +34,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
   const notes = t.raw("notes") as Record<ModuleKey, string>;
   const recommend = t.raw("recommend") as Record<ModuleKey, { name: string; why: string }>;
   const questionMsgs = t.raw("questions") as QuestionMsg[];
-  const noteOk = t("noteOk");
+  const noteOk = t.raw("noteOk") as string;
   const coveringFor = t("coveringFor");
 
   const QUESTIONS: Question[] = useMemo(
