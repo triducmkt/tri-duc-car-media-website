@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { Reveal } from "@/components/Reveal";
 import { getCaseStudies } from "@/lib/sanity/queries";
+import { CaseMap } from "@/components/case-studies/CaseMap";
 
 export async function generateMetadata({
   params,
@@ -27,14 +28,11 @@ export default async function CaseStudiesPage({
 
   return (
     <>
-      <section className="bg-ink py-20 text-white sm:py-24">
-        <Container>
-          <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} sub={t("intro")} tone="dark" serif />
-        </Container>
-      </section>
+      <CaseMap />
 
       <section className="bg-paper py-20 sm:py-24">
-        <Container>
+        <Container className="flex flex-col gap-10">
+          <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} serif />
           {items.length === 0 ? (
             <p className="text-base text-ink-muted">{t("empty")}</p>
           ) : (

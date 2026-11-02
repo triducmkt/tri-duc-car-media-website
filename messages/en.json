@@ -444,6 +444,25 @@
     "value3Body": "Long-term systems are prioritized over short-lived campaigns without foundation.",
     "contactCta": "Book a conversation with Tri Duc"
   },
+  "caseMap": {
+    "eyebrow": "Where we work",
+    "heading": "From Rạch Giá to Bắc Ninh — real results, in places you can check.",
+    "sub": "Every light is a business growing with Trí Đức right now. Tap one to see how they grew.",
+    "places": [
+      { "city": "HCMC", "client": "AP Car Care (Tân Phú & D.7)", "metric": "Avg. revenue 1B+ VND/month · 60% from returning customers" },
+      { "city": "Bình Dương", "client": "Khang Vũ Auto Care", "metric": "Facebook views 292 → 20,000+ in 2 months" },
+      { "city": "Rạch Giá", "client": "Apex Autocare", "metric": "Facebook views +289% in 2 months" },
+      { "city": "Bắc Ninh", "client": "Vietnam Detailing Academy", "metric": "Bắc Ninh campus since 10/2025 · reach ×67" },
+      { "city": "Đà Nẵng", "client": "AP ecosystem", "metric": "Scouting a third campus (2026)" }
+    ],
+    "hoangSa": "Hoàng Sa Archipelago",
+    "truongSa": "Trường Sa Archipelago",
+    "planned": "Planned",
+    "read": "Read the story",
+    "ctaHeading": "Your shop — the next light on the map?",
+    "ctaBook": "Book a free 1-1",
+    "ctaZalo": "Message on Zalo"
+  },
   "caseStudies": {
     "title": "Case Studies",
     "eyebrow": "Real results",

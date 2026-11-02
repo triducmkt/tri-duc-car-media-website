@@ -444,6 +444,25 @@
     "value3Body": "Ưu tiên hệ thống dài hạn hơn các chiến dịch ngắn hạn thiếu nền tảng.",
     "contactCta": "Đặt lịch trò chuyện cùng Trí Đức"
   },
+  "caseMap": {
+    "eyebrow": "Bản đồ đồng hành",
+    "heading": "Từ Rạch Giá đến Bắc Ninh — kết quả thật, ở những nơi anh chị kiểm chứng được.",
+    "sub": "Mỗi điểm sáng là một doanh nghiệp đang đồng hành cùng Trí Đức. Bấm vào để xem họ đã tăng trưởng thế nào.",
+    "places": [
+      { "city": "TP.HCM", "client": "AP Car Care (Tân Phú & Q.7)", "metric": "Doanh thu TB hơn 1 tỷ/tháng · 60% từ khách quay lại" },
+      { "city": "Bình Dương", "client": "Khang Vũ Auto Care", "metric": "Lượt xem Facebook 292 → 20.000+ sau 2 tháng" },
+      { "city": "Rạch Giá", "client": "Apex Autocare", "metric": "Lượt xem Facebook +289% sau 2 tháng" },
+      { "city": "Bắc Ninh", "client": "Học viện Detailing Việt Nam", "metric": "Cơ sở Bắc Ninh từ 10/2025 · tiếp cận ×67" },
+      { "city": "Đà Nẵng", "client": "Hệ sinh thái AP", "metric": "Đang khảo sát cơ sở thứ 3 (2026)" }
+    ],
+    "hoangSa": "QĐ. Hoàng Sa",
+    "truongSa": "QĐ. Trường Sa",
+    "planned": "Sắp mở",
+    "read": "Xem câu chuyện",
+    "ctaHeading": "Tiệm của anh chị — điểm sáng tiếp theo?",
+    "ctaBook": "Đặt lịch 1-1 miễn phí",
+    "ctaZalo": "Nhắn Zalo"
+  },
   "caseStudies": {
     "title": "Dự án",
     "eyebrow": "Kết quả thực tế",
