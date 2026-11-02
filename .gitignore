@@ -56,3 +56,6 @@ next-env.d.ts
 
 hq/
 
+
+# local per-change backups (agent rule) — not deployed
+/backup/

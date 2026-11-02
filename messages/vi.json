@@ -53,7 +53,7 @@
   },
   "systemHero": {
     "ariaLabel": "Giới thiệu",
-    "skip": "Bỏ qua, xem dịch vụ",
+    "skip": "Bỏ qua, tính thử ngay",
     "open": {
       "eyebrow": "TƯ VẤN MARKETING – SALES CHO SME",
       "title": "Giải phóng người chủ",
@@ -88,15 +88,43 @@
       }
     ],
     "tasks": [
-      "Chốt đơn khách VIP", "Duyệt bài đăng", "Trả lời Zalo lúc 22h", "Xếp ca nhân viên",
-      "Khách phàn nàn", "Kiểm kho", "Gọi lại khách cũ", "Ký chi", "Đào tạo nhân viên mới",
-      "Chạy quảng cáo", "Chụp hình sản phẩm", "Nhắc công nợ", "Tuyển người",
-      "Họp nhà cung cấp", "Sửa giá bán", "Viết nội dung", "Xử lý đơn trễ", "Đổi lịch hẹn",
-      "Kiểm tra doanh thu", "Trả lời bình luận", "Đặt hàng nhập", "Gọi khách hẹn lại",
-      "Duyệt khuyến mãi", "Sửa quy trình", "Nhân viên xin nghỉ"
+      "Chốt đơn khách VIP",
+      "Duyệt bài đăng",
+      "Trả lời Zalo lúc 22h",
+      "Xếp ca nhân viên",
+      "Khách phàn nàn",
+      "Kiểm kho",
+      "Gọi lại khách cũ",
+      "Ký chi",
+      "Đào tạo nhân viên mới",
+      "Chạy quảng cáo",
+      "Chụp hình sản phẩm",
+      "Nhắc công nợ",
+      "Tuyển người",
+      "Họp nhà cung cấp",
+      "Sửa giá bán",
+      "Viết nội dung",
+      "Xử lý đơn trễ",
+      "Đổi lịch hẹn",
+      "Kiểm tra doanh thu",
+      "Trả lời bình luận",
+      "Đặt hàng nhập",
+      "Gọi khách hẹn lại",
+      "Duyệt khuyến mãi",
+      "Sửa quy trình",
+      "Nhân viên xin nghỉ"
     ],
-    "core": ["Chiến lược", "Đối tác", "Quyết định lớn"],
-    "satellites": ["SOP", "Đội ngũ", "Phòng MKT in-house", "SME OS"]
+    "core": [
+      "Chiến lược",
+      "Đối tác",
+      "Quyết định lớn"
+    ],
+    "satellites": [
+      "SOP",
+      "Đội ngũ",
+      "Phòng MKT in-house",
+      "SME OS"
+    ]
   },
   "services": {
     "title": "Dịch vụ",
@@ -136,27 +164,51 @@
     "questions": [
       {
         "text": "Bạn có biết kênh nào đang mang về nhiều khách nhất không?",
-        "options": ["Biết rõ theo số liệu", "Áng chừng theo cảm nhận", "Chưa theo dõi"]
+        "options": [
+          "Biết rõ theo số liệu",
+          "Áng chừng theo cảm nhận",
+          "Chưa theo dõi"
+        ]
       },
       {
         "text": "Khách hỏi giá rồi im lặng. Sau đó có ai chủ động gọi lại không?",
-        "options": ["Có, theo lịch cố định", "Tuỳ mình nhớ hay quên", "Gần như không"]
+        "options": [
+          "Có, theo lịch cố định",
+          "Tuỳ mình nhớ hay quên",
+          "Gần như không"
+        ]
       },
       {
         "text": "Khách nhắn Zalo lúc 21h, bao lâu thì có người trả lời?",
-        "options": ["Dưới 15 phút", "Sáng hôm sau", "Không chắc, tuỳ hôm"]
+        "options": [
+          "Dưới 15 phút",
+          "Sáng hôm sau",
+          "Không chắc, tuỳ hôm"
+        ]
       },
       {
         "text": "Nếu người chốt đơn giỏi nhất nghỉ tuần sau, bao lâu người mới làm được như vậy?",
-        "options": ["Dưới 2 tuần, có tài liệu sẵn", "Một tới ba tháng", "Không ai thay được"]
+        "options": [
+          "Dưới 2 tuần, có tài liệu sẵn",
+          "Một tới ba tháng",
+          "Không ai thay được"
+        ]
       },
       {
         "text": "Mỗi khách hàng mới tốn bao nhiêu tiền để có được?",
-        "options": ["Biết con số cụ thể", "Áng chừng", "Chưa từng tính"]
+        "options": [
+          "Biết con số cụ thể",
+          "Áng chừng",
+          "Chưa từng tính"
+        ]
       },
       {
         "text": "Bạn có danh sách khách cũ để chủ động liên hệ khi cần không?",
-        "options": ["Có, đầy đủ và dùng thường xuyên", "Có nhưng nằm rải rác nhiều nơi", "Không có"]
+        "options": [
+          "Có, đầy đủ và dùng thường xuyên",
+          "Có nhưng nằm rải rác nhiều nơi",
+          "Không có"
+        ]
       }
     ],
     "notes": {
@@ -210,6 +262,49 @@
     "sentOk": "Đã ghi nhận. Trí Đức sẽ liên hệ trong 24 giờ làm việc.",
     "sentErr": "Chưa gửi được. Bạn gọi giúp 076.991.8685 hoặc thử lại sau ít phút.",
     "recBadge": "Phù hợp với bạn"
+  },
+  "freedom": {
+    "eyebrow": "Tính thử trong 30 giây",
+    "heading": "Mỗi tuần, anh/chị đang làm thay nhân viên bao nhiêu giờ?",
+    "sub": "Chọn những việc anh/chị vẫn phải tự tay làm. Con số bên cạnh sẽ cho thấy cái giá thật của việc “không ai thay được mình”.",
+    "step1": "Những việc anh/chị vẫn tự làm",
+    "tasks": [
+      "Trả lời inbox, Zalo khách",
+      "Báo giá, chốt đơn",
+      "Lên bài Facebook, TikTok",
+      "Nhắc lịch, chăm khách cũ",
+      "Giao việc, kiểm tra nhân viên",
+      "Xử lý khiếu nại",
+      "Tuyển và kèm người mới",
+      "Làm báo cáo, sổ sách",
+      "Có mặt ở tiệm vì không ai thay"
+    ],
+    "hoursShort": "{n}h/tuần",
+    "step2": "Một giờ của anh/chị đáng giá bao nhiêu?",
+    "step2Hint": "Gợi ý: lấy lợi nhuận một tháng chia cho khoảng 200 giờ làm việc.",
+    "rateK": "{n}k/giờ",
+    "rateM": "{n} triệu/giờ",
+    "resultWeek": "Mỗi tuần anh/chị đang tự làm",
+    "resultWeekUnit": "giờ việc lặp lại",
+    "resultDays": "Tương đương <b>{n} ngày công</b> mỗi năm",
+    "gridLabel": "{n} trên 365 ngày trong năm dành cho việc lặp lại",
+    "resultMoney": "Giá trị thời gian của anh/chị mỗi năm",
+    "resultMoneyNote": "Thời gian này lẽ ra dành cho chiến lược, đối tác, và gia đình.",
+    "million": "{n} triệu đ",
+    "billion": "{n} tỷ đ",
+    "numberLocale": "vi-VN",
+    "zeroState": "Tuyệt vời — anh/chị đã thật sự rời tay khỏi vận hành. Hãy chia sẻ bí quyết với Trí Đức nhé!",
+    "ctaHeading": "Nhận lộ trình lấy lại {n} giờ mỗi tuần — miễn phí",
+    "namePh": "Tên anh/chị",
+    "phonePh": "Số điện thoại / Zalo",
+    "submit": "Gửi kết quả cho Trí Đức",
+    "sending": "Đang gửi...",
+    "privacy": "Trí Đức gọi lại trong 24 giờ làm việc. Không spam.",
+    "zalo": "Hoặc nhắn Zalo ngay",
+    "okTitle": "Đã nhận kết quả của anh/chị",
+    "okBody": "Trí Đức sẽ gọi lại trong 24 giờ làm việc để cùng xem việc nào nên giao đi trước.",
+    "errTitle": "Chưa gửi được",
+    "errBody": "Anh/chị gọi giúp 076.991.8685 hoặc thử lại sau ít phút."
   },
   "actionBar": {
     "ariaLabel": "Liên hệ nhanh",

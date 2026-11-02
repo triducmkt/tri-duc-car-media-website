@@ -53,7 +53,7 @@
   },
   "systemHero": {
     "ariaLabel": "Introduction",
-    "skip": "Skip, view services",
+    "skip": "Skip, try the calculator",
     "open": {
       "eyebrow": "MARKETING – SALES CONSULTING FOR SMES",
       "title": "Free the owner",
@@ -88,15 +88,43 @@
       }
     ],
     "tasks": [
-      "Closing VIP deals", "Approving posts", "Replying on Zalo at 10pm", "Scheduling staff shifts",
-      "Handling complaints", "Checking inventory", "Calling back old customers", "Approving payments",
-      "Training new hires", "Running ads", "Shooting product photos", "Chasing invoices", "Hiring",
-      "Supplier meetings", "Adjusting prices", "Writing content", "Handling late orders",
-      "Rescheduling appointments", "Checking revenue", "Replying to comments", "Placing stock orders",
-      "Calling back leads", "Approving promotions", "Fixing processes", "Staff requesting leave"
+      "Closing VIP deals",
+      "Approving posts",
+      "Replying on Zalo at 10pm",
+      "Scheduling staff shifts",
+      "Handling complaints",
+      "Checking inventory",
+      "Calling back old customers",
+      "Approving payments",
+      "Training new hires",
+      "Running ads",
+      "Shooting product photos",
+      "Chasing invoices",
+      "Hiring",
+      "Supplier meetings",
+      "Adjusting prices",
+      "Writing content",
+      "Handling late orders",
+      "Rescheduling appointments",
+      "Checking revenue",
+      "Replying to comments",
+      "Placing stock orders",
+      "Calling back leads",
+      "Approving promotions",
+      "Fixing processes",
+      "Staff requesting leave"
     ],
-    "core": ["Strategy", "Partnerships", "Big decisions"],
-    "satellites": ["SOP", "Team", "In-house marketing dept.", "SME OS"]
+    "core": [
+      "Strategy",
+      "Partnerships",
+      "Big decisions"
+    ],
+    "satellites": [
+      "SOP",
+      "Team",
+      "In-house marketing dept.",
+      "SME OS"
+    ]
   },
   "services": {
     "title": "Services",
@@ -136,27 +164,51 @@
     "questions": [
       {
         "text": "Do you know which channel brings in the most customers?",
-        "options": ["We know exactly, backed by data", "Roughly, by gut feeling", "We don't track this"]
+        "options": [
+          "We know exactly, backed by data",
+          "Roughly, by gut feeling",
+          "We don't track this"
+        ]
       },
       {
         "text": "A customer asks for a price, then goes quiet. Does anyone follow up?",
-        "options": ["Yes, on a fixed schedule", "Depends on whether we remember", "Almost never"]
+        "options": [
+          "Yes, on a fixed schedule",
+          "Depends on whether we remember",
+          "Almost never"
+        ]
       },
       {
         "text": "A customer messages on Zalo at 9pm. How long until someone replies?",
-        "options": ["Under 15 minutes", "The next morning", "Not sure, depends on the day"]
+        "options": [
+          "Under 15 minutes",
+          "The next morning",
+          "Not sure, depends on the day"
+        ]
       },
       {
         "text": "If your best closer quit next week, how long before someone new could match them?",
-        "options": ["Under 2 weeks — we have documentation", "One to three months", "No one could replace them"]
+        "options": [
+          "Under 2 weeks — we have documentation",
+          "One to three months",
+          "No one could replace them"
+        ]
       },
       {
         "text": "How much does it cost you to acquire one new customer?",
-        "options": ["We know the exact number", "Roughly", "We've never calculated it"]
+        "options": [
+          "We know the exact number",
+          "Roughly",
+          "We've never calculated it"
+        ]
       },
       {
         "text": "Do you have a list of past customers to reach out to when needed?",
-        "options": ["Yes, complete and used regularly", "Yes, but scattered across many places", "No"]
+        "options": [
+          "Yes, complete and used regularly",
+          "Yes, but scattered across many places",
+          "No"
+        ]
       }
     ],
     "notes": {
@@ -210,6 +262,49 @@
     "sentOk": "Received. Tri Duc will be in touch within 24 business hours.",
     "sentErr": "Couldn't send it. Please call 076.991.8685 or try again in a few minutes.",
     "recBadge": "Recommended for you"
+  },
+  "freedom": {
+    "eyebrow": "30-second check",
+    "heading": "How many hours a week are you still doing your staff's job?",
+    "sub": "Tick the things you still handle yourself. The card shows the real cost of being the person nobody can replace.",
+    "step1": "What you still do yourself",
+    "tasks": [
+      "Answering inbox & Zalo",
+      "Quoting & closing sales",
+      "Posting on Facebook, TikTok",
+      "Following up past customers",
+      "Assigning & checking staff",
+      "Handling complaints",
+      "Hiring & training new staff",
+      "Reports & bookkeeping",
+      "Being on site — no one can cover"
+    ],
+    "hoursShort": "{n}h/wk",
+    "step2": "What is one hour of your time worth?",
+    "step2Hint": "Tip: monthly profit divided by roughly 200 working hours.",
+    "rateK": "{n}k VND/h",
+    "rateM": "{n}M VND/h",
+    "resultWeek": "Every week you personally spend",
+    "resultWeekUnit": "hours on repeat work",
+    "resultDays": "That's <b>{n} working days</b> a year",
+    "gridLabel": "{n} of 365 days a year spent on repetitive work",
+    "resultMoney": "Value of your time, per year",
+    "resultMoneyNote": "Time that should go to strategy, partners and family.",
+    "million": "{n}M VND",
+    "billion": "{n}B VND",
+    "numberLocale": "en-US",
+    "zeroState": "Impressive — you've truly stepped out of operations. Tell Tri Duc how you did it!",
+    "ctaHeading": "Get a free plan to win back {n} hours a week",
+    "namePh": "Your name",
+    "phonePh": "Phone / Zalo",
+    "submit": "Send my result to Tri Duc",
+    "sending": "Sending...",
+    "privacy": "We call back within 24 business hours. No spam.",
+    "zalo": "Or message on Zalo",
+    "okTitle": "Result received",
+    "okBody": "Tri Duc will call within 24 business hours to map out what to hand off first.",
+    "errTitle": "Couldn't send",
+    "errBody": "Please call 076.991.8685 or try again in a few minutes."
   },
   "actionBar": {
     "ariaLabel": "Quick contact",
