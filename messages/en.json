@@ -307,6 +307,20 @@
     "errTitle": "Couldn't send",
     "errBody": "Please call 076.991.8685 or try again in a few minutes."
   },
+  "reel": {
+    "eyebrow": "A working session with Trí Đức",
+    "heading": "No quotes sent from afar. We come to your shop.",
+    "steps": [
+      { "title": "On site", "text": "Standing at your front desk, watching how real customers are welcomed." },
+      { "title": "Touchpoints", "text": "Banners, fanpage, messages — where customers are slipping away." },
+      { "title": "Real numbers", "text": "Your funnel is built from your own shop's data, not guesswork." },
+      { "title": "Redraw the system", "text": "Customer journey, revenue streams, who does what — clear on one board." },
+      { "title": "Team handover", "text": "Processes that run smoothly even when the owner isn't there." }
+    ],
+    "ctaZalo": "Invite Trí Đức to your shop (Zalo)",
+    "ctaBook": "Book a 1-1 meeting",
+    "aiNote": "Illustrative footage built with AI"
+  },
   "proof": {
     "eyebrow": "Living proof",
     "heading": "Every point of light is a real result. Watch them grow.",

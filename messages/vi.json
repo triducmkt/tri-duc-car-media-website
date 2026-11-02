@@ -307,6 +307,20 @@
     "errTitle": "Chưa gửi được",
     "errBody": "Anh/chị gọi giúp 076.991.8685 hoặc thử lại sau ít phút."
   },
+  "reel": {
+    "eyebrow": "Một buổi làm việc với Trí Đức",
+    "heading": "Không gửi báo giá từ xa. Chúng tôi đến tận tiệm của anh chị.",
+    "steps": [
+      { "title": "Đến tận nơi", "text": "Đứng ngay quầy tiếp khách, xem khách thật được đón tiếp thế nào." },
+      { "title": "Soi điểm chạm", "text": "Băng rôn, fanpage, tin nhắn — chỗ nào đang làm rơi khách." },
+      { "title": "Đọc số liệu thật", "text": "Dựng phễu khách hàng từ chính số liệu của tiệm, không đoán mò." },
+      { "title": "Vẽ lại hệ thống", "text": "Hành trình khách hàng, nguồn doanh thu, ai làm việc gì — rõ trên một tấm bảng." },
+      { "title": "Bàn giao đội ngũ", "text": "Quy trình chạy trơn tru kể cả khi chủ không có mặt ở tiệm." }
+    ],
+    "ctaZalo": "Mời Trí Đức đến tiệm (Zalo)",
+    "ctaBook": "Đặt lịch gặp 1-1",
+    "aiNote": "Hình ảnh minh hoạ dựng bằng AI"
+  },
   "proof": {
     "eyebrow": "Bằng chứng sống",
     "heading": "Mỗi đốm sáng là một kết quả thật. Xem chúng lớn lên.",
