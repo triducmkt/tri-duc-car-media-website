@@ -1,4 +1,4 @@
-import { Noto_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
+import { Mona_Sans, Source_Serif_4 } from "next/font/google";
 
 /**
  * MASTER FONT SYSTEM — the only place font families are chosen.
@@ -15,22 +15,23 @@ import { Noto_Sans, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
  * FONT_ROLES table are kept side by side — keep them in sync.
  */
 
-// Body & UI — paragraphs, forms, buttons, nav. Noto Sans: Google's flagship
-// Vietnamese-complete design; clearest stacked diacritics at 14–16 px and a
-// tall x-height for 40–55 year-old readers.
-export const fontBody = Noto_Sans({
+// Body & UI — paragraphs, forms, buttons, nav. Mona Sans: crisp grotesque with
+// firm 600–800 weights for nav and buttons; clean stacked Vietnamese diacritics.
+// Variable (wght 200–900, wdth 75–125) so every weight is available.
+export const fontBody = Mona_Sans({
   variable: "--tdcm-font-body",
   subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
+  axes: ["wdth"],
   display: "swap",
 });
 
-// Display — H1–H3, numbers, labels, eyebrows. Plus Jakarta Sans: modern,
-// premium B2B voice; compact enough for long Vietnamese headlines.
-export const fontDisplay = Plus_Jakarta_Sans({
+// Display — H1–H3, numbers, labels, eyebrows. Same family as body (one premium
+// sans voice site-wide); headings get weight 700–800 and the serif does the
+// contrast. Identical files to fontBody, so the browser downloads them once.
+export const fontDisplay = Mona_Sans({
   variable: "--tdcm-font-display",
   subsets: ["latin", "vietnamese"],
-  weight: ["500", "600", "700", "800"],
+  axes: ["wdth"],
   display: "swap",
 });
 
@@ -52,19 +53,19 @@ export const fontVariables = `${fontBody.variable} ${fontDisplay.variable} ${fon
 /** FIELD_MAP-style registry read by scripts/check-fonts.mjs and the docs. */
 export const FONT_ROLES = {
   body: {
-    family: "Noto Sans",
+    family: "Mona Sans",
     cssVar: "--tdcm-font-body",
     tailwind: "font-sans",
-    weights: ["400", "500", "600", "700"],
-    use: "Đoạn văn, form, nút, menu, nhãn nhỏ",
+    weights: ["variable 200–900", "wdth 75–125"],
+    use: "Đoạn văn 400, nhãn/menu 600, nút 700",
     leading: "1.6 (đoạn văn) · 1.4 (UI)",
   },
   display: {
-    family: "Plus Jakarta Sans",
+    family: "Mona Sans",
     cssVar: "--tdcm-font-display",
     tailwind: "font-display",
-    weights: ["500", "600", "700", "800"],
-    use: "H1–H3, con số lớn, eyebrow, badge",
+    weights: ["variable 200–900", "wdth 75–125"],
+    use: "H1–H3 700–800, con số lớn, eyebrow 700, badge",
     leading: "≥ 1.15 (tiếng Việt có dấu chồng — không dùng leading-none cho chữ có dấu)",
   },
   serif: {

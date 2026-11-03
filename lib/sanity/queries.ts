@@ -20,12 +20,20 @@ const caseStudyProjection = `{
 
 const blogPostProjection = `{
   _id,
+  _updatedAt,
   "slug": slug.current,
   title,
   excerpt,
   body,
   coverImage,
-  publishedAt
+  publishedAt,
+  author,
+  category,
+  tags,
+  sourceUrl,
+  seoTitle,
+  seoDescription,
+  focusKeyword
 }`;
 
 const testimonialProjection = `{

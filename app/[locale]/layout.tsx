@@ -10,6 +10,7 @@ import { ActionBar } from "@/components/ActionBar";
 import { MainContent } from "@/components/MainContent";
 import { Tracker } from "@/components/analytics/Tracker";
 import { fontVariables } from "@/lib/fonts";
+import { organizationJsonLd } from "@/lib/company";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -54,6 +55,11 @@ export default async function LocaleLayout({
       className={`${fontVariables} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-paper text-ink">
+        <script
+          type="application/ld+json"
+          // Static, server-built JSON from lib/company.ts — no user input.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
         <NextIntlClientProvider>
           <a
             href="#main-content"

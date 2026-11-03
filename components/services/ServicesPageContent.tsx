@@ -8,6 +8,7 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import Diagnostic from "@/components/services/Diagnostic";
 import { SystemBuilder } from "@/components/services/SystemBuilder";
+import { VatAdvantage } from "@/components/VatAdvantage";
 
 const icons = [SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon];
 
@@ -34,6 +35,7 @@ export function ServicesPageContent() {
   return (
     <>
       <SystemBuilder />
+      <VatAdvantage id="hoa-don-vat" />
 
       <section className="border-t border-white/5 bg-ink py-20 text-white sm:py-24">
         <Container>

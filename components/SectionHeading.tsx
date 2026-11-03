@@ -7,6 +7,7 @@ export function SectionHeading({
   align = "left",
   tone = "light",
   serif = false,
+  as: Tag = "h2",
 }: {
   eyebrow?: string;
   heading: string;
@@ -15,6 +16,8 @@ export function SectionHeading({
   tone?: "light" | "dark";
   /** Use the serif accent role (font-serif, see lib/fonts.ts) instead of the display role. */
   serif?: boolean;
+  /** Heading level — "h1" when this is the page's main heading (one per page, for SEO). */
+  as?: "h1" | "h2";
 }) {
   const alignClass = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
   const subColor = tone === "dark" ? "text-white/70" : "text-ink-muted";
@@ -23,15 +26,15 @@ export function SectionHeading({
   return (
     <div className={`flex max-w-2xl flex-col gap-3 ${alignClass}`}>
       {eyebrow ? (
-        <span className={`text-sm font-semibold uppercase tracking-[0.14em] ${eyebrowColor}`}>
+        <span className={`text-sm font-bold uppercase tracking-[0.14em] ${eyebrowColor}`}>
           {eyebrow}
         </span>
       ) : null}
-      <h2
-        className={`${serif ? "font-serif" : "font-display"} text-3xl font-semibold tracking-tight sm:text-4xl`}
+      <Tag
+        className={`${serif ? "font-serif" : "font-display"} text-3xl font-bold tracking-tight sm:text-4xl`}
       >
         {heading}
-      </h2>
+      </Tag>
       {sub ? <p className={`text-base leading-relaxed sm:text-lg ${subColor}`}>{sub}</p> : null}
     </div>
   );

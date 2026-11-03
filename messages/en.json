@@ -15,7 +15,7 @@
   },
   "footer": {
     "tagline": "Free the owner. Elevate the business.",
-    "companyName": "Tri Duc Car Media",
+    "companyName": "Trí Đức Car Media",
     "addressLabel": "Contact",
     "phone": "076.991.8685",
     "email": "tangtriduc@triduccar.media",
@@ -23,7 +23,10 @@
     "servicesHeading": "Services",
     "rights": "All rights reserved by Tri Duc Car Media.",
     "madeWith": "Designed and operated by the Tri Duc Car Media team.",
-    "privacy": "Data privacy"
+    "privacy": "Data privacy",
+    "fanpage": "facebook.com/triduccar.media",
+    "taxCode": "Tax code",
+    "vatLine": "VAT e-invoices issued"
   },
   "home": {
     "servicesEyebrow": "Solutions",
@@ -172,27 +175,42 @@
       {
         "name": "Marketing - Sales - Customer care system",
         "floor": "Marketing · Sales · Care",
-        "deliver": ["Customer journey from ad → sale → return visit", "Consulting & care scripts for your staff"]
+        "deliver": [
+          "Customer journey from ad → sale → return visit",
+          "Consulting & care scripts for your staff"
+        ]
       },
       {
         "name": "Owner's personal brand",
         "floor": "Owner's brand",
-        "deliver": ["The owner's positioning & story", "A weekly social content plan"]
+        "deliver": [
+          "The owner's positioning & story",
+          "A weekly social content plan"
+        ]
       },
       {
         "name": "SOP standardisation & team training",
         "floor": "Foundation · SOP & team",
-        "deliver": ["SOPs for every role", "Hands-on training + checks for staff"]
+        "deliver": [
+          "SOPs for every role",
+          "Hands-on training + checks for staff"
+        ]
       },
       {
         "name": "In-house marketing team setup",
         "floor": "In-house marketing",
-        "deliver": ["Team structure, job descriptions, hiring", "Hands-on support through the first months"]
+        "deliver": [
+          "Team structure, job descriptions, hiring",
+          "Hands-on support through the first months"
+        ]
       },
       {
         "name": "SME OS digital platform",
         "floor": "Data · SME OS",
-        "deliver": ["Customers, bookings and revenue in one place", "Reports the owner reads on their phone"]
+        "deliver": [
+          "Customers, bookings and revenue in one place",
+          "Reports the owner reads on their phone"
+        ]
       }
     ],
     "towerLabel": "Your system",
@@ -205,7 +223,7 @@
     "phonePh": "Phone / Zalo",
     "submit": "Send me this roadmap",
     "sending": "Sending…",
-    "note": "Cost & timeline agreed after the diagnosis.",
+    "note": "Cost & timeline agreed after the diagnosis · VAT invoice included.",
     "zalo": "Message on Zalo",
     "okTitle": "Roadmap received!",
     "okBody": "Trí Đức will call back during working hours to book your 15-minute diagnosis.",
@@ -370,11 +388,26 @@
     "eyebrow": "A working session with Trí Đức",
     "heading": "No quotes sent from afar. We come to your shop.",
     "steps": [
-      { "title": "On site", "text": "Standing at your front desk, watching how real customers are welcomed." },
-      { "title": "Touchpoints", "text": "Banners, fanpage, messages — where customers are slipping away." },
-      { "title": "Real numbers", "text": "Your funnel is built from your own shop's data, not guesswork." },
-      { "title": "Redraw the system", "text": "Customer journey, revenue streams, who does what — clear on one board." },
-      { "title": "Team handover", "text": "Processes that run smoothly even when the owner isn't there." }
+      {
+        "title": "On site",
+        "text": "Standing at your front desk, watching how real customers are welcomed."
+      },
+      {
+        "title": "Touchpoints",
+        "text": "Banners, fanpage, messages — where customers are slipping away."
+      },
+      {
+        "title": "Real numbers",
+        "text": "Your funnel is built from your own shop's data, not guesswork."
+      },
+      {
+        "title": "Redraw the system",
+        "text": "Customer journey, revenue streams, who does what — clear on one board."
+      },
+      {
+        "title": "Team handover",
+        "text": "Processes that run smoothly even when the owner isn't there."
+      }
     ],
     "ctaZalo": "Invite Trí Đức to your shop (Zalo)",
     "ctaBook": "Book a 1-1 meeting",
@@ -449,11 +482,31 @@
     "heading": "From Rạch Giá to Bắc Ninh — real results, in places you can check.",
     "sub": "Every light is a business growing with Trí Đức right now. Tap one to see how they grew.",
     "places": [
-      { "city": "HCMC", "client": "AP Car Care (Tân Phú & D.7)", "metric": "Avg. revenue 1B+ VND/month · 60% from returning customers" },
-      { "city": "Bình Dương", "client": "Khang Vũ Auto Care", "metric": "Facebook views 292 → 20,000+ in 2 months" },
-      { "city": "Rạch Giá", "client": "Apex Autocare", "metric": "Facebook views +289% in 2 months" },
-      { "city": "Bắc Ninh", "client": "Vietnam Detailing Academy", "metric": "Bắc Ninh campus since 10/2025 · reach ×67" },
-      { "city": "Đà Nẵng", "client": "AP ecosystem", "metric": "Scouting a third campus (2026)" }
+      {
+        "city": "HCMC",
+        "client": "AP Car Care (Tân Phú & D.7)",
+        "metric": "Avg. revenue 1B+ VND/month · 60% from returning customers"
+      },
+      {
+        "city": "Bình Dương",
+        "client": "Khang Vũ Auto Care",
+        "metric": "Facebook views 292 → 20,000+ in 2 months"
+      },
+      {
+        "city": "Rạch Giá",
+        "client": "Apex Autocare",
+        "metric": "Facebook views +289% in 2 months"
+      },
+      {
+        "city": "Bắc Ninh",
+        "client": "Vietnam Detailing Academy",
+        "metric": "Bắc Ninh campus since 10/2025 · reach ×67"
+      },
+      {
+        "city": "Đà Nẵng",
+        "client": "AP ecosystem",
+        "metric": "Scouting a third campus (2026)"
+      }
     ],
     "hoangSa": "Hoàng Sa Archipelago",
     "truongSa": "Trường Sa Archipelago",
@@ -477,12 +530,31 @@
   },
   "blog": {
     "title": "Insights",
-    "eyebrow": "Blog",
-    "heading": "Marketing - Sales insights for business owners",
-    "intro": "Practical knowledge on Marketing, Sales, Customer Care and running an SME.",
+    "eyebrow": "Field-tested insights",
+    "heading": "Marketing, Sales & Operations insights for business owners",
+    "intro": "Articles drawn from the projects Trí Đức runs: building the system, standardising operations and multi-channel content for SMEs.",
     "readMore": "Read article",
-    "backToList": "Back to Insights",
-    "empty": "Articles are being updated. Please check back soon."
+    "backToList": "Back to insights",
+    "empty": "Articles are being updated. Please check back soon.",
+    "metaTitle": "Marketing, Sales & Operations insights for SMEs",
+    "metaDescription": "Field-tested insights on Marketing - Sales - Customer care systems, SOPs and multi-channel content for SME owners in Ho Chi Minh City.",
+    "crumbHome": "Home",
+    "readTime": "{n} min read",
+    "tagsLabel": "Tags",
+    "ctaHeading": "Want to apply this to your business?",
+    "ctaBody": "Book a free 15-minute diagnosis with founder Tăng Trí Đức and get a roadmap built around your bottleneck.",
+    "ctaBook": "Book a free 1-1",
+    "ctaZalo": "Message on Zalo",
+    "ctaVat": "VAT e-invoices issued",
+    "sourceLink": "See the original post on the Trí Đức Car Media fanpage",
+    "related": "Related articles",
+    "categories": {
+      "he-thong": "Marketing - Sales - Care systems",
+      "van-hanh": "Operations & SOPs",
+      "noi-dung": "Content & channels",
+      "thuong-hieu": "Owner brand",
+      "khach-hang": "Client stories"
+    }
   },
   "booking": {
     "title": "Book a Consultation",
@@ -510,9 +582,21 @@
       "sub": "No long form: choose a format, day and time — leave your name and Zalo number, done.",
       "step1": "1. Format",
       "formats": [
-        { "label": "Zalo call", "detail": "15 minutes", "stub": "15'" },
-        { "label": "Google Meet", "detail": "30 minutes", "stub": "30'" },
-        { "label": "At your shop", "detail": "Inner HCMC", "stub": "1-1" }
+        {
+          "label": "Zalo call",
+          "detail": "15 minutes",
+          "stub": "15'"
+        },
+        {
+          "label": "Google Meet",
+          "detail": "30 minutes",
+          "stub": "30'"
+        },
+        {
+          "label": "At your shop",
+          "detail": "Inner HCMC",
+          "stub": "1-1"
+        }
       ],
       "step2": "2. Day",
       "step3": "3. Time",
@@ -528,7 +612,12 @@
       "flexible": "flexible, please call to arrange",
       "confirmNote": "Trí Đức confirms on Zalo within the working day.",
       "call": "Call now",
-      "trust": ["Free, no strings", "The founder advises you directly", "No boxed packages"],
+      "trust": [
+        "Free, no strings",
+        "VAT invoice included",
+        "The founder advises you directly",
+        "No boxed packages"
+      ],
       "okTitle": "Your slot is held!",
       "okBody": "Trí Đức will confirm the appointment on Zalo within the working day.",
       "zaloAfter": "Message on Zalo",
@@ -552,7 +641,7 @@
     "title": "Contact",
     "eyebrow": "Get in touch",
     "heading": "Contact Tri Duc Car Media",
-    "intro": "Have a question about our services or want to collaborate? Send us a message.",
+    "intro": "Call, message on Zalo or send a note — Trí Đức replies within the working day. Contracts with a limited company, VAT invoices included.",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "fields": {
@@ -567,7 +656,9 @@
     "successTitle": "Message sent!",
     "successBody": "Thank you for reaching out. We'll get back to you as soon as possible.",
     "errorTitle": "Something went wrong",
-    "errorBody": "Please try again later or email us directly at tangtriduc@triduccar.media."
+    "errorBody": "Please try again later or email us directly at tangtriduc@triduccar.media.",
+    "metaDescription": "Contact TRI DUC CAR MEDIA COMPANY LIMITED — tax code 0319761584, VAT e-invoices. Call/Zalo 076.991.8685, 50-50A Le Thuc Hoach, Phu Tho Hoa Ward, HCMC.",
+    "fanpageLabel": "Fanpage"
   },
   "common": {
     "skipToContent": "Skip to main content",
@@ -583,5 +674,68 @@
     "details": "IP address and IP-based approximate location (city), browser, screen size, traffic source, pages viewed, time on page, scroll depth, clicks and hover per 1 cm cell, form/survey steps (never what you type). Used only internally by Tri Duc Car Media to improve the experience, never sold. Change your choice any time from the footer or request deletion at tangtriduc@triduccar.media.",
     "accept": "Accept",
     "decline": "Decline"
+  },
+  "vat": {
+    "eyebrow": "Registered company · VAT invoices",
+    "heading": "Work with a limited company — a VAT e-invoice for every contract.",
+    "sub": "Your marketing and consulting spend is booked properly and the input VAT is deductible — something solo agencies, freelance teams and household businesses usually cannot offer.",
+    "taxLabel": "Tax code",
+    "copy": "Copy",
+    "copied": "Copied",
+    "lookup": "Look up the tax code on the General Department of Taxation portal",
+    "cta": "Get a quote with VAT",
+    "ctaLegal": "See legal details",
+    "tableCaption": "Trí Đức Car Media compared with solo agencies, freelance teams and household businesses",
+    "colCriteria": "Criteria",
+    "colUs": "Trí Đức Car Media",
+    "colThem": "Solo / freelance / household business",
+    "rows": [
+      {
+        "label": "VAT e-invoice",
+        "us": "Issued for every service contract",
+        "them": "Usually none, or only a sales invoice"
+      },
+      {
+        "label": "Tax deduction & bookkeeping",
+        "us": "Input VAT deductible, expense booked properly",
+        "them": "Hard to justify the expense, no VAT deduction"
+      },
+      {
+        "label": "Contract",
+        "us": "Signed by a legal entity with tax code and seal",
+        "them": "Usually a personal agreement"
+      },
+      {
+        "label": "Transparency",
+        "us": "Tax code 0319761584, publicly verifiable",
+        "them": "Hard to verify"
+      },
+      {
+        "label": "When people change",
+        "us": "Team + SOPs, no broken hand-offs",
+        "them": "Depends on 1–2 people"
+      }
+    ],
+    "footnote": "Applies to service contracts signed with TRI DUC CAR MEDIA COMPANY LIMITED. A general market comparison, not aimed at any specific provider."
+  },
+  "legal": {
+    "heading": "Company registration",
+    "vatBadge": "VAT invoices",
+    "legalName": "Company name",
+    "intlName": "International name",
+    "taxCode": "Tax code",
+    "type": "Entity type",
+    "address": "Head office",
+    "representative": "Legal representative",
+    "capital": "Charter capital",
+    "capitalValue": "VND 1,000,000,000",
+    "registered": "Registered",
+    "registeredValue": "First {first} · amendment 1 {amended} · {issuer}",
+    "phone": "Phone",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyAll": "Copy company details",
+    "lookup": "Look up",
+    "note": "Your accountant needs supplier details? Copy the full name, tax code and address in one tap."
   }
 }

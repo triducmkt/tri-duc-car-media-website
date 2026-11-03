@@ -23,7 +23,10 @@
     "servicesHeading": "Dịch vụ",
     "rights": "Bản quyền thuộc về Trí Đức Car Media.",
     "madeWith": "Thiết kế & vận hành bởi đội ngũ Trí Đức Car Media.",
-    "privacy": "Quyền riêng tư dữ liệu"
+    "privacy": "Quyền riêng tư dữ liệu",
+    "fanpage": "facebook.com/triduccar.media",
+    "taxCode": "MST",
+    "vatLine": "Xuất hóa đơn VAT điện tử"
   },
   "home": {
     "servicesEyebrow": "Giải pháp",
@@ -172,27 +175,42 @@
       {
         "name": "Hệ thống Marketing - Sales - CSKH",
         "floor": "Marketing · Sales · CSKH",
-        "deliver": ["Hành trình khách từ quảng cáo → chốt đơn → quay lại", "Kịch bản tư vấn & chăm sóc khách cho nhân viên"]
+        "deliver": [
+          "Hành trình khách từ quảng cáo → chốt đơn → quay lại",
+          "Kịch bản tư vấn & chăm sóc khách cho nhân viên"
+        ]
       },
       {
         "name": "Thương hiệu cá nhân người chủ",
         "floor": "Thương hiệu người chủ",
-        "deliver": ["Định vị & câu chuyện riêng của người chủ", "Kế hoạch nội dung hằng tuần trên mạng xã hội"]
+        "deliver": [
+          "Định vị & câu chuyện riêng của người chủ",
+          "Kế hoạch nội dung hằng tuần trên mạng xã hội"
+        ]
       },
       {
         "name": "Chuẩn hoá SOP & đào tạo đội ngũ",
         "floor": "Nền móng · SOP & đội ngũ",
-        "deliver": ["Bộ quy trình (SOP) cho từng vị trí", "Đào tạo thực chiến + kiểm tra cho nhân viên"]
+        "deliver": [
+          "Bộ quy trình (SOP) cho từng vị trí",
+          "Đào tạo thực chiến + kiểm tra cho nhân viên"
+        ]
       },
       {
         "name": "Setup phòng Marketing in-house",
         "floor": "Phòng Marketing riêng",
-        "deliver": ["Cơ cấu phòng, mô tả công việc, tuyển dụng", "Đồng hành vận hành giai đoạn đầu"]
+        "deliver": [
+          "Cơ cấu phòng, mô tả công việc, tuyển dụng",
+          "Đồng hành vận hành giai đoạn đầu"
+        ]
       },
       {
         "name": "Nền tảng số SME OS",
         "floor": "Dữ liệu · SME OS",
-        "deliver": ["Khách, lịch hẹn, doanh thu về chung một nơi", "Báo cáo để chủ xem ngay trên điện thoại"]
+        "deliver": [
+          "Khách, lịch hẹn, doanh thu về chung một nơi",
+          "Báo cáo để chủ xem ngay trên điện thoại"
+        ]
       }
     ],
     "towerLabel": "Hệ thống của anh chị",
@@ -205,7 +223,7 @@
     "phonePh": "Số điện thoại / Zalo",
     "submit": "Gửi lộ trình cho tôi",
     "sending": "Đang gửi…",
-    "note": "Chi phí & thời gian chốt sau buổi chẩn đoán.",
+    "note": "Chi phí & thời gian chốt sau buổi chẩn đoán · có hóa đơn VAT.",
     "zalo": "Nhắn Zalo ngay",
     "okTitle": "Đã nhận lộ trình của anh/chị!",
     "okBody": "Trí Đức sẽ gọi lại trong giờ làm việc để hẹn buổi chẩn đoán 15 phút.",
@@ -370,11 +388,26 @@
     "eyebrow": "Một buổi làm việc với Trí Đức",
     "heading": "Không gửi báo giá từ xa. Chúng tôi đến tận tiệm của anh chị.",
     "steps": [
-      { "title": "Đến tận nơi", "text": "Đứng ngay quầy tiếp khách, xem khách thật được đón tiếp thế nào." },
-      { "title": "Soi điểm chạm", "text": "Băng rôn, fanpage, tin nhắn — chỗ nào đang làm rơi khách." },
-      { "title": "Đọc số liệu thật", "text": "Dựng phễu khách hàng từ chính số liệu của tiệm, không đoán mò." },
-      { "title": "Vẽ lại hệ thống", "text": "Hành trình khách hàng, nguồn doanh thu, ai làm việc gì — rõ trên một tấm bảng." },
-      { "title": "Bàn giao đội ngũ", "text": "Quy trình chạy trơn tru kể cả khi chủ không có mặt ở tiệm." }
+      {
+        "title": "Đến tận nơi",
+        "text": "Đứng ngay quầy tiếp khách, xem khách thật được đón tiếp thế nào."
+      },
+      {
+        "title": "Soi điểm chạm",
+        "text": "Băng rôn, fanpage, tin nhắn — chỗ nào đang làm rơi khách."
+      },
+      {
+        "title": "Đọc số liệu thật",
+        "text": "Dựng phễu khách hàng từ chính số liệu của tiệm, không đoán mò."
+      },
+      {
+        "title": "Vẽ lại hệ thống",
+        "text": "Hành trình khách hàng, nguồn doanh thu, ai làm việc gì — rõ trên một tấm bảng."
+      },
+      {
+        "title": "Bàn giao đội ngũ",
+        "text": "Quy trình chạy trơn tru kể cả khi chủ không có mặt ở tiệm."
+      }
     ],
     "ctaZalo": "Mời Trí Đức đến tiệm (Zalo)",
     "ctaBook": "Đặt lịch gặp 1-1",
@@ -449,11 +482,31 @@
     "heading": "Từ Rạch Giá đến Bắc Ninh — kết quả thật, ở những nơi anh chị kiểm chứng được.",
     "sub": "Mỗi điểm sáng là một doanh nghiệp đang đồng hành cùng Trí Đức. Bấm vào để xem họ đã tăng trưởng thế nào.",
     "places": [
-      { "city": "TP.HCM", "client": "AP Car Care (Tân Phú & Q.7)", "metric": "Doanh thu TB hơn 1 tỷ/tháng · 60% từ khách quay lại" },
-      { "city": "Bình Dương", "client": "Khang Vũ Auto Care", "metric": "Lượt xem Facebook 292 → 20.000+ sau 2 tháng" },
-      { "city": "Rạch Giá", "client": "Apex Autocare", "metric": "Lượt xem Facebook +289% sau 2 tháng" },
-      { "city": "Bắc Ninh", "client": "Học viện Detailing Việt Nam", "metric": "Cơ sở Bắc Ninh từ 10/2025 · tiếp cận ×67" },
-      { "city": "Đà Nẵng", "client": "Hệ sinh thái AP", "metric": "Đang khảo sát cơ sở thứ 3 (2026)" }
+      {
+        "city": "TP.HCM",
+        "client": "AP Car Care (Tân Phú & Q.7)",
+        "metric": "Doanh thu TB hơn 1 tỷ/tháng · 60% từ khách quay lại"
+      },
+      {
+        "city": "Bình Dương",
+        "client": "Khang Vũ Auto Care",
+        "metric": "Lượt xem Facebook 292 → 20.000+ sau 2 tháng"
+      },
+      {
+        "city": "Rạch Giá",
+        "client": "Apex Autocare",
+        "metric": "Lượt xem Facebook +289% sau 2 tháng"
+      },
+      {
+        "city": "Bắc Ninh",
+        "client": "Học viện Detailing Việt Nam",
+        "metric": "Cơ sở Bắc Ninh từ 10/2025 · tiếp cận ×67"
+      },
+      {
+        "city": "Đà Nẵng",
+        "client": "Hệ sinh thái AP",
+        "metric": "Đang khảo sát cơ sở thứ 3 (2026)"
+      }
     ],
     "hoangSa": "QĐ. Hoàng Sa",
     "truongSa": "QĐ. Trường Sa",
@@ -477,12 +530,31 @@
   },
   "blog": {
     "title": "Kiến thức",
-    "eyebrow": "Blog",
-    "heading": "Kiến thức Marketing - Sales cho chủ doanh nghiệp",
-    "intro": "Chia sẻ kiến thức thực chiến về Marketing, Sales, CSKH và vận hành doanh nghiệp SME.",
+    "eyebrow": "Kiến thức thực chiến",
+    "heading": "Kiến thức Marketing - Sales - Vận hành cho chủ doanh nghiệp",
+    "intro": "Bài viết từ chính các dự án Trí Đức đang đồng hành: cách xây hệ thống, chuẩn hóa vận hành và làm nội dung đa kênh cho SME & hộ kinh doanh.",
     "readMore": "Đọc bài viết",
-    "backToList": "Quay lại Blog",
-    "empty": "Bài viết đang được cập nhật. Vui lòng quay lại sau."
+    "backToList": "Quay lại Kiến thức",
+    "empty": "Bài viết đang được cập nhật. Vui lòng quay lại sau.",
+    "metaTitle": "Kiến thức Marketing, Sales, Vận hành cho SME",
+    "metaDescription": "Kiến thức thực chiến về hệ thống Marketing - Sales - CSKH, chuẩn hóa SOP và nội dung đa kênh cho chủ doanh nghiệp SME, hộ kinh doanh tại TP.HCM.",
+    "crumbHome": "Trang chủ",
+    "readTime": "{n} phút đọc",
+    "tagsLabel": "Thẻ bài viết",
+    "ctaHeading": "Muốn áp dụng ngay cho doanh nghiệp của anh chị?",
+    "ctaBody": "Đặt 15 phút chẩn đoán miễn phí với founder Tăng Trí Đức, nhận lộ trình riêng theo đúng chỗ đang nghẽn.",
+    "ctaBook": "Đặt lịch 1-1 miễn phí",
+    "ctaZalo": "Nhắn Zalo",
+    "ctaVat": "Xuất hóa đơn VAT điện tử",
+    "sourceLink": "Xem bài gốc trên fanpage Trí Đức Car Media",
+    "related": "Bài viết liên quan",
+    "categories": {
+      "he-thong": "Hệ thống MKT - Sales - CSKH",
+      "van-hanh": "Vận hành & SOP",
+      "noi-dung": "Nội dung & đa kênh",
+      "thuong-hieu": "Thương hiệu người chủ",
+      "khach-hang": "Câu chuyện khách hàng"
+    }
   },
   "booking": {
     "title": "Đặt lịch tư vấn",
@@ -510,9 +582,21 @@
       "sub": "Không cần điền dài: chọn hình thức, ngày, giờ — để lại tên và số Zalo là xong.",
       "step1": "1. Hình thức",
       "formats": [
-        { "label": "Gọi Zalo", "detail": "15 phút", "stub": "15'" },
-        { "label": "Google Meet", "detail": "30 phút", "stub": "30'" },
-        { "label": "Gặp tại tiệm", "detail": "Nội thành TP.HCM", "stub": "1-1" }
+        {
+          "label": "Gọi Zalo",
+          "detail": "15 phút",
+          "stub": "15'"
+        },
+        {
+          "label": "Google Meet",
+          "detail": "30 phút",
+          "stub": "30'"
+        },
+        {
+          "label": "Gặp tại tiệm",
+          "detail": "Nội thành TP.HCM",
+          "stub": "1-1"
+        }
       ],
       "step2": "2. Ngày",
       "step3": "3. Khung giờ",
@@ -528,7 +612,12 @@
       "flexible": "linh hoạt, gọi sắp xếp giúp",
       "confirmNote": "Trí Đức nhắn Zalo xác nhận lịch trong ngày làm việc.",
       "call": "Gọi ngay",
-      "trust": ["Miễn phí, không ràng buộc", "Founder trực tiếp tư vấn", "Không bán gói đóng khung"],
+      "trust": [
+        "Miễn phí, không ràng buộc",
+        "Có hóa đơn VAT",
+        "Founder trực tiếp tư vấn",
+        "Không bán gói đóng khung"
+      ],
       "okTitle": "Đã giữ lịch cho anh chị!",
       "okBody": "Trí Đức sẽ nhắn Zalo xác nhận lịch hẹn trong ngày làm việc.",
       "zaloAfter": "Nhắn Zalo cho nhanh",
@@ -552,7 +641,7 @@
     "title": "Liên hệ",
     "eyebrow": "Kết nối với chúng tôi",
     "heading": "Liên hệ Trí Đức Car Media",
-    "intro": "Bạn có câu hỏi về dịch vụ hoặc muốn hợp tác? Gửi lời nhắn cho chúng tôi.",
+    "intro": "Gọi, nhắn Zalo hoặc gửi lời nhắn — Trí Đức phản hồi trong ngày làm việc. Hợp đồng ký với công ty TNHH, có hóa đơn VAT.",
     "phoneLabel": "Điện thoại",
     "emailLabel": "Email",
     "fields": {
@@ -567,7 +656,9 @@
     "successTitle": "Đã gửi thành công!",
     "successBody": "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm nhất có thể.",
     "errorTitle": "Có lỗi xảy ra",
-    "errorBody": "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email tangtriduc@triduccar.media."
+    "errorBody": "Vui lòng thử lại sau hoặc liên hệ trực tiếp qua email tangtriduc@triduccar.media.",
+    "metaDescription": "Liên hệ CÔNG TY TNHH TRÍ ĐỨC CAR MEDIA — MST 0319761584, xuất hóa đơn VAT điện tử. Gọi/Zalo 076.991.8685, 50-50A Lê Thúc Hoạch, P. Phú Thọ Hòa, TP.HCM.",
+    "fanpageLabel": "Fanpage"
   },
   "common": {
     "skipToContent": "Chuyển tới nội dung chính",
@@ -583,5 +674,68 @@
     "details": "Dữ liệu gồm: IP và vị trí ước tính theo IP (thành phố), trình duyệt, kích thước màn hình, nguồn truy cập, trang đã xem, thời gian ở trang, độ cuộn, click và rê chuột theo từng ô 1 cm, các bước điền form/khảo sát (không ghi nội dung anh/chị gõ). Dữ liệu chỉ dùng nội bộ Trí Đức Car Media để cải thiện trải nghiệm, không bán cho bên thứ ba. Anh/chị có thể đổi lựa chọn bất cứ lúc nào ở chân trang hoặc yêu cầu xoá qua tangtriduc@triduccar.media.",
     "accept": "Đồng ý",
     "decline": "Từ chối"
+  },
+  "vat": {
+    "eyebrow": "Pháp nhân rõ ràng · Hóa đơn VAT",
+    "heading": "Hợp tác với một công ty TNHH — có hóa đơn VAT điện tử cho mọi hợp đồng.",
+    "sub": "Chi phí marketing, tư vấn của doanh nghiệp anh chị được hạch toán đúng luật và khấu trừ thuế GTGT đầu vào. Điều mà agency cá nhân, team freelance hay hộ kinh doanh thường không làm được.",
+    "taxLabel": "Mã số thuế",
+    "copy": "Sao chép",
+    "copied": "Đã chép",
+    "lookup": "Tra cứu MST trên cổng Tổng cục Thuế",
+    "cta": "Nhận báo giá có VAT",
+    "ctaLegal": "Xem hồ sơ pháp lý",
+    "tableCaption": "So sánh Trí Đức Car Media với agency cá nhân, team freelance, hộ kinh doanh",
+    "colCriteria": "Tiêu chí",
+    "colUs": "Trí Đức Car Media",
+    "colThem": "Cá nhân / freelance / hộ KD",
+    "rows": [
+      {
+        "label": "Hóa đơn điện tử VAT (GTGT)",
+        "us": "Xuất cho mọi hợp đồng dịch vụ",
+        "them": "Thường không xuất được, hoặc chỉ có hóa đơn bán hàng"
+      },
+      {
+        "label": "Khấu trừ thuế & hạch toán chi phí",
+        "us": "Được khấu trừ thuế GTGT đầu vào, hạch toán chi phí hợp lệ",
+        "them": "Khó chứng minh chi phí, không khấu trừ được VAT"
+      },
+      {
+        "label": "Hợp đồng",
+        "us": "Ký với pháp nhân, có MST và con dấu",
+        "them": "Thường là hợp đồng / thỏa thuận cá nhân"
+      },
+      {
+        "label": "Minh bạch",
+        "us": "MST 0319761584 tra cứu công khai",
+        "them": "Khó kiểm chứng"
+      },
+      {
+        "label": "Khi nhân sự thay đổi",
+        "us": "Đội ngũ + quy trình SOP, không đứt gánh",
+        "them": "Phụ thuộc 1–2 người"
+      }
+    ],
+    "footnote": "Áp dụng cho hợp đồng dịch vụ ký với CÔNG TY TNHH TRÍ ĐỨC CAR MEDIA. So sánh mang tính phổ biến trên thị trường, không nhắm đến đơn vị cụ thể nào."
+  },
+  "legal": {
+    "heading": "Hồ sơ pháp lý doanh nghiệp",
+    "vatBadge": "Xuất hóa đơn VAT",
+    "legalName": "Tên doanh nghiệp",
+    "intlName": "Tên quốc tế",
+    "taxCode": "Mã số thuế",
+    "type": "Loại hình",
+    "address": "Trụ sở chính",
+    "representative": "Người đại diện",
+    "capital": "Vốn điều lệ",
+    "capitalValue": "1.000.000.000 đồng",
+    "registered": "Đăng ký",
+    "registeredValue": "Lần đầu {first} · thay đổi lần 1 {amended} · {issuer}",
+    "phone": "Điện thoại",
+    "copy": "Sao chép",
+    "copied": "Đã chép",
+    "copyAll": "Chép thông tin công ty",
+    "lookup": "Tra cứu",
+    "note": "Kế toán bên anh chị cần thông tin nhà cung cấp? Bấm để chép đầy đủ tên, MST, địa chỉ."
   }
 }

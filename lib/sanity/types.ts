@@ -51,6 +51,14 @@ export type BlogPost = {
   body?: LocalizedBlockContent;
   coverImage?: SanityImage;
   publishedAt: string;
+  author?: string;
+  category?: string;
+  tags?: string[];
+  sourceUrl?: string;
+  seoTitle?: Partial<LocalizedString>;
+  seoDescription?: Partial<LocalizedString>;
+  focusKeyword?: string;
+  _updatedAt?: string;
 };
 
 export type Testimonial = {

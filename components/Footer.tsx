@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Mail, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { FacebookIcon } from "@/components/icons/FacebookIcon";
+import { COMPANY, companyAddressLine } from "@/lib/company";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/Container";
 import { ConsentSettingsButton } from "@/components/analytics/Tracker";
@@ -84,14 +86,35 @@ export function Footer() {
             <Mail size={16} aria-hidden />
             {t("email")}
           </a>
+          <a
+            href={COMPANY.fanpage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-white/75 transition-colors hover:text-white"
+          >
+            <FacebookIcon size={16} aria-hidden />
+            {t("fanpage")}
+          </a>
+          <Link
+            href={{ pathname: "/contact", hash: "phap-ly" }}
+            className="flex items-start gap-2 text-sm text-white/75 transition-colors hover:text-white"
+          >
+            <MapPin size={16} className="mt-0.5 shrink-0" aria-hidden />
+            {companyAddressLine}
+          </Link>
         </div>
       </Container>
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {t("companyName")}. {t("rights")}
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="font-semibold text-white/70">
+              {COMPANY.legalNameVi} · {t("taxCode")} {COMPANY.taxCode} · {t("vatLine")}
+            </p>
+            <p>
+              © {new Date().getFullYear()} {t("companyName")}. {t("rights")}
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-4">
             <ConsentSettingsButton label={t("privacy")} />
             <p>{t("madeWith")}</p>

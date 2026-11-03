@@ -7,23 +7,28 @@
 
 | Vai trò | Font | Biến CSS | Class Tailwind | Weight | Dùng cho |
 |---|---|---|---|---|---|
-| **body** | Noto Sans | `--tdcm-font-body` | `font-sans` (mặc định của `<body>`) | 400 · 500 · 600 · 700 | Đoạn văn, form, nút, menu, nhãn nhỏ |
-| **display** | Plus Jakarta Sans | `--tdcm-font-display` | `font-display` | 500 · 600 · 700 · 800 | H1–H3, con số lớn, eyebrow, badge, canvas/three.js |
-| **serif** | Source Serif 4 (variable, trục `opsz`) | `--tdcm-font-serif` | `font-serif` | variable 200–900 (+ italic) | Câu tuyên ngôn thương hiệu, tên founder, `SectionHeading serif`, trích dẫn |
+| **body** | Mona Sans (variable, trục `wdth`) | `--tdcm-font-body` | `font-sans` (mặc định của `<body>`) | đoạn văn 400 · menu/nhãn 600 · nút 700 | Đoạn văn, form, nút, menu, nhãn nhỏ |
+| **display** | Mona Sans (cùng họ với body) | `--tdcm-font-display` | `font-display` | tiêu đề 700–800 · eyebrow 700 | H1–H3, con số lớn, eyebrow, badge, canvas/three.js |
+| **serif** | Source Serif 4 (variable, trục `opsz`) — **giữ nguyên, anh Đức đã duyệt** | `--tdcm-font-serif` | `font-serif` | variable 200–900 (+ italic) | Câu tuyên ngôn thương hiệu, tên founder, `SectionHeading serif`, trích dẫn |
 
 Cả 3 font đều **có subset `vietnamese`** trên Google Fonts, tự host qua `next/font`
 (không gọi Google lúc chạy, không nháy font).
 
-### Vì sao chọn bộ này (thay Inter + Be Vietnam Pro + Playfair Display)
-- **Nhất quán:** trước đây 1 trang trộn 3 họ chữ (H1 Playfair, H3 Be Vietnam Pro, nút Inter).
-  Giờ mỗi vai trò đúng 1 font, gọi qua vai trò.
-- **Noto Sans (body):** Google thiết kế với tiếng Việt đầy đủ. Dấu chồng (ế, ữ, ặ) rõ nhất
-  ở cỡ 14–16 px, x-height cao, dễ đọc với chủ doanh nghiệp 40–55 tuổi.
-- **Plus Jakarta Sans (display):** giọng B2B hiện đại, cao cấp, gọn hơn Be Vietnam Pro nên tiêu đề
-  tiếng Việt dài ít xuống dòng. Dấu chữ hoa (Ấ, Ổ, Ữ) đặt gọn. Khác font của đối thủ trực tiếp
-  (Base.vn và MISA dùng Inter, MONA dùng Be Vietnam Pro).
+### Lịch sử quyết định
+- **2026-11-03 (sáng):** Inter + Be Vietnam Pro + Playfair Display → Noto Sans + Plus Jakarta Sans + Source Serif 4.
+- **2026-11-03 (chiều), phản hồi anh Đức:** serif Source Serif 4 "đã chuẩn doanh nghiệp B2B" nên **giữ**.
+  Hai font không chân (Noto Sans, Plus Jakarta) "chưa premium, thiếu đậm ở nút bấm và thanh menu", nên
+  thay cả hai bằng **Mona Sans**. Đồng thời menu lên 600, nút lên 700, thanh hành động mobile 650.
+
+### Vì sao Mona Sans
+- Grotesk sắc, nét đậm 700–800 chắc, tạo cảm giác "pro / premium" như các thương hiệu công nghệ lớn
+  (là font thương hiệu của GitHub). Dùng một họ sans cho toàn site nên giọng thống nhất; serif tạo tương phản.
+- Gọn bề ngang: menu không xuống dòng, tiêu đề tiếng Việt dài ít dòng hơn Montserrat.
+- Dấu tiếng Việt (Ấ, Ổ, Ữ, ặ) gọn, rõ ở cả cỡ 14 px.
+- Là font variable (wght 200–900, wdth 75–125): có đủ mọi độ đậm, không bị trình duyệt giả lập đậm.
+- Đã so cùng thanh menu, nút, tiêu đề thật của site với Montserrat (quá rộng, menu xuống dòng),
+  Inter Tight (đoạn văn chật), Hanken Grotesk, Manrope (tròn, kém premium), Archivo.
 - **Source Serif 4 (serif):** nét chắc, tương phản thấp, mang giọng "báo cáo tư vấn" đáng tin.
-  Playfair tương phản quá cao, nét mảnh làm dấu tiếng Việt mờ ở cỡ nhỏ và trông như "tạp chí thời trang".
 
 ## 2. Quy tắc dùng (bắt buộc)
 1. **Không bao giờ ghi tên font** trong component/CSS. Dùng class `font-sans` / `font-display` /
@@ -51,10 +56,12 @@ Cả 3 font đều **có subset `vietnamese`** trên Google Fonts, tự host qua
 
 | Vai trò | Font | Nhận xét khi render |
 |---|---|---|
-| display | **Manrope** | Gần Jakarta, hơi "kỹ thuật"; dấu gọn |
-| display | **Mona Sans** | Grotesk sắc, giọng tech/SaaS; có trục độ rộng |
-| display | **Inter Tight** | Gọn nhất, hợp tiêu đề rất dài |
-| display | Montserrat | Rộng, dấu đẹp nhưng phổ biến ở SME VN (ít khác biệt) |
+| display | **Inter Tight** | Gọn, mạnh, chuyên nghiệp; đoạn văn hơi chật nên chỉ hợp tiêu đề |
+| display | **Hanken Grotesk** | Grotesk sạch, đậm đẹp; ứng viên thay Mona Sans |
+| display | Montserrat | Đậm, sang nhưng rất rộng (menu, tiêu đề xuống dòng); phổ biến ở SME VN |
+| display | Manrope | Tròn, "kỹ thuật", kém premium (anh Đức đánh giá) |
+| display | Plus Jakarta Sans | Đã dùng sáng 2026-11-03; anh Đức thấy chưa premium, thiếu đậm |
+| body | Noto Sans | Đã dùng sáng 2026-11-03; rất dễ đọc nhưng nhạt |
 | display | Be Vietnam Pro | Font cũ: thiết kế cho tiếng Việt, rộng, đậm |
 | display | Lexend / Bricolage Grotesque | Quá rộng / quá cá tính cho tư vấn B2B |
 | body | **Inter** | Font body cũ: sắc, trung tính |

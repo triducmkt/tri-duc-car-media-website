@@ -30,14 +30,15 @@ const loaders = importMatch ? importMatch[1].split(",").map((s) => s.trim()).fil
 if (!loaders.length) errors.push("lib/fonts.ts: no next/font/google loaders found");
 
 const rows = [];
-for (const loader of loaders) {
+// Every loader call (one family may serve several roles, e.g. body + display).
+const calls = loaders.flatMap((loader) => {
+  const found = [...master.matchAll(new RegExp(`\\b${loader}\\(\\{([\\s\\S]*?)\\}\\)`, "g"))];
+  if (!found.length) errors.push(`lib/fonts.ts: ${loader} imported but never called`);
+  return found.map((m) => ({ loader, body: m[1] }));
+});
+const seenRoles = new Set();
+for (const { loader, body } of calls) {
   const family = loader.replaceAll("_", " ");
-  const call = master.match(new RegExp(`${loader}\\(\\{([\\s\\S]*?)\\}\\)`));
-  if (!call) {
-    errors.push(`lib/fonts.ts: ${loader} imported but never called`);
-    continue;
-  }
-  const body = call[1];
   const variable = body.match(/variable:\s*["']([^"']+)["']/)?.[1] ?? "";
   const subsets = [...(body.match(/subsets:\s*\[([^\]]*)\]/)?.[1] ?? "").matchAll(/["']([^"']+)["']/g)].map((m) => m[1]);
   const weights = [...(body.match(/weight:\s*\[([^\]]*)\]/)?.[1] ?? "").matchAll(/["']([^"']+)["']/g)].map((m) => m[1]);
@@ -53,6 +54,8 @@ for (const loader of loaders) {
   for (const a of axes) if (data && !(data.axes ?? []).some((x) => x.tag === a)) errors.push(`lib/fonts.ts: ${family} has no "${a}" axis`);
   if (!weights.length && data && !data.weights.includes("variable")) errors.push(`lib/fonts.ts: ${family} is not variable — list its weights`);
   const role = variable.replace("--tdcm-font-", "");
+  if (seenRoles.has(role)) errors.push(`lib/fonts.ts: role "${role}" is loaded twice`);
+  seenRoles.add(role);
   if (!new RegExp(`${role}:\\s*\\{[\\s\\S]*?family:\\s*["']${family}["']`).test(master))
     errors.push(`lib/fonts.ts: FONT_ROLES.${role}.family must be "${family}"`);
   rows.push({
@@ -64,6 +67,9 @@ for (const loader of loaders) {
     vietnamese: subsets.includes("vietnamese") ? "yes" : "NO",
   });
 }
+
+for (const role of ["body", "display", "serif"])
+  if (!seenRoles.has(role)) errors.push(`lib/fonts.ts: no loader defines --tdcm-font-${role}`);
 
 // ── 2. Codebase scan ──────────────────────────────────────────────────────
 function walk(dir, out = []) {

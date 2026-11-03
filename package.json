@@ -17,7 +17,9 @@
     "cf:preview": "opennextjs-cloudflare build && wrangler dev",
     "cf:deploy": "opennextjs-cloudflare build && wrangler deploy",
     "studio:deploy": "sanity deploy",
-    "fonts:check": "node scripts/check-fonts.mjs"
+    "fonts:check": "node scripts/check-fonts.mjs",
+    "blog:check": "node scripts/import-fanpage-posts.mjs --dry-run",
+    "blog:import": "node --env-file=.env.local scripts/import-fanpage-posts.mjs"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
