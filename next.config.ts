@@ -4,6 +4,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // Low-RAM machines can cap build workers: NEXT_BUILD_CPUS=2 npm run build.
+  // Unset (CI) keeps Next's default.
+  ...(process.env.NEXT_BUILD_CPUS ? { experimental: { cpus: Number(process.env.NEXT_BUILD_CPUS) } } : {}),
   images: {
     // Sanity's urlForImage() already serves pre-resized images via query
     // params, and Cloudflare's own image optimizer needs a paid Images

@@ -33,31 +33,40 @@ const plain = (s) => s.replace(/\*\*/g, "");
 const fold = (s) =>
   s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
 
-/** "text with **bold** parts" → Portable Text spans. */
+/** "text with **bold** and [links](/vi/dich-vu)" → Portable Text spans + link markDefs. */
 function spans(text) {
-  return text
-    .split(/(\*\*[^*]+\*\*)/)
+  const markDefs = [];
+  const children = text
+    .split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/)
     .filter(Boolean)
     .map((part) => {
+      const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (link) {
+        const _key = key();
+        markDefs.push({ _type: "link", _key, href: link[2] });
+        return { _type: "span", _key: key(), text: link[1], marks: [_key] };
+      }
       const bold = part.startsWith("**") && part.endsWith("**");
       return { _type: "span", _key: key(), text: bold ? part.slice(2, -2) : part, marks: bold ? ["strong"] : [] };
     });
+  return { markDefs, children };
 }
 const block = (text, style = "normal", listItem) => ({
   _type: "block",
   _key: key(),
   style,
   ...(listItem ? { listItem, level: 1 } : {}),
-  markDefs: [],
-  children: spans(text),
+  ...spans(text),
 });
+const internalLinks = (p) => p.body.join(" ").match(/\]\(\/(vi|en)\/[^)]*\)/g)?.length ?? 0;
 
 // ── SEO standard (docs/seo-content-standard.md) ──────────────────────────
 function checkPost(p) {
   const errs = [];
   const kw = (p.focusKeyword || "").trim();
   const paragraphs = p.body.filter((l) => !/^(#|-|!\[)/.test(l));
-  const text = p.body.map(plain).join(" ");
+  const text = p.body.map((l) => plain(l).replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")).join(" ");
+  if (internalLinks(p) < 2) errs.push(`need ≥ 2 internal links like [Dịch vụ](/vi/dich-vu) (has ${internalLinks(p)})`);
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.slug)) errs.push("slug must be lowercase ASCII words joined by '-'");
   if (p.slug.split("-").length > 8) errs.push("slug longer than 8 words");
   if (!kw) errs.push("focusKeyword missing");

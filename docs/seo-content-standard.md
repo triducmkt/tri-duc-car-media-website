@@ -39,7 +39,7 @@
 - Ảnh được nén và đổi cỡ tự động qua Sanity CDN (WebP/AVIF), có `width/height` để không xô lệch layout.
 
 ## 6. Liên kết
-- **Nội bộ:** mỗi bài ≥ 2 liên kết nội bộ phù hợp: trang Dịch vụ, Dự án / case study liên quan, Đặt lịch.
+- ⚙️ **Nội bộ:** mỗi bài ≥ 2 liên kết nội bộ phù hợp (viết dạng `[chữ](/vi/dich-vu)` trong posts.json): trang Dịch vụ, Dự án / case study liên quan, Đặt lịch.
   Khối "Bài viết liên quan" (cùng chuyên mục) tự hiển thị.
 - **Bài gốc:** ⚙️ `sourceUrl` trỏ về bài trên fanpage (hiện link "Xem bài gốc") để Google và người đọc thấy nguồn gốc.
 
@@ -58,4 +58,5 @@
    **Giữ nguyên ý, số liệu và giọng của anh Đức**; không bịa số liệu. Hashtag thành `tags`; SĐT / Zalo trong caption
    được thay bằng khối CTA chuẩn.
 4. Ghi vào `content/fanpage-posts/posts.json`, ảnh vào `content/fanpage-posts/images/`.
-5. `npm run blog:check` phải xanh hết, rồi `npm run blog:import`. Website tự cập nhật (ISR / build lại).
+5. `npm run blog:check` phải xanh hết, rồi `npm run blog:import`.
+6. **Bắt buộc deploy lại** (push lên `main` hoặc chạy lại workflow Deploy). Các trang build tĩnh nên bài mới chỉ hiện sau khi build. Build ở máy local: xóa `.next/cache/fetch-cache` trước (cache dữ liệu Sanity 1 năm), máy ít RAM dùng `NEXT_BUILD_CPUS=2`.
