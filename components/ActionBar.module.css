@@ -10,7 +10,7 @@
   backdrop-filter: blur(12px);
   border-top: 1px solid rgba(233, 228, 215, 0.14);
   padding-bottom: env(safe-area-inset-bottom);
-  font-family: var(--td-sans, "Be Vietnam Pro", system-ui, sans-serif);
+  font-family: var(--tdcm-font-display, system-ui), system-ui, sans-serif;
 }
 .bar a {
   padding: 0.85rem 0;

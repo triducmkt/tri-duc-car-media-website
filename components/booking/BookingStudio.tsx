@@ -6,6 +6,7 @@ import { Check, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/Container";
 import { FormStatus } from "@/components/forms/FormStatus";
 import { trackEvent } from "@/lib/tracking/grid";
+import { fontStack } from "@/lib/fontStack";
 
 /** Booking as picking a slot: format → day → time → name + Zalo. A three.js
  *  appointment ticket fills in live beside the form and, on submit, flips and
@@ -198,7 +199,7 @@ export function BookingStudio() {
         await document.fonts?.ready;
         if (disposed) return;
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const font = getComputedStyle(document.documentElement).getPropertyValue("--font-be-vietnam-pro").trim() || "sans-serif";
+        const font = fontStack("display");
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));

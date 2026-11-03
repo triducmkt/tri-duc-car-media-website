@@ -40,7 +40,7 @@ export default async function AboutPage({
 
   return (
     <>
-      <section className="bg-ink py-20 text-white sm:py-28">
+      <section className="overflow-hidden bg-ink py-20 text-white sm:py-28">
         <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative mx-auto w-full max-w-sm">
             <FounderAura />

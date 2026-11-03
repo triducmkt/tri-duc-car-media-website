@@ -47,23 +47,18 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-be-vietnam-pro);
-  --font-serif: var(--font-playfair);
-}
-
-/* Read by SystemHero (home hero) and Diagnostic (services) CSS modules only —
-   those components fall back to a literal font name when unset, so both must
-   resolve to the actual next/font variables here to render correctly. */
-:root {
-  --td-sans: var(--font-be-vietnam-pro);
-  --td-serif: var(--font-playfair);
+  /* Font ROLES (master: lib/fonts.ts, rules: docs/font-system.md). The
+     --tdcm-font-* variables are set on <html> by next/font; CSS modules and
+     canvas code read those directly. Never name a family anywhere else. */
+  --font-sans: var(--tdcm-font-body), system-ui, sans-serif;
+  --font-display: var(--tdcm-font-display), var(--tdcm-font-body), system-ui, sans-serif;
+  --font-serif: var(--tdcm-font-serif), Georgia, serif;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 ::selection {

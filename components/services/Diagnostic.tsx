@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { fontStack } from "@/lib/fontStack";
 import styles from "./Diagnostic.module.css";
 import { trackEvent } from "@/lib/tracking/grid";
 import {
@@ -74,10 +75,9 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Canvas's `font` setter can't resolve CSS var() references, so the
-    // actual font stacks are read once from the resolved custom properties.
-    const rootStyle = getComputedStyle(document.documentElement);
-    const sansFamily = rootStyle.getPropertyValue("--td-sans").trim() || '"Be Vietnam Pro", system-ui, sans-serif';
-    const serifFamily = rootStyle.getPropertyValue("--td-serif").trim() || '"Playfair Display", Georgia, serif';
+    // actual font stacks are read once from the font roles (lib/fonts.ts).
+    const sansFamily = fontStack("display");
+    const serifFamily = fontStack("serif");
 
     let W = 0, H = 0, cx = 0, cy = 0, dpr = 1, f = 800, isMobile = false, raf = 0;
     let rotY = 0, rotYT = 0, rotX = 0, rotXT = 0, tA = 0, t0 = 0;

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
+import { fontStack } from "@/lib/fontStack";
 import styles from "./SystemHero.module.css";
 import { CAP_LAYOUT, SATELLITE_POS } from "./systemHeroLayout";
 
@@ -64,9 +65,8 @@ export default function SystemHero({ skipHref = "#tru-cot" }: Props) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Canvas's `font` setter can't resolve CSS var() references, so the
-    // actual font stacks are read once from the resolved custom properties.
-    const rootStyle = getComputedStyle(document.documentElement);
-    const sansFamily = rootStyle.getPropertyValue("--td-sans").trim() || '"Be Vietnam Pro", system-ui, sans-serif';
+    // actual font stack is read once from the display role (lib/fonts.ts).
+    const sansFamily = fontStack("display");
 
     let W = 0, H = 0, cx = 0, cy = 0, dpr = 1, isMobile = false, f = 900;
     let N = 25;

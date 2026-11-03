@@ -13,7 +13,7 @@ export function SectionHeading({
   sub?: string;
   align?: Align;
   tone?: "light" | "dark";
-  /** Use the Playfair Display accent font instead of the default display font. */
+  /** Use the serif accent role (font-serif, see lib/fonts.ts) instead of the display role. */
   serif?: boolean;
 }) {
   const alignClass = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";

@@ -10,8 +10,8 @@
   --bone: #e9e4d7;
   --muted: #8fa0a6;
   --line: rgba(233, 228, 215, 0.14);
-  --serif: var(--td-serif, "Playfair Display", Georgia, serif);
-  --sans: var(--td-sans, "Be Vietnam Pro", system-ui, sans-serif);
+  --serif: var(--tdcm-font-serif, Georgia), Georgia, serif;
+  --sans: var(--tdcm-font-display, system-ui), system-ui, sans-serif;
 
   position: relative;
   height: 640vh;

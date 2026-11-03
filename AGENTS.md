@@ -19,6 +19,8 @@ File `hq/00-INDEX.md` là HQ của riêng dự án này (liên kết trực ti�
 
 **Sau khi hoàn thành một phần việc đáng kể** (bất kể bạn là agent nào — Claude, Codex, Antigravity...): cập nhật mục "TRẠNG THÁI HIỆN TẠI" trong `hq/00-INDEX.md` ở trên + thêm 1 mục mới vào `hq/01-REQUIREMENTS-LOG.md` (cùng thư mục) — để agent tiếp theo tiếp tục ngay lập tức mà không mất ngữ cảnh.
 
+**Typography (bắt buộc khi sửa giao diện):** font chỉ được chọn ở `lib/fonts.ts` (3 vai trò body / display / serif). Quy tắc + băng ghế font tiếng Việt đã kiểm tra: `docs/font-system.md`. Chạy `npm run fonts:check` trước khi commit. Không ghi tên font trong component.
+
 Quy định làm việc áp dụng chung cho mọi dự án:
 👉 `D:\My Agents\Global\GLOBAL-RULES.md` (hoặc mirror tại `C:\Users\TANG KIM SON\AI-HQ\GLOBAL-RULES.md`)
 
