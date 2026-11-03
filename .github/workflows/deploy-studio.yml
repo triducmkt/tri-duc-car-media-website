@@ -1,7 +1,10 @@
 name: Deploy Sanity Studio
 
 # Studio builds need more RAM than the office laptop has free, so it is
-# built here. Runs when the schema changes or on demand.
+# built here. Runs when the schema changes or on demand (Actions tab → Run).
+# Needs repo secret SANITY_DEPLOY_TOKEN = a Sanity API token with the
+# "Deploy Studio" permission (the SANITY_API_TOKEN robot is only an editor
+# and cannot deploy). Without it the job skips with a warning.
 on:
   workflow_dispatch:
   push:
@@ -15,13 +18,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
     steps:
+      - name: Check deploy token
+        id: token
+        run: |
+          if [ -z "$SANITY_AUTH_TOKEN" ]; then
+            echo "::warning::Missing secret SANITY_DEPLOY_TOKEN (Sanity token with Deploy Studio permission) — Studio not deployed."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v4
+        if: steps.token.outputs.ok == 'true'
       - uses: actions/setup-node@v4
+        if: steps.token.outputs.ok == 'true'
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+        if: steps.token.outputs.ok == 'true'
       - run: npx sanity deploy -y
-        env:
-          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+        if: steps.token.outputs.ok == 'true'
