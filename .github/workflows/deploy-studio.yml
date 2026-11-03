@@ -5,7 +5,8 @@ name: Deploy Sanity Studio
 # Needs repo secret SANITY_DEPLOY_TOKEN = a Sanity API token with the
 # "Deploy Studio" permission (the SANITY_API_TOKEN robot is only an editor
 # and cannot deploy). Without it the job skips with a warning.
-# Secret added by the owner 2026-11-03.
+# Secret added by the owner 2026-11-03 (Developer/Administrator role: the
+# CLI needs sanity.project.read, "Deploy Studio (Token only)" is not enough).
 on:
   workflow_dispatch:
   push:
