@@ -48,13 +48,21 @@ jobs:
         if: steps.token.outputs.ok == 'true'
       - name: Deploy Studio
         if: steps.token.outputs.ok == 'true'
+        env:
+          EDITOR_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
         run: |
           set -o pipefail
-          if ! npx sanity deploy -y 2>&1 | tee deploy.log; then
-            # Surface the tail of the log as annotations (readable without
-            # login); GitHub masks the secret value automatically.
-            tail -n 25 deploy.log | sed 's/\x1b\[[0-9;]*m//g' | grep -v '^\s*$' | while IFS= read -r line; do
-              echo "::error::${line}"
-            done
-            exit 1
+          # Surface a log's tail as annotations (readable without login);
+          # GitHub masks secret values automatically.
+          report() { tail -n 12 "$1" | sed 's/\x1b\[[0-9;]*m//g' | grep -v '^\s*$' | while IFS= read -r line; do echo "::$2::[$3] ${line}"; done; }
+          # 1) Deploy token (SANITY_DEPLOY_TOKEN).
+          if npx sanity deploy -y 2>&1 | tee deploy.log; then
+            echo "::notice::Studio deployed with SANITY_DEPLOY_TOKEN"; exit 0
           fi
+          report deploy.log warning deploy-token
+          # 2) Fallback: the editor robot (SANITY_API_TOKEN), which can read the project.
+          if [ -n "$EDITOR_TOKEN" ] && SANITY_AUTH_TOKEN="$EDITOR_TOKEN" npx sanity deploy -y 2>&1 | tee deploy2.log; then
+            echo "::notice::Studio deployed with SANITY_API_TOKEN (editor)"; exit 0
+          fi
+          report deploy2.log error editor-token
+          exit 1
