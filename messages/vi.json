@@ -580,7 +580,75 @@
     "empty": "Các dự án đang được cập nhật. Vui lòng quay lại sau.",
     "ongoingBadge": "Đang đồng hành cùng Trí Đức Car Media",
     "updatedThrough": "Số liệu cập nhật đến",
-    "resultsHeading": "Kết quả nổi bật"
+    "resultsHeading": "Kết quả nổi bật",
+    "twin": {
+      "eyebrow": "Bản sao cơ sở",
+      "heading": "Cơ sở của anh chị giống {client} đến đâu?",
+      "sub": "Trả lời 4 câu, mỗi câu 1 chạm. Bên phải dựng dần cơ sở của anh chị cạnh {client}.",
+      "caseLabel": "{client}",
+      "youLabel": "Cơ sở của anh chị",
+      "match": "giống",
+      "estimate": "Ước lượng từ {n}/4 câu trả lời",
+      "step": "Câu {n}/4",
+      "back": "Quay lại",
+      "restart": "Làm lại",
+      "questions": {
+        "industry": {
+          "q": "Cơ sở của anh chị thuộc ngành nào?",
+          "options": {
+            "car-care": "Chăm sóc, rửa xe, detailing",
+            "garage": "Gara sửa chữa ô tô",
+            "beauty": "Spa, thẩm mỹ, làm đẹp",
+            "training": "Đào tạo, gym, trung tâm",
+            "other": "Ngành dịch vụ khác"
+          }
+        },
+        "scale": {
+          "q": "Hiện có bao nhiêu cơ sở?",
+          "options": {
+            "one": "1 cơ sở",
+            "few": "2–3 cơ sở",
+            "expand": "Đang tính mở thêm"
+          }
+        },
+        "channels": {
+          "q": "Kênh online đang thế nào?",
+          "options": {
+            "none": "Gần như chưa có gì",
+            "some": "Có fanpage nhưng đăng thất thường",
+            "steady": "Đăng đều nhưng ít khách"
+          }
+        },
+        "goal": {
+          "q": "Điều anh chị muốn nhất lúc này?",
+          "options": {
+            "new": "Thêm khách mới",
+            "retain": "Khách cũ quay lại nhiều hơn",
+            "owner": "Bớt phụ thuộc vào chủ"
+          }
+        }
+      },
+      "same": "Giống ở",
+      "diff": "Khác ở",
+      "labels": {
+        "industry": "Ngành",
+        "scale": "Quy mô",
+        "channels": "Kênh online",
+        "goal": "Mục tiêu"
+      },
+      "betterTitle": "Ca giống anh chị nhất: {client} ({pct}%)",
+      "betterLink": "Xem ca này",
+      "leadTitle": "Muốn làm giống {client}?",
+      "leadBody": "Để lại tên và Zalo, anh Đức gọi lại kể đúng chặng đầu của ca này, áp vào cơ sở của anh chị.",
+      "name": "Tên anh chị",
+      "phone": "Số Zalo / điện thoại",
+      "submit": "Gửi cho anh Đức",
+      "sending": "Đang gửi…",
+      "done": "Đã gửi. Anh Đức sẽ liên hệ qua Zalo sớm.",
+      "error": "Chưa gửi được. Anh chị nhắn Zalo trực tiếp giúp em nhé.",
+      "zalo": "Hoặc nhắn Zalo ngay",
+      "book": "Đặt lịch gặp"
+    }
   },
   "blog": {
     "title": "Kiến thức",

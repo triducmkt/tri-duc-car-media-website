@@ -580,7 +580,75 @@
     "empty": "Case studies are being updated. Please check back soon.",
     "ongoingBadge": "Actively managed by Tri Duc Car Media",
     "updatedThrough": "Data updated through",
-    "resultsHeading": "Key results"
+    "resultsHeading": "Key results",
+    "twin": {
+      "eyebrow": "Your shop’s twin",
+      "heading": "How close is your business to {client}?",
+      "sub": "Answer 4 questions, one tap each. Your shop is built next to {client} as you go.",
+      "caseLabel": "{client}",
+      "youLabel": "Your business",
+      "match": "match",
+      "estimate": "Estimated from {n}/4 answers",
+      "step": "Question {n}/4",
+      "back": "Back",
+      "restart": "Start over",
+      "questions": {
+        "industry": {
+          "q": "What kind of business do you run?",
+          "options": {
+            "car-care": "Car care, wash, detailing",
+            "garage": "Car repair garage",
+            "beauty": "Spa, beauty",
+            "training": "Training, gym, centre",
+            "other": "Another service business"
+          }
+        },
+        "scale": {
+          "q": "How many locations?",
+          "options": {
+            "one": "1 location",
+            "few": "2–3 locations",
+            "expand": "Planning to open more"
+          }
+        },
+        "channels": {
+          "q": "How are your online channels?",
+          "options": {
+            "none": "Almost nothing yet",
+            "some": "A fanpage, posted irregularly",
+            "steady": "Posting steadily, few customers"
+          }
+        },
+        "goal": {
+          "q": "What do you want most right now?",
+          "options": {
+            "new": "More new customers",
+            "retain": "More returning customers",
+            "owner": "Less reliance on the owner"
+          }
+        }
+      },
+      "same": "Alike in",
+      "diff": "Different in",
+      "labels": {
+        "industry": "Industry",
+        "scale": "Size",
+        "channels": "Online channels",
+        "goal": "Goal"
+      },
+      "betterTitle": "Closest case to you: {client} ({pct}%)",
+      "betterLink": "See this case",
+      "leadTitle": "Want what {client} got?",
+      "leadBody": "Leave your name and Zalo; Duc will call and walk you through the first stage of this case, applied to your shop.",
+      "name": "Your name",
+      "phone": "Zalo / phone number",
+      "submit": "Send to Duc",
+      "sending": "Sending…",
+      "done": "Sent. Duc will reach you on Zalo soon.",
+      "error": "Could not send. Please message us on Zalo directly.",
+      "zalo": "Or message on Zalo now",
+      "book": "Book a meeting"
+    }
   },
   "blog": {
     "title": "Insights",
