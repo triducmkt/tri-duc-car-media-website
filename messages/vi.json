@@ -554,6 +554,40 @@
       "noi-dung": "Nội dung & đa kênh",
       "thuong-hieu": "Thương hiệu người chủ",
       "khach-hang": "Câu chuyện khách hàng"
+    },
+    "allHeading": "Tất cả bài viết",
+    "compass": {
+      "question": "Tuần này, điều gì làm anh chị mệt nhất?",
+      "pains": [
+        {
+          "label": "Tôi không rời cơ sở được ngày nào",
+          "note": "Vắng một buổi là điện thoại réo, việc dồn lại."
+        },
+        {
+          "label": "Quảng cáo tốn tiền mà khách không đều",
+          "note": "Tháng đông, tháng vắng, không biết vì sao."
+        },
+        {
+          "label": "Thuê người rồi mà việc gì cũng phải nhắc",
+          "note": "Nhân viên làm theo lời, không theo hệ thống."
+        },
+        {
+          "label": "Làm từ sáng tới tối, thấy đuối",
+          "note": "Bận suốt nhưng không chắc cơ sở đang khỏe."
+        }
+      ],
+      "hint": "Mỗi ngôi sao là một bài viết · chạm để đọc",
+      "pathTitle": "Lộ trình đọc dành cho anh chị",
+      "pathMeta": "{n} bài · khoảng {m} phút",
+      "minutes": "{n} phút đọc",
+      "leadHeading": "Đọc xong vẫn chưa biết áp dụng vào cơ sở mình?",
+      "leadBody": "Để lại tên và Zalo. Founder Tăng Trí Đức gọi lại trong 1 ngày làm việc, 15 phút miễn phí, bàn riêng chuyện “{pain}”.",
+      "leadName": "Tên anh chị",
+      "leadPhone": "Số Zalo / điện thoại",
+      "leadSubmit": "Gửi cho founder",
+      "leadZalo": "Hoặc nhắn Zalo ngay",
+      "leadDone": "Đã nhận. Founder sẽ gọi lại cho anh chị trong 1 ngày làm việc.",
+      "leadError": "Chưa gửi được. Anh chị thử lại hoặc nhắn Zalo 0769 918 685 giúp em."
     }
   },
   "booking": {

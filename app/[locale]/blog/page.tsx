@@ -5,6 +5,8 @@ import { BlogPostCard } from "@/components/BlogPostCard";
 import { getBlogPosts } from "@/lib/sanity/queries";
 import { getPathname } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
+import { readingMinutes } from "@/lib/blog";
+import { ReadingCompass } from "@/components/blog/ReadingCompass";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || COMPANY.siteUrl;
 
@@ -34,17 +36,28 @@ export default async function BlogPage({
   const t = await getTranslations("blog");
   const items = await getBlogPosts();
   const categories = t.raw("categories") as Record<string, string>;
+  const compassPosts = items.map((p) => ({
+    slug: p.slug,
+    title: p.title[locale] || p.title.vi,
+    category: p.category,
+    minutes: readingMinutes(p.body?.[locale] ?? p.body?.vi),
+  }));
 
   return (
     <>
-      <section className="bg-ink py-20 text-white sm:py-24">
-        <Container>
-          <SectionHeading as="h1" eyebrow={t("eyebrow")} heading={t("heading")} sub={t("intro")} tone="dark" />
-        </Container>
-      </section>
+      {items.length > 0 ? (
+        <ReadingCompass posts={compassPosts} heading={t("heading")} eyebrow={t("eyebrow")} />
+      ) : (
+        <section className="bg-ink py-20 text-white sm:py-24">
+          <Container>
+            <SectionHeading as="h1" eyebrow={t("eyebrow")} heading={t("heading")} sub={t("intro")} tone="dark" />
+          </Container>
+        </section>
+      )}
 
       <section className="bg-paper py-20 sm:py-24">
-        <Container>
+        <Container className="flex flex-col gap-10">
+          {items.length > 0 ? <SectionHeading heading={t("allHeading")} sub={t("intro")} /> : null}
           {items.length === 0 ? (
             <p className="text-base text-ink-muted">{t("empty")}</p>
           ) : (

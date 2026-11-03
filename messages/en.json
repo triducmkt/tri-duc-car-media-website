@@ -554,6 +554,40 @@
       "noi-dung": "Content & channels",
       "thuong-hieu": "Owner brand",
       "khach-hang": "Client stories"
+    },
+    "allHeading": "All articles",
+    "compass": {
+      "question": "This week, what is wearing you out the most?",
+      "pains": [
+        {
+          "label": "I can’t leave the business for a single day",
+          "note": "Miss one morning and the phone never stops."
+        },
+        {
+          "label": "Ads cost money but customers come unevenly",
+          "note": "Busy months, quiet months, and no idea why."
+        },
+        {
+          "label": "I hired people, yet I still have to remind them",
+          "note": "Staff follow instructions, not a system."
+        },
+        {
+          "label": "I work dawn to dusk and feel drained",
+          "note": "Always busy, never sure the business is healthy."
+        }
+      ],
+      "hint": "Each star is an article · tap to read",
+      "pathTitle": "Your reading path",
+      "pathMeta": "{n} articles · about {m} min",
+      "minutes": "{n} min read",
+      "leadHeading": "Read it, but not sure how to apply it to your business?",
+      "leadBody": "Leave your name and Zalo. Founder Tăng Trí Đức will call within 1 working day for a free 15-minute talk about “{pain}”.",
+      "leadName": "Your name",
+      "leadPhone": "Zalo / phone number",
+      "leadSubmit": "Send to the founder",
+      "leadZalo": "Or message on Zalo",
+      "leadDone": "Received. The founder will call you within 1 working day.",
+      "leadError": "Could not send. Please try again or message Zalo 0769 918 685."
     }
   },
   "booking": {

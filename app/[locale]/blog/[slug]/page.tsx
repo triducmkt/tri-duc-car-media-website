@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
-import type { TypedObject } from "@portabletext/types";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CalendarDays, Clock, FileCheck2, MessageCircle } from "lucide-react";
 import { Container } from "@/components/Container";
@@ -14,19 +13,12 @@ import { getBlogPosts, getBlogPostBySlug } from "@/lib/sanity/queries";
 import { urlForImage } from "@/lib/sanity/image";
 import type { SanityImage } from "@/lib/sanity/types";
 import { COMPANY } from "@/lib/company";
+import { readingMinutes } from "@/lib/blog";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || COMPANY.siteUrl;
 
 function postUrl(locale: "vi" | "en", slug: string) {
   return `${siteUrl}${getPathname({ locale, href: { pathname: "/blog/[slug]", params: { slug } } })}`;
-}
-
-/** ~200 words/minute for Vietnamese reading. */
-function readingMinutes(blocks?: TypedObject[]) {
-  const text = (blocks ?? [])
-    .flatMap((b) => ((b as { children?: { text?: string }[] }).children ?? []).map((c) => c.text ?? ""))
-    .join(" ");
-  return Math.max(1, Math.round(text.split(/\s+/).filter(Boolean).length / 200));
 }
 
 function bodyComponents(locale: "vi" | "en"): PortableTextComponents {
