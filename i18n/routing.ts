@@ -42,6 +42,11 @@ export const routing = defineRouting({
       vi: "/lien-he",
       en: "/contact",
     },
+    // Ads landing page (components/check/ShopCheck.tsx).
+    "/check": {
+      vi: "/kiem-tra-co-so",
+      en: "/shop-check",
+    },
   },
 });
 

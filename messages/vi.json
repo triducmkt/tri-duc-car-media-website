@@ -11,7 +11,8 @@
     "caseStudies": "Dự án",
     "blog": "Kiến thức",
     "contact": "Liên hệ",
-    "bookingCta": "Đặt lịch tư vấn"
+    "bookingCta": "Đặt lịch tư vấn",
+    "check": "Kiểm tra 60s"
   },
   "footer": {
     "tagline": "Giải phóng người chủ. Nâng tầm doanh nghiệp.",
@@ -964,5 +965,160 @@
     },
     "book": "Đặt lịch gặp anh Đức",
     "office": "Văn phòng"
+  },
+  "check": {
+    "metaTitle": "Kiểm tra cơ sở 60 giây — chỗ nào đang giữ chân người chủ? | Trí Đức Car Media",
+    "metaDescription": "5 câu hỏi, 60 giây: biết ngay cơ sở dịch vụ của anh chị đang yếu ở khách mới, khách cũ, đội ngũ, kênh online hay số liệu, kèm ca thật tương tự và bước đầu tiên nên làm.",
+    "nav": "Kiểm tra 60s",
+    "eyebrow": "Kiểm tra cơ sở · 60 giây",
+    "heading": {
+      "default": "Cơ sở của anh chị đang kẹt ở chỗ nào?",
+      "gara": "Gara của anh chị đang kẹt ở chỗ nào?",
+      "cham-soc-xe": "Tiệm chăm sóc xe của anh chị đang kẹt ở chỗ nào?",
+      "spa": "Spa của anh chị đang kẹt ở chỗ nào?",
+      "gym": "Phòng gym của anh chị đang kẹt ở chỗ nào?",
+      "dao-tao": "Trung tâm của anh chị đang kẹt ở chỗ nào?"
+    },
+    "sub": "5 câu, mỗi câu 1 chạm. Radar bên cạnh vẽ ngay sức khỏe cơ sở, chỉ ra chỗ yếu nhất và bước nên làm trước.",
+    "free": "Miễn phí · Không cần email · Kết quả hiện ngay",
+    "step": "Câu {n}/5",
+    "back": "Quay lại",
+    "restart": "Làm lại",
+    "axes": {
+      "khach-moi": {
+        "label": "Khách mới",
+        "q": "Mỗi tuần, khách mới tìm đến có đều không?",
+        "o": [
+          "Gần như không có",
+          "Lúc có lúc không",
+          "Khá đều",
+          "Đều và đang tăng"
+        ]
+      },
+      "khach-cu": {
+        "label": "Khách quay lại",
+        "q": "Khách cũ có quay lại mà không cần nhắc?",
+        "o": [
+          "Ít ai quay lại",
+          "Phải gọi, nhắn mới quay lại",
+          "Khá nhiều người quay lại",
+          "Phần lớn doanh thu từ khách cũ"
+        ]
+      },
+      "doi-ngu": {
+        "label": "Đội ngũ tự chạy",
+        "q": "Anh chị nghỉ 3 ngày thì cơ sở thế nào?",
+        "o": [
+          "Rối, không nghỉ được",
+          "Chạy nhưng gọi liên tục",
+          "Chạy được, vài việc phải chờ",
+          "Chạy bình thường"
+        ]
+      },
+      "kenh": {
+        "label": "Kênh online",
+        "q": "Fanpage, Google, TikTok của cơ sở đang ra sao?",
+        "o": [
+          "Gần như chưa có",
+          "Có nhưng đăng thất thường",
+          "Đăng đều nhưng ít khách hỏi",
+          "Đăng đều và ra khách"
+        ]
+      },
+      "so-lieu": {
+        "label": "Nắm số liệu",
+        "q": "Anh chị có biết rõ doanh thu, chi phí, khách từ đâu tới?",
+        "o": [
+          "Chủ yếu nhớ trong đầu",
+          "Có sổ nhưng không đều",
+          "Có số mỗi tháng",
+          "Xem số mỗi tuần để quyết định"
+        ]
+      }
+    },
+    "score": "Điểm sức khỏe",
+    "weakest": "Chỗ yếu nhất",
+    "nextStep": "Nên bắt đầu từ",
+    "fix": {
+      "khach-moi": "Dựng hệ thống Marketing – Sales để khách mới tìm đến đều mỗi tuần.",
+      "khach-cu": "Dựng quy trình chăm sóc khách cũ (CSKH) để khách tự quay lại.",
+      "doi-ngu": "Chuẩn hóa SOP và đào tạo đội ngũ để cơ sở chạy khi chủ vắng.",
+      "kenh": "Đồng bộ fanpage, Google, TikTok theo một kế hoạch nội dung đều đặn.",
+      "so-lieu": "Đưa số liệu doanh thu, chi phí, khách vào một bảng xem được hằng tuần."
+    },
+    "proofLabel": "Ca thật tương tự",
+    "proof": {
+      "khach-moi": "Khang Vũ Auto Care: lượt xem Facebook 292 → 20.115 sau 2 tháng",
+      "khach-cu": "AP Car Care: hơn 60% doanh thu từ khách quay lại",
+      "doi-ngu": "Hệ sinh thái AP: CEO tập trung dẫn dắt, 1 → 5 thương hiệu",
+      "kenh": "Học viện Detailing: lượt tiếp cận tăng 67 lần",
+      "so-lieu": "AP Car Care: đọc phễu khách → doanh thu mỗi tháng"
+    },
+    "seeCase": "Xem ca này",
+    "leadTitle": "Nhận đề xuất bước đầu cho cơ sở của anh chị",
+    "leadBody": "Anh Đức xem kết quả này rồi gọi lại qua Zalo, nói cụ thể nên làm gì trước. Chỉ cần 2 ô.",
+    "name": "Tên anh chị",
+    "phone": "Số Zalo / điện thoại",
+    "submit": "Gửi kết quả cho anh Đức",
+    "sending": "Đang gửi…",
+    "done": "Đã gửi. Anh Đức sẽ liên hệ qua Zalo sớm.",
+    "error": "Chưa gửi được. Anh chị bấm nhắn Zalo giúp em nhé.",
+    "orZalo": "Nhắn Zalo ngay",
+    "orCall": "Gọi {phone}",
+    "orBook": "Đặt lịch gặp",
+    "proofTitle": "Những cơ sở đã đi qua bước này",
+    "stats": [
+      {
+        "v": "> 1 tỷ/tháng",
+        "l": "Doanh thu trung bình AP Car Care",
+        "c": "ap-car-care"
+      },
+      {
+        "v": "292 → 20.115",
+        "l": "Lượt xem Facebook Khang Vũ sau 2 tháng",
+        "c": "khang-vu-auto-care"
+      },
+      {
+        "v": "4 → 250",
+        "l": "Học viên tiềm năng Học viện Detailing (T1 → T8/2026)",
+        "c": "hoc-vien-detailing-viet-nam"
+      }
+    ],
+    "howTitle": "Sau 60 giây sẽ thế nào?",
+    "how": [
+      {
+        "t": "Kiểm tra 60 giây",
+        "d": "Biết ngay chỗ yếu nhất của cơ sở."
+      },
+      {
+        "t": "Anh Đức gọi lại",
+        "d": "Trao đổi ngắn qua Zalo về đúng chỗ yếu đó."
+      },
+      {
+        "t": "Bước đầu tiên",
+        "d": "Một việc cụ thể làm trước, rồi mới bàn tiếp."
+      }
+    ],
+    "faqTitle": "Câu hỏi thường gặp",
+    "faq": [
+      {
+        "q": "Kiểm tra có mất phí không?",
+        "a": "Không. Kết quả hiện ngay trên trang, không cần email."
+      },
+      {
+        "q": "Để lại số thì có bị gọi bán hàng liên tục không?",
+        "a": "Không. Anh Đức tự gọi một lần để trao đổi về kết quả; anh chị không muốn thì dừng."
+      },
+      {
+        "q": "Cơ sở nhỏ, 1 chi nhánh có phù hợp không?",
+        "a": "Có. Khang Vũ Auto Care và Apex Autocare đều bắt đầu từ 1 cơ sở."
+      },
+      {
+        "q": "Có xuất hóa đơn VAT không?",
+        "a": "Có. Công ty TNHH Trí Đức Car Media xuất hóa đơn điện tử VAT cho doanh nghiệp."
+      }
+    ],
+    "finalTitle": "60 giây để biết nên bắt đầu từ đâu.",
+    "finalCta": "Làm bài kiểm tra"
   }
 }

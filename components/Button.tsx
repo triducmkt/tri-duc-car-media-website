@@ -12,7 +12,8 @@ type StaticPathname =
   | "/case-studies"
   | "/blog"
   | "/booking"
-  | "/contact";
+  | "/contact"
+  | "/check";
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold tracking-[0.01em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--color-brand-500] min-h-11";

@@ -86,6 +86,19 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <Link
+            href="/check"
+            aria-current={pathname === "/check" ? "page" : undefined}
+            className={`flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-bold ring-1 transition-colors ${
+              transparent ? "text-gold-400 ring-gold-400/50 hover:bg-white/10" : "text-ink ring-gold-500/50 hover:bg-gold-500/10"
+            }`}
+          >
+            <span className="relative flex h-2 w-2" aria-hidden>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-500" />
+            </span>
+            {t("check")}
+          </Link>
           <LanguageSwitcher tone={transparent ? "dark" : "light"} />
           <Button
             href="/booking"
@@ -112,6 +125,14 @@ export function Header() {
       {open ? (
         <div className="border-t border-black/5 bg-white lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
+            <Link
+              href="/check"
+              onClick={() => setOpen(false)}
+              className="mb-1 flex items-center gap-2 rounded-lg bg-gold-500/10 px-3 py-3 text-base font-bold text-ink ring-1 ring-gold-500/40"
+            >
+              <span className="h-2 w-2 rounded-full bg-gold-500" aria-hidden />
+              {t("check")}
+            </Link>
             {navItems.map((item) => (
               <Link
                 key={item.key}

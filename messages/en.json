@@ -11,7 +11,8 @@
     "caseStudies": "Case Studies",
     "blog": "Insights",
     "contact": "Contact",
-    "bookingCta": "Book a Consultation"
+    "bookingCta": "Book a Consultation",
+    "check": "60s check"
   },
   "footer": {
     "tagline": "Free the owner. Elevate the business.",
@@ -964,5 +965,160 @@
     },
     "book": "Book a meeting with Duc",
     "office": "Office"
+  },
+  "check": {
+    "metaTitle": "60-second shop check — what is holding the owner back? | Tri Duc Car Media",
+    "metaDescription": "5 questions, 60 seconds: see whether your service business is weakest in new customers, repeat customers, team, online channels or numbers, with a matching real case and the first step to take.",
+    "nav": "60s check",
+    "eyebrow": "Shop check · 60 seconds",
+    "heading": {
+      "default": "Where is your business stuck?",
+      "gara": "Where is your garage stuck?",
+      "cham-soc-xe": "Where is your car-care shop stuck?",
+      "spa": "Where is your spa stuck?",
+      "gym": "Where is your gym stuck?",
+      "dao-tao": "Where is your centre stuck?"
+    },
+    "sub": "5 questions, one tap each. The radar draws your shop’s health live, shows the weakest spot and what to do first.",
+    "free": "Free · No email needed · Instant result",
+    "step": "Question {n}/5",
+    "back": "Back",
+    "restart": "Start over",
+    "axes": {
+      "khach-moi": {
+        "label": "New customers",
+        "q": "Do new customers come in steadily each week?",
+        "o": [
+          "Hardly any",
+          "On and off",
+          "Fairly steady",
+          "Steady and growing"
+        ]
+      },
+      "khach-cu": {
+        "label": "Returning customers",
+        "q": "Do past customers come back without reminders?",
+        "o": [
+          "Few come back",
+          "Only when we call or message",
+          "Quite a few return",
+          "Most revenue is repeat"
+        ]
+      },
+      "doi-ngu": {
+        "label": "Team runs itself",
+        "q": "If you took 3 days off, what happens?",
+        "o": [
+          "Chaos, I can’t",
+          "It runs but they call constantly",
+          "It runs, some things wait",
+          "Business as usual"
+        ]
+      },
+      "kenh": {
+        "label": "Online channels",
+        "q": "How are your fanpage, Google and TikTok?",
+        "o": [
+          "Almost nothing",
+          "There, but posted irregularly",
+          "Posted steadily, few enquiries",
+          "Posted steadily, bringing customers"
+        ]
+      },
+      "so-lieu": {
+        "label": "Knowing the numbers",
+        "q": "Do you clearly know revenue, costs and where customers come from?",
+        "o": [
+          "Mostly in my head",
+          "A notebook, not kept up",
+          "Monthly figures",
+          "Weekly figures I decide by"
+        ]
+      }
+    },
+    "score": "Health score",
+    "weakest": "Weakest spot",
+    "nextStep": "Start with",
+    "fix": {
+      "khach-moi": "A Marketing – Sales system that brings new customers in every week.",
+      "khach-cu": "A customer-care routine so past customers come back on their own.",
+      "doi-ngu": "SOPs and team training so the shop runs while you are away.",
+      "kenh": "Fanpage, Google and TikTok in sync under one steady content plan.",
+      "so-lieu": "Revenue, costs and customer sources on one sheet you read weekly."
+    },
+    "proofLabel": "A real case like yours",
+    "proof": {
+      "khach-moi": "Khang Vu Auto Care: Facebook views 292 → 20,115 in 2 months",
+      "khach-cu": "AP Car Care: 60%+ of revenue from returning customers",
+      "doi-ngu": "AP ecosystem: CEO free to lead, 1 → 5 brands",
+      "kenh": "Detailing Academy: reach up 67x",
+      "so-lieu": "AP Car Care: reading the funnel from leads to revenue monthly"
+    },
+    "seeCase": "See this case",
+    "leadTitle": "Get the first-step proposal for your shop",
+    "leadBody": "Duc reviews this result and calls you on Zalo with what to do first. Just 2 fields.",
+    "name": "Your name",
+    "phone": "Zalo / phone number",
+    "submit": "Send my result to Duc",
+    "sending": "Sending…",
+    "done": "Sent. Duc will reach you on Zalo soon.",
+    "error": "Could not send. Please message us on Zalo.",
+    "orZalo": "Message on Zalo",
+    "orCall": "Call {phone}",
+    "orBook": "Book a meeting",
+    "proofTitle": "Businesses that took this step",
+    "stats": [
+      {
+        "v": "> 1B VND/month",
+        "l": "AP Car Care average revenue",
+        "c": "ap-car-care"
+      },
+      {
+        "v": "292 → 20,115",
+        "l": "Khang Vu Facebook views in 2 months",
+        "c": "khang-vu-auto-care"
+      },
+      {
+        "v": "4 → 250",
+        "l": "Detailing Academy prospective students (Jan → Aug 2026)",
+        "c": "hoc-vien-detailing-viet-nam"
+      }
+    ],
+    "howTitle": "What happens after 60 seconds?",
+    "how": [
+      {
+        "t": "60-second check",
+        "d": "See your shop’s weakest spot."
+      },
+      {
+        "t": "Duc calls back",
+        "d": "A short Zalo talk about that exact spot."
+      },
+      {
+        "t": "First step",
+        "d": "One concrete thing to do first, then we talk further."
+      }
+    ],
+    "faqTitle": "FAQ",
+    "faq": [
+      {
+        "q": "Is the check free?",
+        "a": "Yes. The result shows on the page; no email needed."
+      },
+      {
+        "q": "Will I get sales calls nonstop?",
+        "a": "No. Duc calls once to discuss the result; say stop and it stops."
+      },
+      {
+        "q": "Does a single small shop fit?",
+        "a": "Yes. Khang Vu Auto Care and Apex Autocare both started with one location."
+      },
+      {
+        "q": "Do you issue VAT invoices?",
+        "a": "Yes. Tri Duc Car Media Co., Ltd. issues electronic VAT invoices to businesses."
+      }
+    ],
+    "finalTitle": "60 seconds to know where to start.",
+    "finalCta": "Take the check"
   }
 }

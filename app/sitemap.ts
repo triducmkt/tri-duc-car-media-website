@@ -13,6 +13,7 @@ const staticPaths = [
   "/blog",
   "/booking",
   "/contact",
+  "/check",
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

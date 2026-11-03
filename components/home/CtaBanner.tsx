@@ -4,6 +4,7 @@ import { Button } from "@/components/Button";
 
 export function CtaBanner() {
   const t = useTranslations("home");
+  const tc = useTranslations("check");
 
   return (
     <section className="relative overflow-hidden bg-ink py-20 sm:py-24">
@@ -22,13 +23,18 @@ export function CtaBanner() {
         <p className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
           {t("ctaBannerBody")}
         </p>
-        <Button
-          href="/booking"
-          variant="secondary"
-          className="!bg-gold-500 !text-ink hover:!bg-gold-400"
-        >
-          {t("ctaBannerButton")}
-        </Button>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Button
+            href="/booking"
+            variant="secondary"
+            className="!bg-gold-500 !text-ink hover:!bg-gold-400"
+          >
+            {t("ctaBannerButton")}
+          </Button>
+          <Button href="/check" variant="secondary" className="!bg-transparent !text-white ring-1 ring-white/30 hover:!bg-white/10">
+            {tc("finalCta")} · 60s
+          </Button>
+        </div>
       </Container>
     </section>
   );
