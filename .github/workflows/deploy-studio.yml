@@ -2,12 +2,11 @@ name: Deploy Sanity Studio
 
 # Studio builds need more RAM than the office laptop has free, so it is
 # built here. Runs when the schema changes or on demand (Actions tab → Run).
-# Needs repo secret SANITY_DEPLOY_TOKEN = a Sanity API token with the
-# "Deploy Studio" permission (the SANITY_API_TOKEN robot is only an editor
-# and cannot deploy). Without it the job skips with a warning.
-# Secret added by the owner 2026-11-03 (Developer/Administrator role: the
-# CLI needs sanity.project.read, "Deploy Studio (Token only)" is not enough).
-# Owner re-checked token role + secret 2026-11-03.
+# Needs repo secret SANITY_DEPLOY_TOKEN = a Developer token created INSIDE
+# project 0lzmbuzo (owner account: Google sign-in). A token from any other
+# Sanity project fails with "missing grant sanity.project.read".
+# Without the secret the job skips with a warning.
+# Token re-created in project 0lzmbuzo by the owner 2026-11-03.
 on:
   workflow_dispatch:
   push:
