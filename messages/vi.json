@@ -476,7 +476,60 @@
     "value2Body": "Mọi giải pháp đều hướng tới SOP có thể lặp lại, không phụ thuộc cá nhân.",
     "value3Title": "Tăng trưởng bền vững",
     "value3Body": "Ưu tiên hệ thống dài hạn hơn các chiến dịch ngắn hạn thiếu nền tảng.",
-    "contactCta": "Đặt lịch trò chuyện cùng Trí Đức"
+    "contactCta": "Đặt lịch trò chuyện cùng Trí Đức",
+    "journey": {
+      "eyebrow": "Hành trình",
+      "heading": "Mỗi chặng là một cơ sở thật.",
+      "sub": "Cuộn xuống để đi cùng anh Đức qua những nơi đã làm. Số liệu lấy từ chính các dự án.",
+      "scroll": "Cuộn để đi tiếp",
+      "stopLabel": "Chặng {n}/{total}",
+      "caseLink": "Xem dự án",
+      "legalLink": "Xem hồ sơ pháp lý",
+      "stops": [
+        {
+          "date": "08/2023",
+          "place": "Tân Phú & Quận 7, TP.HCM",
+          "title": "Bắt đầu từ AP Car Care",
+          "body": "Xây thương hiệu “Chăm xe như chăm người thân” cho 2 chi nhánh.",
+          "metric": "Doanh thu trung bình hơn 1 tỷ/tháng · hơn 60% từ khách quay lại"
+        },
+        {
+          "date": "Từ 2023",
+          "place": "Hệ sinh thái AP",
+          "title": "Ngồi ghế CMO cho CEO Johnny Lộc Nguyễn",
+          "body": "Anh Johnny tập trung dẫn dắt, phần marketing do Trí Đức Car Media đảm nhận.",
+          "metric": "1 trung tâm → 5 thương hiệu · mở Bắc Ninh 10/2025"
+        },
+        {
+          "date": "Đầu 2025",
+          "place": "Học viện Detailing Việt Nam",
+          "title": "Kéo học viên quay lại",
+          "body": "Mở rộng đa kênh Fanpage + TikTok cho học viện đào tạo nghề.",
+          "metric": "Học viên tiềm năng: 4 → 250 lượt (T1 → T8/2026)"
+        },
+        {
+          "date": "07/2026",
+          "place": "Bình Dương & Rạch Giá",
+          "title": "Khang Vũ và Apex Autocare",
+          "body": "Facebook, TikTok, YouTube chạy đồng bộ ngay tháng đầu, chủ tiệm không phải tự đăng bài.",
+          "metric": "Lượt xem Facebook Khang Vũ: 292 → 20.115 sau 2 tháng"
+        },
+        {
+          "date": "22/10/2026",
+          "place": "Phú Thọ Hòa, TP.HCM",
+          "title": "Thành lập Công ty TNHH Trí Đức Car Media",
+          "body": "Có pháp nhân để ký hợp đồng và xuất hóa đơn VAT cho doanh nghiệp.",
+          "metric": "Mã số thuế 0319761584"
+        }
+      ],
+      "next": {
+        "date": "Chặng tiếp theo",
+        "title": "Cơ sở của anh chị",
+        "body": "Kể anh Đức nghe cơ sở đang kẹt ở đâu, rồi cùng xem nên bắt đầu từ chặng nào.",
+        "book": "Đặt lịch gặp anh Đức",
+        "zalo": "Nhắn Zalo trước"
+      }
+    }
   },
   "caseMap": {
     "eyebrow": "Bản đồ đồng hành",

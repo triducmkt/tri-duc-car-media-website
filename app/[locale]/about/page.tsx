@@ -6,6 +6,9 @@ import { Button } from "@/components/Button";
 import { FounderPortrait } from "@/components/FounderPortrait";
 import { FounderAura } from "@/components/about/FounderAura";
 import { Reveal } from "@/components/Reveal";
+import { FounderJourney, type JourneyStop } from "@/components/about/FounderJourney";
+import { getCaseStudies } from "@/lib/sanity/queries";
+import { urlForImage } from "@/lib/sanity/image";
 
 export async function generateMetadata({
   params,
@@ -25,6 +28,24 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("about");
+  const caseStudies = await getCaseStudies();
+
+  // Journey stops, same order as messages → about.journey.stops.
+  const cover = (slug: string) => {
+    const img = caseStudies.find((c) => c.slug === slug)?.coverImage;
+    return img ? urlForImage(img).width(240).height(300).fit("crop").auto("format").url() : undefined;
+  };
+  const caseStop = (slug: string): JourneyStop => ({
+    href: { pathname: "/case-studies/[slug]", params: { slug } },
+    image: cover(slug),
+  });
+  const journey: JourneyStop[] = [
+    caseStop("ap-car-care"),
+    caseStop("johnny-loc-nguyen-he-sinh-thai-ap"),
+    caseStop("hoc-vien-detailing-viet-nam"),
+    { ...caseStop("khang-vu-auto-care"), image: "/behind/khang-vu.webp" },
+    { href: { pathname: "/contact", hash: "phap-ly" } },
+  ];
 
   const values = [
     { Icon: BondIcon, title: t("value1Title"), body: t("value1Body") },
@@ -67,6 +88,8 @@ export default async function AboutPage({
           </div>
         </Container>
       </section>
+
+      <FounderJourney stops={journey} />
 
       <section className="bg-paper py-20 sm:py-28">
         <Container className="mx-auto flex max-w-3xl flex-col gap-10">

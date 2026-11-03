@@ -476,7 +476,60 @@
     "value2Body": "Every solution is designed as a repeatable SOP, not dependent on any one person.",
     "value3Title": "Sustainable growth",
     "value3Body": "Long-term systems are prioritized over short-lived campaigns without foundation.",
-    "contactCta": "Book a conversation with Tri Duc"
+    "contactCta": "Book a conversation with Tri Duc",
+    "journey": {
+      "eyebrow": "The journey",
+      "heading": "Every stop is a real business.",
+      "sub": "Scroll to travel with Duc through the places he has worked. Figures come from the projects themselves.",
+      "scroll": "Scroll to continue",
+      "stopLabel": "Stop {n}/{total}",
+      "caseLink": "See the project",
+      "legalLink": "See company records",
+      "stops": [
+        {
+          "date": "08/2023",
+          "place": "Tan Phu & District 7, HCMC",
+          "title": "Starting at AP Car Care",
+          "body": "Building the “care for your car like family” brand across 2 branches.",
+          "metric": "Average revenue over 1 billion VND/month · 60%+ from returning customers"
+        },
+        {
+          "date": "Since 2023",
+          "place": "AP ecosystem",
+          "title": "Acting CMO for CEO Johnny Loc Nguyen",
+          "body": "Johnny leads the business; Tri Duc Car Media runs the marketing.",
+          "metric": "1 centre → 5 brands · Bac Ninh opened 10/2025"
+        },
+        {
+          "date": "Early 2025",
+          "place": "Vietnam Detailing Academy",
+          "title": "Bringing students back",
+          "body": "Expanding to Fanpage + TikTok for a vocational training academy.",
+          "metric": "Prospective students: 4 → 250 (Jan → Aug 2026)"
+        },
+        {
+          "date": "07/2026",
+          "place": "Binh Duong & Rach Gia",
+          "title": "Khang Vu and Apex Autocare",
+          "body": "Facebook, TikTok and YouTube in sync from month one, without the owner posting.",
+          "metric": "Khang Vu Facebook views: 292 → 20,115 in 2 months"
+        },
+        {
+          "date": "22/10/2026",
+          "place": "Phu Tho Hoa, HCMC",
+          "title": "Tri Duc Car Media Co., Ltd. founded",
+          "body": "A legal entity that signs contracts and issues VAT invoices to businesses.",
+          "metric": "Tax code 0319761584"
+        }
+      ],
+      "next": {
+        "date": "Next stop",
+        "title": "Your business",
+        "body": "Tell Duc where your shop is stuck, then decide together which stop to start from.",
+        "book": "Book a meeting with Duc",
+        "zalo": "Message on Zalo first"
+      }
+    }
   },
   "caseMap": {
     "eyebrow": "Where we work",
