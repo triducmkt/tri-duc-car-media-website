@@ -1,7 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
-import SystemHero from "@/components/home/SystemHero";
+import { FootageHero } from "@/components/home/FootageHero";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { ConsultReel } from "@/components/home/ConsultReel";
 import { FreedomCalculator } from "@/components/home/FreedomCalculator";
 import { ProofEngine } from "@/components/home/ProofEngine";
 import { VatAdvantage } from "@/components/VatAdvantage";
@@ -27,8 +26,7 @@ export default async function HomePage({
 
   return (
     <>
-      <SystemHero skipHref="#tinh-gio" />
-      <ConsultReel />
+      <FootageHero skipHref="#tinh-gio" />
       <div aria-hidden className="h-20 bg-gradient-to-b from-ink to-paper sm:h-28" />
       <FreedomCalculator />
       <ProofEngine />
