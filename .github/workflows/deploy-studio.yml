@@ -6,7 +6,8 @@ name: Deploy Sanity Studio
 # project 0lzmbuzo (owner account: Google sign-in). A token from any other
 # Sanity project fails with "missing grant sanity.project.read".
 # Without the secret the job skips with a warning.
-# Token re-created in project 0lzmbuzo by the owner 2026-11-03.
+# Token re-created in project 0lzmbuzo by the owner 2026-11-03; the Editor
+# role lacks deployStudio/deploySchema, so it was replaced with Administrator.
 on:
   workflow_dispatch:
   push:
