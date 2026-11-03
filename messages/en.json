@@ -772,5 +772,76 @@
     "copyAll": "Copy company details",
     "lookup": "Look up",
     "note": "Your accountant needs supplier details? Copy the full name, tax code and address in one tap."
+  },
+  "channels": {
+    "eyebrow": "Tri Duc channels",
+    "heading": "Reach us on whichever channel you already use.",
+    "sub": "Watch Duc explain operations in one minute, read real shop stories, or message him on Zalo. Pick a channel on the orbit.",
+    "tablist": "Choose a channel",
+    "items": {
+      "video": {
+        "label": "Video",
+        "title": "Hear Duc in one minute",
+        "note": "Each video answers one question owners ask most."
+      },
+      "facebook": {
+        "label": "Fanpage",
+        "title": "Read real shop stories",
+        "note": "Posts, photos and behind-the-scenes from the shops Duc works with."
+      },
+      "zalo": {
+        "label": "Zalo",
+        "title": "Message Duc directly",
+        "note": "His personal Zalo; he reads and replies himself."
+      },
+      "phone": {
+        "label": "Call",
+        "title": "Call when it can’t wait",
+        "note": "Tap the number to call from your phone."
+      },
+      "visit": {
+        "label": "Meet",
+        "title": "Meet at your shop",
+        "note": "Duc sees your process and talks to your staff before proposing anything."
+      }
+    },
+    "topics": {
+      "all": "All",
+      "van-hanh": "Operations",
+      "khach-hang": "Customers",
+      "dong-tien": "Cash flow",
+      "marketing": "Marketing"
+    },
+    "play": "Play video",
+    "views": "{n} views",
+    "playlist": "Video list",
+    "youtubeChannel": "Visit the YouTube channel",
+    "youtubeSubscribe": "Subscribe",
+    "fanpageOpen": "Open the Tri Duc Car Media fanpage",
+    "fanpageFallback": "Don’t see the fanpage? Your browser may block Facebook content; use the button below to open it directly.",
+    "qrAlt": "Duc’s Zalo QR code",
+    "qrCaption": "Scan with Zalo on your phone",
+    "starterTitle": "Not sure how to start? Pick a line and we copy it for you:",
+    "starters": [
+      "Hi Duc, my shop depends on me too much; a few days off and things fall apart.",
+      "Hi Duc, my ads run but customers don’t come steadily. Could you take a look?",
+      "Hi Duc, I’d like to ask about the operations and marketing package for my shop."
+    ],
+    "copied": "Copied. Open Zalo and paste to send.",
+    "zaloOpen": "Message Duc on Zalo",
+    "phoneNote": "Can’t talk now? Message the same number on Zalo.",
+    "phoneToZalo": "Switch to Zalo",
+    "emailLabel": "Or email",
+    "visitCaption": "Real behind-the-scenes: a working day at Khang Vu Auto Care and a content shoot.",
+    "photos": {
+      "studio": "Content shoot in the studio",
+      "khang-vu": "At the Khang Vu front desk",
+      "xuong": "Walking through the workshop",
+      "san": "Talking outside the shop",
+      "gam-xe": "With the tech team at a car",
+      "ban-tron": "Sitting down with the owner"
+    },
+    "book": "Book a meeting with Duc",
+    "office": "Office"
   }
 }

@@ -30,6 +30,7 @@ export const COMPANY = {
   siteUrl: "https://triduccar.media",
   fanpage: "https://www.facebook.com/triduccar.media",
   zalo: "https://zalo.me/0769918685",
+  youtube: "https://www.youtube.com/@TangTriDuc1989",
   /** Public lookup of the tax code on the national tax portal. */
   taxLookupUrl: "https://tracuunnt.gdt.gov.vn/tcnnt/mstdn.jsp",
 } as const;
@@ -68,6 +69,6 @@ export function organizationJsonLd() {
     },
     founder: { "@type": "Person", name: COMPANY.representative, jobTitle: COMPANY.representativeTitle },
     areaServed: "VN",
-    sameAs: [COMPANY.fanpage],
+    sameAs: [COMPANY.fanpage, COMPANY.youtube],
   };
 }

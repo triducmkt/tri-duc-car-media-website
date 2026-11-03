@@ -772,5 +772,76 @@
     "copyAll": "Chép thông tin công ty",
     "lookup": "Tra cứu",
     "note": "Kế toán bên anh chị cần thông tin nhà cung cấp? Bấm để chép đầy đủ tên, MST, địa chỉ."
+  },
+  "channels": {
+    "eyebrow": "Kênh của Trí Đức",
+    "heading": "Anh chị quen dùng kênh nào, mình gặp nhau ở đó.",
+    "sub": "Xem anh Đức nói chuyện vận hành trong 1 phút, đọc chuyện cơ sở thật, hay nhắn thẳng qua Zalo. Chọn một kênh trên quỹ đạo.",
+    "tablist": "Chọn kênh",
+    "items": {
+      "video": {
+        "label": "Video",
+        "title": "Xem anh Đức nói trong 1 phút",
+        "note": "Mỗi video trả lời đúng một câu hỏi chủ cơ sở hay gặp."
+      },
+      "facebook": {
+        "label": "Fanpage",
+        "title": "Đọc chuyện cơ sở thật",
+        "note": "Bài viết, hình ảnh và hậu trường từ các cơ sở anh Đức đang đồng hành."
+      },
+      "zalo": {
+        "label": "Zalo",
+        "title": "Nhắn thẳng cho anh Đức",
+        "note": "Zalo cá nhân, anh Đức tự đọc và trả lời."
+      },
+      "phone": {
+        "label": "Gọi",
+        "title": "Gọi khi cần nói ngay",
+        "note": "Bấm số để gọi trên điện thoại."
+      },
+      "visit": {
+        "label": "Gặp mặt",
+        "title": "Gặp tận cơ sở",
+        "note": "Anh Đức đến xem quy trình, nói chuyện với nhân viên rồi mới đề xuất."
+      }
+    },
+    "topics": {
+      "all": "Tất cả",
+      "van-hanh": "Vận hành",
+      "khach-hang": "Khách hàng",
+      "dong-tien": "Dòng tiền",
+      "marketing": "Marketing"
+    },
+    "play": "Phát video",
+    "views": "{n} lượt xem",
+    "playlist": "Danh sách video",
+    "youtubeChannel": "Xem kênh YouTube",
+    "youtubeSubscribe": "Đăng ký kênh",
+    "fanpageOpen": "Mở fanpage Trí Đức Car Media",
+    "fanpageFallback": "Không thấy khung fanpage? Trình duyệt có thể đang chặn nội dung Facebook, anh chị bấm nút bên dưới để mở trực tiếp.",
+    "qrAlt": "Mã QR Zalo của anh Đức",
+    "qrCaption": "Quét bằng Zalo trên điện thoại",
+    "starterTitle": "Chưa biết mở lời? Chọn một câu, em chép sẵn:",
+    "starters": [
+      "Chào anh Đức, cơ sở em đang rất phụ thuộc vào em, nghỉ vài ngày là rối.",
+      "Chào anh Đức, em chạy quảng cáo mà khách không đều, muốn nhờ anh xem giúp.",
+      "Chào anh Đức, em muốn hỏi về gói vận hành và marketing cho cơ sở của em."
+    ],
+    "copied": "Đã chép. Mở Zalo rồi dán vào là gửi được.",
+    "zaloOpen": "Mở Zalo nhắn anh Đức",
+    "phoneNote": "Không tiện nói chuyện? Nhắn Zalo cùng số này.",
+    "phoneToZalo": "Chuyển sang Zalo",
+    "emailLabel": "Hoặc gửi email",
+    "visitCaption": "Hậu trường thật: buổi làm việc tại Khang Vũ Auto Care và buổi quay nội dung.",
+    "photos": {
+      "studio": "Quay nội dung tại studio",
+      "khang-vu": "Trao đổi tại quầy lễ tân Khang Vũ",
+      "xuong": "Xem quy trình trong xưởng",
+      "san": "Bàn chuyện trước cửa cơ sở",
+      "gam-xe": "Cùng đội kỹ thuật xem xe",
+      "ban-tron": "Ngồi lại với chủ cơ sở"
+    },
+    "book": "Đặt lịch gặp anh Đức",
+    "office": "Văn phòng"
   }
 }

@@ -9,7 +9,8 @@ import { Process } from "@/components/home/Process";
 import { CaseStudiesPreview } from "@/components/home/CaseStudiesPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { getFeaturedCaseStudies, getTestimonials } from "@/lib/sanity/queries";
+import { ChannelOrbit } from "@/components/channels/ChannelOrbit";
+import { getChannelVideos, getFeaturedCaseStudies, getTestimonials } from "@/lib/sanity/queries";
 
 export default async function HomePage({
   params,
@@ -19,9 +20,10 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const [caseStudies, testimonials] = await Promise.all([
+  const [caseStudies, testimonials, videos] = await Promise.all([
     getFeaturedCaseStudies(3),
     getTestimonials(),
+    getChannelVideos(locale),
   ]);
 
   return (
@@ -35,6 +37,7 @@ export default async function HomePage({
         <ServicesGrid />
       </div>
       <FounderIntro />
+      <ChannelOrbit videos={videos} />
       <Process />
       <CaseStudiesPreview items={caseStudies} locale={locale} />
       <Testimonials items={testimonials} locale={locale} />

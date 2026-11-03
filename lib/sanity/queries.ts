@@ -1,5 +1,6 @@
 import { sanityClient, isSanityConfigured } from "./client";
 import type { CaseStudy, BlogPost, Testimonial } from "./types";
+import { FALLBACK_VIDEOS, videoSource, type ChannelVideo, type VideoTopic } from "@/lib/channels";
 
 const caseStudyProjection = `{
   _id,
@@ -100,4 +101,35 @@ export function getTestimonials() {
     {},
     [],
   );
+}
+
+type SanityVideo = {
+  _id: string;
+  title?: { vi?: string; en?: string };
+  url?: string;
+  fileUrl?: string;
+  vertical?: boolean;
+  topic?: VideoTopic;
+};
+
+/** Videos for the channel hub; falls back to the curated YouTube shorts. */
+export async function getChannelVideos(locale: "vi" | "en"): Promise<ChannelVideo[]> {
+  const rows = await safeFetch<SanityVideo[]>(
+    `*[_type == "video" && (defined(url) || defined(file))] | order(coalesce(order, 999) asc, _createdAt desc)[0...24]{
+      _id, title, url, "fileUrl": file.asset->url, vertical, topic
+    }`,
+    {},
+    [],
+  );
+  const videos = rows
+    .map((r) => ({
+      id: r._id,
+      title: r.title?.[locale] || r.title?.vi || "",
+      url: r.url,
+      fileUrl: r.fileUrl,
+      vertical: r.vertical ?? true,
+      topic: r.topic,
+    }))
+    .filter((v) => videoSource(v));
+  return videos.length > 0 ? videos : FALLBACK_VIDEOS;
 }

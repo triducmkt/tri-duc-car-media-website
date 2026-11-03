@@ -2,6 +2,7 @@ import { localizedString, localizedText, localizedBlockContent } from "./localiz
 import { caseStudy } from "./caseStudy";
 import { blogPost } from "./blogPost";
 import { testimonial } from "./testimonial";
+import { video } from "./video";
 
 export const schemaTypes = [
   localizedString,
@@ -10,4 +11,5 @@ export const schemaTypes = [
   caseStudy,
   blogPost,
   testimonial,
+  video,
 ];
