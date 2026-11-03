@@ -32,6 +32,10 @@ jobs:
             echo "ok=false" >> "$GITHUB_OUTPUT"
           else
             echo "ok=true" >> "$GITHUB_OUTPUT"
+            # Which Sanity role does this token have? (prints names only, never the token)
+            ROLES=$(curl -s -H "Authorization: Bearer $SANITY_AUTH_TOKEN" https://api.sanity.io/v2021-06-07/users/me \
+              | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{const j=JSON.parse(s);console.log((j.name||'?')+' | roles: '+(j.roles||[]).map(r=>r.name).join(','))}catch{console.log('unreadable response')}})")
+            echo "::notice::SANITY_DEPLOY_TOKEN belongs to: ${ROLES}"
           fi
       - uses: actions/checkout@v4
         if: steps.token.outputs.ok == 'true'
