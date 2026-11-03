@@ -7,6 +7,7 @@ name: Deploy Sanity Studio
 # and cannot deploy). Without it the job skips with a warning.
 # Secret added by the owner 2026-11-03 (Developer/Administrator role: the
 # CLI needs sanity.project.read, "Deploy Studio (Token only)" is not enough).
+# Owner re-checked token role + secret 2026-11-03.
 on:
   workflow_dispatch:
   push:
