@@ -40,5 +40,15 @@ jobs:
           cache: npm
       - run: npm ci
         if: steps.token.outputs.ok == 'true'
-      - run: npx sanity deploy -y
+      - name: Deploy Studio
         if: steps.token.outputs.ok == 'true'
+        run: |
+          set -o pipefail
+          if ! npx sanity deploy -y 2>&1 | tee deploy.log; then
+            # Surface the tail of the log as annotations (readable without
+            # login); GitHub masks the secret value automatically.
+            tail -n 25 deploy.log | sed 's/\x1b\[[0-9;]*m//g' | grep -v '^\s*$' | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+            exit 1
+          fi
