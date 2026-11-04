@@ -1119,6 +1119,26 @@
       }
     ],
     "finalTitle": "60 seconds to know where to start.",
-    "finalCta": "Take the check"
+    "finalCta": "Take the check",
+    "zaloResult": "Send my result via Zalo",
+    "zaloCopied": "Result copied. Open Zalo, paste and send it to Duc.",
+    "zaloText": "Hi Duc, I just did the 60-second shop check: {score}/100, weakest in {weakest}. Where should I start?",
+    "prefilled": "Your answer from the article is filled in",
+    "prompt": {
+      "eyebrow": "Quick score · 1 question",
+      "heading": "This article is about “{axis}”. Where is your shop on it?",
+      "sub": "Pick a level. 4 more questions (about 40 seconds) show your weakest spot and what to do first.",
+      "or": "Or ask Duc directly:"
+    },
+    "axesTitle": "5 axes of a service business’s health",
+    "axesSub": "Each axis is a place owners get stuck. Read the articles for the axis you are weakest on.",
+    "signs": {
+      "khach-moi": "Revenue swings with the season; ads cost money but customers don’t come steadily.",
+      "khach-cu": "Customers leave after one visit, come back only when reminded, rarely refer others.",
+      "doi-ngu": "The owner can’t leave for a day; staff ask about everything.",
+      "kenh": "The fanpage is posted on and off; nobody owns content.",
+      "so-lieu": "Unclear how much this month made or which channel customers come from."
+    },
+    "readArticle": "Read"
   }
 }

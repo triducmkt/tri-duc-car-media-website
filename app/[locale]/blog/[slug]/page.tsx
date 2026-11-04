@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { CalendarDays, Clock, FileCheck2, MessageCircle } from "lucide-react";
+import { CalendarDays, Clock, FileCheck2 } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Link, getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -14,6 +14,8 @@ import { urlForImage } from "@/lib/sanity/image";
 import type { SanityImage } from "@/lib/sanity/types";
 import { COMPANY } from "@/lib/company";
 import { readingMinutes } from "@/lib/blog";
+import { axisForArticle } from "@/lib/shopCheck";
+import { RadarPrompt } from "@/components/check/RadarPrompt";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || COMPANY.siteUrl;
 
@@ -198,29 +200,11 @@ export default async function BlogPostPage({
           </ul>
         ) : null}
 
-        <aside className="flex flex-col gap-4 rounded-2xl bg-ink p-6 text-white sm:p-8">
-          <p className="font-serif text-2xl font-bold leading-snug">{t("ctaHeading")}</p>
-          <p className="text-white/70">{t("ctaBody")}</p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/booking"
-              className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-3 text-sm font-bold text-ink hover:bg-gold-400"
-            >
-              {t("ctaBook")}
-            </Link>
-            <a
-              href={COMPANY.zalo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold ring-1 ring-white/25 hover:bg-white/10"
-            >
-              <MessageCircle size={16} aria-hidden /> {t("ctaZalo")}
-            </a>
-          </div>
-          <p className="inline-flex items-center gap-2 text-xs text-white/55">
-            <FileCheck2 size={14} aria-hidden /> {COMPANY.legalNameVi} · MST {COMPANY.taxCode} · {t("ctaVat")}
-          </p>
-        </aside>
+        {/* Organic reader → landing page: this article's axis, pre-filled. */}
+        <RadarPrompt axis={axisForArticle(item.slug, item.category)} slug={item.slug} />
+        <p className="-mt-6 inline-flex items-center gap-2 text-xs text-ink-muted">
+          <FileCheck2 size={14} aria-hidden /> {COMPANY.legalNameVi} · MST {COMPANY.taxCode} · {t("ctaVat")}
+        </p>
 
         {item.sourceUrl ? (
           <a

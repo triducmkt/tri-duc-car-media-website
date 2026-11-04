@@ -8,6 +8,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { entryReferrer } from "@/lib/shopCheck";
 
 const navItems = [
   { href: "/" as const, key: "home" as const },
@@ -29,6 +30,11 @@ export function Header() {
   // past it, instead of cutting a white bar across the cinematic intro.
   const isHome = pathname === "/";
   const transparent = isHome && !scrolled;
+
+  // Remember the visit's first external referrer (organic vs ads) for lead emails.
+  useEffect(() => {
+    entryReferrer();
+  }, []);
 
   useEffect(() => {
     if (!isHome) return;

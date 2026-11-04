@@ -1,23 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowLeft, ArrowRight, CalendarCheck, Check, MessageCircle, Phone, RotateCcw, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Link } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
-import { ATTRIBUTION_KEYS, AXIS_KEYS, CHECK_AXES, LEVELS, checkScore, weakestAxis, type CheckAxis } from "@/lib/shopCheck";
+import { ATTRIBUTION_KEYS, AXIS_KEYS, CHECK_AXES, LEVELS, checkScore, entryReferrer, weakestAxis, type CheckAxis } from "@/lib/shopCheck";
 import { trackEvent } from "@/lib/tracking/grid";
+import { CheckRadar } from "./CheckRadar";
 
-/** Ads landing hero: "Kiểm tra cơ sở 60 giây". A three.js pentagon radar
- *  (5 axes of a service shop) morphs live as the visitor answers; the result
- *  names the weakest axis, the first fix and a matching real case, then a
- *  2-field form posts to /api/check with the ad attribution (utm_*, gclid,
- *  ?nganh=) and pushes `generate_lead` to dataLayer for Google Ads later. */
+/** Landing hero: "Kiểm tra cơ sở 60 giây". The 3D radar (CheckRadar) morphs
+ *  live as the visitor answers; the result names the weakest axis, the first
+ *  fix and a matching real case, then either a 2-field form → /api/check or
+ *  "send my result via Zalo" (copied text). Answers can arrive pre-filled
+ *  from a Kiến thức article (?doi-ngu=1&from=<slug>, see RadarPrompt).
+ *  Attribution sent with the lead: utm_*, gclid, ?nganh=, from, entry_ref
+ *  (first external referrer of the visit → organic vs ads). dataLayer /
+ *  gtag `generate_lead` fire on submit for Google Ads later. */
 
-const R = 1.55; // radar radius at the top level
-// First axis on top, so the bottom stays clear for the score.
-const ANGLE = (k: number) => Math.PI / 2 - (k * Math.PI * 2) / AXIS_KEYS.length;
 const STORE = "td-check-attribution";
 
 type Values = Partial<Record<CheckAxis, number>>;
@@ -26,19 +27,18 @@ export function ShopCheck({ variant }: { variant?: string }) {
   const t = useTranslations("check");
   const [values, setValues] = useState<Values>({});
   const [step, setStep] = useState(0);
+  const [prefilled, setPrefilled] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [zaloCopied, setZaloCopied] = useState(false);
   const [attribution, setAttribution] = useState<Record<string, string>>({});
-  const sectionRef = useRef<HTMLElement>(null);
-  const hostRef = useRef<HTMLDivElement>(null);
-  const labelRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  const sceneState = useRef({ values: new Array(AXIS_KEYS.length).fill(-1), weakest: -1 });
 
   const done = step >= AXIS_KEYS.length;
   const score = checkScore(values);
   const weakest = weakestAxis(values);
   const heading = t.has(`heading.${variant}`) ? t(`heading.${variant}`) : t("heading.default");
 
-  // Ad attribution: first landing wins for the session.
+  // Read the URL once: attribution (first landing wins for the session) and
+  // any answer pre-filled by an article.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const fresh: Record<string, string> = {};
@@ -46,35 +46,56 @@ export function ShopCheck({ variant }: { variant?: string }) {
       const v = params.get(k);
       if (v) fresh[k] = v.slice(0, 200);
     }
+    const entry = entryReferrer();
+    if (entry) fresh.entry_ref = entry;
     let stored: Record<string, string> = {};
     try {
       stored = JSON.parse(sessionStorage.getItem(STORE) || "{}");
       if (!Object.keys(stored).length && Object.keys(fresh).length) sessionStorage.setItem(STORE, JSON.stringify(fresh));
     } catch {}
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- read once from the URL on mount
-    setAttribution(Object.keys(stored).length ? stored : fresh);
-    trackEvent("check_view", { variant: variant ?? "default", source: fresh.utm_source ?? "" });
-  }, [variant]);
 
-  useEffect(() => {
-    sceneState.current.values = AXIS_KEYS.map((k) => values[k] ?? -1);
-    sceneState.current.weakest = done ? AXIS_KEYS.indexOf(weakest) : -1;
-  }, [values, done, weakest]);
+    const pre: Values = {};
+    for (const k of AXIS_KEYS) {
+      const n = Number(params.get(k));
+      if (params.has(k) && Number.isInteger(n) && n >= 0 && n < LEVELS) pre[k] = n;
+    }
+    const first = AXIS_KEYS.findIndex((k) => pre[k] === undefined);
+    /* eslint-disable react-hooks/set-state-in-effect -- read once from the URL on mount */
+    setAttribution({ ...fresh, ...stored, ...(fresh.from ? { from: fresh.from } : {}) });
+    if (Object.keys(pre).length) {
+      setValues(pre);
+      setStep(first < 0 ? AXIS_KEYS.length : first);
+      setPrefilled(true);
+    }
+    /* eslint-enable react-hooks/set-state-in-effect */
+    trackEvent("check_view", { variant: variant ?? "default", source: fresh.utm_source ?? entry ?? "", from: fresh.from ?? "", prefilled: Object.keys(pre).length });
+  }, [variant]);
 
   const answer = (axis: CheckAxis, level: number) => {
     const next = { ...values, [axis]: level };
     setValues(next);
-    setStep((s) => s + 1);
+    // Jump to the next unanswered question (some may be pre-filled).
+    const nextStep = AXIS_KEYS.findIndex((k) => next[k] === undefined);
+    setStep(nextStep < 0 ? AXIS_KEYS.length : nextStep);
     trackEvent("check_answer", { axis, level });
-    if (AXIS_KEYS.every((k) => next[k] !== undefined)) {
-      trackEvent("check_complete", { score: checkScore(next), weakest: weakestAxis(next) });
-    }
+    if (nextStep < 0) trackEvent("check_complete", { score: checkScore(next), weakest: weakestAxis(next), entry: attribution.entry_ref ?? "" });
   };
 
   const restart = () => {
     setValues({});
     setStep(0);
+    setPrefilled(false);
     setStatus("idle");
+    setZaloCopied(false);
+  };
+
+  const answerLines = () => AXIS_KEYS.map((k) => `${t(`axes.${k}.label`)}: ${(t.raw(`axes.${k}.o`) as string[])[values[k] ?? 0]}`);
+
+  const conversion = (channel: "form" | "zalo") => {
+    // Google Ads / GTM conversion hook (no-op until a tag is installed).
+    const w = window as unknown as { dataLayer?: unknown[]; gtag?: (...a: unknown[]) => void };
+    w.dataLayer?.push({ event: "generate_lead", form: "shop_check", channel, score, weakest });
+    w.gtag?.("event", "generate_lead", { form: "shop_check", channel, value: 1 });
   };
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
@@ -90,238 +111,40 @@ export function ShopCheck({ variant }: { variant?: string }) {
           phone: fd.get("phone"),
           score,
           weakest: t(`axes.${weakest}.label`),
-          answers: AXIS_KEYS.map((k) => `${t(`axes.${k}.label`)}: ${(t.raw(`axes.${k}.o`) as string[])[values[k] ?? 0]}`),
+          answers: answerLines(),
           attribution,
           page: window.location.pathname + window.location.search,
         }),
       });
       if (!res.ok) throw new Error(String(res.status));
       setStatus("done");
-      trackEvent("check_lead", { score, weakest });
-      // Google Ads / GTM conversion hook (no-op until a tag is installed).
-      const w = window as unknown as { dataLayer?: unknown[]; gtag?: (...a: unknown[]) => void };
-      w.dataLayer?.push({ event: "generate_lead", form: "shop_check", score, weakest });
-      w.gtag?.("event", "generate_lead", { form: "shop_check", value: 1 });
+      trackEvent("check_lead", { score, weakest, channel: "form", entry: attribution.entry_ref ?? "", from: attribution.from ?? "" });
+      conversion("form");
     } catch {
       setStatus("error");
     }
   };
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const host = hostRef.current;
-    if (!section || !host) return;
-    let disposed = false;
-    let cleanup = () => {};
-
-    const io = new IntersectionObserver(
-      async (entries) => {
-        if (!entries.some((e) => e.isIntersecting)) return;
-        io.disconnect();
-        const THREE = await import("three");
-        if (disposed) return;
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const K = AXIS_KEYS.length;
-
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        host.appendChild(renderer.domElement);
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 50);
-        camera.position.set(0, 0, 5.6);
-        const radar = new THREE.Group();
-        radar.rotation.x = -0.55;
-        scene.add(radar);
-        const ratio = renderer.getPixelRatio();
-
-        const outline = (r: number, z: number, color: number, opacity: number) => {
-          const pts: number[] = [];
-          for (let k = 0; k < K; k++) pts.push(Math.cos(ANGLE(k)) * r, Math.sin(ANGLE(k)) * r, z);
-          const geo = new THREE.BufferGeometry();
-          geo.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
-          const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity });
-          const line = new THREE.LineLoop(geo, mat);
-          radar.add(line);
-          return { geo, mat };
-        };
-        // Grid rings per level + gold target ring + spokes.
-        const statics = [1, 2, 3].map((l) => outline((R * l) / (LEVELS - 1), 0, 0x7fa2ef, l === 3 ? 0 : 0.14));
-        const target = outline(R, 0, 0xf0c069, 0.55);
-        const spokePts: number[] = [];
-        for (let k = 0; k < K; k++) spokePts.push(0, 0, 0, Math.cos(ANGLE(k)) * R, Math.sin(ANGLE(k)) * R, 0);
-        const spokeGeo = new THREE.BufferGeometry();
-        spokeGeo.setAttribute("position", new THREE.Float32BufferAttribute(spokePts, 3));
-        const spokeMat = new THREE.LineBasicMaterial({ color: 0x7fa2ef, transparent: true, opacity: 0.18 });
-        radar.add(new THREE.LineSegments(spokeGeo, spokeMat));
-
-        // The live shape: a lifted plate (top + bottom outline, side edges, fill).
-        const shapeTop = new Float32Array(K * 3), shapeBot = new Float32Array(K * 3);
-        const mkLoop = (arr: Float32Array, color: number, opacity: number) => {
-          const geo = new THREE.BufferGeometry();
-          geo.setAttribute("position", new THREE.BufferAttribute(arr, 3));
-          const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity });
-          radar.add(new THREE.LineLoop(geo, mat));
-          return { geo, mat };
-        };
-        const top = mkLoop(shapeTop, 0x8fb6f9, 0.95);
-        const bot = mkLoop(shapeBot, 0x4285f4, 0.35);
-        const sides = new Float32Array(K * 6);
-        const sideGeo = new THREE.BufferGeometry();
-        sideGeo.setAttribute("position", new THREE.BufferAttribute(sides, 3));
-        const sideMat = new THREE.LineBasicMaterial({ color: 0x4285f4, transparent: true, opacity: 0.4 });
-        radar.add(new THREE.LineSegments(sideGeo, sideMat));
-        const fill = new Float32Array(K * 9);
-        const fillGeo = new THREE.BufferGeometry();
-        fillGeo.setAttribute("position", new THREE.BufferAttribute(fill, 3));
-        const fillMat = new THREE.MeshBasicMaterial({ color: 0x4285f4, transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false });
-        radar.add(new THREE.Mesh(fillGeo, fillMat));
-
-        // Glow points: vertices + signals running around the outline.
-        const SIG = 60;
-        const n = K + SIG;
-        const gp = new Float32Array(n * 3), ga = new Float32Array(n), gs = new Float32Array(n), gc = new Float32Array(n * 3);
-        const glowGeo = new THREE.BufferGeometry();
-        glowGeo.setAttribute("position", new THREE.BufferAttribute(gp, 3));
-        glowGeo.setAttribute("aAlpha", new THREE.BufferAttribute(ga, 1));
-        glowGeo.setAttribute("aSize", new THREE.BufferAttribute(gs, 1));
-        glowGeo.setAttribute("aColor", new THREE.BufferAttribute(gc, 3));
-        const glowMat = new THREE.ShaderMaterial({
-          transparent: true,
-          depthWrite: false,
-          blending: THREE.AdditiveBlending,
-          uniforms: { uScale: { value: ratio } },
-          vertexShader: /* glsl */ `
-            attribute float aAlpha; attribute float aSize; attribute vec3 aColor;
-            uniform float uScale; varying float vA; varying vec3 vC;
-            void main() {
-              vA = aAlpha; vC = aColor;
-              gl_PointSize = aSize * uScale;
-              gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-            }`,
-          fragmentShader: /* glsl */ `
-            varying float vA; varying vec3 vC;
-            void main() {
-              float d = length(gl_PointCoord - 0.5);
-              float core = smoothstep(0.15, 0.0, d);
-              float halo = pow(smoothstep(0.5, 0.0, d), 2.2);
-              gl_FragColor = vec4(vC * (0.75 + core), (halo * 0.8 + core) * vA);
-            }`,
-        });
-        radar.add(new THREE.Points(glowGeo, glowMat));
-
-        const eased = new Float32Array(K).fill(0.06);
-        const lift = 0.28;
-
-        const resize = () => {
-          const w = host.clientWidth, h = host.clientHeight;
-          renderer.setSize(w, h, false);
-          camera.aspect = w / Math.max(h, 1);
-          camera.position.z = camera.aspect < 1 ? 5.6 / Math.max(camera.aspect, 0.7) : 5.6;
-          camera.updateProjectionMatrix();
-        };
-        resize();
-        const ro = new ResizeObserver(resize);
-        ro.observe(host);
-
-        let visible = true;
-        const vis = new IntersectionObserver((e) => (visible = e[0].isIntersecting));
-        vis.observe(section);
-
-        const pointer = { x: 0, y: 0 };
-        const onMove = (e: PointerEvent) => {
-          const r = host.getBoundingClientRect();
-          pointer.x = ((e.clientX - r.left) / r.width - 0.5) * 2;
-          pointer.y = ((e.clientY - r.top) / r.height - 0.5) * 2;
-        };
-        host.addEventListener("pointermove", onMove);
-
-        const v = new THREE.Vector3();
-        let raf = 0;
-        const frame = (now: number) => {
-          raf = requestAnimationFrame(frame);
-          if (!visible) return;
-          const time = reduce ? 0 : now / 1000;
-          const { values: vals, weakest: weak } = sceneState.current;
-
-          if (!reduce) {
-            radar.rotation.z = Math.sin(time * 0.25) * 0.12;
-            radar.rotation.y += (pointer.x * 0.35 - radar.rotation.y) * 0.05;
-            radar.rotation.x += (-0.55 + pointer.y * 0.2 - radar.rotation.x) * 0.05;
-          }
-
-          for (let k = 0; k < K; k++) {
-            const answered = vals[k] >= 0;
-            const goal = answered ? Math.max(0.1, vals[k] / (LEVELS - 1)) : 0.06 + (reduce ? 0 : (Math.sin(time * 2 + k) + 1) * 0.02);
-            eased[k] += (goal - eased[k]) * (reduce ? 1 : 0.08);
-            const x = Math.cos(ANGLE(k)) * R * eased[k], y = Math.sin(ANGLE(k)) * R * eased[k];
-            shapeTop.set([x, y, lift], k * 3);
-            shapeBot.set([x, y, 0], k * 3);
-            sides.set([x, y, 0, x, y, lift], k * 6);
-            const k2 = (k + 1) % K;
-            const x2 = Math.cos(ANGLE(k2)) * R * eased[k2], y2 = Math.sin(ANGLE(k2)) * R * eased[k2];
-            fill.set([0, 0, lift, x, y, lift, x2, y2, lift], k * 9);
-            const isWeak = k === weak;
-            gp.set([x, y, lift], k * 3);
-            gc.set(isWeak ? [1, 0.42, 0.35] : answered ? [0.95, 0.8, 0.5] : [0.55, 0.68, 1], k * 3);
-            gs[k] = (isWeak ? 34 : 20) + (reduce ? 0 : Math.sin(time * 3 + k) * 3) + (isWeak && !reduce ? Math.sin(time * 6) * 6 : 0);
-            ga[k] = answered ? 1 : 0.5;
-
-            const el = labelRefs.current[k];
-            if (el) {
-              v.set(Math.cos(ANGLE(k)) * R * 1.2, Math.sin(ANGLE(k)) * R * 1.2, 0);
-              radar.localToWorld(v);
-              v.project(camera);
-              el.style.transform = `translate(${(v.x * 0.5 + 0.5) * host.clientWidth}px, ${(-v.y * 0.5 + 0.5) * host.clientHeight}px) translate(-50%, -50%)`;
-              el.style.opacity = "1";
-            }
-          }
-          // Signals travelling around the live outline.
-          for (let i = 0; i < SIG; i++) {
-            const u = ((i / SIG) + (reduce ? 0 : time * 0.06)) % 1;
-            const seg = u * K, k = Math.floor(seg) % K, f = seg - Math.floor(seg), k2 = (k + 1) % K;
-            gp.set([shapeTop[k * 3] + (shapeTop[k2 * 3] - shapeTop[k * 3]) * f, shapeTop[k * 3 + 1] + (shapeTop[k2 * 3 + 1] - shapeTop[k * 3 + 1]) * f, lift], (K + i) * 3);
-            gc.set([0.75, 0.85, 1], (K + i) * 3);
-            gs[K + i] = 7;
-            ga[K + i] = 0.55;
-          }
-          fillMat.color.setHex(weak >= 0 ? 0xf0c069 : 0x4285f4);
-          fillMat.opacity = weak >= 0 ? 0.16 : 0.22;
-          [top.geo, bot.geo, sideGeo, fillGeo, glowGeo].forEach((g) => Object.values(g.attributes).forEach((a) => (a.needsUpdate = true)));
-          renderer.render(scene, camera);
-        };
-        raf = requestAnimationFrame(frame);
-
-        cleanup = () => {
-          cancelAnimationFrame(raf);
-          ro.disconnect();
-          vis.disconnect();
-          host.removeEventListener("pointermove", onMove);
-          [...statics, target, top, bot].forEach(({ geo, mat }) => {
-            geo.dispose();
-            mat.dispose();
-          });
-          [spokeGeo, sideGeo, fillGeo, glowGeo].forEach((g) => g.dispose());
-          [spokeMat, sideMat, fillMat, glowMat].forEach((m) => m.dispose());
-          renderer.dispose();
-          renderer.domElement.remove();
-        };
-      },
-      { rootMargin: "200px 0px" },
-    );
-    io.observe(section);
-    return () => {
-      disposed = true;
-      io.disconnect();
-      cleanup();
-    };
-  }, []);
+  const sendViaZalo = () => {
+    const text = t("zaloText", { score, weakest: t(`axes.${weakest}.label`) });
+    // Start the copy and open Zalo inside the same tap, or popup blockers kick in.
+    navigator.clipboard?.writeText(text).then(() => setZaloCopied(true), () => setZaloCopied(false));
+    window.open(COMPANY.zalo, "_blank", "noopener");
+    trackEvent("check_lead", { score, weakest, channel: "zalo", entry: attribution.entry_ref ?? "", from: attribution.from ?? "" });
+    conversion("zalo");
+  };
 
   const axis = AXIS_KEYS[Math.min(step, AXIS_KEYS.length - 1)];
   const options = t.raw(`axes.${axis}.o`) as string[];
   const caseSlug = CHECK_AXES[weakest].caseSlug;
+  const radarValues = AXIS_KEYS.map((k) => values[k] ?? -1);
+  const labels = AXIS_KEYS.map((k) => ({
+    text: t(`axes.${k}.label`),
+    tone: done && k === weakest ? ("weak" as const) : !done && k === axis ? ("focus" as const) : values[k] !== undefined ? ("done" as const) : ("idle" as const),
+  }));
 
   return (
-    <section ref={sectionRef} id="kiem-tra" className="relative overflow-hidden bg-ink pb-16 pt-24 text-white sm:pb-24 sm:pt-32">
+    <section id="kiem-tra" className="relative overflow-hidden bg-ink pb-16 pt-24 text-white sm:pb-24 sm:pt-32">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_35%,rgba(66,133,244,0.2),transparent_60%)]" />
       <Container className="relative grid gap-5 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 sm:gap-5">
@@ -331,28 +154,20 @@ export function ShopCheck({ variant }: { variant?: string }) {
           <p className="flex items-center gap-2 text-sm font-semibold text-gold-400">
             <ShieldCheck size={16} aria-hidden /> {t("free")}
           </p>
-          <div className="relative mx-auto aspect-[16/11] w-full max-w-[520px] select-none sm:aspect-[4/3]">
-            <div ref={hostRef} aria-hidden className="absolute inset-0 [&>canvas]:h-full [&>canvas]:w-full" />
-            {AXIS_KEYS.map((k, i) => (
-              <span
-                key={k}
-                ref={(el) => {
-                  labelRefs.current[i] = el;
-                }}
-                className={`pointer-events-none absolute left-0 top-0 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-bold opacity-0 ${
-                  done && k === weakest ? "bg-[#ff6b59] text-white" : values[k] !== undefined ? "bg-gold-400 text-ink" : "bg-white/10 text-white/70 ring-1 ring-white/15"
-                }`}
-              >
-                {t(`axes.${k}.label`)}
-              </span>
-            ))}
+          <CheckRadar
+            values={radarValues}
+            weakest={done ? AXIS_KEYS.indexOf(weakest) : -1}
+            focus={done ? -1 : AXIS_KEYS.indexOf(axis)}
+            labels={labels}
+            className="mx-auto aspect-[16/11] w-full max-w-[520px] sm:aspect-[4/3]"
+          >
             {done && (
               <div className="pointer-events-none absolute right-0 top-0 flex flex-col items-end">
                 <span className="font-display text-4xl font-bold tabular-nums text-gold-400 sm:text-5xl">{score}</span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/55">{t("score")} /100</span>
               </div>
             )}
-          </div>
+          </CheckRadar>
         </div>
 
         <div className="flex flex-col gap-5 rounded-2xl bg-white/[0.05] p-5 ring-1 ring-white/10 backdrop-blur sm:p-7">
@@ -362,10 +177,15 @@ export function ShopCheck({ variant }: { variant?: string }) {
                 <span>{t("step", { n: step + 1 })}</span>
                 <span className="flex gap-1.5" aria-hidden>
                   {AXIS_KEYS.map((k, i) => (
-                    <span key={k} className={`h-1.5 w-7 rounded-full ${i < step ? "bg-gold-400" : i === step ? "bg-white/60" : "bg-white/15"}`} />
+                    <span key={k} className={`h-1.5 w-7 rounded-full ${values[k] !== undefined ? "bg-gold-400" : i === step ? "bg-white/60" : "bg-white/15"}`} />
                   ))}
                 </span>
               </div>
+              {prefilled && (
+                <p className="flex items-center gap-2 text-xs font-semibold text-gold-400">
+                  <Check size={14} aria-hidden /> {t("prefilled")}
+                </p>
+              )}
               <h2 className="font-display text-2xl font-bold leading-snug">{t(`axes.${axis}.q`)}</h2>
               <div className="flex flex-col gap-2.5">
                 {options.map((o, level) => (
@@ -437,10 +257,20 @@ export function ShopCheck({ variant }: { variant?: string }) {
                 </form>
               )}
 
+              <button
+                type="button"
+                onClick={sendViaZalo}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#35b6ff] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
+              >
+                <MessageCircle size={18} aria-hidden /> {t("zaloResult")}
+              </button>
+              {zaloCopied && (
+                <p role="status" className="-mt-2 text-center text-xs font-semibold text-[#35b6ff]">
+                  {t("zaloCopied")}
+                </p>
+              )}
+
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 pt-4 text-sm font-semibold">
-                <a href={COMPANY.zalo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("check_cta", { to: "zalo" })} className="inline-flex items-center gap-1.5 text-[#35b6ff] hover:text-white">
-                  <MessageCircle size={16} aria-hidden /> {t("orZalo")}
-                </a>
                 <a href={`tel:${COMPANY.phone}`} onClick={() => trackEvent("check_cta", { to: "call" })} className="inline-flex items-center gap-1.5 text-white/75 hover:text-white">
                   <Phone size={16} aria-hidden /> {t("orCall", { phone: COMPANY.phoneDisplay })}
                 </a>

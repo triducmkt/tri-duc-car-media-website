@@ -6,7 +6,8 @@ import { VatAdvantage } from "@/components/VatAdvantage";
 import { ShopCheck } from "@/components/check/ShopCheck";
 import { Link, getPathname } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
-import { INDUSTRY_VARIANTS } from "@/lib/shopCheck";
+import { AXIS_KEYS, INDUSTRY_VARIANTS, articlesByAxis } from "@/lib/shopCheck";
+import { getBlogPosts } from "@/lib/sanity/queries";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || COMPANY.siteUrl;
 
@@ -37,6 +38,7 @@ export default async function CheckPage({
   const stats = t.raw("stats") as { v: string; l: string; c: string }[];
   const how = t.raw("how") as { t: string; d: string }[];
   const faq = t.raw("faq") as { q: string; a: string }[];
+  const byAxis = articlesByAxis(await getBlogPosts());
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -79,6 +81,34 @@ export default async function CheckPage({
               </li>
             ))}
           </ol>
+        </Container>
+      </section>
+
+      {/* Organic SEO: what each axis means + the articles about it (two-way links with RadarPrompt). */}
+      <section className="bg-paper py-16 sm:py-20">
+        <Container className="flex flex-col gap-8">
+          <SectionHeading heading={t("axesTitle")} sub={t("axesSub")} align="center" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {AXIS_KEYS.map((axis) => (
+              <div key={axis} className="flex flex-col gap-3 rounded-2xl bg-paper-soft p-5 ring-1 ring-black/5">
+                <h3 className="font-display text-lg font-bold text-ink">{t(`axes.${axis}.label`)}</h3>
+                <p className="text-sm leading-relaxed text-ink-muted">{t(`signs.${axis}`)}</p>
+                <ul className="mt-auto flex flex-col gap-2">
+                  {byAxis[axis].slice(0, 2).map((p) => (
+                    <li key={p.slug}>
+                      <Link
+                        href={{ pathname: "/blog/[slug]", params: { slug: p.slug } }}
+                        className="group inline-flex items-start gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700"
+                      >
+                        <ArrowRight size={14} aria-hidden className="mt-1 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                        <span>{p.title[locale] || p.title.vi}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 

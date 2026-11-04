@@ -1119,6 +1119,26 @@
       }
     ],
     "finalTitle": "60 giây để biết nên bắt đầu từ đâu.",
-    "finalCta": "Làm bài kiểm tra"
+    "finalCta": "Làm bài kiểm tra",
+    "zaloResult": "Gửi kết quả qua Zalo",
+    "zaloCopied": "Đã chép kết quả. Mở Zalo, dán vào và gửi cho anh Đức.",
+    "zaloText": "Chào anh Đức, em vừa làm Kiểm tra cơ sở 60 giây: {score}/100, yếu nhất ở {weakest}. Anh tư vấn giúp em nên bắt đầu từ đâu?",
+    "prefilled": "Đã điền sẵn câu bạn chọn trong bài viết",
+    "prompt": {
+      "eyebrow": "Chấm nhanh · 1 câu",
+      "heading": "Bài này nói về “{axis}”. Cơ sở của anh chị đang ở mức nào?",
+      "sub": "Chọn 1 mức. Làm tiếp 4 câu nữa (khoảng 40 giây) để biết chỗ yếu nhất và việc nên làm trước.",
+      "or": "Hoặc hỏi thẳng anh Đức:"
+    },
+    "axesTitle": "5 trục đo sức khỏe một cơ sở dịch vụ",
+    "axesSub": "Mỗi trục là một chỗ chủ cơ sở hay bị kẹt. Đọc thêm bài viết theo đúng trục anh chị đang yếu.",
+    "signs": {
+      "khach-moi": "Doanh thu lên xuống theo mùa, quảng cáo tốn tiền mà khách không đều.",
+      "khach-cu": "Khách làm xong là đi, phải gọi nhắc mới quay lại, ít người giới thiệu.",
+      "doi-ngu": "Chủ không rời cơ sở được ngày nào, việc gì nhân viên cũng hỏi.",
+      "kenh": "Fanpage đăng lúc có lúc không, chưa có ai lo nội dung đều đặn.",
+      "so-lieu": "Không rõ tháng này lời bao nhiêu, khách đến từ kênh nào."
+    },
+    "readArticle": "Đọc bài"
   }
 }

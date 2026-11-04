@@ -219,7 +219,7 @@ function rebuildReports() {
     var v = vis[r[2]], p = pages[r[6]], type = r[8], d = r[18] ? safeJson_(r[18]) : {};
     if (type === 'click') { if (v) v.clicks++; if (p) p.clicks++; }
     if (type === 'cta_click') { if (v) v.cta++; if (p) p.cta++; }
-    if (type === 'form_submit' && d.ok) { if (v) v.forms++; if (p) p.forms++; }
+    if ((type === 'form_submit' && d.ok) || LEAD_EVENTS[type]) { if (v) v.forms++; if (p) p.forms++; }
     if (type === 'survey_answer' && v) v.surveys++;
     if (type === 'page_end') {
       if (v) v.active += Number(d.activeMs) || 0;
@@ -242,6 +242,8 @@ function rebuildReports() {
         p.clicks, p.cta, p.forms, u ? Math.round((p.forms / u) * 1000) / 10 : 0];
     }).sort(function (a, b) { return b[1] - a[1]; }));
 
+  buildFunnel_(ss, pv, ev);
+
   // R_Sensors — every 1 cm sensor aggregated.
   var agg = {};
   se.forEach(function (r) {
@@ -256,6 +258,89 @@ function rebuildReports() {
   writeReport_(ss, 'R_Sensors', ['Đường dẫn', 'Layout', 'Sensor ID', 'Hàng (cm)', 'Cột (cm)', 'Rê chuột (ms)', 'Di chuột', 'Click', 'Số phiên chạm'], aggRows);
 
   buildHeatmapTabs_(ss, agg);
+}
+
+// ───────────────────────── organic funnel (R_Funnel, R_Leads) ─────────────────────────
+
+/** Lead events sent by the website's tools (besides form_submit ok). */
+var LEAD_EVENTS = { check_lead: 1, twin_lead: 1, compass_lead: 1 };
+var LANDING_PATHS = { '/vi/kiem-tra-co-so': 1, '/en/shop-check': 1 };
+var SOURCES = ['Tìm kiếm tự nhiên (Organic)', 'Quảng cáo (Paid)', 'Mạng xã hội', 'Giới thiệu (Referral)', 'Trực tiếp (Direct)', 'Tất cả'];
+
+/** Classify a session from its first pageview: referrer, utm, gclid, fbclid. */
+function sourceOf_(r) {
+  var ref = String(r[32] || '').toLowerCase(), src = String(r[33] || '').toLowerCase(), med = String(r[34] || '').toLowerCase();
+  if (r[38] || /cpc|ppc|paid|ads/.test(med)) return SOURCES[1];
+  if (/(^|\.)(google|bing|coccoc|yahoo|duckduckgo|yandex)\./.test(ref.replace(/^https?:\/\//, '')) || med === 'organic') return SOURCES[0];
+  if (r[39] || /facebook|fb\.|zalo|tiktok|youtube|instagram|linkedin|threads/.test(ref + ' ' + src)) return SOURCES[2];
+  if (ref && ref.indexOf('triduccar.media') < 0) return SOURCES[3];
+  if (src) return SOURCES[3];
+  return SOURCES[4];
+}
+
+function buildFunnel_(ss, pv, ev) {
+  // Session → source (first pageview of the session wins).
+  var ses = {};
+  pv.forEach(function (r) {
+    var s = ses[r[3]];
+    if (!s) s = ses[r[3]] = { source: sourceOf_(r), entry: r[29], ref: r[32] || '(direct)', device: r[19], vid: r[2], start: r[0], article: 0, landing: 0 };
+    if (/\/(kien-thuc|blog)\/./.test(r[29])) s.article = 1;
+    if (LANDING_PATHS[r[29]]) s.landing = 1;
+  });
+  var flags = {}, leads = [];
+  ev.forEach(function (r) {
+    var f = flags[r[3]] || (flags[r[3]] = {}), type = r[8], d = r[18] ? safeJson_(r[18]) : {};
+    if (type === 'prompt_answer') f.prompt = 1;
+    if (type === 'check_answer') f.start = 1;
+    if (type === 'check_complete') f.complete = 1;
+    if (type === 'cta_click' && (d.kind === 'zalo' || d.kind === 'call')) f.contact = 1;
+    var isLead = LEAD_EVENTS[type] || (type === 'form_submit' && d.ok);
+    if (isLead) {
+      if (type === 'check_lead') f.checkLead = 1;
+      f.lead = 1;
+      var s = ses[r[3]] || {};
+      leads.push([r[0], s.source || '(chưa rõ)', type === 'form_submit' ? 'form: ' + (d.form || '') : type, d.channel || '', r[6],
+        d.score !== undefined ? d.score : '', d.weakest || '', d.from || '', s.entry || '', s.ref || '', s.device || '', r[2], r[3]]);
+    }
+  });
+
+  var steps = [
+    ['Phiên truy cập', function () { return true; }],
+    ['Phiên có đọc bài Kiến thức', function (s) { return s.article; }],
+    ['Phiên trả lời radar cuối bài', function (s, f) { return f.prompt; }],
+    ['Phiên vào landing Kiểm tra 60s', function (s) { return s.landing; }],
+    ['Phiên bắt đầu kiểm tra (≥1 câu)', function (s, f) { return f.start; }],
+    ['Phiên làm xong 5 câu', function (s, f) { return f.complete; }],
+    ['Phiên để lại lead ở landing', function (s, f) { return f.checkLead; }],
+    ['Phiên để lại lead (mọi công cụ)', function (s, f) { return f.lead; }],
+    ['Phiên bấm Zalo / Gọi', function (s, f) { return f.contact; }],
+  ];
+  var counts = {};
+  SOURCES.forEach(function (src) { counts[src] = steps.map(function () { return 0; }); });
+  Object.keys(ses).forEach(function (sid) {
+    var s = ses[sid], f = flags[sid] || {};
+    steps.forEach(function (st, i) {
+      if (st[1](s, f)) { counts[s.source][i]++; counts['Tất cả'][i]++; }
+    });
+  });
+  // "% so với bước trước" compares each step with its parent step (landing can be reached without an article).
+  var PARENT = [0, 0, 1, 0, 3, 4, 5, 0, 0];
+  var rows = [];
+  SOURCES.forEach(function (src) {
+    var c = counts[src];
+    steps.forEach(function (st, i) {
+      var prev = c[PARENT[i]];
+      rows.push([src, i + 1, st[0], c[i],
+        prev ? Math.round((c[i] / prev) * 1000) / 10 : 0,
+        c[0] ? Math.round((c[i] / c[0]) * 1000) / 10 : 0,
+        i === 7 && c[7] ? Math.ceil(c[0] / c[7]) : '']);
+    });
+  });
+  writeReport_(ss, 'R_Funnel',
+    ['Nguồn', 'Bước', 'Bước phễu', 'Số phiên', '% so với bước trước', '% so với tổng phiên', 'Số phiên cần cho 1 lead'], rows);
+  writeReport_(ss, 'R_Leads',
+    ['Thời gian (GMT+7)', 'Nguồn phiên', 'Loại lead', 'Kênh', 'Trang', 'Điểm', 'Yếu nhất', 'Từ bài viết', 'Trang vào đầu tiên', 'Referrer đầu tiên', 'Thiết bị', 'Visitor ID', 'Session ID'],
+    leads.reverse());
 }
 
 /** One sheet tab per busiest page+layout: each spreadsheet cell = one 1 cm sensor. */
@@ -336,6 +421,11 @@ function writeDictionary_(ss) {
     ['Khảo sát', 'survey_start, survey_answer (câu, lựa chọn, điểm), survey_complete (điểm, điểm nghẽn)', 'Công cụ Chẩn đoán hệ thống trên trang Dịch vụ', 'Component', 'Events'],
     ['Khác', 'copy', 'Khách copy chữ (vd. số điện thoại) — tối đa 60 ký tự', 'Trình duyệt', 'Events'],
     ['Khác', 'js_error', 'Lỗi kỹ thuật trên trình duyệt khách — để sửa lỗi', 'Trình duyệt', 'Events'],
+    ['Lead (công cụ)', 'check_lead (form / zalo), twin_lead, compass_lead', 'Khách để lại lead ở landing Kiểm tra 60s, Bản sao cơ sở (trang dự án), La bàn đọc (Kiến thức)', 'Component', 'Events, R_Leads'],
+    ['Phễu Kiểm tra 60s', 'check_view, check_answer, check_complete, check_case, check_cta', 'Xem landing → trả lời câu đầu → làm xong 5 câu → xem ca thật / bấm gọi, đặt lịch', 'Component', 'Events, R_Funnel'],
+    ['Phễu từ bài viết', 'prompt_answer, prompt_cta', 'Radar cuối bài Kiến thức: khách chọn 1 mức → sang landing đã điền sẵn câu đó', 'Component', 'Events, R_Funnel'],
+    ['Báo cáo', 'R_Funnel', 'Phễu theo nguồn (Organic / Quảng cáo / Mạng xã hội / Giới thiệu / Trực tiếp): số phiên mỗi bước, % chuyển đổi, số phiên cần cho 1 lead', 'Apps Script', 'R_Funnel'],
+    ['Báo cáo', 'R_Leads', 'Danh sách từng lead: thời gian, nguồn, loại, điểm, chỗ yếu, bài viết dẫn tới, trang vào đầu tiên', 'Apps Script', 'R_Leads'],
     ['Báo cáo', 'R_Visitors / R_Pages / R_Sensors / HM …', 'Tổng hợp tự động mỗi giờ (hoặc menu 📊 Tracking)', 'Apps Script', '—'],
     ['KHÔNG thu', 'Nội dung khách gõ, mật khẩu, số thẻ, vân tay thiết bị ẩn', 'Không cần cho phân tích và vi phạm quyền riêng tư; tên/SĐT chỉ đến qua email khi khách tự gửi form', '—', '—'],
     ['Pháp lý', 'Đồng ý (consent)', 'Chỉ ghi nhận sau khi khách bấm "Đồng ý" trên banner (Luật Bảo vệ dữ liệu cá nhân 2025 / NĐ 13/2023). Từ chối = không ghi gì.', 'Banner', '—'],
