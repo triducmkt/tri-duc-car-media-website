@@ -30,15 +30,29 @@ const C = {
 };
 
 // ---------- Mark: 120×120 grid, ink spans x 22–100, y 18–102 ----------
-// Stem + top/bottom bars = the D's spine; bowl = gauge arc (red at top = redline);
-// the Đ crossbar = needle pivoting on the stem, pointing into the redline.
+// Stem + top/bottom bars = the D's spine; bowl = gauge arc (gold at the top since v3);
+// the Đ crossbar = needle pivoting on the stem, rising toward the owner dot (v4).
 // Stroke weight 14 for spine + gauge; gauge centre (58,60), centreline r=35.
 const PIVOT = [29, 60];
-// v3: needle held higher (~55° from the gauge centre) — steady in the top zone.
-const TIP = [75, 35];
+// v4: the orange dot = the owner. Through v3 it sat on the stem as the needle's
+// pivot (the owner holding the machine). In v4 it has stepped OUT of the Đ and
+// sits above the gauge, top-right: the machine keeps running and its needle
+// rises toward the owner, who is now in the owner's seat, not the worker's.
+// Brief: vision v3 + "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
+const OWNER_ANGLE = 50; // degrees from the gauge centre (58,60)
+const OWNER_R = 7.5;
+const OWNER = [58 + 53 * Math.cos((OWNER_ANGLE * Math.PI) / 180), 60 - 53 * Math.sin((OWNER_ANGLE * Math.PI) / 180)];
 const dir = (() => {
-  const dx = TIP[0] - PIVOT[0], dy = TIP[1] - PIVOT[1], l = Math.hypot(dx, dy);
+  const dx = OWNER[0] - PIVOT[0], dy = OWNER[1] - PIVOT[1], l = Math.hypot(dx, dy);
   return [dx / l, dy / l];
+})();
+// Needle tip: where the pivot→owner line meets the inner edge zone of the gauge (r≈29).
+const TIP = (() => {
+  // |PIVOT + t·dir − C|² = 29², far root
+  const ox = PIVOT[0] - 58, oy = PIVOT[1] - 60;
+  const b = ox * dir[0] + oy * dir[1];
+  const t = -b + Math.sqrt(b * b - (ox * ox + oy * oy - 29 * 29));
+  return [+(PIVOT[0] + dir[0] * t).toFixed(2), +(PIVOT[1] + dir[1] * t).toFixed(2)];
 })();
 const TAIL = [PIVOT[0] - dir[0] * 10, PIVOT[1] - dir[1] * 10];
 const f = (n) => +n.toFixed(2);
@@ -63,7 +77,8 @@ function mark({ spine, needle, arc, hub, id, ticks = true }) {
     `<path fill="none" stroke="${arcStroke}" stroke-width="14" d="M58 25A35 35 0 0 1 58 95"/>`,
     ticks ? `<path fill="none" stroke="${needle}" stroke-width="4" stroke-linecap="round" d="${ticksPath()}"/>` : "",
     `<path fill="none" stroke="${needle}" stroke-width="7.5" stroke-linecap="round" d="M${f(TAIL[0])} ${f(TAIL[1])}L${TIP[0]} ${TIP[1]}"/>`,
-    hub ? `<circle cx="${PIVOT[0]}" cy="${PIVOT[1]}" r="6" fill="${hub}"/>` : "",
+    // owner dot (v4): outside the Đ; mono versions use the ink colour
+    `<circle cx="${f(OWNER[0])}" cy="${f(OWNER[1])}" r="${OWNER_R}" fill="${hub ?? needle}"/>`,
   ].join("");
   return { defs, body };
 }
@@ -136,21 +151,41 @@ function svg(w, h, inner, defs = "", bg = null, minX = 0, minY = 0) {
 }
 
 const themes = {
-  color: { spine: C.navy, needle: C.navy, arc: "gradient", hub: C.orange, name: C.navy, sub: C.ember },
-  reverse: { spine: C.white, needle: C.white, arc: "gradient", hub: C.orange, name: C.white, sub: C.goldLight },
-  "mono-black": { spine: C.navy, needle: C.navy, arc: C.navy, hub: null, name: C.navy, sub: C.navy },
-  "mono-white": { spine: C.white, needle: C.white, arc: C.white, hub: null, name: C.white, sub: C.white },
+  color: { spine: C.navy, needle: C.navy, arc: "gradient", hub: C.orange, name: C.navy, sub: C.ember, tag: "#4B5568" },
+  reverse: { spine: C.white, needle: C.white, arc: "gradient", hub: C.orange, name: C.white, sub: C.goldLight, tag: "#C3CAD6" },
+  "mono-black": { spine: C.navy, needle: C.navy, arc: C.navy, hub: null, name: C.navy, sub: C.navy, tag: C.navy },
+  "mono-white": { spine: C.white, needle: C.white, arc: C.white, hub: null, name: C.white, sub: C.white, tag: C.white },
 };
 
-function horizontal(t, id) {
+// v4: brand-promise line for signage, cards, slides, uniforms.
+const TAGLINE = "Vắng 30 ngày, cơ sở vẫn tăng trưởng.";
+function horizontal(t, id, withTagline = false) {
   const m = mark({ ...t, id });
   const gap = 28;
   const wm = wordmark(100 + gap, 18, t);
-  const minY = Math.min(18, wm.top) - PAD;
-  const maxY = Math.max(102, wm.bottom) + PAD;
+  const minY = Math.min(OWNER[1] - OWNER_R, wm.top) - PAD;
+  let maxY = Math.max(102, wm.bottom) + PAD;
   const minX = 22 - PAD;
-  const maxX = 100 + gap + wm.width + PAD;
-  return svg(maxX - minX, maxY - minY, m.body + wm.body, m.defs, null, minX, minY);
+  let maxX = 100 + gap + wm.width + PAD;
+  let tag = "";
+  if (withTagline) {
+    // one rule + the promise, spanning the full lockup width
+    const full = 100 + gap + wm.width - 22;
+    // natural letter spacing (0.02em); size chosen so the line spans ~92% of the lockup
+    const size0 = 20;
+    const w0 = inkBox(semi, TAGLINE, size0, size0 * 0.02).w;
+    const size = Math.min(22, (size0 * full * 0.92) / w0);
+    const tracking = size * 0.02;
+    const box = inkBox(semi, TAGLINE, size, tracking);
+    const ruleY = Math.max(102, wm.bottom) + 18;
+    const base = ruleY + 14 + capRatio(semi) * size;
+    tag =
+      `<rect x="22" y="${f(ruleY)}" width="${f(full)}" height="1.2" fill="${t.tag}" opacity="0.35"/>` +
+      `<path fill="${t.tag}" d="${textPath(semi, TAGLINE, 22 - box.x1, base, size, tracking)}"/>`;
+    maxY = base + 6 + PAD;
+    maxX = Math.max(maxX, 22 + full + PAD);
+  }
+  return svg(maxX - minX, maxY - minY, m.body + wm.body + tag, m.defs, null, minX, minY);
 }
 function vertical(t, id) {
   const m = mark({ ...t, id });
@@ -186,6 +221,7 @@ for (const [k, t] of Object.entries(themes)) {
   files[`tri-duc-media-horizontal-${k}.svg`] = horizontal(t, `h-${k}`);
   files[`tri-duc-media-vertical-${k}.svg`] = vertical(t, `v-${k}`);
   files[`tri-duc-media-mark-${k}.svg`] = markOnly(t, `m-${k}`);
+  files[`tri-duc-media-horizontal-tagline-${k}.svg`] = horizontal(t, `ht-${k}`, true);
 }
 files["tri-duc-media-app-icon.svg"] = appIcon();
 

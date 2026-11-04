@@ -12,13 +12,14 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 - **Phần cong của chữ Đ là cung đồng hồ**, chuyển từ cam (dưới) lên vàng (trên; từ v3, trước là đỏ). Ý nghĩa: đo sức khỏe cơ sở; càng lên càng thành tài sản, khớp với công cụ "Kiểm tra cơ sở 60 giây".
 - **Nét gạch ngang của chữ Đ là cây kim chỉ lên vùng cao:** "Nâng tầm doanh nghiệp".
 - **3 vạch số nằm dưới kim:** kim đã vượt qua toàn bộ thang đo, tức là doanh nghiệp vượt mức cũ. App icon không có vạch, vì vạch bị nhòe ở cỡ dưới 64px.
-- **Trục kim màu cam nằm trên thân chữ:** người chủ là điểm tựa. Bộ máy chạy quanh người chủ, không cần người chủ ôm hết việc.
+- **Chấm cam đứng ngoài chữ Đ (từ v4) là người chủ đã bước ra khỏi bộ máy.** Bộ máy vẫn tự chạy, kim tự đi lên phía người chủ: "Vắng 30 ngày, cơ sở vẫn tăng trưởng." (v1–v3 chấm cam là trục kim nằm trên thân chữ.)
 
 ## Bộ file (`svg/`, dạng vector, chữ đã chuyển thành nét vẽ nên không cần cài font)
 | File | Dùng khi |
 |---|---|
 | `tri-duc-media-horizontal-color.svg` | Logo chính: header web, tài liệu, slide, nền sáng |
 | `tri-duc-media-horizontal-reverse.svg` | Nền tối hoặc nền navy |
+| `tri-duc-media-horizontal-tagline-*.svg` | Có dòng lời hứa: biển hiệu, danh thiếp, slide, áo (từ v4) |
 | `tri-duc-media-vertical-*.svg` | Chỗ hẹp và cao: standee, bìa hồ sơ, avatar lớn |
 | `tri-duc-media-mark-*.svg` | Biểu tượng đứng riêng |
 | `tri-duc-media-app-icon.svg` | Favicon, avatar Zalo/Facebook, icon app |

@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v3** · ảnh: [history/v3/preview.png](history/v3/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v4** · ảnh: [history/v4/preview.png](history/v4/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -114,4 +114,31 @@
 - **Còn mở cho vòng sau:**
   - vàng ở đỉnh cung hơi nhạt trên nền trắng, có thể cần đậm hơn khi in;
   - chưa thử trên ảnh thật (biển hiệu, áo đồng phục, xe).
+- **Trạng thái:** nháp, thay bằng v4.
+
+## v4 — Người chủ bước ra khỏi bộ máy + dòng lời hứa (2026-11-04)
+- **Yêu cầu anh Đức:** ở vai brand designer 10 năm, xem logo mới nhất, nghĩ theo chân dung khách và thương hiệu, nghĩ khác lối mòn, làm 1 thay đổi LỚN (không chỉnh nhỏ), ship mỗi lần, báo top 3 website đã khảo sát.
+- **Ảnh:** [history/v4/preview.png](history/v4/preview.png). Bảng này có thêm mockup biển hiệu và avatar tròn Zalo/Facebook.
+- **Khảo sát 3 website** (thương hiệu chủ SME Việt Nam gặp hằng ngày):
+  1. **KiotViet** (kiotviet.vn): biểu tượng chữ K dạng app, xanh dương/xanh lá, giọng "phần mềm phổ biến nhất".
+  2. **Base.vn** (base.vn): xanh dương, "Hệ điều hành doanh nghiệp thế hệ AI", giọng công nghệ.
+  3. **MISA** (misa.vn): đỏ/trắng, "Agentic AI", giọng tập đoàn.
+
+  **Kết luận:** cả 3 đều lạnh, công nghệ, biểu tượng kiểu app. Trí Đức Media nên khác ở 3 điểm: tông ấm (cam/vàng), có con người (người chủ), chữ Đ thuần Việt. KHÔNG đi theo lối "AI/phần mềm".
+- **Thay đổi LỚN so với v3 (ý tưởng cốt lõi):**
+  - **Chấm cam = người chủ.** Từ v1 đến v3, chấm cam là trục kim nằm TRÊN thân chữ Đ, tức người chủ vẫn phải giữ bộ máy. Ở v4, chấm cam **bước ra khỏi chữ Đ**, đứng ở góc trên bên phải, ngoài cung đồng hồ.
+  - **Bộ máy tự chạy:** thân Đ, cung và vạch số vẫn chạy. Kim không còn chấm trục và tự hướng lên phía người chủ. Đây chính là hình ảnh của lời hứa "Vắng 30 ngày, cơ sở vẫn tăng trưởng" và tầm nhìn "từ người làm thành người sở hữu".
+  - **Bản logo mới có dòng lời hứa:** `tri-duc-media-horizontal-tagline-*.svg` (màu, nền tối, mono đen, mono trắng). Dưới logo có một đường kẻ mảnh và dòng "Vắng 30 ngày, cơ sở vẫn tăng trưởng.", dùng cho biển hiệu, danh thiếp, slide, áo.
+- **Lợi ích thực tế:**
+  - Chấm cam tách riêng tạo một điểm nhấn dễ nhớ, rõ ở cả avatar tròn 72px.
+  - Cả câu chuyện thương hiệu kể được trong 1 câu: "chấm cam là anh chị, đã bước ra ngoài; bộ máy vẫn tự đi lên."
+- **Giữ nguyên:** màu v3 (cam → vàng), font, bố cục ngang/dọc.
+- **Tự kiểm tra:**
+  - avatar tròn 72px và app icon 32px vẫn nhận ra chữ Đ và chấm cam;
+  - bản mono vẫn giữ chấm (cùng màu mực);
+  - dấu Í, Ứ không dính.
+- **Còn mở cho vòng sau:**
+  - chấm cam đứng gần dấu sắc chữ Í ở bản ngang, cần xem lại khoảng cách khi in nhỏ;
+  - kim không còn trục nên đầu trái hơi "lửng", có thể thử bo hoặc cắt gọn;
+  - chưa có mockup áo đồng phục và xe.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
