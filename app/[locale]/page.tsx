@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { FootageHero } from "@/components/home/FootageHero";
+import { ChapterDial } from "@/components/home/ChapterDial";
 import { HouseCallMap } from "@/components/home/HouseCallMap";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FreedomCalculator } from "@/components/home/FreedomCalculator";
@@ -40,12 +41,17 @@ export default async function HomePage({
       <div id="tru-cot">
         <ServicesGrid />
       </div>
-      <FounderIntro />
+      <div id="nguoi-dong-hanh">
+        <FounderIntro />
+      </div>
       <ChannelOrbit videos={videos} />
-      <Process />
+      <div id="quy-trinh">
+        <Process />
+      </div>
       <CaseStudiesPreview items={caseStudies} locale={locale} />
       <Testimonials items={testimonials} locale={locale} />
       <CtaBanner />
+      <ChapterDial />
     </>
   );
 }

@@ -1530,5 +1530,51 @@
       }
     ],
     "bubbleLabel": "Lời nhắn Zalo soạn sẵn cho anh chị"
+  },
+  "chapters": {
+    "label": "Chương {n}/{total}",
+    "open": "Mục lục trang, đang ở chương {n}/{total}: {title}",
+    "eyebrow": "Trang này có 8 chương",
+    "heading": "Anh chị muốn xem phần nào?",
+    "left": "Còn khoảng {min} phút đọc · cả trang {total} phút",
+    "min": "{min} phút",
+    "close": "Đóng mục lục",
+    "ctaLead": "Không cần đọc hết. Nhắn anh Đức một câu là đủ để bắt đầu.",
+    "ctaZalo": "Nhắn Zalo anh Đức",
+    "ctaCheck": "Kiểm tra 60s",
+    "items": [
+      {
+        "t": "Giải phóng người chủ",
+        "d": "Tư liệu thật tại AP Car Care"
+      },
+      {
+        "t": "Đến tận tiệm",
+        "d": "Chọn khu của tiệm, xem bao lâu anh Đức tới"
+      },
+      {
+        "t": "Tính giờ đang mất",
+        "d": "30 giây ra số giờ và số tiền mỗi năm"
+      },
+      {
+        "t": "Lời hứa vắng 30 ngày",
+        "d": "Thang tự do 5 bậc, gói Tự Do 30 Ngày"
+      },
+      {
+        "t": "Bằng chứng thật",
+        "d": "Số liệu 3 cơ sở đang đồng hành"
+      },
+      {
+        "t": "Pháp nhân & dịch vụ",
+        "d": "Hóa đơn VAT, 5 trụ cột dịch vụ"
+      },
+      {
+        "t": "Gặp anh Đức",
+        "d": "Người trực tiếp làm, video 1 phút, kênh liên hệ"
+      },
+      {
+        "t": "Bắt đầu thế nào",
+        "d": "4 bước đồng hành, dự án tiêu biểu"
+      }
+    ]
   }
 }

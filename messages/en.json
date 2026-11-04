@@ -1530,5 +1530,51 @@
       }
     ],
     "bubbleLabel": "Your Zalo message, pre-written"
+  },
+  "chapters": {
+    "label": "Chapter {n}/{total}",
+    "open": "Page contents, chapter {n}/{total}: {title}",
+    "eyebrow": "This page has 8 chapters",
+    "heading": "Which part do you want to see?",
+    "left": "About {min} min left · whole page {total} min",
+    "min": "{min} min",
+    "close": "Close contents",
+    "ctaLead": "No need to read it all. One message to Đức is enough to start.",
+    "ctaZalo": "Message Đức on Zalo",
+    "ctaCheck": "60s check",
+    "items": [
+      {
+        "t": "Free the owner",
+        "d": "Real footage at AP Car Care"
+      },
+      {
+        "t": "We come to your shop",
+        "d": "Pick your area, see how soon Đức arrives"
+      },
+      {
+        "t": "Hours you're losing",
+        "d": "30 seconds to your hours and money per year"
+      },
+      {
+        "t": "The 30-day promise",
+        "d": "5-step freedom ladder, the 30-Day package"
+      },
+      {
+        "t": "Real proof",
+        "d": "Numbers from 3 businesses we work with"
+      },
+      {
+        "t": "Company & services",
+        "d": "VAT invoices, 5 service pillars"
+      },
+      {
+        "t": "Meet Đức",
+        "d": "The person doing the work, 1-minute videos, contact"
+      },
+      {
+        "t": "How to start",
+        "d": "4 steps, featured projects"
+      }
+    ]
   }
 }
