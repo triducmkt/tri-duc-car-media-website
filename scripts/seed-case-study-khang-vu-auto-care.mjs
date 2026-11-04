@@ -51,7 +51,7 @@ function block(text, { style = "normal", listItem, level, strong = false } = {})
 const bodyVi = [
   block("Bối cảnh", { style: "h3" }),
   block(
-    "Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Car Media từ tháng 07/2026 — tháng đầu tiên triển khai đồng bộ cả ba nền tảng Facebook, TikTok và YouTube trong cùng một gói Marketing PRO.",
+    "Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Media từ tháng 07/2026 — tháng đầu tiên triển khai đồng bộ cả ba nền tảng Facebook, TikTok và YouTube trong cùng một gói Marketing PRO.",
   ),
   block("Tăng trưởng qua từng tháng (T6 → T7 → T8/2026)", { style: "h3" }),
   block("Lượt xem Facebook: 292 → 1.722 (+490%) → 20.115 (+1.068% so với T7).", { listItem: "bullet" }),
@@ -77,14 +77,14 @@ const bodyVi = [
   ),
   block("Định hướng tiếp theo", { style: "h3" }),
   block(
-    "Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương. Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Khang Vũ Auto Care.",
+    "Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương. Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Khang Vũ Auto Care.",
   ),
 ];
 
 const bodyEn = [
   block("Context", { style: "h3" }),
   block(
-    "Khang Vu Auto Care (Binh Duong) began working with Tri Duc Car Media in July 2026 — the first month running Facebook, TikTok and YouTube together under one Marketing PRO package.",
+    "Khang Vu Auto Care (Binh Duong) began working with Tri Duc Media in July 2026 — the first month running Facebook, TikTok and YouTube together under one Marketing PRO package.",
   ),
   block("Month-over-month growth (Jun → Jul → Aug 2026)", { style: "h3" }),
   block("Facebook views: 292 → 1,722 (+490%) → 20,115 (+1,068% vs. July).", { listItem: "bullet" }),
@@ -110,7 +110,7 @@ const bodyEn = [
   ),
   block("What's next", { style: "h3" }),
   block(
-    "If July was about building the foundation, August showed the ability to expand reach and win new customers. September shifts focus to conversion: stronger follow/inbox calls to action, a before/after and customer-review content series, and deeper local search coverage around Binh Duong. Tri Duc Car Media still directly runs Khang Vu Auto Care's full media operation today.",
+    "If July was about building the foundation, August showed the ability to expand reach and win new customers. September shifts focus to conversion: stronger follow/inbox calls to action, a before/after and customer-review content series, and deeper local search coverage around Binh Duong. Tri Duc Media still directly runs Khang Vu Auto Care's full media operation today.",
   ),
 ];
 

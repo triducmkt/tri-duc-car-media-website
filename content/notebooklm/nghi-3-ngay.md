@@ -31,7 +31,7 @@ Một doanh nghiệp muốn lớn hơn cần có quy trình rõ ràng, người 
 ## Bắt đầu từ điểm nghẽn lớn nhất
 Không cần xây mọi thứ cùng lúc. Hãy ghi lại trong một tuần những lần nhân viên phải gọi anh. Việc nào lặp lại nhiều nhất chính là điểm nghẽn cần chuẩn hóa trước. Anh có thể thử [công cụ chụp X-quang doanh nghiệp trên trang Dịch vụ](/vi/dich-vu) để thấy khối nào đang yếu nhất trong 90 giây.
 ## Video gốc
-Bài viết này mở rộng từ video trên fanpage Trí Đức Car Media, nơi founder Tăng Trí Đức chia sẻ cách tìm “điểm nghẽn” đang khiến chủ cơ sở chưa thể bước ra khỏi việc vận hành mỗi ngày.
+Bài viết này mở rộng từ video trên fanpage Trí Đức Media, nơi founder Tăng Trí Đức chia sẻ cách tìm “điểm nghẽn” đang khiến chủ cơ sở chưa thể bước ra khỏi việc vận hành mỗi ngày.
 Muốn cùng tìm điểm nghẽn cho cơ sở của mình? [Đặt lịch 15 phút chẩn đoán miễn phí](/vi/dat-lich-tu-van).
 
 ---
@@ -48,7 +48,7 @@ Hãy thống nhất thành các bước cụ thể, viết ra giấy và đào t
 - **Tư vấn và báo giá:** giải thích rõ vấn đề, các phương án và chi phí, tránh báo giá miệng mỗi người một kiểu.
 - **Bàn giao:** kiểm tra cùng khách trước khi giao, hướng dẫn cách bảo quản.
 - **Chăm sóc sau dịch vụ:** nhắc lịch bảo dưỡng, hỏi thăm trải nghiệm, mời khách quay lại.
-![Chuyên gia Trí Đức Car Media trao đổi quy trình phục vụ khách cùng chủ cơ sở](tdcm-fb-01-2.jpg)
+![Chuyên gia Trí Đức Media trao đổi quy trình phục vụ khách cùng chủ cơ sở](tdcm-fb-01-2.jpg)
 ## 2. Chuẩn hóa cách đội ngũ phối hợp
 Việc gì cũng hỏi sếp, chuyện gì cũng chờ sếp quyết. Đến lúc sếp bận hoặc vắng mặt, công việc lập tức đình trệ. Nguyên nhân thường không nằm ở nhân viên kém, mà ở chỗ chưa ai được giao rõ trách nhiệm và phạm vi tự quyết.
 Hãy phân rõ **người phụ trách**, **trách nhiệm** và **phạm vi được tự quyết** cho từng vị trí. Ví dụ: kỹ thuật viên trưởng được quyết thay vật tư dưới một mức chi phí nhất định, lễ tân được tự xử lý đổi lịch hẹn. Không phải chuyện gì cũng cần gọi sếp vào xử lý.
@@ -56,7 +56,7 @@ Hãy phân rõ **người phụ trách**, **trách nhiệm** và **phạm vi đ�
 Đừng để sáng nào cũng bắt đầu bằng câu hỏi: “Hôm nay đăng gì?”. Hãy có **kế hoạch nội dung theo tháng**, lịch quay dựng, lịch đăng bài và người chịu trách nhiệm rõ ràng. Sếp vẫn định hướng và chia sẻ câu chuyện thực tế, nhưng không cần tự nghĩ từng bài mỗi ngày.
 Nếu anh chị chưa biết bắt đầu từ đâu, có thể thử [công cụ Dựng hệ thống trên trang Dịch vụ](/vi/dich-vu): chọn những việc đang làm mình mệt, hệ thống sẽ gợi ý lộ trình từ nền móng SOP đến marketing.
 ## Chuẩn hóa không làm hết bận sau một đêm
-Chuẩn hóa không giúp cơ sở hết bận chỉ sau một đêm. Nhưng nếu cứ làm theo thói quen cũ, rất khó mong chờ một kết quả mới. Tại Trí Đức Car Media (TDCM), chúng tôi đồng hành cùng chủ cơ sở xây dựng kế hoạch và hoạt động marketing bài bản hơn, để thương hiệu xuất hiện đều đặn mà sếp không phải tự ôm hết mọi việc.
+Chuẩn hóa không giúp cơ sở hết bận chỉ sau một đêm. Nhưng nếu cứ làm theo thói quen cũ, rất khó mong chờ một kết quả mới. Tại Trí Đức Media (TDCM), chúng tôi đồng hành cùng chủ cơ sở xây dựng kế hoạch và hoạt động marketing bài bản hơn, để thương hiệu xuất hiện đều đặn mà sếp không phải tự ôm hết mọi việc.
 Muốn tháng sau nhẹ gánh hơn, đừng đợi sang tháng mới bắt đầu thay đổi. Anh chị muốn rà soát lại vận hành và marketing của cơ sở mình? [Đặt lịch 15 phút chẩn đoán miễn phí](/vi/dat-lich-tu-van) để cùng trao đổi hướng triển khai phù hợp.
 
 ---
@@ -81,7 +81,7 @@ Một cơ sở khỏe không có nghĩa là người chủ phải làm ít ngay 
 - **Phân công rõ trách nhiệm**, ai làm gì và được tự quyết đến đâu.
 - **Đào tạo nhân viên chủ động** xử lý những việc thuộc phạm vi của họ.
 ![Xưởng dịch vụ ô tô vận hành theo quy trình rõ ràng](tdcm-fb-03-3.jpg)
-Để rồi có một ngày, người chủ có thể dành thời gian cho kế hoạch phát triển, khách hàng lớn hoặc đơn giản là nghỉ ngơi một hôm mà công việc vẫn tiếp tục. Đó cũng là con đường mà [dịch vụ chuẩn hóa SOP và đào tạo đội ngũ](/vi/dich-vu) của Trí Đức Car Media đồng hành cùng chủ cơ sở.
+Để rồi có một ngày, người chủ có thể dành thời gian cho kế hoạch phát triển, khách hàng lớn hoặc đơn giản là nghỉ ngơi một hôm mà công việc vẫn tiếp tục. Đó cũng là con đường mà [dịch vụ chuẩn hóa SOP và đào tạo đội ngũ](/vi/dich-vu) của Trí Đức Media đồng hành cùng chủ cơ sở.
 ## Làm chủ là xây được cơ sở không phụ thuộc vào mình
 Làm chủ không phải là người làm nhiều nhất trong cơ sở, mà là người xây dựng được một cơ sở không phụ thuộc vào mình trong mọi việc. Anh chị thử tự hỏi: nếu mình vắng mặt 3 ngày, cơ sở vẫn chạy tốt hay cả đội lại ngóng sếp về?
 Nếu câu trả lời khiến anh chị chưa yên tâm, hãy [đặt lịch trò chuyện 1-1 miễn phí](/vi/dat-lich-tu-van) để cùng tìm điểm nghẽn.
@@ -102,8 +102,8 @@ Lối thoát không phải bỏ việc kinh doanh, mà là bắt đầu chuyển
 - **Kinh nghiệm thành nội dung:** những điều mình hay giải thích cho khách trở thành bài viết, video.
 - **Câu chuyện thành thương hiệu:** khách nhớ đến cơ sở, không chỉ nhớ một người.
 - **Công việc thành phân quyền:** mỗi người biết việc của mình và được tự quyết trong phạm vi rõ ràng.
-![Chuyên gia Trí Đức Car Media tại quầy lễ tân Khang Vũ Auto](tdcm-fb-07-3.jpg)
-Đây cũng là cách Trí Đức Car Media đồng hành cùng các cơ sở như Khang Vũ Auto Care hay hệ thống AP. Anh chị có thể xem các câu chuyện cụ thể trong [mục Dự án](/vi/du-an).
+![Chuyên gia Trí Đức Media tại quầy lễ tân Khang Vũ Auto](tdcm-fb-07-3.jpg)
+Đây cũng là cách Trí Đức Media đồng hành cùng các cơ sở như Khang Vũ Auto Care hay hệ thống AP. Anh chị có thể xem các câu chuyện cụ thể trong [mục Dự án](/vi/du-an).
 ## Giải phóng sức lao động không phải là làm ít đi
 Giải phóng sức lao động là **không phải tự mình làm tất cả**. Làm chủ không có nghĩa là phải một mình gánh hết. Bắt đầu bằng một việc nhỏ: chọn công việc lặp lại tốn thời gian nhất của mình tuần này và viết ra các bước để giao cho người khác.
 Nếu muốn có người cùng nhìn lại toàn bộ cơ sở và vạch lộ trình, hãy [đặt lịch trò chuyện 1-1 với founder Tăng Trí Đức](/vi/dat-lich-tu-van).
@@ -113,7 +113,7 @@ Nếu muốn có người cùng nhìn lại toàn bộ cơ sở và vạch lộ 
 ## Dự án thật: Johnny Lộc Nguyễn — Hệ sinh thái AP — Đồng hành cùng Mr Johnny Lộc Nguyễn — Giải phóng nhà sáng lập, phát triển từ một trung tâm chăm sóc xe thành một hệ sinh thái AP với 5 thương hiệu
 Nguồn: https://triduccar.media/vi/du-an/johnny-loc-nguyen-he-sinh-thai-ap · Số liệu tới 09/2026
 
-Tóm tắt: Từ 2023 đến nay, Trí Đức Car Media đồng hành cùng CEO Johnny Lộc Nguyễn — tư vấn, đề xuất và trực tiếp đảm nhiệm vai trò CMO — giúp anh tập trung dẫn dắt hệ sinh thái AP (Car Care, Market, Education, Service, Store) mở rộng ra Bắc Ninh (10/2025), hướng tới Đà Nẵng (2026) và tầm nhìn 10 chi nhánh toàn quốc vào 2030.
+Tóm tắt: Từ 2023 đến nay, Trí Đức Media đồng hành cùng CEO Johnny Lộc Nguyễn — tư vấn, đề xuất và trực tiếp đảm nhiệm vai trò CMO — giúp anh tập trung dẫn dắt hệ sinh thái AP (Car Care, Market, Education, Service, Store) mở rộng ra Bắc Ninh (10/2025), hướng tới Đà Nẵng (2026) và tầm nhìn 10 chi nhánh toàn quốc vào 2030.
 
 Số liệu:
 - Năm bắt đầu đồng hành: 2023
@@ -124,7 +124,7 @@ Số liệu:
 
 ### Người đứng sau hệ sinh thái AP
 Nguyễn Phước Lộc — được biết đến nhiều hơn với tên gọi Johnny Lộc Nguyễn — là kỹ sư ô tô tốt nghiệp Đại học Bách Khoa TP.HCM, khởi nghiệp từ một trung tâm chăm sóc xe nhỏ tại Đồng Nai vào năm 2012. Sau hơn một thập kỷ, anh đã xây dựng nên AP: một hệ sinh thái ô tô toàn diện gồm 5 mảnh ghép — AP Car Care (chăm sóc & detailing), AP Market (thương mại điện tử phụ kiện), AP Education (đào tạo nghề — chính là Học viện Detailing Việt Nam), AP Service (bảo dưỡng, sửa chữa) và AP Store (mua bán xe).
-Trí Đức Car Media bắt đầu đồng hành cùng anh Johnny từ năm 2023, đúng giai đoạn AP hoàn thiện mảnh ghép cuối (AP Store) và chuẩn hoá lại toàn bộ hệ thống thành AP Corporation. Đây không phải một hợp đồng dịch vụ ngắn hạn, mà là một mối quan hệ tư vấn — đồng hành xuyên suốt nhiều năm, đi qua cả những giai đoạn thuận lợi lẫn khó khăn.
+Trí Đức Media bắt đầu đồng hành cùng anh Johnny từ năm 2023, đúng giai đoạn AP hoàn thiện mảnh ghép cuối (AP Store) và chuẩn hoá lại toàn bộ hệ thống thành AP Corporation. Đây không phải một hợp đồng dịch vụ ngắn hạn, mà là một mối quan hệ tư vấn — đồng hành xuyên suốt nhiều năm, đi qua cả những giai đoạn thuận lợi lẫn khó khăn.
 
 ### Hệ sinh thái bao phủ toàn bộ ngành detailing & ô tô
 Điều khiến AP khác biệt không chỉ là quy mô, mà là độ phủ: 5 mảnh ghép cộng lại bao trọn gần như toàn bộ hành trình một chiếc xe và cả một ngành nghề — chăm sóc/detailing (AP Car Care), phụ kiện & nâng cấp (AP Market), đào tạo nhân lực cho cả ngành detailing (AP Education — Học viện Detailing Việt Nam), bảo dưỡng/sửa chữa (AP Service), đến mua bán xe (AP Store). Ít có mô hình nào tại Việt Nam phủ đủ cả 5 lớp này trong cùng một hệ sinh thái, từ người dùng dịch vụ đến người được đào tạo để làm nghề.
@@ -134,7 +134,7 @@ Một trong những triết lý kinh doanh được anh Đức đề xuất và 
 
 ### “Giải phóng” một nhà sáng lập khỏi việc không thuộc vai trò của mình
 Như phần lớn founder của các doanh nghiệp vừa và nhỏ đang tăng trưởng nhanh, giai đoạn đầu anh Johnny từng phải kiêm nhiệm rất nhiều việc lẽ ra thuộc về một bộ phận chuyên trách: tự lên ý tưởng nội dung, tự chỉnh sửa hình ảnh, tự theo dõi và trả lời tin nhắn trên fanpage, thậm chí tự mày mò chỉnh sửa website — bên cạnh vai trò điều hành toàn bộ hệ thống nhiều chi nhánh, nhiều mảng kinh doanh.
-Theo đúng cơ cấu tổ chức mà AP Corporation công bố, vị trí “CMO — Giám đốc Marketing” (phụ trách truyền thông, nội dung, quảng cáo, thiết kế) là một trong 5 khối chức năng chính dưới CEO, ngang hàng với COO, CFO, CHRO và CIO. Vai trò của Trí Đức Car Media trong suốt hành trình này chính là đảm nhiệm trọn vẹn khối CMO đó — từ chiến lược nội dung, sản xuất hình ảnh/video, đến vận hành quảng cáo và báo cáo số liệu hàng tháng — để anh Johnny không còn phải tự làm, mà có thể lùi lại một bước để nhìn toàn cục.
+Theo đúng cơ cấu tổ chức mà AP Corporation công bố, vị trí “CMO — Giám đốc Marketing” (phụ trách truyền thông, nội dung, quảng cáo, thiết kế) là một trong 5 khối chức năng chính dưới CEO, ngang hàng với COO, CFO, CHRO và CIO. Vai trò của Trí Đức Media trong suốt hành trình này chính là đảm nhiệm trọn vẹn khối CMO đó — từ chiến lược nội dung, sản xuất hình ảnh/video, đến vận hành quảng cáo và báo cáo số liệu hàng tháng — để anh Johnny không còn phải tự làm, mà có thể lùi lại một bước để nhìn toàn cục.
 Khi không còn phải tự tay thiết kế từng banner hay trực page mỗi tối, thời gian và năng lượng của một nhà sáng lập được trả lại đúng chỗ: xây chiến lược, đào tạo đội ngũ, phát triển hệ sinh thái, và quan trọng nhất — biết rõ việc gì nên buông, việc gì nên giữ.
 
 ### Không phải hành trình chỉ toàn thành công

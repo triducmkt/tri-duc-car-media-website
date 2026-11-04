@@ -30,7 +30,7 @@ export function FounderPortrait({
     <div className={`relative ${className}`}>
       <Image
         src={PHOTO_SRC}
-        alt="Tăng Trí Đức — Founder Trí Đức Car Media"
+        alt="Tăng Trí Đức — Founder Trí Đức Media"
         fill
         priority={priority}
         sizes="(min-width: 1024px) 420px, 384px"

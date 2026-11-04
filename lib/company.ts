@@ -9,7 +9,7 @@ export const COMPANY = {
   legalNameVi: "CÔNG TY TNHH TRÍ ĐỨC CAR MEDIA",
   legalNameEn: "TRI DUC CAR MEDIA COMPANY LIMITED",
   shortName: "TRI DUC CAR MEDIA CO.,LTD",
-  brandName: "Trí Đức Car Media",
+  brandName: "Trí Đức Media",
   type: "Công ty TNHH một thành viên",
   taxCode: "0319761584",
   registeredOn: "2026-10-22",
@@ -51,7 +51,8 @@ export function organizationJsonLd() {
     "@id": `${COMPANY.siteUrl}/#organization`,
     name: COMPANY.brandName,
     legalName: COMPANY.legalNameVi,
-    alternateName: [COMPANY.legalNameEn, COMPANY.shortName],
+    // "Trí Đức Car Media" = brand name used until 11/2026 — kept so search still links old mentions.
+    alternateName: ["Trí Đức Car Media", COMPANY.legalNameEn, COMPANY.shortName],
     url: COMPANY.siteUrl,
     logo: `${COMPANY.siteUrl}/brand/logo.png`,
     image: `${COMPANY.siteUrl}/brand/logo.png`,

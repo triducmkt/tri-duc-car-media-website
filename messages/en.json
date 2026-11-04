@@ -1,7 +1,7 @@
 {
   "meta": {
-    "siteName": "Tri Duc Car Media",
-    "defaultTitle": "Tang Tri Duc | Tri Duc Car Media — Marketing & Growth Consulting for SMEs",
+    "siteName": "Tri Duc Media",
+    "defaultTitle": "Tang Tri Duc | Tri Duc Media — Marketing & Growth Consulting for SMEs",
     "defaultDescription": "Consulting, design and operation of Marketing - Sales - Customer Care systems for Vietnamese SMEs and household businesses, led by founder Tang Tri Duc."
   },
   "nav": {
@@ -16,14 +16,14 @@
   },
   "footer": {
     "tagline": "Free the owner. Elevate the business.",
-    "companyName": "Trí Đức Car Media",
+    "companyName": "Trí Đức Media",
     "addressLabel": "Contact",
     "phone": "076.991.8685",
     "email": "tangtriduc@triduccar.media",
     "linksHeading": "Navigate",
     "servicesHeading": "Services",
-    "rights": "All rights reserved by Tri Duc Car Media.",
-    "madeWith": "Designed and operated by the Tri Duc Car Media team.",
+    "rights": "All rights reserved by Tri Duc Media.",
+    "madeWith": "Designed and operated by the Tri Duc Media team.",
     "privacy": "Data privacy",
     "fanpage": "facebook.com/triduccar.media",
     "taxCode": "Tax code",
@@ -35,7 +35,7 @@
     "servicesSub": "From strategy to execution — every service is designed to free business owners from manual, day-to-day operations.",
     "founderEyebrow": "Your partner",
     "founderHeading": "Not just an agency. A strategic partner.",
-    "founderBody": "Tang Tri Duc personally advises and works alongside each business, rather than handing it off to junior staff. Rooted in the Automotive Services industry, Tri Duc Car Media now brings this model to SMEs across every sector in Vietnam.",
+    "founderBody": "Tang Tri Duc personally advises and works alongside each business, rather than handing it off to junior staff. Rooted in the Automotive Services industry, Tri Duc Media now brings this model to SMEs across every sector in Vietnam.",
     "founderCta": "Meet the founder",
     "processEyebrow": "Process",
     "processHeading": "How we work alongside your business",
@@ -460,14 +460,14 @@
     "title": "About the Founder",
     "eyebrow": "Founder",
     "name": "Tang Tri Duc",
-    "roleLine": "Founder — Tri Duc Car Media",
+    "roleLine": "Founder — Tri Duc Media",
     "heading": "Building and standing beside SMEs",
     "quote": "Free the owner. Elevate the business.",
-    "bodyIntro": "Tang Tri Duc is the founder of Tri Duc Car Media — a firm that consults, provides, designs and operates Marketing, Communications, Sales and business optimization services for SMEs and household businesses in Vietnam.",
+    "bodyIntro": "Tang Tri Duc is the founder of Tri Duc Media — a firm that consults, provides, designs and operates Marketing, Communications, Sales and business optimization services for SMEs and household businesses in Vietnam.",
     "body1Heading": "Rooted in Automotive Services",
     "body1": "Starting with growth solutions for the Automotive Services industry, Tang Tri Duc built hands-on experience designing Marketing - Sales - Customer Care systems for small and medium businesses — where owners often have to wear every hat themselves.",
     "body2Heading": "Expanding the model to every SME sector",
-    "body2": "From that foundation, Tri Duc Car Media grew into a comprehensive partner for SMEs and household businesses across many industries, guided by one consistent philosophy: every business needs a properly designed operating system, not an owner carrying everything alone.",
+    "body2": "From that foundation, Tri Duc Media grew into a comprehensive partner for SMEs and household businesses across many industries, guided by one consistent philosophy: every business needs a properly designed operating system, not an owner carrying everything alone.",
     "body3Heading": "Approach",
     "body3": "No off-the-shelf packages — every business is diagnosed individually, given its own roadmap, and supported directly by the founder at the moments that matter most.",
     "valuesHeading": "Core values",
@@ -498,7 +498,7 @@
           "date": "Since 2023",
           "place": "AP ecosystem",
           "title": "Acting CMO for CEO Johnny Loc Nguyen",
-          "body": "Johnny leads the business; Tri Duc Car Media runs the marketing.",
+          "body": "Johnny leads the business; Tri Duc Media runs the marketing.",
           "metric": "1 centre → 5 brands · Bac Ninh opened 10/2025"
         },
         {
@@ -579,11 +579,11 @@
     "title": "Case Studies",
     "eyebrow": "Real results",
     "heading": "Projects we've supported",
-    "intro": "A selection of examples showing how Tri Duc Car Media partners with businesses — full details are being finalized with each client.",
+    "intro": "A selection of examples showing how Tri Duc Media partners with businesses — full details are being finalized with each client.",
     "readMore": "View details",
     "backToList": "Back to case studies",
     "empty": "Case studies are being updated. Please check back soon.",
-    "ongoingBadge": "Actively managed by Tri Duc Car Media",
+    "ongoingBadge": "Actively managed by Tri Duc Media",
     "updatedThrough": "Data updated through",
     "resultsHeading": "Key results",
     "twin": {
@@ -673,7 +673,7 @@
     "ctaBook": "Book a free 1-1",
     "ctaZalo": "Message on Zalo",
     "ctaVat": "VAT e-invoices issued",
-    "sourceLink": "See the original post on the Trí Đức Car Media fanpage",
+    "sourceLink": "See the original post on the Trí Đức Media fanpage",
     "related": "Related articles",
     "categories": {
       "he-thong": "Marketing - Sales - Care systems",
@@ -721,7 +721,7 @@
     "title": "Book a Consultation",
     "eyebrow": "Start your growth journey",
     "heading": "Book a 1-1 consultation with Tang Tri Duc",
-    "intro": "Leave your details and the Tri Duc Car Media team will confirm a suitable consultation time within 24 business hours.",
+    "intro": "Leave your details and the Tri Duc Media team will confirm a suitable consultation time within 24 business hours.",
     "fields": {
       "name": "Full name",
       "phone": "Phone number",
@@ -734,7 +734,7 @@
     "submit": "Send booking request",
     "submitting": "Sending...",
     "successTitle": "Request sent successfully!",
-    "successBody": "Thank you. The Tri Duc Car Media team will contact you within 24 business hours.",
+    "successBody": "Thank you. The Tri Duc Media team will contact you within 24 business hours.",
     "errorTitle": "Something went wrong",
     "errorBody": "Please try again later or contact us directly at 076.991.8685.",
     "studio": {
@@ -785,7 +785,7 @@
       "errTitle": "Couldn't hold the slot",
       "errBody": "Please call 076.991.8685 or message us on Zalo.",
       "ticket": {
-        "brand": "TRÍ ĐỨC CAR MEDIA",
+        "brand": "TRÍ ĐỨC MEDIA",
         "title": "1-1 CONSULTATION PASS",
         "format": "FORMAT",
         "date": "DAY",
@@ -801,7 +801,7 @@
   "contact": {
     "title": "Contact",
     "eyebrow": "Get in touch",
-    "heading": "Contact Tri Duc Car Media",
+    "heading": "Contact Tri Duc Media",
     "intro": "Call, message on Zalo or send a note — Trí Đức replies within the working day. Contracts with a limited company, VAT invoices included.",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
@@ -832,7 +832,7 @@
     "title": "Tri Duc uses data to improve this website",
     "body": "With your consent we record how you use the site (pages viewed, time, click positions, scroll) together with your IP address and device type.",
     "detailsToggle": "What we collect",
-    "details": "IP address and IP-based approximate location (city), browser, screen size, traffic source, pages viewed, time on page, scroll depth, clicks and hover per 1 cm cell, form/survey steps (never what you type). Used only internally by Tri Duc Car Media to improve the experience, never sold. Change your choice any time from the footer or request deletion at tangtriduc@triduccar.media.",
+    "details": "IP address and IP-based approximate location (city), browser, screen size, traffic source, pages viewed, time on page, scroll depth, clicks and hover per 1 cm cell, form/survey steps (never what you type). Used only internally by Tri Duc Media to improve the experience, never sold. Change your choice any time from the footer or request deletion at tangtriduc@triduccar.media.",
     "accept": "Accept",
     "decline": "Decline"
   },
@@ -846,9 +846,9 @@
     "lookup": "Look up the tax code on the General Department of Taxation portal",
     "cta": "Get a quote with VAT",
     "ctaLegal": "See legal details",
-    "tableCaption": "Trí Đức Car Media compared with solo agencies, freelance teams and household businesses",
+    "tableCaption": "Trí Đức Media compared with solo agencies, freelance teams and household businesses",
     "colCriteria": "Criteria",
-    "colUs": "Trí Đức Car Media",
+    "colUs": "Trí Đức Media",
     "colThem": "Solo / freelance / household business",
     "rows": [
       {
@@ -943,7 +943,7 @@
     "playlist": "Video list",
     "youtubeChannel": "Visit the YouTube channel",
     "youtubeSubscribe": "Subscribe",
-    "fanpageOpen": "Open the Tri Duc Car Media fanpage",
+    "fanpageOpen": "Open the Tri Duc Media fanpage",
     "fanpageFallback": "Don’t see the fanpage? Your browser may block Facebook content; use the button below to open it directly.",
     "qrAlt": "Duc’s Zalo QR code",
     "qrCaption": "Scan with Zalo on your phone",
@@ -971,7 +971,7 @@
     "office": "Office"
   },
   "check": {
-    "metaTitle": "60-second shop check — what is holding the owner back? | Tri Duc Car Media",
+    "metaTitle": "60-second shop check — what is holding the owner back? | Tri Duc Media",
     "metaDescription": "5 questions, 60 seconds: see whether your service business is weakest in new customers, repeat customers, team, online channels or numbers, with a matching real case and the first step to take.",
     "nav": "60s check",
     "eyebrow": "Shop check · 60 seconds",

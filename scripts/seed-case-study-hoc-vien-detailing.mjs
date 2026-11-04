@@ -65,7 +65,7 @@ function imageBlock(asset, caption) {
 const bodyVi = (charts) => [
   block("Bối cảnh", { style: "h3" }),
   block(
-    "Học viện Detailing Việt Nam (thương hiệu AP Education trên chamsocxehoi.edu.vn) đào tạo nghề chăm sóc & nâng cấp ô tô — detailing, dán PPF, phim cách nhiệt, âm thanh xe hơi — theo mô hình “học thực chiến, làm thực tế” gắn liền với hệ thống AP Car Care do CEO Johnny Lộc Nguyễn sáng lập. Trí Đức Car Media bắt đầu quản lý fanpage từ đầu năm 2025.",
+    "Học viện Detailing Việt Nam (thương hiệu AP Education trên chamsocxehoi.edu.vn) đào tạo nghề chăm sóc & nâng cấp ô tô — detailing, dán PPF, phim cách nhiệt, âm thanh xe hơi — theo mô hình “học thực chiến, làm thực tế” gắn liền với hệ thống AP Car Care do CEO Johnny Lộc Nguyễn sáng lập. Trí Đức Media bắt đầu quản lý fanpage từ đầu năm 2025.",
   ),
   block(
     "Tháng 10/2025, học viện mở thêm cơ sở tại Bắc Ninh — đánh dấu bước ngoặt Nam tiến ra Bắc của cả hệ sinh thái AP, và cũng là giai đoạn đội ngũ marketing bắt đầu dồn lực đẩy mạnh nội dung đa kênh (Fanpage + TikTok) để xây nhận diện tại thị trường mới.",
@@ -108,14 +108,14 @@ const bodyVi = (charts) => [
     "Giai đoạn tới tập trung chuyển đổi lượt tiếp cận khổng lồ thành học viên ghi danh thực tế: tối ưu kịch bản tư vấn tuyển sinh, xây dựng chuỗi nội dung “góc nhìn học viên” (before/after tay nghề) và case học viên tốt nghiệp có việc làm ngay tại hệ thống AP Car Care — đặc biệt tại cơ sở Bắc Ninh vừa mở và trong bối cảnh AP đang khảo sát mở học viện tại Đà Nẵng.",
   ),
   block(
-    "Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Học viện Detailing Việt Nam. Xem thêm hành trình xây dựng cả hệ sinh thái AP — từ AP Car Care đến AP Education — trong case study riêng về CEO Johnny Lộc Nguyễn.",
+    "Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Học viện Detailing Việt Nam. Xem thêm hành trình xây dựng cả hệ sinh thái AP — từ AP Car Care đến AP Education — trong case study riêng về CEO Johnny Lộc Nguyễn.",
   ),
 ];
 
 const bodyEn = (charts) => [
   block("Context", { style: "h3" }),
   block(
-    "Vietnam Detailing Academy (on-site brand: AP Education, at chamsocxehoi.edu.vn) trains professional automotive care skills — detailing, PPF, window tint, car audio — under a hands-on “train on real cars” model tied to the AP Car Care network founded by CEO Johnny Loc Nguyen. Tri Duc Car Media took over the Fanpage in early 2025.",
+    "Vietnam Detailing Academy (on-site brand: AP Education, at chamsocxehoi.edu.vn) trains professional automotive care skills — detailing, PPF, window tint, car audio — under a hands-on “train on real cars” model tied to the AP Car Care network founded by CEO Johnny Loc Nguyen. Tri Duc Media took over the Fanpage in early 2025.",
   ),
   block(
     "In October 2025, the academy opened a second location in Bac Ninh — marking the AP ecosystem's first move north — and that's also when the marketing team began pushing multi-channel content (Fanpage + TikTok) harder to build awareness in the new market.",
@@ -158,7 +158,7 @@ const bodyEn = (charts) => [
     "The next phase focuses on converting this massive reach into actual enrollments: refining the admissions-inquiry script, building a “student's-eye view” content series (skill before/after), and graduate success stories placed directly within the AP Car Care network — especially at the newly opened Bac Ninh location, while AP explores opening an academy in Da Nang.",
   ),
   block(
-    "Tri Duc Car Media still directly runs Vietnam Detailing Academy's full media operation today. See the dedicated case study on CEO Johnny Loc Nguyen for the full story of building the AP ecosystem, from AP Car Care to AP Education.",
+    "Tri Duc Media still directly runs Vietnam Detailing Academy's full media operation today. See the dedicated case study on CEO Johnny Loc Nguyen for the full story of building the AP ecosystem, from AP Car Care to AP Education.",
   ),
 ];
 

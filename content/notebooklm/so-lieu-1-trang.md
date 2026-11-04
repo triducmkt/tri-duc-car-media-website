@@ -49,7 +49,7 @@ Hãy thống nhất thành các bước cụ thể, viết ra giấy và đào t
 - **Tư vấn và báo giá:** giải thích rõ vấn đề, các phương án và chi phí, tránh báo giá miệng mỗi người một kiểu.
 - **Bàn giao:** kiểm tra cùng khách trước khi giao, hướng dẫn cách bảo quản.
 - **Chăm sóc sau dịch vụ:** nhắc lịch bảo dưỡng, hỏi thăm trải nghiệm, mời khách quay lại.
-![Chuyên gia Trí Đức Car Media trao đổi quy trình phục vụ khách cùng chủ cơ sở](tdcm-fb-01-2.jpg)
+![Chuyên gia Trí Đức Media trao đổi quy trình phục vụ khách cùng chủ cơ sở](tdcm-fb-01-2.jpg)
 ## 2. Chuẩn hóa cách đội ngũ phối hợp
 Việc gì cũng hỏi sếp, chuyện gì cũng chờ sếp quyết. Đến lúc sếp bận hoặc vắng mặt, công việc lập tức đình trệ. Nguyên nhân thường không nằm ở nhân viên kém, mà ở chỗ chưa ai được giao rõ trách nhiệm và phạm vi tự quyết.
 Hãy phân rõ **người phụ trách**, **trách nhiệm** và **phạm vi được tự quyết** cho từng vị trí. Ví dụ: kỹ thuật viên trưởng được quyết thay vật tư dưới một mức chi phí nhất định, lễ tân được tự xử lý đổi lịch hẹn. Không phải chuyện gì cũng cần gọi sếp vào xử lý.
@@ -57,7 +57,7 @@ Hãy phân rõ **người phụ trách**, **trách nhiệm** và **phạm vi đ�
 Đừng để sáng nào cũng bắt đầu bằng câu hỏi: “Hôm nay đăng gì?”. Hãy có **kế hoạch nội dung theo tháng**, lịch quay dựng, lịch đăng bài và người chịu trách nhiệm rõ ràng. Sếp vẫn định hướng và chia sẻ câu chuyện thực tế, nhưng không cần tự nghĩ từng bài mỗi ngày.
 Nếu anh chị chưa biết bắt đầu từ đâu, có thể thử [công cụ Dựng hệ thống trên trang Dịch vụ](/vi/dich-vu): chọn những việc đang làm mình mệt, hệ thống sẽ gợi ý lộ trình từ nền móng SOP đến marketing.
 ## Chuẩn hóa không làm hết bận sau một đêm
-Chuẩn hóa không giúp cơ sở hết bận chỉ sau một đêm. Nhưng nếu cứ làm theo thói quen cũ, rất khó mong chờ một kết quả mới. Tại Trí Đức Car Media (TDCM), chúng tôi đồng hành cùng chủ cơ sở xây dựng kế hoạch và hoạt động marketing bài bản hơn, để thương hiệu xuất hiện đều đặn mà sếp không phải tự ôm hết mọi việc.
+Chuẩn hóa không giúp cơ sở hết bận chỉ sau một đêm. Nhưng nếu cứ làm theo thói quen cũ, rất khó mong chờ một kết quả mới. Tại Trí Đức Media (TDCM), chúng tôi đồng hành cùng chủ cơ sở xây dựng kế hoạch và hoạt động marketing bài bản hơn, để thương hiệu xuất hiện đều đặn mà sếp không phải tự ôm hết mọi việc.
 Muốn tháng sau nhẹ gánh hơn, đừng đợi sang tháng mới bắt đầu thay đổi. Anh chị muốn rà soát lại vận hành và marketing của cơ sở mình? [Đặt lịch 15 phút chẩn đoán miễn phí](/vi/dat-lich-tu-van) để cùng trao đổi hướng triển khai phù hợp.
 
 ---
@@ -117,4 +117,4 @@ Nếu chỉ chạy quảng cáo để có khách mới, doanh thu sẽ bấp bê
 - Content phải thật và gần gũi thì khách mới tin tưởng hơn quảng cáo thông thường.
 - Video hậu trường và mẹo chăm xe giúp khách hiểu và trân trọng tay nghề đội ngũ.
 - Chăm sóc khách cũ chính là “vũ khí bí mật” giữ doanh thu ổn định lâu dài — không phụ thuộc hoàn toàn vào ads.
-Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.
+Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.

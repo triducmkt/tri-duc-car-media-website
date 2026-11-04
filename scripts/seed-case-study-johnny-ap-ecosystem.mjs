@@ -1,7 +1,7 @@
 /**
  * One-off import: creates the "Johnny Lộc Nguyễn — Hệ sinh thái AP" case
  * study in Sanity. This one is different from the others: it isn't a
- * monthly marketing report, it's the founder story of how Tri Duc Car Media
+ * monthly marketing report, it's the founder story of how Tri Duc Media
  * has partnered with CEO Johnny Loc Nguyen since 2023 — freeing him from
  * doing marketing execution himself so he could focus on leading the whole
  * AP ecosystem (AP Car Care, AP Market, AP Education, AP Service, AP Store)
@@ -74,7 +74,7 @@ const bodyVi = (imgs) => [
   ),
   imageBlock(imgs.ecosystem, "Hệ sinh thái ô tô toàn diện AP — 5 mảnh ghép xoay quanh một chiếc xe (nguồn: apcarcare.vn)"),
   block(
-    "Trí Đức Car Media bắt đầu đồng hành cùng anh Johnny từ năm 2023, đúng giai đoạn AP hoàn thiện mảnh ghép cuối (AP Store) và chuẩn hoá lại toàn bộ hệ thống thành AP Corporation. Đây không phải một hợp đồng dịch vụ ngắn hạn, mà là một mối quan hệ tư vấn — đồng hành xuyên suốt nhiều năm, đi qua cả những giai đoạn thuận lợi lẫn khó khăn.",
+    "Trí Đức Media bắt đầu đồng hành cùng anh Johnny từ năm 2023, đúng giai đoạn AP hoàn thiện mảnh ghép cuối (AP Store) và chuẩn hoá lại toàn bộ hệ thống thành AP Corporation. Đây không phải một hợp đồng dịch vụ ngắn hạn, mà là một mối quan hệ tư vấn — đồng hành xuyên suốt nhiều năm, đi qua cả những giai đoạn thuận lợi lẫn khó khăn.",
   ),
 
   block("Hệ sinh thái bao phủ toàn bộ ngành detailing & ô tô", { style: "h3" }),
@@ -92,7 +92,7 @@ const bodyVi = (imgs) => [
     "Như phần lớn founder của các doanh nghiệp vừa và nhỏ đang tăng trưởng nhanh, giai đoạn đầu anh Johnny từng phải kiêm nhiệm rất nhiều việc lẽ ra thuộc về một bộ phận chuyên trách: tự lên ý tưởng nội dung, tự chỉnh sửa hình ảnh, tự theo dõi và trả lời tin nhắn trên fanpage, thậm chí tự mày mò chỉnh sửa website — bên cạnh vai trò điều hành toàn bộ hệ thống nhiều chi nhánh, nhiều mảng kinh doanh.",
   ),
   block(
-    "Theo đúng cơ cấu tổ chức mà AP Corporation công bố, vị trí “CMO — Giám đốc Marketing” (phụ trách truyền thông, nội dung, quảng cáo, thiết kế) là một trong 5 khối chức năng chính dưới CEO, ngang hàng với COO, CFO, CHRO và CIO. Vai trò của Trí Đức Car Media trong suốt hành trình này chính là đảm nhiệm trọn vẹn khối CMO đó — từ chiến lược nội dung, sản xuất hình ảnh/video, đến vận hành quảng cáo và báo cáo số liệu hàng tháng — để anh Johnny không còn phải tự làm, mà có thể lùi lại một bước để nhìn toàn cục.",
+    "Theo đúng cơ cấu tổ chức mà AP Corporation công bố, vị trí “CMO — Giám đốc Marketing” (phụ trách truyền thông, nội dung, quảng cáo, thiết kế) là một trong 5 khối chức năng chính dưới CEO, ngang hàng với COO, CFO, CHRO và CIO. Vai trò của Trí Đức Media trong suốt hành trình này chính là đảm nhiệm trọn vẹn khối CMO đó — từ chiến lược nội dung, sản xuất hình ảnh/video, đến vận hành quảng cáo và báo cáo số liệu hàng tháng — để anh Johnny không còn phải tự làm, mà có thể lùi lại một bước để nhìn toàn cục.",
   ),
   block(
     "Khi không còn phải tự tay thiết kế từng banner hay trực page mỗi tối, thời gian và năng lượng của một nhà sáng lập được trả lại đúng chỗ: xây chiến lược, đào tạo đội ngũ, phát triển hệ sinh thái, và quan trọng nhất — biết rõ việc gì nên buông, việc gì nên giữ.",
@@ -142,7 +142,7 @@ const bodyEn = (imgs) => [
   ),
   imageBlock(imgs.ecosystem, "AP's full automotive ecosystem — five arms around one car (source: apcarcare.vn)"),
   block(
-    "Tri Duc Car Media began partnering with Johnny in 2023, right as AP completed its final piece (AP Store) and standardized the whole system under AP Corporation. This has never been a short-term service contract — it's an ongoing advisory relationship spanning years, through both smooth stretches and hard ones.",
+    "Tri Duc Media began partnering with Johnny in 2023, right as AP completed its final piece (AP Store) and standardized the whole system under AP Corporation. This has never been a short-term service contract — it's an ongoing advisory relationship spanning years, through both smooth stretches and hard ones.",
   ),
 
   block("An ecosystem that covers the whole detailing & automotive industry", { style: "h3" }),
@@ -160,7 +160,7 @@ const bodyEn = (imgs) => [
     "Like most founders of fast-growing SMEs, in the early stage Johnny had to wear far more hats than a single person should: coming up with content ideas himself, editing photos himself, monitoring and replying to Fanpage messages himself, even tinkering with the website himself — on top of running an entire multi-branch, multi-business system.",
   ),
   block(
-    "Per AP Corporation's own published org chart, the “CMO — Marketing Director” seat (communications, content, ads, design) is one of five core functions under the CEO, alongside COO, CFO, CHRO and CIO. Tri Duc Car Media's role throughout this journey has been to fully own that CMO function — content strategy, photo/video production, ad operations, and monthly reporting — so Johnny no longer has to do it himself, and can step back to see the whole picture.",
+    "Per AP Corporation's own published org chart, the “CMO — Marketing Director” seat (communications, content, ads, design) is one of five core functions under the CEO, alongside COO, CFO, CHRO and CIO. Tri Duc Media's role throughout this journey has been to fully own that CMO function — content strategy, photo/video production, ad operations, and monthly reporting — so Johnny no longer has to do it himself, and can step back to see the whole picture.",
   ),
   block(
     "Once he no longer had to design every banner or man the page every evening himself, a founder's time and energy went back where it belonged: building strategy, training the team, growing the ecosystem, and — most importantly — knowing what to let go of and what to hold onto.",
@@ -252,8 +252,8 @@ const doc = {
     en: "Founder Partnership & Brand Ecosystem Building",
   },
   summary: {
-    vi: "Từ 2023 đến nay, Trí Đức Car Media đồng hành cùng CEO Johnny Lộc Nguyễn — tư vấn, đề xuất và trực tiếp đảm nhiệm vai trò CMO — giúp anh tập trung dẫn dắt hệ sinh thái AP (Car Care, Market, Education, Service, Store) mở rộng ra Bắc Ninh (10/2025), hướng tới Đà Nẵng (2026) và tầm nhìn 10 chi nhánh toàn quốc vào 2030.",
-    en: "Since 2023, Tri Duc Car Media has partnered with CEO Johnny Loc Nguyen — advising, proposing, and directly running the CMO function — freeing him to lead the AP ecosystem (Car Care, Market, Education, Service, Store) expanding into Bac Ninh (Oct 2025), scouting Da Nang next (2026), with a 2030 vision of 10 branches nationwide.",
+    vi: "Từ 2023 đến nay, Trí Đức Media đồng hành cùng CEO Johnny Lộc Nguyễn — tư vấn, đề xuất và trực tiếp đảm nhiệm vai trò CMO — giúp anh tập trung dẫn dắt hệ sinh thái AP (Car Care, Market, Education, Service, Store) mở rộng ra Bắc Ninh (10/2025), hướng tới Đà Nẵng (2026) và tầm nhìn 10 chi nhánh toàn quốc vào 2030.",
+    en: "Since 2023, Tri Duc Media has partnered with CEO Johnny Loc Nguyen — advising, proposing, and directly running the CMO function — freeing him to lead the AP ecosystem (Car Care, Market, Education, Service, Store) expanding into Bac Ninh (Oct 2025), scouting Da Nang next (2026), with a 2030 vision of 10 branches nationwide.",
   },
   isOngoing: true,
   dataAsOf: "09/2026",

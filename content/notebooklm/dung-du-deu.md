@@ -31,7 +31,7 @@ Marketing đều đặn mỗi tuần hiệu quả hơn những đợt làm rầm
 - **Phòng Gym:** hành trình thay đổi của hội viên, lịch tập, huấn luyện viên.
 Xem cách công thức này được áp dụng thực tế tại [các cơ sở Trí Đức đang đồng hành](/vi/du-an), hoặc chọn đúng chỗ đang nghẽn với [công cụ Dựng hệ thống](/vi/dich-vu).
 ## Video gốc
-Bài viết mở rộng từ video trên fanpage Trí Đức Car Media về công thức “đúng – đủ – đều”. Muốn áp dụng cho doanh nghiệp của mình? [Đặt lịch chẩn đoán 15 phút miễn phí](/vi/dat-lich-tu-van).
+Bài viết mở rộng từ video trên fanpage Trí Đức Media về công thức “đúng – đủ – đều”. Muốn áp dụng cho doanh nghiệp của mình? [Đặt lịch chẩn đoán 15 phút miễn phí](/vi/dat-lich-tu-van).
 
 ---
 
@@ -58,7 +58,7 @@ Có một cơ sở từng chạy quảng cáo liên tục nhưng phần lớn kh
 - **Lời kêu gọi đặt lịch** đưa họ từ người xem online thành người hỏi, rồi thành khách tại cửa hàng.
 ![Đội ngũ cơ sở dịch vụ trước xưởng, sẵn sàng ghi hình nội dung thực tế](tdcm-fb-06-4.jpg)
 Vì vậy, nếu quảng cáo không ra đơn, hãy nhìn lại cả hệ thống: quảng cáo có tiếp cận đúng người không, content có đủ thực tế không, hình ảnh có chứng minh được năng lực không, trang cửa hàng có đủ uy tín để khách ra quyết định không. Câu chuyện [chuẩn hóa kênh online của AP Car Care](/vi/kien-thuc/chuan-hoa-kenh-online-ap-car-care) là một ví dụ thực tế.
-Trí Đức Car Media kết hợp content thực tế, tối ưu quảng cáo và chiến lược local để từng bước kéo dòng khách thật về cửa hàng. Xem [các gói dịch vụ](/vi/dich-vu) hoặc [đặt lịch chẩn đoán miễn phí](/vi/dat-lich-tu-van).
+Trí Đức Media kết hợp content thực tế, tối ưu quảng cáo và chiến lược local để từng bước kéo dòng khách thật về cửa hàng. Xem [các gói dịch vụ](/vi/dich-vu) hoặc [đặt lịch chẩn đoán miễn phí](/vi/dat-lich-tu-van).
 
 ---
 
@@ -86,7 +86,7 @@ Một gara có thể lên lịch trước các nhóm nội dung xoay vòng mỗi
 Mỗi tuần biết rõ cần làm gì, ai phụ trách và khi nào hoàn thành. Đó mới là cách để marketing vận hành đều đặn, thay vì sáng nào cũng bắt đầu bằng câu hỏi “Hôm nay đăng gì?”.
 ![Không gian cơ sở dịch vụ được ghi hình làm nội dung marketing](tdcm-fb-02-3.jpg)
 ## Marketing nên giúp sếp bớt bận
-Làm chủ đã đủ thứ phải lo. Marketing nên là việc hỗ trợ sếp phát triển kinh doanh, chứ không phải thêm một việc khiến sếp bận hơn. Tại Trí Đức Car Media, chúng tôi giúp chủ cơ sở xây dựng [hệ thống Marketing - Sales - CSKH](/vi/dich-vu) có kế hoạch, có quy trình và bớt phụ thuộc vào việc sếp phải nhắc từng việc.
+Làm chủ đã đủ thứ phải lo. Marketing nên là việc hỗ trợ sếp phát triển kinh doanh, chứ không phải thêm một việc khiến sếp bận hơn. Tại Trí Đức Media, chúng tôi giúp chủ cơ sở xây dựng [hệ thống Marketing - Sales - CSKH](/vi/dich-vu) có kế hoạch, có quy trình và bớt phụ thuộc vào việc sếp phải nhắc từng việc.
 Muốn biết hệ thống marketing của cơ sở mình đang hổng ở đâu? [Đặt lịch chẩn đoán miễn phí 15 phút](/vi/dat-lich-tu-van) với founder Tăng Trí Đức.
 
 ---
@@ -104,7 +104,7 @@ Số liệu:
 
 
 ### Bối cảnh
-Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Car Media từ tháng 07/2026 — tháng đầu tiên triển khai đồng bộ cả ba nền tảng Facebook, TikTok và YouTube trong cùng một gói Marketing PRO.
+Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Media từ tháng 07/2026 — tháng đầu tiên triển khai đồng bộ cả ba nền tảng Facebook, TikTok và YouTube trong cùng một gói Marketing PRO.
 
 ### Tăng trưởng qua từng tháng (T6 → T7 → T8/2026)
 - Lượt xem Facebook: 292 → 1.722 (+490%) → 20.115 (+1.068% so với T7).
@@ -116,7 +116,7 @@ Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Ca
 - Các từ khoá thương hiệu bắt đầu xuất hiện trong tìm kiếm TikTok: “Khang Vũ Auto Care”, “Khang Vũ ô tô”, “rửa xe hơi Bình Dương”.
 
 ### Định hướng tiếp theo
-Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương. Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Khang Vũ Auto Care.
+Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương. Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Khang Vũ Auto Care.
 
 ---
 
@@ -133,7 +133,7 @@ Số liệu:
 
 
 ### Bối cảnh
-Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp tại Rạch Giá, Kiên Giang. Trí Đức Car Media bắt đầu đồng hành từ tháng 07/2026 với gói Marketing PRO: nội dung Fanpage, video ngắn, thiết kế hình ảnh và tư vấn truyền thông định kỳ.
+Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp tại Rạch Giá, Kiên Giang. Trí Đức Media bắt đầu đồng hành từ tháng 07/2026 với gói Marketing PRO: nội dung Fanpage, video ngắn, thiết kế hình ảnh và tư vấn truyền thông định kỳ.
 
 ### Kết quả sau 2 tháng triển khai (T7 → T8/2026)
 - Facebook: lượt xem tăng từ 2.333 lên 9.084 (+289%).
@@ -144,4 +144,4 @@ Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp t�
 - Các từ khoá tìm kiếm thương hiệu bắt đầu xuất hiện trên TikTok: “xe ô tô độ ở Rạch Giá”, “rửa xe ở Rạch Giá”, “phủ gầm ô tô” — cho thấy khách hàng địa phương đã bắt đầu chủ động tìm đến Apex Autocare thay vì chỉ tình cờ thấy quảng cáo.
 
 ### Định hướng tiếp theo
-Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search). Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Apex Autocare.
+Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search). Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Apex Autocare.

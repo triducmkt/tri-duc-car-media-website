@@ -563,7 +563,7 @@ function FacebookPanel() {
         <p className="absolute inset-x-0 top-1/2 -translate-y-1/2 px-6 text-center text-sm text-ink-muted">{t("fanpageFallback")}</p>
         <iframe
           src={plugin}
-          title="Fanpage Trí Đức Car Media"
+          title="Fanpage Trí Đức Media"
           loading="lazy"
           className="relative h-[520px] w-full"
           allow="encrypted-media"

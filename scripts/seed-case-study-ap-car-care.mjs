@@ -168,7 +168,7 @@ const bodyVi = (charts) => [
     listItem: "bullet",
   }),
   block(
-    "Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.",
+    "Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.",
   ),
 ];
 
@@ -269,7 +269,7 @@ const bodyEn = (charts) => [
     listItem: "bullet",
   }),
   block(
-    "Tri Duc Car Media still directly runs AP Car Care's full multi-channel media operation today, alongside Vietnam Detailing Academy — the training arm of the same AP ecosystem founded by CEO Johnny Loc Nguyen. See the dedicated case study on building the AP ecosystem for the full story.",
+    "Tri Duc Media still directly runs AP Car Care's full multi-channel media operation today, alongside Vietnam Detailing Academy — the training arm of the same AP ecosystem founded by CEO Johnny Loc Nguyen. See the dedicated case study on building the AP ecosystem for the full story.",
   ),
 ];
 

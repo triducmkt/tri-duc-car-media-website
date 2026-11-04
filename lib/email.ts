@@ -19,7 +19,7 @@ export async function sendNotificationEmail({
   // domain verification, but only delivers to the account owner's own inbox.
   // Once triduccar.media is verified in Resend, set RESEND_FROM_EMAIL to send
   // from an @triduccar.media address and deliver to any recipient.
-  const from = RESEND_FROM_EMAIL || "Trí Đức Car Media <onboarding@resend.dev>";
+  const from = RESEND_FROM_EMAIL || "Trí Đức Media <onboarding@resend.dev>";
 
   if (!RESEND_API_KEY) {
     console.warn(

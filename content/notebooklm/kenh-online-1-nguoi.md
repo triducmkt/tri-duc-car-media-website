@@ -32,7 +32,7 @@ Quay, chụp, dựng phim, thiết kế và chạy quảng cáo là những kỹ
 ## Làm sao để content không thành “người làm tất cả”?
 Cần ba thứ: mô tả công việc rõ ràng, quy trình sản xuất từ ý tưởng đến lúc đăng, và người duyệt có thẩm quyền. Khi chưa đủ nguồn lực tuyển cả team, nhiều chủ cơ sở chọn [thuê ngoài phòng marketing hoặc setup phòng marketing in-house](/vi/dich-vu) có người dẫn dắt giai đoạn đầu.
 ## Video gốc
-Bài viết mở rộng từ video trên fanpage Trí Đức Car Media về vai trò thực sự của một người làm content trong doanh nghiệp. Xem thêm [hệ thống marketing cho chủ cơ sở](/vi/kien-thuc/he-thong-marketing-cho-chu-co-so) để biết cách đặt người content vào đúng chỗ trong hệ thống.
+Bài viết mở rộng từ video trên fanpage Trí Đức Media về vai trò thực sự của một người làm content trong doanh nghiệp. Xem thêm [hệ thống marketing cho chủ cơ sở](/vi/kien-thuc/he-thong-marketing-cho-chu-co-so) để biết cách đặt người content vào đúng chỗ trong hệ thống.
 Cần tư vấn cách tổ chức đội ngũ content phù hợp với quy mô cơ sở? [Đặt lịch 1-1 miễn phí](/vi/dat-lich-tu-van).
 
 ---
@@ -44,13 +44,13 @@ Câu chuyện AP Car Care cho thấy **chuẩn hóa kênh online** có thể ké
 Khách hỏi giá rồi im lặng. Bài đăng có người xem nhưng không tạo ra cuộc trò chuyện. Hình ảnh mỗi bài một kiểu, nội dung thiếu nhất quán khiến khách khó hình dung xưởng đang làm gì và liệu có đáng tin hay không. Đó cũng là bài toán từng xuất hiện tại AP Car Care.
 ## Khách không chỉ mua một hạng mục
 Khi khách nhắn “Bên mình làm hạng mục này bao nhiêu?”, nếu phía sau câu hỏi ấy chỉ là một bảng giá thì rất dễ kết thúc bằng câu “để em tham khảo”. Với dịch vụ chăm sóc xe, khách không chỉ mua một hạng mục. Họ đang tìm một nơi đủ đáng tin để giao chiếc xe của mình.
-## Trí Đức Car Media đã làm gì?
+## Trí Đức Media đã làm gì?
 Không chạy theo nội dung thật “viral”, mà bắt đầu từ những điều thực tế hơn:
 - **Hình ảnh** phải thể hiện đúng chất lượng dịch vụ.
 - **Nội dung** phải giúp khách hiểu vấn đề trên chiếc xe của mình.
 - **Video** cho thấy quá trình làm thật.
 - **Toàn bộ kênh online** cùng truyền tải một hình ảnh thương hiệu nhất quán.
-![Chuyên gia Trí Đức Car Media trao đổi định hướng nội dung với đội ngũ](tdcm-fb-05-2.jpg)
+![Chuyên gia Trí Đức Media trao đổi định hướng nội dung với đội ngũ](tdcm-fb-05-2.jpg)
 Những chiếc xe thật, tình trạng thật, quy trình thật được đưa lên các kênh truyền thông. Từng video được làm, từng nội dung được chỉnh, từng cách thể hiện được thử nghiệm rồi tiếp tục tối ưu.
 ## Kết quả sau 12 tháng
 Có những giai đoạn kết quả chưa đến ngay. Nhưng thay vì bỏ cuộc sau vài tháng, hai bên tiếp tục điều chỉnh và duy trì đều đặn. Sau 12 tháng, thay đổi bắt đầu rõ hơn: chuỗi video thực tế tạo được sự quan tâm, khách chủ động tìm hiểu dịch vụ, lượng khách đặt lịch qua kênh online ổn định hơn, có thời điểm lịch dịch vụ kín sàn.
@@ -75,7 +75,7 @@ Số liệu:
 
 
 ### Bối cảnh
-Học viện Detailing Việt Nam (thương hiệu AP Education trên chamsocxehoi.edu.vn) đào tạo nghề chăm sóc & nâng cấp ô tô — detailing, dán PPF, phim cách nhiệt, âm thanh xe hơi — theo mô hình “học thực chiến, làm thực tế” gắn liền với hệ thống AP Car Care do CEO Johnny Lộc Nguyễn sáng lập. Trí Đức Car Media bắt đầu quản lý fanpage từ đầu năm 2025.
+Học viện Detailing Việt Nam (thương hiệu AP Education trên chamsocxehoi.edu.vn) đào tạo nghề chăm sóc & nâng cấp ô tô — detailing, dán PPF, phim cách nhiệt, âm thanh xe hơi — theo mô hình “học thực chiến, làm thực tế” gắn liền với hệ thống AP Car Care do CEO Johnny Lộc Nguyễn sáng lập. Trí Đức Media bắt đầu quản lý fanpage từ đầu năm 2025.
 Tháng 10/2025, học viện mở thêm cơ sở tại Bắc Ninh — đánh dấu bước ngoặt Nam tiến ra Bắc của cả hệ sinh thái AP, và cũng là giai đoạn đội ngũ marketing bắt đầu dồn lực đẩy mạnh nội dung đa kênh (Fanpage + TikTok) để xây nhận diện tại thị trường mới.
 
 ### Phễu marketing: khác với AP Car Care, học viện đo bằng lượt tiếp cận & lead tư vấn
@@ -91,4 +91,4 @@ Vì đào tạo là ngành có chu kỳ quyết định dài hơn dịch vụ ch
 
 ### Định hướng tiếp theo
 Giai đoạn tới tập trung chuyển đổi lượt tiếp cận khổng lồ thành học viên ghi danh thực tế: tối ưu kịch bản tư vấn tuyển sinh, xây dựng chuỗi nội dung “góc nhìn học viên” (before/after tay nghề) và case học viên tốt nghiệp có việc làm ngay tại hệ thống AP Car Care — đặc biệt tại cơ sở Bắc Ninh vừa mở và trong bối cảnh AP đang khảo sát mở học viện tại Đà Nẵng.
-Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Học viện Detailing Việt Nam. Xem thêm hành trình xây dựng cả hệ sinh thái AP — từ AP Car Care đến AP Education — trong case study riêng về CEO Johnny Lộc Nguyễn.
+Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Học viện Detailing Việt Nam. Xem thêm hành trình xây dựng cả hệ sinh thái AP — từ AP Car Care đến AP Education — trong case study riêng về CEO Johnny Lộc Nguyễn.

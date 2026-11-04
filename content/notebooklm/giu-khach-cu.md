@@ -19,13 +19,13 @@ Câu chuyện AP Car Care cho thấy **chuẩn hóa kênh online** có thể ké
 Khách hỏi giá rồi im lặng. Bài đăng có người xem nhưng không tạo ra cuộc trò chuyện. Hình ảnh mỗi bài một kiểu, nội dung thiếu nhất quán khiến khách khó hình dung xưởng đang làm gì và liệu có đáng tin hay không. Đó cũng là bài toán từng xuất hiện tại AP Car Care.
 ## Khách không chỉ mua một hạng mục
 Khi khách nhắn “Bên mình làm hạng mục này bao nhiêu?”, nếu phía sau câu hỏi ấy chỉ là một bảng giá thì rất dễ kết thúc bằng câu “để em tham khảo”. Với dịch vụ chăm sóc xe, khách không chỉ mua một hạng mục. Họ đang tìm một nơi đủ đáng tin để giao chiếc xe của mình.
-## Trí Đức Car Media đã làm gì?
+## Trí Đức Media đã làm gì?
 Không chạy theo nội dung thật “viral”, mà bắt đầu từ những điều thực tế hơn:
 - **Hình ảnh** phải thể hiện đúng chất lượng dịch vụ.
 - **Nội dung** phải giúp khách hiểu vấn đề trên chiếc xe của mình.
 - **Video** cho thấy quá trình làm thật.
 - **Toàn bộ kênh online** cùng truyền tải một hình ảnh thương hiệu nhất quán.
-![Chuyên gia Trí Đức Car Media trao đổi định hướng nội dung với đội ngũ](tdcm-fb-05-2.jpg)
+![Chuyên gia Trí Đức Media trao đổi định hướng nội dung với đội ngũ](tdcm-fb-05-2.jpg)
 Những chiếc xe thật, tình trạng thật, quy trình thật được đưa lên các kênh truyền thông. Từng video được làm, từng nội dung được chỉnh, từng cách thể hiện được thử nghiệm rồi tiếp tục tối ưu.
 ## Kết quả sau 12 tháng
 Có những giai đoạn kết quả chưa đến ngay. Nhưng thay vì bỏ cuộc sau vài tháng, hai bên tiếp tục điều chỉnh và duy trì đều đặn. Sau 12 tháng, thay đổi bắt đầu rõ hơn: chuỗi video thực tế tạo được sự quan tâm, khách chủ động tìm hiểu dịch vụ, lượng khách đặt lịch qua kênh online ổn định hơn, có thời điểm lịch dịch vụ kín sàn.
@@ -92,4 +92,4 @@ Nếu chỉ chạy quảng cáo để có khách mới, doanh thu sẽ bấp bê
 - Content phải thật và gần gũi thì khách mới tin tưởng hơn quảng cáo thông thường.
 - Video hậu trường và mẹo chăm xe giúp khách hiểu và trân trọng tay nghề đội ngũ.
 - Chăm sóc khách cũ chính là “vũ khí bí mật” giữ doanh thu ổn định lâu dài — không phụ thuộc hoàn toàn vào ads.
-Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.
+Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.

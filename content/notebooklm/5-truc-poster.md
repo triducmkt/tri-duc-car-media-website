@@ -31,5 +31,5 @@ Một doanh nghiệp muốn lớn hơn cần có quy trình rõ ràng, người 
 ## Bắt đầu từ điểm nghẽn lớn nhất
 Không cần xây mọi thứ cùng lúc. Hãy ghi lại trong một tuần những lần nhân viên phải gọi anh. Việc nào lặp lại nhiều nhất chính là điểm nghẽn cần chuẩn hóa trước. Anh có thể thử [công cụ chụp X-quang doanh nghiệp trên trang Dịch vụ](/vi/dich-vu) để thấy khối nào đang yếu nhất trong 90 giây.
 ## Video gốc
-Bài viết này mở rộng từ video trên fanpage Trí Đức Car Media, nơi founder Tăng Trí Đức chia sẻ cách tìm “điểm nghẽn” đang khiến chủ cơ sở chưa thể bước ra khỏi việc vận hành mỗi ngày.
+Bài viết này mở rộng từ video trên fanpage Trí Đức Media, nơi founder Tăng Trí Đức chia sẻ cách tìm “điểm nghẽn” đang khiến chủ cơ sở chưa thể bước ra khỏi việc vận hành mỗi ngày.
 Muốn cùng tìm điểm nghẽn cho cơ sở của mình? [Đặt lịch 15 phút chẩn đoán miễn phí](/vi/dat-lich-tu-van).

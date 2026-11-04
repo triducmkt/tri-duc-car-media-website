@@ -24,7 +24,7 @@ Hãy thống nhất thành các bước cụ thể, viết ra giấy và đào t
 - **Tư vấn và báo giá:** giải thích rõ vấn đề, các phương án và chi phí, tránh báo giá miệng mỗi người một kiểu.
 - **Bàn giao:** kiểm tra cùng khách trước khi giao, hướng dẫn cách bảo quản.
 - **Chăm sóc sau dịch vụ:** nhắc lịch bảo dưỡng, hỏi thăm trải nghiệm, mời khách quay lại.
-![Chuyên gia Trí Đức Car Media trao đổi quy trình phục vụ khách cùng chủ cơ sở](tdcm-fb-01-2.jpg)
+![Chuyên gia Trí Đức Media trao đổi quy trình phục vụ khách cùng chủ cơ sở](tdcm-fb-01-2.jpg)
 ## 2. Chuẩn hóa cách đội ngũ phối hợp
 Việc gì cũng hỏi sếp, chuyện gì cũng chờ sếp quyết. Đến lúc sếp bận hoặc vắng mặt, công việc lập tức đình trệ. Nguyên nhân thường không nằm ở nhân viên kém, mà ở chỗ chưa ai được giao rõ trách nhiệm và phạm vi tự quyết.
 Hãy phân rõ **người phụ trách**, **trách nhiệm** và **phạm vi được tự quyết** cho từng vị trí. Ví dụ: kỹ thuật viên trưởng được quyết thay vật tư dưới một mức chi phí nhất định, lễ tân được tự xử lý đổi lịch hẹn. Không phải chuyện gì cũng cần gọi sếp vào xử lý.
@@ -32,7 +32,7 @@ Hãy phân rõ **người phụ trách**, **trách nhiệm** và **phạm vi đ�
 Đừng để sáng nào cũng bắt đầu bằng câu hỏi: “Hôm nay đăng gì?”. Hãy có **kế hoạch nội dung theo tháng**, lịch quay dựng, lịch đăng bài và người chịu trách nhiệm rõ ràng. Sếp vẫn định hướng và chia sẻ câu chuyện thực tế, nhưng không cần tự nghĩ từng bài mỗi ngày.
 Nếu anh chị chưa biết bắt đầu từ đâu, có thể thử [công cụ Dựng hệ thống trên trang Dịch vụ](/vi/dich-vu): chọn những việc đang làm mình mệt, hệ thống sẽ gợi ý lộ trình từ nền móng SOP đến marketing.
 ## Chuẩn hóa không làm hết bận sau một đêm
-Chuẩn hóa không giúp cơ sở hết bận chỉ sau một đêm. Nhưng nếu cứ làm theo thói quen cũ, rất khó mong chờ một kết quả mới. Tại Trí Đức Car Media (TDCM), chúng tôi đồng hành cùng chủ cơ sở xây dựng kế hoạch và hoạt động marketing bài bản hơn, để thương hiệu xuất hiện đều đặn mà sếp không phải tự ôm hết mọi việc.
+Chuẩn hóa không giúp cơ sở hết bận chỉ sau một đêm. Nhưng nếu cứ làm theo thói quen cũ, rất khó mong chờ một kết quả mới. Tại Trí Đức Media (TDCM), chúng tôi đồng hành cùng chủ cơ sở xây dựng kế hoạch và hoạt động marketing bài bản hơn, để thương hiệu xuất hiện đều đặn mà sếp không phải tự ôm hết mọi việc.
 Muốn tháng sau nhẹ gánh hơn, đừng đợi sang tháng mới bắt đầu thay đổi. Anh chị muốn rà soát lại vận hành và marketing của cơ sở mình? [Đặt lịch 15 phút chẩn đoán miễn phí](/vi/dat-lich-tu-van) để cùng trao đổi hướng triển khai phù hợp.
 
 ---
@@ -61,7 +61,7 @@ Một gara có thể lên lịch trước các nhóm nội dung xoay vòng mỗi
 Mỗi tuần biết rõ cần làm gì, ai phụ trách và khi nào hoàn thành. Đó mới là cách để marketing vận hành đều đặn, thay vì sáng nào cũng bắt đầu bằng câu hỏi “Hôm nay đăng gì?”.
 ![Không gian cơ sở dịch vụ được ghi hình làm nội dung marketing](tdcm-fb-02-3.jpg)
 ## Marketing nên giúp sếp bớt bận
-Làm chủ đã đủ thứ phải lo. Marketing nên là việc hỗ trợ sếp phát triển kinh doanh, chứ không phải thêm một việc khiến sếp bận hơn. Tại Trí Đức Car Media, chúng tôi giúp chủ cơ sở xây dựng [hệ thống Marketing - Sales - CSKH](/vi/dich-vu) có kế hoạch, có quy trình và bớt phụ thuộc vào việc sếp phải nhắc từng việc.
+Làm chủ đã đủ thứ phải lo. Marketing nên là việc hỗ trợ sếp phát triển kinh doanh, chứ không phải thêm một việc khiến sếp bận hơn. Tại Trí Đức Media, chúng tôi giúp chủ cơ sở xây dựng [hệ thống Marketing - Sales - CSKH](/vi/dich-vu) có kế hoạch, có quy trình và bớt phụ thuộc vào việc sếp phải nhắc từng việc.
 Muốn biết hệ thống marketing của cơ sở mình đang hổng ở đâu? [Đặt lịch chẩn đoán miễn phí 15 phút](/vi/dat-lich-tu-van) với founder Tăng Trí Đức.
 
 ---
@@ -86,7 +86,7 @@ Một cơ sở khỏe không có nghĩa là người chủ phải làm ít ngay 
 - **Phân công rõ trách nhiệm**, ai làm gì và được tự quyết đến đâu.
 - **Đào tạo nhân viên chủ động** xử lý những việc thuộc phạm vi của họ.
 ![Xưởng dịch vụ ô tô vận hành theo quy trình rõ ràng](tdcm-fb-03-3.jpg)
-Để rồi có một ngày, người chủ có thể dành thời gian cho kế hoạch phát triển, khách hàng lớn hoặc đơn giản là nghỉ ngơi một hôm mà công việc vẫn tiếp tục. Đó cũng là con đường mà [dịch vụ chuẩn hóa SOP và đào tạo đội ngũ](/vi/dich-vu) của Trí Đức Car Media đồng hành cùng chủ cơ sở.
+Để rồi có một ngày, người chủ có thể dành thời gian cho kế hoạch phát triển, khách hàng lớn hoặc đơn giản là nghỉ ngơi một hôm mà công việc vẫn tiếp tục. Đó cũng là con đường mà [dịch vụ chuẩn hóa SOP và đào tạo đội ngũ](/vi/dich-vu) của Trí Đức Media đồng hành cùng chủ cơ sở.
 ## Làm chủ là xây được cơ sở không phụ thuộc vào mình
 Làm chủ không phải là người làm nhiều nhất trong cơ sở, mà là người xây dựng được một cơ sở không phụ thuộc vào mình trong mọi việc. Anh chị thử tự hỏi: nếu mình vắng mặt 3 ngày, cơ sở vẫn chạy tốt hay cả đội lại ngóng sếp về?
 Nếu câu trả lời khiến anh chị chưa yên tâm, hãy [đặt lịch trò chuyện 1-1 miễn phí](/vi/dat-lich-tu-van) để cùng tìm điểm nghẽn.
@@ -125,13 +125,13 @@ Câu chuyện AP Car Care cho thấy **chuẩn hóa kênh online** có thể ké
 Khách hỏi giá rồi im lặng. Bài đăng có người xem nhưng không tạo ra cuộc trò chuyện. Hình ảnh mỗi bài một kiểu, nội dung thiếu nhất quán khiến khách khó hình dung xưởng đang làm gì và liệu có đáng tin hay không. Đó cũng là bài toán từng xuất hiện tại AP Car Care.
 ## Khách không chỉ mua một hạng mục
 Khi khách nhắn “Bên mình làm hạng mục này bao nhiêu?”, nếu phía sau câu hỏi ấy chỉ là một bảng giá thì rất dễ kết thúc bằng câu “để em tham khảo”. Với dịch vụ chăm sóc xe, khách không chỉ mua một hạng mục. Họ đang tìm một nơi đủ đáng tin để giao chiếc xe của mình.
-## Trí Đức Car Media đã làm gì?
+## Trí Đức Media đã làm gì?
 Không chạy theo nội dung thật “viral”, mà bắt đầu từ những điều thực tế hơn:
 - **Hình ảnh** phải thể hiện đúng chất lượng dịch vụ.
 - **Nội dung** phải giúp khách hiểu vấn đề trên chiếc xe của mình.
 - **Video** cho thấy quá trình làm thật.
 - **Toàn bộ kênh online** cùng truyền tải một hình ảnh thương hiệu nhất quán.
-![Chuyên gia Trí Đức Car Media trao đổi định hướng nội dung với đội ngũ](tdcm-fb-05-2.jpg)
+![Chuyên gia Trí Đức Media trao đổi định hướng nội dung với đội ngũ](tdcm-fb-05-2.jpg)
 Những chiếc xe thật, tình trạng thật, quy trình thật được đưa lên các kênh truyền thông. Từng video được làm, từng nội dung được chỉnh, từng cách thể hiện được thử nghiệm rồi tiếp tục tối ưu.
 ## Kết quả sau 12 tháng
 Có những giai đoạn kết quả chưa đến ngay. Nhưng thay vì bỏ cuộc sau vài tháng, hai bên tiếp tục điều chỉnh và duy trì đều đặn. Sau 12 tháng, thay đổi bắt đầu rõ hơn: chuỗi video thực tế tạo được sự quan tâm, khách chủ động tìm hiểu dịch vụ, lượng khách đặt lịch qua kênh online ổn định hơn, có thời điểm lịch dịch vụ kín sàn.
@@ -166,7 +166,7 @@ Có một cơ sở từng chạy quảng cáo liên tục nhưng phần lớn kh
 - **Lời kêu gọi đặt lịch** đưa họ từ người xem online thành người hỏi, rồi thành khách tại cửa hàng.
 ![Đội ngũ cơ sở dịch vụ trước xưởng, sẵn sàng ghi hình nội dung thực tế](tdcm-fb-06-4.jpg)
 Vì vậy, nếu quảng cáo không ra đơn, hãy nhìn lại cả hệ thống: quảng cáo có tiếp cận đúng người không, content có đủ thực tế không, hình ảnh có chứng minh được năng lực không, trang cửa hàng có đủ uy tín để khách ra quyết định không. Câu chuyện [chuẩn hóa kênh online của AP Car Care](/vi/kien-thuc/chuan-hoa-kenh-online-ap-car-care) là một ví dụ thực tế.
-Trí Đức Car Media kết hợp content thực tế, tối ưu quảng cáo và chiến lược local để từng bước kéo dòng khách thật về cửa hàng. Xem [các gói dịch vụ](/vi/dich-vu) hoặc [đặt lịch chẩn đoán miễn phí](/vi/dat-lich-tu-van).
+Trí Đức Media kết hợp content thực tế, tối ưu quảng cáo và chiến lược local để từng bước kéo dòng khách thật về cửa hàng. Xem [các gói dịch vụ](/vi/dich-vu) hoặc [đặt lịch chẩn đoán miễn phí](/vi/dat-lich-tu-van).
 
 ---
 
@@ -184,8 +184,8 @@ Lối thoát không phải bỏ việc kinh doanh, mà là bắt đầu chuyển
 - **Kinh nghiệm thành nội dung:** những điều mình hay giải thích cho khách trở thành bài viết, video.
 - **Câu chuyện thành thương hiệu:** khách nhớ đến cơ sở, không chỉ nhớ một người.
 - **Công việc thành phân quyền:** mỗi người biết việc của mình và được tự quyết trong phạm vi rõ ràng.
-![Chuyên gia Trí Đức Car Media tại quầy lễ tân Khang Vũ Auto](tdcm-fb-07-3.jpg)
-Đây cũng là cách Trí Đức Car Media đồng hành cùng các cơ sở như Khang Vũ Auto Care hay hệ thống AP. Anh chị có thể xem các câu chuyện cụ thể trong [mục Dự án](/vi/du-an).
+![Chuyên gia Trí Đức Media tại quầy lễ tân Khang Vũ Auto](tdcm-fb-07-3.jpg)
+Đây cũng là cách Trí Đức Media đồng hành cùng các cơ sở như Khang Vũ Auto Care hay hệ thống AP. Anh chị có thể xem các câu chuyện cụ thể trong [mục Dự án](/vi/du-an).
 ## Giải phóng sức lao động không phải là làm ít đi
 Giải phóng sức lao động là **không phải tự mình làm tất cả**. Làm chủ không có nghĩa là phải một mình gánh hết. Bắt đầu bằng một việc nhỏ: chọn công việc lặp lại tốn thời gian nhất của mình tuần này và viết ra các bước để giao cho người khác.
 Nếu muốn có người cùng nhìn lại toàn bộ cơ sở và vạch lộ trình, hãy [đặt lịch trò chuyện 1-1 với founder Tăng Trí Đức](/vi/dat-lich-tu-van).
@@ -211,7 +211,7 @@ Một doanh nghiệp muốn lớn hơn cần có quy trình rõ ràng, người 
 ## Bắt đầu từ điểm nghẽn lớn nhất
 Không cần xây mọi thứ cùng lúc. Hãy ghi lại trong một tuần những lần nhân viên phải gọi anh. Việc nào lặp lại nhiều nhất chính là điểm nghẽn cần chuẩn hóa trước. Anh có thể thử [công cụ chụp X-quang doanh nghiệp trên trang Dịch vụ](/vi/dich-vu) để thấy khối nào đang yếu nhất trong 90 giây.
 ## Video gốc
-Bài viết này mở rộng từ video trên fanpage Trí Đức Car Media, nơi founder Tăng Trí Đức chia sẻ cách tìm “điểm nghẽn” đang khiến chủ cơ sở chưa thể bước ra khỏi việc vận hành mỗi ngày.
+Bài viết này mở rộng từ video trên fanpage Trí Đức Media, nơi founder Tăng Trí Đức chia sẻ cách tìm “điểm nghẽn” đang khiến chủ cơ sở chưa thể bước ra khỏi việc vận hành mỗi ngày.
 Muốn cùng tìm điểm nghẽn cho cơ sở của mình? [Đặt lịch 15 phút chẩn đoán miễn phí](/vi/dat-lich-tu-van).
 
 ---
@@ -236,7 +236,7 @@ Quay, chụp, dựng phim, thiết kế và chạy quảng cáo là những kỹ
 ## Làm sao để content không thành “người làm tất cả”?
 Cần ba thứ: mô tả công việc rõ ràng, quy trình sản xuất từ ý tưởng đến lúc đăng, và người duyệt có thẩm quyền. Khi chưa đủ nguồn lực tuyển cả team, nhiều chủ cơ sở chọn [thuê ngoài phòng marketing hoặc setup phòng marketing in-house](/vi/dich-vu) có người dẫn dắt giai đoạn đầu.
 ## Video gốc
-Bài viết mở rộng từ video trên fanpage Trí Đức Car Media về vai trò thực sự của một người làm content trong doanh nghiệp. Xem thêm [hệ thống marketing cho chủ cơ sở](/vi/kien-thuc/he-thong-marketing-cho-chu-co-so) để biết cách đặt người content vào đúng chỗ trong hệ thống.
+Bài viết mở rộng từ video trên fanpage Trí Đức Media về vai trò thực sự của một người làm content trong doanh nghiệp. Xem thêm [hệ thống marketing cho chủ cơ sở](/vi/kien-thuc/he-thong-marketing-cho-chu-co-so) để biết cách đặt người content vào đúng chỗ trong hệ thống.
 Cần tư vấn cách tổ chức đội ngũ content phù hợp với quy mô cơ sở? [Đặt lịch 1-1 miễn phí](/vi/dat-lich-tu-van).
 
 ---
@@ -260,7 +260,7 @@ Marketing đều đặn mỗi tuần hiệu quả hơn những đợt làm rầm
 - **Phòng Gym:** hành trình thay đổi của hội viên, lịch tập, huấn luyện viên.
 Xem cách công thức này được áp dụng thực tế tại [các cơ sở Trí Đức đang đồng hành](/vi/du-an), hoặc chọn đúng chỗ đang nghẽn với [công cụ Dựng hệ thống](/vi/dich-vu).
 ## Video gốc
-Bài viết mở rộng từ video trên fanpage Trí Đức Car Media về công thức “đúng – đủ – đều”. Muốn áp dụng cho doanh nghiệp của mình? [Đặt lịch chẩn đoán 15 phút miễn phí](/vi/dat-lich-tu-van).
+Bài viết mở rộng từ video trên fanpage Trí Đức Media về công thức “đúng – đủ – đều”. Muốn áp dụng cho doanh nghiệp của mình? [Đặt lịch chẩn đoán 15 phút miễn phí](/vi/dat-lich-tu-van).
 
 ---
 
@@ -319,7 +319,7 @@ Nếu chỉ chạy quảng cáo để có khách mới, doanh thu sẽ bấp bê
 - Content phải thật và gần gũi thì khách mới tin tưởng hơn quảng cáo thông thường.
 - Video hậu trường và mẹo chăm xe giúp khách hiểu và trân trọng tay nghề đội ngũ.
 - Chăm sóc khách cũ chính là “vũ khí bí mật” giữ doanh thu ổn định lâu dài — không phụ thuộc hoàn toàn vào ads.
-Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.
+Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông đa kênh của AP Car Care, song song đồng hành cùng Học viện Detailing Việt Nam — mảnh ghép đào tạo trong cùng hệ sinh thái AP do CEO Johnny Lộc Nguyễn sáng lập. Xem thêm câu chuyện xây dựng hệ sinh thái AP trong case study riêng.
 
 ---
 
@@ -336,7 +336,7 @@ Số liệu:
 
 
 ### Bối cảnh
-Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp tại Rạch Giá, Kiên Giang. Trí Đức Car Media bắt đầu đồng hành từ tháng 07/2026 với gói Marketing PRO: nội dung Fanpage, video ngắn, thiết kế hình ảnh và tư vấn truyền thông định kỳ.
+Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp tại Rạch Giá, Kiên Giang. Trí Đức Media bắt đầu đồng hành từ tháng 07/2026 với gói Marketing PRO: nội dung Fanpage, video ngắn, thiết kế hình ảnh và tư vấn truyền thông định kỳ.
 
 ### Kết quả sau 2 tháng triển khai (T7 → T8/2026)
 - Facebook: lượt xem tăng từ 2.333 lên 9.084 (+289%).
@@ -347,7 +347,7 @@ Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp t�
 - Các từ khoá tìm kiếm thương hiệu bắt đầu xuất hiện trên TikTok: “xe ô tô độ ở Rạch Giá”, “rửa xe ở Rạch Giá”, “phủ gầm ô tô” — cho thấy khách hàng địa phương đã bắt đầu chủ động tìm đến Apex Autocare thay vì chỉ tình cờ thấy quảng cáo.
 
 ### Định hướng tiếp theo
-Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search). Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Apex Autocare.
+Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search). Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Apex Autocare.
 
 ---
 
@@ -364,7 +364,7 @@ Số liệu:
 
 
 ### Bối cảnh
-Học viện Detailing Việt Nam (thương hiệu AP Education trên chamsocxehoi.edu.vn) đào tạo nghề chăm sóc & nâng cấp ô tô — detailing, dán PPF, phim cách nhiệt, âm thanh xe hơi — theo mô hình “học thực chiến, làm thực tế” gắn liền với hệ thống AP Car Care do CEO Johnny Lộc Nguyễn sáng lập. Trí Đức Car Media bắt đầu quản lý fanpage từ đầu năm 2025.
+Học viện Detailing Việt Nam (thương hiệu AP Education trên chamsocxehoi.edu.vn) đào tạo nghề chăm sóc & nâng cấp ô tô — detailing, dán PPF, phim cách nhiệt, âm thanh xe hơi — theo mô hình “học thực chiến, làm thực tế” gắn liền với hệ thống AP Car Care do CEO Johnny Lộc Nguyễn sáng lập. Trí Đức Media bắt đầu quản lý fanpage từ đầu năm 2025.
 Tháng 10/2025, học viện mở thêm cơ sở tại Bắc Ninh — đánh dấu bước ngoặt Nam tiến ra Bắc của cả hệ sinh thái AP, và cũng là giai đoạn đội ngũ marketing bắt đầu dồn lực đẩy mạnh nội dung đa kênh (Fanpage + TikTok) để xây nhận diện tại thị trường mới.
 
 ### Phễu marketing: khác với AP Car Care, học viện đo bằng lượt tiếp cận & lead tư vấn
@@ -380,14 +380,14 @@ Vì đào tạo là ngành có chu kỳ quyết định dài hơn dịch vụ ch
 
 ### Định hướng tiếp theo
 Giai đoạn tới tập trung chuyển đổi lượt tiếp cận khổng lồ thành học viên ghi danh thực tế: tối ưu kịch bản tư vấn tuyển sinh, xây dựng chuỗi nội dung “góc nhìn học viên” (before/after tay nghề) và case học viên tốt nghiệp có việc làm ngay tại hệ thống AP Car Care — đặc biệt tại cơ sở Bắc Ninh vừa mở và trong bối cảnh AP đang khảo sát mở học viện tại Đà Nẵng.
-Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Học viện Detailing Việt Nam. Xem thêm hành trình xây dựng cả hệ sinh thái AP — từ AP Car Care đến AP Education — trong case study riêng về CEO Johnny Lộc Nguyễn.
+Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Học viện Detailing Việt Nam. Xem thêm hành trình xây dựng cả hệ sinh thái AP — từ AP Car Care đến AP Education — trong case study riêng về CEO Johnny Lộc Nguyễn.
 
 ---
 
 ## Dự án thật: Johnny Lộc Nguyễn — Hệ sinh thái AP — Đồng hành cùng Mr Johnny Lộc Nguyễn — Giải phóng nhà sáng lập, phát triển từ một trung tâm chăm sóc xe thành một hệ sinh thái AP với 5 thương hiệu
 Nguồn: https://triduccar.media/vi/du-an/johnny-loc-nguyen-he-sinh-thai-ap · Số liệu tới 09/2026
 
-Tóm tắt: Từ 2023 đến nay, Trí Đức Car Media đồng hành cùng CEO Johnny Lộc Nguyễn — tư vấn, đề xuất và trực tiếp đảm nhiệm vai trò CMO — giúp anh tập trung dẫn dắt hệ sinh thái AP (Car Care, Market, Education, Service, Store) mở rộng ra Bắc Ninh (10/2025), hướng tới Đà Nẵng (2026) và tầm nhìn 10 chi nhánh toàn quốc vào 2030.
+Tóm tắt: Từ 2023 đến nay, Trí Đức Media đồng hành cùng CEO Johnny Lộc Nguyễn — tư vấn, đề xuất và trực tiếp đảm nhiệm vai trò CMO — giúp anh tập trung dẫn dắt hệ sinh thái AP (Car Care, Market, Education, Service, Store) mở rộng ra Bắc Ninh (10/2025), hướng tới Đà Nẵng (2026) và tầm nhìn 10 chi nhánh toàn quốc vào 2030.
 
 Số liệu:
 - Năm bắt đầu đồng hành: 2023
@@ -398,7 +398,7 @@ Số liệu:
 
 ### Người đứng sau hệ sinh thái AP
 Nguyễn Phước Lộc — được biết đến nhiều hơn với tên gọi Johnny Lộc Nguyễn — là kỹ sư ô tô tốt nghiệp Đại học Bách Khoa TP.HCM, khởi nghiệp từ một trung tâm chăm sóc xe nhỏ tại Đồng Nai vào năm 2012. Sau hơn một thập kỷ, anh đã xây dựng nên AP: một hệ sinh thái ô tô toàn diện gồm 5 mảnh ghép — AP Car Care (chăm sóc & detailing), AP Market (thương mại điện tử phụ kiện), AP Education (đào tạo nghề — chính là Học viện Detailing Việt Nam), AP Service (bảo dưỡng, sửa chữa) và AP Store (mua bán xe).
-Trí Đức Car Media bắt đầu đồng hành cùng anh Johnny từ năm 2023, đúng giai đoạn AP hoàn thiện mảnh ghép cuối (AP Store) và chuẩn hoá lại toàn bộ hệ thống thành AP Corporation. Đây không phải một hợp đồng dịch vụ ngắn hạn, mà là một mối quan hệ tư vấn — đồng hành xuyên suốt nhiều năm, đi qua cả những giai đoạn thuận lợi lẫn khó khăn.
+Trí Đức Media bắt đầu đồng hành cùng anh Johnny từ năm 2023, đúng giai đoạn AP hoàn thiện mảnh ghép cuối (AP Store) và chuẩn hoá lại toàn bộ hệ thống thành AP Corporation. Đây không phải một hợp đồng dịch vụ ngắn hạn, mà là một mối quan hệ tư vấn — đồng hành xuyên suốt nhiều năm, đi qua cả những giai đoạn thuận lợi lẫn khó khăn.
 
 ### Hệ sinh thái bao phủ toàn bộ ngành detailing & ô tô
 Điều khiến AP khác biệt không chỉ là quy mô, mà là độ phủ: 5 mảnh ghép cộng lại bao trọn gần như toàn bộ hành trình một chiếc xe và cả một ngành nghề — chăm sóc/detailing (AP Car Care), phụ kiện & nâng cấp (AP Market), đào tạo nhân lực cho cả ngành detailing (AP Education — Học viện Detailing Việt Nam), bảo dưỡng/sửa chữa (AP Service), đến mua bán xe (AP Store). Ít có mô hình nào tại Việt Nam phủ đủ cả 5 lớp này trong cùng một hệ sinh thái, từ người dùng dịch vụ đến người được đào tạo để làm nghề.
@@ -408,7 +408,7 @@ Một trong những triết lý kinh doanh được anh Đức đề xuất và 
 
 ### “Giải phóng” một nhà sáng lập khỏi việc không thuộc vai trò của mình
 Như phần lớn founder của các doanh nghiệp vừa và nhỏ đang tăng trưởng nhanh, giai đoạn đầu anh Johnny từng phải kiêm nhiệm rất nhiều việc lẽ ra thuộc về một bộ phận chuyên trách: tự lên ý tưởng nội dung, tự chỉnh sửa hình ảnh, tự theo dõi và trả lời tin nhắn trên fanpage, thậm chí tự mày mò chỉnh sửa website — bên cạnh vai trò điều hành toàn bộ hệ thống nhiều chi nhánh, nhiều mảng kinh doanh.
-Theo đúng cơ cấu tổ chức mà AP Corporation công bố, vị trí “CMO — Giám đốc Marketing” (phụ trách truyền thông, nội dung, quảng cáo, thiết kế) là một trong 5 khối chức năng chính dưới CEO, ngang hàng với COO, CFO, CHRO và CIO. Vai trò của Trí Đức Car Media trong suốt hành trình này chính là đảm nhiệm trọn vẹn khối CMO đó — từ chiến lược nội dung, sản xuất hình ảnh/video, đến vận hành quảng cáo và báo cáo số liệu hàng tháng — để anh Johnny không còn phải tự làm, mà có thể lùi lại một bước để nhìn toàn cục.
+Theo đúng cơ cấu tổ chức mà AP Corporation công bố, vị trí “CMO — Giám đốc Marketing” (phụ trách truyền thông, nội dung, quảng cáo, thiết kế) là một trong 5 khối chức năng chính dưới CEO, ngang hàng với COO, CFO, CHRO và CIO. Vai trò của Trí Đức Media trong suốt hành trình này chính là đảm nhiệm trọn vẹn khối CMO đó — từ chiến lược nội dung, sản xuất hình ảnh/video, đến vận hành quảng cáo và báo cáo số liệu hàng tháng — để anh Johnny không còn phải tự làm, mà có thể lùi lại một bước để nhìn toàn cục.
 Khi không còn phải tự tay thiết kế từng banner hay trực page mỗi tối, thời gian và năng lượng của một nhà sáng lập được trả lại đúng chỗ: xây chiến lược, đào tạo đội ngũ, phát triển hệ sinh thái, và quan trọng nhất — biết rõ việc gì nên buông, việc gì nên giữ.
 
 ### Không phải hành trình chỉ toàn thành công
@@ -440,7 +440,7 @@ Số liệu:
 
 
 ### Bối cảnh
-Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Car Media từ tháng 07/2026 — tháng đầu tiên triển khai đồng bộ cả ba nền tảng Facebook, TikTok và YouTube trong cùng một gói Marketing PRO.
+Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Media từ tháng 07/2026 — tháng đầu tiên triển khai đồng bộ cả ba nền tảng Facebook, TikTok và YouTube trong cùng một gói Marketing PRO.
 
 ### Tăng trưởng qua từng tháng (T6 → T7 → T8/2026)
 - Lượt xem Facebook: 292 → 1.722 (+490%) → 20.115 (+1.068% so với T7).
@@ -452,4 +452,4 @@ Khang Vũ Auto Care (Bình Dương) bắt đầu hợp tác với Trí Đức Ca
 - Các từ khoá thương hiệu bắt đầu xuất hiện trong tìm kiếm TikTok: “Khang Vũ Auto Care”, “Khang Vũ ô tô”, “rửa xe hơi Bình Dương”.
 
 ### Định hướng tiếp theo
-Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương. Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Khang Vũ Auto Care.
+Tháng 7 là giai đoạn xây nền, tháng 8 đã cho thấy khả năng mở rộng độ phủ và tiếp cận khách hàng mới. Trọng tâm tháng 9 chuyển sang tối ưu chuyển đổi: tăng lời kêu gọi follow/inbox, xây dựng chuỗi nội dung before/after, video review khách hàng thực tế và mở rộng khai thác tìm kiếm địa phương quanh khu vực Bình Dương. Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Khang Vũ Auto Care.

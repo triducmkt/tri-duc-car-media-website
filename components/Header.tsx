@@ -58,7 +58,7 @@ export function Header() {
               zoom/DPI; the light variant sits directly on the dark hero. */}
           <Image
             src={transparent ? "/brand/logo-light.svg" : "/brand/logo.svg"}
-            alt="Trí Đức Car Media"
+            alt="Trí Đức Media"
             width={725}
             height={256}
             priority

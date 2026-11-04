@@ -19,7 +19,7 @@ export const caseStudy = defineType({
     defineField({
       name: "isOngoing",
       title: "Đang đồng hành",
-      description: "Bật nếu Trí Đức Car Media vẫn đang trực tiếp phụ trách truyền thông cho dự án này.",
+      description: "Bật nếu Trí Đức Media vẫn đang trực tiếp phụ trách truyền thông cho dự án này.",
       type: "boolean",
       initialValue: true,
     }),

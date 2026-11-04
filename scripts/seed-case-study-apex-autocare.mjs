@@ -51,7 +51,7 @@ function block(text, { style = "normal", listItem, level, strong = false } = {})
 const bodyVi = [
   block("Bối cảnh", { style: "h3" }),
   block(
-    "Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp tại Rạch Giá, Kiên Giang. Trí Đức Car Media bắt đầu đồng hành từ tháng 07/2026 với gói Marketing PRO: nội dung Fanpage, video ngắn, thiết kế hình ảnh và tư vấn truyền thông định kỳ.",
+    "Apex Autocare là trung tâm chăm sóc & nâng cấp ô tô chuyên nghiệp tại Rạch Giá, Kiên Giang. Trí Đức Media bắt đầu đồng hành từ tháng 07/2026 với gói Marketing PRO: nội dung Fanpage, video ngắn, thiết kế hình ảnh và tư vấn truyền thông định kỳ.",
   ),
   block("Kết quả sau 2 tháng triển khai (T7 → T8/2026)", { style: "h3" }),
   block("Facebook: lượt xem tăng từ 2.333 lên 9.084 (+289%).", { listItem: "bullet" }),
@@ -75,14 +75,14 @@ const bodyVi = [
   ),
   block("Định hướng tiếp theo", { style: "h3" }),
   block(
-    "Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search). Trí Đức Car Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Apex Autocare.",
+    "Hai tháng đầu tập trung xây nền nhận diện thương hiệu tại Rạch Giá. Giai đoạn tiếp theo chuyển trọng tâm sang chuyển đổi: tối ưu lời kêu gọi hành động (CTA) trong video, xây dựng chuỗi nội dung before/after và review khách hàng thực tế, đồng thời mở rộng khai thác tìm kiếm địa phương (local search). Trí Đức Media hiện vẫn đang trực tiếp phụ trách toàn bộ hoạt động truyền thông của Apex Autocare.",
   ),
 ];
 
 const bodyEn = [
   block("Context", { style: "h3" }),
   block(
-    "Apex Autocare is a professional car care and detailing center in Rach Gia, Kien Giang. Tri Duc Car Media began the partnership in July 2026 with the Marketing PRO package: Facebook content, short-form video, visual design and ongoing communications advisory.",
+    "Apex Autocare is a professional car care and detailing center in Rach Gia, Kien Giang. Tri Duc Media began the partnership in July 2026 with the Marketing PRO package: Facebook content, short-form video, visual design and ongoing communications advisory.",
   ),
   block("Results after 2 months (Jul → Aug 2026)", { style: "h3" }),
   block("Facebook views grew from 2,333 to 9,084 (+289%).", { listItem: "bullet" }),
@@ -106,7 +106,7 @@ const bodyEn = [
   ),
   block("What's next", { style: "h3" }),
   block(
-    "The first two months focused on building brand awareness in Rach Gia. The next phase shifts toward conversion: stronger calls to action in video, a steady before/after and customer-review content series, and deeper local search coverage. Tri Duc Car Media still directly runs Apex Autocare's full media operation today.",
+    "The first two months focused on building brand awareness in Rach Gia. The next phase shifts toward conversion: stronger calls to action in video, a steady before/after and customer-review content series, and deeper local search coverage. Tri Duc Media still directly runs Apex Autocare's full media operation today.",
   ),
 ];
 

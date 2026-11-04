@@ -1,6 +1,6 @@
 # Thư viện quà — danh sách tạo bằng NotebookLM
 
-Thư mục này: `D:\My Agents\Projects\Website Tri Duc Car Media\content\notebooklm\`
+Thư mục này: `D:\My Agents\Projects\Website Tri Duc Media\content\notebooklm\`
 Trên web: khối **"Thư viện quà"** ở https://triduccar.media/vi/kiem-tra-co-so#thu-vien-qua và hộp quà 3D ở kết quả Kiểm tra 60 giây.
 Mỗi món gắn với 1 chỗ yếu (trục) của khách → khách nhận qua Zalo sau khi để lại tên + Zalo (email `[Kiểm tra 60s]` ghi rõ "🎁 Quà khách chọn").
 
