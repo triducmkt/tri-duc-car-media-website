@@ -27,26 +27,37 @@ const C = {
 // ---------- Mark: 120×120 grid, ink spans x 22–100, y 18–102 ----------
 // Stem + top/bottom bars = the D's spine; bowl = gauge arc (red at top = redline);
 // the Đ crossbar = needle pivoting on the stem, pointing into the redline.
-const PIVOT = [30, 60];
+// Stroke weight 14 for spine + gauge; gauge centre (58,60), centreline r=35.
+const PIVOT = [29, 60];
 const TIP = [80, 40];
 const dir = (() => {
   const dx = TIP[0] - PIVOT[0], dy = TIP[1] - PIVOT[1], l = Math.hypot(dx, dy);
   return [dx / l, dy / l];
 })();
-const TAIL = [PIVOT[0] - dir[0] * 17, PIVOT[1] - dir[1] * 17];
+const TAIL = [PIVOT[0] - dir[0] * 10, PIVOT[1] - dir[1] * 10];
 const f = (n) => +n.toFixed(2);
 
-function mark({ spine, needle, arc, hub, id }) {
+// Scale ticks sit below the needle: the needle has already passed the marked range.
+const TICK_ANGLES = [10, -25, -60];
+function ticksPath() {
+  return TICK_ANGLES.map((a) => {
+    const r = (a * Math.PI) / 180, c = Math.cos(r), s = Math.sin(r);
+    return `M${f(58 + 18 * c)} ${f(60 - 18 * s)}L${f(58 + 23 * c)} ${f(60 - 23 * s)}`;
+  }).join("");
+}
+
+function mark({ spine, needle, arc, hub, id, ticks = true }) {
   const arcStroke = arc === "gradient" ? `url(#${id}-g)` : arc;
   const defs =
     arc === "gradient"
       ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="0" y1="18" x2="0" y2="102"><stop offset="0" stop-color="${C.red}"/><stop offset="1" stop-color="${C.orange}"/></linearGradient>`
       : "";
   const body = [
-    `<path fill="${spine}" d="M22 18H58V34H38V86H58V102H22Z"/>`,
-    `<path fill="none" stroke="${arcStroke}" stroke-width="16" d="M58 26A34 34 0 0 1 58 94"/>`,
-    `<path fill="none" stroke="${needle}" stroke-width="8" stroke-linecap="round" d="M${f(TAIL[0])} ${f(TAIL[1])}L${TIP[0]} ${TIP[1]}"/>`,
-    hub ? `<circle cx="${PIVOT[0]}" cy="${PIVOT[1]}" r="6.5" fill="${hub}"/>` : "",
+    `<path fill="${spine}" d="M22 18H58V32H36V88H58V102H22Z"/>`,
+    `<path fill="none" stroke="${arcStroke}" stroke-width="14" d="M58 25A35 35 0 0 1 58 95"/>`,
+    ticks ? `<path fill="none" stroke="${needle}" stroke-width="4" stroke-linecap="round" d="${ticksPath()}"/>` : "",
+    `<path fill="none" stroke="${needle}" stroke-width="7.5" stroke-linecap="round" d="M${f(TAIL[0])} ${f(TAIL[1])}L${TIP[0]} ${TIP[1]}"/>`,
+    hub ? `<circle cx="${PIVOT[0]}" cy="${PIVOT[1]}" r="6" fill="${hub}"/>` : "",
   ].join("");
   return { defs, body };
 }
@@ -153,7 +164,7 @@ function markOnly(t, id) {
 }
 function appIcon() {
   // navy rounded square, white spine/needle, mark at ~62% of the tile
-  const m = mark({ ...themes.reverse, id: "app" });
+  const m = mark({ ...themes.reverse, id: "app", ticks: false }); // ticks blur below 64px
   const s = 0.52 * (120 / 84); // 84-unit ink height ≈ 52% of the tile
   const inkCx = (TAIL[0] + 100) / 2; // centre including the needle tail
   const tx = 60 - inkCx * s, ty = 60 - 60 * s;

@@ -9,6 +9,7 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 - **Chữ Đ:** chữ ký của founder (Đức) và nét gạch ngang chỉ tiếng Việt mới có.
 - **Phần cong của chữ Đ là cung đồng hồ**, chuyển từ cam (dưới) lên đỏ (trên, vùng tua cao). Ý nghĩa: đo sức khỏe cơ sở, khớp với công cụ "Kiểm tra cơ sở 60 giây".
 - **Nét gạch ngang của chữ Đ là cây kim chỉ lên vùng đỏ:** "Nâng tầm doanh nghiệp".
+- **3 vạch số nằm dưới kim:** kim đã vượt qua toàn bộ thang đo, tức là doanh nghiệp vượt mức cũ. App icon không có vạch, vì vạch bị nhòe ở cỡ dưới 64px.
 - **Trục kim màu cam nằm trên thân chữ:** người chủ là điểm tựa. Bộ máy chạy quanh người chủ, không cần người chủ ôm hết việc.
 
 ## Bộ file (`svg/`, dạng vector, chữ đã chuyển thành nét vẽ nên không cần cài font)
