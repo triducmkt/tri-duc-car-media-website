@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v6** · ảnh: [history/v6/preview.png](history/v6/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v7** · ảnh: [history/v7/preview.png](history/v7/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -197,4 +197,24 @@
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông với logo xanh khi publish;
   - có thể thử gân phụ mảnh cho bản biển hiệu lớn;
   - chưa có mockup xe.
+- **Trạng thái:** nháp, thay bằng v7.
+
+## v7 — Thân và lá đúc thành một khối, màu chảy từ gốc lên ngọn (2026-11-04)
+- **Yêu cầu anh Đức:** "Làm tiếp v7".
+- **Ảnh:** [history/v7/preview.png](history/v7/preview.png)
+- **Nhận xét v6 (góc designer):** thân chữ Đ màu navy và chiếc lá xanh là 2 mảnh ghép, có đường nối cứng ở giữa, nhìn như dán lại với nhau.
+- **Thay đổi so với v6:**
+  - **Một hình liền mạch:** thân chữ Đ và chiếc lá gộp thành 1 khối duy nhất, không còn đường nối.
+  - **Màu chảy liền một dải** từ gốc dưới bên trái lên ngọn lá: navy `#0B1220` → xanh biển `#0A6FB8` → xanh lá `#17A85A`. Đen và xanh biển (Thủy) nuôi xanh lá (Mộc) trong một nét. Đây là câu chuyện phong thủy được vẽ thành chính hình logo.
+  - **Bản nền tối:** gốc trắng → xanh biển sáng → xanh lá sáng.
+  - **Mockup mới:** xe van dịch vụ màu trắng, logo có dòng lời hứa ở hông xe (thêm vào cạnh biển hiệu, áo, danh thiếp, avatar).
+- **Giữ nguyên:** hình chữ Đ lá mầm, gân lá thon, 2 dấu sắc lá non, font, chữ.
+- **Tự kiểm tra:**
+  - avatar tròn, app icon 32px vẫn rõ;
+  - bản mono không đổi (1 màu);
+  - ở bản màu, gân lá xanh vẫn tách rõ khỏi phần gốc xanh biển và navy.
+- **Còn mở cho vòng sau:**
+  - góc trên bên trái thân chữ hơi ngả xanh biển (do màu chạy theo đường chéo); có thể muốn cả thân đậm hơn;
+  - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish;
+  - có thể thử gân phụ cho biển hiệu lớn.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.

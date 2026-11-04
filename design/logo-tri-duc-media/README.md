@@ -9,7 +9,7 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 
 ## Ý nghĩa (từ v5 — "Đ lá mầm", màu theo mệnh Mộc)
 - **Chữ Đ thành một chiếc lá:** phần cong của chữ Đ vuốt lên thành đầu lá nhọn, vượt cao hơn thân chữ. Ý nghĩa: cơ sở lớn vượt tầm cũ của mình.
-- **Thân chữ Đ màu navy là thân cây, là hệ thống:** phần đứng yên, rễ sâu.
+- **Thân chữ Đ là thân cây, là hệ thống:** phần đứng yên, rễ sâu. Từ v7, thân và lá đúc thành 1 khối, màu chảy liền từ navy ở gốc → xanh biển → xanh lá ở ngọn.
 - **Nét gạch ngang của chữ Đ là gân lá:** thò ra bên trái như nét Đ bình thường, rồi thon dần, vươn lên trong lòng lá. Sự tăng trưởng đến từ bên trong.
 - **2 dấu sắc trên Í, Ứ là 2 lá non xanh lá (từ v6):** chính cái tên cũng đang nảy mầm. Dấu vẫn đúng vị trí và độ nghiêng chuẩn tiếng Việt.
 - **Màu xanh biển ở gốc chuyển sang xanh lá ở ngọn:** Thủy sinh Mộc, nước nuôi gốc thì lá xanh. Bảng màu hợp mệnh Mộc (Đại Lâm Mộc) của founder.

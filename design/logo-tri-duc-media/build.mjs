@@ -48,7 +48,10 @@ const dir = (() => {
 const f = (n) => +n.toFixed(2);
 const along = (t) => [PIVOT[0] + dir[0] * t, PIVOT[1] + dir[1] * t];
 const TAIL = along(-21);
-const LEAF_OUTER = "M36 18H60C74 18 86 13 97 4C101.5 20 103.5 38 103 58C102.3 84 83 102 58 102H36Z";
+// v7: trunk and leaf are ONE continuous silhouette (no seam at x=36). The colour
+// flows from the root (bottom-left) to the leaf tip: navy → sea blue → green —
+// black/blue water (Thủy) feeding green wood (Mộc), in one gesture.
+const LEAF_OUTER = "M22 18H60C74 18 86 13 97 4C101.5 20 103.5 38 103 58C102.3 84 83 102 58 102H22Z";
 const LEAF_INNER = "M36 32H60C78 32 89 44 89 60C89 76 77 88 60 88H36Z";
 // Midrib drawn as a tapered shoot: full width at the Đ bar, thinning as it
 // rises into the leaf — reads as a living vein, not a stick.
@@ -66,10 +69,9 @@ function mark({ spine, needle, arc, id, ticks = true }) {
   const light = spine !== C.white;
   const defs =
     arc === "gradient"
-      ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="40" y1="102" x2="97" y2="4"><stop offset="0" stop-color="${light ? C.sea : C.seaLight}"/><stop offset="1" stop-color="${light ? C.leaf : C.leafLight}"/></linearGradient>`
+      ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="22" y1="102" x2="97" y2="4"><stop offset="0.12" stop-color="${light ? C.navy : C.white}"/><stop offset="0.5" stop-color="${light ? C.sea : C.seaLight}"/><stop offset="0.95" stop-color="${light ? C.leaf : C.leafLight}"/></linearGradient>`
       : "";
   const body = [
-    `<rect x="22" y="18" width="14" height="84" fill="${spine}"/>`,
     `<path fill="${leafFill}" fill-rule="evenodd" d="${LEAF_OUTER}${LEAF_INNER}"/>`,
     `<path fill="${needle}" d="${RIB}"/>`,
   ].join("");
