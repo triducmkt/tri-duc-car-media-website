@@ -17,7 +17,7 @@ import { VatAdvantage } from "@/components/VatAdvantage";
 import { ShopCheck } from "@/components/check/ShopCheck";
 import { Link, getPathname } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
-import { AXIS_KEYS, INDUSTRY_VARIANTS, articlesByAxis } from "@/lib/shopCheck";
+import { AXIS_KEYS, articlesByAxis } from "@/lib/shopCheck";
 import { getBlogPosts } from "@/lib/sanity/queries";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || COMPANY.siteUrl;
@@ -36,17 +36,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: "
 
 export default async function CheckPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: "vi" | "en" }>;
-  searchParams: Promise<{ nganh?: string }>;
 }) {
   const { locale } = await params;
-  const { nganh } = await searchParams;
   setRequestLocale(locale);
   const t = await getTranslations("check");
   const tg = await getTranslations("gifts");
-  const variant = (INDUSTRY_VARIANTS as readonly string[]).includes(nganh ?? "") ? nganh : undefined;
   const stats = t.raw("stats") as { v: string; l: string; c: string }[];
   const how = t.raw("how") as { t: string; d: string }[];
   const faq = t.raw("faq") as { q: string; a: string }[];
@@ -60,7 +56,7 @@ export default async function CheckPage({
 
   return (
     <>
-      <ShopCheck variant={variant} />
+      <ShopCheck />
 
       {/* Gift library: every gift leads into the check (?qua=…) or straight to booking. */}
       <section id="thu-vien-qua" className="bg-paper-soft py-16 sm:py-20">

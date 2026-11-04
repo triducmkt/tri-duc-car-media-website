@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, CalendarCheck, Check, MessageCircle, Phone, Rota
 import { Container } from "@/components/Container";
 import { Link } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
-import { ATTRIBUTION_KEYS, AXIS_KEYS, CHECK_AXES, LEVELS, checkScore, entryReferrer, weakestAxis, type CheckAxis } from "@/lib/shopCheck";
+import { ATTRIBUTION_KEYS, AXIS_KEYS, CHECK_AXES, INDUSTRY_VARIANTS, LEVELS, checkScore, entryReferrer, weakestAxis, type CheckAxis } from "@/lib/shopCheck";
 import { trackEvent } from "@/lib/tracking/grid";
 import { CheckRadar } from "./CheckRadar";
 import { GiftBox } from "./GiftBox";
@@ -26,7 +26,7 @@ const STORE = "td-check-attribution";
 
 type Values = Partial<Record<CheckAxis, number>>;
 
-export function ShopCheck({ variant }: { variant?: string }) {
+export function ShopCheck() {
   const t = useTranslations("check");
   const tg = useTranslations("gifts");
   const [giftPick, setGiftPick] = useState<GiftId | null>(null);
@@ -37,6 +37,8 @@ export function ShopCheck({ variant }: { variant?: string }) {
   const [zaloCopied, setZaloCopied] = useState(false);
   const [zaloSent, setZaloSent] = useState(false);
   const [attribution, setAttribution] = useState<Record<string, string>>({});
+  // ?nganh= (ad group industry) is read in the browser so the page stays static (ERR-WEB-006).
+  const [variant, setVariant] = useState<string | undefined>();
 
   const done = step >= AXIS_KEYS.length;
   const score = checkScore(values);
@@ -67,8 +69,11 @@ export function ShopCheck({ variant }: { variant?: string }) {
       if (params.has(k) && Number.isInteger(n) && n >= 0 && n < LEVELS) pre[k] = n;
     }
     const first = AXIS_KEYS.findIndex((k) => pre[k] === undefined);
+    const nganh = params.get("nganh") ?? "";
+    const v = (INDUSTRY_VARIANTS as readonly string[]).includes(nganh) ? nganh : undefined;
     const qua = params.get("qua");
     /* eslint-disable react-hooks/set-state-in-effect -- read once from the URL on mount */
+    setVariant(v);
     if (qua && (GIFT_IDS as string[]).includes(qua)) setGiftPick(qua as GiftId);
     setAttribution({ ...fresh, ...stored, ...(fresh.from ? { from: fresh.from } : {}) });
     if (Object.keys(pre).length) {
@@ -77,8 +82,8 @@ export function ShopCheck({ variant }: { variant?: string }) {
       setPrefilled(true);
     }
     /* eslint-enable react-hooks/set-state-in-effect */
-    trackEvent("check_view", { variant: variant ?? "default", source: fresh.utm_source ?? entry ?? "", from: fresh.from ?? "", prefilled: Object.keys(pre).length });
-  }, [variant]);
+    trackEvent("check_view", { variant: v ?? "default", source: fresh.utm_source ?? entry ?? "", from: fresh.from ?? "", prefilled: Object.keys(pre).length });
+  }, []);
 
   const answer = (axis: CheckAxis, level: number) => {
     const next = { ...values, [axis]: level };
