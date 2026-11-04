@@ -1177,7 +1177,7 @@
       },
       "dung-du-deu": {
         "title": "“Right – Enough – Steady” marketing",
-        "desc": "Slides for garages, spas and gyms: which channels, how much, how steadily, so new customers keep coming."
+        "desc": "Gift pack: 11 slides, an infographic, a 6-minute video and a 16-minute podcast for garages, spas and gyms: which channels, how much, how steadily."
       },
       "kenh-online-1-nguoi": {
         "title": "Online channels with one person",
@@ -1207,7 +1207,10 @@
       "audioShort": "Short listen (2 min)",
       "audioLong": "Full podcast (18 min)",
       "ebook": "Download the PDF guide (15 pages)",
-      "infographic": "View the infographic"
+      "infographic": "View the infographic",
+      "video6": "6-minute video",
+      "audio16": "Podcast (16 min)",
+      "slides11": "Download the slides PDF (11 pages)"
     }
   },
   "ladder": {

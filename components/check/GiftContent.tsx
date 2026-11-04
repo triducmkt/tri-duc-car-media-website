@@ -24,7 +24,7 @@ export function GiftContent({ gift }: { gift: GiftId }) {
         <p className="font-display text-lg font-bold">{t("unlockedTitle")}</p>
         <p className="mt-1 text-sm text-white/65">{t("unlockedBody")}</p>
       </div>
-      <div className={`grid gap-4 ${video ? "sm:grid-cols-[160px_1fr]" : ""}`}>
+      <div className={`grid gap-4 ${video && !video.landscape ? "sm:grid-cols-[160px_1fr]" : ""}`}>
         {video && (
           <figure className="flex flex-col gap-1.5">
             <video
@@ -34,7 +34,7 @@ export function GiftContent({ gift }: { gift: GiftId }) {
               playsInline
               preload="none"
               onPlay={() => open(video.label)}
-              className="mx-auto aspect-[9/16] w-full max-w-[200px] rounded-lg bg-black ring-1 ring-white/10"
+              className={`mx-auto w-full rounded-lg bg-black ring-1 ring-white/10 ${video.landscape ? "aspect-video" : "aspect-[9/16] max-w-[200px]"}`}
             />
             <figcaption className="text-center text-xs text-white/60">{t(`assets.${video.label}`)}</figcaption>
           </figure>

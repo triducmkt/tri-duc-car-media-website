@@ -1177,7 +1177,7 @@
       },
       "dung-du-deu": {
         "title": "Marketing “Đúng – Đủ – Đều”",
-        "desc": "Bộ slide cho xưởng xe, spa, gym: chọn kênh nào, làm bao nhiêu, đều đặn ra sao để khách mới đến đều."
+        "desc": "Bộ quà: slide 11 trang, infographic, video 6 phút và podcast 16 phút cho xưởng xe, spa, gym: chọn kênh, làm bao nhiêu, đều đặn ra sao để khách mới đến đều."
       },
       "kenh-online-1-nguoi": {
         "title": "Kênh online khi chỉ có 1 người làm",
@@ -1207,7 +1207,10 @@
       "audioShort": "Bản nghe tóm tắt (2 phút)",
       "audioLong": "Podcast đầy đủ (18 phút)",
       "ebook": "Tải cẩm nang PDF (15 trang)",
-      "infographic": "Xem infographic"
+      "infographic": "Xem infographic",
+      "video6": "Video 6 phút",
+      "audio16": "Podcast (16 phút)",
+      "slides11": "Tải slide PDF (11 trang)"
     }
   },
   "ladder": {
