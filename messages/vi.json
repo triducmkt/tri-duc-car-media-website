@@ -1474,5 +1474,61 @@
     "missionLabel": "Sứ mệnh",
     "mission": "Giải phóng người chủ. Nâng tầm doanh nghiệp.",
     "missionBody": "Mỗi cơ sở cần một hệ thống, không phải một ông chủ ôm hết việc. Tầm nhìn và giá trị cốt lõi ngay bên dưới."
+  },
+  "houseCall": {
+    "eyebrow": "Đến tận tiệm · TP.HCM",
+    "heading": "Anh chị không cần lên văn phòng. Anh Đức chạy xe tới tận tiệm.",
+    "sub": "Tư vấn qua điện thoại thì ai cũng nói được. Trí Đức ngồi ở quầy của anh chị 15 phút, nhìn khách thật được đón thế nào, rồi mới bàn giải pháp. Chọn khu của tiệm để xem đường đi.",
+    "office": "Trí Đức Media · Tân Phú",
+    "minShort": "phút",
+    "minLong": "phút xe máy tới tiệm anh chị",
+    "rideNote": "Từ văn phòng Tân Phú tới {place} · khoảng {km} km · ước tính ngoài giờ cao điểm",
+    "mapNote": "Bản đồ minh hoạ · tên khu vực theo quận cũ cho dễ hình dung · chạm vào bản đồ để chọn",
+    "stepPlace": "Tiệm của anh chị ở khu nào?",
+    "stepIndustry": "Anh chị kinh doanh gì?",
+    "remote": "Tỉnh / thành khác",
+    "remoteNote": "Ở ngoài TP.HCM? Mình gặp qua Zalo video trước: anh chị cầm điện thoại đi một vòng tiệm là đủ.",
+    "promise": "Buổi chẩn đoán 15 phút miễn phí: anh Đức xem quầy tiếp khách, cách nhân viên trả lời khách, rồi nói thẳng 1–2 chỗ đang để mất khách. Lịch ghé xác nhận qua Zalo.",
+    "promiseRemote": "Buổi chẩn đoán 15 phút miễn phí qua Zalo video. Lịch hẹn xác nhận qua Zalo.",
+    "msg": "Chào anh Đức, em là chủ {industry} ở {place}. Em muốn hẹn anh ghé tiệm chẩn đoán 15 phút.",
+    "msgRemote": "Chào anh Đức, em là chủ {industry} ở tỉnh khác. Em muốn hẹn anh chẩn đoán 15 phút qua Zalo video.",
+    "defaultIndustry": "cơ sở",
+    "ctaZalo": "Hẹn anh Đức ghé tiệm",
+    "ctaZaloRemote": "Hẹn gọi Zalo video",
+    "ctaBook": "Chọn ngày giờ",
+    "copyHint": "Bấm nút là lời nhắn trên được chép sẵn: mở Zalo, dán và gửi.",
+    "copied": "Đã chép lời nhắn. Dán vào Zalo và gửi nhé.",
+    "proof": "Đang đồng hành tại TP.HCM: AP Car Care (Tân Phú & Quận 7), tư liệu thật ở đầu trang.",
+    "industries": [
+      {
+        "label": "Gara / chăm sóc xe",
+        "inMsg": "gara / chăm sóc xe"
+      },
+      {
+        "label": "Spa / thẩm mỹ",
+        "inMsg": "spa / thẩm mỹ"
+      },
+      {
+        "label": "Gym / yoga",
+        "inMsg": "phòng gym / yoga"
+      },
+      {
+        "label": "Trung tâm đào tạo",
+        "inMsg": "trung tâm đào tạo"
+      },
+      {
+        "label": "Quán ăn / cafe",
+        "inMsg": "quán ăn / cafe"
+      },
+      {
+        "label": "Cửa hàng bán lẻ",
+        "inMsg": "cửa hàng bán lẻ"
+      },
+      {
+        "label": "Ngành khác",
+        "inMsg": "cơ sở kinh doanh"
+      }
+    ],
+    "bubbleLabel": "Lời nhắn Zalo soạn sẵn cho anh chị"
   }
 }

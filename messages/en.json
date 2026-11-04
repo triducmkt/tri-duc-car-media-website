@@ -1474,5 +1474,61 @@
     "missionLabel": "Mission",
     "mission": "Free the owner. Elevate the business.",
     "missionBody": "Every business needs a system, not an owner who carries everything. Vision and core values follow below."
+  },
+  "houseCall": {
+    "eyebrow": "We come to your shop · HCMC",
+    "heading": "No need to visit our office. Đức rides over to your shop.",
+    "sub": "Anyone can give advice over the phone. Trí Đức sits at your front desk for 15 minutes, watches how real customers are welcomed, and only then talks solutions. Pick your area to see the route.",
+    "office": "Trí Đức Media · Tan Phu",
+    "minShort": "min",
+    "minLong": "minutes by motorbike to your shop",
+    "rideNote": "From our Tan Phu office to {place} · about {km} km · off-peak estimate",
+    "mapNote": "Illustrative map · areas named by the former districts · tap the map to choose",
+    "stepPlace": "Where is your shop?",
+    "stepIndustry": "What's your business?",
+    "remote": "Another province",
+    "remoteNote": "Outside HCMC? Let's start with a Zalo video call: just walk your phone around the shop.",
+    "promise": "A free 15-minute diagnosis: Đức watches your front desk and how staff answer customers, then names 1–2 places you're losing customers. Visit time confirmed on Zalo.",
+    "promiseRemote": "A free 15-minute diagnosis over Zalo video. Time confirmed on Zalo.",
+    "msg": "Hi Đức, I run a {industry} in {place}. I'd like to book a 15-minute diagnosis at my shop.",
+    "msgRemote": "Hi Đức, I run a {industry} outside HCMC. I'd like to book a 15-minute diagnosis over Zalo video.",
+    "defaultIndustry": "business",
+    "ctaZalo": "Ask Đức to visit",
+    "ctaZaloRemote": "Book a Zalo video call",
+    "ctaBook": "Pick a date & time",
+    "copyHint": "The button copies the message above: open Zalo, paste, send.",
+    "copied": "Message copied. Paste it into Zalo and send.",
+    "proof": "Working with in HCMC: AP Car Care (Tan Phu & District 7), real footage at the top of this page.",
+    "industries": [
+      {
+        "label": "Garage / car care",
+        "inMsg": "garage / car care shop"
+      },
+      {
+        "label": "Spa / beauty",
+        "inMsg": "spa / beauty salon"
+      },
+      {
+        "label": "Gym / yoga",
+        "inMsg": "gym / yoga studio"
+      },
+      {
+        "label": "Training centre",
+        "inMsg": "training centre"
+      },
+      {
+        "label": "Restaurant / café",
+        "inMsg": "restaurant / café"
+      },
+      {
+        "label": "Retail store",
+        "inMsg": "retail store"
+      },
+      {
+        "label": "Other",
+        "inMsg": "business"
+      }
+    ],
+    "bubbleLabel": "Your Zalo message, pre-written"
   }
 }
