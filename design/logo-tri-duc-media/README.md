@@ -7,12 +7,13 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 
 **Quy trình vòng lặp + lịch sử từng phiên bản (kèm ảnh): [HISTORY.md](HISTORY.md). Brief thương hiệu: [BRAND-BRIEF.md](BRAND-BRIEF.md).**
 
-## Ý nghĩa
-- **Chữ Đ:** chữ ký của founder (Đức) và nét gạch ngang chỉ tiếng Việt mới có.
-- **Phần cong của chữ Đ là cung đồng hồ**, chuyển từ cam (dưới) lên vàng (trên; từ v3, trước là đỏ). Ý nghĩa: đo sức khỏe cơ sở; càng lên càng thành tài sản, khớp với công cụ "Kiểm tra cơ sở 60 giây".
-- **Nét gạch ngang của chữ Đ là cây kim chỉ lên vùng cao:** "Nâng tầm doanh nghiệp".
-- **3 vạch số nằm dưới kim:** kim đã vượt qua toàn bộ thang đo, tức là doanh nghiệp vượt mức cũ. App icon không có vạch, vì vạch bị nhòe ở cỡ dưới 64px.
-- **Chấm cam đứng ngoài chữ Đ (từ v4) là người chủ đã bước ra khỏi bộ máy.** Bộ máy vẫn tự chạy, kim tự đi lên phía người chủ: "Vắng 30 ngày, cơ sở vẫn tăng trưởng." (v1–v3 chấm cam là trục kim nằm trên thân chữ.)
+## Ý nghĩa (từ v5 — "Đ lá mầm", màu theo mệnh Mộc)
+- **Chữ Đ thành một chiếc lá:** phần cong của chữ Đ vuốt lên thành đầu lá nhọn, vượt cao hơn thân chữ. Ý nghĩa: cơ sở lớn vượt tầm cũ của mình.
+- **Thân chữ Đ màu navy là thân cây, là hệ thống:** phần đứng yên, rễ sâu.
+- **Nét gạch ngang của chữ Đ là gân lá:** thò ra bên trái như nét Đ bình thường, rồi thon dần, vươn lên trong lòng lá. Sự tăng trưởng đến từ bên trong.
+- **Màu xanh biển ở gốc chuyển sang xanh lá ở ngọn:** Thủy sinh Mộc, nước nuôi gốc thì lá xanh. Bảng màu hợp mệnh Mộc (Đại Lâm Mộc) của founder.
+- **Câu chuyện:** Đại Lâm Mộc là cây lớn trong rừng, người trồng vắng mặt mà cây vẫn lớn. Đó chính là "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
+- *(Ý nghĩa cũ v1–v4 "đồng hồ / kim đo / chấm cam người chủ": xem HISTORY.md.)*
 
 ## Bộ file (`svg/`, dạng vector, chữ đã chuyển thành nét vẽ nên không cần cài font)
 | File | Dùng khi |
@@ -27,19 +28,21 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 
 PNG có sẵn trong `png/`: logo ngang 2000px, logo dọc 1600px, biểu tượng 1024px, app icon 1024/512/192/180/32px.
 
-## Màu
+## Màu (từ v5)
 | Vai trò | Mã |
 |---|---|
-| Navy (chữ, thân chữ Đ) | `#0B1220` (trùng màu chữ chính của website) |
-| Cam (trục kim, đáy cung) | `#F7891C` |
-| Vàng (đỉnh cung, từ v3) | `#DFA136` |
-| Chữ MEDIA trên nền sáng | `#E0701A` |
-| Chữ MEDIA trên nền tối | `#F0C069` |
+| Navy (thân chữ Đ, chữ TRÍ ĐỨC) | `#0B1220` (trùng màu chữ chính của website) |
+| Xanh biển (gốc lá, chữ MEDIA trên nền sáng) | `#0A6FB8` |
+| Xanh lá (ngọn lá, gân lá trên nền sáng) | `#17A85A` |
+| Nền tối: xanh biển sáng / xanh lá sáng (lá, gân lá, chữ MEDIA) | `#3AA3EC` / `#45D17F` |
+| Trắng | `#FFFFFF` |
+
+Cam và vàng (v1–v4) đã thôi dùng. Theo anh Đức, đó chỉ là ý tưởng ban đầu, không hợp mệnh.
 
 ## Quy tắc dùng
 - **Khoảng trống quanh logo:** tối thiểu bằng chiều rộng thân chữ Đ ở mọi phía.
 - **Cỡ tối thiểu:** logo ngang rộng ít nhất 120px trên màn hình hoặc 30mm khi in. Nhỏ hơn mức đó thì dùng biểu tượng đứng riêng hoặc app icon.
-- **Chuyển màu:** chỉ dùng trên cung đồng hồ. Ở cỡ dưới 24px, hoặc khi in 1 màu, dùng bản mono.
+- **Chuyển màu:** chỉ dùng trên chiếc lá (phần cong của chữ Đ). Ở cỡ dưới 24px, hoặc khi in 1 màu, dùng bản mono.
 - **Không làm:** kéo méo tỉ lệ, đổi font, thêm bóng đổ hay viền, xoay biểu tượng, đặt logo màu lên ảnh nền rối (khi đó dùng bản reverse hoặc mono-white).
 - **Tên thương hiệu là "Trí Đức Media".** Tên pháp lý "Công ty TNHH Trí Đức Car Media" chỉ dùng ở hóa đơn, hợp đồng và dòng pháp lý.
 

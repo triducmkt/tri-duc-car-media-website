@@ -17,68 +17,61 @@ if (!FONTS) throw new Error("Usage: node build.mjs <fonts dir>");
 const heavy = opentype.loadSync(path.join(FONTS, "BeVietnamPro-ExtraBold.ttf"));
 const semi = opentype.loadSync(path.join(FONTS, "BeVietnamPro-SemiBold.ttf"));
 
-// v3: red "redline" replaced by gold — climbing into gold = growth that becomes
-// an owned asset, calm rather than overloaded (brief: vision v3 / brand promise).
-// Gold matches the website accent (gold-400 #F0C069 / gold-500 #D9A441).
+// v5 (2026-11-04): new palette from the founder's element — Mộc (Đại Lâm Mộc).
+// Compatible: sea blue (Thủy nourishes Mộc), green (Mộc), black/navy, white.
+// Orange/gold of v1–v4 retired. Gradient runs blue at the root → green at the
+// tip: "Thủy sinh Mộc" — water at the roots feeds the leaf.
 const C = {
   navy: "#0B1220",
-  orange: "#F7891C",
-  gold: "#DFA136", // arc top (light backgrounds)
-  goldLight: "#F0C069", // MEDIA on dark backgrounds
-  ember: "#E0701A", // MEDIA on light backgrounds (orange deepened for legibility)
   white: "#FFFFFF",
+  sea: "#0A6FB8", // root of the leaf, MEDIA on light
+  leaf: "#17A85A", // tip of the leaf, midrib + veins on light
+  seaLight: "#3AA3EC", // reverse (on navy)
+  leafLight: "#45D17F", // reverse (on navy), MEDIA on dark
 };
 
-// ---------- Mark: 120×120 grid, ink spans x 22–100, y 18–102 ----------
-// Stem + top/bottom bars = the D's spine; bowl = gauge arc (gold at the top since v3);
-// the Đ crossbar = needle pivoting on the stem, rising toward the owner dot (v4).
-// Stroke weight 14 for spine + gauge; gauge centre (58,60), centreline r=35.
+// ---------- Mark v5 "Đ lá mầm" (sprouting Đ), 120×120 grid ----------
+// Trunk  = the Đ's stem (navy): roots, the system, what stays put.
+// Leaf   = the Đ's bowl, whose top-right corner lifts into a pointed leaf tip
+//          rising ABOVE the trunk — the business outgrowing its old height.
+// Midrib = the Đ crossbar: starts left of the trunk like a normal Đ bar, then
+//          runs up through the leaf to its tip — growth driven from inside.
+// Story: Đại Lâm Mộc — a big tree keeps growing while the gardener is away:
+// "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
+const MARK_TOP = 4; // leaf tip
 const PIVOT = [29, 60];
-// v4: the orange dot = the owner. Through v3 it sat on the stem as the needle's
-// pivot (the owner holding the machine). In v4 it has stepped OUT of the Đ and
-// sits above the gauge, top-right: the machine keeps running and its needle
-// rises toward the owner, who is now in the owner's seat, not the worker's.
-// Brief: vision v3 + "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
-const OWNER_ANGLE = 50; // degrees from the gauge centre (58,60)
-const OWNER_R = 7.5;
-const OWNER = [58 + 53 * Math.cos((OWNER_ANGLE * Math.PI) / 180), 60 - 53 * Math.sin((OWNER_ANGLE * Math.PI) / 180)];
+const LEAF_TIP = [97, 4];
 const dir = (() => {
-  const dx = OWNER[0] - PIVOT[0], dy = OWNER[1] - PIVOT[1], l = Math.hypot(dx, dy);
+  const dx = LEAF_TIP[0] - PIVOT[0], dy = LEAF_TIP[1] - PIVOT[1], l = Math.hypot(dx, dy);
   return [dx / l, dy / l];
 })();
-// Needle tip: where the pivot→owner line meets the inner edge zone of the gauge (r≈29).
-const TIP = (() => {
-  // |PIVOT + t·dir − C|² = 29², far root
-  const ox = PIVOT[0] - 58, oy = PIVOT[1] - 60;
-  const b = ox * dir[0] + oy * dir[1];
-  const t = -b + Math.sqrt(b * b - (ox * ox + oy * oy - 29 * 29));
-  return [+(PIVOT[0] + dir[0] * t).toFixed(2), +(PIVOT[1] + dir[1] * t).toFixed(2)];
-})();
-const TAIL = [PIVOT[0] - dir[0] * 10, PIVOT[1] - dir[1] * 10];
 const f = (n) => +n.toFixed(2);
+const along = (t) => [PIVOT[0] + dir[0] * t, PIVOT[1] + dir[1] * t];
+const TAIL = along(-21);
+const LEAF_OUTER = "M36 18H60C74 18 86 13 97 4C101.5 20 103.5 38 103 58C102.3 84 83 102 58 102H36Z";
+const LEAF_INNER = "M36 32H60C78 32 89 44 89 60C89 76 77 88 60 88H36Z";
+// Midrib drawn as a tapered shoot: full width at the Đ bar, thinning as it
+// rises into the leaf — reads as a living vein, not a stick.
+const RIB = (() => {
+  const n = [-dir[1], dir[0]];
+  const pt = (t, w) => [along(t)[0] + n[0] * w, along(t)[1] + n[1] * w];
+  const a = pt(-16, 4.6), b = pt(54, 1.2), c = pt(54, -1.2), d = pt(-16, -4.6);
+  const tail = along(-8);
+  // rounded tail cap (arc through the tail end) + straight tapered sides
+  return `M${f(a[0])} ${f(a[1])}L${f(b[0])} ${f(b[1])}L${f(c[0])} ${f(c[1])}L${f(d[0])} ${f(d[1])}A4.6 4.6 0 0 0 ${f(a[0])} ${f(a[1])}Z`;
+})();
 
-// Scale ticks sit below the needle: the needle has already passed the marked range.
-const TICK_ANGLES = [15, -25, -65]; // evenly spaced 40° — a regular, standardised scale
-function ticksPath() {
-  return TICK_ANGLES.map((a) => {
-    const r = (a * Math.PI) / 180, c = Math.cos(r), s = Math.sin(r);
-    return `M${f(58 + 18 * c)} ${f(60 - 18 * s)}L${f(58 + 23 * c)} ${f(60 - 23 * s)}`;
-  }).join("");
-}
-
-function mark({ spine, needle, arc, hub, id, ticks = true }) {
-  const arcStroke = arc === "gradient" ? `url(#${id}-g)` : arc;
+function mark({ spine, needle, arc, id, ticks = true }) {
+  const leafFill = arc === "gradient" ? `url(#${id}-g)` : arc;
+  const light = spine !== C.white;
   const defs =
     arc === "gradient"
-      ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="0" y1="18" x2="0" y2="102"><stop offset="0" stop-color="${C.gold}"/><stop offset="1" stop-color="${C.orange}"/></linearGradient>`
+      ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="40" y1="102" x2="97" y2="4"><stop offset="0" stop-color="${light ? C.sea : C.seaLight}"/><stop offset="1" stop-color="${light ? C.leaf : C.leafLight}"/></linearGradient>`
       : "";
   const body = [
-    `<path fill="${spine}" d="M22 18H58V32H36V88H58V102H22Z"/>`,
-    `<path fill="none" stroke="${arcStroke}" stroke-width="14" d="M58 25A35 35 0 0 1 58 95"/>`,
-    ticks ? `<path fill="none" stroke="${needle}" stroke-width="4" stroke-linecap="round" d="${ticksPath()}"/>` : "",
-    `<path fill="none" stroke="${needle}" stroke-width="7.5" stroke-linecap="round" d="M${f(TAIL[0])} ${f(TAIL[1])}L${TIP[0]} ${TIP[1]}"/>`,
-    // owner dot (v4): outside the Đ; mono versions use the ink colour
-    `<circle cx="${f(OWNER[0])}" cy="${f(OWNER[1])}" r="${OWNER_R}" fill="${hub ?? needle}"/>`,
+    `<rect x="22" y="18" width="14" height="84" fill="${spine}"/>`,
+    `<path fill="${leafFill}" fill-rule="evenodd" d="${LEAF_OUTER}${LEAF_INNER}"/>`,
+    `<path fill="${needle}" d="${RIB}"/>`,
   ].join("");
   return { defs, body };
 }
@@ -151,10 +144,10 @@ function svg(w, h, inner, defs = "", bg = null, minX = 0, minY = 0) {
 }
 
 const themes = {
-  color: { spine: C.navy, needle: C.navy, arc: "gradient", hub: C.orange, name: C.navy, sub: C.ember, tag: "#4B5568" },
-  reverse: { spine: C.white, needle: C.white, arc: "gradient", hub: C.orange, name: C.white, sub: C.goldLight, tag: "#C3CAD6" },
-  "mono-black": { spine: C.navy, needle: C.navy, arc: C.navy, hub: null, name: C.navy, sub: C.navy, tag: C.navy },
-  "mono-white": { spine: C.white, needle: C.white, arc: C.white, hub: null, name: C.white, sub: C.white, tag: C.white },
+  color: { spine: C.navy, needle: C.leaf, arc: "gradient", name: C.navy, sub: C.sea, tag: "#4B5568" },
+  reverse: { spine: C.white, needle: C.leafLight, arc: "gradient", name: C.white, sub: C.leafLight, tag: "#C3CAD6" },
+  "mono-black": { spine: C.navy, needle: C.navy, arc: C.navy, name: C.navy, sub: C.navy, tag: C.navy },
+  "mono-white": { spine: C.white, needle: C.white, arc: C.white, name: C.white, sub: C.white, tag: C.white },
 };
 
 // v4: brand-promise line for signage, cards, slides, uniforms.
@@ -163,7 +156,7 @@ function horizontal(t, id, withTagline = false) {
   const m = mark({ ...t, id });
   const gap = 28;
   const wm = wordmark(100 + gap, 18, t);
-  const minY = Math.min(OWNER[1] - OWNER_R, wm.top) - PAD;
+  const minY = Math.min(MARK_TOP, wm.top) - PAD;
   let maxY = Math.max(102, wm.bottom) + PAD;
   const minX = 22 - PAD;
   let maxX = 100 + gap + wm.width + PAD;
@@ -191,7 +184,7 @@ function vertical(t, id) {
   const m = mark({ ...t, id });
   const markCx = 61; // ink centre of the D (22..100)
   const k = 1.35; // mark is enlarged in the stacked lockup
-  const top = 60 - 42 * k, bottom = 60 + 42 * k, leftInk = markCx - (markCx - TAIL[0]) * k;
+  const top = 60 - (60 - MARK_TOP) * k, bottom = 60 + 42 * k, leftInk = markCx - (markCx - TAIL[0]) * k;
   const g = `<g transform="translate(${markCx} 60) scale(${k}) translate(${-markCx} -60)">${m.body}</g>`;
   // place the wordmark so its accents clear the mark by 26 units
   const probe = wordmark(markCx, 0, { ...t, align: "center" });
@@ -206,9 +199,9 @@ function markOnly(t, id) {
 function appIcon() {
   // navy rounded square, white spine/needle, mark at ~62% of the tile
   const m = mark({ ...themes.reverse, id: "app", ticks: false }); // ticks blur below 64px
-  const s = 0.52 * (120 / 84); // 84-unit ink height ≈ 52% of the tile
-  const inkCx = (TAIL[0] + 100) / 2; // centre including the needle tail
-  const tx = 60 - inkCx * s, ty = 60 - 60 * s;
+  const s = 0.6 * (120 / (102 - MARK_TOP)); // full ink height (leaf tip → base) ≈ 60% of the tile
+  const inkCx = (TAIL[0] + 103) / 2; // centre including the midrib tail
+  const tx = 60 - inkCx * s, ty = 60 - ((MARK_TOP + 102) / 2) * s;
   return svg(
     120, 120,
     `<rect width="120" height="120" rx="26" fill="${C.navy}"/><g transform="translate(${f(tx)} ${f(ty)}) scale(${f(s)})">${m.body}</g>`,

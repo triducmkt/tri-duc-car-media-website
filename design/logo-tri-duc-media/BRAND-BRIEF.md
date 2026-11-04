@@ -42,6 +42,12 @@ Gợi ý cho vòng tới, đối chiếu với v2 "Đ kim đo":
 - Con số **30** (ngày) và mốc **1000 người chủ / 2031** là chất liệu kể chuyện, KHÔNG đưa vào logo.
 - Màu đỏ ở vùng tua cao dễ gợi "quá tải/nguy hiểm", ngược với ý "ung dung, bền vững". Nên cân nhắc lại sắc độ ở vòng sau.
 
+## Màu chủ đạo theo phong thủy (anh Đức chốt 2026-11-04)
+- Founder **mệnh Mộc (Đại Lâm Mộc, "gỗ rừng lớn")**.
+- **Màu hợp:** xanh dương / xanh biển (Thủy sinh Mộc), xanh lá cây (Mộc), đen, trắng.
+- **Màu cam chỉ là ý tưởng ban đầu, KHÔNG phải màu chủ đạo lâu dài.** Từ v5, logo dùng xanh biển + xanh lá + đen/navy + trắng. Cam và vàng chỉ còn trong lịch sử v1–v4.
+- **Chất liệu ý tưởng:** Đại Lâm Mộc là cây lớn trong rừng, rễ sâu, tự lớn qua năm tháng. Ý này khớp với lời hứa "Vắng 30 ngày, cơ sở vẫn tăng trưởng": cây vẫn lớn khi người trồng vắng mặt.
+
 ## Ràng buộc thiết kế
 - Đọc rõ dấu tiếng Việt (Í, Ứ), kể cả ở cỡ nhỏ.
 - Có biểu tượng đứng riêng, nhận ra được ở 32px (favicon, avatar Zalo/Facebook).

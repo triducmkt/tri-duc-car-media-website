@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v4** · ảnh: [history/v4/preview.png](history/v4/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v5** · ảnh: [history/v5/preview.png](history/v5/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -140,5 +140,35 @@
 - **Còn mở cho vòng sau:**
   - chấm cam đứng gần dấu sắc chữ Í ở bản ngang, cần xem lại khoảng cách khi in nhỏ;
   - kim không còn trục nên đầu trái hơi "lửng", có thể thử bo hoặc cắt gọn;
+  - chưa có mockup áo đồng phục và xe.
+- **Trạng thái:** nháp, thay bằng v5.
+
+## v5 — "Đ lá mầm", màu theo mệnh Mộc (2026-11-04) — ĐỔI Ý TƯỞNG LỚN
+- **Yêu cầu anh Đức:** "vẫn chưa đủ wow về ý tưởng thiết kế và bản vẽ. a thêm thông tin màu hợp mệnh phong thủy, mệnh của a là mệnh mộc (đại lâm mộc) hợp các màu xanh dương/xanh biển, trắng, đen, xanh lá cây. màu cam thực ra chỉ là ý tưởng ban đầu, không phải màu chủ đạo của cty sẽ gắn bó lâu dài"
+- **Ảnh:** [history/v5/preview.png](history/v5/preview.png)
+- **Brief:** thêm mục "Màu chủ đạo theo phong thủy" vào BRAND-BRIEF.md (mệnh Mộc, cam chỉ là ý tưởng ban đầu).
+- **Thay đổi so với v4 (bỏ hẳn ý đồng hồ, vẽ lại từ đầu):**
+  - **Ý tưởng:** từ "đồng hồ đo + người chủ bước ra" sang **"Đ lá mầm"**. Đại Lâm Mộc là cây lớn trong rừng, tự lớn khi người trồng vắng mặt: lời hứa "Vắng 30 ngày, cơ sở vẫn tăng trưởng" được vẽ bằng hình ảnh tự nhiên.
+  - **Phần cong chữ Đ thành chiếc lá:** góc trên bên phải vuốt lên thành đầu lá nhọn, vượt cao hơn thân chữ (cơ sở lớn vượt tầm cũ).
+  - **Thân chữ Đ màu navy là thân cây, là hệ thống:** đứng yên, rễ sâu.
+  - **Nét gạch ngang Đ thành gân lá:** một nét thon dần (đầu tròn bên trái, nhọn khi vươn lên trong lá). Bỏ hẳn kim, vạch số và chấm cam.
+  - **Màu mới:**
+    - lá chuyển từ xanh biển `#0A6FB8` (gốc) sang xanh lá `#17A85A` (ngọn), tức Thủy sinh Mộc;
+    - chữ TRÍ ĐỨC navy `#0B1220`;
+    - chữ MEDIA xanh biển trên nền sáng, xanh lá sáng `#45D17F` trên nền tối;
+    - cam và vàng đã thôi dùng.
+- **Quá trình vẽ trong vòng này:**
+  - Bản nháp đầu dùng gân lá là một que thẳng có 2 gân phụ. Nhìn giống que xiên kèm răng cào nên em bỏ.
+  - Thay bằng nét thon, rồi sửa đầu nét bị móc ngược và kéo nét thò ra trái đủ dài để đọc thành chữ Đ.
+- **Vì sao "wow" hơn:**
+  - Một hình duy nhất kể 3 lớp nghĩa: chữ Đ (tên founder, nét Việt), chiếc lá (Mộc, mệnh founder), tăng trưởng tự nhiên (lời hứa).
+  - Khác hẳn 3 thương hiệu SME đã khảo sát (KiotViet, Base.vn, MISA: xanh/đỏ, công nghệ, icon app). Đây là biểu tượng có hồn, mang tính tự nhiên.
+- **Tự kiểm tra:**
+  - avatar tròn 72px và icon 32px vẫn ra chữ Đ hình lá;
+  - bản mono rõ hình lá (gân lá hòa vào thân chữ, chỉ thấy phần thò ra trái);
+  - dấu Í, Ứ không dính.
+- **Còn mở cho vòng sau:**
+  - website đang dùng màu nhấn vàng đồng, sẽ lệch tông với logo xanh khi publish (cần quyết định khi đổi logo trên web);
+  - thử thêm một gân phụ rất mảnh ở bản lớn (biển hiệu) để tăng chi tiết;
   - chưa có mockup áo đồng phục và xe.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
