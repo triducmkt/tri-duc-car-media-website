@@ -10,6 +10,7 @@ import { ATTRIBUTION_KEYS, AXIS_KEYS, CHECK_AXES, LEVELS, checkScore, entryRefer
 import { trackEvent } from "@/lib/tracking/grid";
 import { CheckRadar } from "./CheckRadar";
 import { GiftBox } from "./GiftBox";
+import { GiftContent } from "./GiftContent";
 import { GIFT_IDS, GIFT_MAP, giftForAxis, type GiftId } from "@/lib/gifts";
 
 /** Landing hero: "Kiểm tra cơ sở 60 giây". The 3D radar (CheckRadar) morphs
@@ -34,6 +35,7 @@ export function ShopCheck({ variant }: { variant?: string }) {
   const [prefilled, setPrefilled] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [zaloCopied, setZaloCopied] = useState(false);
+  const [zaloSent, setZaloSent] = useState(false);
   const [attribution, setAttribution] = useState<Record<string, string>>({});
 
   const done = step >= AXIS_KEYS.length;
@@ -97,6 +99,7 @@ export function ShopCheck({ variant }: { variant?: string }) {
     setPrefilled(false);
     setStatus("idle");
     setZaloCopied(false);
+    setZaloSent(false);
   };
 
   const answerLines = () => AXIS_KEYS.map((k) => `${t(`axes.${k}.label`)}: ${(t.raw(`axes.${k}.o`) as string[])[values[k] ?? 0]}`);
@@ -141,6 +144,7 @@ export function ShopCheck({ variant }: { variant?: string }) {
     // Start the copy and open Zalo inside the same tap, or popup blockers kick in.
     navigator.clipboard?.writeText(text).then(() => setZaloCopied(true), () => setZaloCopied(false));
     window.open(COMPANY.zalo, "_blank", "noopener");
+    setZaloSent(true);
     trackEvent("check_lead", { score, weakest, channel: "zalo", gift, entry: attribution.entry_ref ?? "", from: attribution.from ?? "" });
     conversion("zalo");
   };
@@ -289,6 +293,8 @@ export function ShopCheck({ variant }: { variant?: string }) {
                   {t("zaloCopied")}
                 </p>
               )}
+              {/* Gift opens once the visitor has left contact (form or Zalo). */}
+              {(status === "done" || zaloSent) && <GiftContent gift={gift} />}
 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 pt-4 text-sm font-semibold">
                 <a href={`tel:${COMPANY.phone}`} onClick={() => trackEvent("check_cta", { to: "call" })} className="inline-flex items-center gap-1.5 text-white/75 hover:text-white">

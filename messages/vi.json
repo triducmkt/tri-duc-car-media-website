@@ -1165,7 +1165,7 @@
     "items": {
       "nghi-3-ngay": {
         "title": "Nghỉ 3 ngày, cơ sở vẫn chạy",
-        "desc": "Cẩm nang 3 bước chuẩn hóa vận hành để chủ rời cơ sở được, đúc kết từ các cơ sở anh Đức đồng hành."
+        "desc": "Bộ quà: cẩm nang 15 trang, infographic, video 60 giây và 2 bản nghe (2 & 18 phút) về 3 bước chuẩn hóa để chủ rời cơ sở được."
       },
       "giu-khach-cu": {
         "title": "7 việc giữ khách cũ quay lại",
@@ -1195,6 +1195,15 @@
         "title": "Thẻ 15 phút chẩn đoán miễn phí",
         "desc": "Trò chuyện 15 phút với founder Tăng Trí Đức về đúng chỗ cơ sở đang nghẽn."
       }
+    },
+    "unlockedTitle": "Quà của anh chị đây",
+    "unlockedBody": "Xem ngay hoặc lưu lại để gửi quản lý cùng xem. Anh Đức sẽ nhắn Zalo để bàn bước đầu cho cơ sở của anh chị.",
+    "assets": {
+      "video60": "Video 60 giây",
+      "audioShort": "Bản nghe tóm tắt (2 phút)",
+      "audioLong": "Podcast đầy đủ (18 phút)",
+      "ebook": "Tải cẩm nang PDF (15 trang)",
+      "infographic": "Xem infographic"
     }
   }
 }

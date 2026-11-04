@@ -1165,7 +1165,7 @@
     "items": {
       "nghi-3-ngay": {
         "title": "Take 3 days off, the shop still runs",
-        "desc": "A 3-step guide to standardising operations so the owner can step away, from the shops Duc works with."
+        "desc": "Gift pack: a 15-page guide, an infographic, a 60-second video and 2 audio pieces (2 & 18 min) on 3 steps so the owner can step away."
       },
       "giu-khach-cu": {
         "title": "7 ways to bring customers back",
@@ -1195,6 +1195,15 @@
         "title": "Free 15-minute diagnosis card",
         "desc": "15 minutes with founder Tang Tri Duc on exactly where your shop is stuck."
       }
+    },
+    "unlockedTitle": "Here is your gift",
+    "unlockedBody": "Watch now or save it to share with your manager. Duc will message you on Zalo about the first step for your shop.",
+    "assets": {
+      "video60": "60-second video",
+      "audioShort": "Short listen (2 min)",
+      "audioLong": "Full podcast (18 min)",
+      "ebook": "Download the PDF guide (15 pages)",
+      "infographic": "View the infographic"
     }
   }
 }

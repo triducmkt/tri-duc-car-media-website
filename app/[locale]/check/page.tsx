@@ -83,7 +83,7 @@ export default async function CheckPage({
                   </div>
                   <h3 className="font-display text-base font-bold leading-snug text-ink">{tg(`items.${id}.title`)}</h3>
                   <p className="text-sm leading-relaxed text-ink-muted">{tg(`items.${id}.desc`)}</p>
-                  {ready ? (
+                  {"href" in g ? (
                     <Link href="/booking" className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700">
                       {tg("book")} <ArrowRight size={15} aria-hidden />
                     </Link>
