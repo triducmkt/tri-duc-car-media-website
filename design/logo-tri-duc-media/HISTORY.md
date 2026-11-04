@@ -318,3 +318,9 @@
   - bản dọc vẫn là biểu tượng lớn + tên thường (chưa có đường kẻ MEDIA);
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
+
+## Quyết định (2026-11-04) — Chốt slogan
+- **Anh Đức chọn:** "Chủ vắng, khách vẫn đông".
+- Slogan chính thức đi kèm logo: **"Chủ vắng, khách vẫn đông."** Câu này đã có sẵn trên v10 (bản ngang có slogan, logo động), nên không cần dựng lại.
+- Lời hứa đầy đủ "Vắng 30 ngày, cơ sở vẫn tăng trưởng." giữ nguyên cho bài viết, slide, tư vấn.
+- Bản mới nhất vẫn là v10 (nháp, chưa lên web).

@@ -30,7 +30,7 @@ Khởi đầu từ ngành Dịch vụ & Ô tô, nay mở rộng sang mọi ngàn
 ## Lời hứa thương hiệu
 > **"Vắng 30 ngày, cơ sở vẫn tăng trưởng."**
 
-## Slogan ngắn (đề xuất v10, chờ anh Đức chốt)
+## Slogan (anh Đức CHỐT 2026-11-04): "Chủ vắng, khách vẫn đông."
 Lời hứa đầy đủ "Vắng 30 ngày, cơ sở vẫn tăng trưởng." giữ nguyên, dùng trong bài viết, slide, tư vấn.
 **Tiêu chí slogan** (sau góp ý của anh Đức):
 1. đọc một lần là hiểu;
@@ -38,9 +38,9 @@ Lời hứa đầy đủ "Vắng 30 ngày, cơ sở vẫn tăng trưởng." gi�
 3. có "móc" để nhớ.
 
 Các câu đã loại: "Vắng chủ, vẫn tăng." (ngắn nhưng khó hiểu); "Gieo hệ thống, gặt tự do." (chưa bắt tai).
-- **A. "Chủ vắng, khách vẫn đông."** (đang dùng trên logo v10): chơi chữ đối vắng ↔ đông, cụ thể, chủ tiệm nào cũng hiểu.
-- **B. "Chủ nghỉ, cơ sở vẫn chạy."**: rõ nghĩa nhất, ít chơi chữ.
-- **C. "Anh chị nghỉ, cơ sở vẫn lớn."**: đúng xưng hô thân quen với khách.
+- **A. "Chủ vắng, khách vẫn đông."** ✅ ĐÃ CHỐT, dùng trên mọi bản logo có slogan: chơi chữ đối vắng ↔ đông, cụ thể, chủ tiệm nào cũng hiểu.
+- (dự phòng, không dùng) **B. "Chủ nghỉ, cơ sở vẫn chạy."**: rõ nghĩa nhất, ít chơi chữ.
+- (dự phòng, không dùng) **C. "Anh chị nghỉ, cơ sở vẫn lớn."**: đúng xưng hô thân quen với khách.
 
 ## Nhận diện "Trí Đức Media" — logo cần nói được gì
 Từ sứ mệnh, tầm nhìn và lời hứa ở trên, mỗi phương án logo được chấm theo 4 ý:
