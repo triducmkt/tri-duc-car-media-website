@@ -17,6 +17,8 @@ export type GiftAsset = {
   label: string;
   url: string;
   poster?: string;
+  /** Videos: 16:9 instead of the default vertical 9:16. */
+  landscape?: boolean;
 };
 type Gift = { axis: CheckAxis | null; format: GiftFormat; status: "ready" | "soon"; assets: GiftAsset[]; href?: "/booking" };
 
@@ -36,7 +38,17 @@ export const GIFT_MAP = {
     ],
   },
   "giu-khach-cu": { axis: "khach-cu", format: "checklist", status: "soon", assets: [] },
-  "dung-du-deu": { axis: "khach-moi", format: "slides", status: "soon", assets: [] },
+  "dung-du-deu": {
+    axis: "khach-moi",
+    format: "slides",
+    status: "ready",
+    assets: [
+      { kind: "video", label: "video6", url: `${CDN}/a4fb423714874b0ab79395ac1246af3614e7c1d0.mp4`, poster: `${CDN}/55b170a4c038e27f0f5b418dd9466a54d5c39eb0.jpg`, landscape: true },
+      { kind: "audio", label: "audio16", url: `${CDN}/98feb1c3c149185df36464ee7421ab32f2f0b6d6.m4a` },
+      { kind: "pdf", label: "slides11", url: `${CDN}/672a2f8a87258e0fc2958897450e05c8fa5204e8.pdf` },
+      { kind: "image", label: "infographic", url: `${CDN}/5c8e06658a1e991ff3a4a28f4f7754cf32ea3e0c.jpg` },
+    ],
+  },
   "kenh-online-1-nguoi": { axis: "kenh", format: "infographic", status: "soon", assets: [] },
   "so-lieu-1-trang": { axis: "so-lieu", format: "checklist", status: "soon", assets: [] },
   "5-truc-poster": { axis: null, format: "poster", status: "soon", assets: [] },
