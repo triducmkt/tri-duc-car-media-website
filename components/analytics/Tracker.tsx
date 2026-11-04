@@ -41,6 +41,8 @@ export function Tracker() {
   const [consent, setConsent] = useState<Consent>(null);
   const [ready, setReady] = useState(false);
   const [bannerOpen, setBannerOpen] = useState(false);
+  // Phones get a one-line strip; the full explanation is one tap away.
+  const [expanded, setExpanded] = useState(false);
   const [heatmapKey, setHeatmapKey] = useState<string | null>(null);
   const engineRef = useRef<TrackerEngine | null>(null);
 
@@ -111,29 +113,63 @@ export function Tracker() {
       role="dialog"
       aria-live="polite"
       aria-label={t("title")}
-      className="fixed inset-x-3 bottom-[4.5rem] z-[60] mx-auto max-w-xl rounded-2xl bg-ink p-5 text-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10 sm:bottom-5 sm:left-5 sm:right-auto"
+      className="fixed inset-x-3 bottom-[4.25rem] z-[60] mx-auto max-w-xl rounded-2xl bg-ink text-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10 sm:bottom-5 sm:left-5 sm:right-auto"
     >
-      <p className="font-display text-base font-semibold">{t("title")}</p>
-      <p className="mt-1.5 text-sm leading-relaxed text-white/70">{t("body")}</p>
-      <details className="mt-2 text-sm text-white/60">
-        <summary className="cursor-pointer font-medium text-brand-300">{t("detailsToggle")}</summary>
-        <p className="mt-2 leading-relaxed">{t("details")}</p>
-      </details>
-      <div className="mt-4 flex flex-wrap gap-2.5">
-        <button
-          type="button"
-          onClick={() => decide("granted")}
-          className="min-h-11 rounded-full bg-gold-500 px-5 text-sm font-bold text-ink hover:bg-gold-400"
-        >
-          {t("accept")}
-        </button>
-        <button
-          type="button"
-          onClick={() => decide("denied")}
-          className="min-h-11 rounded-full px-5 text-sm font-semibold text-white ring-1 ring-inset ring-white/25 hover:bg-white/5"
-        >
-          {t("decline")}
-        </button>
+      {/* Phone, collapsed: one short line + the two choices (~70px tall). */}
+      <div className={expanded ? "hidden" : "flex items-center gap-2.5 px-3.5 py-2.5 sm:hidden"}>
+        <p className="min-w-0 flex-1 text-xs leading-snug text-white/80">
+          {t("short")}{" "}
+          <button
+            type="button"
+            onClick={() => setExpanded(true)}
+            aria-expanded={expanded}
+            className="font-semibold text-brand-300 underline underline-offset-2"
+          >
+            {t("more")}
+          </button>
+        </p>
+        <div className="flex shrink-0 gap-1.5">
+          <button
+            type="button"
+            onClick={() => decide("granted")}
+            className="min-h-9 px-3.5 text-xs rounded-full bg-gold-500 font-bold text-ink hover:bg-gold-400"
+          >
+            {t("accept")}
+          </button>
+          <button
+            type="button"
+            onClick={() => decide("denied")}
+            className="min-h-9 px-3.5 text-xs rounded-full font-semibold text-white ring-1 ring-inset ring-white/25 hover:bg-white/5"
+          >
+            {t("decline")}
+          </button>
+        </div>
+      </div>
+
+      {/* Full card: always from sm up; on phones after "Chi tiết". */}
+      <div className={`p-5 ${expanded ? "block" : "hidden sm:block"}`}>
+        <p className="font-display text-base font-semibold">{t("title")}</p>
+        <p className="mt-1.5 text-sm leading-relaxed text-white/70">{t("body")}</p>
+        <details className="mt-2 text-sm text-white/60" open={expanded || undefined}>
+          <summary className="cursor-pointer font-medium text-brand-300">{t("detailsToggle")}</summary>
+          <p className="mt-2 leading-relaxed">{t("details")}</p>
+        </details>
+        <div className="mt-4 flex flex-wrap gap-2.5">
+          <button
+            type="button"
+            onClick={() => decide("granted")}
+            className="min-h-11 px-5 text-sm rounded-full bg-gold-500 font-bold text-ink hover:bg-gold-400"
+          >
+            {t("accept")}
+          </button>
+          <button
+            type="button"
+            onClick={() => decide("denied")}
+            className="min-h-11 px-5 text-sm rounded-full font-semibold text-white ring-1 ring-inset ring-white/25 hover:bg-white/5"
+          >
+            {t("decline")}
+          </button>
+        </div>
       </div>
     </div>
   );

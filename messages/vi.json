@@ -835,7 +835,9 @@
     "detailsToggle": "Chi tiết dữ liệu thu thập",
     "details": "Dữ liệu gồm: IP và vị trí ước tính theo IP (thành phố), trình duyệt, kích thước màn hình, nguồn truy cập, trang đã xem, thời gian ở trang, độ cuộn, click và rê chuột theo từng ô 1 cm, các bước điền form/khảo sát (không ghi nội dung anh/chị gõ). Dữ liệu chỉ dùng nội bộ Trí Đức Media để cải thiện trải nghiệm, không bán cho bên thứ ba. Anh/chị có thể đổi lựa chọn bất cứ lúc nào ở chân trang hoặc yêu cầu xoá qua tangtriduc@triduccar.media.",
     "accept": "Đồng ý",
-    "decline": "Từ chối"
+    "decline": "Từ chối",
+    "short": "Cho phép Trí Đức ghi nhận cách anh/chị dùng trang để cải thiện web?",
+    "more": "Chi tiết"
   },
   "vat": {
     "eyebrow": "Pháp nhân rõ ràng · Hóa đơn VAT",

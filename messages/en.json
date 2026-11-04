@@ -835,7 +835,9 @@
     "detailsToggle": "What we collect",
     "details": "IP address and IP-based approximate location (city), browser, screen size, traffic source, pages viewed, time on page, scroll depth, clicks and hover per 1 cm cell, form/survey steps (never what you type). Used only internally by Tri Duc Media to improve the experience, never sold. Change your choice any time from the footer or request deletion at tangtriduc@triduccar.media.",
     "accept": "Accept",
-    "decline": "Decline"
+    "decline": "Decline",
+    "short": "Let Tri Duc record how you use the site to improve it?",
+    "more": "Details"
   },
   "vat": {
     "eyebrow": "Registered company · VAT invoices",
