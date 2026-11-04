@@ -1205,25 +1205,5 @@
       "ebook": "Tải cẩm nang PDF (15 trang)",
       "infographic": "Xem infographic"
     }
-  },
-  "dash": {
-    "eyebrow": "Đồng hồ cơ sở · 30 giây",
-    "heading": "Cơ sở của anh chị đang chạy ở vòng tua nào?",
-    "sub": "Lái xe nhìn đồng hồ là biết máy khỏe hay yếu. Trả lời 5 câu bấm chọn, đồng hồ sẽ chỉ ra đèn báo nào đang kéo cơ sở chậm lại.",
-    "step": "Câu {n}/{total}",
-    "back": "Câu trước",
-    "readout": "Vòng tua cơ sở",
-    "lamps": "Đèn báo",
-    "gaugeAria": "Đồng hồ cơ sở đang chỉ {score} trên 100",
-    "verdict": {
-      "low": "Máy đang ì: người chủ vẫn đang kéo cả cơ sở.",
-      "mid": "Máy chạy được, nhưng còn đèn báo đang sáng.",
-      "high": "Máy khỏe. Giờ là lúc tăng tốc."
-    },
-    "weakest": "Đèn báo sáng nhất:",
-    "cta": "Xem cách xử lý + nhận quà",
-    "book": "Đặt 15 phút với anh Đức",
-    "ctaNote": "Mở kết quả đầy đủ: cách xử lý đúng chỗ yếu và món quà miễn phí đi kèm.",
-    "restart": "Đo lại"
   }
 }

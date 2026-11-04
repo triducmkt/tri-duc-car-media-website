@@ -2,7 +2,6 @@ import { setRequestLocale } from "next-intl/server";
 import { FootageHero } from "@/components/home/FootageHero";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FreedomCalculator } from "@/components/home/FreedomCalculator";
-import { ShopDashboard } from "@/components/home/ShopDashboard";
 import { ProofEngine } from "@/components/home/ProofEngine";
 import { VatAdvantage } from "@/components/VatAdvantage";
 import { FounderIntro } from "@/components/home/FounderIntro";
@@ -29,8 +28,7 @@ export default async function HomePage({
 
   return (
     <>
-      <FootageHero skipHref="#dong-ho" />
-      <ShopDashboard />
+      <FootageHero skipHref="#tinh-gio" />
       <div aria-hidden className="h-20 bg-gradient-to-b from-ink to-paper sm:h-28" />
       <FreedomCalculator />
       <ProofEngine />

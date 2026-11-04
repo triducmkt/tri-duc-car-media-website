@@ -1205,25 +1205,5 @@
       "ebook": "Download the PDF guide (15 pages)",
       "infographic": "View the infographic"
     }
-  },
-  "dash": {
-    "eyebrow": "Shop gauge · 30 seconds",
-    "heading": "What RPM is your business running at?",
-    "sub": "A driver reads the dashboard to know if the engine is healthy. Tap through 5 questions and the gauge shows which warning light is slowing your business down.",
-    "step": "Question {n}/{total}",
-    "back": "Previous",
-    "readout": "Business RPM",
-    "lamps": "Warning lights",
-    "gaugeAria": "Shop gauge reads {score} out of 100",
-    "verdict": {
-      "low": "The engine is idling: the owner is still pulling the whole shop.",
-      "mid": "The engine runs, but some warning lights are on.",
-      "high": "Healthy engine. Time to accelerate."
-    },
-    "weakest": "Brightest warning light:",
-    "cta": "See the fix + get your gift",
-    "book": "Book 15 minutes with Duc",
-    "ctaNote": "Opens the full result: how to fix your weakest spot, plus a matching free gift.",
-    "restart": "Measure again"
   }
 }
