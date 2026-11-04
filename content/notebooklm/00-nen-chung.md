@@ -25,6 +25,11 @@ không hứa hẹn kết quả, không bịa số liệu: chỉ dùng số trong
 5. Nắm số liệu — có biết rõ doanh thu, chi phí, khách từ đâu tới?
 Mỗi trục chấm 0–3: (0) gần như chưa có → (3) tốt và đều.
 
+## Quy tắc hình ảnh (rút kinh nghiệm từ món "Nghỉ 3 ngày")
+- KHÔNG vẽ mã QR (AI vẽ QR giả, không quét được). Chỉ ghi đường link dạng chữ; Trí Đức sẽ chèn QR thật sau.
+- KHÔNG vẽ chân dung / khuôn mặt người thật (Tăng Trí Đức, Johnny Lộc Nguyễn, chủ tiệm). Dùng biểu tượng hoặc hình minh hoạ chung.
+- KHÔNG thêm nhãn, tên bộ phận, toạ độ, số liệu hay tên viết tắt không có trong nguồn.
+
 ## Ưu đãi có thật (được nhắc)
 - Kiểm tra cơ sở 60 giây, miễn phí: triduccar.media/vi/kiem-tra-co-so
 - Buổi chẩn đoán 15 phút miễn phí với founder (đặt lịch: triduccar.media/vi/dat-lich-tu-van, Zalo 076.991.8685)

@@ -8,7 +8,7 @@
 
 ## Prompt dán vào NotebookLM
 
-> Tạo bộ slide tiếng Việt “Marketing Đúng – Đủ – Đều cho xưởng xe, spa, gym”: vì sao quảng cáo càng chạy càng đắt mà không ra đơn; Đúng (đúng khách, đúng kênh), Đủ (bao nhiêu nội dung/tuần là đủ), Đều (giữ nhịp thế nào khi chủ bận); ví dụ Khang Vũ Auto Care (lượt xem Facebook 292 → hơn 20.000 sau 2 tháng) và Apex Autocare; slide cuối mời Kiểm tra 60 giây. Mỗi slide tối đa 25 chữ + 1 hình minh hoạ gợi ý.
+> Tạo bộ slide tiếng Việt “Marketing Đúng – Đủ – Đều cho xưởng xe, spa, gym”: vì sao quảng cáo càng chạy càng đắt mà không ra đơn; Đúng (đúng khách, đúng kênh), Đủ (bao nhiêu nội dung/tuần là đủ), Đều (giữ nhịp thế nào khi chủ bận); ví dụ Khang Vũ Auto Care (lượt xem Facebook 292 → hơn 20.000 sau 2 tháng) và Apex Autocare; slide cuối mời Kiểm tra 60 giây (ghi link bằng chữ: triduccar.media/vi/kiem-tra-co-so — không vẽ mã QR) và buổi chẩn đoán 15 phút miễn phí (Zalo 076.991.8685). Mỗi slide tối đa 25 chữ + 1 hình minh hoạ. Không vẽ khuôn mặt người thật, không thêm số liệu hay nhãn ngoài nguồn.
 
 ## Văn bản nguồn
 
