@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
 
 const require = createRequire(import.meta.url);
 const opentype = require("opentype.js");
@@ -235,6 +236,8 @@ function leafName(x0, capTop, t, id) {
   return {
     body: `<path fill="${t.name}" d="${d}"/>${g}<path fill="${t.accent ?? t.name}" d="${leaves}"/>`,
     defs: m.defs, x1, x2, top, base,
+    // v9: pieces for the animated logo
+    parts: { textD: d, markT: `translate(${f(stemX - 22 * k)} ${f(capTop - 18 * k)}) scale(${f(k)})`, acc: [accI, accU] },
   };
 }
 
@@ -318,6 +321,90 @@ for (const [k, t] of Object.entries(themes)) {
 }
 files["tri-duc-media-app-icon.svg"] = appIcon();
 
+// ---------- v9: animated logo "cây mọc" (the Đ-leaf grows from its root) ----------
+// One timeline drives both the SMIL animated SVG (web/email header) and the
+// frame-rendered MP4/GIF (YouTube Shorts / Reels / Facebook intro-outro).
+const TL = {
+  leaf: [0.0, 0.85], // leaf+trunk revealed from the root (bottom) up to the tip
+  rib: [0.55, 1.1], // midrib (Đ crossbar) grows from its tail toward the tip
+  text: [0.15, 0.85], // "TRÍ ĐỨC" rises in
+  accI: [1.0, 1.4], // young leaf on Í pops
+  accU: [1.15, 1.55], // young leaf on Ứ pops
+  media: [1.35, 1.85],
+  tag: [1.65, 2.15],
+  end: 3.2,
+};
+const easeOut = (x) => 1 - Math.pow(1 - x, 3);
+const easeBack = (x) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const prog = ([a, b], sec) => Math.min(1, Math.max(0, (sec - a) / (b - a)));
+const RIB_HW = 4.6 * (20 / 14);
+const RIB_TAIL = along(-16 - RIB_HW);
+const RIB_DEG = (Math.atan2(dir[1], dir[0]) * 180) / Math.PI;
+
+function animatedPieces(t, id) {
+  const nm = leafName(0, 18, t, id);
+  const base2 = nm.base + cap1 * 0.3 + cap2;
+  const left = nm.x1, width = nm.x2 - nm.x1;
+  const media = textPath(semi, SUB, left - subBox.x1, base2, s2, subTracking);
+  const size = s2 * 0.8, tracking = size * 0.02;
+  const box = inkBox(semi, TAGLINE, size, tracking);
+  const ruleY = base2 + 16, tbase = ruleY + 12 + capRatio(semi) * size;
+  const tag = textPath(semi, TAGLINE, left - box.x1, tbase, size, tracking);
+  const view = { minX: left - PAD, minY: nm.top - PAD, w: width + 2 * PAD, h: tbase + 6 + PAD - (nm.top - PAD) };
+  const gradId = `${id}-g`;
+  const dark = t.spine === C.white;
+  const defs = `<linearGradient id="${gradId}" gradientUnits="userSpaceOnUse" x1="22" y1="102" x2="97" y2="4"><stop offset="0.12" stop-color="${dark ? C.white : C.navy}"/><stop offset="0.5" stop-color="${dark ? C.seaLight : C.sea}"/><stop offset="0.95" stop-color="${dark ? C.leafLight : C.leaf}"/></linearGradient>`;
+  return { nm, left, width, media, tag, ruleY, view, defs, gradId };
+}
+
+// Static frame at time sec (for MP4/GIF).
+function animFrame(t, id, sec) {
+  const P = animatedPieces(t, id);
+  const { nm } = P;
+  const e = (k) => easeOut(prog(TL[k], sec));
+  const clipTop = 104 - (104 - (MARK_TOP - 2)) * e("leaf");
+  const rib = Math.max(e("rib"), 0.0001);
+  const ty = (1 - e("text")) * 10;
+  const pop = (k, b) => {
+    const s = prog(TL[k], sec) > 0 ? Math.max(0.0001, easeBack(prog(TL[k], sec))) : 0.0001;
+    const p0 = [b.x1 + 0.4, b.y2];
+    return `<g transform="translate(${f(p0[0])} ${f(p0[1])}) scale(${f(s)}) translate(${f(-p0[0])} ${f(-p0[1])})"><path fill="${t.accent}" d="${leafAccent(b)}"/></g>`;
+  };
+  const body =
+    `<g opacity="${f(e("text"))}" transform="translate(0 ${f(ty)})"><path fill="${t.name}" d="${nm.parts.textD}"/></g>` +
+    `<g transform="${nm.parts.markT}"><clipPath id="${id}-c"><rect x="-10" y="${f(clipTop)}" width="140" height="${f(110 - clipTop)}"/></clipPath>` +
+    `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(20)}"/>` +
+    `<g transform="translate(${f(RIB_TAIL[0])} ${f(RIB_TAIL[1])}) rotate(${f(RIB_DEG)}) scale(${f(rib)} 1) rotate(${f(-RIB_DEG)}) translate(${f(-RIB_TAIL[0])} ${f(-RIB_TAIL[1])})"><path fill="${t.needle}" d="${ribPath(RIB_HW)}"/></g></g>` +
+    pop("accI", nm.parts.acc[0]) + pop("accU", nm.parts.acc[1]) +
+    `<path opacity="${f(e("media"))}" fill="${t.sub}" d="${P.media}"/>` +
+    `<g opacity="${f(e("tag"))}"><rect x="${f(P.left)}" y="${f(P.ruleY)}" width="${f(P.width)}" height="1.2" fill="${t.tag}" opacity="0.35"/><path fill="${t.tag}" d="${P.tag}"/></g>`;
+  return svg(P.view.w, P.view.h, body, P.defs, null, P.view.minX, P.view.minY);
+}
+
+// SMIL animated SVG (plays once, holds the final frame; also works inside <img>).
+function animatedSVG(t, id) {
+  const P = animatedPieces(t, id);
+  const { nm } = P;
+  const spl = 'calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1" fill="freeze"';
+  const dur = (k) => `begin="${TL[k][0]}s" dur="${f(TL[k][1] - TL[k][0])}s"`;
+  const pop = (k, b) => {
+    const p0 = [b.x1 + 0.4, b.y2];
+    return `<g transform="translate(${f(p0[0])} ${f(p0[1])})"><g transform="scale(0)"><animateTransform attributeName="transform" type="scale" ${dur(k)} values="0;1.15;1" keyTimes="0;0.7;1" fill="freeze"/><g transform="translate(${f(-p0[0])} ${f(-p0[1])})"><path fill="${t.accent}" d="${leafAccent(b)}"/></g></g></g>`;
+  };
+  const body =
+    `<g opacity="0"><animate attributeName="opacity" from="0" to="1" ${dur("text")} ${spl}/><animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" ${dur("text")} ${spl}/><path fill="${t.name}" d="${nm.parts.textD}"/></g>` +
+    `<g transform="${nm.parts.markT}"><clipPath id="${id}-c"><rect x="-10" y="104" width="140" height="6"><animate attributeName="y" from="104" to="${MARK_TOP - 2}" ${dur("leaf")} ${spl}/><animate attributeName="height" from="6" to="${110 - (MARK_TOP - 2)}" ${dur("leaf")} ${spl}/></rect></clipPath>` +
+    `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(20)}"/>` +
+    `<g transform="translate(${f(RIB_TAIL[0])} ${f(RIB_TAIL[1])}) rotate(${f(RIB_DEG)})"><g transform="scale(0 1)"><animateTransform attributeName="transform" type="scale" from="0 1" to="1 1" ${dur("rib")} ${spl}/><g transform="rotate(${f(-RIB_DEG)}) translate(${f(-RIB_TAIL[0])} ${f(-RIB_TAIL[1])})"><path fill="${t.needle}" d="${ribPath(RIB_HW)}"/></g></g></g></g>` +
+    pop("accI", nm.parts.acc[0]) + pop("accU", nm.parts.acc[1]) +
+    `<path opacity="0" fill="${t.sub}" d="${P.media}"><animate attributeName="opacity" from="0" to="1" ${dur("media")} ${spl}/></path>` +
+    `<g opacity="0"><animate attributeName="opacity" from="0" to="1" ${dur("tag")} ${spl}/><rect x="${f(P.left)}" y="${f(P.ruleY)}" width="${f(P.width)}" height="1.2" fill="${t.tag}" opacity="0.35"/><path fill="${t.tag}" d="${P.tag}"/></g>`;
+  return svg(P.view.w, P.view.h, body, P.defs, null, P.view.minX, P.view.minY);
+}
+files["tri-duc-media-animated-color.svg"] = animatedSVG(themes.color, "an-c");
+files["tri-duc-media-animated-reverse.svg"] = animatedSVG(themes.reverse, "an-r");
+
+
 const svgDir = path.join(OUT, "svg");
 const pngDir = path.join(OUT, "png");
 fs.mkdirSync(svgDir, { recursive: true });
@@ -336,6 +423,30 @@ await png("tri-duc-media-vertical-color.svg", "vertical-color-1600.png", 1600);
 await png("tri-duc-media-mark-color.svg", "mark-color-1024.png", 1024);
 for (const s of [1024, 512, 192, 180, 32]) await png("tri-duc-media-app-icon.svg", `app-icon-${s}.png`, s);
 await png("tri-duc-media-horizontal-color.svg", "horizontal-color-on-white-2000.png", 2000, "#FFFFFF");
+
+// ---------- v9: intro videos (frames → ffmpeg) ----------
+const motionDir = path.join(OUT, "motion");
+const frameDir = path.join(motionDir, "_frames");
+fs.mkdirSync(frameDir, { recursive: true });
+async function renderVideo(t, id, W, H, bg, logoW, name) {
+  const fps = 30, n = Math.round(TL.end * fps);
+  for (const old of fs.readdirSync(frameDir)) fs.unlinkSync(path.join(frameDir, old));
+  for (let i = 0; i < n; i++) {
+    const logo = await sharp(Buffer.from(animFrame(t, id, i / fps)), { density: 300 }).resize({ width: logoW }).png().toBuffer();
+    const meta = await sharp(logo).metadata();
+    await sharp({ create: { width: W, height: H, channels: 4, background: bg } })
+      .composite([{ input: logo, left: Math.round((W - meta.width) / 2), top: Math.round((H - meta.height) / 2) }])
+      .png().toFile(path.join(frameDir, "f" + String(i).padStart(4, "0") + ".png"));
+  }
+  const inp = path.join(frameDir, "f%04d.png");
+  spawnSync("ffmpeg", ["-y", "-loglevel", "error", "-framerate", String(fps), "-i", inp, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", path.join(motionDir, name + ".mp4")], { stdio: "inherit" });
+  spawnSync("ffmpeg", ["-y", "-loglevel", "error", "-framerate", String(fps), "-i", inp, "-vf", "fps=20,scale=540:-1:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse", path.join(motionDir, name + ".gif")], { stdio: "inherit" });
+  fs.copyFileSync(path.join(frameDir, "f" + String(Math.round(n * 0.25)).padStart(4, "0") + ".png"), path.join(motionDir, name + "-frame-mid.png"));
+  fs.copyFileSync(path.join(frameDir, "f" + String(n - 1).padStart(4, "0") + ".png"), path.join(motionDir, name + "-poster.png"));
+}
+await renderVideo(themes.reverse, "vr", 1080, 1920, C.navy, 860, "intro-9x16-navy"); // Shorts / Reels / TikTok
+await renderVideo(themes.color, "vc", 1920, 1080, "#FFFFFF", 1100, "intro-16x9-white"); // YouTube / slides
+fs.rmSync(frameDir, { recursive: true, force: true });
 
 console.log(Object.keys(files).length, "SVG files;", fs.readdirSync(pngDir).length, "PNG files");
 console.log({ s1: f(s1), s2: f(s2), tagline: TAGLINE });

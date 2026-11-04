@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v8** · ảnh: [history/v8/preview.png](history/v8/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v9** · ảnh: [history/v9/preview.png](history/v9/preview.png) + logo động [history/v9/intro-9x16-navy.gif](history/v9/intro-9x16-navy.gif) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -247,5 +247,49 @@
   - anh Đức chốt slogan A/B/C;
   - bản mono của chữ Đ-lá hơi "lửng" ở đầu nét gạch bên trái;
   - khoảng trống bên phải chữ MEDIA ở bản ngang (có thể căn MEDIA giữa, hoặc giãn chữ bằng chiều ngang tên);
+  - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
+- **Trạng thái:** nháp, thay bằng v9 (thiết kế tĩnh v9 = v8, thêm logo động).
+
+## v9 — Logo động "cây mọc": intro/outro video + SVG động (2026-11-04)
+- **Yêu cầu anh Đức:** ở vai brand designer 10 năm, xem logo mới nhất, nghĩ theo chân dung khách và thương hiệu, nghĩ khác lối mòn, làm 1 thay đổi LỚN, ship mỗi lần, báo top 3 website đã khảo sát.
+- **Ảnh:**
+  - dải phim chuyển động [history/v9/filmstrip-16x9.png](history/v9/filmstrip-16x9.png) và [filmstrip-9x16.png](history/v9/filmstrip-9x16.png);
+  - GIF [intro-9x16-navy.gif](history/v9/intro-9x16-navy.gif);
+  - bảng tĩnh [preview.png](history/v9/preview.png) (giống v8).
+- **Khảo sát 3 website** (thương hiệu xanh lá/xanh biển mà chủ cơ sở thấy hằng ngày trên điện thoại, cũng là nơi avatar Trí Đức Media sẽ xuất hiện cạnh họ):
+  1. **Grab** (grab.com/vn): chữ "Grab" xanh lá phẳng, bo tròn, ứng dụng nhiều chuyển động.
+  2. **Vietcombank** (vietcombank.com.vn): biểu tượng và chữ xanh lá phẳng, website nhiều hình minh họa sống động.
+  3. **Zalo** (zalo.me): chữ "Zalo" xanh dương phẳng. Avatar Zalo OA của Trí Đức Media sẽ nằm trong giao diện xanh dương này.
+
+  **Kết luận:**
+  - mảng "xanh lá phẳng" (Grab, Vietcombank) và "xanh dương phẳng" (Zalo) đã có chủ;
+  - logo Trí Đức Media khác được nhờ dải màu chảy navy → xanh biển → xanh lá và hình chữ Đ-lá. **Không** được đơn giản hóa thành 1 màu xanh phẳng;
+  - các thương hiệu lớn đều "sống" bằng chuyển động trong app và video, nên logo mình cần có bản động.
+- **Thay đổi LỚN: logo động "cây mọc"** (thiết kế tĩnh giữ nguyên v8):
+  - **Kịch bản 3,2 giây:**
+    1. chữ Đ-lá mọc từ gốc (navy) lên ngọn (xanh lá);
+    2. gân lá (nét gạch chữ Đ) vươn ra;
+    3. "TRÍ ĐỨC" hiện lên;
+    4. 2 lá non bật ra trên dấu sắc Í và Ứ (có nảy nhẹ);
+    5. MEDIA hiện;
+    6. đường kẻ và slogan "Vắng chủ, vẫn tăng." hiện;
+    7. giữ khung cuối.
+  - **Câu chuyện:** cơ sở tự lớn lên từ gốc, đúng lời hứa thương hiệu, kể bằng chuyển động thay vì chữ.
+  - **File giao:**
+    - `motion/intro-9x16-navy.mp4` / `.gif`: nền navy dọc, cho YouTube Shorts, Reels, TikTok;
+    - `motion/intro-16x9-white.mp4` / `.gif`: nền trắng ngang, cho YouTube, slide, màn hình chờ;
+    - `motion/*-poster.png` là khung cuối, `*-frame-mid.png` là khung giữa;
+    - `svg/tri-duc-media-animated-color.svg` / `-reverse.svg`: SVG động (SMIL), tự chạy 1 lần rồi giữ khung cuối, dùng được trong thẻ `<img>`, chữ ký email, header web (khi được duyệt publish).
+  - **Kỹ thuật:**
+    - `build.mjs` có 1 dòng thời gian `TL` dùng chung cho SVG động và cho video dựng từng khung (sharp → ffmpeg);
+    - muốn đổi nhịp thì sửa `TL` rồi dựng lại.
+- **Tự kiểm tra:**
+  - dải phim 6 khung đúng thứ tự (lá mọc → gân → chữ → lá non → MEDIA → slogan);
+  - SVG động mở trên Chrome: 9 lớp chuyển động chạy hết, dừng đúng khung cuối đầy đủ;
+  - file nhẹ: MP4 khoảng 50–65 KB, GIF khoảng 75–125 KB.
+- **Còn mở cho vòng sau:**
+  - anh Đức chốt slogan A/B/C (đang dùng A "Vắng chủ, vẫn tăng.");
+  - có thể thêm âm thanh ngắn (tiếng lá/"ting") cho video;
+  - bản 9:16 có thể phóng logo to hơn nữa;
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.

@@ -28,6 +28,8 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 | `tri-duc-media-app-icon.svg` | Favicon, avatar Zalo/Facebook, icon app |
 | `*-mono-black.svg` / `*-mono-white.svg` | In 1 màu: con dấu, thêu áo, khắc, hóa đơn, fax |
 
+**Logo động (từ v9):** `motion/intro-9x16-navy.mp4|gif` (Shorts/Reels/TikTok), `motion/intro-16x9-white.mp4|gif` (YouTube/slide), `svg/tri-duc-media-animated-*.svg` (SVG tự chạy 1 lần: header web, chữ ký email). Kịch bản 3,2 giây "cây mọc": chữ Đ-lá mọc từ gốc → gân lá → TRÍ ĐỨC → 2 lá non → MEDIA → slogan.
+
 PNG có sẵn trong `png/`: logo ngang 2000px, logo dọc 1600px, biểu tượng 1024px, app icon 1024/512/192/180/32px.
 
 ## Màu (từ v5)
