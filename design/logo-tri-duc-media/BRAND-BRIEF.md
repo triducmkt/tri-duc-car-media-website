@@ -30,6 +30,13 @@ Khởi đầu từ ngành Dịch vụ & Ô tô, nay mở rộng sang mọi ngàn
 ## Lời hứa thương hiệu
 > **"Vắng 30 ngày, cơ sở vẫn tăng trưởng."**
 
+## Slogan ngắn (đề xuất v8, chờ anh Đức chốt)
+Lời hứa đầy đủ "Vắng 30 ngày, cơ sở vẫn tăng trưởng." giữ nguyên, dùng trong bài viết, slide, tư vấn.
+Slogan đi kèm logo cần ngắn và có nhịp để dễ nhớ (anh Đức nhận xét slogan cũ chưa dễ nhớ):
+- **A. "Vắng chủ, vẫn tăng."** (đang dùng trên logo v8): 4 tiếng, láy âm V–V (Vắng/Vẫn), rút thẳng từ lời hứa.
+- **B. "Chủ nghỉ ngơi, cơ sở vẫn lời."**: vần ơi–ời, rất đời thường. Lưu ý: chữ "lời" là hứa hẹn lợi nhuận.
+- **C. "Gieo hệ thống, gặt tự do."**: câu đối, gắn với hình ảnh cây lá của logo, nhưng trừu tượng hơn.
+
 ## Nhận diện "Trí Đức Media" — logo cần nói được gì
 Từ sứ mệnh, tầm nhìn và lời hứa ở trên, mỗi phương án logo được chấm theo 4 ý:
 1. **Tự vận hành:** cơ sở chạy và đi lên mà người chủ không phải có mặt. Biểu tượng nên gợi một hệ thống tự chạy, không gợi một người đang gồng gánh.

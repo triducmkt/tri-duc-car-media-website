@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v7** · ảnh: [history/v7/preview.png](history/v7/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v8** · ảnh: [history/v8/preview.png](history/v8/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -217,4 +217,35 @@
   - góc trên bên trái thân chữ hơi ngả xanh biển (do màu chạy theo đường chéo); có thể muốn cả thân đậm hơn;
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish;
   - có thể thử gân phụ cho biển hiệu lớn.
+- **Trạng thái:** nháp, thay bằng v8.
+
+## v8 — Chiếc lá CHÍNH LÀ chữ Đ trong tên + slogan 4 tiếng (2026-11-04)
+- **Yêu cầu anh Đức:** "a thấy có nét và thẩm mỹ hơn các phiên bản đầu nhưng chưa đủ wow, ấn tượng và slogan chưa dễ nhớ. tiếp v8"
+- **Ảnh:** [history/v8/preview.png](history/v8/preview.png)
+- **Chẩn đoán v7:**
+  1. biểu tượng và chữ vẫn là 2 phần tách rời (hình bên trái, tên bên phải), giống hàng nghìn logo khác;
+  2. slogan 8 tiếng không có nhịp.
+- **Thay đổi LỚN so với v7:**
+  - **Biểu tượng thay chính chữ Đ trong "TRÍ ĐỨC".**
+    - Đây là kiểu ý tưởng anh Đức lấy làm ví dụ ngay từ đầu (chữ O của VieON là màn hình, PNJ là viên kim cương). Người xem đọc tên "TRÍ ĐỨC" và gặp chiếc lá ngay trong tên.
+    - Chữ Đ-lá là con chữ duy nhất có màu (navy → xanh biển → xanh lá), nằm giữa các chữ navy, nên mắt dừng ngay ở đó.
+    - Đầu lá vươn lên ngang tầm 2 lá non trên dấu sắc: 3 chiếc lá cùng mọc trên một dòng tên.
+  - **Bản đậm riêng cho chữ Đ-lá:** nét 20 thay vì 14, để ngang độ đậm chữ ExtraBold bên cạnh. Lòng chữ Đ thành dáng lá (đầu hơi nhọn).
+  - **Logo ngang** giờ là "TRÍ [Đ-lá]ỨC / MEDIA", không còn biểu tượng đứng riêng bên cạnh. Bản dọc vẫn là biểu tượng lớn ở trên + tên bên dưới. App icon và avatar dùng biểu tượng như v7.
+  - **Slogan mới "Vắng chủ, vẫn tăng."**:
+    - 4 tiếng, láy âm V–V, rút thẳng từ lời hứa;
+    - cỡ chữ bằng khoảng chữ MEDIA, nằm dưới một đường kẻ mảnh;
+    - 2 phương án khác ghi trong BRAND-BRIEF (B. "Chủ nghỉ ngơi, cơ sở vẫn lời.", C. "Gieo hệ thống, gặt tự do.").
+- **Quá trình vẽ trong vòng này:**
+  - lần dựng đầu, chữ Đ-lá mảnh hơn chữ xung quanh nên em làm bản đậm;
+  - slogan lúc đầu kéo to bằng chiều ngang tên nên tràn khung, em hạ cỡ chữ;
+  - bảng xem trước giờ tự co ảnh vừa khung theo cả chiều ngang và chiều cao.
+- **Tự kiểm tra:**
+  - trên danh thiếp và xe (logo rộng khoảng 200px) vẫn đọc ra "TRÍ ĐỨC" và thấy chữ Đ-lá;
+  - bản mono đọc được: gân lá hòa vào chữ, phần thò ra trái là nét gạch của chữ Đ.
+- **Còn mở cho vòng sau:**
+  - anh Đức chốt slogan A/B/C;
+  - bản mono của chữ Đ-lá hơi "lửng" ở đầu nét gạch bên trái;
+  - khoảng trống bên phải chữ MEDIA ở bản ngang (có thể căn MEDIA giữa, hoặc giãn chữ bằng chiều ngang tên);
+  - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.

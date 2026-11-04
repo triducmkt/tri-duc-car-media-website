@@ -6,6 +6,8 @@ const sharp = require(process.cwd() + "/node_modules/sharp");
 const fs = require("fs");
 const D = "design/logo-tri-duc-media/svg/";
 const r = (n, w) => sharp(Buffer.from(fs.readFileSync(D + n)), { density: 600 }).resize({ width: w }).png().toBuffer();
+// fit inside a box (keeps aspect) — lockups with a slogan are taller than plain ones
+const fit = (n, w, h) => sharp(Buffer.from(fs.readFileSync(D + n)), { density: 600 }).resize({ width: w, height: h, fit: "inside" }).png().toBuffer();
 const panel = (w, h, bg) => sharp({ create: { width: w, height: h, channels: 4, background: bg } }).png().toBuffer();
 const circle = async (size, bg) =>
   sharp(Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}" fill="${bg}"/></svg>`)).png().toBuffer();
@@ -15,11 +17,11 @@ const circle = async (size, bg) =>
   const comps = [
     // 1. Main lockup with brand promise
     { input: await panel(1740, 600, "#FFFFFF"), left: 30, top: 30 },
-    { input: await r("tri-duc-media-horizontal-tagline-color.svg", 1060), left: 370, top: 80 },
+    { input: await fit("tri-duc-media-horizontal-tagline-color.svg", 1060, 500), left: 370, top: 80 },
     // 2. Storefront sign mockup (navy board, wall behind)
     { input: await panel(860, 440, "#D9D4CB"), left: 30, top: 660 },
     { input: await panel(760, 320, "#0B1220"), left: 80, top: 720 },
-    { input: await r("tri-duc-media-horizontal-tagline-reverse.svg", 600), left: 160, top: 745 },
+    { input: await fit("tri-duc-media-horizontal-tagline-reverse.svg", 600, 250), left: 160, top: 745 },
     // 3. Vertical lockup
     { input: await panel(860, 440, "#FFFFFF"), left: 910, top: 660 },
     { input: await r("tri-duc-media-vertical-color.svg", 300), left: 1190, top: 690 },
@@ -51,7 +53,7 @@ const circle = async (size, bg) =>
   comps.push({ input: await card("#FFFFFF"), left: 950, top: 1700 });
   comps.push({ input: await r("tri-duc-media-horizontal-color.svg", 280), left: 1000, top: 1755 });
   comps.push({ input: await card("#0B1220"), left: 1350, top: 1880 });
-  comps.push({ input: await r("tri-duc-media-horizontal-tagline-reverse.svg", 300), left: 1390, top: 1915 });
+  comps.push({ input: await fit("tri-duc-media-horizontal-tagline-reverse.svg", 300, 150), left: 1390, top: 1915 });
   // 8. Vehicle mockup (v7): white service van, tagline lockup on the side panel
   const van = `<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="440" viewBox="0 0 1300 440">
     <path d="M60 330 V110 Q60 60 110 60 H880 Q930 60 965 95 L1110 200 Q1150 215 1170 240 V330 Q1170 350 1150 350 H80 Q60 350 60 330 Z" fill="#FFFFFF" stroke="#C9D2DC" stroke-width="4"/>
@@ -62,7 +64,7 @@ const circle = async (size, bg) =>
   </svg>`;
   comps.push({ input: await panel(1740, 500, "#E9EEF3"), left: 30, top: 2180 });
   comps.push({ input: await sharp(Buffer.from(van)).png().toBuffer(), left: 250, top: 2220 });
-  comps.push({ input: await r("tri-duc-media-horizontal-tagline-color.svg", 500), left: 420, top: 2275 });
+  comps.push({ input: await fit("tri-duc-media-horizontal-tagline-color.svg", 520, 160), left: 420, top: 2275 });
   await sharp({ create: { width: W, height: H, channels: 4, background: "#F5F7FB" } })
     .composite(comps)
     .png()

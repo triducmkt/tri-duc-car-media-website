@@ -52,19 +52,26 @@ const TAIL = along(-21);
 // flows from the root (bottom-left) to the leaf tip: navy → sea blue → green —
 // black/blue water (Thủy) feeding green wood (Mộc), in one gesture.
 const LEAF_OUTER = "M22 18H60C74 18 86 13 97 4C101.5 20 103.5 38 103 58C102.3 84 83 102 58 102H22Z";
-const LEAF_INNER = "M36 32H60C78 32 89 44 89 60C89 76 77 88 60 88H36Z";
+// Counter of the Đ; w = stroke weight (14 standalone, heavier when the mark
+// stands in for the letter Đ inside the ExtraBold name — v8).
+const leafInner = (w = 14) => {
+  const t = 18 + w, b = 102 - w, r = 103 - w, l = 22 + w;
+  return `M${l} ${t}H60C${r - 11} ${t} ${r} ${t + 12} ${r} 60C${r} ${b - 12} ${r - 12} ${b} 60 ${b}H${l}Z`;
+};
+const LEAF_INNER = leafInner(14);
 // Midrib drawn as a tapered shoot: full width at the Đ bar, thinning as it
 // rises into the leaf — reads as a living vein, not a stick.
-const RIB = (() => {
+const ribPath = (hw = 4.6) => {
   const n = [-dir[1], dir[0]];
   const pt = (t, w) => [along(t)[0] + n[0] * w, along(t)[1] + n[1] * w];
-  const a = pt(-16, 4.6), b = pt(54, 1.2), c = pt(54, -1.2), d = pt(-16, -4.6);
+  const a = pt(-16, hw), b = pt(54, 1.2), c = pt(54, -1.2), d = pt(-16, -hw);
   const tail = along(-8);
   // rounded tail cap (arc through the tail end) + straight tapered sides
-  return `M${f(a[0])} ${f(a[1])}L${f(b[0])} ${f(b[1])}L${f(c[0])} ${f(c[1])}L${f(d[0])} ${f(d[1])}A4.6 4.6 0 0 0 ${f(a[0])} ${f(a[1])}Z`;
-})();
+  return `M${f(a[0])} ${f(a[1])}L${f(b[0])} ${f(b[1])}L${f(c[0])} ${f(c[1])}L${f(d[0])} ${f(d[1])}A${hw} ${hw} 0 0 0 ${f(a[0])} ${f(a[1])}Z`;
+};
+const RIB = ribPath();
 
-function mark({ spine, needle, arc, id, ticks = true }) {
+function mark({ spine, needle, arc, id, ticks = true, w = 14 }) {
   const leafFill = arc === "gradient" ? `url(#${id}-g)` : arc;
   const light = spine !== C.white;
   const defs =
@@ -72,8 +79,8 @@ function mark({ spine, needle, arc, id, ticks = true }) {
       ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="22" y1="102" x2="97" y2="4"><stop offset="0.12" stop-color="${light ? C.navy : C.white}"/><stop offset="0.5" stop-color="${light ? C.sea : C.seaLight}"/><stop offset="0.95" stop-color="${light ? C.leaf : C.leafLight}"/></linearGradient>`
       : "";
   const body = [
-    `<path fill="${leafFill}" fill-rule="evenodd" d="${LEAF_OUTER}${LEAF_INNER}"/>`,
-    `<path fill="${needle}" d="${RIB}"/>`,
+    `<path fill="${leafFill}" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(w)}"/>`,
+    `<path fill="${needle}" d="${w === 14 ? RIB : ribPath(4.6 * (w / 14))}"/>`,
   ].join("");
   return { defs, body };
 }
@@ -183,6 +190,54 @@ function wordmark(x, capTop, { name, sub, accent, align = "left" }) {
   };
 }
 
+
+// v8: the leaf mark IS the letter Đ inside the name ("TRÍ [Đ]ỨC") — the symbol
+// is read as part of the word, like VieON's "O". The leaf tip rises above the cap
+// line like a third accent, next to the two young-leaf acutes.
+function accentAt(ch, penX, base) {
+  const g = heavy.charToGlyph(ch);
+  const capTopY = base - capRatio(heavy) * s1;
+  const pts = [];
+  for (const c of g.getPath(penX, base, s1).commands)
+    for (const [px, py] of [[c.x, c.y], [c.x1, c.y1], [c.x2, c.y2]])
+      if (px !== undefined && py < capTopY - 1.5) pts.push([px, py]);
+  const xs = pts.map((q) => q[0]), ys = pts.map((q) => q[1]);
+  return { x1: Math.min(...xs), x2: Math.max(...xs), y1: Math.min(...ys), y2: Math.max(...ys) };
+}
+function leafName(x0, capTop, t, id) {
+  const base = capTop + cap1;
+  const scale = s1 / heavy.unitsPerEm;
+  let pen = x0, d = "", x1 = Infinity, x2 = -Infinity;
+  const put = (str) => {
+    const gl = heavy.stringToGlyphs(str);
+    gl.forEach((g, i) => {
+      const gp = g.getPath(pen, base, s1);
+      const b = gp.getBoundingBox();
+      if (b.x1 !== b.x2) { x1 = Math.min(x1, b.x1); x2 = Math.max(x2, b.x2); }
+      d += gp.toPathData(2);
+      pen += g.advanceWidth * scale + (i < gl.length - 1 ? heavy.getKerningValue(g, gl[i + 1]) * scale : 0);
+    });
+  };
+  put("TR");
+  const accI = accentAt("Í", pen, base);
+  put("I ");
+  // the mark, scaled so its stem (84 units) equals the cap height
+  const k = cap1 / 84;
+  const stemX = pen + 0.02 * s1;
+  const m = mark({ ...t, id, w: 20 }); // stroke ≈ ExtraBold stem at this scale
+  const g = `<g transform="translate(${f(stemX - 22 * k)} ${f(capTop - 18 * k)}) scale(${f(k)})">${m.body}</g>`;
+  pen = stemX + (103 - 22) * k + 0.07 * s1;
+  const rawU = accentAt("Ứ", pen, base);
+  const accU = { x1: rawU.x1, x2: rawU.x1 + (accI.x2 - accI.x1), y1: rawU.y1, y2: rawU.y1 + (accI.y2 - accI.y1) };
+  put("ƯC");
+  const leaves = [accI, accU].map(leafAccent).join("");
+  const top = Math.min(accI.y1, capTop + (MARK_TOP - 18) * k);
+  return {
+    body: `<path fill="${t.name}" d="${d}"/>${g}<path fill="${t.accent ?? t.name}" d="${leaves}"/>`,
+    defs: m.defs, x1, x2, top, base,
+  };
+}
+
 // ---------- Compositions ----------
 const PAD = 16;
 function svg(w, h, inner, defs = "", bg = null, minX = 0, minY = 0) {
@@ -197,35 +252,33 @@ const themes = {
   "mono-white": { spine: C.white, needle: C.white, arc: C.white, name: C.white, sub: C.white, tag: C.white },
 };
 
-// v4: brand-promise line for signage, cards, slides, uniforms.
-const TAGLINE = "Vắng 30 ngày, cơ sở vẫn tăng trưởng.";
+// v4: brand-promise line. v8: shortened to a 4-syllable slogan with V–V alliteration,
+// distilled from the promise "Vắng 30 ngày, cơ sở vẫn tăng trưởng." (kept in the brief).
+const TAGLINE = "Vắng chủ, vẫn tăng.";
 function horizontal(t, id, withTagline = false) {
-  const m = mark({ ...t, id });
-  const gap = 28;
-  const wm = wordmark(100 + gap, 18, t);
-  const minY = Math.min(MARK_TOP, wm.top) - PAD;
-  let maxY = Math.max(102, wm.bottom) + PAD;
-  const minX = 22 - PAD;
-  let maxX = 100 + gap + wm.width + PAD;
-  let tag = "";
+  const nm = leafName(0, 18, t, id);
+  const base2 = nm.base + cap1 * 0.3 + cap2;
+  const left = nm.x1;
+  const media = textPath(semi, SUB, left - subBox.x1, base2, s2, subTracking);
+  const width = nm.x2 - nm.x1;
+  let body = nm.body + `<path fill="${t.sub}" d="${media}"/>`;
+  const minY = nm.top - PAD;
+  let maxY = base2 + PAD;
+  const minX = left - PAD;
+  let maxX = nm.x2 + PAD;
   if (withTagline) {
-    // one rule + the promise, spanning the full lockup width
-    const full = 100 + gap + wm.width - 22;
-    // natural letter spacing (0.02em); size chosen so the line spans ~92% of the lockup
-    const size0 = 20;
-    const w0 = inkBox(semi, TAGLINE, size0, size0 * 0.02).w;
-    const size = Math.min(22, (size0 * full * 0.92) / w0);
+    // rule across the name width + the short slogan at MEDIA's scale
+    const size = s2 * 0.8;
     const tracking = size * 0.02;
     const box = inkBox(semi, TAGLINE, size, tracking);
-    const ruleY = Math.max(102, wm.bottom) + 18;
-    const base = ruleY + 14 + capRatio(semi) * size;
-    tag =
-      `<rect x="22" y="${f(ruleY)}" width="${f(full)}" height="1.2" fill="${t.tag}" opacity="0.35"/>` +
-      `<path fill="${t.tag}" d="${textPath(semi, TAGLINE, 22 - box.x1, base, size, tracking)}"/>`;
+    const ruleY = base2 + 16;
+    const base = ruleY + 12 + capRatio(semi) * size;
+    body +=
+      `<rect x="${f(left)}" y="${f(ruleY)}" width="${f(width)}" height="1.2" fill="${t.tag}" opacity="0.35"/>` +
+      `<path fill="${t.tag}" d="${textPath(semi, TAGLINE, left - box.x1, base, size, tracking)}"/>`;
     maxY = base + 6 + PAD;
-    maxX = Math.max(maxX, 22 + full + PAD);
   }
-  return svg(maxX - minX, maxY - minY, m.body + wm.body + tag, m.defs, null, minX, minY);
+  return svg(maxX - minX, maxY - minY, body, nm.defs, null, minX, minY);
 }
 function vertical(t, id) {
   const m = mark({ ...t, id });
@@ -285,4 +338,4 @@ for (const s of [1024, 512, 192, 180, 32]) await png("tri-duc-media-app-icon.svg
 await png("tri-duc-media-horizontal-color.svg", "horizontal-color-on-white-2000.png", 2000, "#FFFFFF");
 
 console.log(Object.keys(files).length, "SVG files;", fs.readdirSync(pngDir).length, "PNG files");
-console.log({ s1: f(s1), s2: f(s2), subTracking: f(subTracking), nameW: f(nameBox.w) });
+console.log({ s1: f(s1), s2: f(s2), tagline: TAGLINE });

@@ -8,6 +8,7 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 **Quy trình vòng lặp + lịch sử từng phiên bản (kèm ảnh): [HISTORY.md](HISTORY.md). Brief thương hiệu: [BRAND-BRIEF.md](BRAND-BRIEF.md).**
 
 ## Ý nghĩa (từ v5 — "Đ lá mầm", màu theo mệnh Mộc)
+- **Từ v8, logo ngang là "TRÍ [Đ-lá]ỨC / MEDIA":** chiếc lá chính là chữ Đ trong tên (như chữ O của VieON). Slogan đi kèm: "Vắng chủ, vẫn tăng."
 - **Chữ Đ thành một chiếc lá:** phần cong của chữ Đ vuốt lên thành đầu lá nhọn, vượt cao hơn thân chữ. Ý nghĩa: cơ sở lớn vượt tầm cũ của mình.
 - **Thân chữ Đ là thân cây, là hệ thống:** phần đứng yên, rễ sâu. Từ v7, thân và lá đúc thành 1 khối, màu chảy liền từ navy ở gốc → xanh biển → xanh lá ở ngọn.
 - **Nét gạch ngang của chữ Đ là gân lá:** thò ra bên trái như nét Đ bình thường, rồi thon dần, vươn lên trong lòng lá. Sự tăng trưởng đến từ bên trong.
@@ -21,7 +22,7 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 |---|---|
 | `tri-duc-media-horizontal-color.svg` | Logo chính: header web, tài liệu, slide, nền sáng |
 | `tri-duc-media-horizontal-reverse.svg` | Nền tối hoặc nền navy |
-| `tri-duc-media-horizontal-tagline-*.svg` | Có dòng lời hứa: biển hiệu, danh thiếp, slide, áo (từ v4) |
+| `tri-duc-media-horizontal-tagline-*.svg` | Có slogan "Vắng chủ, vẫn tăng." (từ v8): biển hiệu, danh thiếp, slide, áo |
 | `tri-duc-media-vertical-*.svg` | Chỗ hẹp và cao: standee, bìa hồ sơ, avatar lớn |
 | `tri-duc-media-mark-*.svg` | Biểu tượng đứng riêng |
 | `tri-duc-media-app-icon.svg` | Favicon, avatar Zalo/Facebook, icon app |
