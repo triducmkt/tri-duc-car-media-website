@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import Diagnostic from "@/components/services/Diagnostic";
 import { SystemBuilder } from "@/components/services/SystemBuilder";
 import { VatAdvantage } from "@/components/VatAdvantage";
+import { FreedomLadder } from "@/components/home/FreedomLadder";
 
 const icons = [SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon];
 
@@ -34,6 +35,7 @@ export function ServicesPageContent() {
 
   return (
     <>
+      <FreedomLadder variant="full" />
       <SystemBuilder />
       <VatAdvantage id="hoa-don-vat" />
 

@@ -530,7 +530,11 @@
         "book": "Đặt lịch gặp anh Đức",
         "zalo": "Nhắn Zalo trước"
       }
-    }
+    },
+    "visionEyebrow": "Tầm nhìn 2031",
+    "visionHeading": "1.000 người chủ vắng mặt 30 ngày, cơ sở vẫn tăng trưởng.",
+    "vision": "Đến năm 2031, Trí Đức Media giúp 1.000 người chủ cơ sở, trung tâm, cửa hàng dịch vụ Việt Nam trên toàn quốc nghỉ ngơi, vắng mặt 30 ngày mà cơ sở vẫn tăng trưởng. Người chủ chuyển từ người làm, người vận hành thành người sở hữu — cơ sở tự tăng trưởng mà không cần chủ có mặt.",
+    "visionCta": "Xem Thang Tự Do"
   },
   "caseMap": {
     "eyebrow": "Bản đồ đồng hành",
@@ -1205,5 +1209,219 @@
       "ebook": "Tải cẩm nang PDF (15 trang)",
       "infographic": "Xem infographic"
     }
+  },
+  "ladder": {
+    "eyebrow": "Lời hứa của Trí Đức Media",
+    "heading": "Vắng 30 ngày, cơ sở vẫn tăng trưởng.",
+    "sub": "Nghỉ vài ngày thì tiệm của anh chị chắc vẫn chạy. Nhưng đi xa trọn một tháng — chăm cha mẹ, đưa con đi chơi hè, hay chỉ để thở — thì điện thoại sẽ reo vì những việc gì?",
+    "goal": "Mục tiêu đến 2031: 1.000 chủ cơ sở trên toàn quốc làm được điều này.",
+    "pickLabel": "Anh chị muốn vắng mặt bao lâu?",
+    "phoneTitle": "Điện thoại của anh chị · vắng {span}",
+    "onlyYou": "{n} việc chỉ anh chị mới quyết được",
+    "calm": "Không còn việc gì phải gọi anh chị về",
+    "packageLabel": "Gói giải quyết",
+    "fitLabel": "Hợp với",
+    "timeLabel": "Thời gian dựng",
+    "testLabel": "Tốt nghiệp khi",
+    "buildLabel": "Hệ thống được dựng",
+    "inherit": "Gồm toàn bộ bậc trước, cộng thêm",
+    "more": "Xem vì sao là 30 ngày & bài thi vắng mặt",
+    "levels": [
+      {
+        "span": "3 ngày",
+        "step": "Bậc 0",
+        "name": "Đo Tự Do",
+        "fit": "Mọi cơ sở",
+        "time": "1 buổi · miễn phí",
+        "test": "Biết rõ cơ sở đang vắng được bao lâu và gãy ở đâu",
+        "note": "Phần lớn cơ sở doanh thu 100 triệu – 1 tỷ/tháng đã qua được mốc này. Vì vậy Trí Đức Media không hứa 3 ngày.",
+        "calls": [
+          {
+            "when": "Ngày 2",
+            "text": "Khách quen muốn gặp đúng anh chị mới chịu làm"
+          },
+          {
+            "when": "Ngày 3",
+            "text": "Nhân viên hỏi giá cho một ca đặc biệt"
+          }
+        ],
+        "build": [
+          "Kiểm tra 60 giây: 5 trục sức khỏe cơ sở",
+          "Buổi chẩn đoán 15 phút với anh Đức",
+          "Chỉ ra cơ sở gãy ở mốc nào, nên lên bậc nào trước"
+        ]
+      },
+      {
+        "span": "30 ngày",
+        "step": "Bậc 1",
+        "name": "Tự Do 30 Ngày",
+        "fit": "Doanh thu 100–300 triệu/tháng · 3–15 nhân viên",
+        "time": "3–4 tháng",
+        "test": "Anh chị vắng trọn 30 ngày, doanh thu giữ từ 90% trở lên",
+        "calls": [
+          {
+            "when": "Ngày 5",
+            "text": "Hết vật tư rồi anh chị ơi, ai được duyệt nhập?"
+          },
+          {
+            "when": "Ngày 10",
+            "text": "Lương tháng này tính thưởng sao cho đúng?"
+          },
+          {
+            "when": "Ngày 15",
+            "text": "Khách VIP khiếu nại, em có được đền không?"
+          },
+          {
+            "when": "Ngày 22",
+            "text": "Thợ chính xin nghỉ từ cuối tháng"
+          },
+          {
+            "when": "Ngày 30",
+            "text": "Tháng này lời hay lỗ? Chưa ai chốt sổ."
+          }
+        ],
+        "build": [
+          "Quy trình (SOP) cho từng vị trí, ai vào cũng làm được",
+          "Kịch bản tư vấn & chăm sóc, khách cũ tự quay lại",
+          "Marketing chạy đều mỗi tuần: Fanpage, TikTok, Zalo",
+          "Trưởng ca được tự quyết trong hạn mức",
+          "Quy trình hằng tháng: lương, nhập hàng, khuyến mãi",
+          "Bảng số liệu mỗi tuần trên điện thoại anh chị"
+        ]
+      },
+      {
+        "span": "1 quý",
+        "step": "Bậc 2",
+        "name": "Tự Do 1 Quý",
+        "fit": "Doanh thu 300 triệu – 1 tỷ/tháng",
+        "time": "6–9 tháng",
+        "test": "Vắng 90 ngày, chỉ họp online mỗi tháng một lần",
+        "calls": [
+          {
+            "when": "Tháng 1",
+            "text": "Sắp vào mùa vắng khách, chạy chương trình gì?"
+          },
+          {
+            "when": "Tháng 2",
+            "text": "Quản lý xin nghỉ, ai thay?"
+          },
+          {
+            "when": "Tháng 2",
+            "text": "Giá vật tư tăng, có tăng giá dịch vụ không?"
+          },
+          {
+            "when": "Tháng 3",
+            "text": "Kế hoạch marketing quý sau ai làm?"
+          }
+        ],
+        "build": [
+          "Tuyển & đào tạo quản lý cơ sở",
+          "CMO thuê ngoài hoặc phòng Marketing riêng, lên kế hoạch theo quý",
+          "KPI & thưởng theo kết quả",
+          "Đội ngũ tự tuyển và kèm người mới",
+          "Nền tảng SME OS: khách, lịch hẹn, doanh thu về một chỗ"
+        ]
+      },
+      {
+        "span": "1 năm",
+        "step": "Bậc 3",
+        "name": "Tự Do 1 Năm",
+        "fit": "Trên 1 tỷ/tháng hoặc nhiều chi nhánh",
+        "time": "12–18 tháng",
+        "test": "Vắng 1 năm, chỉ họp mỗi quý một lần",
+        "calls": [
+          {
+            "when": "Tháng 4",
+            "text": "Hợp đồng mặt bằng sắp hết hạn"
+          },
+          {
+            "when": "Tháng 6",
+            "text": "Ngân sách nửa năm sau duyệt thế nào?"
+          },
+          {
+            "when": "Tháng 9",
+            "text": "Có nên mở chi nhánh thứ 2 chưa?"
+          },
+          {
+            "when": "Tháng 12",
+            "text": "Quyết toán thuế cả năm"
+          }
+        ],
+        "build": [
+          "Giám đốc vận hành điều hành thay anh chị",
+          "Ngân sách năm & duyệt chi theo hạn mức 2 lớp",
+          "Quy trình mở chi nhánh",
+          "Thương hiệu chuyển dần từ gương mặt người chủ sang thương hiệu cơ sở"
+        ]
+      },
+      {
+        "span": "không cần có mặt",
+        "step": "Bậc 4",
+        "name": "Tự Do Hoàn Toàn",
+        "fit": "Chuỗi cơ sở có lợi nhuận ổn định",
+        "time": "18–36 tháng",
+        "test": "Anh chị chỉ còn là người sở hữu",
+        "calls": [
+          {
+            "when": "Mùng 5",
+            "text": "Báo cáo tháng đã gửi tới anh chị"
+          },
+          {
+            "when": "Cuối quý",
+            "text": "Lịch họp hội đồng quý"
+          },
+          {
+            "when": "Khi cần",
+            "text": "Người điều hành gửi kế hoạch mới, chờ anh chị duyệt"
+          }
+        ],
+        "build": [
+          "Người điều hành (CEO) thay chủ",
+          "Quản trị bằng báo cáo & họp hội đồng quý",
+          "Thưởng, cổ phần giữ chân người giỏi",
+          "Kiểm toán độc lập",
+          "Sẵn sàng nhượng quyền, gọi vốn hoặc chuyển nhượng"
+        ]
+      }
+    ],
+    "whyEyebrow": "5 tiêu chí",
+    "whyHeading": "Vì sao là 30 ngày, không phải 3 ngày?",
+    "whySub": "Con số được chọn để vừa đúng nỗi lo của người chủ, vừa làm được thật.",
+    "why": [
+      {
+        "t": "Đủ đau",
+        "b": "Vắng 3 ngày, phần lớn cơ sở đã chạy được. Vắng 30 ngày thì hầu hết chưa — đó mới là chỗ anh chị đang bị trói."
+      },
+      {
+        "t": "Trọn một vòng tháng",
+        "b": "30 ngày đi qua đủ lương, nhập hàng, khuyến mãi, chốt sổ — những việc lâu nay chỉ chủ mới quyết."
+      },
+      {
+        "t": "Làm được thật",
+        "b": "Dựng xong trong 3–4 tháng đồng hành, không phải một lời hứa xa vời."
+      },
+      {
+        "t": "Cơ sở tự nuôi được",
+        "b": "Không cần thuê giám đốc lương cao. Cơ sở 100–300 triệu/tháng vẫn kham được."
+      },
+      {
+        "t": "Đo bằng số",
+        "b": "Kết thúc bằng một lần vắng mặt thật, đo bằng số liệu, không bằng cảm giác."
+      }
+    ],
+    "testEyebrow": "Bài thi vắng mặt",
+    "testHeading": "Mỗi gói kết thúc bằng một lần anh chị vắng mặt thật.",
+    "testSub": "Chỉ số được hai bên thống nhất ngay buổi đầu. Đạt đủ 5 điều mới gọi là xong.",
+    "tests": [
+      "Doanh thu từ 90% trở lên so với trung bình 3 tháng trước",
+      "Khách quay lại và điểm đánh giá không giảm",
+      "Nhân viên gọi xin quyết định không quá mức đã thống nhất",
+      "Không có sự cố mất khách, mất tiền",
+      "Báo cáo về điện thoại anh chị đúng hạn"
+    ],
+    "ctaHeading": "Cơ sở của anh chị đang vắng được bao lâu?",
+    "ctaCheck": "Đo trong 60 giây",
+    "ctaZalo": "Nhắn Zalo anh Đức",
+    "ctaBook": "Đặt lịch chẩn đoán"
   }
 }

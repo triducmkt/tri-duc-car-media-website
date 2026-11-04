@@ -3,6 +3,7 @@ import { FootageHero } from "@/components/home/FootageHero";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FreedomCalculator } from "@/components/home/FreedomCalculator";
 import { ProofEngine } from "@/components/home/ProofEngine";
+import { FreedomLadder } from "@/components/home/FreedomLadder";
 import { VatAdvantage } from "@/components/VatAdvantage";
 import { FounderIntro } from "@/components/home/FounderIntro";
 import { Process } from "@/components/home/Process";
@@ -31,6 +32,7 @@ export default async function HomePage({
       <FootageHero skipHref="#tinh-gio" />
       <div aria-hidden className="h-20 bg-gradient-to-b from-ink to-paper sm:h-28" />
       <FreedomCalculator />
+      <FreedomLadder variant="teaser" />
       <ProofEngine />
       <VatAdvantage id="hoa-don-vat" />
       <div id="tru-cot">

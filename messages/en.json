@@ -530,7 +530,11 @@
         "book": "Book a meeting with Duc",
         "zalo": "Message on Zalo first"
       }
-    }
+    },
+    "visionEyebrow": "Vision 2031",
+    "visionHeading": "1,000 owners away for 30 days, businesses still growing.",
+    "vision": "By 2031, Trí Đức Media helps 1,000 owners of service businesses, centers and shops across Vietnam rest and be away for 30 days while their business keeps growing. The owner moves from doer and operator to owner — a business that grows without them being there.",
+    "visionCta": "See the Freedom Ladder"
   },
   "caseMap": {
     "eyebrow": "Where we work",
@@ -1205,5 +1209,219 @@
       "ebook": "Download the PDF guide (15 pages)",
       "infographic": "View the infographic"
     }
+  },
+  "ladder": {
+    "eyebrow": "The Trí Đức Media promise",
+    "heading": "Away 30 days, your business still grows.",
+    "sub": "A few days off and your shop probably still runs. But a whole month away — caring for parents, a summer trip with the kids, or just breathing — what would your phone ring for?",
+    "goal": "Our 2031 goal: 1,000 owners across Vietnam able to do this.",
+    "pickLabel": "How long do you want to be away?",
+    "phoneTitle": "Your phone · away {span}",
+    "onlyYou": "{n} things only you can decide",
+    "calm": "Nothing needs to call you back anymore",
+    "packageLabel": "The package that fixes it",
+    "fitLabel": "Fits",
+    "timeLabel": "Build time",
+    "testLabel": "Done when",
+    "buildLabel": "What gets built",
+    "inherit": "Everything in the previous level, plus",
+    "more": "Why 30 days & the absence test",
+    "levels": [
+      {
+        "span": "3 days",
+        "step": "Level 0",
+        "name": "Freedom Check",
+        "fit": "Any business",
+        "time": "1 session · free",
+        "test": "You know exactly how long the business can run without you and where it breaks",
+        "note": "Most businesses at 100M–1B VND/month already pass this. That's why Trí Đức Media doesn't promise 3 days.",
+        "calls": [
+          {
+            "when": "Day 2",
+            "text": "A regular wants only you to serve them"
+          },
+          {
+            "when": "Day 3",
+            "text": "Staff ask how to price a special job"
+          }
+        ],
+        "build": [
+          "60-second check: 5 health axes",
+          "15-minute diagnosis with Đức",
+          "Where it breaks and which level to climb first"
+        ]
+      },
+      {
+        "span": "30 days",
+        "step": "Level 1",
+        "name": "Freedom 30",
+        "fit": "100–300M VND/month · 3–15 staff",
+        "time": "3–4 months",
+        "test": "You're away 30 full days and revenue stays at 90% or more",
+        "calls": [
+          {
+            "when": "Day 5",
+            "text": "We're out of supplies — who approves the order?"
+          },
+          {
+            "when": "Day 10",
+            "text": "How do we calculate bonuses this month?"
+          },
+          {
+            "when": "Day 15",
+            "text": "A VIP customer complained — can I offer a refund?"
+          },
+          {
+            "when": "Day 22",
+            "text": "The lead technician is quitting at month end"
+          },
+          {
+            "when": "Day 30",
+            "text": "Profit or loss this month? Nobody closed the books."
+          }
+        ],
+        "build": [
+          "SOPs for every role, so anyone can step in",
+          "Consulting & care scripts so past customers return",
+          "Weekly marketing on Facebook, TikTok, Zalo",
+          "Shift leads decide within set limits",
+          "Monthly routines: payroll, purchasing, promotions",
+          "A weekly numbers board on your phone"
+        ]
+      },
+      {
+        "span": "1 quarter",
+        "step": "Level 2",
+        "name": "Freedom 1 Quarter",
+        "fit": "300M–1B VND/month",
+        "time": "6–9 months",
+        "test": "Away 90 days, one online meeting a month",
+        "calls": [
+          {
+            "when": "Month 1",
+            "text": "Low season is coming — what promotion do we run?"
+          },
+          {
+            "when": "Month 2",
+            "text": "The manager is leaving — who replaces them?"
+          },
+          {
+            "when": "Month 2",
+            "text": "Supply costs went up — do we raise prices?"
+          },
+          {
+            "when": "Month 3",
+            "text": "Who plans next quarter's marketing?"
+          }
+        ],
+        "build": [
+          "Hire & train a store manager",
+          "Outsourced CMO or in-house marketing, planning by quarter",
+          "Results-based KPIs & bonuses",
+          "The team hires and trains newcomers itself",
+          "SME OS: customers, bookings, revenue in one place"
+        ]
+      },
+      {
+        "span": "1 year",
+        "step": "Level 3",
+        "name": "Freedom 1 Year",
+        "fit": "Over 1B VND/month or multiple branches",
+        "time": "12–18 months",
+        "test": "Away a year, one meeting per quarter",
+        "calls": [
+          {
+            "when": "Month 4",
+            "text": "The lease is about to expire"
+          },
+          {
+            "when": "Month 6",
+            "text": "How do we approve next half's budget?"
+          },
+          {
+            "when": "Month 9",
+            "text": "Should we open a second branch?"
+          },
+          {
+            "when": "Month 12",
+            "text": "Annual tax settlement"
+          }
+        ],
+        "build": [
+          "An operations director runs it for you",
+          "Annual budget & two-layer spending limits",
+          "A branch-opening playbook",
+          "The brand shifts from the owner's face to the business"
+        ]
+      },
+      {
+        "span": "for good",
+        "step": "Level 4",
+        "name": "Full Freedom",
+        "fit": "A profitable, stable chain",
+        "time": "18–36 months",
+        "test": "You are simply the owner",
+        "calls": [
+          {
+            "when": "5th",
+            "text": "Your monthly report has arrived"
+          },
+          {
+            "when": "Quarter end",
+            "text": "Quarterly board meeting scheduled"
+          },
+          {
+            "when": "As needed",
+            "text": "Your CEO sent a new plan for approval"
+          }
+        ],
+        "build": [
+          "A CEO runs it in your place",
+          "Governance by reports & quarterly board meetings",
+          "Bonus / equity to keep top people",
+          "Independent audit",
+          "Ready to franchise, raise capital or sell"
+        ]
+      }
+    ],
+    "whyEyebrow": "5 criteria",
+    "whyHeading": "Why 30 days, not 3?",
+    "whySub": "The number was chosen to match what owners actually worry about — and to be achievable.",
+    "why": [
+      {
+        "t": "It hurts enough",
+        "b": "Most businesses already survive 3 days. Very few survive 30 — that's where you're really tied down."
+      },
+      {
+        "t": "A full monthly cycle",
+        "b": "30 days covers payroll, purchasing, promotions and closing the books — the things only you decide today."
+      },
+      {
+        "t": "Actually achievable",
+        "b": "Built in 3–4 months of working together, not a distant promise."
+      },
+      {
+        "t": "The business can afford it",
+        "b": "No expensive director needed. A 100–300M VND/month business can carry it."
+      },
+      {
+        "t": "Measured in numbers",
+        "b": "It ends with a real absence, measured by data, not by feeling."
+      }
+    ],
+    "testEyebrow": "The absence test",
+    "testHeading": "Every package ends with you actually being away.",
+    "testSub": "We agree the targets in the first session. All 5 must pass.",
+    "tests": [
+      "Revenue at 90% or more of the previous 3-month average",
+      "Returning customers and ratings don't drop",
+      "Staff calls for decisions stay within the agreed limit",
+      "No lost customers or lost money",
+      "Reports reach your phone on time"
+    ],
+    "ctaHeading": "How long can your business run without you?",
+    "ctaCheck": "Check in 60 seconds",
+    "ctaZalo": "Message Đức on Zalo",
+    "ctaBook": "Book a diagnosis"
   }
 }

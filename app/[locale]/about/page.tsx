@@ -91,6 +91,21 @@ export default async function AboutPage({
 
       <FounderJourney stops={journey} />
 
+      <section id="tam-nhin" className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_0%,rgba(240,192,105,0.16),transparent)]"
+        />
+        <Container className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-400">{t("visionEyebrow")}</span>
+          <h2 className="font-serif text-3xl font-bold leading-tight tracking-tight sm:text-5xl">{t("visionHeading")}</h2>
+          <p className="text-lg leading-relaxed text-white/75 sm:text-xl">{t("vision")}</p>
+          <Button href="/services" variant="primary" className="mt-2">
+            {t("visionCta")}
+          </Button>
+        </Container>
+      </section>
+
       <section className="bg-paper py-20 sm:py-28">
         <Container className="mx-auto flex max-w-3xl flex-col gap-10">
           {bodyBlocks.map((block, index) => (
