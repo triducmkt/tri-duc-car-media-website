@@ -9,8 +9,8 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 
 ## Ý nghĩa
 - **Chữ Đ:** chữ ký của founder (Đức) và nét gạch ngang chỉ tiếng Việt mới có.
-- **Phần cong của chữ Đ là cung đồng hồ**, chuyển từ cam (dưới) lên đỏ (trên, vùng tua cao). Ý nghĩa: đo sức khỏe cơ sở, khớp với công cụ "Kiểm tra cơ sở 60 giây".
-- **Nét gạch ngang của chữ Đ là cây kim chỉ lên vùng đỏ:** "Nâng tầm doanh nghiệp".
+- **Phần cong của chữ Đ là cung đồng hồ**, chuyển từ cam (dưới) lên vàng (trên; từ v3, trước là đỏ). Ý nghĩa: đo sức khỏe cơ sở; càng lên càng thành tài sản, khớp với công cụ "Kiểm tra cơ sở 60 giây".
+- **Nét gạch ngang của chữ Đ là cây kim chỉ lên vùng cao:** "Nâng tầm doanh nghiệp".
 - **3 vạch số nằm dưới kim:** kim đã vượt qua toàn bộ thang đo, tức là doanh nghiệp vượt mức cũ. App icon không có vạch, vì vạch bị nhòe ở cỡ dưới 64px.
 - **Trục kim màu cam nằm trên thân chữ:** người chủ là điểm tựa. Bộ máy chạy quanh người chủ, không cần người chủ ôm hết việc.
 
@@ -31,8 +31,9 @@ PNG có sẵn trong `png/`: logo ngang 2000px, logo dọc 1600px, biểu tượn
 |---|---|
 | Navy (chữ, thân chữ Đ) | `#0B1220` (trùng màu chữ chính của website) |
 | Cam (trục kim, đáy cung) | `#F7891C` |
-| Đỏ (đỉnh cung, chữ MEDIA trên nền sáng) | `#EC3A3A` |
-| Chữ MEDIA trên nền tối | `#F7891C` |
+| Vàng (đỉnh cung, từ v3) | `#DFA136` |
+| Chữ MEDIA trên nền sáng | `#E0701A` |
+| Chữ MEDIA trên nền tối | `#F0C069` |
 
 ## Quy tắc dùng
 - **Khoảng trống quanh logo:** tối thiểu bằng chiều rộng thân chữ Đ ở mọi phía.

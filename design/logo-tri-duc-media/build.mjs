@@ -17,10 +17,15 @@ if (!FONTS) throw new Error("Usage: node build.mjs <fonts dir>");
 const heavy = opentype.loadSync(path.join(FONTS, "BeVietnamPro-ExtraBold.ttf"));
 const semi = opentype.loadSync(path.join(FONTS, "BeVietnamPro-SemiBold.ttf"));
 
+// v3: red "redline" replaced by gold — climbing into gold = growth that becomes
+// an owned asset, calm rather than overloaded (brief: vision v3 / brand promise).
+// Gold matches the website accent (gold-400 #F0C069 / gold-500 #D9A441).
 const C = {
   navy: "#0B1220",
   orange: "#F7891C",
-  red: "#EC3A3A",
+  gold: "#DFA136", // arc top (light backgrounds)
+  goldLight: "#F0C069", // MEDIA on dark backgrounds
+  ember: "#E0701A", // MEDIA on light backgrounds (orange deepened for legibility)
   white: "#FFFFFF",
 };
 
@@ -29,7 +34,8 @@ const C = {
 // the Đ crossbar = needle pivoting on the stem, pointing into the redline.
 // Stroke weight 14 for spine + gauge; gauge centre (58,60), centreline r=35.
 const PIVOT = [29, 60];
-const TIP = [80, 40];
+// v3: needle held higher (~55° from the gauge centre) — steady in the top zone.
+const TIP = [75, 35];
 const dir = (() => {
   const dx = TIP[0] - PIVOT[0], dy = TIP[1] - PIVOT[1], l = Math.hypot(dx, dy);
   return [dx / l, dy / l];
@@ -38,7 +44,7 @@ const TAIL = [PIVOT[0] - dir[0] * 10, PIVOT[1] - dir[1] * 10];
 const f = (n) => +n.toFixed(2);
 
 // Scale ticks sit below the needle: the needle has already passed the marked range.
-const TICK_ANGLES = [10, -25, -60];
+const TICK_ANGLES = [15, -25, -65]; // evenly spaced 40° — a regular, standardised scale
 function ticksPath() {
   return TICK_ANGLES.map((a) => {
     const r = (a * Math.PI) / 180, c = Math.cos(r), s = Math.sin(r);
@@ -50,7 +56,7 @@ function mark({ spine, needle, arc, hub, id, ticks = true }) {
   const arcStroke = arc === "gradient" ? `url(#${id}-g)` : arc;
   const defs =
     arc === "gradient"
-      ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="0" y1="18" x2="0" y2="102"><stop offset="0" stop-color="${C.red}"/><stop offset="1" stop-color="${C.orange}"/></linearGradient>`
+      ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="0" y1="18" x2="0" y2="102"><stop offset="0" stop-color="${C.gold}"/><stop offset="1" stop-color="${C.orange}"/></linearGradient>`
       : "";
   const body = [
     `<path fill="${spine}" d="M22 18H58V32H36V88H58V102H22Z"/>`,
@@ -130,8 +136,8 @@ function svg(w, h, inner, defs = "", bg = null, minX = 0, minY = 0) {
 }
 
 const themes = {
-  color: { spine: C.navy, needle: C.navy, arc: "gradient", hub: C.orange, name: C.navy, sub: C.red },
-  reverse: { spine: C.white, needle: C.white, arc: "gradient", hub: C.orange, name: C.white, sub: C.orange },
+  color: { spine: C.navy, needle: C.navy, arc: "gradient", hub: C.orange, name: C.navy, sub: C.ember },
+  reverse: { spine: C.white, needle: C.white, arc: "gradient", hub: C.orange, name: C.white, sub: C.goldLight },
   "mono-black": { spine: C.navy, needle: C.navy, arc: C.navy, hub: null, name: C.navy, sub: C.navy },
   "mono-white": { spine: C.white, needle: C.white, arc: C.white, hub: null, name: C.white, sub: C.white },
 };

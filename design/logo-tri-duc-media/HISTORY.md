@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v2** · ảnh: [history/v2/preview.png](history/v2/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v3** · ảnh: [history/v3/preview.png](history/v3/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -81,7 +81,7 @@
   - chưa có tầm nhìn chính thức để đối chiếu;
   - chữ "MEDIA" màu đỏ vẫn khác tông vàng đồng của web;
   - chưa thử logo trên ảnh nền thật (biển hiệu, áo, xe).
-- **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
+- **Trạng thái:** nháp, thay bằng v3.
 
 ## Cập nhật brief (2026-11-04) — Tầm nhìn bản 3 + lời hứa thương hiệu
 - **Yêu cầu anh Đức:** bổ sung vào brief thương hiệu và nhận diện "Trí Đức Media":
@@ -92,3 +92,26 @@
 - **Điểm mở cho v3** (từ tầm nhìn mới):
   - nhấn ý "tự đi lên, không cần tay người";
   - xem lại màu đỏ vùng tua cao, vì đỏ dễ gợi quá tải, trái với ý ung dung và bền vững.
+
+## v3 — Vàng thay đỏ, kim cao và vững (2026-11-04)
+- **Yêu cầu anh Đức:** "Làm v3 luôn" (theo Tầm nhìn bản 3 + lời hứa "Vắng 30 ngày, cơ sở vẫn tăng trưởng").
+- **Ảnh:** [history/v3/preview.png](history/v3/preview.png)
+- **Thay đổi so với v2:**
+  - **Cung đồng hồ:** từ cam → đỏ thành cam → vàng (`#F7891C` → `#DFA136`). Bỏ hẳn màu đỏ "vùng tua đỏ".
+  - **Chữ MEDIA:** trên nền sáng từ đỏ `#EC3A3A` thành cam đậm `#E0701A`; trên nền tối từ cam thành vàng nhạt `#F0C069`.
+  - **Kim:** chỉ cao hơn, khoảng 55° (v2 khoảng 42°), nằm vững ở vùng cao của thang đo.
+  - **Vạch số:** 3 vạch cách đều nhau 40°, thay cho khoảng cách lệch ở v2.
+- **Lý do (theo 4 tiêu chí trong BRAND-BRIEF):**
+  - *Đi lên bền vững / người sở hữu:* đỏ gợi quá tải, nguy hiểm; vàng gợi tài sản, thành quả được giữ lại. Càng lên cao càng thành "vàng", đúng ý người chủ chuyển từ người làm thành người sở hữu.
+  - *Tự vận hành:* kim tự nằm yên ở vùng cao, không rung lắc. Cơ sở đã tự giữ được vòng tua mà không cần tay người chủ.
+  - *Chuẩn hóa:* vạch số cách đều, thành một thang đo có quy tắc.
+  - *Đồng bộ web:* vàng trùng tông gold-400/500 đang dùng trên website, nên logo và web không còn hai giọng màu.
+- **Giữ nguyên:** hình chữ Đ, font Be Vietnam Pro, bố cục ngang/dọc, app icon (vẫn bỏ vạch ở cỡ nhỏ).
+- **Tự kiểm tra:**
+  - app icon 32px vẫn nhận ra chữ Đ;
+  - dấu Í, Ứ không dính;
+  - bản mono không đổi (chỉ khác hình kim).
+- **Còn mở cho vòng sau:**
+  - vàng ở đỉnh cung hơi nhạt trên nền trắng, có thể cần đậm hơn khi in;
+  - chưa thử trên ảnh thật (biển hiệu, áo đồng phục, xe).
+- **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
