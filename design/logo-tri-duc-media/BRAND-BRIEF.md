@@ -24,9 +24,23 @@ Khởi đầu từ ngành Dịch vụ & Ô tô, nay mở rộng sang mọi ngàn
 2. **Chuẩn hóa để nhân rộng:** giải pháp thành SOP lặp lại được, không phụ thuộc cá nhân.
 3. **Tăng trưởng bền vững:** ưu tiên hệ thống dài hạn hơn chiến dịch ngắn hạn.
 
-## Tầm nhìn
-⚠️ **Chưa có văn bản chính thức.** Web chỉ có tầm nhìn của khách hàng AP (10 chi nhánh vào 2030), không phải của công ty.
-Cần anh Đức cung cấp. Trong lúc chờ, logo bám theo sứ mệnh và giá trị cốt lõi.
+## Tầm nhìn (bản 3 — anh Đức chốt 2026-11-04)
+> "Đến năm 2031, Trí Đức Media giúp 1000 người chủ cơ sở, trung tâm, cửa hàng dịch vụ Việt Nam trên toàn quốc nghỉ ngơi vắng mặt 30 ngày cơ sở vẫn tăng trưởng. Người chủ chuyển từ người làm, người vận hành thành người sở hữu — cơ sở tự tăng trưởng mà không cần chủ có mặt."
+
+## Lời hứa thương hiệu
+> **"Vắng 30 ngày, cơ sở vẫn tăng trưởng."**
+
+## Nhận diện "Trí Đức Media" — logo cần nói được gì
+Từ sứ mệnh, tầm nhìn và lời hứa ở trên, mỗi phương án logo được chấm theo 4 ý:
+1. **Tự vận hành:** cơ sở chạy và đi lên mà người chủ không phải có mặt. Biểu tượng nên gợi một hệ thống tự chạy, không gợi một người đang gồng gánh.
+2. **Đi lên bền vững:** tăng trưởng đều và có kiểm soát, không phải bùng nổ ngắn hạn (giá trị "Tăng trưởng bền vững").
+3. **Từ người làm thành người sở hữu:** vị thế đứng trên, nhìn tổng thể, ung dung. Logo nên vững chãi và điềm tĩnh, không gấp gáp.
+4. **Chuẩn hóa, lặp lại được:** hình học gọn, có quy tắc, dễ nhân rộng, dùng được ở mọi cỡ (giá trị "Chuẩn hóa để nhân rộng").
+
+Gợi ý cho vòng tới, đối chiếu với v2 "Đ kim đo":
+- Cây kim là phần tử "tự đi lên". Có thể nhấn mạnh thêm ý kim tự giữ ở vùng cao mà không cần tay người.
+- Con số **30** (ngày) và mốc **1000 người chủ / 2031** là chất liệu kể chuyện, KHÔNG đưa vào logo.
+- Màu đỏ ở vùng tua cao dễ gợi "quá tải/nguy hiểm", ngược với ý "ung dung, bền vững". Nên cân nhắc lại sắc độ ở vòng sau.
 
 ## Ràng buộc thiết kế
 - Đọc rõ dấu tiếng Việt (Í, Ứ), kể cả ở cỡ nhỏ.

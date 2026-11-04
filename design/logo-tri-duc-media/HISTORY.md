@@ -82,3 +82,13 @@
   - chữ "MEDIA" màu đỏ vẫn khác tông vàng đồng của web;
   - chưa thử logo trên ảnh nền thật (biển hiệu, áo, xe).
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
+
+## Cập nhật brief (2026-11-04) — Tầm nhìn bản 3 + lời hứa thương hiệu
+- **Yêu cầu anh Đức:** bổ sung vào brief thương hiệu và nhận diện "Trí Đức Media":
+  - Tầm nhìn bản 3: "Đến năm 2031, Trí Đức Media giúp 1000 người chủ cơ sở… nghỉ ngơi vắng mặt 30 ngày cơ sở vẫn tăng trưởng…";
+  - Lời hứa chính: "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
+- **Đã ghi vào [BRAND-BRIEF.md](BRAND-BRIEF.md)**, kèm 4 tiêu chí chấm logo (tự vận hành, đi lên bền vững, từ người làm thành người sở hữu, chuẩn hóa).
+- Không có thiết kế mới trong lần này; bản mới nhất vẫn là v2.
+- **Điểm mở cho v3** (từ tầm nhìn mới):
+  - nhấn ý "tự đi lên, không cần tay người";
+  - xem lại màu đỏ vùng tua cao, vì đỏ dễ gợi quá tải, trái với ý ung dung và bền vững.
