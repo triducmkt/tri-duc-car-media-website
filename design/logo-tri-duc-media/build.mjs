@@ -257,31 +257,44 @@ const themes = {
 
 // v4: brand-promise line. v8: shortened to a 4-syllable slogan with V–V alliteration,
 // distilled from the promise "Vắng 30 ngày, cơ sở vẫn tăng trưởng." (kept in the brief).
-const TAGLINE = "Vắng chủ, vẫn tăng.";
+// v10: clearer slogan — "vắng" (owner away) ↔ "đông" (customers crowd in).
+const TAGLINE = "Chủ vắng, khách vẫn đông.";
+// v10: lower block. MEDIA is centred under the name between two hairlines that
+// run out to the name's edges (no more empty space right of MEDIA); the slogan
+// is centred below. "TRÍ ĐỨC" itself is unchanged since v8.
+function lowerBlock(nm, withTag) {
+  const base2 = nm.base + cap1 * 0.34 + cap2;
+  const center = (nm.x1 + nm.x2) / 2;
+  const mLeft = center - subBox.w / 2;
+  const media = textPath(semi, SUB, mLeft - subBox.x1, base2, s2, subTracking);
+  const gap = s2 * 0.6, ry = base2 - cap2 / 2 - 0.7;
+  const rules = [
+    { x: nm.x1, y: ry, w: mLeft - gap - nm.x1, anchor: mLeft - gap },
+    { x: mLeft + subBox.w + gap, y: ry, w: nm.x2 - (mLeft + subBox.w + gap), anchor: mLeft + subBox.w + gap },
+  ];
+  let tag = "", bottom = base2;
+  if (withTag) {
+    const width = nm.x2 - nm.x1;
+    let size = s2 * 0.92;
+    const w0 = inkBox(semi, TAGLINE, size, size * 0.01).w;
+    if (w0 > width * 0.96) size *= (width * 0.96) / w0;
+    const tracking = size * 0.01;
+    const box = inkBox(semi, TAGLINE, size, tracking);
+    const tbase = base2 + 20 + capRatio(semi) * size;
+    tag = textPath(semi, TAGLINE, center - box.w / 2 - box.x1, tbase, size, tracking);
+    bottom = tbase + 0.25 * size; // descenders (g, y)
+  }
+  return { media, rules, tag, bottom };
+}
+const ruleRect = (r, fill) => `<rect x="${f(r.x)}" y="${f(r.y)}" width="${f(r.w)}" height="1.4" fill="${fill}" opacity="0.6"/>`;
+
 function horizontal(t, id, withTagline = false) {
   const nm = leafName(0, 18, t, id);
-  const base2 = nm.base + cap1 * 0.3 + cap2;
-  const left = nm.x1;
-  const media = textPath(semi, SUB, left - subBox.x1, base2, s2, subTracking);
-  const width = nm.x2 - nm.x1;
-  let body = nm.body + `<path fill="${t.sub}" d="${media}"/>`;
-  const minY = nm.top - PAD;
-  let maxY = base2 + PAD;
-  const minX = left - PAD;
-  let maxX = nm.x2 + PAD;
-  if (withTagline) {
-    // rule across the name width + the short slogan at MEDIA's scale
-    const size = s2 * 0.8;
-    const tracking = size * 0.02;
-    const box = inkBox(semi, TAGLINE, size, tracking);
-    const ruleY = base2 + 16;
-    const base = ruleY + 12 + capRatio(semi) * size;
-    body +=
-      `<rect x="${f(left)}" y="${f(ruleY)}" width="${f(width)}" height="1.2" fill="${t.tag}" opacity="0.35"/>` +
-      `<path fill="${t.tag}" d="${textPath(semi, TAGLINE, left - box.x1, base, size, tracking)}"/>`;
-    maxY = base + 6 + PAD;
-  }
-  return svg(maxX - minX, maxY - minY, body, nm.defs, null, minX, minY);
+  const L = lowerBlock(nm, withTagline);
+  let body = nm.body + `<path fill="${t.sub}" d="${L.media}"/>` + L.rules.map((r) => ruleRect(r, t.sub)).join("");
+  if (withTagline) body += `<path fill="${t.tag}" d="${L.tag}"/>`;
+  const minX = nm.x1 - PAD, minY = nm.top - PAD;
+  return svg(nm.x2 - nm.x1 + 2 * PAD, L.bottom + PAD - minY, body, nm.defs, null, minX, minY);
 }
 function vertical(t, id) {
   const m = mark({ ...t, id });
@@ -343,18 +356,12 @@ const RIB_DEG = (Math.atan2(dir[1], dir[0]) * 180) / Math.PI;
 
 function animatedPieces(t, id) {
   const nm = leafName(0, 18, t, id);
-  const base2 = nm.base + cap1 * 0.3 + cap2;
-  const left = nm.x1, width = nm.x2 - nm.x1;
-  const media = textPath(semi, SUB, left - subBox.x1, base2, s2, subTracking);
-  const size = s2 * 0.8, tracking = size * 0.02;
-  const box = inkBox(semi, TAGLINE, size, tracking);
-  const ruleY = base2 + 16, tbase = ruleY + 12 + capRatio(semi) * size;
-  const tag = textPath(semi, TAGLINE, left - box.x1, tbase, size, tracking);
-  const view = { minX: left - PAD, minY: nm.top - PAD, w: width + 2 * PAD, h: tbase + 6 + PAD - (nm.top - PAD) };
+  const L = lowerBlock(nm, true);
+  const view = { minX: nm.x1 - PAD, minY: nm.top - PAD, w: nm.x2 - nm.x1 + 2 * PAD, h: L.bottom + PAD - (nm.top - PAD) };
   const gradId = `${id}-g`;
   const dark = t.spine === C.white;
   const defs = `<linearGradient id="${gradId}" gradientUnits="userSpaceOnUse" x1="22" y1="102" x2="97" y2="4"><stop offset="0.12" stop-color="${dark ? C.white : C.navy}"/><stop offset="0.5" stop-color="${dark ? C.seaLight : C.sea}"/><stop offset="0.95" stop-color="${dark ? C.leafLight : C.leaf}"/></linearGradient>`;
-  return { nm, left, width, media, tag, ruleY, view, defs, gradId };
+  return { nm, L, view, defs, gradId };
 }
 
 // Static frame at time sec (for MP4/GIF).
@@ -376,8 +383,9 @@ function animFrame(t, id, sec) {
     `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(20)}"/>` +
     `<g transform="translate(${f(RIB_TAIL[0])} ${f(RIB_TAIL[1])}) rotate(${f(RIB_DEG)}) scale(${f(rib)} 1) rotate(${f(-RIB_DEG)}) translate(${f(-RIB_TAIL[0])} ${f(-RIB_TAIL[1])})"><path fill="${t.needle}" d="${ribPath(RIB_HW)}"/></g></g>` +
     pop("accI", nm.parts.acc[0]) + pop("accU", nm.parts.acc[1]) +
-    `<path opacity="${f(e("media"))}" fill="${t.sub}" d="${P.media}"/>` +
-    `<g opacity="${f(e("tag"))}"><rect x="${f(P.left)}" y="${f(P.ruleY)}" width="${f(P.width)}" height="1.2" fill="${t.tag}" opacity="0.35"/><path fill="${t.tag}" d="${P.tag}"/></g>`;
+    `<path opacity="${f(e("media"))}" fill="${t.sub}" d="${P.L.media}"/>` +
+    P.L.rules.map((r) => `<g transform="translate(${f(r.anchor)} 0) scale(${f(Math.max(e("media"), 0.0001))} 1) translate(${f(-r.anchor)} 0)">${ruleRect(r, t.sub)}</g>`).join("") +
+    `<path opacity="${f(e("tag"))}" fill="${t.tag}" d="${P.L.tag}"/>`;
   return svg(P.view.w, P.view.h, body, P.defs, null, P.view.minX, P.view.minY);
 }
 
@@ -397,8 +405,9 @@ function animatedSVG(t, id) {
     `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(20)}"/>` +
     `<g transform="translate(${f(RIB_TAIL[0])} ${f(RIB_TAIL[1])}) rotate(${f(RIB_DEG)})"><g transform="scale(0 1)"><animateTransform attributeName="transform" type="scale" from="0 1" to="1 1" ${dur("rib")} ${spl}/><g transform="rotate(${f(-RIB_DEG)}) translate(${f(-RIB_TAIL[0])} ${f(-RIB_TAIL[1])})"><path fill="${t.needle}" d="${ribPath(RIB_HW)}"/></g></g></g></g>` +
     pop("accI", nm.parts.acc[0]) + pop("accU", nm.parts.acc[1]) +
-    `<path opacity="0" fill="${t.sub}" d="${P.media}"><animate attributeName="opacity" from="0" to="1" ${dur("media")} ${spl}/></path>` +
-    `<g opacity="0"><animate attributeName="opacity" from="0" to="1" ${dur("tag")} ${spl}/><rect x="${f(P.left)}" y="${f(P.ruleY)}" width="${f(P.width)}" height="1.2" fill="${t.tag}" opacity="0.35"/><path fill="${t.tag}" d="${P.tag}"/></g>`;
+    `<path opacity="0" fill="${t.sub}" d="${P.L.media}"><animate attributeName="opacity" from="0" to="1" ${dur("media")} ${spl}/></path>` +
+    P.L.rules.map((r) => `<g transform="translate(${f(r.anchor)} 0)"><g transform="scale(0 1)"><animateTransform attributeName="transform" type="scale" from="0 1" to="1 1" ${dur("media")} ${spl}/><g transform="translate(${f(-r.anchor)} 0)">${ruleRect(r, t.sub)}</g></g></g>`).join("") +
+    `<path opacity="0" fill="${t.tag}" d="${P.L.tag}"><animate attributeName="opacity" from="0" to="1" ${dur("tag")} ${spl}/></path>`;
   return svg(P.view.w, P.view.h, body, P.defs, null, P.view.minX, P.view.minY);
 }
 files["tri-duc-media-animated-color.svg"] = animatedSVG(themes.color, "an-c");
@@ -444,7 +453,7 @@ async function renderVideo(t, id, W, H, bg, logoW, name) {
   fs.copyFileSync(path.join(frameDir, "f" + String(Math.round(n * 0.25)).padStart(4, "0") + ".png"), path.join(motionDir, name + "-frame-mid.png"));
   fs.copyFileSync(path.join(frameDir, "f" + String(n - 1).padStart(4, "0") + ".png"), path.join(motionDir, name + "-poster.png"));
 }
-await renderVideo(themes.reverse, "vr", 1080, 1920, C.navy, 860, "intro-9x16-navy"); // Shorts / Reels / TikTok
+await renderVideo(themes.reverse, "vr", 1080, 1920, C.navy, 960, "intro-9x16-navy"); // Shorts / Reels / TikTok
 await renderVideo(themes.color, "vc", 1920, 1080, "#FFFFFF", 1100, "intro-16x9-white"); // YouTube / slides
 fs.rmSync(frameDir, { recursive: true, force: true });
 

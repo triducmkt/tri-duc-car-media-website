@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v9** · ảnh: [history/v9/preview.png](history/v9/preview.png) + logo động [history/v9/intro-9x16-navy.gif](history/v9/intro-9x16-navy.gif) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v10** · ảnh: [history/v10/preview.png](history/v10/preview.png) + logo động [history/v10/intro-9x16-navy.gif](history/v10/intro-9x16-navy.gif) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -291,5 +291,30 @@
   - anh Đức chốt slogan A/B/C (đang dùng A "Vắng chủ, vẫn tăng.");
   - có thể thêm âm thanh ngắn (tiếng lá/"ting") cho video;
   - bản 9:16 có thể phóng logo to hơn nữa;
+  - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
+- **Trạng thái:** nháp, thay bằng v10.
+
+## v10 — Slogan rõ nghĩa + MEDIA kẹp giữa 2 đường kẻ (2026-11-04)
+- **Yêu cầu anh Đức:** "các thiết kế và chuyển động đã ổn. nhưng câu "Vắng chủ, vẫn tăng." dù ngắn lại khó hiểu. Gieo hệ thống cũng chưa catch. tiếp v10 với phần thiết kế Trí Đức giữ nguyên, cải tiến các phần còn lại"
+- **Ảnh:**
+  - [history/v10/preview.png](history/v10/preview.png);
+  - dải phim chuyển động [filmstrip-16x9.png](history/v10/filmstrip-16x9.png), [filmstrip-9x16.png](history/v10/filmstrip-9x16.png);
+  - GIF [intro-9x16-navy.gif](history/v10/intro-9x16-navy.gif).
+- **Giữ nguyên:** toàn bộ chữ "TRÍ ĐỨC" (chữ Đ-lá, 2 lá non trên dấu sắc), màu, biểu tượng, app icon, kịch bản chuyển động.
+- **Thay đổi:**
+  - **Slogan mới: "Chủ vắng, khách vẫn đông."**
+    - Tiêu chí: đọc một lần là hiểu; nói ra thành câu đời thường; có "móc" để nhớ.
+    - Câu chơi chữ đối "vắng" ↔ "đông": chủ vắng mặt mà khách vẫn đông. Cụ thể, chủ gara, spa hay gym đều hiểu ngay.
+    - Ý vẫn là lời hứa "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
+    - Phương án dự phòng (ghi trong BRAND-BRIEF): B. "Chủ nghỉ, cơ sở vẫn chạy." (rõ nghĩa nhất); C. "Anh chị nghỉ, cơ sở vẫn lớn." (đúng xưng hô với khách).
+  - **Chữ MEDIA đặt giữa, kẹp giữa 2 đường kẻ mảnh** chạy kín chiều ngang tên, nên không còn khoảng trống bên phải như v8–v9. Đường kẻ cùng màu chữ MEDIA (xanh biển; nền tối là xanh lá sáng). Bỏ đường kẻ riêng phía trên slogan.
+  - **Slogan đặt giữa**, cỡ chữ lớn hơn v9 (~0.92 lần chữ MEDIA, tự co nếu dài hơn tên), nên đọc rõ hơn trên danh thiếp và xe.
+  - **Logo động:** khi MEDIA hiện, 2 đường kẻ vẽ dần từ chữ MEDIA ra hai bên, rồi slogan hiện. Video 9:16 phóng logo to hơn (rộng 960/1080 px).
+- **Tự kiểm tra:**
+  - bảng xem trước: logo màu, nền tối, mono, danh thiếp, xe đều cân đối, slogan không tràn;
+  - dải phim: đường kẻ vẽ đúng chiều, slogan hiện cuối.
+- **Còn mở:**
+  - anh Đức chốt slogan A/B/C;
+  - bản dọc vẫn là biểu tượng lớn + tên thường (chưa có đường kẻ MEDIA);
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
