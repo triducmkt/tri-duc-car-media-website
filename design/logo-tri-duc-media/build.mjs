@@ -121,15 +121,60 @@ const nameBox = inkBox(heavy, NAME, s1);
 const subTracking = s2 * 0.34;
 const subBox = inkBox(semi, SUB, s2, subTracking);
 
-function wordmark(x, capTop, { name, sub, align = "left" }) {
+// v6: the two acute accents (Í, Ứ) are redrawn as young leaves in the leaf colour.
+// Vietnamese diacritics become the brand's signature detail: the name itself sprouts.
+// Name is set without the acutes ("TRI ĐƯC" — same advances), then each acute's
+// bounding box (taken from the real accented glyph) is filled with a leaf.
+const NAME_PLAIN = "TRI ĐƯC";
+function accentBoxes(x, y, size) {
+  const glyphs = heavy.stringToGlyphs(NAME);
+  const scale = size / heavy.unitsPerEm;
+  const capTopY = y - capRatio(heavy) * size;
+  let cx = x;
+  const boxes = [];
+  glyphs.forEach((g, i) => {
+    if (i === 2 || i === 5) {
+      const pts = [];
+      for (const c of g.getPath(cx, y, size).commands) {
+        for (const [px, py] of [[c.x, c.y], [c.x1, c.y1], [c.x2, c.y2]]) {
+          if (px !== undefined && py < capTopY - 1.5) pts.push([px, py]);
+        }
+      }
+      const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
+      boxes.push({ x1: Math.min(...xs), x2: Math.max(...xs), y1: Math.min(...ys), y2: Math.max(...ys) });
+    }
+    let adv = g.advanceWidth * scale;
+    if (i < glyphs.length - 1) adv += heavy.getKerningValue(g, glyphs[i + 1]) * scale;
+    cx += adv;
+  });
+  // Ứ: the horn of Ư also rises above the cap line, so its raw box is too wide.
+  // The acute is the same mark in both letters: reuse Í's accent size, anchored
+  // at the left/top-most accent point of Ứ (the horn sits to the right).
+  const [a, b] = boxes;
+  const w = a.x2 - a.x1, h = a.y2 - a.y1;
+  boxes[1] = { x1: b.x1, x2: b.x1 + w, y1: b.y1, y2: b.y1 + h };
+  return boxes;
+}
+// Almond leaf along the acute's diagonal (bottom-left → top-right).
+function leafAccent(b) {
+  const p0 = [b.x1 + 0.4, b.y2], p1 = [b.x2, b.y1 - 0.6];
+  const d = [p1[0] - p0[0], p1[1] - p0[1]], L = Math.hypot(...d);
+  const n = [-d[1] / L, d[0] / L], w = L * 0.3;
+  const m = [(p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2];
+  const c1 = [m[0] + n[0] * w, m[1] + n[1] * w], c2 = [m[0] - n[0] * w, m[1] - n[1] * w];
+  return `M${f(p0[0])} ${f(p0[1])}Q${f(c1[0])} ${f(c1[1])} ${f(p1[0])} ${f(p1[1])}Q${f(c2[0])} ${f(c2[1])} ${f(p0[0])} ${f(p0[1])}Z`;
+}
+
+function wordmark(x, capTop, { name, sub, accent, align = "left" }) {
   const base1 = capTop + cap1;
   const base2 = base1 + cap1 * 0.3 + cap2;
   const left = align === "center" ? x - nameBox.w / 2 : x;
   const subLeft = align === "center" ? x - subBox.w / 2 : x;
-  const n = textPath(heavy, NAME, left - nameBox.x1, base1, s1);
+  const n = textPath(heavy, NAME_PLAIN, left - nameBox.x1, base1, s1);
+  const leaves = accentBoxes(left - nameBox.x1, base1, s1).map(leafAccent).join("");
   const m = textPath(semi, SUB, subLeft - subBox.x1, base2, s2, subTracking);
   return {
-    body: `<path fill="${name}" d="${n}"/><path fill="${sub}" d="${m}"/>`,
+    body: `<path fill="${name}" d="${n}"/><path fill="${accent ?? name}" d="${leaves}"/><path fill="${sub}" d="${m}"/>`,
     top: base1 + nameBox.y1, // accents rise above the cap line
     bottom: base2,
     width: nameBox.w,
@@ -144,8 +189,8 @@ function svg(w, h, inner, defs = "", bg = null, minX = 0, minY = 0) {
 }
 
 const themes = {
-  color: { spine: C.navy, needle: C.leaf, arc: "gradient", name: C.navy, sub: C.sea, tag: "#4B5568" },
-  reverse: { spine: C.white, needle: C.leafLight, arc: "gradient", name: C.white, sub: C.leafLight, tag: "#C3CAD6" },
+  color: { spine: C.navy, needle: C.leaf, arc: "gradient", accent: C.leaf, name: C.navy, sub: C.sea, tag: "#4B5568" },
+  reverse: { spine: C.white, needle: C.leafLight, arc: "gradient", accent: C.leafLight, name: C.white, sub: C.leafLight, tag: "#C3CAD6" },
   "mono-black": { spine: C.navy, needle: C.navy, arc: C.navy, name: C.navy, sub: C.navy, tag: C.navy },
   "mono-white": { spine: C.white, needle: C.white, arc: C.white, name: C.white, sub: C.white, tag: C.white },
 };

@@ -11,7 +11,7 @@ const circle = async (size, bg) =>
   sharp(Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}" fill="${bg}"/></svg>`)).png().toBuffer();
 
 (async () => {
-  const W = 1800, H = 1640;
+  const W = 1800, H = 2180;
   const comps = [
     // 1. Main lockup with brand promise
     { input: await panel(1740, 600, "#FFFFFF"), left: 30, top: 30 },
@@ -40,6 +40,18 @@ const circle = async (size, bg) =>
     const masked = await sharp(icon).composite([{ input: await circle(s, "#000"), blend: "dest-in" }]).png().toBuffer();
     comps.push({ input: masked, left, top: 1490 - s / 2 });
   }
+  // 6. Uniform mockup (v6): navy tee, white/green mark on the left chest
+  const tee = `<svg xmlns="http://www.w3.org/2000/svg" width="440" height="420" viewBox="0 0 440 420"><path d="M140 30 L185 14 Q220 52 255 14 L300 30 L420 96 L378 172 L330 146 L330 404 L110 404 L110 146 L62 172 L20 96 Z" fill="#0B1220"/><path d="M185 14 Q220 52 255 14" fill="none" stroke="#1C2740" stroke-width="10"/></svg>`;
+  comps.push({ input: await panel(860, 500, "#E9EEF3"), left: 30, top: 1640 });
+  comps.push({ input: await sharp(Buffer.from(tee)).png().toBuffer(), left: 240, top: 1680 });
+  comps.push({ input: await r("tri-duc-media-mark-reverse.svg", 70), left: 470, top: 1790 });
+  // 7. Business cards (v6): front white with the colour lockup, back navy with the promise
+  comps.push({ input: await panel(860, 500, "#E9EEF3"), left: 910, top: 1640 });
+  const card = (bg) => sharp(Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="380" height="220"><rect width="380" height="220" rx="12" fill="${bg}"/></svg>`)).png().toBuffer();
+  comps.push({ input: await card("#FFFFFF"), left: 950, top: 1700 });
+  comps.push({ input: await r("tri-duc-media-horizontal-color.svg", 280), left: 1000, top: 1755 });
+  comps.push({ input: await card("#0B1220"), left: 1350, top: 1880 });
+  comps.push({ input: await r("tri-duc-media-horizontal-tagline-reverse.svg", 300), left: 1390, top: 1915 });
   await sharp({ create: { width: W, height: H, channels: 4, background: "#F5F7FB" } })
     .composite(comps)
     .png()

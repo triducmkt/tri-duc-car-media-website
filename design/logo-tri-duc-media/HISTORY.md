@@ -1,6 +1,6 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v5** · ảnh: [history/v5/preview.png](history/v5/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
+> **BẢN MỚI NHẤT: v6** · ảnh: [history/v6/preview.png](history/v6/preview.png) · trạng thái: **NHÁP, CHƯA lên web**
 > Logo đang chạy trên web: **v0** (logo cũ).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
@@ -171,4 +171,30 @@
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông với logo xanh khi publish (cần quyết định khi đổi logo trên web);
   - thử thêm một gân phụ rất mảnh ở bản lớn (biển hiệu) để tăng chi tiết;
   - chưa có mockup áo đồng phục và xe.
+- **Trạng thái:** nháp, thay bằng v6.
+
+## v6 — Dấu sắc thành lá non + mockup áo, danh thiếp (2026-11-04)
+- **Yêu cầu anh Đức:** "Làm tiếp v6".
+- **Ảnh:** [history/v6/preview.png](history/v6/preview.png)
+- **Thay đổi so với v5:**
+  - **Chi tiết chữ ký mới:** 2 dấu sắc trên Í và Ứ được vẽ lại thành **2 chiếc lá non màu xanh lá** (`#17A85A`; nền tối `#45D17F`).
+    - Dấu tiếng Việt trở thành chi tiết nhận diện: chính cái tên "Trí Đức" cũng đang nảy mầm.
+    - Lá đặt đúng vị trí và độ nghiêng của dấu sắc gốc trong font, nên người đọc vẫn thấy chữ Í, Ứ chuẩn tiếng Việt.
+    - Bản mono: lá cùng màu mực.
+  - **Kỹ thuật:**
+    - chữ được dựng không dấu ("TRI ĐƯC", cùng độ rộng chữ); khung dấu sắc lấy từ glyph Í/Ứ thật, rồi vẽ lá hình hạt hạnh theo đường chéo của dấu;
+    - Ứ dùng cùng kích thước khung với Í, vì phần móc của chữ Ư cũng nhô lên trên chữ (lần dựng đầu bị đo nhầm nên lá bè ngang, đã sửa).
+  - **Mockup mới trong bảng xem trước:**
+    - áo thun đồng phục navy, biểu tượng ở ngực trái;
+    - danh thiếp: mặt trước nền trắng có logo màu, mặt sau navy có dòng lời hứa.
+- **Giữ nguyên:** biểu tượng "Đ lá mầm", màu mệnh Mộc, font, bố cục.
+- **Ý nghĩa thêm:** biểu tượng là chiếc lá lớn (cây đã thành), 2 dấu sắc là 2 lá non (cơ sở mới). Logo vừa kể "cây lớn tự đi lên", vừa kể "liên tục nảy lộc", hợp tầm nhìn 1000 người chủ.
+- **Tự kiểm tra:**
+  - ở danh thiếp (logo rộng khoảng 280px) 2 lá non vẫn rõ;
+  - ở bản dọc nhỏ, lá non vẫn đọc ra là dấu sắc;
+  - dưới cỡ logo ngang 120px nên dùng biểu tượng riêng (quy tắc cũ).
+- **Còn mở cho vòng sau:**
+  - website đang dùng màu nhấn vàng đồng, sẽ lệch tông với logo xanh khi publish;
+  - có thể thử gân phụ mảnh cho bản biển hiệu lớn;
+  - chưa có mockup xe.
 - **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.

@@ -11,6 +11,7 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 - **Chữ Đ thành một chiếc lá:** phần cong của chữ Đ vuốt lên thành đầu lá nhọn, vượt cao hơn thân chữ. Ý nghĩa: cơ sở lớn vượt tầm cũ của mình.
 - **Thân chữ Đ màu navy là thân cây, là hệ thống:** phần đứng yên, rễ sâu.
 - **Nét gạch ngang của chữ Đ là gân lá:** thò ra bên trái như nét Đ bình thường, rồi thon dần, vươn lên trong lòng lá. Sự tăng trưởng đến từ bên trong.
+- **2 dấu sắc trên Í, Ứ là 2 lá non xanh lá (từ v6):** chính cái tên cũng đang nảy mầm. Dấu vẫn đúng vị trí và độ nghiêng chuẩn tiếng Việt.
 - **Màu xanh biển ở gốc chuyển sang xanh lá ở ngọn:** Thủy sinh Mộc, nước nuôi gốc thì lá xanh. Bảng màu hợp mệnh Mộc (Đại Lâm Mộc) của founder.
 - **Câu chuyện:** Đại Lâm Mộc là cây lớn trong rừng, người trồng vắng mặt mà cây vẫn lớn. Đó chính là "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
 - *(Ý nghĩa cũ v1–v4 "đồng hồ / kim đo / chấm cam người chủ": xem HISTORY.md.)*
