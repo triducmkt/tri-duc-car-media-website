@@ -22,7 +22,7 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 |---|---|
 | `tri-duc-media-horizontal-color.svg` | Logo chính: header web, tài liệu, slide, nền sáng |
 | `tri-duc-media-horizontal-reverse.svg` | Nền tối hoặc nền navy |
-| `tri-duc-media-horizontal-tagline-*.svg` | Có slogan "Vắng chủ, vẫn tăng." (từ v8): biển hiệu, danh thiếp, slide, áo |
+| `tri-duc-media-horizontal-tagline-*.svg` | Có slogan "Chủ vắng, khách vẫn đông." (từ v10): biển hiệu, danh thiếp, slide, áo |
 | `tri-duc-media-vertical-*.svg` | Chỗ hẹp và cao: standee, bìa hồ sơ, avatar lớn |
 | `tri-duc-media-mark-*.svg` | Biểu tượng đứng riêng |
 | `tri-duc-media-app-icon.svg` | Favicon, avatar Zalo/Facebook, icon app |
