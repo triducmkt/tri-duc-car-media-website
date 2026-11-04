@@ -1,7 +1,7 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v10** · ảnh: [history/v10/preview.png](history/v10/preview.png) + logo động [history/v10/intro-9x16-navy.gif](history/v10/intro-9x16-navy.gif) · trạng thái: **NHÁP, CHƯA lên web**
-> Logo đang chạy trên web: **v0** (logo cũ).
+> **BẢN MỚI NHẤT: v10** · ảnh: [history/v10/preview.png](history/v10/preview.png) + logo động [history/v10/intro-9x16-navy.gif](history/v10/intro-9x16-navy.gif) · trạng thái: **ĐANG CHẠY TRÊN WEB**
+> Logo đang chạy trên web: **v10** (publish 2026-11-04, commit `27d3dbd`). Muốn đưa bản mới lên web: `export-web.cjs` (chỉ khi anh Đức yêu cầu).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
 
@@ -53,7 +53,7 @@
   - chuyển màu không in 1 màu được;
   - chữ "CAR" làm khách ngoài ngành ô tô thấy không dành cho mình;
   - màu lệch với website.
-- **Trạng thái:** ĐANG CHẠY TRÊN WEB.
+- **Trạng thái:** đã thay bằng v10 trên web (2026-11-04).
 
 ## v1 — "Đ kim đo", bản dựng đầu (2026-11-04, commit `00ef23d`)
 - **Yêu cầu anh Đức:** "hoàn toàn có thể bỏ chữ CAR nếu cần thiết, chỉ còn TRÍ ĐỨC MEDIA…", sau đó chọn "Chỉ dựng, chưa thay".
@@ -317,10 +317,22 @@
   - anh Đức chốt slogan A/B/C;
   - bản dọc vẫn là biểu tượng lớn + tên thường (chưa có đường kẻ MEDIA);
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
-- **Trạng thái:** NHÁP MỚI NHẤT, chưa lên web.
+- **Trạng thái:** ĐANG CHẠY TRÊN WEB (từ 2026-11-04).
 
 ## Quyết định (2026-11-04) — Chốt slogan
 - **Anh Đức chọn:** "Chủ vắng, khách vẫn đông".
 - Slogan chính thức đi kèm logo: **"Chủ vắng, khách vẫn đông."** Câu này đã có sẵn trên v10 (bản ngang có slogan, logo động), nên không cần dựng lại.
 - Lời hứa đầy đủ "Vắng 30 ngày, cơ sở vẫn tăng trưởng." giữ nguyên cho bài viết, slide, tư vấn.
 - Bản mới nhất vẫn là v10 (nháp, chưa lên web).
+
+## PUBLISHED — v10 lên web (2026-11-04, commit `27d3dbd`)
+- **Yêu cầu anh Đức:** "hãy đưa logo v10 cùng slogan lên web ở tất cả vị trí liên quan, ưu tiên tối đa cho logo động (dạng gif hoặc video); có phần trình bày ý nghĩa của tên và logo, sứ mệnh, giá trị cốt lõi và tầm nhìn cty"
+- **Vị trí đã thay:**
+  - Header: logo động không slogan, 2 bản sáng/tối chồng nhau, đổi bằng độ mờ nên chỉ chạy 1 lần khi tải trang;
+  - Footer: logo động có slogan, kèm link "Ý nghĩa tên & logo";
+  - ảnh thay thế của BlogPostCard;
+  - favicon.ico, app/icon.png, app/apple-icon.png;
+  - logo.png (JSON-LD).
+- **Trang Về Founder `#thuong-hieu`:** video logo động 16:9 lặp, ý nghĩa tên (Trí Đức, Media, chữ "Car" trong tên pháp lý), ý nghĩa logo (4 ý), slogan, sứ mệnh. Ngay sau là Tầm nhìn 2031 (#tam-nhin) và Giá trị cốt lõi (#gia-tri) có sẵn.
+- **Dựng lại / cập nhật web khi logo đổi:** `node design/logo-tri-duc-media/build.mjs <fonts>` rồi `node design/logo-tri-duc-media/export-web.cjs`.
+- **Trạng thái:** v10 ĐANG CHẠY TRÊN WEB (thay cho v0).
