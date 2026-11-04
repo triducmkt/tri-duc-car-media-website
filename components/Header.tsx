@@ -53,17 +53,27 @@ export function Header() {
       }`}
     >
       <Container className="flex h-18 items-center justify-between py-3">
-        <Link href="/" onClick={() => setOpen(false)}>
-          {/* Vector logo (public/brand/logo*.svg) — stays razor-sharp at any
-              zoom/DPI; the light variant sits directly on the dark hero. */}
+        <Link href="/" onClick={() => setOpen(false)} className="relative block" aria-label="Trí Đức Media">
+          {/* Logo v10 (design/logo-tri-duc-media): animated SVG — the Đ-leaf grows
+              from its root once on page load. Both variants are mounted and
+              cross-faded, so switching light/dark on scroll never replays it. */}
           <Image
-            src={transparent ? "/brand/logo-light.svg" : "/brand/logo.svg"}
-            alt="Trí Đức Media"
-            width={725}
-            height={256}
+            src="/brand/logo-light.svg"
+            alt=""
+            width={313}
+            height={135}
             priority
             unoptimized
-            className="h-10 w-auto sm:h-11"
+            className={`h-12 w-auto transition-opacity duration-300 sm:h-[52px] ${transparent ? "opacity-100" : "opacity-0"}`}
+          />
+          <Image
+            src="/brand/logo.svg"
+            alt="Trí Đức Media"
+            width={313}
+            height={135}
+            priority
+            unoptimized
+            className={`absolute inset-0 h-12 w-auto transition-opacity duration-300 sm:h-[52px] ${transparent ? "opacity-0" : "opacity-100"}`}
           />
         </Link>
 

@@ -27,7 +27,8 @@
     "privacy": "Data privacy",
     "fanpage": "facebook.com/triduccar.media",
     "taxCode": "Tax code",
-    "vatLine": "VAT e-invoices issued"
+    "vatLine": "VAT e-invoices issued",
+    "brandStory": "Our name & logo"
   },
   "home": {
     "servicesEyebrow": "Solutions",
@@ -1426,5 +1427,52 @@
     "ctaCheck": "Check in 60 seconds",
     "ctaZalo": "Message Đức on Zalo",
     "ctaBook": "Book a diagnosis"
+  },
+  "brand": {
+    "eyebrow": "Brand",
+    "heading": "Trí Đức Media. Owner away, customers still come.",
+    "sub": "From the name to every stroke of the logo, it all tells one story: a business with a system keeps growing, even when the owner is away.",
+    "videoAria": "Animated Trí Đức Media logo: the leaf-shaped Đ grows from root to tip",
+    "videoCaption": "Animated logo: the leaf-shaped Đ grows from root to tip and two young leaves sprout on the accents. The business grows from its own system.",
+    "name": {
+      "heading": "The name",
+      "items": [
+        {
+          "title": "Trí Đức",
+          "body": "The name of founder Tăng Trí Đức, who works directly with every owner. “Trí” means working with a system and with numbers. “Đức” means keeping our word with customers."
+        },
+        {
+          "title": "Media",
+          "body": "Communication is how new customers find a business and old ones come back. The legal name keeps the word “Car” (Tri Duc Car Media Co., Ltd.) to remember our start in the automotive trade."
+        }
+      ]
+    },
+    "logo": {
+      "heading": "The logo",
+      "items": [
+        {
+          "title": "The Đ is a leaf",
+          "body": "The curve of the Đ rises into a leaf tip, taller than the stem: a business outgrowing its old size. Like a great tree in the forest, it keeps growing while the gardener is away."
+        },
+        {
+          "title": "The midrib is the Đ crossbar",
+          "body": "The crossbar tapers and rises inside the leaf: growth comes from within (processes, team, numbers), not from the owner pushing harder."
+        },
+        {
+          "title": "Colour flows from root to tip",
+          "body": "Navy at the root turns sea blue, then green at the tip: water feeds the root and the leaf stays green. Solid foundations, lasting growth."
+        },
+        {
+          "title": "Two young leaves on the accents",
+          "body": "The acute accents on Í and Ứ are two new leaves: new businesses on the rise, and a Vietnamese brand carrying Vietnamese diacritics in its logo."
+        }
+      ]
+    },
+    "sloganLabel": "Slogan",
+    "slogan": "Chủ vắng, khách vẫn đông.",
+    "sloganBody": "In English: the owner is away, customers still come. Full promise: away 30 days, the business still grows.",
+    "missionLabel": "Mission",
+    "mission": "Free the owner. Elevate the business.",
+    "missionBody": "Every business needs a system, not an owner who carries everything. Vision and core values follow below."
   }
 }

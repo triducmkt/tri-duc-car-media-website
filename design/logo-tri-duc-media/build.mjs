@@ -354,9 +354,9 @@ const RIB_HW = 4.6 * (20 / 14);
 const RIB_TAIL = along(-16 - RIB_HW);
 const RIB_DEG = (Math.atan2(dir[1], dir[0]) * 180) / Math.PI;
 
-function animatedPieces(t, id) {
+function animatedPieces(t, id, withTag = true) {
   const nm = leafName(0, 18, t, id);
-  const L = lowerBlock(nm, true);
+  const L = lowerBlock(nm, withTag);
   const view = { minX: nm.x1 - PAD, minY: nm.top - PAD, w: nm.x2 - nm.x1 + 2 * PAD, h: L.bottom + PAD - (nm.top - PAD) };
   const gradId = `${id}-g`;
   const dark = t.spine === C.white;
@@ -390,8 +390,8 @@ function animFrame(t, id, sec) {
 }
 
 // SMIL animated SVG (plays once, holds the final frame; also works inside <img>).
-function animatedSVG(t, id) {
-  const P = animatedPieces(t, id);
+function animatedSVG(t, id, withTag = true) {
+  const P = animatedPieces(t, id, withTag);
   const { nm } = P;
   const spl = 'calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1" fill="freeze"';
   const dur = (k) => `begin="${TL[k][0]}s" dur="${f(TL[k][1] - TL[k][0])}s"`;
@@ -412,6 +412,9 @@ function animatedSVG(t, id) {
 }
 files["tri-duc-media-animated-color.svg"] = animatedSVG(themes.color, "an-c");
 files["tri-duc-media-animated-reverse.svg"] = animatedSVG(themes.reverse, "an-r");
+// web header/footer: same animation, name + MEDIA only
+files["tri-duc-media-animated-notag-color.svg"] = animatedSVG(themes.color, "an-nc", false);
+files["tri-duc-media-animated-notag-reverse.svg"] = animatedSVG(themes.reverse, "an-nr", false);
 
 
 const svgDir = path.join(OUT, "svg");

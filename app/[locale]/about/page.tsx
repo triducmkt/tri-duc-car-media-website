@@ -7,6 +7,7 @@ import { FounderPortrait } from "@/components/FounderPortrait";
 import { FounderAura } from "@/components/about/FounderAura";
 import { Reveal } from "@/components/Reveal";
 import { FounderJourney, type JourneyStop } from "@/components/about/FounderJourney";
+import { BrandStory } from "@/components/about/BrandStory";
 import { getCaseStudies } from "@/lib/sanity/queries";
 import { urlForImage } from "@/lib/sanity/image";
 
@@ -91,6 +92,10 @@ export default async function AboutPage({
 
       <FounderJourney stops={journey} />
 
+      {/* Brand story: animated logo, meaning of the name + logo, slogan, mission.
+          Vision (#tam-nhin) and core values (#gia-tri) follow. */}
+      <BrandStory />
+
       <section id="tam-nhin" className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
         <div
           aria-hidden
@@ -122,7 +127,7 @@ export default async function AboutPage({
         </Container>
       </section>
 
-      <section className="bg-paper-soft py-20 sm:py-28">
+      <section id="gia-tri" className="bg-paper-soft py-20 sm:py-28">
         <Container className="flex flex-col gap-12">
           <SectionHeading heading={t("valuesHeading")} align="center" />
           <div className="grid gap-6 sm:grid-cols-3">

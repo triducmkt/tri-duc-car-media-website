@@ -27,7 +27,8 @@
     "privacy": "Quyền riêng tư dữ liệu",
     "fanpage": "facebook.com/triduccar.media",
     "taxCode": "MST",
-    "vatLine": "Xuất hóa đơn VAT điện tử"
+    "vatLine": "Xuất hóa đơn VAT điện tử",
+    "brandStory": "Ý nghĩa tên & logo"
   },
   "home": {
     "servicesEyebrow": "Giải pháp",
@@ -1426,5 +1427,52 @@
     "ctaCheck": "Đo trong 60 giây",
     "ctaZalo": "Nhắn Zalo anh Đức",
     "ctaBook": "Đặt lịch chẩn đoán"
+  },
+  "brand": {
+    "eyebrow": "Thương hiệu",
+    "heading": "Trí Đức Media. Chủ vắng, khách vẫn đông.",
+    "sub": "Từ cái tên tới từng nét trong logo đều kể chung một câu chuyện: cơ sở có hệ thống thì tự lớn, kể cả khi người chủ vắng mặt.",
+    "videoAria": "Logo động Trí Đức Media: chữ Đ hình chiếc lá mọc từ gốc lên ngọn",
+    "videoCaption": "Logo động: chữ Đ hình chiếc lá mọc từ gốc lên ngọn, hai lá non nảy trên dấu sắc. Cơ sở tự lớn lên từ chính hệ thống của mình.",
+    "name": {
+      "heading": "Ý nghĩa tên",
+      "items": [
+        {
+          "title": "Trí Đức",
+          "body": "Tên của founder Tăng Trí Đức, người trực tiếp đồng hành với từng chủ cơ sở. “Trí” là làm có hệ thống, có số liệu. “Đức” là giữ chữ tín với khách hàng."
+        },
+        {
+          "title": "Media",
+          "body": "Truyền thông là công cụ để khách mới tìm đến và khách cũ quay lại. Tên pháp lý vẫn giữ chữ “Car” (Công ty TNHH Trí Đức Car Media) để nhớ những ngày khởi nghiệp từ ngành ô tô."
+        }
+      ]
+    },
+    "logo": {
+      "heading": "Ý nghĩa logo",
+      "items": [
+        {
+          "title": "Chữ Đ là một chiếc lá",
+          "body": "Phần cong của chữ Đ vươn thành đầu lá, cao hơn thân chữ: cơ sở lớn vượt tầm cũ của chính mình. Như cây lớn trong rừng (Đại Lâm Mộc), người trồng vắng mặt cây vẫn lớn."
+        },
+        {
+          "title": "Gân lá là nét gạch chữ Đ",
+          "body": "Nét gạch thon dần, vươn lên trong lòng lá: tăng trưởng đến từ bên trong (quy trình, đội ngũ, số liệu), không phải từ việc người chủ gồng thêm."
+        },
+        {
+          "title": "Màu chảy từ gốc lên ngọn",
+          "body": "Navy ở gốc chuyển sang xanh biển rồi xanh lá ở ngọn: nước nuôi gốc thì lá xanh. Nền móng vững thì tăng trưởng bền."
+        },
+        {
+          "title": "Hai lá non trên dấu sắc",
+          "body": "Dấu sắc trên chữ Í và Ứ là hai lá non mới nhú: những cơ sở mới đang lên, và một thương hiệu Việt mang chính dấu tiếng Việt trong logo."
+        }
+      ]
+    },
+    "sloganLabel": "Slogan",
+    "slogan": "Chủ vắng, khách vẫn đông.",
+    "sloganBody": "Lời hứa đầy đủ: Vắng 30 ngày, cơ sở vẫn tăng trưởng.",
+    "missionLabel": "Sứ mệnh",
+    "mission": "Giải phóng người chủ. Nâng tầm doanh nghiệp.",
+    "missionBody": "Mỗi cơ sở cần một hệ thống, không phải một ông chủ ôm hết việc. Tầm nhìn và giá trị cốt lõi ngay bên dưới."
   }
 }

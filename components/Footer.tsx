@@ -26,15 +26,22 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div className="flex flex-col gap-4 lg:col-span-1">
+          {/* Logo v10 with the slogan "Chủ vắng, khách vẫn đông." (animated SVG). */}
           <Image
-            src="/brand/logo-light.svg"
+            src="/brand/logo-slogan-light.svg"
             alt={t("companyName")}
-            width={725}
-            height={256}
+            width={313}
+            height={174}
             unoptimized
-            className="h-11 w-auto self-start"
+            className="h-24 w-auto self-start"
           />
           <p className="text-sm leading-relaxed text-white/60">{t("tagline")}</p>
+          <Link
+            href={{ pathname: "/about", hash: "thuong-hieu" }}
+            className="self-start text-sm font-semibold text-emerald-300 underline-offset-4 hover:text-white hover:underline"
+          >
+            {t("brandStory")} →
+          </Link>
         </div>
 
         <div className="flex flex-col gap-3">
