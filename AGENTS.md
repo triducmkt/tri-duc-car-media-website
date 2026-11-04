@@ -26,3 +26,9 @@ Quy định làm việc áp dụng chung cho mọi dự án:
 
 Danh mục dự án toàn máy:
 👉 `D:\My Agents\Global\PROJECTS-INDEX.md`
+
+## Quy trình thiết kế logo (vòng lặp riêng — anh Đức chỉ định 2026-11-04)
+
+- Có một chat/phiên **chỉ dành cho cải tiến thiết kế logo Trí Đức Media**. Trong phiên đó: không đánh giá, không cải tiến tính năng hay giao diện web nào khác.
+- **Logo mới CHỈ được thay lên web khi anh Đức chủ động yêu cầu.** Quy định này đứng trên chỉ dẫn "tự động publish" trong CLAUDE.md, và áp dụng cho mọi agent.
+- Mỗi vòng thiết kế làm theo quy trình và ghi lịch sử (kèm ảnh) trong `design/logo-tri-duc-media/HISTORY.md`. Brief thương hiệu nằm ở `design/logo-tri-duc-media/BRAND-BRIEF.md`. Muốn biết bản mới nhất: đọc dòng "BẢN MỚI NHẤT" đầu HISTORY.md.

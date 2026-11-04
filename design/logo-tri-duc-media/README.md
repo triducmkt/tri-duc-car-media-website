@@ -5,6 +5,8 @@ Website vẫn dùng logo cũ ở `public/brand/`.
 
 Xem nhanh toàn bộ bộ logo: `preview.png`.
 
+**Quy trình vòng lặp + lịch sử từng phiên bản (kèm ảnh): [HISTORY.md](HISTORY.md). Brief thương hiệu: [BRAND-BRIEF.md](BRAND-BRIEF.md).**
+
 ## Ý nghĩa
 - **Chữ Đ:** chữ ký của founder (Đức) và nét gạch ngang chỉ tiếng Việt mới có.
 - **Phần cong của chữ Đ là cung đồng hồ**, chuyển từ cam (dưới) lên đỏ (trên, vùng tua cao). Ý nghĩa: đo sức khỏe cơ sở, khớp với công cụ "Kiểm tra cơ sở 60 giây".
