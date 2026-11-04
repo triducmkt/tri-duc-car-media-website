@@ -1140,5 +1140,61 @@
       "so-lieu": "Unclear how much this month made or which channel customers come from."
     },
     "readArticle": "Read"
+  },
+  "gifts": {
+    "eyebrow": "A gift for your weakest spot",
+    "soon": "In the works",
+    "ready": "Available",
+    "formats": {
+      "ebook": "Guide",
+      "podcast": "Podcast",
+      "infographic": "Infographic",
+      "poster": "Poster",
+      "slides": "Slides",
+      "checklist": "Checklist",
+      "card": "Gift card"
+    },
+    "claimSoon": "Leave your name and Zalo: Duc sends it on Zalo as soon as it is published, with a first-step proposal for your shop.",
+    "claimReady": "Leave your name and Zalo to get the gift and a first-step proposal for your shop.",
+    "submit": "Get it on Zalo",
+    "libraryTitle": "Gift library for service business owners",
+    "librarySub": "Each one solves a common sticking point. Pick what you need, take the 60-second check, get it on Zalo.",
+    "pick": "Choose this gift",
+    "book": "Book now",
+    "chosen": "Your chosen gift",
+    "items": {
+      "nghi-3-ngay": {
+        "title": "Take 3 days off, the shop still runs",
+        "desc": "A 3-step guide to standardising operations so the owner can step away, from the shops Duc works with."
+      },
+      "giu-khach-cu": {
+        "title": "7 ways to bring customers back",
+        "desc": "An after-service care checklist, based on how AP Car Care gets 60%+ of revenue from returning customers."
+      },
+      "dung-du-deu": {
+        "title": "“Right – Enough – Steady” marketing",
+        "desc": "Slides for garages, spas and gyms: which channels, how much, how steadily, so new customers keep coming."
+      },
+      "kenh-online-1-nguoi": {
+        "title": "Online channels with one person",
+        "desc": "One page: what to post, where, how many times a week when one person handles content."
+      },
+      "so-lieu-1-trang": {
+        "title": "One-page weekly numbers",
+        "desc": "A template for revenue, costs and customer sources; 10 minutes a week to decide."
+      },
+      "5-truc-poster": {
+        "title": "5-axis shop health poster",
+        "desc": "Print it for the front desk: 5 questions owner and manager score monthly."
+      },
+      "chu-co-so-hoi": {
+        "title": "Podcast: owners ask, Duc answers",
+        "desc": "Real questions from garage, spa and gym owners, for the commute."
+      },
+      "the-15-phut": {
+        "title": "Free 15-minute diagnosis card",
+        "desc": "15 minutes with founder Tang Tri Duc on exactly where your shop is stuck."
+      }
+    }
   }
 }

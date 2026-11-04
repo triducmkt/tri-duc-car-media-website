@@ -1,5 +1,16 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronDown, Headphones, Image as ImageIcon, LayoutDashboard, ListChecks, Presentation, Ticket } from "lucide-react";
+import { GIFT_IDS, GIFT_MAP, type GiftFormat } from "@/lib/gifts";
+
+const FORMAT_ICON: Record<GiftFormat, typeof BookOpen> = {
+  ebook: BookOpen,
+  podcast: Headphones,
+  infographic: LayoutDashboard,
+  poster: ImageIcon,
+  slides: Presentation,
+  checklist: ListChecks,
+  card: Ticket,
+};
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { VatAdvantage } from "@/components/VatAdvantage";
@@ -34,6 +45,7 @@ export default async function CheckPage({
   const { nganh } = await searchParams;
   setRequestLocale(locale);
   const t = await getTranslations("check");
+  const tg = await getTranslations("gifts");
   const variant = (INDUSTRY_VARIANTS as readonly string[]).includes(nganh ?? "") ? nganh : undefined;
   const stats = t.raw("stats") as { v: string; l: string; c: string }[];
   const how = t.raw("how") as { t: string; d: string }[];
@@ -49,6 +61,43 @@ export default async function CheckPage({
   return (
     <>
       <ShopCheck variant={variant} />
+
+      {/* Gift library: every gift leads into the check (?qua=…) or straight to booking. */}
+      <section id="thu-vien-qua" className="bg-paper-soft py-16 sm:py-20">
+        <Container className="flex flex-col gap-8">
+          <SectionHeading eyebrow={tg("eyebrow")} heading={tg("libraryTitle")} sub={tg("librarySub")} align="center" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {GIFT_IDS.map((id) => {
+              const g = GIFT_MAP[id];
+              const Icon = FORMAT_ICON[g.format];
+              const ready = g.status === "ready";
+              return (
+                <div key={id} className="flex flex-col gap-3 rounded-2xl bg-paper p-5 ring-1 ring-black/5">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600">
+                      <Icon size={20} aria-hidden />
+                    </span>
+                    <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${ready ? "bg-emerald-500/10 text-emerald-700" : "bg-black/5 text-ink-muted"}`}>
+                      {tg(`formats.${g.format}`)} · {tg(g.status)}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-base font-bold leading-snug text-ink">{tg(`items.${id}.title`)}</h3>
+                  <p className="text-sm leading-relaxed text-ink-muted">{tg(`items.${id}.desc`)}</p>
+                  {ready ? (
+                    <Link href="/booking" className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700">
+                      {tg("book")} <ArrowRight size={15} aria-hidden />
+                    </Link>
+                  ) : (
+                    <a href={`?qua=${id}#kiem-tra`} className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700">
+                      {tg("pick")} <ArrowRight size={15} aria-hidden />
+                    </a>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-paper py-16 sm:py-20">
         <Container className="flex flex-col gap-8">

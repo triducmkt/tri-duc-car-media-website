@@ -8,6 +8,7 @@ const schema = z.object({
   phone: z.string().trim().regex(/^[0-9+\s.\-()]{8,30}$/),
   score: z.number().int().min(0).max(100),
   weakest: z.string().trim().max(80),
+  gift: z.string().trim().max(200).optional(),
   answers: z.array(z.string().trim().max(200)).max(8),
   attribution: z.record(z.string(), z.string().trim().max(200)).optional(),
   page: z.string().trim().max(300).optional(),
@@ -21,7 +22,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "invalid_input" }, { status: 400 });
   }
 
-  const { name, phone, score, weakest, answers, attribution, page } = parsed.data;
+  const { name, phone, score, weakest, gift, answers, attribution, page } = parsed.data;
   const source = Object.entries(attribution ?? {}).filter(([, v]) => v);
 
   try {
@@ -31,6 +32,7 @@ export async function POST(request: Request) {
         <p><strong>Họ tên:</strong> ${escapeHtml(name)}</p>
         <p><strong>Điện thoại / Zalo:</strong> ${escapeHtml(phone)}</p>
         <p><strong>Điểm sức khỏe:</strong> ${score}/100 · <strong>Yếu nhất:</strong> ${escapeHtml(weakest)}</p>
+        ${gift ? `<p><strong>🎁 Quà khách chọn nhận qua Zalo:</strong> ${escapeHtml(gift)}</p>` : ""}
         <p><strong>Câu trả lời:</strong></p>
         <ul>${answers.map((a) => `<li>${escapeHtml(a)}</li>`).join("")}</ul>
         ${

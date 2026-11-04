@@ -1140,5 +1140,61 @@
       "so-lieu": "Không rõ tháng này lời bao nhiêu, khách đến từ kênh nào."
     },
     "readArticle": "Đọc bài"
+  },
+  "gifts": {
+    "eyebrow": "Quà cho chỗ yếu của anh chị",
+    "soon": "Đang hoàn thiện",
+    "ready": "Có sẵn",
+    "formats": {
+      "ebook": "Cẩm nang",
+      "podcast": "Podcast",
+      "infographic": "Infographic",
+      "poster": "Poster",
+      "slides": "Slide",
+      "checklist": "Checklist",
+      "card": "Thẻ quà"
+    },
+    "claimSoon": "Để lại tên và Zalo: anh Đức gửi bản này qua Zalo ngay khi phát hành, kèm đề xuất bước đầu cho cơ sở của anh chị.",
+    "claimReady": "Để lại tên và Zalo để nhận quà và đề xuất bước đầu cho cơ sở của anh chị.",
+    "submit": "Nhận quà qua Zalo",
+    "libraryTitle": "Thư viện quà cho chủ cơ sở dịch vụ",
+    "librarySub": "Mỗi món giải một chỗ hay kẹt. Chọn món anh chị cần, làm bài kiểm tra 60 giây rồi nhận qua Zalo.",
+    "pick": "Chọn quà này",
+    "book": "Đặt lịch ngay",
+    "chosen": "Quà anh chị chọn",
+    "items": {
+      "nghi-3-ngay": {
+        "title": "Nghỉ 3 ngày, cơ sở vẫn chạy",
+        "desc": "Cẩm nang 3 bước chuẩn hóa vận hành để chủ rời cơ sở được, đúc kết từ các cơ sở anh Đức đồng hành."
+      },
+      "giu-khach-cu": {
+        "title": "7 việc giữ khách cũ quay lại",
+        "desc": "Checklist chăm sóc khách sau dịch vụ, dựa trên cách AP Car Care có hơn 60% doanh thu từ khách quay lại."
+      },
+      "dung-du-deu": {
+        "title": "Marketing “Đúng – Đủ – Đều”",
+        "desc": "Bộ slide cho xưởng xe, spa, gym: chọn kênh nào, làm bao nhiêu, đều đặn ra sao để khách mới đến đều."
+      },
+      "kenh-online-1-nguoi": {
+        "title": "Kênh online khi chỉ có 1 người làm",
+        "desc": "Một trang: đăng gì, đăng ở đâu, mỗi tuần mấy bài khi cơ sở chỉ có 1 người lo nội dung."
+      },
+      "so-lieu-1-trang": {
+        "title": "Bảng số liệu tuần 1 trang",
+        "desc": "Mẫu ghi doanh thu, chi phí, khách từ đâu tới; xem 10 phút mỗi tuần để quyết định."
+      },
+      "5-truc-poster": {
+        "title": "Poster 5 trục sức khỏe cơ sở",
+        "desc": "In treo ở quầy: 5 câu chủ và quản lý cùng chấm mỗi tháng."
+      },
+      "chu-co-so-hoi": {
+        "title": "Podcast: Chủ cơ sở hỏi – anh Đức trả lời",
+        "desc": "Những câu chủ gara, spa, gym hay hỏi, nghe trên đường đi làm."
+      },
+      "the-15-phut": {
+        "title": "Thẻ 15 phút chẩn đoán miễn phí",
+        "desc": "Trò chuyện 15 phút với founder Tăng Trí Đức về đúng chỗ cơ sở đang nghẽn."
+      }
+    }
   }
 }

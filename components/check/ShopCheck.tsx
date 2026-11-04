@@ -9,6 +9,8 @@ import { COMPANY } from "@/lib/company";
 import { ATTRIBUTION_KEYS, AXIS_KEYS, CHECK_AXES, LEVELS, checkScore, entryReferrer, weakestAxis, type CheckAxis } from "@/lib/shopCheck";
 import { trackEvent } from "@/lib/tracking/grid";
 import { CheckRadar } from "./CheckRadar";
+import { GiftBox } from "./GiftBox";
+import { GIFT_IDS, GIFT_MAP, giftForAxis, type GiftId } from "@/lib/gifts";
 
 /** Landing hero: "Kiểm tra cơ sở 60 giây". The 3D radar (CheckRadar) morphs
  *  live as the visitor answers; the result names the weakest axis, the first
@@ -25,6 +27,8 @@ type Values = Partial<Record<CheckAxis, number>>;
 
 export function ShopCheck({ variant }: { variant?: string }) {
   const t = useTranslations("check");
+  const tg = useTranslations("gifts");
+  const [giftPick, setGiftPick] = useState<GiftId | null>(null);
   const [values, setValues] = useState<Values>({});
   const [step, setStep] = useState(0);
   const [prefilled, setPrefilled] = useState(false);
@@ -35,6 +39,7 @@ export function ShopCheck({ variant }: { variant?: string }) {
   const done = step >= AXIS_KEYS.length;
   const score = checkScore(values);
   const weakest = weakestAxis(values);
+  const gift: GiftId = giftPick ?? giftForAxis(weakest);
   const heading = t.has(`heading.${variant}`) ? t(`heading.${variant}`) : t("heading.default");
 
   // Read the URL once: attribution (first landing wins for the session) and
@@ -60,7 +65,9 @@ export function ShopCheck({ variant }: { variant?: string }) {
       if (params.has(k) && Number.isInteger(n) && n >= 0 && n < LEVELS) pre[k] = n;
     }
     const first = AXIS_KEYS.findIndex((k) => pre[k] === undefined);
+    const qua = params.get("qua");
     /* eslint-disable react-hooks/set-state-in-effect -- read once from the URL on mount */
+    if (qua && (GIFT_IDS as string[]).includes(qua)) setGiftPick(qua as GiftId);
     setAttribution({ ...fresh, ...stored, ...(fresh.from ? { from: fresh.from } : {}) });
     if (Object.keys(pre).length) {
       setValues(pre);
@@ -78,7 +85,10 @@ export function ShopCheck({ variant }: { variant?: string }) {
     const nextStep = AXIS_KEYS.findIndex((k) => next[k] === undefined);
     setStep(nextStep < 0 ? AXIS_KEYS.length : nextStep);
     trackEvent("check_answer", { axis, level });
-    if (nextStep < 0) trackEvent("check_complete", { score: checkScore(next), weakest: weakestAxis(next), entry: attribution.entry_ref ?? "" });
+    if (nextStep < 0) {
+      trackEvent("check_complete", { score: checkScore(next), weakest: weakestAxis(next), entry: attribution.entry_ref ?? "" });
+      trackEvent("gift_reveal", { gift: giftPick ?? giftForAxis(weakestAxis(next)) });
+    }
   };
 
   const restart = () => {
@@ -111,6 +121,7 @@ export function ShopCheck({ variant }: { variant?: string }) {
           phone: fd.get("phone"),
           score,
           weakest: t(`axes.${weakest}.label`),
+          gift: `${tg(`items.${gift}.title`)} (${tg(`formats.${GIFT_MAP[gift].format}`)} · ${tg(GIFT_MAP[gift].status)})`,
           answers: answerLines(),
           attribution,
           page: window.location.pathname + window.location.search,
@@ -118,7 +129,7 @@ export function ShopCheck({ variant }: { variant?: string }) {
       });
       if (!res.ok) throw new Error(String(res.status));
       setStatus("done");
-      trackEvent("check_lead", { score, weakest, channel: "form", entry: attribution.entry_ref ?? "", from: attribution.from ?? "" });
+      trackEvent("check_lead", { score, weakest, channel: "form", gift, entry: attribution.entry_ref ?? "", from: attribution.from ?? "" });
       conversion("form");
     } catch {
       setStatus("error");
@@ -130,7 +141,7 @@ export function ShopCheck({ variant }: { variant?: string }) {
     // Start the copy and open Zalo inside the same tap, or popup blockers kick in.
     navigator.clipboard?.writeText(text).then(() => setZaloCopied(true), () => setZaloCopied(false));
     window.open(COMPANY.zalo, "_blank", "noopener");
-    trackEvent("check_lead", { score, weakest, channel: "zalo", entry: attribution.entry_ref ?? "", from: attribution.from ?? "" });
+    trackEvent("check_lead", { score, weakest, channel: "zalo", gift, entry: attribution.entry_ref ?? "", from: attribution.from ?? "" });
     conversion("zalo");
   };
 
@@ -242,16 +253,25 @@ export function ShopCheck({ variant }: { variant?: string }) {
                 </p>
               ) : (
                 <form onSubmit={submit} className="flex flex-col gap-3">
-                  <div>
-                    <h2 className="font-display text-xl font-bold">{t("leadTitle")}</h2>
-                    <p className="mt-1 text-sm text-white/65">{t("leadBody")}</p>
+                  {/* The gift for the weakest axis (or the one picked in the library). */}
+                  <div className="flex items-center gap-4 rounded-xl bg-gold-400/10 p-3 ring-1 ring-gold-400/35">
+                    <GiftBox open={done} className="h-24 w-24 shrink-0 sm:h-28 sm:w-28" />
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold uppercase tracking-[0.12em] text-gold-400">{giftPick ? tg("chosen") : tg("eyebrow")}</p>
+                      <h2 className="font-display text-lg font-bold leading-snug sm:text-xl">{tg(`items.${gift}.title`)}</h2>
+                      <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-white/60">
+                        <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold text-white/80">{tg(`formats.${GIFT_MAP[gift].format}`)}</span>
+                        <span className={GIFT_MAP[gift].status === "ready" ? "text-emerald-300" : "text-white/55"}>{tg(GIFT_MAP[gift].status)}</span>
+                      </p>
+                    </div>
                   </div>
+                  <p className="text-sm text-white/65">{GIFT_MAP[gift].status === "ready" ? tg("claimReady") : tg("claimSoon")}</p>
                   <div className="grid gap-3 sm:grid-cols-2">
                     <input name="name" required maxLength={120} autoComplete="name" placeholder={t("name")} aria-label={t("name")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-gold-400" />
                     <input name="phone" required inputMode="tel" pattern="[0-9+\s.\-()]{8,30}" autoComplete="tel" placeholder={t("phone")} aria-label={t("phone")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-gold-400" />
                   </div>
                   <button type="submit" disabled={status === "sending"} className="rounded-full bg-gold-400 px-5 py-3.5 text-base font-bold text-ink transition-colors hover:bg-gold-500 disabled:opacity-60">
-                    {status === "sending" ? t("sending") : t("submit")}
+                    {status === "sending" ? t("sending") : tg("submit")}
                   </button>
                   {status === "error" && <p role="alert" className="text-sm text-red-300">{t("error")}</p>}
                 </form>
