@@ -1581,5 +1581,17 @@
         "d": "4 steps, featured projects"
       }
     ]
+  },
+  "growth": {
+    "eyebrow": "Month-by-month growth",
+    "times": "{n}× higher",
+    "fromTo": "from {from} to {to}",
+    "sub": "{client} · {from} → {to} · one column per month",
+    "pick": "Pick a metric",
+    "loading": "Building the chart…",
+    "source": "Numbers from the monthly reports sent to the client, exactly as in the article below.",
+    "ctaLead": "How similar is your business to this one?",
+    "ctaTwin": "Check similarity (4 questions)",
+    "ctaZalo": "Ask Đức"
   }
 }

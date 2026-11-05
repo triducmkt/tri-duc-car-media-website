@@ -33,7 +33,10 @@ export function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+      // threshold 0 (any pixel past the margin): a ratio threshold never fires
+      // for blocks taller than ~6 screens, e.g. a whole case study on a phone,
+      // which then stayed invisible (hq/lesson.md ERR-WEB-007).
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
     );
     observer.observe(el);
     return () => observer.disconnect();

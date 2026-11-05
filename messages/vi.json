@@ -1581,5 +1581,17 @@
         "d": "4 bước đồng hành, dự án tiêu biểu"
       }
     ]
+  },
+  "growth": {
+    "eyebrow": "Tăng trưởng qua từng tháng",
+    "times": "gấp {n} lần",
+    "fromTo": "từ {from} lên {to}",
+    "sub": "{client} · {from} → {to} · mỗi cột là một tháng",
+    "pick": "Chọn chỉ số",
+    "loading": "Đang dựng đồ thị…",
+    "source": "Số liệu lấy từ báo cáo tháng gửi khách, đúng như trong bài bên dưới.",
+    "ctaLead": "Cơ sở của anh chị giống ca này bao nhiêu phần trăm?",
+    "ctaTwin": "Xem độ giống (4 câu)",
+    "ctaZalo": "Hỏi anh Đức"
   }
 }

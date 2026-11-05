@@ -10,6 +10,7 @@ import { getCaseStudies, getCaseStudyBySlug } from "@/lib/sanity/queries";
 import { urlForImage } from "@/lib/sanity/image";
 import type { SanityImage } from "@/lib/sanity/types";
 import { CaseTwin } from "@/components/case-studies/CaseTwin";
+import { GrowthSkyline } from "@/components/case-studies/GrowthSkyline";
 
 function bodyComponents(locale: "vi" | "en"): PortableTextComponents {
   return {
@@ -170,7 +171,9 @@ export default async function CaseStudyDetailPage({
                 </div>
               </div>
             ) : null}
-  
+
+            <GrowthSkyline slug={slug} client={clientName} />
+
             {body ? (
               <div className="prose prose-neutral max-w-none prose-headings:font-serif prose-a:text-gold-600 prose-strong:text-ink">
                 <PortableText value={body} components={bodyComponents(locale)} />
