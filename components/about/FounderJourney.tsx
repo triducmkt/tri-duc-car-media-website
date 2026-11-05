@@ -181,14 +181,14 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
           city.a[i] = 0.25 + h(5) * 0.45;
           city.s[i] = 2.5 + h(6) * 3;
           const warm = h(7) > 0.62;
-          city.c.set(warm ? [0.27, 0.82, 0.5] : [0.55, 0.68, 1], i * 3);
+          city.c.set(warm ? [0.43, 0.65, 0.97] : [0.55, 0.68, 1], i * 3);
         }
         city.flag();
 
         // Lane lights travelling down the road (the "work in motion").
         const LANE = 70;
         const lane = cloud(LANE);
-        for (let i = 0; i < LANE; i++) lane.c.set([0.27, 0.82, 0.5], i * 3);
+        for (let i = 0; i < LANE; i++) lane.c.set([0.43, 0.65, 0.97], i * 3);
 
         // Posts: a vertical beam + a beacon per milestone; the last one is the visitor's shop.
         const posts = cloud(total * 26);
@@ -245,7 +245,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
           for (let i = 0; i < total; i++) {
             lit[i] += ((i === nearest ? 1 : 0) - lit[i]) * 0.08;
             const last = i === total - 1;
-            const col = last ? [0.7, 0.85, 1] : [0.27, 0.82, 0.5];
+            const col = last ? [0.7, 0.85, 1] : [0.43, 0.65, 0.97];
             const b = beacons[i];
             for (let j = 0; j < 26; j++) {
               const idx = i * 26 + j;
@@ -335,7 +335,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
                 postLabels.current[i] = el;
               }}
               className={`absolute left-0 top-0 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-bold opacity-0 ${
-                i === total - 1 ? "bg-white text-ink" : "bg-gold-400 text-ink"
+                i === total - 1 ? "bg-white text-ink" : "bg-brand-400 text-ink"
               }`}
             >
               {i === total - 1 ? t("next.date") : copy[i]?.date}
@@ -365,7 +365,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
                   >
                     <span
                       className={`h-2.5 w-2.5 rounded-full ring-2 transition-all ${
-                        i === active ? "scale-125 bg-gold-400 ring-gold-400/40" : "bg-white/20 ring-transparent"
+                        i === active ? "scale-125 bg-brand-400 ring-brand-400/40" : "bg-white/20 ring-transparent"
                       }`}
                     />
                     {i === total - 1 ? t("next.title") : copy[i]?.date}
@@ -384,7 +384,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
                   }`}
                 >
                   <div className="flex items-center justify-between gap-3 text-xs font-semibold">
-                    <span className="rounded-full bg-gold-400 px-2.5 py-1 text-ink">{c.date}</span>
+                    <span className="rounded-full bg-brand-400 px-2.5 py-1 text-ink">{c.date}</span>
                     <span className="text-white/50">{t("stopLabel", { n: i + 1, total })}</span>
                   </div>
                   <div className="flex gap-4">
@@ -400,7 +400,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
                       <p className="mt-2 text-sm leading-relaxed text-white/75">{c.body}</p>
                     </div>
                   </div>
-                  <p className="rounded-xl bg-gold-400/10 px-3 py-2 text-sm font-semibold text-gold-400 ring-1 ring-gold-400/30">{c.metric}</p>
+                  <p className="rounded-xl bg-brand-400/10 px-3 py-2 text-sm font-semibold text-brand-400 ring-1 ring-brand-400/30">{c.metric}</p>
                   {stops[i].href && (
                     <Link
                       href={stops[i].href!}

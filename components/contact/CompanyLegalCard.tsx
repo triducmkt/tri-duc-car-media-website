@@ -86,10 +86,10 @@ export function CompanyLegalCard() {
     <div id="phap-ly" className="scroll-mt-28 overflow-hidden rounded-2xl bg-paper ring-1 ring-black/5">
       <div className="flex flex-wrap items-center justify-between gap-3 bg-ink px-5 py-4 text-white">
         <p className="flex items-center gap-2 text-sm font-bold">
-          <BadgeCheck className="h-5 w-5 text-gold-400" aria-hidden />
+          <BadgeCheck className="h-5 w-5 text-leaf-400" aria-hidden />
           {t("heading")}
         </p>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-500 px-3 py-1 text-xs font-bold text-ink">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-3 py-1 text-xs font-bold text-ink">
           <FileCheck2 className="h-3.5 w-3.5" aria-hidden /> {t("vatBadge")}
         </span>
       </div>

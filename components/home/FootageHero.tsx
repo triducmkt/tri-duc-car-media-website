@@ -192,7 +192,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
 
   const stepBlock = (
     <div key={step} className="flex animate-[fadeUp_.45s_ease] flex-col gap-1.5" aria-live="polite">
-      <p className="font-display text-sm font-semibold text-gold-400">
+      <p className="font-display text-sm font-semibold text-brand-400">
         {String(step + 1).padStart(2, "0")} / {String(STEPS).padStart(2, "0")}
       </p>
       <p className="font-display text-2xl font-bold sm:text-3xl">{s.title}</p>
@@ -207,7 +207,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
           <span
             key={item.title}
             className={`h-[3px] flex-1 rounded-full transition-colors duration-500 ${
-              k <= step ? "bg-gold-400" : "bg-white/15"
+              k <= step ? "bg-brand-400" : "bg-white/15"
             }`}
           />
         ))}
@@ -223,7 +223,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackEvent("hero_cta", { channel: "zalo" })}
-        className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-gold-500"
+        className="inline-flex items-center gap-2 rounded-full bg-brand-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-500"
       >
         <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
       </a>
@@ -247,12 +247,12 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
         {/* Soft ink glow behind the card (desktop). */}
         <div
           aria-hidden
-          className="absolute inset-0 hidden bg-[radial-gradient(60%_70%_at_72%_50%,rgba(69,209,127,0.08),transparent_70%)] lg:block"
+          className="absolute inset-0 hidden bg-[radial-gradient(60%_70%_at_72%_50%,rgba(110,166,247,0.08),transparent_70%)] lg:block"
         />
 
         <div className="relative mx-auto grid h-full w-full max-w-7xl lg:grid-cols-[1fr_minmax(0,0.82fr)] lg:items-center lg:gap-16 lg:px-8">
           {/* Footage: full-bleed on mobile, a 3:4 card on desktop. */}
-          <figure className="absolute inset-0 m-0 lg:relative lg:inset-auto lg:order-2 lg:mx-auto lg:aspect-[3/4] lg:w-[min(100%,calc(min(80svh,780px)*0.75))] lg:overflow-hidden lg:rounded-2xl lg:shadow-[0_40px_120px_-40px_rgba(0,0,0,0.8)] lg:ring-1 lg:ring-gold-400/25">
+          <figure className="absolute inset-0 m-0 lg:relative lg:inset-auto lg:order-2 lg:mx-auto lg:aspect-[3/4] lg:w-[min(100%,calc(min(80svh,780px)*0.75))] lg:overflow-hidden lg:rounded-2xl lg:shadow-[0_40px_120px_-40px_rgba(0,0,0,0.8)] lg:ring-1 lg:ring-brand-400/25">
             {/* Frame 1 doubles as the instant-paint poster and reduced-data fallback. */}
             <picture>
               <source media="(min-width: 1024px)" srcSet={frameUrl("d", 0)} />
@@ -281,7 +281,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
               ref={openRef}
               className="flex max-w-xl flex-col gap-4 [--open:1] max-lg:opacity-[var(--open)] max-lg:[transform:translateY(calc((1-var(--open))*-24px))]"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
                 {tHero("open.eyebrow")}
               </p>
               <h1 className="font-display text-[40px] font-bold leading-[1.05] sm:text-6xl lg:text-7xl">

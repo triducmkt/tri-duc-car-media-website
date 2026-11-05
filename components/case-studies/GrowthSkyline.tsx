@@ -69,7 +69,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
         for (let x = -5; x <= 5; x += 0.25) for (let z = -1.6; z <= 1.6; z += 0.25) floorPts.push(x, 0, z);
         const floorGeo = new THREE.BufferGeometry();
         floorGeo.setAttribute("position", new THREE.Float32BufferAttribute(floorPts, 3));
-        const floorMat = new THREE.PointsMaterial({ color: 0x3d7fb8, size: 0.035, transparent: true, opacity: 0.35 });
+        const floorMat = new THREE.PointsMaterial({ color: 0x5b7fc4, size: 0.035, transparent: true, opacity: 0.35 });
         stage.add(new THREE.Points(floorGeo, floorMat));
 
         // Columns: unit boxes scaled in Y; gradient blue base → gold top.
@@ -88,7 +88,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
             varying float vY; varying vec3 vN;
             void main() {
               vec3 base = vec3(0.16, 0.27, 0.55);
-              vec3 top = vec3(0.27, 0.82, 0.50);
+              vec3 top = vec3(0.27, 0.82, 0.5); // growth = brand green
               vec3 c = mix(base, top, smoothstep(0.15, 1.0, vY));
               float rim = 0.55 + 0.45 * abs(normalize(vN).x);
               gl_FragColor = vec4(c * rim, 0.92);
@@ -127,7 +127,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
             varying float vA;
             void main() {
               float d = length(gl_PointCoord - 0.5);
-              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(smoothstep(0.5, 0.0, d), 1.6) * vA);
+              gl_FragColor = vec4(vec3(0.43, 0.65, 0.97) * 1.2, pow(smoothstep(0.5, 0.0, d), 1.6) * vA);
             }`,
         });
         stage.add(new THREE.Points(glowGeo, glowMat));
@@ -135,7 +135,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
         // Trend line across the tops (redrawn per metric).
         const lineGeo = new THREE.BufferGeometry();
         lineGeo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(maxPoints * 3), 3));
-        const lineMat = new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0 });
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x6ea6f7, transparent: true, opacity: 0 });
         stage.add(new THREE.Line(lineGeo, lineMat));
 
         const H = 2.4; // tallest column
@@ -286,13 +286,13 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
     <div ref={cardRef} className="not-prose relative overflow-hidden rounded-3xl bg-ink p-5 text-white sm:p-7">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_80%,rgba(10,111,184,0.18),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_80%,rgba(66,133,244,0.18),transparent_70%)]"
       />
       <div className="relative flex flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-400">{t("eyebrow")}</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-400">{t("eyebrow")}</p>
           <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
-            {s[locale]}: <span className="text-gold-400">{headline}</span>
+            {s[locale]}: <span className="text-leaf-400">{headline}</span>
           </h2>
           <p className="text-sm text-white/60">
             {t("sub", { client, from: pts[0][locale], to: pts[pts.length - 1][locale] })}
@@ -311,7 +311,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
                   trackEvent("growth_metric", { slug, metric: x.key });
                 }}
                 className={`rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
-                  i === metric ? "border-gold-400 bg-gold-400 text-ink" : "border-white/20 text-white/70 hover:border-gold-400/60"
+                  i === metric ? "border-brand-400 bg-brand-400 text-ink" : "border-white/20 text-white/70 hover:border-brand-400/60"
                 }`}
               >
                 {x[locale]}
@@ -330,7 +330,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
                     valueLabels.current[i] = el;
                   }}
                   className={`absolute left-0 top-0 whitespace-nowrap font-display font-bold tabular-nums opacity-0 transition-opacity ${
-                    i === pts.length - 1 ? "text-base text-gold-400 sm:text-xl" : "text-[11px] text-white/85 sm:text-sm"
+                    i === pts.length - 1 ? "text-base text-leaf-400 sm:text-xl" : "text-[11px] text-white/85 sm:text-sm"
                   }`}
                 >
                   {pts[i] ? fmt.format(pts[i].value) : ""}
@@ -363,13 +363,13 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
           {t("source")}
         </p>
 
-        <div className="flex flex-col gap-3 rounded-2xl border border-gold-400/25 bg-gold-500/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 rounded-2xl border border-brand-400/25 bg-brand-500/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm font-semibold">{t("ctaLead")}</p>
           <div className="flex flex-wrap gap-2">
             <a
               href="#ban-sao"
               onClick={() => trackEvent("growth_cta", { slug, channel: "twin" })}
-              className="inline-flex items-center gap-1.5 rounded-full bg-gold-400 px-4 py-2.5 text-sm font-bold text-ink transition hover:bg-gold-500"
+              className="inline-flex items-center gap-1.5 rounded-full bg-brand-400 px-4 py-2.5 text-sm font-bold text-ink transition hover:bg-brand-500"
             >
               <ArrowDown className="h-4 w-4" aria-hidden /> {t("ctaTwin")}
             </a>

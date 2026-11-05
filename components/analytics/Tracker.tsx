@@ -132,7 +132,7 @@ export function Tracker() {
           <button
             type="button"
             onClick={() => decide("granted")}
-            className="min-h-9 px-3.5 text-xs rounded-full bg-gold-500 font-bold text-ink hover:bg-gold-400"
+            className="min-h-9 px-3.5 text-xs rounded-full bg-brand-500 font-bold text-ink hover:bg-brand-400"
           >
             {t("accept")}
           </button>
@@ -158,7 +158,7 @@ export function Tracker() {
           <button
             type="button"
             onClick={() => decide("granted")}
-            className="min-h-11 px-5 text-sm rounded-full bg-gold-500 font-bold text-ink hover:bg-gold-400"
+            className="min-h-11 px-5 text-sm rounded-full bg-brand-500 font-bold text-ink hover:bg-brand-400"
           >
             {t("accept")}
           </button>

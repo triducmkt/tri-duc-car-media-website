@@ -125,7 +125,7 @@ export function ChannelOrbit({ videos, id = "kenh" }: { videos: ChannelVideo[]; 
           dust.p.set([(r1 - Math.floor(r1) - 0.5) * 12, (r2 - Math.floor(r2) - 0.5) * 9, -2 - (r3 - Math.floor(r3)) * 3], i * 3);
           dust.a[i] = 0.18 + (r3 - Math.floor(r3)) * 0.25;
           dust.s[i] = 3;
-          dust.c.set([0.23, 0.64, 0.93], i * 3);
+          dust.c.set([0.43, 0.65, 0.97], i * 3);
         }
         dust.flag();
         scene.add(new THREE.Points(dust.geo, glowMat));
@@ -291,7 +291,7 @@ export function ChannelOrbit({ videos, id = "kenh" }: { videos: ChannelVideo[]; 
     <section ref={sectionRef} id={id} className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_40%,rgba(10,111,184,0.18),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_40%,rgba(66,133,244,0.18),transparent_60%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-start lg:gap-14">
         <div className="flex flex-col gap-6">
@@ -303,7 +303,7 @@ export function ChannelOrbit({ videos, id = "kenh" }: { videos: ChannelVideo[]; 
             <img
               src="/founder/tang-tri-duc.png"
               alt=""
-              className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full object-cover object-top ring-2 ring-gold-400/80 shadow-[0_0_40px_rgba(69,209,127,0.45)] sm:h-28 sm:w-28"
+              className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full object-cover object-top ring-2 ring-brand-400/80 shadow-[0_0_40px_rgba(110,166,247,0.45)] sm:h-28 sm:w-28"
             />
             {CHANNEL_KEYS.map((key, k) => {
               const Icon = ICONS[key];
@@ -428,7 +428,7 @@ function VideoPanel({ videos }: { videos: ChannelVideo[] }) {
                 if (first) setCurrentId(first.id);
               }}
               className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors ${
-                topic === tp ? "bg-gold-400 text-ink" : "bg-white/5 text-white/80 ring-1 ring-white/10 hover:bg-white/10"
+                topic === tp ? "bg-brand-400 text-ink" : "bg-white/5 text-white/80 ring-1 ring-white/10 hover:bg-white/10"
               }`}
             >
               {t(`topics.${tp}`)}
@@ -458,7 +458,7 @@ function VideoPanel({ videos }: { videos: ChannelVideo[] }) {
                     type="button"
                     onClick={() => choose(v)}
                     className={`flex w-full items-center gap-3 rounded-xl p-2 text-left transition-colors ${
-                      on ? "bg-white/12 ring-1 ring-gold-400/60" : "hover:bg-white/5"
+                      on ? "bg-white/12 ring-1 ring-brand-400/60" : "hover:bg-white/5"
                     }`}
                   >
                     <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-white/10">
@@ -574,7 +574,7 @@ function FacebookPanel() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={outbound("facebook")}
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3aa3ec] px-5 py-3 text-sm font-bold text-white hover:brightness-110"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6ea6f7] px-5 py-3 text-sm font-bold text-white hover:brightness-110"
       >
         <FacebookIcon size={18} /> {t("fanpageOpen")}
       </a>
@@ -612,14 +612,14 @@ function ZaloPanel() {
             type="button"
             onClick={() => copyStarter(i)}
             className={`flex items-start gap-2 rounded-xl p-3 text-left text-sm leading-snug transition-colors ${
-              copied === i ? "bg-[#3aa3ec]/15 ring-1 ring-[#3aa3ec]/60" : "bg-white/5 ring-1 ring-white/10 hover:bg-white/10"
+              copied === i ? "bg-[#6ea6f7]/15 ring-1 ring-[#6ea6f7]/60" : "bg-white/5 ring-1 ring-white/10 hover:bg-white/10"
             }`}
           >
-            {copied === i ? <Check size={16} className="mt-0.5 shrink-0 text-[#3aa3ec]" aria-hidden /> : <MessageCircle size={16} className="mt-0.5 shrink-0 text-white/50" aria-hidden />}
+            {copied === i ? <Check size={16} className="mt-0.5 shrink-0 text-[#6ea6f7]" aria-hidden /> : <MessageCircle size={16} className="mt-0.5 shrink-0 text-white/50" aria-hidden />}
             <span>“{s}”</span>
           </button>
         ))}
-        <p aria-live="polite" className="min-h-5 text-xs font-semibold text-[#3aa3ec]">
+        <p aria-live="polite" className="min-h-5 text-xs font-semibold text-[#6ea6f7]">
           {copied >= 0 ? t("copied") : ""}
         </p>
         <a
@@ -627,7 +627,7 @@ function ZaloPanel() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={outbound("zalo")}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3aa3ec] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6ea6f7] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
         >
           <MessageCircle size={18} aria-hidden /> {t("zaloOpen")}
         </a>
@@ -643,10 +643,10 @@ function PhonePanel({ onZalo }: { onZalo: () => void }) {
       <a
         href={`tel:${COMPANY.phone}`}
         onClick={outbound("phone")}
-        className="flex items-center gap-4 rounded-2xl bg-gold-400/10 p-5 ring-1 ring-gold-400/40 transition-colors hover:bg-gold-400/15"
+        className="flex items-center gap-4 rounded-2xl bg-brand-400/10 p-5 ring-1 ring-brand-400/40 transition-colors hover:bg-brand-400/15"
       >
-        <Phone size={30} className="text-gold-400" aria-hidden />
-        <span className="font-display text-3xl font-bold tracking-wide text-gold-400 sm:text-4xl">{COMPANY.phoneDisplay}</span>
+        <Phone size={30} className="text-brand-400" aria-hidden />
+        <span className="font-display text-3xl font-bold tracking-wide text-brand-400 sm:text-4xl">{COMPANY.phoneDisplay}</span>
       </a>
       <p className="text-sm text-white/70">{t("phoneNote")}</p>
       <div className="flex flex-wrap gap-3">
@@ -689,7 +689,7 @@ function VisitPanel() {
         <Link
           href="/booking"
           onClick={outbound("visit")}
-          className="inline-flex items-center gap-2 rounded-full bg-[#45d17f] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
+          className="inline-flex items-center gap-2 rounded-full bg-[#6ea6f7] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
         >
           <CalendarCheck size={18} aria-hidden /> {t("book")}
         </Link>

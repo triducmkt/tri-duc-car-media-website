@@ -75,11 +75,11 @@ export function SystemBuilder() {
         // Labels sit to the screen-right of each floor, whatever the tower's spin.
         const camRight = new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion);
 
-        scene.add(new THREE.AmbientLight(0xa9d3f2, 0.55));
+        scene.add(new THREE.AmbientLight(0xbfd2ff, 0.55));
         const key = new THREE.DirectionalLight(0xffffff, 1.3);
         key.position.set(4, 8, 5);
         scene.add(key);
-        const glow = new THREE.PointLight(0x45d17f, 0, 9, 1.6);
+        const glow = new THREE.PointLight(0x6ea6f7, 0, 9, 1.6);
         scene.add(glow);
 
         const world = new THREE.Group();
@@ -100,7 +100,7 @@ export function SystemBuilder() {
         const groundGeo = new THREE.BufferGeometry();
         groundGeo.setAttribute("position", new THREE.Float32BufferAttribute(groundPts, 3));
         const groundMat = new THREE.PointsMaterial({
-          color: 0x3aa3ec,
+          color: 0x6ea6f7,
           size: 0.035,
           transparent: true,
           opacity: 0.45,
@@ -117,7 +117,7 @@ export function SystemBuilder() {
               color: 0x131d33,
               metalness: 0.35,
               roughness: 0.35,
-              emissive: 0x17a85a,
+              emissive: 0x4285f4,
               emissiveIntensity: 0,
               transparent: true,
               opacity: 0.15,
@@ -125,7 +125,7 @@ export function SystemBuilder() {
           );
           const edges = new THREE.LineSegments(
             edgeGeo,
-            new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0.25 }),
+            new THREE.LineBasicMaterial({ color: 0x6ea6f7, transparent: true, opacity: 0.25 }),
           );
           const g = new THREE.Group();
           g.add(body, edges);
@@ -150,7 +150,7 @@ export function SystemBuilder() {
         const moteGeo = new THREE.BufferGeometry();
         moteGeo.setAttribute("position", new THREE.BufferAttribute(motePos, 3));
         const moteMat = new THREE.PointsMaterial({
-          color: 0x7be0a6,
+          color: 0x8fb6f9,
           size: 0.05,
           transparent: true,
           opacity: 0.9,
@@ -296,11 +296,11 @@ export function SystemBuilder() {
     <section ref={sectionRef} id="dung-he-thong" className="relative overflow-hidden bg-ink pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_75%_40%,rgba(69,209,127,0.12),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_75%_40%,rgba(110,166,247,0.12),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-2 lg:gap-x-14">
         <div className="flex flex-col gap-4 lg:col-start-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{t("eyebrow")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
           <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px]">
             {t("heading")}
           </h1>
@@ -316,13 +316,13 @@ export function SystemBuilder() {
               onClick={() => toggle(i)}
               className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-left text-sm font-medium transition-all ${
                 picked[i]
-                  ? "border-gold-400 bg-gold-400 text-ink shadow-lg shadow-gold-500/20"
+                  ? "border-brand-400 bg-brand-400 text-ink shadow-lg shadow-brand-500/20"
                   : "border-white/15 bg-white/[0.03] text-white/80 hover:border-white/40 hover:text-white"
               }`}
             >
               <span
                 className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border ${
-                  picked[i] ? "border-ink bg-ink text-gold-400" : "border-white/40"
+                  picked[i] ? "border-ink bg-ink text-brand-400" : "border-white/40"
                 }`}
               >
                 {picked[i] ? <Check size={11} strokeWidth={3} aria-hidden /> : null}
@@ -334,7 +334,7 @@ export function SystemBuilder() {
 
         {/* 3D tower — sticky beside the plan on desktop, between chips and plan on mobile. */}
         <div className="lg:col-start-2 lg:row-span-4 lg:row-start-1">
-          <div className="relative aspect-[4/3.4] w-full overflow-hidden rounded-3xl border border-white/10 bg-[radial-gradient(70%_60%_at_50%_70%,rgba(10,111,184,0.14),transparent_75%)] lg:sticky lg:top-24 lg:aspect-[4/4.4]">
+          <div className="relative aspect-[4/3.4] w-full overflow-hidden rounded-3xl border border-white/10 bg-[radial-gradient(70%_60%_at_50%_70%,rgba(66,133,244,0.14),transparent_75%)] lg:sticky lg:top-24 lg:aspect-[4/4.4]">
             <div ref={canvasHost} aria-hidden className="absolute inset-0 [&>canvas]:h-full [&>canvas]:w-full" />
             <div aria-hidden className="pointer-events-none absolute inset-0">
               {services.map((sv, i) => (
@@ -343,7 +343,7 @@ export function SystemBuilder() {
                   ref={(el) => {
                     labelRefs.current[i] = el;
                   }}
-                  className="absolute left-0 top-0 whitespace-nowrap rounded-full border border-gold-400/30 bg-ink/70 px-2.5 py-1 text-[11px] font-semibold text-gold-400 opacity-0 backdrop-blur sm:text-xs"
+                  className="absolute left-0 top-0 whitespace-nowrap rounded-full border border-brand-400/30 bg-ink/70 px-2.5 py-1 text-[11px] font-semibold text-brand-400 opacity-0 backdrop-blur sm:text-xs"
                 >
                   {sv.floor}
                 </div>
@@ -371,7 +371,7 @@ export function SystemBuilder() {
                 key={x.s}
                 className="flex animate-[fadeUp_.45s_ease] gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gold-500/15 font-display text-sm font-bold text-gold-400">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-500/15 font-display text-sm font-bold text-brand-400">
                   {floor + 1}
                 </span>
                 <div className="flex flex-col gap-1.5">
@@ -382,7 +382,7 @@ export function SystemBuilder() {
                   <ul className="mt-1 flex flex-col gap-1 text-sm text-white/75">
                     {services[x.s].deliver.map((d) => (
                       <li key={d} className="flex gap-2">
-                        <Check size={15} className="mt-0.5 shrink-0 text-gold-400" aria-hidden />
+                        <Check size={15} className="mt-0.5 shrink-0 text-leaf-400" aria-hidden />
                         {d}
                       </li>
                     ))}
@@ -399,7 +399,7 @@ export function SystemBuilder() {
           ) : (
             <form
               onSubmit={onSubmit}
-              className="flex flex-col gap-3 rounded-2xl border border-gold-400/25 bg-gold-500/[0.06] p-5"
+              className="flex flex-col gap-3 rounded-2xl border border-brand-400/25 bg-brand-500/[0.06] p-5"
             >
               <p className="font-display text-lg font-semibold">{t("ctaHeading")}</p>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -410,7 +410,7 @@ export function SystemBuilder() {
                   autoComplete="name"
                   placeholder={t("namePh")}
                   aria-label={t("namePh")}
-                  className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                  className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                 />
                 <input
                   name="phone"
@@ -421,13 +421,13 @@ export function SystemBuilder() {
                   autoComplete="tel"
                   placeholder={t("phonePh")}
                   aria-label={t("phonePh")}
-                  className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                  className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                 />
               </div>
               <button
                 type="submit"
                 disabled={status === "sending" || plan.length === 0}
-                className="min-h-12 rounded-full bg-gold-500 px-6 text-[15px] font-bold text-ink transition-colors hover:bg-gold-400 disabled:opacity-50"
+                className="min-h-12 rounded-full bg-brand-500 px-6 text-[15px] font-bold text-ink transition-colors hover:bg-brand-400 disabled:opacity-50"
               >
                 {status === "sending" ? t("sending") : t("submit")}
               </button>

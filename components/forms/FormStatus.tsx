@@ -12,7 +12,7 @@ export function FormStatus({
   const Icon = type === "success" ? CheckCircle2 : AlertTriangle;
   const tone =
     type === "success"
-      ? "bg-emerald-50 text-emerald-800 ring-emerald-200"
+      ? "bg-leaf-500/10 text-leaf-600 ring-leaf-500/30"
       : "bg-red-50 text-red-800 ring-red-200";
 
   return (

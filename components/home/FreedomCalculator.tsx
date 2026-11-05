@@ -137,7 +137,7 @@ export function FreedomCalculator() {
 
           <fieldset className="flex flex-col gap-4">
             <legend className="mb-4 font-display text-base font-semibold text-ink">
-              <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink text-sm text-gold-400">
+              <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink text-sm text-brand-400">
                 1
               </span>
               {t("step1")}
@@ -159,13 +159,13 @@ export function FreedomCalculator() {
                   >
                     <span
                       className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-colors ${
-                        on ? "bg-gold-500 text-ink" : "bg-white ring-1 ring-black/15"
+                        on ? "bg-brand-500 text-ink" : "bg-white ring-1 ring-black/15"
                       }`}
                     >
                       {on ? <Check size={15} strokeWidth={3} aria-hidden /> : null}
                     </span>
                     {label}
-                    <span className={`text-xs font-semibold ${on ? "text-gold-400" : "text-ink-muted"}`}>
+                    <span className={`text-xs font-semibold ${on ? "text-brand-400" : "text-ink-muted"}`}>
                       {t("hoursShort", { n: TASK_HOURS[i].h })}
                     </span>
                   </button>
@@ -176,7 +176,7 @@ export function FreedomCalculator() {
 
           <fieldset className="flex flex-col gap-4">
             <legend className="mb-1 font-display text-base font-semibold text-ink">
-              <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink text-sm text-gold-400">
+              <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink text-sm text-brand-400">
                 2
               </span>
               {t("step2")}
@@ -191,7 +191,7 @@ export function FreedomCalculator() {
                   onClick={() => setRate(r)}
                   className={`min-h-12 rounded-xl px-3 text-[15px] font-semibold transition-all ${
                     rate === r
-                      ? "bg-brand-500 text-white shadow-[0_8px_24px_-8px_rgba(10,111,184,0.6)]"
+                      ? "bg-brand-500 text-white shadow-[0_8px_24px_-8px_rgba(66,133,244,0.6)]"
                       : "bg-paper-soft text-ink ring-1 ring-inset ring-black/10 hover:ring-brand-500/40"
                   }`}
                 >
@@ -207,13 +207,13 @@ export function FreedomCalculator() {
           <div className="relative overflow-hidden rounded-3xl bg-ink p-7 text-white shadow-[0_30px_80px_-30px_rgba(11,18,32,0.8)] sm:p-9">
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(69,209,127,0.18),transparent)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(110,166,247,0.18),transparent)]"
             />
             <div className="relative flex flex-col gap-7" aria-live="polite">
               <div>
                 <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/55">{t("resultWeek")}</p>
                 <p className="mt-1 flex items-baseline gap-3">
-                  <span className="font-serif text-6xl font-bold tabular-nums text-gold-400 sm:text-7xl">
+                  <span className="font-serif text-6xl font-bold tabular-nums text-brand-400 sm:text-7xl">
                     {Math.round(animHours)}
                   </span>
                   <span className="text-lg text-white/80">{t("resultWeekUnit")}</span>
@@ -240,7 +240,7 @@ export function FreedomCalculator() {
                     <span
                       key={i}
                       className={`aspect-square rounded-[2px] transition-colors duration-300 ${
-                        i < filled ? "bg-gold-500" : "bg-white/10"
+                        i < filled ? "bg-brand-500" : "bg-white/10"
                       }`}
                     />
                   ))}
@@ -272,7 +272,7 @@ export function FreedomCalculator() {
                       autoComplete="name"
                       placeholder={t("namePh")}
                       aria-label={t("namePh")}
-                      className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                      className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                     />
                     <input
                       name="phone"
@@ -283,13 +283,13 @@ export function FreedomCalculator() {
                       autoComplete="tel"
                       placeholder={t("phonePh")}
                       aria-label={t("phonePh")}
-                      className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                      className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="min-h-12 rounded-full bg-gold-500 px-6 text-[15px] font-bold text-ink transition-colors hover:bg-gold-400 disabled:opacity-60"
+                    className="min-h-12 rounded-full bg-brand-500 px-6 text-[15px] font-bold text-ink transition-colors hover:bg-brand-400 disabled:opacity-60"
                   >
                     {status === "sending" ? t("sending") : t("submit")}
                   </button>

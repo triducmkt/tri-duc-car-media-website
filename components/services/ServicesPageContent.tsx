@@ -63,19 +63,19 @@ export function ServicesPageContent() {
                 <div
                   className={`flex flex-col gap-5 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 sm:flex-row sm:items-start sm:gap-8 ${
                     isRecommended
-                      ? "bg-gold-500/[0.06] ring-2 ring-gold-500 shadow-lg shadow-gold-500/10"
-                      : "bg-white/[0.03] ring-1 ring-white/10 hover:ring-gold-500/30"
+                      ? "bg-brand-500/[0.06] ring-2 ring-brand-500 shadow-lg shadow-brand-500/10"
+                      : "bg-white/[0.03] ring-1 ring-white/10 hover:ring-brand-500/30"
                   }`}
                 >
                   <span
                     className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${
-                      isRecommended ? "bg-gold-500 text-ink" : "bg-gold-500/10 text-gold-400"
+                      isRecommended ? "bg-brand-500 text-ink" : "bg-brand-500/10 text-brand-400"
                     }`}
                   >
                     <Icon size={26} aria-hidden />
                   </span>
                   <div className="flex flex-1 flex-col gap-3">
-                    <span className="font-serif text-xs font-semibold uppercase tracking-[0.14em] text-gold-400">
+                    <span className="font-serif text-xs font-semibold uppercase tracking-[0.14em] text-brand-400">
                       0{index + 1}
                     </span>
                     <h2 className="font-display text-xl font-semibold text-white">{service.title}</h2>
@@ -83,7 +83,7 @@ export function ServicesPageContent() {
                       {service.description}
                     </p>
                     {isRecommended && (
-                      <span className="inline-flex w-fit items-center rounded-full bg-gold-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink">
+                      <span className="inline-flex w-fit items-center rounded-full bg-brand-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink">
                         {tDiag("recBadge")}
                       </span>
                     )}
@@ -91,7 +91,7 @@ export function ServicesPageContent() {
                       {SERVICES[index] ? (
                         <span className="font-display text-lg font-bold text-white">
                           {formatVnd(SERVICES[index].price.amount, locale)}
-                          {SERVICES[index].price.estimated ? <span className="text-gold-400">*</span> : null}
+                          {SERVICES[index].price.estimated ? <span className="text-brand-400">*</span> : null}
                           <span className="ml-1 text-sm font-medium text-white/55">
                             {SERVICES[index].price.unit === "month" ? tp("perMonth") : tp("once")}
                           </span>

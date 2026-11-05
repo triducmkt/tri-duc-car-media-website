@@ -39,13 +39,13 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
   ctx.fillRect(0, 0, W, H);
   // Soft gold glow top-left.
   const glow = ctx.createRadialGradient(140, 60, 0, 140, 60, 420);
-  glow.addColorStop(0, "rgba(69,209,127,0.18)");
-  glow.addColorStop(1, "rgba(69,209,127,0)");
+  glow.addColorStop(0, "rgba(110,166,247,0.18)");
+  glow.addColorStop(1, "rgba(110,166,247,0)");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
 
   // Perforation.
-  ctx.strokeStyle = "rgba(69,209,127,0.45)";
+  ctx.strokeStyle = "rgba(110,166,247,0.45)";
   ctx.lineWidth = 3;
   ctx.setLineDash([10, 12]);
   ctx.beginPath();
@@ -55,7 +55,7 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
   ctx.setLineDash([]);
 
   ctx.textBaseline = "alphabetic";
-  ctx.fillStyle = "#45d17f";
+  ctx.fillStyle = "#6ea6f7";
   ctx.font = `700 24px ${font}`;
   ctx.fillText(c.brand, 52, 72);
   ctx.fillStyle = "#ffffff";
@@ -63,7 +63,7 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
   ctx.fillText(c.title, 52, 128);
 
   const field = (label: string, value: string, x: number, y: number, maxW: number) => {
-    ctx.fillStyle = "rgba(69,209,127,0.75)";
+    ctx.fillStyle = "rgba(110,166,247,0.75)";
     ctx.font = `600 19px ${font}`;
     ctx.fillText(label, x, y);
     ctx.fillStyle = value === "—" ? "rgba(255,255,255,0.3)" : "#ffffff";
@@ -83,7 +83,7 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
 
   // Stub.
   ctx.textAlign = "center";
-  ctx.fillStyle = "#45d17f";
+  ctx.fillStyle = "#6ea6f7";
   ctx.font = `800 88px ${font}`;
   ctx.fillText(d.stub, (CUT + W) / 2, 250);
   ctx.fillStyle = "rgba(255,255,255,0.7)";
@@ -105,8 +105,8 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
     ctx.save();
     ctx.translate(590, 300);
     ctx.rotate(-0.26);
-    ctx.strokeStyle = "rgba(69,209,127,0.92)";
-    ctx.fillStyle = "rgba(69,209,127,0.92)";
+    ctx.strokeStyle = "rgba(110,166,247,0.92)";
+    ctx.fillStyle = "rgba(110,166,247,0.92)";
     ctx.lineWidth = 7;
     ctx.beginPath();
     ctx.roundRect(-150, -58, 300, 116, 18);
@@ -127,7 +127,7 @@ function drawBack(ctx: CanvasRenderingContext2D, c: Copy, font: string) {
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
   ctx.textAlign = "center";
-  ctx.fillStyle = "#45d17f";
+  ctx.fillStyle = "#6ea6f7";
   ctx.font = `900 64px ${font}`;
   ctx.fillText(c.brand, W / 2, H / 2);
   ctx.fillStyle = "rgba(255,255,255,0.6)";
@@ -254,7 +254,7 @@ export function BookingStudio() {
         backMesh.position.z = -0.012;
         const edge = new THREE.LineLoop(
           new THREE.BufferGeometry().setFromPoints(shape.getPoints(48)),
-          new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0.85 }),
+          new THREE.LineBasicMaterial({ color: 0x6ea6f7, transparent: true, opacity: 0.85 }),
         );
         edge.position.z = 0.002;
         card.add(frontMesh, backMesh, edge);
@@ -266,7 +266,7 @@ export function BookingStudio() {
         key.position.set(-3, 4, 6);
         scene.add(key);
         // A sheen that sweeps across the card.
-        const sheen = new THREE.PointLight(0xb8f0cf, 0, 6, 1.5);
+        const sheen = new THREE.PointLight(0xd3e3fd, 0, 6, 1.5);
         scene.add(sheen);
 
         // Motes; a burst throws them outward when the booking is sent.
@@ -281,7 +281,7 @@ export function BookingStudio() {
         const moteGeo = new THREE.BufferGeometry();
         moteGeo.setAttribute("position", new THREE.BufferAttribute(mp, 3));
         const moteMat = new THREE.PointsMaterial({
-          color: 0x7be0a6,
+          color: 0x8fb6f9,
           size: 0.045,
           transparent: true,
           opacity: 0.7,
@@ -440,7 +440,7 @@ export function BookingStudio() {
   const chip = (on: boolean) =>
     `rounded-2xl border px-4 py-3 text-left transition-all ${
       on
-        ? "border-gold-400 bg-gold-400 text-ink shadow-lg shadow-gold-500/20"
+        ? "border-brand-400 bg-brand-400 text-ink shadow-lg shadow-brand-500/20"
         : "border-white/15 bg-white/[0.03] text-white/85 hover:border-white/40"
     }`;
 
@@ -448,11 +448,11 @@ export function BookingStudio() {
     <section ref={sectionRef} id="dat-lich" className="relative overflow-hidden bg-ink pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_45%_at_78%_35%,rgba(69,209,127,0.13),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_45%_at_78%_35%,rgba(110,166,247,0.13),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         <div className="flex flex-col gap-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{t("eyebrow")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
           <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px]">{t("heading")}</h1>
           <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
         </div>
@@ -468,7 +468,7 @@ export function BookingStudio() {
             <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-white/70">
               {trust.map((item) => (
                 <li key={item} className="inline-flex items-center gap-1.5">
-                  <Check size={15} className="text-gold-400" aria-hidden />
+                  <Check size={15} className="text-leaf-400" aria-hidden />
                   {item}
                 </li>
               ))}
@@ -484,7 +484,7 @@ export function BookingStudio() {
                 href={ZALO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-2 rounded-full bg-gold-400 px-5 py-3 text-sm font-bold text-ink hover:bg-gold-500"
+                className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-400 px-5 py-3 text-sm font-bold text-ink hover:bg-brand-500"
               >
                 <MessageCircle size={16} aria-hidden /> {t("zaloAfter")}
               </a>
@@ -557,7 +557,7 @@ export function BookingStudio() {
                     aria-label={t("namePh")}
                     value={guest}
                     onChange={(e) => setGuest(e.target.value)}
-                    className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                    className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                   />
                   <input
                     name="phone"
@@ -568,7 +568,7 @@ export function BookingStudio() {
                     autoComplete="tel"
                     placeholder={t("phonePh")}
                     aria-label={t("phonePh")}
-                    className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                    className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                   />
                 </div>
                 <details className="group rounded-xl border border-white/10 px-4 py-3 text-sm text-white/70">
@@ -580,7 +580,7 @@ export function BookingStudio() {
                       autoComplete="organization"
                       placeholder={t("companyPh")}
                       aria-label={t("companyPh")}
-                      className="min-h-11 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                      className="min-h-11 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                     />
                     <textarea
                       name="message"
@@ -588,7 +588,7 @@ export function BookingStudio() {
                       maxLength={2000}
                       placeholder={t("messagePh")}
                       aria-label={t("messagePh")}
-                      className="rounded-xl bg-white px-4 py-3 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-gold-400"
+                      className="rounded-xl bg-white px-4 py-3 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                     />
                   </div>
                 </details>
@@ -600,7 +600,7 @@ export function BookingStudio() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="min-h-13 rounded-full bg-gold-500 px-6 py-3.5 text-base font-bold text-ink transition-colors hover:bg-gold-400 disabled:opacity-60"
+                  className="min-h-13 rounded-full bg-brand-500 px-6 py-3.5 text-base font-bold text-ink transition-colors hover:bg-brand-400 disabled:opacity-60"
                 >
                   {status === "sending" ? t("sending") : t("submit")}
                 </button>

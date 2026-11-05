@@ -79,7 +79,7 @@ export default async function AboutPage({
               {t("name")}
             </h1>
             <p className="text-lg font-medium text-white/80">{t("roleLine")}</p>
-            <p className="font-serif bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-2xl font-semibold text-transparent">
+            <p className="font-serif bg-gradient-to-r from-brand-400 to-brand-600 bg-clip-text text-2xl font-semibold text-transparent">
               {t("quote")}
             </p>
             <p className="max-w-xl text-base leading-relaxed text-white/70">{t("bodyIntro")}</p>
@@ -99,10 +99,10 @@ export default async function AboutPage({
       <section id="tam-nhin" className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_0%,rgba(69,209,127,0.16),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_0%,rgba(110,166,247,0.16),transparent)]"
         />
         <Container className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-400">{t("visionEyebrow")}</span>
+          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-400">{t("visionEyebrow")}</span>
           <h2 className="font-serif text-3xl font-bold leading-tight tracking-tight sm:text-5xl">{t("visionHeading")}</h2>
           <p className="text-lg leading-relaxed text-white/75 sm:text-xl">{t("vision")}</p>
           <Button href="/services" variant="primary" className="mt-2">
@@ -115,7 +115,7 @@ export default async function AboutPage({
         <Container className="mx-auto flex max-w-3xl flex-col gap-10">
           {bodyBlocks.map((block, index) => (
             <Reveal key={block.heading} delay={index * 100} className="flex gap-5">
-              <span className="font-serif shrink-0 text-3xl font-bold text-gold-500/70">
+              <span className="font-serif shrink-0 text-3xl font-bold text-brand-500/70">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <div className="flex flex-col gap-3 border-l border-black/10 pl-5">
@@ -133,8 +133,8 @@ export default async function AboutPage({
           <div className="grid gap-6 sm:grid-cols-3">
             {values.map(({ Icon, title, body }, index) => (
               <Reveal key={title} delay={index * 90}>
-                <div className="flex h-full flex-col items-center gap-3 rounded-2xl bg-paper p-7 text-center ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 hover:ring-gold-500/30">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600">
+                <div className="flex h-full flex-col items-center gap-3 rounded-2xl bg-paper p-7 text-center ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 hover:ring-brand-500/30">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                     <Icon size={22} aria-hidden />
                   </span>
                   <h3 className="font-display text-base font-semibold text-ink">{title}</h3>

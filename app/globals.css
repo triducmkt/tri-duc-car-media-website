@@ -2,26 +2,31 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Brand palette = logo v10 (design/logo-tri-duc-media): navy #0B1220, sea blue #0A6FB8,
-     green #17A85A + white. The "gold-*" token names are kept for the existing
-     classes but now carry the brand GREEN accent (2026-11-05). */
+  /* Trí Đức Media color standard (anh Đức, 2026-11-05 — docs/color-system.md):
+     blue #4285F4 30% · black (ink) 30% · white 25% · green #17A85A 10% ·
+     other colors 5% (decoration / necessary highlights only).
+     Run `npm run colors:check` before committing UI work. */
   --color-paper: #ffffff;
   --color-paper-soft: #f5f7fb;
 
-  --color-brand-50: #e6f1fa;
-  --color-brand-100: #cfe4f5;
-  --color-brand-300: #6fb0e3;
-  --color-brand-500: #0a6fb8;
-  --color-brand-600: #085d9b;
-  --color-brand-700: #064a7c;
+  /* BLUE — primary brand color: CTAs, links, eyebrows, highlights, 3D accents. */
+  --color-brand-50: #eaf1fe;
+  --color-brand-100: #d3e3fd;
+  --color-brand-300: #8fb6f9;
+  --color-brand-400: #6ea6f7; /* text/accents on dark backgrounds */
+  --color-brand-500: #4285f4;
+  --color-brand-600: #2f6fe0; /* text on white (AA) */
+  --color-brand-700: #2557b3;
 
+  /* BLACK — dark sections, body text. */
   --color-ink: #0b1220;
   --color-ink-soft: #131d33;
   --color-ink-muted: #4b5568;
 
-  --color-gold-400: #45d17f;
-  --color-gold-500: #17a85a;
-  --color-gold-600: #11864a;
+  /* GREEN — secondary accent, ~10%: growth, savings, success, checkmarks. */
+  --color-leaf-400: #45d17f;
+  --color-leaf-500: #17a85a;
+  --color-leaf-600: #11864a;
 
   --background: var(--color-paper);
   --foreground: var(--color-ink);
@@ -34,6 +39,7 @@
   --color-brand-50: var(--color-brand-50);
   --color-brand-100: var(--color-brand-100);
   --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
   --color-brand-500: var(--color-brand-500);
   --color-brand-600: var(--color-brand-600);
   --color-brand-700: var(--color-brand-700);
@@ -42,9 +48,9 @@
   --color-ink-soft: var(--color-ink-soft);
   --color-ink-muted: var(--color-ink-muted);
 
-  --color-gold-400: var(--color-gold-400);
-  --color-gold-500: var(--color-gold-500);
-  --color-gold-600: var(--color-gold-600);
+  --color-leaf-400: var(--color-leaf-400);
+  --color-leaf-500: var(--color-leaf-500);
+  --color-leaf-600: var(--color-leaf-600);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

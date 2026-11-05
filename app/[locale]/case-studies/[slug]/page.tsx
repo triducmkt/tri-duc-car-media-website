@@ -78,7 +78,7 @@ export default async function CaseStudyDetailPage({
     <>
       <article className="bg-paper py-16 sm:py-24">
         <Container className="mx-auto flex max-w-3xl flex-col gap-8">
-          <Link href="/case-studies" className="text-sm font-semibold text-gold-600">
+          <Link href="/case-studies" className="text-sm font-semibold text-brand-600">
             ← {t("backToList")}
           </Link>
   
@@ -90,13 +90,13 @@ export default async function CaseStudyDetailPage({
                 </span>
               ) : null}
               {item.industry ? (
-                <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">
+                <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
                   {item.industry[locale] || item.industry.vi}
                 </span>
               ) : null}
               {item.isOngoing ? (
                 <span className="flex items-center gap-1.5 rounded-full bg-paper-soft px-3 py-1 text-xs font-semibold text-ink ring-1 ring-black/5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+                  <span className="h-1.5 w-1.5 rounded-full bg-leaf-500" aria-hidden />
                   {t("ongoingBadge")}
                 </span>
               ) : null}
@@ -124,7 +124,7 @@ export default async function CaseStudyDetailPage({
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 rounded-full border border-black/10 px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:border-gold-500/40 hover:text-gold-600"
+                    className="flex items-center gap-1.5 rounded-full border border-black/10 px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:border-brand-500/40 hover:text-brand-600"
                   >
                     {link.label[locale] || link.label.vi}
                     <ExternalLink size={13} aria-hidden />
@@ -161,7 +161,7 @@ export default async function CaseStudyDetailPage({
                         {stat.label[locale] || stat.label.vi}
                       </span>
                       {stat.note ? (
-                        <span className="mt-1 flex items-center gap-1 text-xs font-semibold text-gold-600">
+                        <span className="mt-1 flex items-center gap-1 text-xs font-semibold text-leaf-600">
                           <TrendingUp size={13} aria-hidden />
                           {stat.note[locale] || stat.note.vi}
                         </span>
@@ -175,7 +175,7 @@ export default async function CaseStudyDetailPage({
             <GrowthSkyline slug={slug} client={clientName} />
 
             {body ? (
-              <div className="prose prose-neutral max-w-none prose-headings:font-serif prose-a:text-gold-600 prose-strong:text-ink">
+              <div className="prose prose-neutral max-w-none prose-headings:font-serif prose-a:text-brand-600 prose-strong:text-ink">
                 <PortableText value={body} components={bodyComponents(locale)} />
               </div>
             ) : null}

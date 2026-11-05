@@ -19,6 +19,8 @@ File `hq/00-INDEX.md` là HQ của riêng dự án này (liên kết trực ti�
 
 **Sau khi hoàn thành một phần việc đáng kể** (bất kể bạn là agent nào — Claude, Codex, Antigravity...): cập nhật mục "TRẠNG THÁI HIỆN TẠI" trong `hq/00-INDEX.md` ở trên + thêm 1 mục mới vào `hq/01-REQUIREMENTS-LOG.md` (cùng thư mục) — để agent tiếp theo tiếp tục ngay lập tức mà không mất ngữ cảnh.
 
+**Màu sắc (quy cách chung toàn dự án, anh Đức chốt 2026-11-05 — bắt buộc):** xanh dương `#4285F4` 30% (màu chủ đạo, token `brand-*`) · đen `#0B1220` 30% (`ink`) · trắng 25% (`paper`) · xanh lá `#17A85A` 10% (`leaf-*`, chỉ cho nghĩa tích cực: tăng trưởng, tiết kiệm, thành công, dấu tích) · màu khác 5% (trang trí / điểm nhấn cần thiết; đỏ chỉ cho cảnh báo). Token ở `app/globals.css`, quy tắc chi tiết: `docs/color-system.md`. Chạy `npm run colors:check` trước khi commit. Không dùng bảng màu mặc định Tailwind (amber, emerald, sky…).
+
 **Typography (bắt buộc khi sửa giao diện):** font chỉ được chọn ở `lib/fonts.ts` (3 vai trò body / display / serif). Quy tắc + băng ghế font tiếng Việt đã kiểm tra: `docs/font-system.md`. Chạy `npm run fonts:check` trước khi commit. Không ghi tên font trong component.
 
 Quy định làm việc áp dụng chung cho mọi dự án:

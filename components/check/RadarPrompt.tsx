@@ -42,11 +42,11 @@ export function RadarPrompt({ axis, slug }: { axis: CheckAxis; slug: string }) {
               key={o}
               type="button"
               onClick={() => go(level)}
-              className="flex items-center gap-3 rounded-xl bg-white/5 px-4 py-3 text-left text-sm font-semibold ring-1 ring-white/12 transition-colors hover:bg-white/10 hover:ring-gold-400/50"
+              className="flex items-center gap-3 rounded-xl bg-white/5 px-4 py-3 text-left text-sm font-semibold ring-1 ring-white/12 transition-colors hover:bg-white/10 hover:ring-brand-400/50"
             >
               <span className="flex gap-0.5" aria-hidden>
                 {Array.from({ length: LEVELS - 1 }, (_, b) => (
-                  <span key={b} className={`h-3 w-1.5 rounded-sm ${b < level ? "bg-gold-400" : "bg-white/20"}`} />
+                  <span key={b} className={`h-3 w-1.5 rounded-sm ${b < level ? "bg-brand-400" : "bg-white/20"}`} />
                 ))}
               </span>
               <span className="flex-1">{o}</span>
@@ -62,7 +62,7 @@ export function RadarPrompt({ axis, slug }: { axis: CheckAxis; slug: string }) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("prompt_cta", { to: "zalo", from: slug })}
-            className="inline-flex items-center gap-1.5 text-[#3aa3ec] hover:text-white"
+            className="inline-flex items-center gap-1.5 text-[#6ea6f7] hover:text-white"
           >
             <MessageCircle size={15} aria-hidden /> Zalo
           </a>

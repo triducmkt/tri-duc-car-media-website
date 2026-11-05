@@ -25,8 +25,8 @@ export function ServicesGrid() {
             const Icon = icons[index % icons.length];
             return (
               <Reveal key={service.title} delay={index * 80}>
-                <div className="group flex h-full flex-col gap-4 rounded-2xl bg-paper-soft p-7 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-gold-500/30">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600">
+                <div className="group flex h-full flex-col gap-4 rounded-2xl bg-paper-soft p-7 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-brand-500/30">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                     <Icon size={22} aria-hidden />
                   </span>
                   <h3 className="font-display text-lg font-semibold text-ink">{service.title}</h3>

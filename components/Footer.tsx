@@ -38,7 +38,7 @@ export function Footer() {
           <p className="text-sm leading-relaxed text-white/60">{t("tagline")}</p>
           <Link
             href={{ pathname: "/about", hash: "thuong-hieu" }}
-            className="self-start text-sm font-semibold text-emerald-300 underline-offset-4 hover:text-white hover:underline"
+            className="self-start text-sm font-semibold text-leaf-400 underline-offset-4 hover:text-white hover:underline"
           >
             {t("brandStory")} →
           </Link>
@@ -71,7 +71,7 @@ export function Footer() {
               <li key={service.slug}>
                 <Link
                   href={{ pathname: "/services/[slug]", params: { slug: service.slug } }}
-                  className="text-sm text-white/75 transition-colors hover:text-gold-400"
+                  className="text-sm text-white/75 transition-colors hover:text-brand-400"
                 >
                   {service.name[locale]}
                 </Link>
@@ -80,7 +80,7 @@ export function Footer() {
             <li>
               <Link
                 href={{ pathname: "/services", hash: "bang-gia" }}
-                className="text-sm font-semibold text-gold-400 transition-colors hover:text-white"
+                className="text-sm font-semibold text-brand-400 transition-colors hover:text-white"
               >
                 {t("priceList")}
               </Link>

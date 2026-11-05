@@ -113,7 +113,7 @@ export function ConsultReel() {
         const litLine = new THREE.Line(
           litGeo,
           new THREE.LineBasicMaterial({
-            color: 0x45d17f,
+            color: 0x6ea6f7,
             transparent: true,
             opacity: 0.75,
             blending: THREE.AdditiveBlending,
@@ -158,7 +158,7 @@ export function ConsultReel() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float glow = smoothstep(0.5, 0.0, d);
-              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(glow, 1.8) * vA);
+              gl_FragColor = vec4(vec3(0.43, 0.65, 0.97) * 1.2, pow(glow, 1.8) * vA);
             }`,
         });
         scene.add(new THREE.Points(geo, ptMat));
@@ -320,7 +320,7 @@ export function ConsultReel() {
 
         <div className="relative mx-auto flex h-full w-full max-w-7xl flex-col justify-between px-4 pb-6 pt-24 sm:px-6 sm:pt-28 lg:px-8">
           <div className="flex max-w-2xl flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {t("eyebrow")}
             </p>
             <h2 className="font-display text-[26px] font-bold leading-tight sm:text-4xl lg:text-5xl">
@@ -330,7 +330,7 @@ export function ConsultReel() {
 
           <div className="flex flex-col gap-5">
             <div key={step} className="flex max-w-xl animate-[fadeUp_.5s_ease] flex-col gap-1.5" aria-live="polite">
-              <p className="font-display text-sm font-semibold text-gold-400">
+              <p className="font-display text-sm font-semibold text-brand-400">
                 {String(step + 1).padStart(2, "0")} / {String(STEPS).padStart(2, "0")}
               </p>
               <p className="font-display text-2xl font-bold sm:text-3xl">{s.title}</p>
@@ -353,7 +353,7 @@ export function ConsultReel() {
                     onClick={() => jump(k)}
                     style={{ left: `${NODE_X[k]}%` }}
                     className={`absolute top-0 -translate-x-1/2 whitespace-nowrap rounded-full px-2 py-1.5 text-[11px] font-semibold transition-colors sm:px-3 sm:text-sm ${
-                      k === step ? "text-gold-400" : "text-white/55 hover:text-white"
+                      k === step ? "text-brand-400" : "text-white/55 hover:text-white"
                     }`}
                   >
                     <span className="hidden sm:inline">{item.title}</span>
@@ -370,7 +370,7 @@ export function ConsultReel() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent("reel_cta", { channel: "zalo" })}
-                  className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-gold-500"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-500"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
                 </a>

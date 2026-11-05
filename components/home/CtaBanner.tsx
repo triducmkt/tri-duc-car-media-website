@@ -10,11 +10,11 @@ export function CtaBanner() {
     <section className="relative overflow-hidden bg-ink py-20 sm:py-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_0%,rgba(69,209,127,0.16),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_0%,rgba(110,166,247,0.16),transparent)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-gold-500/10 blur-3xl"
+        className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-500/10 blur-3xl"
       />
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <h2 className="font-serif max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -27,7 +27,7 @@ export function CtaBanner() {
           <Button
             href="/booking"
             variant="secondary"
-            className="!bg-gold-500 !text-ink hover:!bg-gold-400"
+            className="!bg-brand-500 !text-ink hover:!bg-brand-400"
           >
             {t("ctaBannerButton")}
           </Button>

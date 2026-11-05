@@ -29,28 +29,28 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
   const index = SERVICES.findIndex((x) => x.slug === slug);
   const inCombos = COMBOS.filter((c) => c.parts.some((p) => p.slug === slug));
   const others = SERVICES.filter((x) => x.slug !== slug);
-  const star = s.price.estimated ? <span className="text-gold-400">*</span> : null;
+  const star = s.price.estimated ? <span className="text-brand-400">*</span> : null;
 
   return (
     <>
       <section className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_60%_at_80%_30%,rgba(10,111,184,0.25),transparent_70%),radial-gradient(35%_40%_at_10%_90%,rgba(23,168,90,0.14),transparent_70%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_60%_at_80%_30%,rgba(66,133,244,0.25),transparent_70%),radial-gradient(35%_40%_at_10%_90%,rgba(66,133,244,0.14),transparent_70%)]"
         />
         <Container className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div className="flex flex-col gap-4">
             <Link href="/services" className="inline-flex w-fit items-center gap-1.5 text-sm text-white/60 hover:text-white">
               <ArrowLeft className="h-4 w-4" aria-hidden /> {t("back")}
             </Link>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {t("pillar", { n: index + 1 })}
             </p>
             <h1 className="font-display text-3xl font-bold leading-tight sm:text-5xl">{s.name[locale]}</h1>
             <p className="max-w-2xl text-white/75 sm:text-lg">{s.pitch[locale]}</p>
           </div>
 
-          <div className="flex flex-col gap-3 rounded-3xl bg-white/[0.05] p-6 ring-1 ring-gold-500/40">
+          <div className="flex flex-col gap-3 rounded-3xl bg-white/[0.05] p-6 ring-1 ring-brand-500/40">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">{t("priceFrom")}</p>
             <p className="font-display text-3xl font-bold sm:text-4xl">
               {formatVnd(s.price.amount, locale)}
@@ -72,7 +72,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                 href={COMPANY.zalo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-3 text-sm font-bold text-ink transition hover:bg-gold-400"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-400"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
               </a>
@@ -95,7 +95,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
               <ul className="grid gap-3 sm:grid-cols-2">
                 {s.includes[locale].map((x) => (
                   <li key={x} className="flex items-start gap-3 rounded-2xl bg-paper-soft p-4 text-sm text-ink ring-1 ring-black/5">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-600">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-leaf-500/15 text-leaf-600">
                       <Check className="h-4 w-4" aria-hidden />
                     </span>
                     {x}
@@ -138,10 +138,10 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                   <Link
                     key={c.key}
                     href={{ pathname: "/services", hash: "bang-gia" }}
-                    className="flex items-center justify-between gap-3 rounded-2xl bg-white/[0.05] p-4 ring-1 ring-white/10 hover:ring-gold-500/60"
+                    className="flex items-center justify-between gap-3 rounded-2xl bg-white/[0.05] p-4 ring-1 ring-white/10 hover:ring-brand-500/60"
                   >
                     <span>
-                      <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-gold-400">{c.step[locale]}</span>
+                      <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-400">{c.step[locale]}</span>
                       <span className="block font-semibold">{c.name[locale]}</span>
                     </span>
                     <span className="text-right text-sm font-bold">
@@ -177,7 +177,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         </Container>
         <Container className="mt-12">
           <p className="border-t border-black/10 pt-6 text-xs leading-relaxed text-ink-muted">
-            {HAS_ESTIMATES ? <span className="font-semibold text-gold-600">(*) </span> : null}
+            {HAS_ESTIMATES ? <span className="font-semibold text-brand-600">(*) </span> : null}
             {HAS_ESTIMATES ? t("footnote") : t("note")}
           </p>
         </Container>

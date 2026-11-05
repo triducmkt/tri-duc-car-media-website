@@ -82,7 +82,7 @@ export function HeatmapOverlay({ accessKey, path, onExit }: { accessKey: string;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Faint 1 cm grid so every sensor is visible.
-    ctx.strokeStyle = "rgba(10,111,184,0.12)";
+    ctx.strokeStyle = "rgba(66,133,244,0.12)";
     ctx.lineWidth = 1;
     ctx.beginPath();
     for (let x = 0; x <= size.w; x += CM_PX) {
@@ -141,7 +141,7 @@ export function HeatmapOverlay({ accessKey, path, onExit }: { accessKey: string;
               key={m}
               type="button"
               onClick={() => setMetric(m)}
-              className={`rounded-lg px-2 py-1.5 text-xs font-semibold ${metric === m ? "bg-gold-500 text-ink" : "bg-white/10 hover:bg-white/15"}`}
+              className={`rounded-lg px-2 py-1.5 text-xs font-semibold ${metric === m ? "bg-brand-500 text-ink" : "bg-white/10 hover:bg-white/15"}`}
             >
               {METRIC_LABEL[m]}
             </button>
@@ -168,7 +168,7 @@ export function HeatmapOverlay({ accessKey, path, onExit }: { accessKey: string;
               : `Không tải được dữ liệu (${data?.error ?? "?"}).`}
         </p>
         {layout !== autoLayout ? (
-          <p className="mt-1 text-xs text-gold-400">Lưu ý: đang xem dữ liệu {layout} trên màn hình khác cỡ — vị trí có thể lệch.</p>
+          <p className="mt-1 text-xs text-brand-400">Lưu ý: đang xem dữ liệu {layout} trên màn hình khác cỡ — vị trí có thể lệch.</p>
         ) : null}
       </div>
     </>,

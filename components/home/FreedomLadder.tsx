@@ -57,15 +57,15 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
     <section id={variant === "full" ? "thang-tu-do" : "loi-hua"} className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_15%_0%,rgba(69,209,127,0.14),transparent),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(10,111,184,0.12),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_15%_0%,rgba(110,166,247,0.14),transparent),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(66,133,244,0.12),transparent)]"
       />
       <Container className="relative flex flex-col gap-14">
         {/* ── Promise ── */}
         <div className="flex max-w-3xl flex-col gap-5">
-          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-400">{t("eyebrow")}</span>
+          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-400">{t("eyebrow")}</span>
           <h2 className="font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl">{t("heading")}</h2>
           <p className="text-lg leading-relaxed text-white/75 sm:text-xl">{t("sub")}</p>
-          <p className="text-sm font-semibold text-gold-400/90">{t("goal")}</p>
+          <p className="text-sm font-semibold text-brand-400/90">{t("goal")}</p>
         </div>
 
         {/* ── Ladder (stairs) ── */}
@@ -88,9 +88,9 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                     style={{ height: `${STAIR_HEIGHTS[i]}%` }}
                     className={`flex flex-col justify-between rounded-t-xl p-2.5 transition-all duration-300 sm:p-4 ${
                       on
-                        ? "bg-gold-500 text-ink shadow-[0_-12px_40px_-12px_rgba(69,209,127,0.7)]"
+                        ? "bg-brand-500 text-ink shadow-[0_-12px_40px_-12px_rgba(110,166,247,0.7)]"
                         : passed
-                          ? "bg-gold-500/25 text-white ring-1 ring-inset ring-gold-500/40"
+                          ? "bg-brand-500/25 text-white ring-1 ring-inset ring-brand-500/40"
                           : "bg-white/[0.06] text-white ring-1 ring-inset ring-white/10 group-hover:bg-white/[0.1]"
                     }`}
                   >
@@ -122,7 +122,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                 <p className="text-xs font-medium uppercase tracking-[0.12em] text-white/45">
                   {t("phoneTitle", { span: level.span })}
                 </p>
-                <p className={`mt-1 font-display text-lg font-semibold ${calm ? "text-gold-400" : "text-white"}`}>
+                <p className={`mt-1 font-display text-lg font-semibold ${calm ? "text-brand-400" : "text-white"}`}>
                   {calm ? t("calm") : t("onlyYou", { n: level.calls.length })}
                 </p>
                 <ul key={active} className="mt-4 flex flex-col gap-2.5" aria-live="polite">
@@ -131,12 +131,12 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                       key={c.text}
                       style={{ animation: "fadeUp .45s ease both", animationDelay: `${i * 110}ms` }}
                       className={`flex items-start gap-3 rounded-2xl p-3.5 ${
-                        calm ? "bg-gold-500/10 ring-1 ring-gold-500/20" : "bg-white/[0.07] ring-1 ring-white/10"
+                        calm ? "bg-brand-500/10 ring-1 ring-brand-500/20" : "bg-white/[0.07] ring-1 ring-white/10"
                       }`}
                     >
                       <span
                         className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                          calm ? "bg-gold-500/20 text-gold-400" : "bg-red-500/90 text-white"
+                          calm ? "bg-brand-500/20 text-brand-400" : "bg-red-500/90 text-white"
                         }`}
                       >
                         {calm ? <CheckCircle2 size={16} aria-hidden /> : <PhoneIncoming size={15} aria-hidden />}
@@ -148,7 +148,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                     </li>
                   ))}
                 </ul>
-                {level.note ? <p className="mt-4 text-sm leading-relaxed text-gold-400/90">{level.note}</p> : null}
+                {level.note ? <p className="mt-4 text-sm leading-relaxed text-brand-400/90">{level.note}</p> : null}
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50">
                 {t("packageLabel")} · {level.step}
               </span>
-              <h3 className="font-serif text-3xl font-bold text-gold-400 sm:text-4xl">{level.name}</h3>
+              <h3 className="font-serif text-3xl font-bold text-brand-400 sm:text-4xl">{level.name}</h3>
             </div>
             <dl className="grid gap-4 sm:grid-cols-3">
               {[
@@ -184,7 +184,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {level.build.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-[15px] leading-snug text-white/80">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-500 text-ink">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-500 text-ink">
                       <Check size={12} strokeWidth={3} aria-hidden />
                     </span>
                     {b}
@@ -214,7 +214,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
         {variant === "teaser" ? (
           <Link
             href={{ pathname: "/services", hash: "thang-tu-do" }}
-            className="inline-flex w-fit items-center gap-2 text-base font-semibold text-gold-400 underline-offset-4 hover:underline"
+            className="inline-flex w-fit items-center gap-2 text-base font-semibold text-brand-400 underline-offset-4 hover:underline"
           >
             {t("more")}
             <ArrowRight size={16} aria-hidden />
@@ -224,7 +224,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
             {/* ── 5 criteria: why 30 days ── */}
             <div className="flex flex-col gap-8 border-t border-white/10 pt-14">
               <div className="flex max-w-2xl flex-col gap-3">
-                <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-400">{t("whyEyebrow")}</span>
+                <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-400">{t("whyEyebrow")}</span>
                 <h3 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">{t("whyHeading")}</h3>
                 <p className="text-base leading-relaxed text-white/70 sm:text-lg">{t("whySub")}</p>
               </div>
@@ -232,7 +232,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                 {why.map((w, i) => (
                   <Reveal key={w.t} delay={i * 80}>
                     <li className="flex h-full flex-col gap-3 rounded-2xl bg-white/[0.04] p-6 ring-1 ring-white/10">
-                      <span className="font-serif text-3xl font-bold text-gold-400">0{i + 1}</span>
+                      <span className="font-serif text-3xl font-bold text-brand-400">0{i + 1}</span>
                       <span className="font-display text-lg font-semibold text-white">{w.t}</span>
                       <span className="text-sm leading-relaxed text-white/65">{w.b}</span>
                     </li>
@@ -242,7 +242,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
             </div>
 
             {/* ── Absence test ── */}
-            <div className="grid gap-8 rounded-3xl bg-gold-500 p-7 text-ink sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
+            <div className="grid gap-8 rounded-3xl bg-brand-500 p-7 text-ink sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
               <div className="flex flex-col gap-3">
                 <span className="text-sm font-bold uppercase tracking-[0.14em] text-ink/60">{t("testEyebrow")}</span>
                 <h3 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("testHeading")}</h3>
@@ -251,7 +251,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
               <ul className="flex flex-col gap-3">
                 {tests.map((x) => (
                   <li key={x} className="flex items-start gap-3 rounded-2xl bg-ink/[0.07] p-4 text-[15px] font-medium leading-snug">
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ink text-gold-400">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ink text-brand-400">
                       <Check size={14} strokeWidth={3} aria-hidden />
                     </span>
                     {x}

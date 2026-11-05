@@ -30,7 +30,7 @@ import { trackEvent } from "@/lib/tracking/grid";
 type Pick = { kind: "combo"; key: string } | { kind: "single"; slug: string };
 type Seg = { label: string; value: number };
 
-const SEG_COLORS = [0x0a6fb8, 0x17a85a, 0x3aa3ec, 0x45d17f, 0x085d9b];
+const SEG_COLORS = [0x2557b3, 0x4285f4, 0x8fb6f9, 0x2f6fe0, 0x6ea6f7]; // 5 distinct brand blues
 const H = 2.6;
 const hexOf = (i: number) => `#${SEG_COLORS[i % SEG_COLORS.length].toString(16).padStart(6, "0")}`;
 
@@ -109,7 +109,7 @@ export function PriceStudio() {
         }
         const dotGeo = new THREE.BufferGeometry();
         dotGeo.setAttribute("position", new THREE.Float32BufferAttribute(dots, 3));
-        const dotMat = new THREE.PointsMaterial({ color: 0x3aa3ec, size: 0.03, transparent: true, opacity: 0.45 });
+        const dotMat = new THREE.PointsMaterial({ color: 0x6ea6f7, size: 0.03, transparent: true, opacity: 0.45 });
         stage.add(new THREE.Points(dotGeo, dotMat));
 
         const W = 1.15;
@@ -241,14 +241,14 @@ export function PriceStudio() {
     trackEvent("price_pick", p.kind === "combo" ? { combo: p.key } : { service: p.slug });
   };
 
-  const star = (est: boolean) => (est ? <span className="text-gold-400">*</span> : null);
+  const star = (est: boolean) => (est ? <span className="text-brand-400">*</span> : null);
 
   return (
     <section ref={sectionRef} id="bang-gia" className="relative overflow-hidden bg-ink py-20 text-white sm:py-24">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_45%_at_25%_40%,rgba(10,111,184,0.22),transparent_70%),radial-gradient(35%_35%_at_80%_80%,rgba(23,168,90,0.12),transparent_70%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_45%_at_25%_40%,rgba(66,133,244,0.22),transparent_70%),radial-gradient(35%_35%_at_80%_80%,rgba(66,133,244,0.12),transparent_70%)]" />
       <Container className="relative flex flex-col gap-10">
         <div className="flex max-w-3xl flex-col gap-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{t("eyebrow")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
           <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
           <p className="text-white/70 sm:text-lg">{t("sub")}</p>
         </div>
@@ -268,7 +268,7 @@ export function PriceStudio() {
                         className="border-t border-ink/30"
                       />
                     ))}
-                    <div className="absolute inset-x-0 border-t-2 border-gold-400" style={{ bottom: `${(price / Math.max(list, 1)) * 100}%` }} />
+                    <div className="absolute inset-x-0 border-t-2 border-brand-400" style={{ bottom: `${(price / Math.max(list, 1)) * 100}%` }} />
                   </div>
                   <ul className="flex flex-col gap-1.5 pb-2 text-xs text-white/80">
                     {segs.map((sg, i) => (
@@ -295,7 +295,7 @@ export function PriceStudio() {
                 <span ref={listLabel} className="absolute left-0 top-0 whitespace-nowrap text-right text-[10px] text-white/55 line-through opacity-0 sm:text-xs">
                   {t("separate")} {shortVnd(list, locale)}
                 </span>
-                <span ref={priceLabel} className="absolute left-0 top-0 whitespace-nowrap rounded-full bg-gold-500 px-2.5 py-1 text-[11px] font-bold text-ink opacity-0 sm:text-sm">
+                <span ref={priceLabel} className="absolute left-0 top-0 whitespace-nowrap rounded-full bg-leaf-500 px-2.5 py-1 text-[11px] font-bold text-ink opacity-0 sm:text-sm">
                   {combo && combo.price === null ? t("contact") : `${shortVnd(price, locale)}${(combo ? combo.estimated : single?.price.estimated) ? "*" : ""}`}
                 </span>
               </div>
@@ -312,7 +312,7 @@ export function PriceStudio() {
                 </p>
               )}
               {saving > 0 ? (
-                <p className="flex items-center gap-1.5 text-sm font-semibold text-gold-400">
+                <p className="flex items-center gap-1.5 text-sm font-semibold text-leaf-400">
                   <Sparkles className="h-4 w-4" aria-hidden />
                   {t("saving", { amount: formatVnd(saving, locale), pct: Math.round((saving / list) * 100) })}
                 </p>
@@ -342,11 +342,11 @@ export function PriceStudio() {
                       aria-pressed={on}
                       onClick={() => choose({ kind: "combo", key: c.key })}
                       className={`flex flex-col gap-2 rounded-2xl p-4 text-left transition-all ${
-                        on ? "bg-gold-500/[0.12] ring-2 ring-gold-500" : "bg-white/[0.03] ring-1 ring-white/10 hover:ring-gold-500/50"
+                        on ? "bg-brand-500/[0.12] ring-2 ring-brand-500" : "bg-white/[0.03] ring-1 ring-white/10 hover:ring-brand-500/50"
                       }`}
                     >
                       <span className="flex items-center justify-between gap-2">
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-gold-400">{c.step[locale]}</span>
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-400">{c.step[locale]}</span>
                         <span className="text-[11px] text-white/50">{c.duration[locale]}</span>
                       </span>
                       <span className="font-display text-lg font-bold">{c.name[locale]}</span>
@@ -366,7 +366,7 @@ export function PriceStudio() {
                         <ul className="flex flex-col gap-1">
                           {c.parts.map((p) => (
                             <li key={p.slug} className="flex items-start gap-1.5 text-xs text-white/70">
-                              <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-400" aria-hidden />
+                              <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-leaf-400" aria-hidden />
                               {serviceBySlug(p.slug)!.short[locale]}
                               {p.months && serviceBySlug(p.slug)!.price.unit === "month" ? ` · ${t("months", { n: p.months })}` : ""}
                             </li>
@@ -385,12 +385,12 @@ export function PriceStudio() {
             <div className="flex flex-col gap-3">
               <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-white/55">{t("singlesHeading")}</h3>
               <ul className="flex flex-col gap-2">
-                <li className="flex items-center gap-3 rounded-2xl bg-gold-500/[0.08] p-4 ring-1 ring-gold-500/40">
+                <li className="flex items-center gap-3 rounded-2xl bg-leaf-500/[0.08] p-4 ring-1 ring-leaf-500/40">
                   <span className="flex-1">
                     <span className="block text-sm font-semibold">{t("freeName")}</span>
                     <span className="block text-xs text-white/55">{t("freeNote")}</span>
                   </span>
-                  <span className="font-display text-lg font-bold text-gold-400">0đ</span>
+                  <span className="font-display text-lg font-bold text-leaf-400">0đ</span>
                 </li>
                 {SERVICES.map((s, i) => {
                   const on = single?.slug === s.slug;
@@ -442,7 +442,7 @@ export function PriceStudio() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("price_cta", { channel: "zalo", pick: pick.kind === "combo" ? pick.key : pick.slug })}
-                className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-3 text-sm font-bold text-ink transition hover:bg-gold-400"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-400"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
               </a>
@@ -456,7 +456,7 @@ export function PriceStudio() {
             </div>
 
             <p className="text-xs leading-relaxed text-white/55">
-              {HAS_ESTIMATES ? <span className="text-gold-400">(*) </span> : null}
+              {HAS_ESTIMATES ? <span className="text-brand-400">(*) </span> : null}
               {HAS_ESTIMATES ? t("footnote") : t("note")}
             </p>
           </div>

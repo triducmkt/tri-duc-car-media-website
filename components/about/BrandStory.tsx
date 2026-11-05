@@ -77,7 +77,7 @@ export async function BrandStory() {
                 return (
                   <Reveal key={item.title} delay={i * 80}>
                     <div className="flex h-full flex-col gap-2.5 rounded-2xl bg-paper-soft p-6 ring-1 ring-black/5">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                         <Icon size={19} aria-hidden />
                       </span>
                       <p className="font-display text-base font-semibold text-ink">{item.title}</p>
@@ -94,7 +94,7 @@ export async function BrandStory() {
         <Reveal>
           <div className="grid overflow-hidden rounded-[1.75rem] bg-ink text-white ring-1 ring-white/10 sm:grid-cols-2">
             <div className="flex flex-col gap-3 border-b border-white/10 p-8 sm:border-b-0 sm:border-r sm:p-10">
-              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-400">{t("sloganLabel")}</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-400">{t("sloganLabel")}</span>
               <p className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("slogan")}</p>
               <p className="text-sm leading-relaxed text-white/65">{t("sloganBody")}</p>
             </div>

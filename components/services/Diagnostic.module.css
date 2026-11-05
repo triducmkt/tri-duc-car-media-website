@@ -2,10 +2,10 @@
 
 .dx {
   --lacquer: #0b1220;
-  --brass: #17a85a;
-  --brass-soft: #7be0a6;
+  --brass: #4285f4;
+  --brass-soft: #8fb6f9;
   --vermilion: #c7452f;
-  --jade: #17a85a;
+  --jade: #4285f4;
   --bone: #eef2f7;
   --muted: #9ba4b2;
   --line: rgba(238,242,247, 0.14);
@@ -26,7 +26,7 @@
 .vis {
   position: relative;
   border: 1px solid var(--line);
-  background: linear-gradient(170deg, #0f2129, #0a1418);
+  background: linear-gradient(170deg, #131d33, #0b1220);
   border-radius: 4px;
   aspect-ratio: 1/1;
   max-height: 70svh;
@@ -68,7 +68,7 @@
   padding: 0.9rem 1.1rem; cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
-.opt:hover { border-color: var(--brass); background: rgba(23,168,90, 0.07); }
+.opt:hover { border-color: var(--brass); background: rgba(66,133,244, 0.07); }
 .opt:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 
 .note {
@@ -77,7 +77,7 @@
   background: rgba(199, 69, 47, 0.08);
   font-size: 0.89rem; border-radius: 0 3px 3px 0;
 }
-.note.ok { border-left-color: var(--jade); background: rgba(23,168,90, 0.08); }
+.note.ok { border-left-color: var(--jade); background: rgba(66,133,244, 0.08); }
 .note b { color: var(--brass-soft); font-weight: 600; }
 
 .startBtn {
@@ -101,7 +101,7 @@
 .res h3 { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; margin: 0 0 0.5rem; }
 .why { color: var(--muted); font-size: 0.93rem; margin: 0 0 1.6rem; max-width: 44ch; }
 
-.reco { border: 1px solid var(--brass); border-radius: 3px; padding: 1.3rem; background: rgba(23,168,90, 0.06); }
+.reco { border: 1px solid var(--brass); border-radius: 3px; padding: 1.3rem; background: rgba(66,133,244, 0.06); }
 .recoLbl { font-size: 0.68rem; letter-spacing: 0.16em; color: var(--brass); margin-bottom: 0.5rem; }
 .reco h4 { margin: 0 0 0.5rem; font-size: 1.05rem; font-weight: 600; }
 .reco p { margin: 0; font-size: 0.89rem; color: var(--muted); }
@@ -122,7 +122,7 @@
 
 .sent {
   margin-top: 1rem; padding: 0.9rem 1.05rem;
-  border-left: 2px solid var(--jade); background: rgba(23,168,90, 0.08);
+  border-left: 2px solid var(--jade); background: rgba(66,133,244, 0.08);
   font-size: 0.89rem; border-radius: 0 3px 3px 0;
 }
 .sent.err { border-left-color: var(--vermilion); background: rgba(199, 69, 47, 0.08); }

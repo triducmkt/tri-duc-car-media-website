@@ -150,7 +150,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
       MODS.forEach((m, i) => (IDX[m.k] = i));
 
       const g = ctx!.createRadialGradient(cx, cy, 10, cx, cy, Math.max(W, H) * 0.8);
-      g.addColorStop(0, "#12242c"); g.addColorStop(1, "#081216");
+      g.addColorStop(0, "#131d33"); g.addColorStop(1, "#0b1220");
       ctx!.fillStyle = g; ctx!.fillRect(0, 0, W, H);
 
       const hubP = project(0, 0, 0);
@@ -174,7 +174,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
           const u = (tA * (0.1 + health * 0.3) + k / 3 + e * 0.13) % 1;
           ctx!.beginPath();
           ctx!.arc(A.x + (B.x - A.x) * u, A.y + (B.y - A.y) * u, 2.1, 0, 6.284);
-          ctx!.fillStyle = `rgba(123,224,166,${0.25 + health * 0.45})`;
+          ctx!.fillStyle = `rgba(143,182,249,${0.25 + health * 0.45})`;
           ctx!.fill();
         }
       });
@@ -250,14 +250,14 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
 
       const hb = project(0, 0, 0);
       ctx!.beginPath(); ctx!.arc(hb.x, hb.y, 10 * hb.s, 0, 6.284);
-      ctx!.fillStyle = "rgba(123,224,166,.10)"; ctx!.fill();
-      ctx!.strokeStyle = "rgba(123,224,166,.35)"; ctx!.lineWidth = 1; ctx!.stroke();
+      ctx!.fillStyle = "rgba(143,182,249,.10)"; ctx!.fill();
+      ctx!.strokeStyle = "rgba(143,182,249,.35)"; ctx!.lineWidth = 1; ctx!.stroke();
 
       if (scoreRef.current !== null) {
         const ap = sstep(0, 1.1, (ts - doneAtRef.current) / 1000);
         ctx!.font = `700 ${30 * hb.s}px ${serifFamily}`;
         ctx!.textAlign = "center"; ctx!.textBaseline = "middle";
-        ctx!.fillStyle = `rgba(123,224,166,${0.95 * ap})`;
+        ctx!.fillStyle = `rgba(143,182,249,${0.95 * ap})`;
         ctx!.fillText(scoreRef.current.toFixed(1), hb.x, hb.y - 2);
         ctx!.font = `400 ${10 * hb.s}px ${sansFamily}`;
         ctx!.fillStyle = `rgba(155,164,178,${0.9 * ap})`;
@@ -270,11 +270,11 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
         else {
           const yy = H * sp;
           const lg = ctx!.createLinearGradient(0, yy - 40, 0, yy + 40);
-          lg.addColorStop(0, "rgba(23,168,90,0)");
-          lg.addColorStop(0.5, "rgba(23,168,90,.35)");
-          lg.addColorStop(1, "rgba(23,168,90,0)");
+          lg.addColorStop(0, "rgba(66,133,244,0)");
+          lg.addColorStop(0.5, "rgba(66,133,244,.35)");
+          lg.addColorStop(1, "rgba(66,133,244,0)");
           ctx!.fillStyle = lg; ctx!.fillRect(0, yy - 40, W, 80);
-          ctx!.fillStyle = "rgba(123,224,166,.7)"; ctx!.fillRect(0, yy, W, 1);
+          ctx!.fillStyle = "rgba(143,182,249,.7)"; ctx!.fillRect(0, yy, W, 1);
         }
       }
 
@@ -373,15 +373,15 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
   };
 
   const q = QUESTIONS[qi];
-  const barColor = result ? (result.score >= 7 ? "#17A85A" : result.score >= 4 ? "#17A85A" : "#C7452F") : "#17A85A";
+  const barColor = result ? (result.score >= 7 ? "#4285f4" : result.score >= 4 ? "#4285f4" : "#C7452F") : "#4285f4";
 
   return (
     <div className={styles.dx}>
       <div className={styles.vis}>
         <canvas ref={canvasRef} aria-hidden="true" />
         <div className={styles.legend}>
-          <span><i style={{ background: "#17A85A" }} />{t("legendGood")}</span>
-          <span><i style={{ background: "#17A85A" }} />{t("legendWarn")}</span>
+          <span><i style={{ background: "#4285f4" }} />{t("legendGood")}</span>
+          <span><i style={{ background: "#4285f4" }} />{t("legendWarn")}</span>
           <span><i style={{ background: "#C7452F" }} />{t("legendBad")}</span>
         </div>
       </div>

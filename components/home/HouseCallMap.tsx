@@ -203,8 +203,8 @@ export function HouseCallMap() {
               float d = length(gl_PointCoord - 0.5);
               if (d > 0.5) discard;
               float soft = smoothstep(0.5, 0.1, d);
-              vec3 cool = vec3(0.23, 0.64, 0.93);
-              vec3 c = mix(cool, vec3(0.27, 0.82, 0.50), max(vOn, vGlow * 0.7));
+              vec3 cool = vec3(0.43, 0.65, 0.97);
+              vec3 c = mix(cool, vec3(0.43, 0.65, 0.97), max(vOn, vGlow * 0.7));
               float a = (mix(0.55, 0.16, vBg) + vOn * 0.45 + vGlow * 0.35) * vA * soft;
               gl_FragColor = vec4(c, a);
             }`,
@@ -212,7 +212,7 @@ export function HouseCallMap() {
         map.add(new THREE.Points(dotGeo, dotMat));
 
         // ── Glow sprites (office head, rider + trail, destination head).
-        const gold = 0x45d17f;
+        const gold = 0x6ea6f7;
         const TRAIL = 14;
         const GLOWS = 2 + TRAIL;
         const glowPos = new Float32Array(GLOWS * 3);
@@ -239,7 +239,7 @@ export function HouseCallMap() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float g = smoothstep(0.5, 0.0, d);
-              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(g, 1.6) * vA);
+              gl_FragColor = vec4(vec3(0.43, 0.65, 0.97) * 1.2, pow(g, 1.6) * vA);
             }`,
         });
         map.add(new THREE.Points(glowGeo, glowMat));
@@ -469,11 +469,11 @@ export function HouseCallMap() {
     <section ref={sectionRef} id="den-tan-tiem" className="relative overflow-hidden bg-ink pb-20 pt-14 text-white sm:pb-24 sm:pt-20">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_55%_at_28%_55%,rgba(10,111,184,0.14),transparent_70%),radial-gradient(30%_30%_at_75%_20%,rgba(69,209,127,0.08),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_55%_at_28%_55%,rgba(66,133,244,0.14),transparent_70%),radial-gradient(30%_30%_at_75%_20%,rgba(110,166,247,0.08),transparent_70%)]"
       />
       <Container className="relative grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-12">
         <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{t("eyebrow")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
           <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px]">{t("heading")}</h2>
           <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
         </div>
@@ -487,13 +487,13 @@ export function HouseCallMap() {
           <div className="pointer-events-none absolute inset-0">
             <span
               ref={officeLabel}
-              className="absolute left-0 top-0 whitespace-nowrap rounded-full border border-gold-400/60 bg-ink/80 px-2.5 py-1 text-[11px] font-semibold text-gold-400 backdrop-blur sm:text-xs"
+              className="absolute left-0 top-0 whitespace-nowrap rounded-full border border-brand-400/60 bg-ink/80 px-2.5 py-1 text-[11px] font-semibold text-brand-400 backdrop-blur sm:text-xs"
             >
               {t("office")}
             </span>
             <span
               ref={destLabel}
-              className="absolute left-0 top-0 whitespace-nowrap rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold text-ink opacity-0 shadow-[0_0_24px_rgba(69,209,127,0.5)] transition-opacity sm:text-xs"
+              className="absolute left-0 top-0 whitespace-nowrap rounded-full bg-brand-400 px-3 py-1 text-[11px] font-bold text-ink opacity-0 shadow-[0_0_24px_rgba(110,166,247,0.5)] transition-opacity sm:text-xs"
             >
               {d && r ? `${nameOf(d)} · ≈ ${r.min} ${t("minShort")}` : ""}
             </span>
@@ -504,7 +504,7 @@ export function HouseCallMap() {
         <div className="flex flex-col gap-5 lg:col-start-2">
           <div className="flex flex-col gap-2.5">
             <p className="text-sm font-semibold text-white/85">
-              <span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-gold-400 text-[11px] font-bold text-ink">1</span>
+              <span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-brand-400 text-[11px] font-bold text-ink">1</span>
               {t("stepPlace")}
             </p>
             <div className="flex flex-wrap gap-1.5" role="group" aria-label={t("stepPlace")}>
@@ -517,9 +517,9 @@ export function HouseCallMap() {
                   className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors ${
                     i === active
                       ? picked
-                        ? "border-gold-400 bg-gold-400 text-ink"
-                        : "border-gold-400/70 text-gold-400"
-                      : "border-white/15 text-white/70 hover:border-gold-400/60 hover:text-white"
+                        ? "border-brand-400 bg-brand-400 text-ink"
+                        : "border-brand-400/70 text-brand-400"
+                      : "border-white/15 text-white/70 hover:border-brand-400/60 hover:text-white"
                   }`}
                 >
                   {nameOf(x)}
@@ -530,7 +530,7 @@ export function HouseCallMap() {
                 aria-pressed={remote}
                 onClick={() => pick(REMOTE, "chip")}
                 className={`rounded-full border border-dashed px-2.5 py-1 text-xs font-medium transition-colors ${
-                  remote ? "border-gold-400 bg-gold-400 text-ink" : "border-white/25 text-white/60 hover:border-gold-400/60"
+                  remote ? "border-brand-400 bg-brand-400 text-ink" : "border-white/25 text-white/60 hover:border-brand-400/60"
                 }`}
               >
                 {t("remote")}
@@ -564,10 +564,10 @@ export function HouseCallMap() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 rounded-2xl border border-gold-400/25 bg-gold-500/[0.06] p-5" aria-live="polite">
+          <div className="flex flex-col gap-4 rounded-2xl border border-brand-400/25 bg-brand-500/[0.06] p-5" aria-live="polite">
             {d && r ? (
               <div className="flex items-end gap-4">
-                <p className="font-display text-5xl font-bold leading-none text-gold-400 tabular-nums">≈{r.min}</p>
+                <p className="font-display text-5xl font-bold leading-none text-brand-400 tabular-nums">≈{r.min}</p>
                 <div className="flex flex-col pb-0.5">
                   <p className="text-sm font-semibold text-white">{t("minLong")}</p>
                   <p className="text-xs text-white/55">{t("rideNote", { place: nameOf(d), km: r.km })}</p>
@@ -575,7 +575,7 @@ export function HouseCallMap() {
               </div>
             ) : (
               <div className="flex items-center gap-3">
-                <MapPin className="h-8 w-8 shrink-0 text-gold-400" aria-hidden />
+                <MapPin className="h-8 w-8 shrink-0 text-brand-400" aria-hidden />
                 <p className="text-sm text-white/80">{t("remoteNote")}</p>
               </div>
             )}
@@ -584,7 +584,7 @@ export function HouseCallMap() {
             {/* What they'll send — a Zalo-style bubble, written for them. */}
             <div className="flex flex-col gap-1.5">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-white/45">{t("bubbleLabel")}</p>
-              <div className="ml-auto max-w-[92%] rounded-2xl rounded-br-sm bg-[#0a6fb8] px-4 py-3 text-sm leading-relaxed text-white shadow-lg">
+              <div className="ml-auto max-w-[92%] rounded-2xl rounded-br-sm bg-[#4285f4] px-4 py-3 text-sm leading-relaxed text-white shadow-lg">
                 {message}
               </div>
             </div>
@@ -595,7 +595,7 @@ export function HouseCallMap() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={onZalo}
-                className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-gold-500"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-500"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden /> {d ? t("ctaZalo") : t("ctaZaloRemote")}
               </a>
@@ -608,7 +608,7 @@ export function HouseCallMap() {
               </Link>
             </div>
             <p className="flex items-center gap-1.5 text-xs text-white/50">
-              {copied ? <Check className="h-3.5 w-3.5 text-gold-400" aria-hidden /> : null}
+              {copied ? <Check className="h-3.5 w-3.5 text-leaf-400" aria-hidden /> : null}
               {copied ? t("copied") : t("copyHint")}
             </p>
           </div>

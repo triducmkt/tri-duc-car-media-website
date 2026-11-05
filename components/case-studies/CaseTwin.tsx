@@ -160,7 +160,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
           world.add(g);
           return g;
         });
-        const GOLD = [0.27, 0.82, 0.5], BLUE = [0.45, 0.66, 1];
+        const GOLD = [0.43, 0.65, 0.97], BLUE = [0.45, 0.66, 1];
 
         // Ring target positions (shared shape for both towers).
         const ringPos = new Float32Array(RINGS * PER_RING * 3);
@@ -318,7 +318,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
 
   return (
     <section ref={sectionRef} id="ban-sao" className="relative overflow-hidden bg-ink py-16 text-white sm:py-24">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_45%,rgba(69,209,127,0.12),transparent_60%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_45%,rgba(110,166,247,0.12),transparent_60%)]" />
       <Container className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
@@ -330,14 +330,14 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
           <div className="relative aspect-[16/11] w-full select-none">
             <div ref={hostRef} aria-hidden className="absolute inset-0 [&>canvas]:h-full [&>canvas]:w-full" />
             <div className="pointer-events-none absolute inset-x-0 top-0 flex flex-col items-center">
-              <span className="font-display text-5xl font-bold tabular-nums text-gold-400 sm:text-6xl">
+              <span className="font-display text-5xl font-bold tabular-nums text-brand-400 sm:text-6xl">
                 {answered ? `${pct}%` : "?"}
               </span>
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white/55">
                 {answered ? t("estimate", { n: answered }) : t("match")}
               </span>
             </div>
-            <span ref={caseLabel} className="pointer-events-none absolute left-0 top-0 max-w-[45%] truncate rounded-full opacity-0 bg-gold-400 px-3 py-1 text-xs font-bold text-ink">
+            <span ref={caseLabel} className="pointer-events-none absolute left-0 top-0 max-w-[45%] truncate rounded-full opacity-0 bg-brand-400 px-3 py-1 text-xs font-bold text-ink">
               {client}
             </span>
             <span ref={youLabel} className="pointer-events-none absolute left-0 top-0 rounded-full bg-brand-500 opacity-0 px-3 py-1 text-xs font-bold text-white">
@@ -353,7 +353,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
                 <span>{t("step", { n: step + 1 })}</span>
                 <span className="flex gap-1.5" aria-hidden>
                   {TWIN_KEYS.map((k, i) => (
-                    <span key={k} className={`h-1.5 w-8 rounded-full ${i < step ? "bg-gold-400" : i === step ? "bg-white/60" : "bg-white/15"}`} />
+                    <span key={k} className={`h-1.5 w-8 rounded-full ${i < step ? "bg-brand-400" : i === step ? "bg-white/60" : "bg-white/15"}`} />
                   ))}
                 </span>
               </div>
@@ -365,7 +365,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
                     type="button"
                     onClick={() => choose(key, o)}
                     className={`flex items-center justify-between gap-3 rounded-xl px-4 py-3.5 text-left text-base font-semibold transition-colors ${
-                      answers[key] === o ? "bg-gold-400 text-ink" : "bg-white/5 ring-1 ring-white/12 hover:bg-white/10 hover:ring-gold-400/50"
+                      answers[key] === o ? "bg-brand-400 text-ink" : "bg-white/5 ring-1 ring-white/12 hover:bg-white/10 hover:ring-brand-400/50"
                     }`}
                   >
                     {t(`questions.${key}.options.${o}`)}
@@ -391,7 +391,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
                         {keys.length === 0 && <li className="text-white/40">—</li>}
                         {keys.map((k) => (
                           <li key={k} className="flex items-center gap-2">
-                            {group === "same" ? <Check size={15} className="text-gold-400" aria-hidden /> : <X size={15} className="text-white/40" aria-hidden />}
+                            {group === "same" ? <Check size={15} className="text-leaf-400" aria-hidden /> : <X size={15} className="text-white/40" aria-hidden />}
                             {t(`labels.${k}`)}
                           </li>
                         ))}
@@ -415,7 +415,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
               )}
 
               {status === "done" ? (
-                <p role="status" className="flex items-center gap-2 rounded-xl bg-gold-500/15 px-4 py-3 text-sm font-semibold text-gold-400 ring-1 ring-gold-500/30">
+                <p role="status" className="flex items-center gap-2 rounded-xl bg-leaf-500/15 px-4 py-3 text-sm font-semibold text-leaf-400 ring-1 ring-leaf-500/30">
                   <Check size={18} aria-hidden /> {t("done")}
                 </p>
               ) : (
@@ -425,10 +425,10 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
                     <p className="mt-1 text-sm text-white/65">{t("leadBody")}</p>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2">
-                    <input name="name" required maxLength={120} autoComplete="name" placeholder={t("name")} aria-label={t("name")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-gold-400" />
-                    <input name="phone" required inputMode="tel" pattern="[0-9+\s.\-()]{8,30}" autoComplete="tel" placeholder={t("phone")} aria-label={t("phone")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-gold-400" />
+                    <input name="name" required maxLength={120} autoComplete="name" placeholder={t("name")} aria-label={t("name")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-brand-400" />
+                    <input name="phone" required inputMode="tel" pattern="[0-9+\s.\-()]{8,30}" autoComplete="tel" placeholder={t("phone")} aria-label={t("phone")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-brand-400" />
                   </div>
-                  <button type="submit" disabled={status === "sending"} className="rounded-full bg-gold-400 px-5 py-3.5 text-base font-bold text-ink transition-colors hover:bg-gold-500 disabled:opacity-60">
+                  <button type="submit" disabled={status === "sending"} className="rounded-full bg-brand-400 px-5 py-3.5 text-base font-bold text-ink transition-colors hover:bg-brand-500 disabled:opacity-60">
                     {status === "sending" ? t("sending") : t("submit")}
                   </button>
                   {status === "error" && <p role="alert" className="text-sm text-red-300">{t("error")}</p>}
@@ -436,7 +436,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
               )}
 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 pt-4 text-sm font-semibold">
-                <a href={COMPANY.zalo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("twin_cta", { to: "zalo" })} className="inline-flex items-center gap-1.5 text-[#3aa3ec] hover:text-white">
+                <a href={COMPANY.zalo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("twin_cta", { to: "zalo" })} className="inline-flex items-center gap-1.5 text-[#6ea6f7] hover:text-white">
                   <MessageCircle size={16} aria-hidden /> {t("zalo")}
                 </a>
                 <Link href="/booking" onClick={() => trackEvent("twin_cta", { to: "booking" })} className="inline-flex items-center gap-1.5 text-white/75 hover:text-white">

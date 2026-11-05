@@ -181,7 +181,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
               float d = length(gl_PointCoord - 0.5);
               float core = smoothstep(0.12, 0.0, d);
               float halo = pow(smoothstep(0.5, 0.0, d), 2.2);
-              vec3 c = mix(vec3(0.23, 0.64, 0.93), vec3(0.27, 0.82, 0.50), vG);
+              vec3 c = mix(vec3(0.43, 0.65, 0.97), vec3(0.43, 0.65, 0.97), vG);
               gl_FragColor = vec4(c * (0.8 + core), (halo * 0.8 + core) * vA);
             }`,
         });
@@ -193,7 +193,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
             if ((posts[i].category ?? "") === (posts[j].category ?? "")) links.push(...pos[i], ...pos[j]);
         const linkGeo = new THREE.BufferGeometry();
         linkGeo.setAttribute("position", new THREE.Float32BufferAttribute(links, 3));
-        const linkMat = new THREE.LineBasicMaterial({ color: 0x5a9ad6, transparent: true, opacity: 0.16 });
+        const linkMat = new THREE.LineBasicMaterial({ color: 0x6ea6f7, transparent: true, opacity: 0.16 });
         sky.add(new THREE.LineSegments(linkGeo, linkMat));
 
         // ── Reading path: a gold curve drawn star to star, with a comet on it.
@@ -201,7 +201,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
         const pathGeo = new THREE.BufferGeometry();
         const pathArr = new Float32Array((SEG + 1) * 3);
         pathGeo.setAttribute("position", new THREE.BufferAttribute(pathArr, 3));
-        const pathMat = new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0.95 });
+        const pathMat = new THREE.LineBasicMaterial({ color: 0x6ea6f7, transparent: true, opacity: 0.95 });
         const pathLine = new THREE.Line(pathGeo, pathMat);
         sky.add(pathLine);
         let curve: InstanceType<typeof THREE.CatmullRomCurve3> | null = null;
@@ -377,12 +377,12 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
     <section ref={sectionRef} id="la-ban" className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_50%_at_70%_40%,rgba(69,209,127,0.10),transparent_70%),radial-gradient(45%_55%_at_25%_60%,rgba(10,111,184,0.14),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_50%_at_70%_40%,rgba(110,166,247,0.10),transparent_70%),radial-gradient(45%_55%_at_25%_60%,rgba(66,133,244,0.14),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-12">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{eyebrow}</p>
             <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">{heading}</h1>
           </div>
           <fieldset className="flex flex-col gap-3">
@@ -394,13 +394,13 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
                 aria-pressed={i === active}
                 onClick={() => pick(i)}
                 className={`flex items-start gap-3 rounded-2xl border p-4 text-left transition-all ${
-                  i === active ? "border-gold-400/70 bg-gold-500/[0.1]" : "border-white/10 bg-white/[0.03] hover:border-white/30"
+                  i === active ? "border-brand-400/70 bg-brand-500/[0.1]" : "border-white/10 bg-white/[0.03] hover:border-white/30"
                 }`}
               >
                 <span
                   aria-hidden
                   className={`mt-1 h-3 w-3 shrink-0 rounded-full ring-4 transition-colors ${
-                    i === active ? "bg-gold-400 ring-gold-400/25" : "bg-white/25 ring-transparent"
+                    i === active ? "bg-brand-400 ring-brand-400/25" : "bg-white/25 ring-transparent"
                   }`}
                 />
                 <span className="flex flex-col gap-0.5">
@@ -444,7 +444,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
                   className="pointer-events-auto absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full"
                 >
                   {step >= 0 ? (
-                    <span className="flex h-5 w-5 -translate-y-5 items-center justify-center rounded-full bg-gold-400 text-[11px] font-bold text-ink shadow-lg shadow-gold-500/30">
+                    <span className="flex h-5 w-5 -translate-y-5 items-center justify-center rounded-full bg-brand-400 text-[11px] font-bold text-ink shadow-lg shadow-brand-500/30">
                       {step + 1}
                     </span>
                   ) : null}
@@ -465,7 +465,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
         <div className="flex flex-col gap-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h2 className="font-display text-xl font-semibold sm:text-2xl">{t("pathTitle")}</h2>
-            <p className="flex items-center gap-1.5 text-sm text-gold-400">
+            <p className="flex items-center gap-1.5 text-sm text-brand-400">
               <Clock size={14} aria-hidden /> {t("pathMeta", { n: path.length, m: totalMin })}
             </p>
           </div>
@@ -475,14 +475,14 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
                 <Link
                   href={{ pathname: "/blog/[slug]", params: { slug: posts[i].slug } }}
                   onClick={() => trackEvent("compass_read", { slug: posts[i].slug, from: "path" })}
-                  className="group flex h-full flex-col gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors hover:border-gold-400/60"
+                  className="group flex h-full flex-col gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors hover:border-brand-400/60"
                 >
                   <span className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-white/50">
                     <span className="flex items-center gap-2">
-                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gold-400 text-[11px] font-bold text-ink">{k + 1}</span>
+                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-400 text-[11px] font-bold text-ink">{k + 1}</span>
                       {posts[i].category ? categories[posts[i].category!] : null}
                     </span>
-                    <ArrowUpRight size={16} aria-hidden className="text-white/40 transition-colors group-hover:text-gold-400" />
+                    <ArrowUpRight size={16} aria-hidden className="text-white/40 transition-colors group-hover:text-brand-400" />
                   </span>
                   <span className="text-sm font-semibold leading-snug text-white">{posts[i].title}</span>
                   <span className="mt-auto text-xs text-white/50">{t("minutes", { n: posts[i].minutes })}</span>
@@ -492,11 +492,11 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
           </ol>
         </div>
 
-        <div className="flex flex-col gap-3 rounded-2xl border border-gold-400/30 bg-gold-500/[0.07] p-5">
+        <div className="flex flex-col gap-3 rounded-2xl border border-brand-400/30 bg-brand-500/[0.07] p-5">
           <p className="font-display text-lg font-semibold">{t("leadHeading")}</p>
           {state === "done" ? (
             <p className="flex items-start gap-2 text-sm text-white/80" role="status">
-              <CheckCircle2 size={18} aria-hidden className="mt-0.5 shrink-0 text-gold-400" /> {t("leadDone")}
+              <CheckCircle2 size={18} aria-hidden className="mt-0.5 shrink-0 text-leaf-400" /> {t("leadDone")}
             </p>
           ) : (
             <form onSubmit={submit} className="flex flex-col gap-3">
@@ -509,7 +509,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
                   placeholder={t("leadName")}
                   aria-label={t("leadName")}
                   autoComplete="name"
-                  className="rounded-xl border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-gold-400 focus:outline-none"
+                  className="rounded-xl border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-brand-400 focus:outline-none"
                 />
                 <input
                   required
@@ -520,14 +520,14 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
                   inputMode="tel"
                   autoComplete="tel"
                   pattern="[0-9+\s.\-()]{8,30}"
-                  className="rounded-xl border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-gold-400 focus:outline-none"
+                  className="rounded-xl border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-brand-400 focus:outline-none"
                 />
               </div>
               <div className="flex flex-wrap items-center gap-3">
                 <button
                   type="submit"
                   disabled={state === "sending"}
-                  className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-5 py-2.5 text-sm font-bold text-ink transition hover:bg-gold-500 disabled:opacity-60"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-400 px-5 py-2.5 text-sm font-bold text-ink transition hover:bg-brand-500 disabled:opacity-60"
                 >
                   {state === "sending" ? <Loader2 size={16} className="animate-spin" aria-hidden /> : <Send size={16} aria-hidden />}
                   {t("leadSubmit")}

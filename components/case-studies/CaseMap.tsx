@@ -142,15 +142,15 @@ export function CaseMap() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               if (d > 0.5) discard;
-              vec3 base = mix(vec3(0.23, 0.64, 0.93), vec3(0.27, 0.82, 0.50), vIsle * 0.7);
-              vec3 c = mix(base, vec3(0.27, 0.82, 0.50), vGlow);
+              vec3 base = mix(vec3(0.43, 0.65, 0.97), vec3(0.43, 0.65, 0.97), vIsle * 0.7);
+              vec3 c = mix(base, vec3(0.43, 0.65, 0.97), vGlow);
               gl_FragColor = vec4(c, 0.42 + vGlow * 0.5 + vIsle * 0.3);
             }`,
         });
         map.add(new THREE.Points(dotGeo, dotMat));
 
         // ── Pins: beam, glowing head, pulsing ring; arcs from the hub.
-        const gold = 0x45d17f;
+        const gold = 0x6ea6f7;
         const heads = new Float32Array(PLACES.length * 3);
         const headA = new Float32Array(PLACES.length);
         const headS = new Float32Array(PLACES.length);
@@ -212,7 +212,7 @@ export function CaseMap() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float g = smoothstep(0.5, 0.0, d);
-              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(g, 1.7) * vA);
+              gl_FragColor = vec4(vec3(0.43, 0.65, 0.97) * 1.2, pow(g, 1.7) * vA);
             }`,
         });
         map.add(new THREE.Points(headGeo, glowMat));
@@ -327,11 +327,11 @@ export function CaseMap() {
     <section ref={sectionRef} id="ban-do" className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_50%_at_30%_55%,rgba(10,111,184,0.16),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_50%_at_30%_55%,rgba(66,133,244,0.16),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{t("eyebrow")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
           <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">{t("heading")}</h1>
           <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
         </div>
@@ -349,8 +349,8 @@ export function CaseMap() {
                 onClick={() => pick(i)}
                 className={`pointer-events-auto absolute left-0 top-0 whitespace-nowrap rounded-full border px-2.5 py-1 text-[11px] font-semibold backdrop-blur transition-colors sm:text-xs ${
                   i === active
-                    ? "border-gold-400 bg-gold-400 text-ink"
-                    : "border-white/15 bg-ink/70 text-white/80 hover:border-gold-400/60"
+                    ? "border-brand-400 bg-brand-400 text-ink"
+                    : "border-white/15 bg-ink/70 text-white/80 hover:border-brand-400/60"
                 }`}
               >
                 {p.city}
@@ -362,7 +362,7 @@ export function CaseMap() {
                 ref={(el) => {
                   isleLabels.current[k] = el;
                 }}
-                className="absolute left-0 top-0 whitespace-nowrap text-[10px] font-medium text-gold-400/70 sm:text-[11px]"
+                className="absolute left-0 top-0 whitespace-nowrap text-[10px] font-medium text-brand-400/70 sm:text-[11px]"
               >
                 {name}
               </span>
@@ -378,12 +378,12 @@ export function CaseMap() {
                   onMouseEnter={() => focus(i)}
                   onFocus={() => focus(i)}
                   className={`flex items-start gap-3 rounded-2xl border p-3.5 transition-all ${
-                    i === active ? "border-gold-400/60 bg-gold-500/[0.08]" : "border-white/10 bg-white/[0.02]"
+                    i === active ? "border-brand-400/60 bg-brand-500/[0.08]" : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
                   <span
                     className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                      i === active ? "bg-gold-400 text-ink" : "bg-white/10 text-white/70"
+                      i === active ? "bg-brand-400 text-ink" : "bg-white/10 text-white/70"
                     }`}
                   >
                     {i + 1}
@@ -393,18 +393,18 @@ export function CaseMap() {
                       {p.city}
                       <span className="font-normal text-white/50"> · {p.client}</span>
                       {"planned" in PLACES[i] ? (
-                        <span className="ml-2 rounded-full border border-gold-400/40 px-2 py-0.5 text-[10px] font-semibold uppercase text-gold-400">
+                        <span className="ml-2 rounded-full border border-brand-400/40 px-2 py-0.5 text-[10px] font-semibold uppercase text-brand-400">
                           {t("planned")}
                         </span>
                       ) : null}
                     </p>
-                    <p className={`text-sm ${i === active ? "text-gold-400" : "text-white/60"}`}>{p.metric}</p>
+                    <p className={`text-sm ${i === active ? "text-brand-400" : "text-white/60"}`}>{p.metric}</p>
                   </div>
                   <Link
                     href={{ pathname: "/case-studies/[slug]", params: { slug: PLACES[i].slug } }}
                     onClick={() => trackEvent("casemap_read", { place: PLACES[i].slug })}
                     aria-label={`${t("read")}: ${p.client}`}
-                    className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-gold-400 hover:text-gold-400"
+                    className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-400 hover:text-brand-400"
                   >
                     <ArrowUpRight size={16} aria-hidden />
                   </Link>
@@ -413,13 +413,13 @@ export function CaseMap() {
             ))}
           </ol>
 
-          <div className="flex flex-col gap-3 rounded-2xl border border-gold-400/25 bg-gold-500/[0.06] p-5">
+          <div className="flex flex-col gap-3 rounded-2xl border border-brand-400/25 bg-brand-500/[0.06] p-5">
             <p className="font-display text-lg font-semibold">{t("ctaHeading")}</p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/booking"
                 onClick={() => trackEvent("casemap_cta", { channel: "booking" })}
-                className="inline-flex items-center rounded-full bg-gold-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-gold-500"
+                className="inline-flex items-center rounded-full bg-brand-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-500"
               >
                 {t("ctaBook")}
               </Link>

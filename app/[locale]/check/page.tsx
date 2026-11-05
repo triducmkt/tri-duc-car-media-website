@@ -70,10 +70,10 @@ export default async function CheckPage({
               return (
                 <div key={id} className="flex flex-col gap-3 rounded-2xl bg-paper p-5 ring-1 ring-black/5">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-500/10 text-gold-600">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                       <Icon size={20} aria-hidden />
                     </span>
-                    <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${ready ? "bg-emerald-500/10 text-emerald-700" : "bg-black/5 text-ink-muted"}`}>
+                    <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${ready ? "bg-leaf-500/10 text-leaf-600" : "bg-black/5 text-ink-muted"}`}>
                       {tg(`formats.${g.format}`)} · {tg(g.status)}
                     </span>
                   </div>
@@ -103,11 +103,11 @@ export default async function CheckPage({
               <Link
                 key={s.c}
                 href={{ pathname: "/case-studies/[slug]", params: { slug: s.c } }}
-                className="group flex flex-col gap-2 rounded-2xl bg-paper-soft p-6 ring-1 ring-black/5 transition-colors hover:ring-gold-500/40"
+                className="group flex flex-col gap-2 rounded-2xl bg-paper-soft p-6 ring-1 ring-black/5 transition-colors hover:ring-brand-500/40"
               >
                 <span className="font-display text-3xl font-bold text-ink">{s.v}</span>
                 <span className="text-sm leading-snug text-ink-muted">{s.l}</span>
-                <ArrowRight size={16} aria-hidden className="mt-auto text-gold-600 transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={16} aria-hidden className="mt-auto text-brand-600 transition-transform group-hover:translate-x-1" />
               </Link>
             ))}
           </div>
@@ -120,7 +120,7 @@ export default async function CheckPage({
           <ol className="grid gap-4 sm:grid-cols-3">
             {how.map((h, i) => (
               <li key={h.t} className="flex flex-col gap-2 rounded-2xl bg-paper p-6 ring-1 ring-black/5">
-                <span className="font-serif text-3xl font-bold text-gold-500/80">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-serif text-3xl font-bold text-brand-500/80">{String(i + 1).padStart(2, "0")}</span>
                 <span className="font-display text-lg font-bold text-ink">{h.t}</span>
                 <span className="text-sm text-ink-muted">{h.d}</span>
               </li>
@@ -180,7 +180,7 @@ export default async function CheckPage({
       <section className="bg-ink py-16 text-white sm:py-20">
         <Container className="flex flex-col items-center gap-6 text-center">
           <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("finalTitle")}</h2>
-          <a href="#kiem-tra" className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-6 py-3.5 text-base font-bold text-ink hover:bg-gold-500">
+          <a href="#kiem-tra" className="inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3.5 text-base font-bold text-ink hover:bg-brand-500">
             {t("finalCta")} <ArrowRight size={18} aria-hidden />
           </a>
         </Container>

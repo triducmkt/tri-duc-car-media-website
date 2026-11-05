@@ -88,7 +88,7 @@ export function Header() {
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-150 ${
                   active
                     ? transparent
-                      ? "text-gold-400"
+                      ? "text-brand-400"
                       : "text-brand-600"
                     : transparent
                       ? "text-white/80 hover:text-white"
@@ -106,12 +106,12 @@ export function Header() {
             href="/check"
             aria-current={pathname === "/check" ? "page" : undefined}
             className={`flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-bold ring-1 transition-colors ${
-              transparent ? "text-gold-400 ring-gold-400/50 hover:bg-white/10" : "text-ink ring-gold-500/50 hover:bg-gold-500/10"
+              transparent ? "text-brand-400 ring-brand-400/50 hover:bg-white/10" : "text-ink ring-brand-500/50 hover:bg-brand-500/10"
             }`}
           >
             <span className="relative flex h-2 w-2" aria-hidden>
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-500" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
             </span>
             {t("check")}
           </Link>
@@ -119,7 +119,7 @@ export function Header() {
           <Button
             href="/booking"
             variant="primary"
-            className={transparent ? "!bg-gold-500 !text-ink hover:!bg-gold-400" : ""}
+            className={transparent ? "!bg-brand-500 !text-ink hover:!bg-brand-400" : ""}
           >
             {t("bookingCta")}
           </Button>
@@ -144,9 +144,9 @@ export function Header() {
             <Link
               href="/check"
               onClick={() => setOpen(false)}
-              className="mb-1 flex items-center gap-2 rounded-lg bg-gold-500/10 px-3 py-3 text-base font-bold text-ink ring-1 ring-gold-500/40"
+              className="mb-1 flex items-center gap-2 rounded-lg bg-brand-500/10 px-3 py-3 text-base font-bold text-ink ring-1 ring-brand-500/40"
             >
-              <span className="h-2 w-2 rounded-full bg-gold-500" aria-hidden />
+              <span className="h-2 w-2 rounded-full bg-brand-500" aria-hidden />
               {t("check")}
             </Link>
             {navItems.map((item) => (

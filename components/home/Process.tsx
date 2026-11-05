@@ -27,10 +27,10 @@ export function Process() {
           {steps.map((step, index) => (
             <li
               key={step.title}
-              className="rounded-2xl bg-white/5 ring-1 ring-white/10 transition-transform duration-300 hover:-translate-y-1 hover:ring-gold-400/30"
+              className="rounded-2xl bg-white/5 ring-1 ring-white/10 transition-transform duration-300 hover:-translate-y-1 hover:ring-brand-400/30"
             >
               <Reveal delay={index * 90} className="flex flex-col gap-3 p-6">
-                <span className="font-serif text-3xl font-bold text-gold-400">
+                <span className="font-serif text-3xl font-bold text-brand-400">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-display text-base font-semibold">{step.title}</h3>

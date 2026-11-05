@@ -165,13 +165,13 @@ export function ShopCheck() {
 
   return (
     <section id="kiem-tra" className="relative overflow-hidden bg-ink pb-16 pt-24 text-white sm:pb-24 sm:pt-32">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_35%,rgba(10,111,184,0.2),transparent_60%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_35%,rgba(66,133,244,0.2),transparent_60%)]" />
       <Container className="relative grid gap-5 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 sm:gap-5">
           <span className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</span>
           <h1 className="font-display text-3xl font-bold leading-tight sm:text-5xl">{heading}</h1>
           <p className="hidden max-w-xl text-lg text-white/70 sm:block">{t("sub")}</p>
-          <p className="flex items-center gap-2 text-sm font-semibold text-gold-400">
+          <p className="flex items-center gap-2 text-sm font-semibold text-brand-400">
             <ShieldCheck size={16} aria-hidden /> {t("free")}
           </p>
           <CheckRadar
@@ -183,7 +183,7 @@ export function ShopCheck() {
           >
             {done && (
               <div className="pointer-events-none absolute right-0 top-0 flex flex-col items-end">
-                <span className="font-display text-4xl font-bold tabular-nums text-gold-400 sm:text-5xl">{score}</span>
+                <span className="font-display text-4xl font-bold tabular-nums text-brand-400 sm:text-5xl">{score}</span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/55">{t("score")} /100</span>
               </div>
             )}
@@ -197,12 +197,12 @@ export function ShopCheck() {
                 <span>{t("step", { n: step + 1 })}</span>
                 <span className="flex gap-1.5" aria-hidden>
                   {AXIS_KEYS.map((k, i) => (
-                    <span key={k} className={`h-1.5 w-7 rounded-full ${values[k] !== undefined ? "bg-gold-400" : i === step ? "bg-white/60" : "bg-white/15"}`} />
+                    <span key={k} className={`h-1.5 w-7 rounded-full ${values[k] !== undefined ? "bg-brand-400" : i === step ? "bg-white/60" : "bg-white/15"}`} />
                   ))}
                 </span>
               </div>
               {prefilled && (
-                <p className="flex items-center gap-2 text-xs font-semibold text-gold-400">
+                <p className="flex items-center gap-2 text-xs font-semibold text-brand-400">
                   <Check size={14} aria-hidden /> {t("prefilled")}
                 </p>
               )}
@@ -214,12 +214,12 @@ export function ShopCheck() {
                     type="button"
                     onClick={() => answer(axis, level)}
                     className={`flex items-center gap-3 rounded-xl px-4 py-3.5 text-left text-base font-semibold transition-colors ${
-                      values[axis] === level ? "bg-gold-400 text-ink" : "bg-white/5 ring-1 ring-white/12 hover:bg-white/10 hover:ring-gold-400/50"
+                      values[axis] === level ? "bg-brand-400 text-ink" : "bg-white/5 ring-1 ring-white/12 hover:bg-white/10 hover:ring-brand-400/50"
                     }`}
                   >
                     <span className="flex gap-0.5" aria-hidden>
                       {Array.from({ length: LEVELS - 1 }, (_, b) => (
-                        <span key={b} className={`h-3.5 w-1.5 rounded-sm ${b < level ? "bg-gold-400" : "bg-white/20"}`} />
+                        <span key={b} className={`h-3.5 w-1.5 rounded-sm ${b < level ? "bg-brand-400" : "bg-white/20"}`} />
                       ))}
                     </span>
                     <span className="flex-1">{o}</span>
@@ -257,29 +257,29 @@ export function ShopCheck() {
               </Link>
 
               {status === "done" ? (
-                <p role="status" className="flex items-center gap-2 rounded-xl bg-gold-500/15 px-4 py-3 text-sm font-semibold text-gold-400 ring-1 ring-gold-500/30">
+                <p role="status" className="flex items-center gap-2 rounded-xl bg-leaf-500/15 px-4 py-3 text-sm font-semibold text-leaf-400 ring-1 ring-leaf-500/30">
                   <Check size={18} aria-hidden /> {t("done")}
                 </p>
               ) : (
                 <form onSubmit={submit} className="flex flex-col gap-3">
                   {/* The gift for the weakest axis (or the one picked in the library). */}
-                  <div className="flex items-center gap-4 rounded-xl bg-gold-400/10 p-3 ring-1 ring-gold-400/35">
+                  <div className="flex items-center gap-4 rounded-xl bg-brand-400/10 p-3 ring-1 ring-brand-400/35">
                     <GiftBox open={done} className="h-24 w-24 shrink-0 sm:h-28 sm:w-28" />
                     <div className="min-w-0">
-                      <p className="text-xs font-bold uppercase tracking-[0.12em] text-gold-400">{giftPick ? tg("chosen") : tg("eyebrow")}</p>
+                      <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-400">{giftPick ? tg("chosen") : tg("eyebrow")}</p>
                       <h2 className="font-display text-lg font-bold leading-snug sm:text-xl">{tg(`items.${gift}.title`)}</h2>
                       <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-white/60">
                         <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold text-white/80">{tg(`formats.${GIFT_MAP[gift].format}`)}</span>
-                        <span className={GIFT_MAP[gift].status === "ready" ? "text-gold-400" : "text-white/55"}>{tg(GIFT_MAP[gift].status)}</span>
+                        <span className={GIFT_MAP[gift].status === "ready" ? "text-brand-400" : "text-white/55"}>{tg(GIFT_MAP[gift].status)}</span>
                       </p>
                     </div>
                   </div>
                   <p className="text-sm text-white/65">{GIFT_MAP[gift].status === "ready" ? tg("claimReady") : tg("claimSoon")}</p>
                   <div className="grid gap-3 sm:grid-cols-2">
-                    <input name="name" required maxLength={120} autoComplete="name" placeholder={t("name")} aria-label={t("name")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-gold-400" />
-                    <input name="phone" required inputMode="tel" pattern="[0-9+\s.\-()]{8,30}" autoComplete="tel" placeholder={t("phone")} aria-label={t("phone")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-gold-400" />
+                    <input name="name" required maxLength={120} autoComplete="name" placeholder={t("name")} aria-label={t("name")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-brand-400" />
+                    <input name="phone" required inputMode="tel" pattern="[0-9+\s.\-()]{8,30}" autoComplete="tel" placeholder={t("phone")} aria-label={t("phone")} className="rounded-xl bg-white px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-brand-400" />
                   </div>
-                  <button type="submit" disabled={status === "sending"} className="rounded-full bg-gold-400 px-5 py-3.5 text-base font-bold text-ink transition-colors hover:bg-gold-500 disabled:opacity-60">
+                  <button type="submit" disabled={status === "sending"} className="rounded-full bg-brand-400 px-5 py-3.5 text-base font-bold text-ink transition-colors hover:bg-brand-500 disabled:opacity-60">
                     {status === "sending" ? t("sending") : tg("submit")}
                   </button>
                   {status === "error" && <p role="alert" className="text-sm text-red-300">{t("error")}</p>}
@@ -289,12 +289,12 @@ export function ShopCheck() {
               <button
                 type="button"
                 onClick={sendViaZalo}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3aa3ec] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6ea6f7] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
               >
                 <MessageCircle size={18} aria-hidden /> {t("zaloResult")}
               </button>
               {zaloCopied && (
-                <p role="status" className="-mt-2 text-center text-xs font-semibold text-[#3aa3ec]">
+                <p role="status" className="-mt-2 text-center text-xs font-semibold text-[#6ea6f7]">
                   {t("zaloCopied")}
                 </p>
               )}

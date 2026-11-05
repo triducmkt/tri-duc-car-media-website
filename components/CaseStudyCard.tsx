@@ -22,7 +22,7 @@ export function CaseStudyCard({
   return (
     <Link
       href={{ pathname: "/case-studies/[slug]", params: { slug: item.slug } }}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-paper-soft ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-gold-500/30"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-paper-soft ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-brand-500/30"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink">
         {cover ? (
@@ -35,7 +35,7 @@ export function CaseStudyCard({
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink-soft to-ink">
-            <HubIcon size={40} className="text-gold-500/30" aria-hidden />
+            <HubIcon size={40} className="text-brand-500/30" aria-hidden />
           </div>
         )}
         {logo ? (
@@ -45,14 +45,14 @@ export function CaseStudyCard({
         ) : null}
         {item.isOngoing && ongoingLabel ? (
           <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-ink shadow-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+            <span className="h-1.5 w-1.5 rounded-full bg-leaf-500" aria-hidden />
             {ongoingLabel}
           </span>
         ) : null}
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">
         {item.industry ? (
-          <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">
+          <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
             {item.industry[locale] || item.industry.vi}
           </span>
         ) : null}
@@ -62,7 +62,7 @@ export function CaseStudyCard({
         <p className="line-clamp-2 text-sm leading-relaxed text-ink-muted">
           {item.summary[locale] || item.summary.vi}
         </p>
-        <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-semibold text-gold-600">
+        <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-semibold text-brand-600">
           {readMoreLabel}
           <ArrowUpRight size={16} aria-hidden />
         </span>

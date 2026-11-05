@@ -162,8 +162,8 @@ export function ProofEngine() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float glow = smoothstep(0.5, 0.0, d);
-              vec3 gold = vec3(0.27, 0.82, 0.50);
-              vec3 blue = vec3(0.23, 0.64, 0.93);
+              vec3 gold = vec3(0.43, 0.65, 0.97);
+              vec3 blue = vec3(0.43, 0.65, 0.97);
               vec3 c = mix(blue, gold, smoothstep(0.35, 0.9, vT));
               gl_FragColor = vec4(c * 1.15, pow(glow, 1.6) * vA);
             }`,
@@ -256,7 +256,7 @@ export function ProofEngine() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_30%_50%,rgba(10,111,184,0.18),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_30%_50%,rgba(66,133,244,0.18),transparent_70%)]"
       />
       <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
         <div className="relative aspect-[4/3] w-full lg:aspect-square">
@@ -268,7 +268,7 @@ export function ProofEngine() {
 
         <div className="flex flex-col gap-7">
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {t("eyebrow")}
             </p>
             <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">
@@ -285,7 +285,7 @@ export function ProofEngine() {
                 onClick={() => pick(i)}
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                   i === active
-                    ? "border-gold-400 bg-gold-400 text-ink"
+                    ? "border-brand-400 bg-brand-400 text-ink"
                     : "border-white/15 text-white/70 hover:border-white/40 hover:text-white"
                 }`}
               >
@@ -300,8 +300,8 @@ export function ProofEngine() {
               <span className="whitespace-nowrap font-display text-2xl font-semibold text-white/40 line-through decoration-white/25 sm:text-3xl">
                 {c.before}
               </span>
-              <ArrowRight className="mb-2 h-6 w-6 text-gold-400" aria-hidden />
-              <span className="whitespace-nowrap font-display text-4xl font-extrabold leading-none text-gold-400 sm:text-5xl xl:text-6xl">
+              <ArrowRight className="mb-2 h-6 w-6 text-leaf-400" aria-hidden />
+              <span className="whitespace-nowrap font-display text-4xl font-extrabold leading-none text-leaf-400 sm:text-5xl xl:text-6xl">
                 {c.after}
               </span>
             </div>
@@ -323,7 +323,7 @@ export function ProofEngine() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("proof_cta", { channel: "zalo" })}
-                className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-gold-500"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-400 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-500"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
               </a>

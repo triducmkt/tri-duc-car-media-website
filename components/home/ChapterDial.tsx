@@ -114,7 +114,7 @@ export function ChapterDial() {
         return pts;
       };
       const trackGeo = new THREE.BufferGeometry().setFromPoints(circle(0, Math.PI * 2, 96));
-      const trackMat = new THREE.LineBasicMaterial({ color: 0x6f9cc8, transparent: true, opacity: 0.35 });
+      const trackMat = new THREE.LineBasicMaterial({ color: 0x8aa6dc, transparent: true, opacity: 0.35 });
       ring.add(new THREE.Line(trackGeo, trackMat));
 
       const ARC_STEPS = 96;
@@ -157,8 +157,8 @@ export function ChapterDial() {
       });
       ring.add(new THREE.Points(glowGeo, glowMat));
 
-      const gold = [0.27, 0.82, 0.5];
-      const dim = [0.23, 0.64, 0.93];
+      const gold = [0.27, 0.82, 0.5]; // chapters already read = green
+      const dim = [0.43, 0.65, 0.97];
       let spin = 0;
       let arc = 0;
       let raf = 0;
@@ -185,7 +185,7 @@ export function ChapterDial() {
           size[i] = on ? 30 + (reduce ? 0 : Math.sin(time * 3) * 4) : i < sn ? 16 : 12;
         }
         pos.set([0, 0, 0], N * 3);
-        col.set([0.27, 0.82, 0.5], N * 3);
+        col.set([0.43, 0.65, 0.97], N * 3);
         size[N] = 34 + (reduce ? 0 : Math.sin(time * 1.8) * 5);
         glowGeo.attributes.aColor.needsUpdate = true;
         glowGeo.attributes.aSize.needsUpdate = true;
@@ -241,13 +241,13 @@ export function ChapterDial() {
           setOpen(true);
           trackEvent("chapter_open", { at: CHAPTERS[active].id });
         }}
-        className={`fixed right-3 z-40 flex items-center gap-2 rounded-full border border-gold-400/40 bg-ink/85 py-1 pl-1 pr-3.5 text-left text-white shadow-[0_10px_40px_rgba(0,0,0,0.45)] backdrop-blur-md transition-all duration-500 bottom-[calc(58px+env(safe-area-inset-bottom))] min-[900px]:bottom-6 min-[900px]:right-6 ${
+        className={`fixed right-3 z-40 flex items-center gap-2 rounded-full border border-brand-400/40 bg-ink/85 py-1 pl-1 pr-3.5 text-left text-white shadow-[0_10px_40px_rgba(0,0,0,0.45)] backdrop-blur-md transition-all duration-500 bottom-[calc(58px+env(safe-area-inset-bottom))] min-[900px]:bottom-6 min-[900px]:right-6 ${
           shown && !open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
         <div ref={canvasHost} aria-hidden className="h-14 w-14 shrink-0 [&>canvas]:h-full [&>canvas]:w-full" />
         <span className="flex flex-col leading-tight">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-400">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-400">
             {t("label", { n: active + 1, total: N })}
           </span>
           <span className="max-w-[9.5rem] truncate text-[13px] font-semibold">{items[active].t}</span>
@@ -271,7 +271,7 @@ export function ChapterDial() {
           >
             <div className="flex items-start justify-between gap-4 border-b border-white/10 px-5 pb-4 pt-5">
               <div className="flex flex-col gap-1">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-400">{t("eyebrow")}</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-400">{t("eyebrow")}</p>
                 <h2 id="chapter-sheet-title" className="font-display text-xl font-bold">
                   {t("heading")}
                 </h2>
@@ -302,18 +302,18 @@ export function ChapterDial() {
                       aria-current={current ? "step" : undefined}
                       onClick={() => jump(i)}
                       className={`flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition-colors ${
-                        current ? "bg-gold-500/[0.12] ring-1 ring-gold-400/50" : "hover:bg-white/[0.05]"
+                        current ? "bg-brand-500/[0.12] ring-1 ring-brand-400/50" : "hover:bg-white/[0.05]"
                       }`}
                     >
                       <span
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                          current ? "bg-gold-400 text-ink" : done ? "bg-gold-400/20 text-gold-400" : "bg-white/10 text-white/60"
+                          current ? "bg-brand-400 text-ink" : done ? "bg-leaf-500/20 text-leaf-400" : "bg-white/10 text-white/60"
                         }`}
                       >
                         {done ? <Check className="h-4 w-4" aria-hidden /> : i + 1}
                       </span>
                       <span className="flex min-w-0 flex-1 flex-col">
-                        <span className={`text-sm font-semibold ${current ? "text-gold-400" : "text-white"}`}>{it.t}</span>
+                        <span className={`text-sm font-semibold ${current ? "text-brand-400" : "text-white"}`}>{it.t}</span>
                         <span className="truncate text-xs text-white/55">{it.d}</span>
                       </span>
                       <span className="shrink-0 text-[11px] text-white/40">{t("min", { min: CHAPTERS[i].min })}</span>
@@ -331,7 +331,7 @@ export function ChapterDial() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent("chapter_cta", { channel: "zalo", at: CHAPTERS[active].id })}
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gold-400 px-4 py-3 text-sm font-bold text-ink transition hover:bg-gold-500"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-400 px-4 py-3 text-sm font-bold text-ink transition hover:bg-brand-500"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
                 </a>

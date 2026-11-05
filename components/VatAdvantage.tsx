@@ -29,7 +29,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
     <section id={id} className={`scroll-mt-24 py-20 sm:py-24 ${dark ? "bg-ink text-white" : "bg-paper-soft text-ink"}`}>
       <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-5">
-          <p className={`text-xs font-bold uppercase tracking-[0.2em] ${dark ? "text-gold-400" : "text-brand-600"}`}>
+          <p className={`text-xs font-bold uppercase tracking-[0.2em] ${dark ? "text-brand-400" : "text-brand-600"}`}>
             {t("eyebrow")}
           </p>
           <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
@@ -41,7 +41,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
             }`}
           >
             <p className="flex items-center gap-2 text-sm font-bold">
-              <BadgeCheck className="h-5 w-5 text-gold-500" aria-hidden />
+              <BadgeCheck className="h-5 w-5 text-leaf-500" aria-hidden />
               {COMPANY.legalNameVi}
             </p>
             <div className="flex flex-wrap items-center gap-3">
@@ -73,7 +73,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
             <Link
               href="/booking"
               onClick={() => trackEvent("vat_cta", { channel: "booking" })}
-              className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-ink transition-colors hover:bg-gold-400"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-bold text-ink transition-colors hover:bg-brand-400"
             >
               <FileCheck2 className="h-4 w-4" aria-hidden /> {t("cta")}
             </Link>
@@ -95,7 +95,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
             <thead>
               <tr className={dark ? "bg-white/[0.06]" : "bg-ink text-white"}>
                 <th scope="col" className="w-[30%] px-3 py-3.5 font-semibold sm:px-4">{t("colCriteria")}</th>
-                <th scope="col" className="px-3 py-3.5 font-bold text-gold-400 sm:px-4">{t("colUs")}</th>
+                <th scope="col" className="px-3 py-3.5 font-bold text-brand-400 sm:px-4">{t("colUs")}</th>
                 <th scope="col" className="px-3 py-3.5 font-semibold opacity-80 sm:px-4">{t("colThem")}</th>
               </tr>
             </thead>
@@ -105,7 +105,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
                   <th scope="row" className="px-3 py-3.5 font-semibold sm:px-4">{r.label}</th>
                   <td className="px-3 py-3.5 sm:px-4">
                     <span className="flex gap-2">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" aria-hidden />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-leaf-500" aria-hidden />
                       <span className="font-medium">{r.us}</span>
                     </span>
                   </td>

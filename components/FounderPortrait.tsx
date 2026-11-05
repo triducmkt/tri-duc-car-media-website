@@ -19,7 +19,7 @@ export function FounderPortrait({
       <div
         className={`relative flex items-center justify-center bg-gradient-to-br from-ink-soft via-ink to-black ${className}`}
       >
-        <span className="font-display bg-gradient-to-br from-gold-400 to-gold-600 bg-clip-text text-6xl font-extrabold tracking-tight text-transparent sm:text-7xl">
+        <span className="font-display bg-gradient-to-br from-brand-400 to-brand-600 bg-clip-text text-6xl font-extrabold tracking-tight text-transparent sm:text-7xl">
           TTĐ
         </span>
       </div>
