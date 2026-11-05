@@ -1629,6 +1629,7 @@
     "inCombos": "Có trong combo",
     "comboHint": "Mua theo combo rẻ hơn khoảng 20% so với mua lẻ.",
     "basis": "Căn cứ giá (*)",
-    "others": "Dịch vụ khác"
+    "others": "Dịch vụ khác",
+    "note": "Giá chưa gồm VAT và ngân sách quảng cáo trả cho nền tảng. Phạm vi công việc chốt sau buổi chẩn đoán 15 phút miễn phí; có hóa đơn VAT điện tử."
   }
 }

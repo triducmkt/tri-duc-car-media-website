@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, Check, MessageCircle } from "lucid
 import { Container } from "@/components/Container";
 import { Link } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
-import { COMBOS, SERVICES, formatVnd, serviceBySlug, shortVnd, type Locale } from "@/lib/servicesCatalog";
+import { COMBOS, HAS_ESTIMATES, SERVICES, formatVnd, serviceBySlug, shortVnd, type Locale } from "@/lib/servicesCatalog";
 
 /** One page per service (Dịch vụ → each pillar, footer links). Content and
  *  prices: lib/servicesCatalog.ts. Copy for labels: messages → pricing. */
@@ -145,7 +145,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                       <span className="block font-semibold">{c.name[locale]}</span>
                     </span>
                     <span className="text-right text-sm font-bold">
-                      {c.price ? `${shortVnd(c.price, locale)}*` : t("contact")}
+                      {c.price ? `${shortVnd(c.price, locale)}${c.estimated ? "*" : ""}` : t("contact")}
                     </span>
                   </Link>
                 ))}
@@ -177,7 +177,8 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         </Container>
         <Container className="mt-12">
           <p className="border-t border-black/10 pt-6 text-xs leading-relaxed text-ink-muted">
-            <span className="font-semibold text-gold-600">(*)</span> {t("footnote")}
+            {HAS_ESTIMATES ? <span className="font-semibold text-gold-600">(*) </span> : null}
+            {HAS_ESTIMATES ? t("footnote") : t("note")}
           </p>
         </Container>
       </section>

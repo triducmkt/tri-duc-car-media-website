@@ -1629,6 +1629,7 @@
     "inCombos": "Included in combos",
     "comboHint": "Combos cost about 20% less than buying separately.",
     "basis": "Price basis (*)",
-    "others": "Other services"
+    "others": "Other services",
+    "note": "Prices exclude VAT and ad spend paid to the platforms. Scope is confirmed after the free 15-minute diagnosis; electronic VAT invoice provided."
   }
 }

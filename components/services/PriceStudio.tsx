@@ -8,6 +8,7 @@ import { Container } from "@/components/Container";
 import { COMPANY } from "@/lib/company";
 import {
   COMBOS,
+  HAS_ESTIMATES,
   SERVICES,
   comboListTotal,
   formatVnd,
@@ -144,7 +145,7 @@ export function PriceStudio() {
           const w = host.clientWidth, h = host.clientHeight;
           renderer.setSize(w, h, false);
           camera.aspect = w / Math.max(h, 1);
-          camera.position.set(0, 2.6, camera.aspect < 0.9 ? 8.2 : 6.6);
+          camera.position.set(0, 2.6, camera.aspect < 0.9 ? 9.4 : 7.8);
           camera.lookAt(0, 1.25, 0);
           camera.updateProjectionMatrix();
         };
@@ -295,7 +296,7 @@ export function PriceStudio() {
                   {t("separate")} {shortVnd(list, locale)}
                 </span>
                 <span ref={priceLabel} className="absolute left-0 top-0 whitespace-nowrap rounded-full bg-gold-500 px-2.5 py-1 text-[11px] font-bold text-ink opacity-0 sm:text-sm">
-                  {combo && combo.price === null ? t("contact") : `${shortVnd(price, locale)}*`}
+                  {combo && combo.price === null ? t("contact") : `${shortVnd(price, locale)}${(combo ? combo.estimated : single?.price.estimated) ? "*" : ""}`}
                 </span>
               </div>
             </div>
@@ -417,7 +418,7 @@ export function PriceStudio() {
                             </span>
                             <span className="block text-[11px] text-white/50">
                               {unitLabel(s, t)}
-                              {s.price.plus ? ` + ${shortVnd(s.price.plus.amount, locale)}${t("perMonth")}*` : ""}
+                              {s.price.plus ? ` + ${shortVnd(s.price.plus.amount, locale)}${t("perMonth")}${s.price.estimated ? "*" : ""}` : ""}
                             </span>
                           </span>
                           <Link
@@ -455,7 +456,8 @@ export function PriceStudio() {
             </div>
 
             <p className="text-xs leading-relaxed text-white/55">
-              <span className="text-gold-400">(*)</span> {t("footnote")}
+              {HAS_ESTIMATES ? <span className="text-gold-400">(*) </span> : null}
+              {HAS_ESTIMATES ? t("footnote") : t("note")}
             </p>
           </div>
         </div>

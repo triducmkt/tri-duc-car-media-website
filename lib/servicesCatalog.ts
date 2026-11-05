@@ -8,7 +8,8 @@
  * market average and set Trí Đức at the HIGH end, marked `estimated` (shown with *)
  * and a note to confirm with the founder. Market basis per service is in
  * `basis` (sources: hq/07-STRATEGY-ANALYSIS-2026.md, section 2026-11-05 vòng 4).
- * When anh Đức confirms a real price: change `amount` and set `estimated: false`.
+ * 2026-11-05: anh Đức confirmed all these prices ("Prices are fine") → estimated:false,
+ * no * on the site. Set `estimated: true` again for any new, unconfirmed price.
  * Order of SERVICES = order of messages → services.items (5 pillars).
  */
 
@@ -83,7 +84,7 @@ export const SERVICES: Service[] = [
       vi: "Phòng marketing thuê ngoài gói trung cấp tại Việt Nam khoảng 13–25 triệu/tháng (trung bình ~20 triệu). Trí Đức đặt mức cao vì làm cả Sales & CSKH, không chỉ đăng bài.",
       en: "Mid-tier outsourced marketing departments in Vietnam run about 13–25M VND/month (avg ~20M). Trí Đức is priced at the high end because it covers sales & customer care, not only posting.",
     },
-    price: { amount: 28_000_000, unit: "month", minMonths: 3, estimated: true },
+    price: { amount: 28_000_000, unit: "month", minMonths: 3, estimated: false },
   },
   {
     slug: "thuong-hieu-ca-nhan-chu-doanh-nghiep",
@@ -128,7 +129,7 @@ export const SERVICES: Service[] = [
       vi: "Chăm sóc fanpage cao cấp ~8–11 triệu/tháng, cộng quay dựng video ngắn; trung bình ~15 triệu/tháng. Đơn vị cao cấp chào tới 60–65 triệu/tháng.",
       en: "Premium page management ~8–11M VND/month plus short-video production; avg ~15M/month. Premium firms quote up to 60–65M/month.",
     },
-    price: { amount: 22_000_000, unit: "month", minMonths: 3, estimated: true },
+    price: { amount: 22_000_000, unit: "month", minMonths: 3, estimated: false },
   },
   {
     slug: "chuan-hoa-sop-dao-tao-doi-ngu",
@@ -170,7 +171,7 @@ export const SERVICES: Service[] = [
       vi: "Thị trường quốc tế: thư viện 10 SOP + đào tạo ~3.000 USD; tư vấn trong nước cho SME ước khoảng 30–35 triệu trọn gói.",
       en: "International: a 10-SOP library + training ~3,000 USD; local SME consulting estimated at about 30–35M VND per package.",
     },
-    price: { amount: 45_000_000, unit: "once", estimated: true },
+    price: { amount: 45_000_000, unit: "once", estimated: false },
   },
   {
     slug: "setup-phong-marketing-in-house",
@@ -212,7 +213,7 @@ export const SERVICES: Service[] = [
       vi: "Một đội marketing nội bộ 4 người tại Việt Nam tốn khoảng 60–100 triệu/tháng; phí setup trọn gói của agency ước 40–45 triệu.",
       en: "A 4-person in-house marketing team in Vietnam costs about 60–100M VND/month; agency setup packages are estimated at 40–45M.",
     },
-    price: { amount: 60_000_000, unit: "once", estimated: true },
+    price: { amount: 60_000_000, unit: "once", estimated: false },
   },
   {
     slug: "nen-tang-so-sme-os",
@@ -254,7 +255,7 @@ export const SERVICES: Service[] = [
       vi: "Phần mềm quản trị SME tại Việt Nam: phí triển khai khoảng 5–30 triệu, thuê bao ~150.000đ/người/tháng (15 người ≈ 2,3 triệu/tháng).",
       en: "SME management software in Vietnam: implementation about 5–30M VND, subscription ~150,000 VND/user/month (15 users ≈ 2.3M/month).",
     },
-    price: { amount: 30_000_000, unit: "once", plus: { amount: 3_000_000, unit: "month" }, estimated: true },
+    price: { amount: 30_000_000, unit: "once", plus: { amount: 3_000_000, unit: "month" }, estimated: false },
   },
 ];
 
@@ -287,7 +288,7 @@ export const COMBOS: Combo[] = [
       { slug: "nen-tang-so-sme-os", months: 3 },
     ],
     price: 135_000_000,
-    estimated: true,
+    estimated: false,
   },
   {
     key: "tu-do-1-quy",
@@ -303,7 +304,7 @@ export const COMBOS: Combo[] = [
       { slug: "nen-tang-so-sme-os", months: 6 },
     ],
     price: 309_000_000,
-    estimated: true,
+    estimated: false,
   },
   {
     key: "tu-do-1-nam",
@@ -319,7 +320,7 @@ export const COMBOS: Combo[] = [
       { slug: "nen-tang-so-sme-os", months: 12 },
     ],
     price: 499_000_000,
-    estimated: true,
+    estimated: false,
   },
   {
     key: "tu-do-hoan-toan",
@@ -352,3 +353,6 @@ export function shortVnd(n: number, locale: Locale) {
   const m = Math.round(n / 1_000_000);
   return locale === "vi" ? `${m} triệu` : `${m}M`;
 }
+
+/** True while any listed price is still a market estimate (shows * + footnote). */
+export const HAS_ESTIMATES = SERVICES.some((s) => s.price.estimated) || COMBOS.some((x) => x.estimated);
