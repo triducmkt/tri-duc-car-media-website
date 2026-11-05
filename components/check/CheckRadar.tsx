@@ -83,13 +83,13 @@ export function CheckRadar({
           return { geo, mat };
         };
         // Grid rings per level + gold target ring + spokes.
-        const statics = [1, 2].map((l) => outline((R * l) / (LEVELS - 1), 0x7fa2ef, 0.14));
-        statics.push(outline(R, 0xf0c069, 0.55));
+        const statics = [1, 2].map((l) => outline((R * l) / (LEVELS - 1), 0x5a9ad6, 0.14));
+        statics.push(outline(R, 0x45d17f, 0.55));
         const spokePts: number[] = [];
         for (let k = 0; k < K; k++) spokePts.push(0, 0, 0, Math.cos(ANGLE(k)) * R, Math.sin(ANGLE(k)) * R, 0);
         const spokeGeo = new THREE.BufferGeometry();
         spokeGeo.setAttribute("position", new THREE.Float32BufferAttribute(spokePts, 3));
-        const spokeMat = new THREE.LineBasicMaterial({ color: 0x7fa2ef, transparent: true, opacity: 0.18 });
+        const spokeMat = new THREE.LineBasicMaterial({ color: 0x5a9ad6, transparent: true, opacity: 0.18 });
         radar.add(new THREE.LineSegments(spokeGeo, spokeMat));
 
         // The live shape: a lifted plate (top + bottom outline, side edges, fill).
@@ -102,17 +102,17 @@ export function CheckRadar({
           radar.add(new THREE.LineLoop(geo, mat));
           return { geo, mat };
         };
-        const top = loop(shapeTop, 0x8fb6f9, 0.95);
-        const bot = loop(shapeBot, 0x4285f4, 0.35);
+        const top = loop(shapeTop, 0x6fb0e3, 0.95);
+        const bot = loop(shapeBot, 0x0a6fb8, 0.35);
         const sides = new Float32Array(K * 6);
         const sideGeo = new THREE.BufferGeometry();
         sideGeo.setAttribute("position", new THREE.BufferAttribute(sides, 3));
-        const sideMat = new THREE.LineBasicMaterial({ color: 0x4285f4, transparent: true, opacity: 0.4 });
+        const sideMat = new THREE.LineBasicMaterial({ color: 0x0a6fb8, transparent: true, opacity: 0.4 });
         radar.add(new THREE.LineSegments(sideGeo, sideMat));
         const fill = new Float32Array(K * 9);
         const fillGeo = new THREE.BufferGeometry();
         fillGeo.setAttribute("position", new THREE.BufferAttribute(fill, 3));
-        const fillMat = new THREE.MeshBasicMaterial({ color: 0x4285f4, transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false });
+        const fillMat = new THREE.MeshBasicMaterial({ color: 0x0a6fb8, transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false });
         radar.add(new THREE.Mesh(fillGeo, fillMat));
 
         // Glow points: vertices + signals running around the outline + a focus spoke.
@@ -200,7 +200,7 @@ export function CheckRadar({
             fill.set([0, 0, lift, x, y, lift, x2, y2, lift], k * 9);
             const isWeak = k === weak;
             gp.set([x, y, lift], k * 3);
-            gc.set(isWeak ? [1, 0.42, 0.35] : answered ? [0.95, 0.8, 0.5] : [0.55, 0.68, 1], k * 3);
+            gc.set(isWeak ? [1, 0.42, 0.35] : answered ? [0.27, 0.82, 0.5] : [0.55, 0.68, 1], k * 3);
             gs[k] = (isWeak ? 34 : 20) + (reduce ? 0 : Math.sin(time * 3 + k) * 3) + (isWeak && !reduce ? Math.sin(time * 6) * 6 : 0);
             ga[k] = answered ? 1 : 0.5;
 
@@ -231,11 +231,11 @@ export function CheckRadar({
             }
             const u = ((i / FOCUS) + (reduce ? 0 : time * 0.35)) % 1;
             gp.set([Math.cos(ANGLE(foc)) * R * u, Math.sin(ANGLE(foc)) * R * u, lift * 0.5], j * 3);
-            gc.set([1, 0.8, 0.45], j * 3);
+            gc.set([0.27, 0.82, 0.5], j * 3);
             gs[j] = 9;
             ga[j] = Math.sin(u * Math.PI) * 0.9;
           }
-          fillMat.color.setHex(weak >= 0 ? 0xf0c069 : 0x4285f4);
+          fillMat.color.setHex(weak >= 0 ? 0x45d17f : 0x0a6fb8);
           fillMat.opacity = weak >= 0 ? 0.16 : 0.22;
           [top.geo, bot.geo, sideGeo, fillGeo, glowGeo].forEach((g) => Object.values(g.attributes).forEach((a) => (a.needsUpdate = true)));
           renderer.render(scene, camera);

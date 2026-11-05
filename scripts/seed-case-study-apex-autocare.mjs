@@ -143,7 +143,7 @@ const doc = {
     vi: "Đồng hành cùng Apex Autocare (Rạch Giá, Kiên Giang) từ 07/2026: lượt xem Facebook tăng 289%, TikTok bắt đầu được thuật toán phân phối tới khách hàng mới, và từ khoá thương hiệu bắt đầu xuất hiện trong tìm kiếm địa phương.",
     en: "Partnering with Apex Autocare (Rach Gia, Kien Giang) since July 2026: Facebook views up 289%, TikTok content starting to reach new audiences via the algorithm, and branded search terms beginning to appear locally.",
   },
-  isOngoing: true,
+  isOngoing: false, // stopped working with Trí Đức Media (anh Đức, 2026-11-05)
   dataAsOf: "08/2026",
   stats: [
     {

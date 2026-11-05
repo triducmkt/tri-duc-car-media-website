@@ -212,12 +212,12 @@ export default function SystemHero({ skipHref = "#tru-cot" }: Props) {
           const ps = project(S.x, S.y, S.z);
           const r = 16 * ps.s * 0.9 + 6;
           ctx!.beginPath(); ctx!.arc(ps.x, ps.y, r, 0, 6.284);
-          ctx!.fillStyle = "rgba(62,158,138," + 0.14 * satOn + ")"; ctx!.fill();
+          ctx!.fillStyle = "rgba(23,168,90," + 0.14 * satOn + ")"; ctx!.fill();
           ctx!.beginPath(); ctx!.arc(ps.x, ps.y, r * 0.42, 0, 6.284);
-          ctx!.fillStyle = "rgba(62,158,138," + 0.85 * satOn + ")"; ctx!.fill();
+          ctx!.fillStyle = "rgba(23,168,90," + 0.85 * satOn + ")"; ctx!.fill();
           ctx!.font = "500 " + (isMobile ? 10 : 12) + "px " + sansFamily;
           ctx!.textAlign = "center"; ctx!.textBaseline = "middle";
-          ctx!.fillStyle = "rgba(233,228,215," + 0.78 * satOn + ")";
+          ctx!.fillStyle = "rgba(238,242,247," + 0.78 * satOn + ")";
           ctx!.fillText(S.label, ps.x, ps.y + r + 14);
         }
       }
@@ -287,12 +287,12 @@ export default function SystemHero({ skipHref = "#tru-cot" }: Props) {
           const tw = ctx!.measureText(st.label).width;
           const pw = tw + 14, ph2 = fs + 11;
           const a2 = fade * appear * (0.55 + tension * 0.4);
-          ctx!.fillStyle = "rgba(10,20,25," + a2 * 0.8 + ")";
+          ctx!.fillStyle = "rgba(11,18,32," + a2 * 0.8 + ")";
           roundRect(px - pw / 2, py - ph2 / 2, pw, ph2, 3); ctx!.fill();
           ctx!.strokeStyle = col.replace(/[\d.]+\)$/, (a2 * 0.5).toFixed(3) + ")");
           ctx!.lineWidth = 1;
           roundRect(px - pw / 2, py - ph2 / 2, pw, ph2, 3); ctx!.stroke();
-          ctx!.fillStyle = "rgba(233,228,215," + a2 * 0.92 + ")";
+          ctx!.fillStyle = "rgba(238,242,247," + a2 * 0.92 + ")";
           ctx!.textAlign = "center"; ctx!.textBaseline = "middle";
           ctx!.fillText(st.label, px, py + 0.5);
           chips++;
@@ -301,7 +301,7 @@ export default function SystemHero({ skipHref = "#tru-cot" }: Props) {
         if (i < 3 && rise > 0.15) {
           ctx!.font = "500 " + (isMobile ? 10.5 : 12.5) + "px " + sansFamily;
           ctx!.textAlign = "center"; ctx!.textBaseline = "middle";
-          ctx!.fillStyle = "rgba(231,196,137," + rise * 0.9 + ")";
+          ctx!.fillStyle = "rgba(123,224,166," + rise * 0.9 + ")";
           ctx!.fillText(st.label, A.x, A.y - 14);
         }
       }
@@ -319,7 +319,7 @@ export default function SystemHero({ skipHref = "#tru-cot" }: Props) {
         Math.round(lerp(90, 196, warm)) + "," +
         Math.round(lerp(70, 137, warm)) + ",0.34)"
       );
-      glow.addColorStop(1, "rgba(214,163,74,0)");
+      glow.addColorStop(1, "rgba(23,168,90,0)");
       ctx!.fillStyle = glow;
       ctx!.beginPath(); ctx!.arc(0, -150, 300, 0, 6.284); ctx!.fill();
 

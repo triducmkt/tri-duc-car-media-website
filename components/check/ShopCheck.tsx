@@ -165,7 +165,7 @@ export function ShopCheck() {
 
   return (
     <section id="kiem-tra" className="relative overflow-hidden bg-ink pb-16 pt-24 text-white sm:pb-24 sm:pt-32">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_35%,rgba(66,133,244,0.2),transparent_60%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_35%,rgba(10,111,184,0.2),transparent_60%)]" />
       <Container className="relative grid gap-5 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 sm:gap-5">
           <span className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</span>
@@ -257,7 +257,7 @@ export function ShopCheck() {
               </Link>
 
               {status === "done" ? (
-                <p role="status" className="flex items-center gap-2 rounded-xl bg-emerald-500/15 px-4 py-3 text-sm font-semibold text-emerald-300 ring-1 ring-emerald-400/30">
+                <p role="status" className="flex items-center gap-2 rounded-xl bg-gold-500/15 px-4 py-3 text-sm font-semibold text-gold-400 ring-1 ring-gold-500/30">
                   <Check size={18} aria-hidden /> {t("done")}
                 </p>
               ) : (
@@ -270,7 +270,7 @@ export function ShopCheck() {
                       <h2 className="font-display text-lg font-bold leading-snug sm:text-xl">{tg(`items.${gift}.title`)}</h2>
                       <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-white/60">
                         <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold text-white/80">{tg(`formats.${GIFT_MAP[gift].format}`)}</span>
-                        <span className={GIFT_MAP[gift].status === "ready" ? "text-emerald-300" : "text-white/55"}>{tg(GIFT_MAP[gift].status)}</span>
+                        <span className={GIFT_MAP[gift].status === "ready" ? "text-gold-400" : "text-white/55"}>{tg(GIFT_MAP[gift].status)}</span>
                       </p>
                     </div>
                   </div>
@@ -289,12 +289,12 @@ export function ShopCheck() {
               <button
                 type="button"
                 onClick={sendViaZalo}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#35b6ff] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3aa3ec] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
               >
                 <MessageCircle size={18} aria-hidden /> {t("zaloResult")}
               </button>
               {zaloCopied && (
-                <p role="status" className="-mt-2 text-center text-xs font-semibold text-[#35b6ff]">
+                <p role="status" className="-mt-2 text-center text-xs font-semibold text-[#3aa3ec]">
                   {t("zaloCopied")}
                 </p>
               )}

@@ -247,7 +247,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
         {/* Soft ink glow behind the card (desktop). */}
         <div
           aria-hidden
-          className="absolute inset-0 hidden bg-[radial-gradient(60%_70%_at_72%_50%,rgba(240,192,105,0.08),transparent_70%)] lg:block"
+          className="absolute inset-0 hidden bg-[radial-gradient(60%_70%_at_72%_50%,rgba(69,209,127,0.08),transparent_70%)] lg:block"
         />
 
         <div className="relative mx-auto grid h-full w-full max-w-7xl lg:grid-cols-[1fr_minmax(0,0.82fr)] lg:items-center lg:gap-16 lg:px-8">

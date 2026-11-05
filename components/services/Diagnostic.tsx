@@ -158,7 +158,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
         const rr = (tA * 0.35 + ring / 3) % 1;
         ctx!.beginPath();
         ctx!.arc(hubP.x, hubP.y, rr * Math.min(W, H) * 0.46, 0, 6.284);
-        ctx!.strokeStyle = `rgba(143,160,166,${0.09 * (1 - rr)})`;
+        ctx!.strokeStyle = `rgba(155,164,178,${0.09 * (1 - rr)})`;
         ctx!.lineWidth = 1; ctx!.stroke();
       }
 
@@ -167,14 +167,14 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
         const A = project(a.x, a.y, a.z), B = project(b.x, b.y, b.z);
         const health = Math.min(stateVal(a), stateVal(b));
         ctx!.beginPath(); ctx!.moveTo(A.x, A.y); ctx!.lineTo(B.x, B.y);
-        ctx!.strokeStyle = `rgba(143,160,166,${0.13 + health * 0.1})`;
+        ctx!.strokeStyle = `rgba(155,164,178,${0.13 + health * 0.1})`;
         ctx!.lineWidth = 1; ctx!.stroke();
         for (let k = 0; k < 3; k++) {
           if (health < 0.34 && (k + e) % 2 === 0) continue;
           const u = (tA * (0.1 + health * 0.3) + k / 3 + e * 0.13) % 1;
           ctx!.beginPath();
           ctx!.arc(A.x + (B.x - A.x) * u, A.y + (B.y - A.y) * u, 2.1, 0, 6.284);
-          ctx!.fillStyle = `rgba(231,196,137,${0.25 + health * 0.45})`;
+          ctx!.fillStyle = `rgba(123,224,166,${0.25 + health * 0.45})`;
           ctx!.fill();
         }
       });
@@ -201,7 +201,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
           const ly = 0.25 * P1.y + 0.5 * ctrly + 0.25 * P2.y;
           ctx!.font = "500 10px " + sansFamily;
           ctx!.textAlign = "center"; ctx!.textBaseline = "middle";
-          ctx!.fillStyle = "rgba(6,12,15,.8)";
+          ctx!.fillStyle = "rgba(11,18,32,.8)";
           roundRect(lx - 46, ly - 9, 92, 18, 3); ctx!.fill();
           ctx!.fillStyle = "rgba(224,120,100,.95)";
           ctx!.fillText(coveringFor, lx, ly + 0.5);
@@ -220,7 +220,7 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
         if (mo.flash > 0) mo.flash = Math.max(0, mo.flash - dt * 1.6);
         const x = P.x - bw / 2 + ox, y = P.y - bh / 2 + oy;
 
-        ctx!.fillStyle = "rgba(6,12,15,.75)";
+        ctx!.fillStyle = "rgba(11,18,32,.75)";
         roundRect(x + 5 * P.s, y + 5 * P.s, bw, bh, 4 * P.s); ctx!.fill();
 
         const grd = ctx!.createLinearGradient(x, y, x, y + bh);
@@ -244,23 +244,23 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
 
         ctx!.font = `600 ${Math.max(9, 11 * P.s)}px ${sansFamily}`;
         ctx!.textAlign = "center"; ctx!.textBaseline = "middle";
-        ctx!.fillStyle = mo.state === "unknown" ? "rgba(143,160,166,.85)" : "rgba(240,236,226,.96)";
+        ctx!.fillStyle = mo.state === "unknown" ? "rgba(155,164,178,.85)" : "rgba(238,242,247,.96)";
         ctx!.fillText(mo.n, P.x + ox, P.y + oy);
       });
 
       const hb = project(0, 0, 0);
       ctx!.beginPath(); ctx!.arc(hb.x, hb.y, 10 * hb.s, 0, 6.284);
-      ctx!.fillStyle = "rgba(231,196,137,.10)"; ctx!.fill();
-      ctx!.strokeStyle = "rgba(231,196,137,.35)"; ctx!.lineWidth = 1; ctx!.stroke();
+      ctx!.fillStyle = "rgba(123,224,166,.10)"; ctx!.fill();
+      ctx!.strokeStyle = "rgba(123,224,166,.35)"; ctx!.lineWidth = 1; ctx!.stroke();
 
       if (scoreRef.current !== null) {
         const ap = sstep(0, 1.1, (ts - doneAtRef.current) / 1000);
         ctx!.font = `700 ${30 * hb.s}px ${serifFamily}`;
         ctx!.textAlign = "center"; ctx!.textBaseline = "middle";
-        ctx!.fillStyle = `rgba(231,196,137,${0.95 * ap})`;
+        ctx!.fillStyle = `rgba(123,224,166,${0.95 * ap})`;
         ctx!.fillText(scoreRef.current.toFixed(1), hb.x, hb.y - 2);
         ctx!.font = `400 ${10 * hb.s}px ${sansFamily}`;
-        ctx!.fillStyle = `rgba(143,160,166,${0.9 * ap})`;
+        ctx!.fillStyle = `rgba(155,164,178,${0.9 * ap})`;
         ctx!.fillText("/ 10", hb.x, hb.y + 20 * hb.s);
       }
 
@@ -270,11 +270,11 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
         else {
           const yy = H * sp;
           const lg = ctx!.createLinearGradient(0, yy - 40, 0, yy + 40);
-          lg.addColorStop(0, "rgba(214,163,74,0)");
-          lg.addColorStop(0.5, "rgba(214,163,74,.35)");
-          lg.addColorStop(1, "rgba(214,163,74,0)");
+          lg.addColorStop(0, "rgba(23,168,90,0)");
+          lg.addColorStop(0.5, "rgba(23,168,90,.35)");
+          lg.addColorStop(1, "rgba(23,168,90,0)");
           ctx!.fillStyle = lg; ctx!.fillRect(0, yy - 40, W, 80);
-          ctx!.fillStyle = "rgba(231,196,137,.7)"; ctx!.fillRect(0, yy, W, 1);
+          ctx!.fillStyle = "rgba(123,224,166,.7)"; ctx!.fillRect(0, yy, W, 1);
         }
       }
 
@@ -373,15 +373,15 @@ export default function Diagnostic({ onSubmitLead, onResult }: Props) {
   };
 
   const q = QUESTIONS[qi];
-  const barColor = result ? (result.score >= 7 ? "#3E9E8A" : result.score >= 4 ? "#D6A34A" : "#C7452F") : "#D6A34A";
+  const barColor = result ? (result.score >= 7 ? "#17A85A" : result.score >= 4 ? "#17A85A" : "#C7452F") : "#17A85A";
 
   return (
     <div className={styles.dx}>
       <div className={styles.vis}>
         <canvas ref={canvasRef} aria-hidden="true" />
         <div className={styles.legend}>
-          <span><i style={{ background: "#3E9E8A" }} />{t("legendGood")}</span>
-          <span><i style={{ background: "#D6A34A" }} />{t("legendWarn")}</span>
+          <span><i style={{ background: "#17A85A" }} />{t("legendGood")}</span>
+          <span><i style={{ background: "#17A85A" }} />{t("legendWarn")}</span>
           <span><i style={{ background: "#C7452F" }} />{t("legendBad")}</span>
         </div>
       </div>

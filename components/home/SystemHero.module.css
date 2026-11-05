@@ -3,13 +3,13 @@
    into the site's global Tailwind theme. */
 
 .stage {
-  --lacquer: #0b161b;
-  --brass: #d6a34a;
-  --brass-soft: #e7c489;
+  --lacquer: #0b1220;
+  --brass: #17a85a;
+  --brass-soft: #7be0a6;
   --vermilion: #c7452f;
-  --bone: #e9e4d7;
-  --muted: #8fa0a6;
-  --line: rgba(233, 228, 215, 0.14);
+  --bone: #eef2f7;
+  --muted: #9ba4b2;
+  --line: rgba(238,242,247, 0.14);
   --serif: var(--tdcm-font-serif, Georgia), Georgia, serif;
   --sans: var(--tdcm-font-display, system-ui), system-ui, sans-serif;
 
@@ -39,7 +39,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(120% 90% at 50% 45%, transparent 38%, rgba(4, 10, 13, 0.72) 100%);
+  background: radial-gradient(120% 90% at 50% 45%, transparent 38%, rgba(11,18,32, 0.72) 100%);
 }
 
 .grain {
@@ -141,7 +141,7 @@
   padding: 0.5rem 1.1rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(11, 22, 27, 0.5);
+  background: rgba(11,18,32, 0.5);
 }
 .counter b {
   font-family: var(--serif);

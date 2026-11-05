@@ -57,7 +57,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
     <section id={variant === "full" ? "thang-tu-do" : "loi-hua"} className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_15%_0%,rgba(240,192,105,0.14),transparent),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(66,133,244,0.12),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_15%_0%,rgba(69,209,127,0.14),transparent),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(10,111,184,0.12),transparent)]"
       />
       <Container className="relative flex flex-col gap-14">
         {/* ── Promise ── */}
@@ -88,7 +88,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                     style={{ height: `${STAIR_HEIGHTS[i]}%` }}
                     className={`flex flex-col justify-between rounded-t-xl p-2.5 transition-all duration-300 sm:p-4 ${
                       on
-                        ? "bg-gold-500 text-ink shadow-[0_-12px_40px_-12px_rgba(240,192,105,0.7)]"
+                        ? "bg-gold-500 text-ink shadow-[0_-12px_40px_-12px_rgba(69,209,127,0.7)]"
                         : passed
                           ? "bg-gold-500/25 text-white ring-1 ring-inset ring-gold-500/40"
                           : "bg-white/[0.06] text-white ring-1 ring-inset ring-white/10 group-hover:bg-white/[0.1]"
@@ -122,7 +122,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                 <p className="text-xs font-medium uppercase tracking-[0.12em] text-white/45">
                   {t("phoneTitle", { span: level.span })}
                 </p>
-                <p className={`mt-1 font-display text-lg font-semibold ${calm ? "text-emerald-300" : "text-white"}`}>
+                <p className={`mt-1 font-display text-lg font-semibold ${calm ? "text-gold-400" : "text-white"}`}>
                   {calm ? t("calm") : t("onlyYou", { n: level.calls.length })}
                 </p>
                 <ul key={active} className="mt-4 flex flex-col gap-2.5" aria-live="polite">
@@ -131,12 +131,12 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
                       key={c.text}
                       style={{ animation: "fadeUp .45s ease both", animationDelay: `${i * 110}ms` }}
                       className={`flex items-start gap-3 rounded-2xl p-3.5 ${
-                        calm ? "bg-emerald-400/10 ring-1 ring-emerald-400/20" : "bg-white/[0.07] ring-1 ring-white/10"
+                        calm ? "bg-gold-500/10 ring-1 ring-gold-500/20" : "bg-white/[0.07] ring-1 ring-white/10"
                       }`}
                     >
                       <span
                         className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                          calm ? "bg-emerald-400/20 text-emerald-300" : "bg-red-500/90 text-white"
+                          calm ? "bg-gold-500/20 text-gold-400" : "bg-red-500/90 text-white"
                         }`}
                       >
                         {calm ? <CheckCircle2 size={16} aria-hidden /> : <PhoneIncoming size={15} aria-hidden />}

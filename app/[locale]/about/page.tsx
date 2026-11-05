@@ -99,7 +99,7 @@ export default async function AboutPage({
       <section id="tam-nhin" className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_0%,rgba(240,192,105,0.16),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_0%,rgba(69,209,127,0.16),transparent)]"
         />
         <Container className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
           <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-400">{t("visionEyebrow")}</span>

@@ -28,7 +28,8 @@
     "fanpage": "facebook.com/triduccar.media",
     "taxCode": "Tax code",
     "vatLine": "VAT e-invoices issued",
-    "brandStory": "Our name & logo"
+    "brandStory": "Our name & logo",
+    "priceList": "Price list"
   },
   "home": {
     "servicesEyebrow": "Solutions",
@@ -226,7 +227,7 @@
     "phonePh": "Phone / Zalo",
     "submit": "Send me this roadmap",
     "sending": "Sending…",
-    "note": "Cost & timeline agreed after the diagnosis · VAT invoice included.",
+    "note": "Reference prices in the Pricing section · confirmed after the diagnosis · VAT invoice.",
     "zalo": "Message on Zalo",
     "okTitle": "Roadmap received!",
     "okBody": "Trí Đức will call back during working hours to book your 15-minute diagnosis.",
@@ -540,7 +541,7 @@
   "caseMap": {
     "eyebrow": "Where we work",
     "heading": "From Rạch Giá to Bắc Ninh — real results, in places you can check.",
-    "sub": "Every light is a business growing with Trí Đức right now. Tap one to see how they grew.",
+    "sub": "Every light is a business Trí Đức has worked with. Tap one to see how they grew.",
     "places": [
       {
         "city": "HCMC",
@@ -1566,7 +1567,7 @@
       },
       {
         "t": "Real proof",
-        "d": "Numbers from 3 businesses we work with"
+        "d": "Real numbers from 3 businesses we have worked with"
       },
       {
         "t": "Company & services",
@@ -1593,5 +1594,41 @@
     "ctaLead": "How similar is your business to this one?",
     "ctaTwin": "Check similarity (4 questions)",
     "ctaZalo": "Ask Đức"
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "heading": "Clear prices before we meet. Pick single services, or a combo to save.",
+    "sub": "Tap a combo or a service: the tower stacks each part, the dashed frame is the separate price, the green plane is what you pay.",
+    "combosHeading": "Combos along the Freedom Ladder",
+    "singlesHeading": "Single services",
+    "comboLabel": "Combo",
+    "singleLabel": "Single service",
+    "separate": "Separately",
+    "contact": "Contact us",
+    "contactNote": "Designed after Step 3. Quoted after the diagnosis.",
+    "saving": "Save {amount} (−{pct}%) vs. buying separately",
+    "perMonth": "/month",
+    "once": "one-off",
+    "months": "{n} months",
+    "minMonths": "Minimum contract {n} months",
+    "plus": "+ {amount}/month subscription",
+    "freeName": "15-minute diagnosis",
+    "freeNote": "At your shop (HCMC) or over Zalo video · no commitment",
+    "detail": "See details",
+    "ctaZalo": "Ask about prices on Zalo",
+    "ctaBook": "Book a free diagnosis",
+    "footnote": "Reference prices based on the current market; they vary with business size and scope. Please confirm with founder Tăng Trí Đức before signing. Prices exclude VAT and ad spend paid to the platforms.",
+    "back": "All services",
+    "pillar": "Pillar {n} / 5",
+    "priceFrom": "Price",
+    "vatNote": "Electronic VAT invoice · staged payments",
+    "includes": "What you get",
+    "steps": "How it rolls out",
+    "fit": "Best for",
+    "measure": "Measured by",
+    "inCombos": "Included in combos",
+    "comboHint": "Combos cost about 20% less than buying separately.",
+    "basis": "Price basis (*)",
+    "others": "Other services"
   }
 }

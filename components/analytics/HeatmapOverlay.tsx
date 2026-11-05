@@ -82,7 +82,7 @@ export function HeatmapOverlay({ accessKey, path, onExit }: { accessKey: string;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Faint 1 cm grid so every sensor is visible.
-    ctx.strokeStyle = "rgba(66,133,244,0.12)";
+    ctx.strokeStyle = "rgba(10,111,184,0.12)";
     ctx.lineWidth = 1;
     ctx.beginPath();
     for (let x = 0; x <= size.w; x += CM_PX) {

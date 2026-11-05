@@ -2,24 +2,26 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Core brand palette — white 40% / blue 40% / near-black navy 20-30% */
+  /* Brand palette = logo v10 (design/logo-tri-duc-media): navy #0B1220, sea blue #0A6FB8,
+     green #17A85A + white. The "gold-*" token names are kept for the existing
+     classes but now carry the brand GREEN accent (2026-11-05). */
   --color-paper: #ffffff;
   --color-paper-soft: #f5f7fb;
 
-  --color-brand-50: #eaf1fe;
-  --color-brand-100: #d3e3fd;
-  --color-brand-300: #8fb6f9;
-  --color-brand-500: #4285f4;
-  --color-brand-600: #2f6fe0;
-  --color-brand-700: #2557b3;
+  --color-brand-50: #e6f1fa;
+  --color-brand-100: #cfe4f5;
+  --color-brand-300: #6fb0e3;
+  --color-brand-500: #0a6fb8;
+  --color-brand-600: #085d9b;
+  --color-brand-700: #064a7c;
 
   --color-ink: #0b1220;
   --color-ink-soft: #131d33;
   --color-ink-muted: #4b5568;
 
-  --color-gold-400: #f0c069;
-  --color-gold-500: #d9a441;
-  --color-gold-600: #b5822a;
+  --color-gold-400: #45d17f;
+  --color-gold-500: #17a85a;
+  --color-gold-600: #11864a;
 
   --background: var(--color-paper);
   --foreground: var(--color-ink);

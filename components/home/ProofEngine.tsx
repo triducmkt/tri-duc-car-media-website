@@ -162,8 +162,8 @@ export function ProofEngine() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float glow = smoothstep(0.5, 0.0, d);
-              vec3 gold = vec3(0.94, 0.75, 0.41);
-              vec3 blue = vec3(0.36, 0.58, 0.98);
+              vec3 gold = vec3(0.27, 0.82, 0.50);
+              vec3 blue = vec3(0.23, 0.64, 0.93);
               vec3 c = mix(blue, gold, smoothstep(0.35, 0.9, vT));
               gl_FragColor = vec4(c * 1.15, pow(glow, 1.6) * vA);
             }`,
@@ -256,7 +256,7 @@ export function ProofEngine() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_30%_50%,rgba(66,133,244,0.18),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_30%_50%,rgba(10,111,184,0.18),transparent_70%)]"
       />
       <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
         <div className="relative aspect-[4/3] w-full lg:aspect-square">

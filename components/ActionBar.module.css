@@ -5,10 +5,10 @@
   z-index: 50;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: rgba(9, 18, 22, 0.94);
+  background: rgba(11,18,32, 0.94);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(233, 228, 215, 0.14);
+  border-top: 1px solid rgba(238,242,247, 0.14);
   padding-bottom: env(safe-area-inset-bottom);
   font-family: var(--tdcm-font-display, system-ui), system-ui, sans-serif;
 }
@@ -18,14 +18,14 @@
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 650;
-  color: #e9e4d7;
-  border-right: 1px solid rgba(233, 228, 215, 0.14);
+  color: #eef2f7;
+  border-right: 1px solid rgba(238,242,247, 0.14);
 }
 .bar a:last-child {
   border-right: 0;
-  background: #d6a34a;
-  color: #14212a;
+  background: #17a85a;
+  color: #0b1220;
   font-weight: 600;
 }
-.bar a:focus-visible { outline: 2px solid #e7c489; outline-offset: -3px; }
+.bar a:focus-visible { outline: 2px solid #7be0a6; outline-offset: -3px; }
 @media (min-width: 900px) { .bar { display: none; } }

@@ -10,7 +10,7 @@ export function CtaBanner() {
     <section className="relative overflow-hidden bg-ink py-20 sm:py-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_0%,rgba(240,192,105,0.16),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_0%,rgba(69,209,127,0.16),transparent)]"
       />
       <div
         aria-hidden

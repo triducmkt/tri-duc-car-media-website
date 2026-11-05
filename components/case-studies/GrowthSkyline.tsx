@@ -69,7 +69,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
         for (let x = -5; x <= 5; x += 0.25) for (let z = -1.6; z <= 1.6; z += 0.25) floorPts.push(x, 0, z);
         const floorGeo = new THREE.BufferGeometry();
         floorGeo.setAttribute("position", new THREE.Float32BufferAttribute(floorPts, 3));
-        const floorMat = new THREE.PointsMaterial({ color: 0x5b7fc4, size: 0.035, transparent: true, opacity: 0.35 });
+        const floorMat = new THREE.PointsMaterial({ color: 0x3d7fb8, size: 0.035, transparent: true, opacity: 0.35 });
         stage.add(new THREE.Points(floorGeo, floorMat));
 
         // Columns: unit boxes scaled in Y; gradient blue base → gold top.
@@ -88,7 +88,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
             varying float vY; varying vec3 vN;
             void main() {
               vec3 base = vec3(0.16, 0.27, 0.55);
-              vec3 top = vec3(0.98, 0.78, 0.42);
+              vec3 top = vec3(0.27, 0.82, 0.50);
               vec3 c = mix(base, top, smoothstep(0.15, 1.0, vY));
               float rim = 0.55 + 0.45 * abs(normalize(vN).x);
               gl_FragColor = vec4(c * rim, 0.92);
@@ -127,7 +127,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
             varying float vA;
             void main() {
               float d = length(gl_PointCoord - 0.5);
-              gl_FragColor = vec4(vec3(1.0, 0.85, 0.55) * 1.2, pow(smoothstep(0.5, 0.0, d), 1.6) * vA);
+              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(smoothstep(0.5, 0.0, d), 1.6) * vA);
             }`,
         });
         stage.add(new THREE.Points(glowGeo, glowMat));
@@ -135,7 +135,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
         // Trend line across the tops (redrawn per metric).
         const lineGeo = new THREE.BufferGeometry();
         lineGeo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(maxPoints * 3), 3));
-        const lineMat = new THREE.LineBasicMaterial({ color: 0xf0c069, transparent: true, opacity: 0 });
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0 });
         stage.add(new THREE.Line(lineGeo, lineMat));
 
         const H = 2.4; // tallest column
@@ -286,7 +286,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
     <div ref={cardRef} className="not-prose relative overflow-hidden rounded-3xl bg-ink p-5 text-white sm:p-7">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_80%,rgba(66,133,244,0.18),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_80%,rgba(10,111,184,0.18),transparent_70%)]"
       />
       <div className="relative flex flex-col gap-4">
         <div className="flex flex-col gap-1">

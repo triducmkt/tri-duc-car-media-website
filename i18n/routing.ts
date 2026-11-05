@@ -18,6 +18,11 @@ export const routing = defineRouting({
       vi: "/dich-vu",
       en: "/services",
     },
+    // One page per service (lib/servicesCatalog.ts).
+    "/services/[slug]": {
+      vi: "/dich-vu/[slug]",
+      en: "/services/[slug]",
+    },
     "/case-studies": {
       vi: "/du-an",
       en: "/case-studies",

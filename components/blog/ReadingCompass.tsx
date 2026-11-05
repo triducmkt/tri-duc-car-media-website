@@ -181,7 +181,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
               float d = length(gl_PointCoord - 0.5);
               float core = smoothstep(0.12, 0.0, d);
               float halo = pow(smoothstep(0.5, 0.0, d), 2.2);
-              vec3 c = mix(vec3(0.55, 0.7, 1.0), vec3(1.0, 0.8, 0.45), vG);
+              vec3 c = mix(vec3(0.23, 0.64, 0.93), vec3(0.27, 0.82, 0.50), vG);
               gl_FragColor = vec4(c * (0.8 + core), (halo * 0.8 + core) * vA);
             }`,
         });
@@ -193,7 +193,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
             if ((posts[i].category ?? "") === (posts[j].category ?? "")) links.push(...pos[i], ...pos[j]);
         const linkGeo = new THREE.BufferGeometry();
         linkGeo.setAttribute("position", new THREE.Float32BufferAttribute(links, 3));
-        const linkMat = new THREE.LineBasicMaterial({ color: 0x7fa2ef, transparent: true, opacity: 0.16 });
+        const linkMat = new THREE.LineBasicMaterial({ color: 0x5a9ad6, transparent: true, opacity: 0.16 });
         sky.add(new THREE.LineSegments(linkGeo, linkMat));
 
         // ── Reading path: a gold curve drawn star to star, with a comet on it.
@@ -201,7 +201,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
         const pathGeo = new THREE.BufferGeometry();
         const pathArr = new Float32Array((SEG + 1) * 3);
         pathGeo.setAttribute("position", new THREE.BufferAttribute(pathArr, 3));
-        const pathMat = new THREE.LineBasicMaterial({ color: 0xf0c069, transparent: true, opacity: 0.95 });
+        const pathMat = new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0.95 });
         const pathLine = new THREE.Line(pathGeo, pathMat);
         sky.add(pathLine);
         let curve: InstanceType<typeof THREE.CatmullRomCurve3> | null = null;
@@ -377,7 +377,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
     <section ref={sectionRef} id="la-ban" className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_50%_at_70%_40%,rgba(240,192,105,0.10),transparent_70%),radial-gradient(45%_55%_at_25%_60%,rgba(66,133,244,0.14),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_50%_at_70%_40%,rgba(69,209,127,0.10),transparent_70%),radial-gradient(45%_55%_at_25%_60%,rgba(10,111,184,0.14),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-12">
         <div className="flex flex-col gap-6">

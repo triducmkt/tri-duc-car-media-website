@@ -160,7 +160,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
           world.add(g);
           return g;
         });
-        const GOLD = [1, 0.78, 0.42], BLUE = [0.45, 0.66, 1];
+        const GOLD = [0.27, 0.82, 0.5], BLUE = [0.45, 0.66, 1];
 
         // Ring target positions (shared shape for both towers).
         const ringPos = new Float32Array(RINGS * PER_RING * 3);
@@ -318,7 +318,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
 
   return (
     <section ref={sectionRef} id="ban-sao" className="relative overflow-hidden bg-ink py-16 text-white sm:py-24">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_45%,rgba(240,192,105,0.12),transparent_60%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_45%,rgba(69,209,127,0.12),transparent_60%)]" />
       <Container className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
@@ -415,7 +415,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
               )}
 
               {status === "done" ? (
-                <p role="status" className="flex items-center gap-2 rounded-xl bg-emerald-500/15 px-4 py-3 text-sm font-semibold text-emerald-300 ring-1 ring-emerald-400/30">
+                <p role="status" className="flex items-center gap-2 rounded-xl bg-gold-500/15 px-4 py-3 text-sm font-semibold text-gold-400 ring-1 ring-gold-500/30">
                   <Check size={18} aria-hidden /> {t("done")}
                 </p>
               ) : (
@@ -436,7 +436,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
               )}
 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 pt-4 text-sm font-semibold">
-                <a href={COMPANY.zalo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("twin_cta", { to: "zalo" })} className="inline-flex items-center gap-1.5 text-[#35b6ff] hover:text-white">
+                <a href={COMPANY.zalo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("twin_cta", { to: "zalo" })} className="inline-flex items-center gap-1.5 text-[#3aa3ec] hover:text-white">
                   <MessageCircle size={16} aria-hidden /> {t("zalo")}
                 </a>
                 <Link href="/booking" onClick={() => trackEvent("twin_cta", { to: "booking" })} className="inline-flex items-center gap-1.5 text-white/75 hover:text-white">

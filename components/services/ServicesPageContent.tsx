@@ -10,6 +10,10 @@ import Diagnostic from "@/components/services/Diagnostic";
 import { SystemBuilder } from "@/components/services/SystemBuilder";
 import { VatAdvantage } from "@/components/VatAdvantage";
 import { FreedomLadder } from "@/components/home/FreedomLadder";
+import { PriceStudio } from "@/components/services/PriceStudio";
+import { SERVICES, formatVnd, type Locale } from "@/lib/servicesCatalog";
+import { Link } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 const icons = [SystemIcon, SpotlightIcon, SequenceIcon, ClusterIcon, HubIcon];
 
@@ -23,6 +27,8 @@ export function ServicesPageContent() {
   const tDiag = useTranslations("diagnostic");
   const items = t.raw("items") as { title: string; description: string }[];
   const [recommended, setRecommended] = useState("");
+  const locale = useLocale() as Locale;
+  const tp = useTranslations("pricing");
 
   async function sendLead(lead: { name: string; phone: string; score: number; bottleneck: string }) {
     const r = await fetch("/api/lead", {
@@ -36,6 +42,7 @@ export function ServicesPageContent() {
   return (
     <>
       <FreedomLadder variant="full" />
+      <PriceStudio />
       <SystemBuilder />
       <VatAdvantage id="hoa-don-vat" />
 
@@ -80,13 +87,28 @@ export function ServicesPageContent() {
                         {tDiag("recBadge")}
                       </span>
                     )}
-                    <Button
-                      href="/booking"
-                      variant="ghost"
-                      className="mt-2 self-start !text-white !ring-white/20 hover:!bg-white/10"
-                    >
-                      {t("ctaLabel")}
-                    </Button>
+                    <div className="mt-2 flex flex-wrap items-center gap-4">
+                      {SERVICES[index] ? (
+                        <span className="font-display text-lg font-bold text-white">
+                          {formatVnd(SERVICES[index].price.amount, locale)}
+                          {SERVICES[index].price.estimated ? <span className="text-gold-400">*</span> : null}
+                          <span className="ml-1 text-sm font-medium text-white/55">
+                            {SERVICES[index].price.unit === "month" ? tp("perMonth") : tp("once")}
+                          </span>
+                        </span>
+                      ) : null}
+                      {SERVICES[index] ? (
+                        <Link
+                          href={{ pathname: "/services/[slug]", params: { slug: SERVICES[index].slug } }}
+                          className="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/10"
+                        >
+                          {tp("detail")}
+                        </Link>
+                      ) : null}
+                      <Button href="/booking" variant="ghost" className="self-start !text-white !ring-white/20 hover:!bg-white/10">
+                        {t("ctaLabel")}
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </Reveal>

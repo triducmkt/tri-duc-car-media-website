@@ -28,7 +28,8 @@
     "fanpage": "facebook.com/triduccar.media",
     "taxCode": "MST",
     "vatLine": "Xuất hóa đơn VAT điện tử",
-    "brandStory": "Ý nghĩa tên & logo"
+    "brandStory": "Ý nghĩa tên & logo",
+    "priceList": "Bảng giá dịch vụ"
   },
   "home": {
     "servicesEyebrow": "Giải pháp",
@@ -226,7 +227,7 @@
     "phonePh": "Số điện thoại / Zalo",
     "submit": "Gửi lộ trình cho tôi",
     "sending": "Đang gửi…",
-    "note": "Chi phí & thời gian chốt sau buổi chẩn đoán · có hóa đơn VAT.",
+    "note": "Giá tham khảo ở mục Bảng giá · chốt sau buổi chẩn đoán · có hóa đơn VAT.",
     "zalo": "Nhắn Zalo ngay",
     "okTitle": "Đã nhận lộ trình của anh/chị!",
     "okBody": "Trí Đức sẽ gọi lại trong giờ làm việc để hẹn buổi chẩn đoán 15 phút.",
@@ -540,7 +541,7 @@
   "caseMap": {
     "eyebrow": "Bản đồ đồng hành",
     "heading": "Từ Rạch Giá đến Bắc Ninh — kết quả thật, ở những nơi anh chị kiểm chứng được.",
-    "sub": "Mỗi điểm sáng là một doanh nghiệp đang đồng hành cùng Trí Đức. Bấm vào để xem họ đã tăng trưởng thế nào.",
+    "sub": "Mỗi điểm sáng là một doanh nghiệp Trí Đức đã và đang đồng hành. Bấm vào để xem họ đã tăng trưởng thế nào.",
     "places": [
       {
         "city": "TP.HCM",
@@ -660,7 +661,7 @@
     "title": "Kiến thức",
     "eyebrow": "Kiến thức thực chiến",
     "heading": "Kiến thức Marketing - Sales - Vận hành cho chủ doanh nghiệp",
-    "intro": "Bài viết từ chính các dự án Trí Đức đang đồng hành: cách xây hệ thống, chuẩn hóa vận hành và làm nội dung đa kênh cho SME & hộ kinh doanh.",
+    "intro": "Bài viết từ chính các dự án Trí Đức đã và đang đồng hành: cách xây hệ thống, chuẩn hóa vận hành và làm nội dung đa kênh cho SME & hộ kinh doanh.",
     "readMore": "Đọc bài viết",
     "backToList": "Quay lại Kiến thức",
     "empty": "Bài viết đang được cập nhật. Vui lòng quay lại sau.",
@@ -1566,7 +1567,7 @@
       },
       {
         "t": "Bằng chứng thật",
-        "d": "Số liệu 3 cơ sở đang đồng hành"
+        "d": "Số liệu thật của 3 cơ sở Trí Đức đã đồng hành"
       },
       {
         "t": "Pháp nhân & dịch vụ",
@@ -1593,5 +1594,41 @@
     "ctaLead": "Cơ sở của anh chị giống ca này bao nhiêu phần trăm?",
     "ctaTwin": "Xem độ giống (4 câu)",
     "ctaZalo": "Hỏi anh Đức"
+  },
+  "pricing": {
+    "eyebrow": "Bảng giá",
+    "heading": "Giá rõ ràng trước khi gặp. Chọn lẻ từng việc, hoặc lấy combo để tiết kiệm.",
+    "sub": "Bấm một combo hoặc một dịch vụ: tháp bên cạnh xếp từng phần, khung nét đứt là giá mua lẻ, mặt phẳng xanh là giá anh chị trả.",
+    "combosHeading": "Combo theo Thang Tự Do",
+    "singlesHeading": "Dịch vụ lẻ",
+    "comboLabel": "Combo",
+    "singleLabel": "Dịch vụ lẻ",
+    "separate": "Mua lẻ",
+    "contact": "Liên hệ",
+    "contactNote": "Thiết kế riêng sau khi đạt Bậc 3. Báo giá sau buổi chẩn đoán.",
+    "saving": "Tiết kiệm {amount} (−{pct}%) so với mua lẻ",
+    "perMonth": "/tháng",
+    "once": "trọn gói",
+    "months": "{n} tháng",
+    "minMonths": "Hợp đồng tối thiểu {n} tháng",
+    "plus": "+ thuê bao {amount}/tháng",
+    "freeName": "Chẩn đoán 15 phút",
+    "freeNote": "Tại tiệm (TP.HCM) hoặc qua Zalo video · không ràng buộc",
+    "detail": "Xem chi tiết",
+    "ctaZalo": "Nhắn Zalo hỏi giá",
+    "ctaBook": "Đặt lịch chẩn đoán miễn phí",
+    "footnote": "Giá tham khảo theo mặt bằng thị trường tại thời điểm đăng, có thể thay đổi theo quy mô và phạm vi công việc. Vui lòng xác nhận lại với founder Tăng Trí Đức trước khi ký hợp đồng. Giá chưa gồm VAT và ngân sách quảng cáo trả cho nền tảng.",
+    "back": "Tất cả dịch vụ",
+    "pillar": "Trụ cột {n} / 5",
+    "priceFrom": "Giá",
+    "vatNote": "Có hóa đơn VAT điện tử · thanh toán theo đợt",
+    "includes": "Anh chị nhận được gì",
+    "steps": "Lộ trình triển khai",
+    "fit": "Hợp với",
+    "measure": "Đo kết quả bằng",
+    "inCombos": "Có trong combo",
+    "comboHint": "Mua theo combo rẻ hơn khoảng 20% so với mua lẻ.",
+    "basis": "Căn cứ giá (*)",
+    "others": "Dịch vụ khác"
   }
 }

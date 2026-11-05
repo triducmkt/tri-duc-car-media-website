@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
 import { getBlogPosts, getCaseStudies } from "@/lib/sanity/queries";
+import { SERVICES } from "@/lib/servicesCatalog";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://triduccar.media";
 
@@ -30,6 +31,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  for (const s of SERVICES) {
+    for (const locale of routing.locales) {
+      entries.push({
+        url: `${siteUrl}${getPathname({ locale, href: { pathname: "/services/[slug]", params: { slug: s.slug } } })}`,
+      });
+    }
+  }
   for (const item of caseStudies) {
     for (const locale of routing.locales) {
       entries.push({

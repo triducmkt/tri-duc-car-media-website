@@ -203,8 +203,8 @@ export function HouseCallMap() {
               float d = length(gl_PointCoord - 0.5);
               if (d > 0.5) discard;
               float soft = smoothstep(0.5, 0.1, d);
-              vec3 cool = vec3(0.34, 0.5, 0.86);
-              vec3 c = mix(cool, vec3(0.98, 0.78, 0.42), max(vOn, vGlow * 0.7));
+              vec3 cool = vec3(0.23, 0.64, 0.93);
+              vec3 c = mix(cool, vec3(0.27, 0.82, 0.50), max(vOn, vGlow * 0.7));
               float a = (mix(0.55, 0.16, vBg) + vOn * 0.45 + vGlow * 0.35) * vA * soft;
               gl_FragColor = vec4(c, a);
             }`,
@@ -212,7 +212,7 @@ export function HouseCallMap() {
         map.add(new THREE.Points(dotGeo, dotMat));
 
         // ── Glow sprites (office head, rider + trail, destination head).
-        const gold = 0xf0c069;
+        const gold = 0x45d17f;
         const TRAIL = 14;
         const GLOWS = 2 + TRAIL;
         const glowPos = new Float32Array(GLOWS * 3);
@@ -239,7 +239,7 @@ export function HouseCallMap() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float g = smoothstep(0.5, 0.0, d);
-              gl_FragColor = vec4(vec3(1.0, 0.84, 0.52) * 1.2, pow(g, 1.6) * vA);
+              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(g, 1.6) * vA);
             }`,
         });
         map.add(new THREE.Points(glowGeo, glowMat));
@@ -469,7 +469,7 @@ export function HouseCallMap() {
     <section ref={sectionRef} id="den-tan-tiem" className="relative overflow-hidden bg-ink pb-20 pt-14 text-white sm:pb-24 sm:pt-20">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_55%_at_28%_55%,rgba(66,133,244,0.14),transparent_70%),radial-gradient(30%_30%_at_75%_20%,rgba(240,192,105,0.08),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_55%_at_28%_55%,rgba(10,111,184,0.14),transparent_70%),radial-gradient(30%_30%_at_75%_20%,rgba(69,209,127,0.08),transparent_70%)]"
       />
       <Container className="relative grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-12">
         <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1">
@@ -493,7 +493,7 @@ export function HouseCallMap() {
             </span>
             <span
               ref={destLabel}
-              className="absolute left-0 top-0 whitespace-nowrap rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold text-ink opacity-0 shadow-[0_0_24px_rgba(240,192,105,0.5)] transition-opacity sm:text-xs"
+              className="absolute left-0 top-0 whitespace-nowrap rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold text-ink opacity-0 shadow-[0_0_24px_rgba(69,209,127,0.5)] transition-opacity sm:text-xs"
             >
               {d && r ? `${nameOf(d)} · ≈ ${r.min} ${t("minShort")}` : ""}
             </span>
@@ -584,7 +584,7 @@ export function HouseCallMap() {
             {/* What they'll send — a Zalo-style bubble, written for them. */}
             <div className="flex flex-col gap-1.5">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-white/45">{t("bubbleLabel")}</p>
-              <div className="ml-auto max-w-[92%] rounded-2xl rounded-br-sm bg-[#0068ff] px-4 py-3 text-sm leading-relaxed text-white shadow-lg">
+              <div className="ml-auto max-w-[92%] rounded-2xl rounded-br-sm bg-[#0a6fb8] px-4 py-3 text-sm leading-relaxed text-white shadow-lg">
                 {message}
               </div>
             </div>

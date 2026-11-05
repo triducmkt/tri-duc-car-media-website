@@ -147,7 +147,7 @@ const doc = {
     vi: "Đồng hành cùng Khang Vũ Auto Care (Bình Dương) từ 07/2026: lượt xem Facebook tăng từ 292 lên hơn 20.000 chỉ sau 2 tháng, đồng bộ triển khai Facebook, TikTok và YouTube ngay từ tháng đầu tiên.",
     en: "Partnering with Khang Vu Auto Care (Binh Duong) since July 2026: Facebook views grew from 292 to over 20,000 in just 2 months, running Facebook, TikTok and YouTube together from month one.",
   },
-  isOngoing: true,
+  isOngoing: false, // stopped working with Trí Đức Media (anh Đức, 2026-11-05)
   dataAsOf: "08/2026",
   stats: [
     {

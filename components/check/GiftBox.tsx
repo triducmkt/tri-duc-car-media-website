@@ -47,17 +47,17 @@ export function GiftBox({ open, className = "" }: { open: boolean; className?: s
       };
 
       // Body + ribbon.
-      const body = edges(1.6, 1.1, 1.6, 0x8fb6f9, 0.9);
+      const body = edges(1.6, 1.1, 1.6, 0x6fb0e3, 0.9);
       body.obj.position.y = -0.25;
-      const ribbon = lines([0, 0.3, 0.81, 0, -0.8, 0.81, 0, 0.3, -0.81, 0, -0.8, -0.81, 0.81, 0.3, 0, 0.81, -0.8, 0, -0.81, 0.3, 0, -0.81, -0.8, 0], 0xf0c069, 0.95);
+      const ribbon = lines([0, 0.3, 0.81, 0, -0.8, 0.81, 0, 0.3, -0.81, 0, -0.8, -0.81, 0.81, 0.3, 0, 0.81, -0.8, 0, -0.81, 0.3, 0, -0.81, -0.8, 0], 0x45d17f, 0.95);
       box.add(body.obj, ribbon.obj);
       // Lid hinged on the back edge: pivot at z = -0.85.
       const hinge = new THREE.Group();
       hinge.position.set(0, 0.32, -0.85);
       box.add(hinge);
-      const lid = edges(1.75, 0.28, 1.75, 0x8fb6f9, 0.95);
+      const lid = edges(1.75, 0.28, 1.75, 0x6fb0e3, 0.95);
       lid.obj.position.set(0, 0.14, 0.85);
-      const bow = lines([0, 0.28, 0.85, -0.45, 0.62, 0.55, 0, 0.28, 0.85, 0.45, 0.62, 0.55, 0, 0.28, 0.85, -0.45, 0.62, 1.15, 0, 0.28, 0.85, 0.45, 0.62, 1.15], 0xf0c069, 1);
+      const bow = lines([0, 0.28, 0.85, -0.45, 0.62, 0.55, 0, 0.28, 0.85, 0.45, 0.62, 0.55, 0, 0.28, 0.85, -0.45, 0.62, 1.15, 0, 0.28, 0.85, 0.45, 0.62, 1.15], 0x45d17f, 1);
       hinge.add(lid.obj, bow.obj);
 
       // Sparks rising from inside the box.

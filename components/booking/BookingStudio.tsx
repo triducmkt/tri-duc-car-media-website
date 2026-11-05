@@ -39,13 +39,13 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
   ctx.fillRect(0, 0, W, H);
   // Soft gold glow top-left.
   const glow = ctx.createRadialGradient(140, 60, 0, 140, 60, 420);
-  glow.addColorStop(0, "rgba(240,192,105,0.18)");
-  glow.addColorStop(1, "rgba(240,192,105,0)");
+  glow.addColorStop(0, "rgba(69,209,127,0.18)");
+  glow.addColorStop(1, "rgba(69,209,127,0)");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
 
   // Perforation.
-  ctx.strokeStyle = "rgba(240,192,105,0.45)";
+  ctx.strokeStyle = "rgba(69,209,127,0.45)";
   ctx.lineWidth = 3;
   ctx.setLineDash([10, 12]);
   ctx.beginPath();
@@ -55,7 +55,7 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
   ctx.setLineDash([]);
 
   ctx.textBaseline = "alphabetic";
-  ctx.fillStyle = "#f0c069";
+  ctx.fillStyle = "#45d17f";
   ctx.font = `700 24px ${font}`;
   ctx.fillText(c.brand, 52, 72);
   ctx.fillStyle = "#ffffff";
@@ -63,7 +63,7 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
   ctx.fillText(c.title, 52, 128);
 
   const field = (label: string, value: string, x: number, y: number, maxW: number) => {
-    ctx.fillStyle = "rgba(240,192,105,0.75)";
+    ctx.fillStyle = "rgba(69,209,127,0.75)";
     ctx.font = `600 19px ${font}`;
     ctx.fillText(label, x, y);
     ctx.fillStyle = value === "—" ? "rgba(255,255,255,0.3)" : "#ffffff";
@@ -83,7 +83,7 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
 
   // Stub.
   ctx.textAlign = "center";
-  ctx.fillStyle = "#f0c069";
+  ctx.fillStyle = "#45d17f";
   ctx.font = `800 88px ${font}`;
   ctx.fillText(d.stub, (CUT + W) / 2, 250);
   ctx.fillStyle = "rgba(255,255,255,0.7)";
@@ -105,8 +105,8 @@ function drawTicket(ctx: CanvasRenderingContext2D, d: TicketData, c: Copy, font:
     ctx.save();
     ctx.translate(590, 300);
     ctx.rotate(-0.26);
-    ctx.strokeStyle = "rgba(74,222,128,0.92)";
-    ctx.fillStyle = "rgba(74,222,128,0.92)";
+    ctx.strokeStyle = "rgba(69,209,127,0.92)";
+    ctx.fillStyle = "rgba(69,209,127,0.92)";
     ctx.lineWidth = 7;
     ctx.beginPath();
     ctx.roundRect(-150, -58, 300, 116, 18);
@@ -127,7 +127,7 @@ function drawBack(ctx: CanvasRenderingContext2D, c: Copy, font: string) {
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
   ctx.textAlign = "center";
-  ctx.fillStyle = "#f0c069";
+  ctx.fillStyle = "#45d17f";
   ctx.font = `900 64px ${font}`;
   ctx.fillText(c.brand, W / 2, H / 2);
   ctx.fillStyle = "rgba(255,255,255,0.6)";
@@ -254,7 +254,7 @@ export function BookingStudio() {
         backMesh.position.z = -0.012;
         const edge = new THREE.LineLoop(
           new THREE.BufferGeometry().setFromPoints(shape.getPoints(48)),
-          new THREE.LineBasicMaterial({ color: 0xf0c069, transparent: true, opacity: 0.85 }),
+          new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0.85 }),
         );
         edge.position.z = 0.002;
         card.add(frontMesh, backMesh, edge);
@@ -266,7 +266,7 @@ export function BookingStudio() {
         key.position.set(-3, 4, 6);
         scene.add(key);
         // A sheen that sweeps across the card.
-        const sheen = new THREE.PointLight(0xffe2a8, 0, 6, 1.5);
+        const sheen = new THREE.PointLight(0xb8f0cf, 0, 6, 1.5);
         scene.add(sheen);
 
         // Motes; a burst throws them outward when the booking is sent.
@@ -281,7 +281,7 @@ export function BookingStudio() {
         const moteGeo = new THREE.BufferGeometry();
         moteGeo.setAttribute("position", new THREE.BufferAttribute(mp, 3));
         const moteMat = new THREE.PointsMaterial({
-          color: 0xf7c46c,
+          color: 0x7be0a6,
           size: 0.045,
           transparent: true,
           opacity: 0.7,
@@ -448,7 +448,7 @@ export function BookingStudio() {
     <section ref={sectionRef} id="dat-lich" className="relative overflow-hidden bg-ink pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_45%_at_78%_35%,rgba(240,192,105,0.13),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_45%_at_78%_35%,rgba(69,209,127,0.13),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         <div className="flex flex-col gap-4">

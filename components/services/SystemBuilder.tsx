@@ -75,11 +75,11 @@ export function SystemBuilder() {
         // Labels sit to the screen-right of each floor, whatever the tower's spin.
         const camRight = new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion);
 
-        scene.add(new THREE.AmbientLight(0xbfd2ff, 0.55));
+        scene.add(new THREE.AmbientLight(0xa9d3f2, 0.55));
         const key = new THREE.DirectionalLight(0xffffff, 1.3);
         key.position.set(4, 8, 5);
         scene.add(key);
-        const glow = new THREE.PointLight(0xf0c069, 0, 9, 1.6);
+        const glow = new THREE.PointLight(0x45d17f, 0, 9, 1.6);
         scene.add(glow);
 
         const world = new THREE.Group();
@@ -100,7 +100,7 @@ export function SystemBuilder() {
         const groundGeo = new THREE.BufferGeometry();
         groundGeo.setAttribute("position", new THREE.Float32BufferAttribute(groundPts, 3));
         const groundMat = new THREE.PointsMaterial({
-          color: 0x5b8ff5,
+          color: 0x3aa3ec,
           size: 0.035,
           transparent: true,
           opacity: 0.45,
@@ -114,10 +114,10 @@ export function SystemBuilder() {
           const body = new THREE.Mesh(
             slabGeo,
             new THREE.MeshStandardMaterial({
-              color: 0x16213a,
+              color: 0x131d33,
               metalness: 0.35,
               roughness: 0.35,
-              emissive: 0xf0a83c,
+              emissive: 0x17a85a,
               emissiveIntensity: 0,
               transparent: true,
               opacity: 0.15,
@@ -125,7 +125,7 @@ export function SystemBuilder() {
           );
           const edges = new THREE.LineSegments(
             edgeGeo,
-            new THREE.LineBasicMaterial({ color: 0xf0c069, transparent: true, opacity: 0.25 }),
+            new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0.25 }),
           );
           const g = new THREE.Group();
           g.add(body, edges);
@@ -150,7 +150,7 @@ export function SystemBuilder() {
         const moteGeo = new THREE.BufferGeometry();
         moteGeo.setAttribute("position", new THREE.BufferAttribute(motePos, 3));
         const moteMat = new THREE.PointsMaterial({
-          color: 0xf7c46c,
+          color: 0x7be0a6,
           size: 0.05,
           transparent: true,
           opacity: 0.9,
@@ -296,7 +296,7 @@ export function SystemBuilder() {
     <section ref={sectionRef} id="dung-he-thong" className="relative overflow-hidden bg-ink pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_75%_40%,rgba(240,192,105,0.12),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_75%_40%,rgba(69,209,127,0.12),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-2 lg:gap-x-14">
         <div className="flex flex-col gap-4 lg:col-start-1">
@@ -334,7 +334,7 @@ export function SystemBuilder() {
 
         {/* 3D tower — sticky beside the plan on desktop, between chips and plan on mobile. */}
         <div className="lg:col-start-2 lg:row-span-4 lg:row-start-1">
-          <div className="relative aspect-[4/3.4] w-full overflow-hidden rounded-3xl border border-white/10 bg-[radial-gradient(70%_60%_at_50%_70%,rgba(66,133,244,0.14),transparent_75%)] lg:sticky lg:top-24 lg:aspect-[4/4.4]">
+          <div className="relative aspect-[4/3.4] w-full overflow-hidden rounded-3xl border border-white/10 bg-[radial-gradient(70%_60%_at_50%_70%,rgba(10,111,184,0.14),transparent_75%)] lg:sticky lg:top-24 lg:aspect-[4/4.4]">
             <div ref={canvasHost} aria-hidden className="absolute inset-0 [&>canvas]:h-full [&>canvas]:w-full" />
             <div aria-hidden className="pointer-events-none absolute inset-0">
               {services.map((sv, i) => (

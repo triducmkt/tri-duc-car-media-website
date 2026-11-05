@@ -7,10 +7,10 @@ export type ChannelKey = "video" | "facebook" | "zalo" | "phone" | "visit";
 
 export const CHANNEL_MAP: Record<ChannelKey, { color: string; href: string; external: boolean }> = {
   video: { color: "#ff4d4d", href: COMPANY.youtube, external: true },
-  facebook: { color: "#4c8dff", href: COMPANY.fanpage, external: true },
-  zalo: { color: "#35b6ff", href: COMPANY.zalo, external: true },
-  phone: { color: "#f0c069", href: `tel:${COMPANY.phone}`, external: false },
-  visit: { color: "#7be0b4", href: "/booking", external: false },
+  facebook: { color: "#3aa3ec", href: COMPANY.fanpage, external: true },
+  zalo: { color: "#3aa3ec", href: COMPANY.zalo, external: true },
+  phone: { color: "#45d17f", href: `tel:${COMPANY.phone}`, external: false },
+  visit: { color: "#45d17f", href: "/booking", external: false },
 };
 
 export const CHANNEL_KEYS = Object.keys(CHANNEL_MAP) as ChannelKey[];

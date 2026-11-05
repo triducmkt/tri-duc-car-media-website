@@ -62,7 +62,7 @@ export function RadarPrompt({ axis, slug }: { axis: CheckAxis; slug: string }) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("prompt_cta", { to: "zalo", from: slug })}
-            className="inline-flex items-center gap-1.5 text-[#35b6ff] hover:text-white"
+            className="inline-flex items-center gap-1.5 text-[#3aa3ec] hover:text-white"
           >
             <MessageCircle size={15} aria-hidden /> Zalo
           </a>

@@ -142,15 +142,15 @@ export function CaseMap() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               if (d > 0.5) discard;
-              vec3 base = mix(vec3(0.36, 0.52, 0.86), vec3(0.95, 0.78, 0.45), vIsle * 0.7);
-              vec3 c = mix(base, vec3(0.98, 0.8, 0.45), vGlow);
+              vec3 base = mix(vec3(0.23, 0.64, 0.93), vec3(0.27, 0.82, 0.50), vIsle * 0.7);
+              vec3 c = mix(base, vec3(0.27, 0.82, 0.50), vGlow);
               gl_FragColor = vec4(c, 0.42 + vGlow * 0.5 + vIsle * 0.3);
             }`,
         });
         map.add(new THREE.Points(dotGeo, dotMat));
 
         // ── Pins: beam, glowing head, pulsing ring; arcs from the hub.
-        const gold = 0xf0c069;
+        const gold = 0x45d17f;
         const heads = new Float32Array(PLACES.length * 3);
         const headA = new Float32Array(PLACES.length);
         const headS = new Float32Array(PLACES.length);
@@ -212,7 +212,7 @@ export function CaseMap() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float g = smoothstep(0.5, 0.0, d);
-              gl_FragColor = vec4(vec3(1.0, 0.82, 0.5) * 1.2, pow(g, 1.7) * vA);
+              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(g, 1.7) * vA);
             }`,
         });
         map.add(new THREE.Points(headGeo, glowMat));
@@ -327,7 +327,7 @@ export function CaseMap() {
     <section ref={sectionRef} id="ban-do" className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_50%_at_30%_55%,rgba(66,133,244,0.16),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_50%_at_30%_55%,rgba(10,111,184,0.16),transparent_70%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1">

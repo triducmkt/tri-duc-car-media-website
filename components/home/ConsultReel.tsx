@@ -113,7 +113,7 @@ export function ConsultReel() {
         const litLine = new THREE.Line(
           litGeo,
           new THREE.LineBasicMaterial({
-            color: 0xf0c069,
+            color: 0x45d17f,
             transparent: true,
             opacity: 0.75,
             blending: THREE.AdditiveBlending,
@@ -158,7 +158,7 @@ export function ConsultReel() {
             void main() {
               float d = length(gl_PointCoord - 0.5);
               float glow = smoothstep(0.5, 0.0, d);
-              gl_FragColor = vec4(vec3(0.97, 0.78, 0.43) * 1.2, pow(glow, 1.8) * vA);
+              gl_FragColor = vec4(vec3(0.27, 0.82, 0.50) * 1.2, pow(glow, 1.8) * vA);
             }`,
         });
         scene.add(new THREE.Points(geo, ptMat));

@@ -191,7 +191,7 @@ export function FreedomCalculator() {
                   onClick={() => setRate(r)}
                   className={`min-h-12 rounded-xl px-3 text-[15px] font-semibold transition-all ${
                     rate === r
-                      ? "bg-brand-500 text-white shadow-[0_8px_24px_-8px_rgba(66,133,244,0.6)]"
+                      ? "bg-brand-500 text-white shadow-[0_8px_24px_-8px_rgba(10,111,184,0.6)]"
                       : "bg-paper-soft text-ink ring-1 ring-inset ring-black/10 hover:ring-brand-500/40"
                   }`}
                 >
@@ -207,7 +207,7 @@ export function FreedomCalculator() {
           <div className="relative overflow-hidden rounded-3xl bg-ink p-7 text-white shadow-[0_30px_80px_-30px_rgba(11,18,32,0.8)] sm:p-9">
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(240,192,105,0.18),transparent)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(69,209,127,0.18),transparent)]"
             />
             <div className="relative flex flex-col gap-7" aria-live="polite">
               <div>

@@ -125,7 +125,7 @@ export function ChannelOrbit({ videos, id = "kenh" }: { videos: ChannelVideo[]; 
           dust.p.set([(r1 - Math.floor(r1) - 0.5) * 12, (r2 - Math.floor(r2) - 0.5) * 9, -2 - (r3 - Math.floor(r3)) * 3], i * 3);
           dust.a[i] = 0.18 + (r3 - Math.floor(r3)) * 0.25;
           dust.s[i] = 3;
-          dust.c.set([0.6, 0.72, 0.96], i * 3);
+          dust.c.set([0.23, 0.64, 0.93], i * 3);
         }
         dust.flag();
         scene.add(new THREE.Points(dust.geo, glowMat));
@@ -291,7 +291,7 @@ export function ChannelOrbit({ videos, id = "kenh" }: { videos: ChannelVideo[]; 
     <section ref={sectionRef} id={id} className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_40%,rgba(66,133,244,0.18),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_40%,rgba(10,111,184,0.18),transparent_60%)]"
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-start lg:gap-14">
         <div className="flex flex-col gap-6">
@@ -303,7 +303,7 @@ export function ChannelOrbit({ videos, id = "kenh" }: { videos: ChannelVideo[]; 
             <img
               src="/founder/tang-tri-duc.png"
               alt=""
-              className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full object-cover object-top ring-2 ring-gold-400/80 shadow-[0_0_40px_rgba(240,192,105,0.45)] sm:h-28 sm:w-28"
+              className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full object-cover object-top ring-2 ring-gold-400/80 shadow-[0_0_40px_rgba(69,209,127,0.45)] sm:h-28 sm:w-28"
             />
             {CHANNEL_KEYS.map((key, k) => {
               const Icon = ICONS[key];
@@ -574,7 +574,7 @@ function FacebookPanel() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={outbound("facebook")}
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#4c8dff] px-5 py-3 text-sm font-bold text-white hover:brightness-110"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3aa3ec] px-5 py-3 text-sm font-bold text-white hover:brightness-110"
       >
         <FacebookIcon size={18} /> {t("fanpageOpen")}
       </a>
@@ -612,14 +612,14 @@ function ZaloPanel() {
             type="button"
             onClick={() => copyStarter(i)}
             className={`flex items-start gap-2 rounded-xl p-3 text-left text-sm leading-snug transition-colors ${
-              copied === i ? "bg-[#35b6ff]/15 ring-1 ring-[#35b6ff]/60" : "bg-white/5 ring-1 ring-white/10 hover:bg-white/10"
+              copied === i ? "bg-[#3aa3ec]/15 ring-1 ring-[#3aa3ec]/60" : "bg-white/5 ring-1 ring-white/10 hover:bg-white/10"
             }`}
           >
-            {copied === i ? <Check size={16} className="mt-0.5 shrink-0 text-[#35b6ff]" aria-hidden /> : <MessageCircle size={16} className="mt-0.5 shrink-0 text-white/50" aria-hidden />}
+            {copied === i ? <Check size={16} className="mt-0.5 shrink-0 text-[#3aa3ec]" aria-hidden /> : <MessageCircle size={16} className="mt-0.5 shrink-0 text-white/50" aria-hidden />}
             <span>“{s}”</span>
           </button>
         ))}
-        <p aria-live="polite" className="min-h-5 text-xs font-semibold text-[#35b6ff]">
+        <p aria-live="polite" className="min-h-5 text-xs font-semibold text-[#3aa3ec]">
           {copied >= 0 ? t("copied") : ""}
         </p>
         <a
@@ -627,7 +627,7 @@ function ZaloPanel() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={outbound("zalo")}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#35b6ff] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3aa3ec] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
         >
           <MessageCircle size={18} aria-hidden /> {t("zaloOpen")}
         </a>
@@ -689,7 +689,7 @@ function VisitPanel() {
         <Link
           href="/booking"
           onClick={outbound("visit")}
-          className="inline-flex items-center gap-2 rounded-full bg-[#7be0b4] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
+          className="inline-flex items-center gap-2 rounded-full bg-[#45d17f] px-5 py-3 text-sm font-bold text-ink hover:brightness-110"
         >
           <CalendarCheck size={18} aria-hidden /> {t("book")}
         </Link>

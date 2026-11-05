@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon } from "@/components/icons/FacebookIcon";
 import { COMPANY, companyAddressLine } from "@/lib/company";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/Container";
 import { ConsentSettingsButton } from "@/components/analytics/Tracker";
+import { SERVICES, type Locale } from "@/lib/servicesCatalog";
 
 const navItems = [
   { href: "/" as const, key: "home" as const },
@@ -19,8 +20,7 @@ const navItems = [
 export function Footer() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
-  const tServices = useTranslations("services");
-  const services = tServices.raw("items") as { title: string }[];
+  const locale = useLocale() as Locale;
 
   return (
     <footer className="bg-ink text-white">
@@ -67,11 +67,24 @@ export function Footer() {
             {t("servicesHeading")}
           </h3>
           <ul className="flex flex-col gap-2">
-            {services.map((service) => (
-              <li key={service.title} className="text-sm text-white/75">
-                {service.title}
+            {SERVICES.map((service) => (
+              <li key={service.slug}>
+                <Link
+                  href={{ pathname: "/services/[slug]", params: { slug: service.slug } }}
+                  className="text-sm text-white/75 transition-colors hover:text-gold-400"
+                >
+                  {service.name[locale]}
+                </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href={{ pathname: "/services", hash: "bang-gia" }}
+                className="text-sm font-semibold text-gold-400 transition-colors hover:text-white"
+              >
+                {t("priceList")}
+              </Link>
+            </li>
           </ul>
         </div>
 

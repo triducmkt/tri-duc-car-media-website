@@ -1,14 +1,14 @@
 /* Diagnostic — "business x-ray". Color variables are declared locally. */
 
 .dx {
-  --lacquer: #0b161b;
-  --brass: #d6a34a;
-  --brass-soft: #e7c489;
+  --lacquer: #0b1220;
+  --brass: #17a85a;
+  --brass-soft: #7be0a6;
   --vermilion: #c7452f;
-  --jade: #3e9e8a;
-  --bone: #e9e4d7;
-  --muted: #8fa0a6;
-  --line: rgba(233, 228, 215, 0.14);
+  --jade: #17a85a;
+  --bone: #eef2f7;
+  --muted: #9ba4b2;
+  --line: rgba(238,242,247, 0.14);
   --serif: var(--tdcm-font-serif, Georgia), Georgia, serif;
   --sans: var(--tdcm-font-display, system-ui), system-ui, sans-serif;
 
@@ -68,7 +68,7 @@
   padding: 0.9rem 1.1rem; cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
-.opt:hover { border-color: var(--brass); background: rgba(214, 163, 74, 0.07); }
+.opt:hover { border-color: var(--brass); background: rgba(23,168,90, 0.07); }
 .opt:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 
 .note {
@@ -77,11 +77,11 @@
   background: rgba(199, 69, 47, 0.08);
   font-size: 0.89rem; border-radius: 0 3px 3px 0;
 }
-.note.ok { border-left-color: var(--jade); background: rgba(62, 158, 138, 0.08); }
+.note.ok { border-left-color: var(--jade); background: rgba(23,168,90, 0.08); }
 .note b { color: var(--brass-soft); font-weight: 600; }
 
 .startBtn {
-  align-self: flex-start; background: var(--brass); color: #14212a;
+  align-self: flex-start; background: var(--brass); color: #0b1220;
   border: 0; border-radius: 3px; font-family: inherit; font-weight: 600;
   font-size: 0.95rem; padding: 0.9rem 1.7rem; cursor: pointer;
 }
@@ -101,7 +101,7 @@
 .res h3 { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; margin: 0 0 0.5rem; }
 .why { color: var(--muted); font-size: 0.93rem; margin: 0 0 1.6rem; max-width: 44ch; }
 
-.reco { border: 1px solid var(--brass); border-radius: 3px; padding: 1.3rem; background: rgba(214, 163, 74, 0.06); }
+.reco { border: 1px solid var(--brass); border-radius: 3px; padding: 1.3rem; background: rgba(23,168,90, 0.06); }
 .recoLbl { font-size: 0.68rem; letter-spacing: 0.16em; color: var(--brass); margin-bottom: 0.5rem; }
 .reco h4 { margin: 0 0 0.5rem; font-size: 1.05rem; font-weight: 600; }
 .reco p { margin: 0; font-size: 0.89rem; color: var(--muted); }
@@ -115,14 +115,14 @@
 .form input:focus { outline: 2px solid var(--brass); outline-offset: 1px; border-color: transparent; }
 .form button {
   font-family: inherit; font-weight: 600; font-size: 0.95rem; padding: 0.9rem;
-  border: 0; border-radius: 3px; background: var(--brass); color: #14212a; cursor: pointer;
+  border: 0; border-radius: 3px; background: var(--brass); color: #0b1220; cursor: pointer;
 }
 .form button:disabled { opacity: 0.6; cursor: default; }
 .microcopy { font-size: 0.78rem; color: var(--muted); margin: 0.3rem 0 0; }
 
 .sent {
   margin-top: 1rem; padding: 0.9rem 1.05rem;
-  border-left: 2px solid var(--jade); background: rgba(62, 158, 138, 0.08);
+  border-left: 2px solid var(--jade); background: rgba(23,168,90, 0.08);
   font-size: 0.89rem; border-radius: 0 3px 3px 0;
 }
 .sent.err { border-left-color: var(--vermilion); background: rgba(199, 69, 47, 0.08); }

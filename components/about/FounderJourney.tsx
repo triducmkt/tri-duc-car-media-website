@@ -181,14 +181,14 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
           city.a[i] = 0.25 + h(5) * 0.45;
           city.s[i] = 2.5 + h(6) * 3;
           const warm = h(7) > 0.62;
-          city.c.set(warm ? [1, 0.75, 0.42] : [0.55, 0.68, 1], i * 3);
+          city.c.set(warm ? [0.27, 0.82, 0.5] : [0.55, 0.68, 1], i * 3);
         }
         city.flag();
 
         // Lane lights travelling down the road (the "work in motion").
         const LANE = 70;
         const lane = cloud(LANE);
-        for (let i = 0; i < LANE; i++) lane.c.set([1, 0.82, 0.5], i * 3);
+        for (let i = 0; i < LANE; i++) lane.c.set([0.27, 0.82, 0.5], i * 3);
 
         // Posts: a vertical beam + a beacon per milestone; the last one is the visitor's shop.
         const posts = cloud(total * 26);
@@ -245,7 +245,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
           for (let i = 0; i < total; i++) {
             lit[i] += ((i === nearest ? 1 : 0) - lit[i]) * 0.08;
             const last = i === total - 1;
-            const col = last ? [0.7, 0.85, 1] : [1, 0.78, 0.4];
+            const col = last ? [0.7, 0.85, 1] : [0.27, 0.82, 0.5];
             const b = beacons[i];
             for (let j = 0; j < 26; j++) {
               const idx = i * 26 + j;

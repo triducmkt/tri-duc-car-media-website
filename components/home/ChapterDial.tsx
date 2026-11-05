@@ -114,12 +114,12 @@ export function ChapterDial() {
         return pts;
       };
       const trackGeo = new THREE.BufferGeometry().setFromPoints(circle(0, Math.PI * 2, 96));
-      const trackMat = new THREE.LineBasicMaterial({ color: 0x8aa6dc, transparent: true, opacity: 0.35 });
+      const trackMat = new THREE.LineBasicMaterial({ color: 0x6f9cc8, transparent: true, opacity: 0.35 });
       ring.add(new THREE.Line(trackGeo, trackMat));
 
       const ARC_STEPS = 96;
       const arcGeo = new THREE.BufferGeometry().setFromPoints(circle(0, Math.PI * 2, ARC_STEPS));
-      const arcMat = new THREE.LineBasicMaterial({ color: 0xf0c069, transparent: true, opacity: 0.95 });
+      const arcMat = new THREE.LineBasicMaterial({ color: 0x45d17f, transparent: true, opacity: 0.95 });
       ring.add(new THREE.Line(arcGeo, arcMat));
 
       // Glow sprites: N beads + core.
@@ -157,8 +157,8 @@ export function ChapterDial() {
       });
       ring.add(new THREE.Points(glowGeo, glowMat));
 
-      const gold = [1, 0.8, 0.45];
-      const dim = [0.55, 0.65, 0.85];
+      const gold = [0.27, 0.82, 0.5];
+      const dim = [0.23, 0.64, 0.93];
       let spin = 0;
       let arc = 0;
       let raf = 0;
@@ -185,7 +185,7 @@ export function ChapterDial() {
           size[i] = on ? 30 + (reduce ? 0 : Math.sin(time * 3) * 4) : i < sn ? 16 : 12;
         }
         pos.set([0, 0, 0], N * 3);
-        col.set([1, 0.86, 0.55], N * 3);
+        col.set([0.27, 0.82, 0.5], N * 3);
         size[N] = 34 + (reduce ? 0 : Math.sin(time * 1.8) * 5);
         glowGeo.attributes.aColor.needsUpdate = true;
         glowGeo.attributes.aSize.needsUpdate = true;
