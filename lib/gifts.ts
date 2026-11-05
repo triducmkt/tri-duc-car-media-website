@@ -37,7 +37,17 @@ export const GIFT_MAP = {
       { kind: "image", label: "infographic", url: `${CDN}/d2dfd51deda2dbdbb0a7cdaaf2ee2cab74255986.jpg` },
     ],
   },
-  "giu-khach-cu": { axis: "khach-cu", format: "checklist", status: "soon", assets: [] },
+  "giu-khach-cu": {
+    axis: "khach-cu",
+    format: "checklist",
+    status: "ready",
+    assets: [
+      { kind: "video", label: "video7", url: `${CDN}/b5159fed8fa17218546dc55c79004974dd5e6143.mp4`, poster: `${CDN}/c09c1710c438bd5104005229aa19206884718da9.jpg`, landscape: true },
+      { kind: "audio", label: "audio14", url: `${CDN}/712c8e4bf85179f116be3848f21b99e4bb95a567.m4a` },
+      { kind: "pdf", label: "checklist12", url: `${CDN}/cf95ceec2243a7eadd33f428a91d99580a83c5f6.pdf` },
+      { kind: "image", label: "infographic", url: `${CDN}/07e640d5bec0fd11d4930cce077d935c5b2131ed.jpg` },
+    ],
+  },
   "dung-du-deu": {
     axis: "khach-moi",
     format: "slides",

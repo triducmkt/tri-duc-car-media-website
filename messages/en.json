@@ -1176,7 +1176,7 @@
       },
       "giu-khach-cu": {
         "title": "7 ways to bring customers back",
-        "desc": "An after-service care checklist, based on how AP Car Care gets 60%+ of revenue from returning customers."
+        "desc": "Gift pack: a front-desk checklist, 12 slides (AP Car Care case), an infographic, a 7-minute video and a 14-minute podcast: 7 ways to bring past customers back."
       },
       "dung-du-deu": {
         "title": "“Right – Enough – Steady” marketing",
@@ -1213,7 +1213,10 @@
       "infographic": "View the infographic",
       "video6": "6-minute video",
       "audio16": "Podcast (16 min)",
-      "slides11": "Download the slides PDF (11 pages)"
+      "slides11": "Download the slides PDF (11 pages)",
+      "video7": "7-minute video",
+      "audio14": "Podcast (14 min)",
+      "checklist12": "Download checklist + slides PDF (12 pages)"
     }
   },
   "ladder": {
