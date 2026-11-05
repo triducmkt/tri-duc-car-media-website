@@ -32,7 +32,22 @@ three.js / canvas: dùng đúng các mã trên (`0x4285f4`, `0x6ea6f7`, `0x8fb6f
 1. Không thêm mã màu mới ngoài bảng trên. Cần màu mới → hỏi anh Đức, rồi thêm vào `app/globals.css` + file này + danh sách trong `scripts/check-colors.mjs`.
 2. Không dùng bảng màu mặc định của Tailwind (`amber`, `emerald`, `sky`, `teal`…). Ngoại lệ: `red-*` cho lỗi/cảnh báo.
 3. Xanh lá không dùng cho nút chính hay eyebrow thông thường — để giữ 10%.
-4. Logo (`public/brand/*`) vẫn là bản v10 (xanh biển `#0A6FB8` + xanh lá). Đổi màu logo thuộc vòng thiết kế logo riêng, chỉ làm khi anh Đức yêu cầu.
+4. Logo (`public/brand/*`) từ bản v11 (06/11/2026, commit c3999a6) đã dùng xanh `#4285F4` thống nhất với website. Thay đổi logo thuộc vòng thiết kế logo riêng (`design/logo-tri-duc-media/HISTORY.md`), chỉ làm khi anh Đức yêu cầu.
+
+## 3b. Bóng & gradient dùng chung (06/11/2026)
+
+Khai báo ở `app/globals.css`, chưa component nào dùng (sẽ dùng khi làm backlog F2/F3/F9 trong `docs/brand-backlog.md`).
+
+| Token | Dùng cho |
+|---|---|
+| `shadow-lift-1` · `shadow-lift-2` · `shadow-lift-3` (class Tailwind) | Bóng luôn hiện (không chỉ khi rê chuột), ám xanh thương hiệu; 1 = thẻ nhỏ, 2 = thẻ chính, 3 = khối nổi bật |
+| `var(--gradient-brand)` | Dải xanh dương → xanh lá cho điểm nhấn nhỏ |
+| `var(--gradient-border)` | Viền gradient của thẻ premium (dùng với `border: 1px solid transparent` + `border-box`) |
+| `var(--gradient-hairline)` | Đường kẻ phát sáng giữa các khối trên nền tối |
+| `var(--gradient-button)` | Nền nút chính |
+| `var(--gradient-surface-light)` | Nền section sáng có gradient loang nhẹ |
+
+Chữ trên video / thumbnail / tiêu đề lớn: xem `docs/typography-lockup.md`.
 
 ## 4. Lịch sử
 - Trước 2026-11-05: xanh Google `#4285F4` + vàng đồng `#F0C069`.
