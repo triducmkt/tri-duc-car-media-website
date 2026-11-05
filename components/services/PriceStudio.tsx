@@ -287,7 +287,7 @@ export function PriceStudio() {
                     ref={(el) => {
                       segLabels.current[i] = el;
                     }}
-                    className="absolute left-0 top-0 whitespace-nowrap text-[10px] font-semibold text-white/85 opacity-0 sm:text-xs"
+                    className="absolute left-0 top-0 w-max max-w-[9.5rem] text-[10px] font-semibold leading-tight text-white/85 opacity-0 sm:max-w-[11rem] sm:text-xs"
                   >
                     {segs[i] ? `${segs[i].label} · ${shortVnd(segs[i].value, locale)}` : ""}
                   </span>
