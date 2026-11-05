@@ -10,10 +10,10 @@ Xem nhanh toàn bộ bộ logo: `preview.png`.
 ## Ý nghĩa (từ v5 — "Đ lá mầm", màu theo mệnh Mộc)
 - **Từ v8, logo ngang là "TRÍ [Đ-lá]ỨC / MEDIA":** chiếc lá chính là chữ Đ trong tên (như chữ O của VieON). Slogan đi kèm (từ v10): "Chủ vắng, khách vẫn đông."; chữ MEDIA đặt giữa, kẹp giữa 2 đường kẻ mảnh
 - **Chữ Đ thành một chiếc lá:** phần cong của chữ Đ vuốt lên thành đầu lá nhọn, vượt cao hơn thân chữ. Ý nghĩa: cơ sở lớn vượt tầm cũ của mình.
-- **Thân chữ Đ là thân cây, là hệ thống:** phần đứng yên, rễ sâu. Từ v7, thân và lá đúc thành 1 khối, màu chảy liền từ navy ở gốc → xanh biển → xanh lá ở ngọn.
+- **Thân chữ Đ là thân cây, là hệ thống:** phần đứng yên, rễ sâu. Từ v7, thân và lá đúc thành 1 khối, màu chảy liền từ navy ở gốc → xanh dương → xanh lá ở ngọn.
 - **Nét gạch ngang của chữ Đ là gân lá:** thò ra bên trái như nét Đ bình thường, rồi thon dần, vươn lên trong lòng lá. Sự tăng trưởng đến từ bên trong.
 - **2 dấu sắc trên Í, Ứ là 2 lá non xanh lá (từ v6):** chính cái tên cũng đang nảy mầm. Dấu vẫn đúng vị trí và độ nghiêng chuẩn tiếng Việt.
-- **Màu xanh biển ở gốc chuyển sang xanh lá ở ngọn:** Thủy sinh Mộc, nước nuôi gốc thì lá xanh. Bảng màu hợp mệnh Mộc (Đại Lâm Mộc) của founder.
+- **Màu xanh dương (#4285F4, từ v11) ở gốc chuyển sang xanh lá ở ngọn:** Thủy sinh Mộc, nước nuôi gốc thì lá xanh. Bảng màu hợp mệnh Mộc (Đại Lâm Mộc) của founder.
 - **Câu chuyện:** Đại Lâm Mộc là cây lớn trong rừng, người trồng vắng mặt mà cây vẫn lớn. Đó chính là "Vắng 30 ngày, cơ sở vẫn tăng trưởng."
 - *(Ý nghĩa cũ v1–v4 "đồng hồ / kim đo / chấm cam người chủ": xem HISTORY.md.)*
 
@@ -36,9 +36,9 @@ PNG có sẵn trong `png/`: logo ngang 2000px, logo dọc 1600px, biểu tượn
 | Vai trò | Mã |
 |---|---|
 | Navy (thân chữ Đ, chữ TRÍ ĐỨC) | `#0B1220` (trùng màu chữ chính của website) |
-| Xanh biển (gốc lá, chữ MEDIA trên nền sáng) | `#0A6FB8` |
+| Xanh dương (gốc lá, chữ MEDIA trên nền sáng) — màu chủ đạo dự án `brand-500` | `#4285F4` |
 | Xanh lá (ngọn lá, gân lá trên nền sáng) | `#17A85A` |
-| Nền tối: xanh biển sáng / xanh lá sáng (lá, gân lá, chữ MEDIA) | `#3AA3EC` / `#45D17F` |
+| Nền tối: xanh dương / xanh lá sáng (lá, gân lá, chữ MEDIA) | `#4285F4` / `#45D17F` |
 | Trắng | `#FFFFFF` |
 
 Cam và vàng (v1–v4) đã thôi dùng. Theo anh Đức, đó chỉ là ý tưởng ban đầu, không hợp mệnh.

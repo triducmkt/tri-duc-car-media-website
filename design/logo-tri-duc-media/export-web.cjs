@@ -53,5 +53,5 @@ cp("motion/intro-16x9-white.gif", `${PUB}/motion/logo-motion-16x9.gif`);
     offset += pngs[i].length;
   });
   fs.writeFileSync("app/favicon.ico", Buffer.concat([header, dir, ...pngs]));
-  console.log("exported logo v10 to public/brand + app icons");
+  console.log("exported the current logo design to public/brand + app icons");
 })();

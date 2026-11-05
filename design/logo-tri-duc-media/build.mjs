@@ -25,9 +25,9 @@ const semi = opentype.loadSync(path.join(FONTS, "BeVietnamPro-SemiBold.ttf"));
 const C = {
   navy: "#0B1220",
   white: "#FFFFFF",
-  sea: "#0A6FB8", // root of the leaf, MEDIA on light
+  sea: "#4285F4", // v11: project blue (brand-500) — root of the leaf, MEDIA on light
   leaf: "#17A85A", // tip of the leaf, midrib + veins on light
-  seaLight: "#3AA3EC", // reverse (on navy)
+  seaLight: "#4285F4", // v11: same project blue on navy (reverse)
   leafLight: "#45D17F", // reverse (on navy), MEDIA on dark
 };
 

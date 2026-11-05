@@ -1,7 +1,7 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v10** · ảnh: [history/v10/preview.png](history/v10/preview.png) + logo động [history/v10/intro-9x16-navy.gif](history/v10/intro-9x16-navy.gif) · trạng thái: **ĐANG CHẠY TRÊN WEB**
-> Logo đang chạy trên web: **v10** (publish 2026-11-04, commit `27d3dbd`). Muốn đưa bản mới lên web: `export-web.cjs` (chỉ khi anh Đức yêu cầu).
+> **BẢN MỚI NHẤT: v11** · ảnh: [history/v11/preview.png](history/v11/preview.png) + logo động [history/v11/intro-9x16-navy.gif](history/v11/intro-9x16-navy.gif) · trạng thái: **ĐANG CHẠY TRÊN WEB**
+> Logo đang chạy trên web: **v11** (= v10 đổi xanh sang #4285F4 của dự án, 2026-11-05). Muốn đưa bản mới lên web: `export-web.cjs` (chỉ khi anh Đức yêu cầu).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
 
@@ -317,7 +317,7 @@
   - anh Đức chốt slogan A/B/C;
   - bản dọc vẫn là biểu tượng lớn + tên thường (chưa có đường kẻ MEDIA);
   - website đang dùng màu nhấn vàng đồng, sẽ lệch tông khi publish.
-- **Trạng thái:** ĐANG CHẠY TRÊN WEB (từ 2026-11-04).
+- **Trạng thái:** đã thay bằng v11 trên web (2026-11-05).
 
 ## Quyết định (2026-11-04) — Chốt slogan
 - **Anh Đức chọn:** "Chủ vắng, khách vẫn đông".
@@ -336,3 +336,17 @@
 - **Trang Về Founder `#thuong-hieu`:** video logo động 16:9 lặp, ý nghĩa tên (Trí Đức, Media, chữ "Car" trong tên pháp lý), ý nghĩa logo (4 ý), slogan, sứ mệnh. Ngay sau là Tầm nhìn 2031 (#tam-nhin) và Giá trị cốt lõi (#gia-tri) có sẵn.
 - **Dựng lại / cập nhật web khi logo đổi:** `node design/logo-tri-duc-media/build.mjs <fonts>` rồi `node design/logo-tri-duc-media/export-web.cjs`.
 - **Trạng thái:** v10 ĐANG CHẠY TRÊN WEB (thay cho v0).
+
+## v11 — Đồng bộ xanh dương #4285F4 của dự án (2026-11-05) — ĐÃ LÊN WEB
+- **Yêu cầu anh Đức:** "điều chỉnh màu xanh trong bộ thiết kế logo đồng nhất màu xanh #4285F4 của dự án này và update lên toàn bộ logo trên website"
+- **Ảnh:** [history/v11/preview.png](history/v11/preview.png) · GIF [history/v11/intro-9x16-navy.gif](history/v11/intro-9x16-navy.gif)
+- **Thay đổi so với v10 (chỉ màu, hình giữ nguyên):**
+  - xanh biển `#0A6FB8` (nền sáng) và `#3AA3EC` (nền tối) → **`#4285F4`** (token `brand-500` của website) ở mọi chỗ:
+    - phần giữa dải màu chữ Đ-lá (navy → **#4285F4** → xanh lá);
+    - chữ MEDIA và 2 đường kẻ trên nền sáng;
+    - app icon, favicon, video logo động.
+  - Xanh lá giữ nguyên `#17A85A` / `#45D17F` (trùng token `leaf-500` / `leaf-400`). Navy `#0B1220` trùng `ink`.
+- **Đã cập nhật web:**
+  - chạy lại `build.mjs` (cả video) và `export-web.cjs`: toàn bộ `public/brand/*`, `public/brand/motion/*`, favicon, icon, apple-icon;
+  - câu mô tả màu trong section thương hiệu đổi "xanh biển" thành "xanh dương".
+- **Trạng thái:** ĐANG CHẠY TRÊN WEB (thay v10).

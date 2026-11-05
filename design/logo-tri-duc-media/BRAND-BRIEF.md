@@ -60,6 +60,10 @@ Gợi ý cho vòng tới, đối chiếu với v2 "Đ kim đo":
 - **Màu cam chỉ là ý tưởng ban đầu, KHÔNG phải màu chủ đạo lâu dài.** Từ v5, logo dùng xanh biển + xanh lá + đen/navy + trắng. Cam và vàng chỉ còn trong lịch sử v1–v4.
 - **Chất liệu ý tưởng:** Đại Lâm Mộc là cây lớn trong rừng, rễ sâu, tự lớn qua năm tháng. Ý này khớp với lời hứa "Vắng 30 ngày, cơ sở vẫn tăng trưởng": cây vẫn lớn khi người trồng vắng mặt.
 
+## Đồng bộ màu với website (anh Đức chốt 2026-11-05)
+- Xanh dương của logo dùng đúng **`#4285F4`** (màu chủ đạo dự án, token `brand-500`). Xanh lá giữ `#17A85A` / `#45D17F` (token `leaf-*`). Navy `#0B1220` (`ink`).
+- Quy cách màu toàn dự án: `docs/color-system.md` (xanh dương 30% · đen 30% · trắng 25% · xanh lá 10% · khác 5%).
+
 ## Ràng buộc thiết kế
 - Đọc rõ dấu tiếng Việt (Í, Ứ), kể cả ở cỡ nhỏ.
 - Có biểu tượng đứng riêng, nhận ra được ở 32px (favicon, avatar Zalo/Facebook).
