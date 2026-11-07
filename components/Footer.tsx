@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon } from "@/components/icons/FacebookIcon";
 import { COMPANY, companyAddressLine } from "@/lib/company";
-import { HoverPrefetchLink as Link } from "@/components/HoverPrefetchLink";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/Container";
 import { ConsentSettingsButton } from "@/components/analytics/Tracker";
 import { SERVICES, type Locale } from "@/lib/servicesCatalog";
