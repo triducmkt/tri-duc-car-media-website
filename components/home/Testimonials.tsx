@@ -17,7 +17,7 @@ export function Testimonials({
   if (items.length === 0) return null;
 
   return (
-    <section className="bg-paper-soft py-20 sm:py-28">
+    <section className="surface-light-soft py-20 sm:py-28">
       <Container className="flex flex-col gap-12">
         <SectionHeading
           eyebrow={t("testimonialsEyebrow")}
@@ -28,7 +28,7 @@ export function Testimonials({
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => (
             <Reveal key={item._id} delay={index * 90}>
-              <figure className="flex h-full flex-col gap-4 rounded-2xl bg-paper p-7 ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 hover:ring-brand-500/30">
+              <figure className="card-premium flex h-full flex-col gap-4 rounded-2xl p-7">
                 <QuoteMarkIcon className="text-brand-500" size={24} aria-hidden />
                 <blockquote className="flex-1 text-sm leading-relaxed text-ink-muted">
                   “{item.quote[locale] || item.quote.vi}”

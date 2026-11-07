@@ -26,7 +26,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
   };
 
   return (
-    <section id={id} className={`scroll-mt-24 py-20 sm:py-24 ${dark ? "bg-ink text-white" : "bg-paper-soft text-ink"}`}>
+    <section id={id} className={`scroll-mt-24 py-20 sm:py-24 ${dark ? "bg-ink text-white" : "surface-light-soft text-ink"}`}>
       <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-5">
           <p className={`text-xs font-bold uppercase tracking-[0.2em] ${dark ? "text-brand-400" : "text-brand-600"}`}>

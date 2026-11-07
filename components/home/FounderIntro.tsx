@@ -9,7 +9,7 @@ export function FounderIntro() {
   const t = useTranslations("home");
 
   return (
-    <section className="bg-paper-soft py-20 sm:py-28">
+    <section className="surface-light-soft py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <Reveal>
           <FounderPortrait className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/10 ring-1 ring-black/5" />

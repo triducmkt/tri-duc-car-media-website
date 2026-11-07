@@ -36,7 +36,15 @@ three.js / canvas: dùng đúng các mã trên (`0x4285f4`, `0x6ea6f7`, `0x8fb6f
 
 ## 3b. Bóng & gradient dùng chung (06/11/2026)
 
-Khai báo ở `app/globals.css`, chưa component nào dùng (sẽ dùng khi làm backlog F2/F3/F9 trong `docs/brand-backlog.md`).
+Khai báo ở `app/globals.css`. Từ 08/11/2026 đã dùng cho F2/F3 (`docs/brand-backlog.md`); F9 (nút, header, footer) chưa làm.
+
+**Class dùng chung (08/11/2026):**
+
+| Class / component | Dùng cho |
+|---|---|
+| `card-premium` | Thẻ trên nền sáng: viền gradient + bóng `lift-2`, rê chuột nâng lên `lift-3`. Thay cho `bg-paper-soft ring-1 ring-black/5 hover:shadow-…`. Giữ bo góc, padding trong className của component. |
+| `surface-light` · `surface-light-soft` | Nền section sáng (trắng / xám rất nhạt) có loang xanh dương góc trên trái, xanh lá góc dưới phải. Mép trên/dưới vẫn đúng màu nền nên ghép với `SectionSeam` không lộ vạch. |
+| `<SectionSeam to="light"/"dark" light="paper"/"paper-soft" />` (`components/SectionSeam.tsx`) | Chèn giữa section tối và section sáng: nửa tối ink → ink-soft, nửa sáng ửng xanh nhạt, ở giữa có đường kẻ phát sáng. Không dùng dải chuyển xám (đã thử 08/11, nhìn đục). |
 
 | Token | Dùng cho |
 |---|---|
@@ -45,7 +53,7 @@ Khai báo ở `app/globals.css`, chưa component nào dùng (sẽ dùng khi làm
 | `var(--gradient-border)` | Viền gradient của thẻ premium (dùng với `border: 1px solid transparent` + `border-box`) |
 | `var(--gradient-hairline)` | Đường kẻ phát sáng giữa các khối trên nền tối |
 | `var(--gradient-button)` | Nền nút chính |
-| `var(--gradient-surface-light)` | Nền section sáng có gradient loang nhẹ |
+| `var(--gradient-surface-light)` | Chỉ là 2 vùng loang màu (không có màu nền) — dùng qua class `surface-light` / `surface-light-soft` |
 
 Chữ trên video / thumbnail / tiêu đề lớn: xem `docs/typography-lockup.md`.
 

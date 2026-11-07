@@ -13,6 +13,7 @@ import { CaseStudiesPreview } from "@/components/home/CaseStudiesPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { ChannelOrbit } from "@/components/channels/ChannelOrbit";
+import { SectionSeam } from "@/components/SectionSeam";
 import { getChannelVideos, getFeaturedCaseStudies, getTestimonials } from "@/lib/sanity/queries";
 
 export default async function HomePage({
@@ -33,10 +34,12 @@ export default async function HomePage({
     <>
       <FootageHero skipHref="#tinh-gio" />
       <HouseCallMap />
-      <div aria-hidden className="h-20 bg-gradient-to-b from-ink to-paper sm:h-28" />
+      <SectionSeam to="light" />
       <FreedomCalculator />
+      <SectionSeam to="dark" />
       <FreedomLadder variant="teaser" />
       <ProofEngine />
+      <SectionSeam to="light" light="paper-soft" />
       <VatAdvantage id="hoa-don-vat" />
       <div id="tru-cot">
         <ServicesGrid />
@@ -44,12 +47,15 @@ export default async function HomePage({
       <div id="nguoi-dong-hanh">
         <FounderIntro />
       </div>
+      <SectionSeam to="dark" light="paper-soft" />
       <ChannelOrbit videos={videos} />
       <div id="quy-trinh">
         <Process />
       </div>
+      <SectionSeam to="light" />
       <CaseStudiesPreview items={caseStudies} locale={locale} />
       <Testimonials items={testimonials} locale={locale} />
+      <SectionSeam to="dark" light={testimonials.length > 0 ? "paper-soft" : "paper"} />
       <CtaBanner />
       <ChapterDial />
     </>

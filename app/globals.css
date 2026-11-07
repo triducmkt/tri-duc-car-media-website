@@ -34,7 +34,10 @@
   --gradient-border: linear-gradient(135deg, rgba(66, 133, 244, 0.65), rgba(23, 168, 90, 0.45) 60%, rgba(11, 18, 32, 0.08));
   --gradient-hairline: linear-gradient(90deg, transparent, rgba(110, 166, 247, 0.9), rgba(69, 209, 127, 0.7), transparent);
   --gradient-button: linear-gradient(180deg, #6ea6f7 -40%, #4285f4 45%, #2f6fe0);
-  --gradient-surface-light: radial-gradient(40% 70% at 15% 20%, rgba(66, 133, 244, 0.12), transparent 70%), radial-gradient(35% 60% at 85% 80%, rgba(23, 168, 90, 0.08), transparent 70%), linear-gradient(180deg, #ffffff, #eaf1fe);
+  /* Soft color pools only (no base color) so .surface-light / .surface-light-soft
+     keep their edge color exactly paper / paper-soft — section seams then
+     blend without a visible step. */
+  --gradient-surface-light: radial-gradient(45% 60% at 8% 12%, rgba(66, 133, 244, 0.1), transparent 70%), radial-gradient(40% 55% at 92% 88%, rgba(23, 168, 90, 0.07), transparent 70%);
 
   --background: var(--color-paper);
   --foreground: var(--color-ink);
@@ -87,6 +90,35 @@ body {
 ::selection {
   background: var(--color-brand-500);
   color: var(--color-paper);
+}
+
+/* F3 — light sections with soft brand-colored pools (docs/brand-backlog.md). */
+.surface-light {
+  background-color: var(--color-paper);
+  background-image: var(--gradient-surface-light);
+}
+.surface-light-soft {
+  background-color: var(--color-paper-soft);
+  background-image: var(--gradient-surface-light);
+}
+
+/* F2 — premium card on light backgrounds: gradient hairline border (blue →
+   green → near-transparent) + always-visible layered shadow; hover lifts to
+   shadow level 3. Layout/padding stay in the component's className. */
+.card-premium {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-paper), var(--color-paper)) padding-box,
+    var(--gradient-border) border-box;
+  box-shadow: var(--shadow-lift-2);
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+.card-premium:hover,
+.card-premium:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift-3);
 }
 
 /* Slow ambient rotation for FounderAura (About page) — the site-wide

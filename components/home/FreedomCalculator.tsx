@@ -121,7 +121,7 @@ export function FreedomCalculator() {
   const filled = Math.round(animDays);
 
   return (
-    <section id="tinh-gio" className="relative scroll-mt-20 bg-paper pb-20 pt-6 sm:pb-28 sm:pt-10">
+    <section id="tinh-gio" className="surface-light relative scroll-mt-20 pb-20 pt-6 sm:pb-28 sm:pt-10">
       <Container className="grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         {/* ── Left: inputs ── */}
         <div className="flex flex-col gap-10">

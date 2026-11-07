@@ -27,7 +27,7 @@ export function BlogPostCard({
   return (
     <Link
       href={{ pathname: "/blog/[slug]", params: { slug: item.slug } }}
-      className="group flex flex-col overflow-hidden rounded-2xl bg-paper-soft ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-lg hover:shadow-black/5"
+      className="card-premium group flex flex-col overflow-hidden rounded-2xl"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink">
         {cover ? (

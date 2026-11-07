@@ -22,7 +22,7 @@ export function CaseStudyCard({
   return (
     <Link
       href={{ pathname: "/case-studies/[slug]", params: { slug: item.slug } }}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-paper-soft ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-brand-500/30"
+      className="card-premium group flex h-full flex-col overflow-hidden rounded-2xl"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink">
         {cover ? (

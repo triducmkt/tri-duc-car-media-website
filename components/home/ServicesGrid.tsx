@@ -12,7 +12,7 @@ export function ServicesGrid() {
   const items = tServices.raw("items") as { title: string; description: string }[];
 
   return (
-    <section className="bg-paper py-20 sm:py-28">
+    <section className="surface-light py-20 sm:py-28">
       <Container className="flex flex-col gap-12">
         <SectionHeading
           eyebrow={t("servicesEyebrow")}
@@ -25,7 +25,7 @@ export function ServicesGrid() {
             const Icon = icons[index % icons.length];
             return (
               <Reveal key={service.title} delay={index * 80}>
-                <div className="group flex h-full flex-col gap-4 rounded-2xl bg-paper-soft p-7 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 hover:ring-brand-500/30">
+                <div className="card-premium group flex h-full flex-col gap-4 rounded-2xl p-7">
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                     <Icon size={22} aria-hidden />
                   </span>

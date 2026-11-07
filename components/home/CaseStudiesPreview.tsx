@@ -19,7 +19,7 @@ export function CaseStudiesPreview({
   if (items.length === 0) return null;
 
   return (
-    <section className="bg-paper py-20 sm:py-28">
+    <section className="surface-light py-20 sm:py-28">
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading eyebrow={t("caseStudiesEyebrow")} heading={t("caseStudiesHeading")} />
