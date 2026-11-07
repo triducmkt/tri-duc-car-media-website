@@ -36,8 +36,8 @@ cp("motion/intro-16x9-white.gif", `${PUB}/motion/logo-motion-16x9.gif`);
   await sharp(svgBuf("tri-duc-media-horizontal-color.svg"), { density: 600 }).resize({ width: 500 }).flatten({ background: "#FFFFFF" }).jpeg({ quality: 92 }).toFile(`${PUB}/logo-white.jpg`);
   // App icons (Next.js file conventions)
   const icon = svgBuf("tri-duc-media-app-icon.svg");
-  await sharp(icon, { density: 600 }).resize(512, 512).png().toFile("app/icon.png");
-  await sharp(icon, { density: 600 }).resize(180, 180).png().toFile("app/apple-icon.png");
+  await sharp(icon, { density: 600 }).resize(512, 512).png().toFile("public/icon.png");
+  await sharp(icon, { density: 600 }).resize(180, 180).png().toFile("public/apple-icon.png");
   // favicon.ico with 16/32/48 PNG entries
   const sizes = [16, 32, 48];
   const pngs = await Promise.all(sizes.map((s) => sharp(icon, { density: 600 }).resize(s, s).png().toBuffer()));

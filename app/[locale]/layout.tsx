@@ -31,6 +31,12 @@ export async function generateMetadata({
       template: `%s | ${t("siteName")}`,
     },
     description: t("defaultDescription"),
+    // Icons live in public/ so they are served as static assets and never
+    // invoke the Worker (app/icon.png would — see hq/lesson.md ERR-WEB-009).
+    icons: {
+      icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    },
   };
 }
 

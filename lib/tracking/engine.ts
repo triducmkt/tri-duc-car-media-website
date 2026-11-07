@@ -2,7 +2,7 @@
  * Browser-side behaviour recorder. Runs only after the visitor accepts the
  * consent banner (components/analytics/Tracker.tsx).
  *
- * Three layers of data, all batched and sent to /api/track every 15 s and
+ * Three layers of data, all batched and sent to /api/track every 60 s and
  * when the tab is hidden/closed (sendBeacon):
  *  1. events  — page_view, click, cta_click, rage_click, scroll_depth, form_start,
  *               form_submit, survey_answer, copy, visibility, js_error, page_end…
@@ -20,7 +20,7 @@ type TrackedEvent = { type: string; ts: number } & Record<string, Primitive>;
 type Sensor = { hover: number; moves: number; clicks: number };
 
 const ENDPOINT = "/api/track";
-const FLUSH_MS = 15_000;
+const FLUSH_MS = 60_000; // each flush = 1 Worker request (Cloudflare Free: 100k/day, hq/lesson.md ERR-WEB-009)
 const IDLE_MS = 30_000; // no input for this long → time stops counting as "active"
 const HOVER_GAP_CAP = 2_000; // pointer resting > 2 s in one cell counts as at most 2 s per sample
 const SESSION_TIMEOUT = 30 * 60_000;

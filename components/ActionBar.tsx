@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { HoverPrefetchLink as Link } from "@/components/HoverPrefetchLink";
 import styles from "./ActionBar.module.css";
 
 type Props = {
