@@ -383,7 +383,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{eyebrow}</p>
-            <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">{heading}</h1>
+            <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">{heading}</h1>
           </div>
           <fieldset className="flex flex-col gap-3">
             <legend className="mb-3 font-display text-lg font-semibold text-white sm:text-xl">{t("question")}</legend>
@@ -464,7 +464,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
       <Container className="relative mt-10 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
         <div className="flex flex-col gap-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="font-display text-xl font-semibold sm:text-2xl">{t("pathTitle")}</h2>
+            <h2 className="font-serif text-xl font-semibold sm:text-2xl">{t("pathTitle")}</h2>
             <p className="flex items-center gap-1.5 text-sm text-brand-400">
               <Clock size={14} aria-hidden /> {t("pathMeta", { n: path.length, m: totalMin })}
             </p>

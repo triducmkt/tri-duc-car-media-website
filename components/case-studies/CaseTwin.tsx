@@ -323,7 +323,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <span className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</span>
-            <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">{t("heading", { client })}</h2>
+            <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("heading", { client })}</h2>
             <p className="text-base text-white/65">{t("sub", { client })}</p>
           </div>
 
@@ -357,7 +357,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
                   ))}
                 </span>
               </div>
-              <h3 className="font-display text-2xl font-bold leading-snug">{t(`questions.${key}.q`)}</h3>
+              <h3 className="font-serif text-2xl font-bold leading-snug">{t(`questions.${key}.q`)}</h3>
               <div className="flex flex-col gap-2.5">
                 {options.map((o) => (
                   <button
@@ -421,7 +421,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
               ) : (
                 <form onSubmit={submit} className="flex flex-col gap-3">
                   <div>
-                    <h3 className="font-display text-xl font-bold">{t("leadTitle", { client })}</h3>
+                    <h3 className="font-serif text-xl font-bold">{t("leadTitle", { client })}</h3>
                     <p className="mt-1 text-sm text-white/65">{t("leadBody")}</p>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2">

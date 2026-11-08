@@ -77,7 +77,7 @@ export default async function CheckPage({
                       {tg(`formats.${g.format}`)} · {tg(g.status)}
                     </span>
                   </div>
-                  <h3 className="font-display text-base font-bold leading-snug text-ink">{tg(`items.${id}.title`)}</h3>
+                  <h3 className="font-serif text-base font-bold leading-snug text-ink">{tg(`items.${id}.title`)}</h3>
                   <p className="text-sm leading-relaxed text-ink-muted">{tg(`items.${id}.desc`)}</p>
                   {"href" in g ? (
                     <Link href="/booking" className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700">
@@ -136,7 +136,7 @@ export default async function CheckPage({
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {AXIS_KEYS.map((axis) => (
               <div key={axis} className="flex flex-col gap-3 rounded-2xl bg-paper-soft p-5 ring-1 ring-black/5">
-                <h3 className="font-display text-lg font-bold text-ink">{t(`axes.${axis}.label`)}</h3>
+                <h3 className="font-serif text-lg font-bold text-ink">{t(`axes.${axis}.label`)}</h3>
                 <p className="text-sm leading-relaxed text-ink-muted">{t(`signs.${axis}`)}</p>
                 <ul className="mt-auto flex flex-col gap-2">
                   {byAxis[axis].slice(0, 2).map((p) => (
@@ -179,7 +179,7 @@ export default async function CheckPage({
 
       <section className="bg-ink py-16 text-white sm:py-20">
         <Container className="flex flex-col items-center gap-6 text-center">
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("finalTitle")}</h2>
+          <h2 className="font-serif text-3xl font-bold sm:text-4xl">{t("finalTitle")}</h2>
           <a href="#kiem-tra" className="inline-flex items-center gap-2 rounded-full bg-brand-400 px-6 py-3.5 text-base font-bold text-ink hover:bg-brand-500">
             {t("finalCta")} <ArrowRight size={18} aria-hidden />
           </a>

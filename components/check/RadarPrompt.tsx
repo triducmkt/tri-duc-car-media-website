@@ -34,7 +34,7 @@ export function RadarPrompt({ axis, slug }: { axis: CheckAxis; slug: string }) {
       />
       <div className="flex flex-col gap-3">
         <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand-300">{t("prompt.eyebrow")}</span>
-        <p className="font-display text-xl font-bold leading-snug sm:text-2xl">{t("prompt.heading", { axis: t(`axes.${axis}.label`) })}</p>
+        <p className="font-serif text-xl font-bold leading-snug sm:text-2xl">{t("prompt.heading", { axis: t(`axes.${axis}.label`) })}</p>
         <p className="text-sm text-white/65">{t(`axes.${axis}.q`)}</p>
         <div className="flex flex-col gap-2">
           {options.map((o, level) => (

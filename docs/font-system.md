@@ -1,25 +1,31 @@
 # Hệ thống font chuẩn — Trí Đức Car Media (Master Font System)
 
 > **Nguồn duy nhất:** `lib/fonts.ts`. Mọi agent đọc file này **trước khi sửa giao diện**,
-> và chạy `npm run fonts:check` trước khi commit. Cập nhật: 2026-11-03.
+> và chạy `npm run fonts:check` trước khi commit. Cập nhật: 2026-11-08 (bộ font v3).
 
-## 1. Bộ font đang dùng (3 vai trò)
+## 1. Bộ font đang dùng (5 vai trò, 3 họ font)
+
+Gốc là 2 giọng đã chốt ở logo v12a + lockup hero (`docs/DESIGN-CORE-RULES.md`): **Playfair Display** (giọng chính) và **Great Vibes** (giọng phụ). Thêm đúng **một** font sans để đọc và làm UI.
 
 | Vai trò | Font | Biến CSS | Class Tailwind | Weight | Dùng cho |
 |---|---|---|---|---|---|
-| **body** | Mona Sans (variable, trục `wdth`) | `--tdcm-font-body` | `font-sans` (mặc định của `<body>`) | đoạn văn 400 · menu/nhãn 600 · nút 700 | Đoạn văn, form, nút, menu, nhãn nhỏ |
-| **display** | Mona Sans (cùng họ với body) | `--tdcm-font-display` | `font-display` | tiêu đề 700–800 · eyebrow 700 | H1–H3, con số lớn, eyebrow, badge, canvas/three.js |
-| **serif** | Source Serif 4 (variable, trục `opsz`) — **giữ nguyên, anh Đức đã duyệt** | `--tdcm-font-serif` | `font-serif` | variable 200–900 (+ italic) | Câu tuyên ngôn thương hiệu, `SectionHeading serif`, trích dẫn |
-| **lockup** (từ 08/11/2026) | Playfair Display 900 | `--tdcm-font-lockup` | `font-lockup` | 900 | **Chỉ** dòng chính của lockup C, qua `<Lockup>` (`components/Lockup.tsx`) |
-| **script** (từ 08/11/2026) | Great Vibes | `--tdcm-font-script` | `font-script` | 400 | **Chỉ** dòng thư pháp của lockup C, qua `<Lockup>` |
+| **body** | **Commissioner** (variable 100–900) | `--tdcm-font-body` | `font-sans` (mặc định của `<body>`) | đoạn văn 400 · menu/nhãn 600 · nút 700 | Đoạn văn, form, nút, menu |
+| **display** | Commissioner (cùng file với body) | `--tdcm-font-display` | `font-display` | 600–800 | Con số, giá, chỉ số, eyebrow, nhãn, badge, canvas/three.js. **Không** dùng cho h1–h3 |
+| **serif** | **Playfair Display** (variable 400–900 + italic) | `--tdcm-font-serif` | `font-serif` | tiêu đề 600–700 · trích dẫn italic | **Mọi tiêu đề h1–h3** (chữ thường đầu câu), `SectionHeading`, câu tuyên ngôn, trích dẫn |
+| **lockup** | Playfair Display 900 (dùng chung file serif) | `--tdcm-font-serif` | `font-lockup` | 900 | **Chỉ** dòng chính IN HOA của lockup C, qua `<Lockup>` |
+| **script** | **Great Vibes** | `--tdcm-font-script` | `font-script` | 400 | **Chỉ** dòng thư pháp của lockup C (và chữ "media" của logo) |
 
-Hai vai trò lockup/script tải với `preload: false`: trang không có lockup không tải file font này.
-Quy cách lockup và chỗ được dùng: `docs/typography-lockup.md` mục 11. Cỡ của 2 vai trò này không đặt tay: theo quy tắc V1/V8 trong `docs/DESIGN-CORE-RULES.md`, sinh bởi `npm run lockup:qc`.
+Great Vibes tải với `preload: false` (trang không có lockup không tải). Cỡ lockup không đặt tay: theo quy tắc V1/V1b/V8 trong `docs/DESIGN-CORE-RULES.md`, sinh bởi `npm run lockup:qc`.
+Cả 3 họ đều **có subset `vietnamese`**, tự host qua `next/font`.
 
-Cả 3 font đều **có subset `vietnamese`** trên Google Fonts, tự host qua `next/font`
-(không gọi Google lúc chạy, không nháy font).
+### Vì sao bộ v3 (08/11/2026)
+- **Một giọng serif cho toàn web:** tiêu đề dùng cùng Playfair Display với lockup và logo → web, logo, video nói chung một ngôn ngữ chữ. Thứ bậc: lockup (900 IN HOA) > tiêu đề (700 chữ thường) > chữ thân sans.
+- **Commissioner thay Mona Sans:** Mona Sans (font của GitHub) và các grotesk "an toàn" khác rất hay gặp ở web dựng bằng AI/template. Commissioner là grotesk tương phản thấp, có chút nét cổ điển hợp với Playfair, thiết kế có dấu tiếng Việt chồng gọn, ít web dùng.
+- **Bỏ Source Serif 4:** 2 font serif khác nhau trên cùng trang làm loãng nhận diện; Playfair italic đảm nhận trích dẫn.
+- Từ 4 họ font xuống 3 họ.
 
 ### Lịch sử quyết định
+- **2026-11-08 (bộ v3, anh Đức: "dàn font phụ mới, premium, không giống trang AI"):** Mona Sans + Source Serif 4 → **Commissioner** (body, display) + **Playfair Display** (serif, mọi tiêu đề h1–h3); lockup dùng chung file Playfair; Great Vibes giữ. Đổi tiêu đề từng trang: trang chính (Trang chủ, Dịch vụ, Về Founder) trước, trang phụ (Dự án, Kiến thức, Đặt lịch, Kiểm tra 60s, Liên hệ, 404) sau.
 - **2026-11-03 (sáng):** Inter + Be Vietnam Pro + Playfair Display → Noto Sans + Plus Jakarta Sans + Source Serif 4.
 - **2026-11-03 (chiều), phản hồi anh Đức:** serif Source Serif 4 "đã chuẩn doanh nghiệp B2B" nên **giữ**.
   Hai font không chân (Noto Sans, Plus Jakarta) "chưa premium, thiếu đậm ở nút bấm và thanh menu", nên

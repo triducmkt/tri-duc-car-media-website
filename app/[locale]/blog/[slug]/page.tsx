@@ -162,7 +162,7 @@ export default async function BlogPostPage({
           </ol>
         </nav>
 
-        <h1 className="font-display text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-[42px]">{title}</h1>
+        <h1 className="font-serif text-3xl font-bold leading-tight text-ink sm:text-[42px]">{title}</h1>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-muted">
           <span className="font-semibold text-ink">{author}</span>
@@ -220,7 +220,7 @@ export default async function BlogPostPage({
 
       {related.length ? (
         <Container className="mt-16 flex flex-col gap-6">
-          <h2 className="font-display text-2xl font-bold text-ink">{t("related")}</h2>
+          <h2 className="font-serif text-2xl font-bold text-ink">{t("related")}</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <BlogPostCard key={p._id} item={p} locale={locale} readMoreLabel={t("readMore")} categoryLabel={p.category ? categories[p.category] : undefined} />

@@ -453,7 +453,7 @@ export function BookingStudio() {
       <Container className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         <div className="flex flex-col gap-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
-          <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px]">{t("heading")}</h1>
+          <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px]">{t("heading")}</h1>
           <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
         </div>
 

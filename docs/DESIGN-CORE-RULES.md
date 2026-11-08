@@ -54,7 +54,8 @@ khác 5% (đỏ chỉ cho cảnh báo). Không dùng bảng màu mặc định T
 
 ## 3. Chữ (tóm tắt — chi tiết `docs/font-system.md`, `docs/typography-lockup.md`)
 
-- Font chỉ chọn ở `lib/fonts.ts`, theo 5 vai trò: body, display (Mona Sans), serif (Source Serif 4), lockup (Playfair Display 900), script (Great Vibes). Không ghi tên font trong component. Kiểm: `npm run fonts:check`.
+- Font chỉ chọn ở `lib/fonts.ts`, theo 5 vai trò, **3 họ font** (từ 08/11/2026): body + display = **Commissioner** (chữ thân, nút, menu, con số, giá, nhãn), serif = **Playfair Display** (mọi tiêu đề h1–h3 chữ thường đầu câu 600–700, trích dẫn italic), lockup = Playfair Display 900 IN HOA (cùng file với serif), script = **Great Vibes**. Toàn web nói đúng 2 giọng của logo + hero. Không ghi tên font trong component. Kiểm: `npm run fonts:check`.
+- Tiêu đề h1–h3 luôn `font-serif`; `font-display` chỉ cho con số, giá, chỉ số, eyebrow, nhãn, badge. Không dùng Playfair 900 IN HOA ngoài lockup (để lockup giữ vị trí nổi bật nhất).
 - Font nào cũng phải có dấu tiếng Việt. Chữ có dấu chồng: giãn dòng ≥ 1,15.
 - Khách 30–55 tuổi đọc trên điện thoại: chữ thân ≥ 16px, tương phản đủ.
 

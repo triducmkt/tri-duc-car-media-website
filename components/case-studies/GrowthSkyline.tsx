@@ -291,7 +291,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
       <div className="relative flex flex-col gap-4">
         <div className="flex flex-col gap-1">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-400">{t("eyebrow")}</p>
-          <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
+          <h2 className="font-serif text-2xl font-bold leading-tight sm:text-3xl">
             {s[locale]}: <span className="text-leaf-400">{headline}</span>
           </h2>
           <p className="text-sm text-white/60">

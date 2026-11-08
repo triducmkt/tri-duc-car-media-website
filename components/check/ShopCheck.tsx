@@ -169,7 +169,7 @@ export function ShopCheck() {
       <Container className="relative grid gap-5 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 sm:gap-5">
           <span className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</span>
-          <h1 className="font-display text-3xl font-bold leading-tight sm:text-5xl">{heading}</h1>
+          <h1 className="font-serif text-3xl font-bold leading-tight sm:text-5xl">{heading}</h1>
           <p className="hidden max-w-xl text-lg text-white/70 sm:block">{t("sub")}</p>
           <p className="flex items-center gap-2 text-sm font-semibold text-brand-400">
             <ShieldCheck size={16} aria-hidden /> {t("free")}
@@ -206,7 +206,7 @@ export function ShopCheck() {
                   <Check size={14} aria-hidden /> {t("prefilled")}
                 </p>
               )}
-              <h2 className="font-display text-2xl font-bold leading-snug">{t(`axes.${axis}.q`)}</h2>
+              <h2 className="font-serif text-2xl font-bold leading-snug">{t(`axes.${axis}.q`)}</h2>
               <div className="flex flex-col gap-2.5">
                 {options.map((o, level) => (
                   <button
@@ -267,7 +267,7 @@ export function ShopCheck() {
                     <GiftBox open={done} className="h-24 w-24 shrink-0 sm:h-28 sm:w-28" />
                     <div className="min-w-0">
                       <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-400">{giftPick ? tg("chosen") : tg("eyebrow")}</p>
-                      <h2 className="font-display text-lg font-bold leading-snug sm:text-xl">{tg(`items.${gift}.title`)}</h2>
+                      <h2 className="font-serif text-lg font-bold leading-snug sm:text-xl">{tg(`items.${gift}.title`)}</h2>
                       <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-white/60">
                         <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold text-white/80">{tg(`formats.${GIFT_MAP[gift].format}`)}</span>
                         <span className={GIFT_MAP[gift].status === "ready" ? "text-brand-400" : "text-white/55"}>{tg(GIFT_MAP[gift].status)}</span>
