@@ -1,7 +1,7 @@
 # Lịch sử thiết kế logo Trí Đức Media
 
-> **BẢN MỚI NHẤT: v12** (bản C: Playfair Display 900 + MEDIA 0,30) · ảnh: [history/v12/preview.png](history/v12/preview.png) + logo động [history/v12/intro-9x16-navy.gif](history/v12/intro-9x16-navy.gif) · trạng thái: **ĐÃ DỰNG, CHƯA LÊN WEB**
-> Logo đang chạy trên web: **v11** (= v10 đổi xanh sang #4285F4 của dự án, 2026-11-05). Muốn đưa bản mới lên web: `export-web.cjs` (chỉ khi anh Đức yêu cầu).
+> **BẢN MỚI NHẤT: v12a** (v12 theo bản A: Playfair Display 900 + chữ *media* Great Vibes như chữ ký, 0,30) · ảnh: [history/v12a/preview.png](history/v12a/preview.png) + logo động [history/v12a/intro-9x16-navy.gif](history/v12a/intro-9x16-navy.gif) · trạng thái: **ĐANG CHẠY TRÊN WEB (2026-11-08)**
+> Logo đang chạy trên web: **v12a**. (v12 bản C với MEDIA in hoa chỉ dựng, không lên web.) Muốn đưa bản mới lên web: `export-web.cjs` (chỉ khi anh Đức yêu cầu).
 >
 > File này chỉ thêm, không sửa hay xóa mục cũ. Mỗi vòng mới thêm 1 mục ở CUỐI file và cập nhật dòng "BẢN MỚI NHẤT" ở trên.
 

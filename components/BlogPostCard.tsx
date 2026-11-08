@@ -43,8 +43,8 @@ export function BlogPostCard({
             <Image
               src="/brand/logo-light.svg"
               alt="Trí Đức Media"
-              width={313}
-              height={135}
+              width={357}
+              height={124}
               unoptimized
               className="h-10 w-auto opacity-40"
             />

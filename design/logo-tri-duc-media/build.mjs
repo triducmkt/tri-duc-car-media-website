@@ -165,6 +165,24 @@ const nameBox = inkBox(heavy, NAME, s1, s1 * NAME_TRACK);
 const subTracking = s2 * 0.34;
 const subBox = inkBox(semi, SUB, s2, subTracking);
 
+// v12 (anh Đức chọn bản A, 2026-11-08): "media" in Great Vibes calligraphy,
+// tucked under the end of the name like a signature (lockup C accent).
+// Rule V1: its tallest stroke ("d") = 0.30 × the name's cap height.
+const script = opentype.loadSync(path.join(FONTS, "GreatVibes-Regular.ttf"));
+const SCRIPT_TEXT = "media";
+const scriptTall = Math.max(...[...SCRIPT_TEXT].map((ch) => script.charToGlyph(ch).getBoundingBox().y2)) / script.unitsPerEm;
+const sScript = (MEDIA_RATIO * cap1) / scriptTall;
+const scriptBox = inkBox(script, SCRIPT_TEXT, sScript);
+// Signature placement: top of the tallest stroke sits this far under the name's
+// baseline; ink ends this far inside the name's right edge.
+const SIG_GAP = cap1 * 0.1;
+const SIG_INSET = cap1 * 0.04;
+function signature(nameRight, nameBase) {
+  const base = nameBase + SIG_GAP + MEDIA_RATIO * cap1;
+  const x = nameRight - SIG_INSET - scriptBox.x2;
+  return { d: textPath(script, SCRIPT_TEXT, x, base, sScript), bottom: base + scriptBox.y2, base };
+}
+
 // v6: the two acute accents (Í, Ứ) are redrawn as young leaves in the leaf colour.
 // Vietnamese diacritics become the brand's signature detail: the name itself sprouts.
 // Name is set without the acutes ("TRI ĐƯC" — same advances), then each acute's
@@ -211,16 +229,14 @@ function leafAccent(b) {
 
 function wordmark(x, capTop, { name, sub, accent, align = "left" }) {
   const base1 = capTop + cap1;
-  const base2 = base1 + cap1 * 0.3 + cap2;
   const left = align === "center" ? x - nameBox.w / 2 : x;
-  const subLeft = align === "center" ? x - subBox.w / 2 : x;
   const n = textPath(heavy, NAME_PLAIN, left - nameBox.x1, base1, s1, s1 * NAME_TRACK);
   const leaves = accentBoxes(left - nameBox.x1, base1, s1).map(leafAccent).join("");
-  const m = textPath(semi, SUB, subLeft - subBox.x1, base2, s2, subTracking);
+  const sig = signature(left + nameBox.w, base1); // v12: "media" signature
   return {
-    body: `<path fill="${name}" d="${n}"/><path fill="${accent ?? name}" d="${leaves}"/><path fill="${sub}" d="${m}"/>`,
+    body: `<path fill="${name}" d="${n}"/><path fill="${accent ?? name}" d="${leaves}"/><path fill="${sub}" d="${sig.d}"/>`,
     top: base1 + nameBox.y1, // accents rise above the cap line
-    bottom: base2,
+    bottom: sig.bottom,
     width: nameBox.w,
   };
 }
@@ -297,21 +313,19 @@ const TAGLINE = "Chủ vắng, khách vẫn đông.";
 // v10: lower block. MEDIA is centred under the name between two hairlines that
 // run out to the name's edges (no more empty space right of MEDIA); the slogan
 // is centred below. "TRÍ ĐỨC" itself is unchanged since v8.
+// v12 (bản A): MEDIA caps + hairlines replaced by the "media" calligraphy
+// signature under the end of the name; no rules.
 function lowerBlock(nm, withTag) {
-  const base2 = nm.base + cap1 * 0.34 + cap2;
   const center = (nm.x1 + nm.x2) / 2;
-  const mLeft = center - subBox.w / 2;
-  const media = textPath(semi, SUB, mLeft - subBox.x1, base2, s2, subTracking);
-  const gap = s2 * 0.6, ry = base2 - cap2 / 2 - 0.7;
-  const rules = [
-    { x: nm.x1, y: ry, w: mLeft - gap - nm.x1, anchor: mLeft - gap },
-    { x: mLeft + subBox.w + gap, y: ry, w: nm.x2 - (mLeft + subBox.w + gap), anchor: mLeft + subBox.w + gap },
-  ];
+  const sig = signature(nm.x2, nm.base);
+  const media = sig.d;
+  const rules = [];
+  const base2 = sig.bottom;
   let tag = "", bottom = base2;
   if (withTag) {
     const width = nm.x2 - nm.x1;
     // v12: third voice (rule V7) stays visibly below MEDIA (was 0.92 × MEDIA size)
-    let size = s2 * 0.78;
+    let size = s2 * 0.66; // bản A: keep the slogan from outweighing the "media" signature
     const w0 = inkBox(semi, TAGLINE, size, size * 0.01).w;
     if (w0 > width * 0.96) size *= (width * 0.96) / w0;
     const tracking = size * 0.01;
