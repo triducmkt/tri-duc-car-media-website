@@ -350,3 +350,14 @@
   - chạy lại `build.mjs` (cả video) và `export-web.cjs`: toàn bộ `public/brand/*`, `public/brand/motion/*`, favicon, icon, apple-icon;
   - câu mô tả màu trong section thương hiệu đổi "xanh biển" thành "xanh dương".
 - **Trạng thái:** ĐANG CHẠY TRÊN WEB (thay v10).
+
+## Đề xuất font chữ logo theo lockup C + quy tắc 75/25 (2026-11-08) — CHƯA ÁP DỤNG
+- **Yêu cầu anh Đức:** "tiến hành đánh giá cải tiến bộ font của logo theo bộ lockup và quy tắc trọng lượng thị giác này luôn. chỉ đề xuất 3 draft thiết kế font cho logo mới đẹp nhất theo bộ tiêu chí score và đề xuất cho a duyệt, chưa thay đổi thực tế"
+- **Bản trình bày:** https://claude.ai/artifact/AGKWQQz4jxxNyqHQNdS4P9 · file `proposals/2026-11-08-font-lockup/index.html` · ảnh [proposals/2026-11-08-font-lockup/preview.png](proposals/2026-11-08-font-lockup/preview.png)
+- **Đánh giá v11:** MEDIA chỉ chiếm ~11,8% mực của cặp tên + MEDIA, ngoài vùng 20–30% của quy tắc V1 (`docs/DESIGN-CORE-RULES.md`). Logo chưa có giọng của lockup C.
+- **3 bản** (giữ Đ-lá, màu, slogan; chỉ đổi chữ; cỡ MEDIA tự cân 25% mực):
+  - **A. Editorial:** Playfair Display 900 + "media" Great Vibes. Đồng bộ tuyệt đối lockup C; phải vẽ lại Đ-lá, khó thêu.
+  - **B. Lai giữ gốc (đề xuất):** Be Vietnam Pro 800 như v11 + "media" Great Vibes. Giữ nhận diện, rẻ nhất; dưới ~14px bỏ chữ viết tay.
+  - **C. Có chân + nhãn:** Playfair Display 900 + MEDIA Be Vietnam Pro 600 giãn rộng giữa 2 đường kẻ.
+- **Điểm (trọng số: đồng bộ lockup 20 · 75/25 15 · đọc rõ cỡ nhỏ 20 · hợp brief 15 · giữ Đ-lá 10 · in 1 màu 10 · khác biệt 10):** v11 61,0 · A 76,5 · **B 85,0** · C 81,5.
+- **Trạng thái:** chờ anh Đức chọn. Chưa sửa `build.mjs`, chưa có vòng vN mới, logo trên web không đổi.

@@ -1,0 +1,283 @@
+<title>Font logo Trí Đức Media</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Playfair+Display:wght@900&family=Great+Vibes&display=swap">
+<style>
+/* Layout: proposal sheet — baseline v11, then 3 drafts side by side (light + dark + small-size rows), live-measured 75/25 weight, weighted scorecard, recommendation. */
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --fg: #0b1220;
+  --muted: #4b5568;
+  --line: rgba(11, 18, 32, 0.1);
+  --blue: #4285f4;
+  --blue-text: #2f6fe0;
+  --green: #17a85a;
+  --green-text: #11864a;
+  --warn: #c2410c;
+  --ink: #0b1220;
+  --paper: #ffffff;
+  --ui: "Be Vietnam Pro", system-ui, sans-serif;
+  --serif: "Playfair Display", Georgia, serif;
+  --script: "Great Vibes", "Segoe Script", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #070c16; --surface: #0f1729; --fg: #eef2f7; --muted: #9ba4b2; --line: rgba(255,255,255,0.1); --blue-text: #6ea6f7; --green-text: #45d17f; --warn: #fb923c; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #070c16; --surface: #0f1729; --fg: #eef2f7; --muted: #9ba4b2; --line: rgba(255,255,255,0.1); --blue-text: #6ea6f7; --green-text: #45d17f; --warn: #fb923c; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.6; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0; }
+h1, h2, h3 { margin: 0; line-height: 1.2; text-wrap: balance; }
+p { margin: 0; }
+code { font-size: 13px; background: var(--line); padding: 1px 6px; border-radius: 5px; }
+
+header.hero { padding-block: 36px 18px; display: grid; gap: 10px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-text); }
+.hero h1 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; }
+.hero p { color: var(--muted); max-width: 80ch; }
+.note { font-size: 13px; color: var(--muted); }
+
+section { padding-block: 22px; display: grid; gap: 14px; }
+section > h2 { font-size: 20px; font-weight: 800; }
+
+/* Logo plates */
+.plate { position: relative; display: grid; place-items: center; min-height: 190px; padding: 28px 18px; overflow: hidden; }
+.plate.light { background: var(--paper); color: var(--ink); }
+.plate.dark { background: var(--ink); color: #fff; }
+.logo { display: grid; justify-items: center; gap: .18em; font-size: clamp(34px, 5.2vw, 54px); }
+.name { display: inline-flex; align-items: baseline; white-space: nowrap; line-height: 1; }
+.name .d { display: inline-block; height: .97em; width: auto; vertical-align: -0.15em; margin: 0 -0.02em 0 -0.06em; align-self: baseline; transform: translateY(0.15em); }
+.f-bvp { font-family: var(--ui); font-weight: 800; letter-spacing: -0.01em; }
+.f-pf { font-family: var(--serif); font-weight: 900; letter-spacing: 0.02em; }
+.media-script { font-family: var(--script); font-weight: 400; color: var(--blue); line-height: .9; }
+.plate.dark .media-script, .plate.dark .media-caps, .plate.dark .rule { color: #6ea6f7; }
+.media-caps { display: flex; align-items: center; gap: .5em; width: 100%; font-family: var(--ui); font-weight: 600; color: var(--blue); letter-spacing: .42em; text-indent: .42em; line-height: 1; }
+.rule { flex: 1; height: 1px; background: currentColor; opacity: .75; }
+.tag { font-family: var(--ui); font-weight: 600; font-size: .27em; letter-spacing: .01em; color: #4b5568; margin-top: .45em; }
+.plate.dark .tag { color: rgba(255,255,255,.75); }
+/* script accent tucked under the end of the name, like a signature */
+.lk-script { display: grid; justify-items: end; }
+.lk-script .media-script { margin-top: -0.32em; margin-right: -0.1em; }
+.lk-script .tag { justify-self: center; }
+
+/* Cards */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
+.card { display: grid; grid-template-rows: auto auto auto auto 1fr; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; min-width: 0; }
+.card.pick { border-color: var(--green); box-shadow: 0 0 0 2px color-mix(in srgb, var(--green) 35%, transparent); }
+.card-head { display: grid; gap: 4px; padding: 16px 18px 12px; }
+.card-head .k { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-text); }
+.card-head h3 { font-size: 18px; font-weight: 800; }
+.card-head p { font-size: 13.5px; color: var(--muted); }
+.badge { justify-self: start; font-size: 11px; font-weight: 800; padding: 2px 9px; border-radius: 999px; background: color-mix(in srgb, var(--green) 16%, transparent); color: var(--green-text); }
+.small-row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding: 14px 18px; background: var(--paper); color: var(--ink); border-top: 1px solid rgba(11,18,32,.08); }
+.small-row .logo { font-size: 22px; }
+.small-row .logo.xs { font-size: 13px; }
+.small-row .cap { font: 600 11px/1.3 var(--ui); color: #4b5568; }
+.meter { display: grid; gap: 6px; padding: 14px 18px; border-top: 1px solid var(--line); }
+.meter .row { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; }
+.bar { position: relative; height: 10px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.bar i { position: absolute; inset: 0 auto 0 0; background: var(--fg); }
+.bar b { position: absolute; inset: 0 0 0 auto; background: var(--blue); }
+.bar .band { position: absolute; top: -3px; bottom: -3px; left: 70%; width: 10%; border-left: 1px dashed var(--green); border-right: 1px dashed var(--green); }
+.ok { color: var(--green-text); font-weight: 800; }
+.bad { color: var(--warn); font-weight: 800; }
+.pros { padding: 4px 18px 18px; display: grid; gap: 6px; font-size: 13.5px; }
+.pros ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+.pros h4 { margin: 6px 0 0; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+.base { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+@media (max-width: 760px) { .base { grid-template-columns: 1fr; } }
+
+.base-info { display: grid; gap: 8px; align-content: center; padding: 18px; background: var(--surface); }
+
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 760px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.total td { font-weight: 800; border-bottom: 0; }
+tr.total td.win { color: var(--green-text); }
+.rec { display: grid; gap: 8px; padding: 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--green); }
+.rec h2 { font-size: 20px; font-weight: 800; }
+.rec ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+footer { padding-block: 18px 44px; color: var(--muted); font-size: 13px; }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Đề xuất · chưa thay logo thật · 08/11/2026</span>
+    <h1>Font chữ logo theo lockup C và quy tắc 75 / 25</h1>
+    <p>Giữ nguyên biểu tượng Đ-lá, màu và slogan của logo v11; chỉ đổi kiểu chữ. Chữ logo phải theo quy tắc V trong <code>docs/DESIGN-CORE-RULES.md</code>: tên TRÍ ĐỨC là giọng chính (~75% mực), chữ MEDIA là giọng phụ (~25%). Slogan là giọng thứ ba, không tính vào cặp này. Tỷ lệ % bên dưới đo trực tiếp trên trang bằng font thật.</p>
+  </header>
+
+  <section aria-labelledby="h-base">
+    <h2 id="h-base">Logo đang chạy (v11)</h2>
+    <div class="base">
+      <div class="plate light" id="v11-plate"></div>
+      <div class="base-info">
+        <p><b>Be Vietnam Pro ExtraBold</b> cho TRÍ ĐỨC, <b>Be Vietnam Pro SemiBold</b> giãn rộng cho MEDIA.</p>
+        <p>MEDIA chiếm <b id="v11-share">…</b> mực của cặp tên + MEDIA. <span id="v11-verdict"></span></p>
+        <p class="note">Rõ, chắc, đọc tốt ở cỡ nhỏ. Nhưng chưa có giọng thư pháp / có chân của lockup C, nên logo và chữ trên video, website đang nói 2 giọng khác nhau.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-drafts">
+    <h2 id="h-drafts">3 bản đề xuất</h2>
+    <div class="grid" id="drafts"></div>
+    <p class="note">Chữ Đ trong tên dùng đúng biểu tượng Đ-lá hiện tại. Ở bản dùng Playfair, Đ-lá cần vẽ lại cho hợp nét có chân nếu được chọn. Cỡ MEDIA của 3 bản được tự cân để đạt 25% mực. Hàng dưới mỗi bản là cỡ nhỏ: logo header website (~22px) và chữ ký email (~13px).</p>
+  </section>
+
+  <section aria-labelledby="h-score">
+    <h2 id="h-score">Bảng chấm điểm</h2>
+    <div class="tbl"><table id="score"></table></div>
+    <p class="note">Mỗi tiêu chí chấm 0–10, nhân trọng số, tổng 100. Tiêu chí 2 tính từ số đo: 10 điểm khi đúng 25%, mỗi điểm % lệch trừ 0,8. Các tiêu chí còn lại là đánh giá của Claude theo brief logo; anh Đức duyệt lại.</p>
+  </section>
+
+  <div class="rec" id="rec"></div>
+
+  <footer>Font: Google Fonts, giấy phép OFL, đều có dấu tiếng Việt. Sau khi anh Đức chọn: dựng vòng logo mới bằng <code>build.mjs</code> theo quy trình trong <code>HISTORY.md</code> (ảnh xem trước, bản 1 màu, favicon), rồi mới thay lên web khi anh yêu cầu.</footer>
+</div>
+
+<script>
+const MARK = (id, rev) => `<svg class="d" viewBox="13 4 92 116" aria-hidden="true"><defs><linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="22" y1="102" x2="97" y2="4"><stop offset="0.12" stop-color="${rev ? "#FFFFFF" : "#0B1220"}"/><stop offset="0.5" stop-color="#4285F4"/><stop offset="0.95" stop-color="${rev ? "#45D17F" : "#17A85A"}"/></linearGradient></defs><path fill="url(#${id})" fill-rule="evenodd" d="M22 18H60C74 18 86 13 97 4C101.5 20 103.5 38 103 58C102.3 84 83 102 58 102H22ZM36 32H60C78 32 89 44 89 60C89 76 77 88 60 88H36Z"/><path fill="${rev ? "#45D17F" : "#17A85A"}" d="M19.57 73.72L71.45 26.6L69.92 24.75L13.72 66.62A4.6 4.6 0 0 0 19.57 73.72Z"/></svg>`;
+let uid = 0;
+const nameHTML = (cls, rev) => `<span class="name ${cls}">TRÍ&nbsp;${MARK("g" + uid++, rev)}ỨC</span>`;
+
+const DRAFTS = [
+  {
+    key: "A", title: "Editorial", sub: "Playfair Display 900 + thư pháp Great Vibes",
+    desc: "Đúng nguyên bộ lockup C: tên có chân rất đậm, chữ media viết tay nép dưới cuối tên như chữ ký.",
+    nameCls: "f-pf", accent: "script", wrap: "lk-script",
+    pros: ["Đồng bộ 100% với video #12 và lockup trên web", "Sang, khác hẳn logo agency chữ không chân"],
+    cons: ["Đ-lá hình học lệch với chữ có chân, phải vẽ lại", "Nét mảnh Playfair và chữ viết tay khó thêu, khó in dấu", "Hơi hướng thời trang / nhà hàng hơn tư vấn vận hành"],
+    s: { c1: 10, c3: 6, c4: 7, c5: 5, c6: 6, c7: 9 },
+  },
+  {
+    key: "B", title: "Lai giữ gốc", sub: "Be Vietnam Pro 800 + thư pháp Great Vibes",
+    desc: "Giữ tên TRÍ ĐỨC chữ không chân đậm như v11, chỉ thay MEDIA bằng chữ viết tay của lockup C.",
+    nameCls: "f-bvp", accent: "script", wrap: "lk-script",
+    pros: ["Giữ trọn nhận diện, Đ-lá khớp sẵn với chữ", "Thêm giọng người thật, gần gũi đúng brief", "Tên vẫn đọc rõ ở 22px; chuyển đổi rẻ nhất"],
+    cons: ["Dưới ~14px chữ media viết tay mất nét: cỡ nhỏ chỉ dùng tên hoặc biểu tượng", "Chỉ nửa lockup C (giọng chính khác Playfair)"],
+    s: { c1: 8, c3: 8, c4: 9, c5: 10, c6: 8, c7: 7 },
+  },
+  {
+    key: "C", title: "Có chân + nhãn", sub: "Playfair Display 900 + Be Vietnam Pro 600",
+    desc: "Tên TRÍ ĐỨC theo giọng chính của lockup C, MEDIA giữ kiểu nhãn giãn rộng giữa 2 đường kẻ như v11.",
+    nameCls: "f-pf", accent: "caps", wrap: "",
+    pros: ["Giọng chính trùng lockup C, đọc rõ ở mọi cỡ", "MEDIA kiểu nhãn dễ in 1 màu, dễ thêu", "Uy tín, kiểu tư vấn chuyên nghiệp"],
+    cons: ["Đ-lá cần vẽ lại cho hợp chữ có chân", "Thiếu giọng viết tay nên bớt gần gũi"],
+    s: { c1: 8, c3: 9, c4: 8, c5: 6, c6: 8, c7: 8 },
+  },
+];
+const CRIT = [
+  ["c1", "Đồng bộ lockup C (video, web)", 20],
+  ["c2", "Trọng lượng 75/25 (đo)", 15],
+  ["c3", "Đọc rõ cỡ nhỏ, dấu tiếng Việt", 20],
+  ["c4", "Hợp brief: chắc chắn, đáng tin, gần gũi", 15],
+  ["c5", "Giữ Đ-lá, chi phí chuyển đổi", 10],
+  ["c6", "In 1 màu, thêu áo, con dấu", 10],
+  ["c7", "Khác biệt so với đối thủ", 10],
+];
+
+function logoHTML(d, rev, extra = "") {
+  const media = d.accent === "script"
+    ? `<span class="media-script" data-acc>media</span>`
+    : `<span class="media-caps" data-acc><span class="rule"></span><span class="mtxt">MEDIA</span><span class="rule"></span></span>`;
+  return `<div class="logo ${d.wrap} ${extra}">${nameHTML(d.nameCls, rev)}${media}<span class="tag">Chủ vắng, khách vẫn đông.</span></div>`;
+}
+
+document.getElementById("drafts").innerHTML = DRAFTS.map((d) => `
+  <article class="card" id="card-${d.key}">
+    <div class="card-head"><span class="k">Bản ${d.key}</span><h3>${d.title}</h3><p><b>${d.sub}</b></p><p>${d.desc}</p></div>
+    <div class="plate light">${logoHTML(d, false)}</div>
+    <div class="plate dark">${logoHTML(d, true)}</div>
+    <div class="small-row">${logoHTML(d, false).replace('class="logo', 'class="logo')}<span class="cap">header web</span></div>
+    <div>
+      <div class="meter"><div class="row"><span>MEDIA chiếm</span><span data-share>…</span></div><div class="bar"><i data-i></i><b data-b></b><span class="band" title="vùng đạt 20–30%"></span></div></div>
+      <div class="pros"><h4>Được</h4><ul>${d.pros.map((x) => `<li>${x}</li>`).join("")}</ul><h4>Chưa được</h4><ul>${d.cons.map((x) => `<li>${x}</li>`).join("")}</ul></div>
+    </div>
+  </article>`).join("");
+
+// v11 baseline (real v11 structure: Be Vietnam 800 name, MEDIA 600 caps ~0.43 of name size)
+document.getElementById("v11-plate").innerHTML = `<div class="logo" id="v11">${nameHTML("f-bvp", false)}<span class="media-caps" data-acc style="font-size:.43em"><span class="rule"></span><span class="mtxt">MEDIA</span><span class="rule"></span></span><span class="tag">Chủ vắng, khách vẫn đông.</span></div>`;
+
+// Ink area of a text run with the element's computed font (same method as npm run lockup:check).
+function ink(text, cs, sizePx) {
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d", { willReadFrequently: true });
+  const font = `${cs.fontStyle} ${cs.fontWeight} ${sizePx}px ${cs.fontFamily}`;
+  ctx.font = font;
+  const ls = cs.letterSpacing === "normal" ? "0px" : (parseFloat(cs.letterSpacing) / parseFloat(cs.fontSize) * sizePx) + "px";
+  ctx.letterSpacing = ls;
+  c.width = Math.ceil(ctx.measureText(text).width + sizePx * 2);
+  c.height = Math.ceil(sizePx * 2.6);
+  ctx.font = font; ctx.letterSpacing = ls; ctx.textBaseline = "middle";
+  ctx.fillText(text, sizePx, c.height / 2);
+  const px = ctx.getImageData(0, 0, c.width, c.height).data;
+  let n = 0;
+  for (let i = 3; i < px.length; i += 4) n += px[i] / 255;
+  return n;
+}
+function measure(logo, scaleToTarget) {
+  const nameEl = logo.querySelector(".name");
+  const acc = logo.querySelector("[data-acc]");
+  const accTextEl = acc.querySelector(".mtxt") || acc;
+  const ncs = getComputedStyle(nameEl), acs = getComputedStyle(accTextEl);
+  const N = parseFloat(ncs.fontSize);
+  const nameInk = ink("TRÍ ĐỨC", ncs, N);
+  const accInk = (s) => ink(accTextEl.textContent.trim(), acs, s);
+  if (scaleToTarget) {
+    // ink grows with size²: solve for 25 % then apply as em of the logo size
+    const s0 = N * 0.6, a0 = accInk(s0);
+    const target = nameInk / 3;
+    const s = s0 * Math.sqrt(target / a0);
+    acc.style.fontSize = (s / N) + "em";
+    return { share: accInk(s) / (accInk(s) + nameInk), em: s / N };
+  }
+  const a = accInk(parseFloat(acs.fontSize));
+  return { share: a / (a + nameInk) };
+}
+const vScore = (share) => Math.max(0, Math.min(10, 10 - Math.abs(share * 100 - 25) * 0.8));
+
+document.fonts.ready.then(() => {
+  const v = measure(document.querySelector("#v11"), false);
+  const pass = v.share >= 0.2 && v.share <= 0.3;
+  document.getElementById("v11-share").textContent = (v.share * 100).toFixed(1) + "%";
+  document.getElementById("v11-verdict").innerHTML = pass ? `<span class="ok">Đạt 20–30%.</span>` : `<span class="bad">Ngoài vùng 20–30%.</span>`;
+  const totals = {};
+  DRAFTS.forEach((d) => {
+    const card = document.getElementById("card-" + d.key);
+    let m;
+    card.querySelectorAll(".logo").forEach((lg, i) => { const r = measure(lg, true); if (i === 0) m = r; });
+    d.s.c2 = +vScore(m.share).toFixed(1);
+    d.share = m.share;
+    card.querySelector("[data-share]").innerHTML = `<span class="${m.share >= .2 && m.share <= .3 ? "ok" : "bad"}">${(m.share * 100).toFixed(1)}%</span> · cỡ ${(m.em).toFixed(2)} lần tên`;
+    card.querySelector("[data-i]").style.width = ((1 - m.share) * 100) + "%";
+    card.querySelector("[data-b]").style.width = (m.share * 100) + "%";
+    totals[d.key] = CRIT.reduce((t, [k, , w]) => t + d.s[k] * w / 10, 0);
+  });
+  const v11s = { c1: 3, c2: +vScore(v.share).toFixed(1), c3: 9, c4: 8, c5: 10, c6: 9, c7: 6 };
+  const v11t = CRIT.reduce((t, [k, , w]) => t + v11s[k] * w / 10, 0);
+  const best = Object.entries(totals).sort((a, b) => b[1] - a[1])[0][0];
+  document.getElementById("card-" + best).classList.add("pick");
+  document.getElementById("card-" + best).querySelector(".card-head").insertAdjacentHTML("beforeend", `<span class="badge">Đề xuất chọn</span>`);
+  const head = `<thead><tr><th>Tiêu chí</th><th class="n">Trọng số</th><th class="n">v11 (hiện tại)</th>${DRAFTS.map((d) => `<th class="n">Bản ${d.key}</th>`).join("")}</tr></thead>`;
+  const body = CRIT.map(([k, label, w]) => `<tr><td>${label}</td><td class="n">${w}</td><td class="n">${v11s[k]}</td>${DRAFTS.map((d) => `<td class="n">${d.s[k]}</td>`).join("")}</tr>`).join("");
+  const tot = `<tr class="total"><td>Tổng điểm / 100</td><td class="n"></td><td class="n">${v11t.toFixed(1)}</td>${DRAFTS.map((d) => `<td class="n ${d.key === best ? "win" : ""}">${totals[d.key].toFixed(1)}</td>`).join("")}</tr>`;
+  document.getElementById("score").innerHTML = head + `<tbody>${body}${tot}</tbody>`;
+  const rank = Object.entries(totals).sort((a, b) => b[1] - a[1]).map(([k, t]) => `Bản ${k} (${t.toFixed(1)})`).join(" · ");
+  const bd = DRAFTS.find((d) => d.key === best);
+  document.getElementById("rec").innerHTML = `<h2>Đề xuất: Bản ${best}, ${bd.title}</h2>
+    <p>Xếp hạng: ${rank} · v11 hiện tại ${v11t.toFixed(1)}.</p>
+    <ol>
+      <li>Giữ tên TRÍ ĐỨC và Đ-lá như v11, nên logo đang chạy trên áo, xe, danh thiếp gần như không phải làm lại.</li>
+      <li>Chữ media viết tay Great Vibes mang giọng lockup C vào logo, cỡ cân đúng 25% mực.</li>
+      <li>Quy tắc cỡ nhỏ: dưới ~14px (favicon, avatar, chữ ký email) dùng biểu tượng Đ-lá hoặc chỉ tên, bỏ chữ media viết tay.</li>
+      <li>Nếu anh muốn đồng bộ tuyệt đối với video và web, chọn Bản A và chấp nhận vẽ lại Đ-lá + bản thêu riêng.</li>
+    </ol>`;
+});
+</script>
