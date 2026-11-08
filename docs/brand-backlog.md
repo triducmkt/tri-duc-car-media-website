@@ -74,7 +74,7 @@
 | F6 | Lockup chữ trên trang Về Founder | P2 | Vừa | — | ☑ | 08/11 · lockup A: *hành trình giải phóng người chủ cùng* / TĂNG TRÍ ĐỨC |
 | F7 | Lockup chữ trên trang từng dịch vụ | P3 | Vừa | — | ☑ | 08/11 · câu thư pháp riêng từng dịch vụ ở `accent` trong `lib/servicesCatalog.ts` |
 | F8 | 3D cho khu vực số liệu: 4 bước Quy trình, Tầm nhìn 2031, ô "Kết quả nổi bật" | P2 | Lớn | — | ☐ | |
-| F9 | Nút gradient + bóng màu; eyebrow dạng viên; đường kẻ gradient; header kính mờ; footer dải gradient | P2 | Vừa | — | ☐ | |
+| F9 | Nút gradient + bóng màu; eyebrow dạng viên; đường kẻ gradient; header kính mờ; footer dải gradient | P2 | Vừa | — | ◐ | 08/11 · phần nền đã lên web (commit 584510a): class `btn-gradient` (Button primary), `eyebrow-pill` (SectionHeading), `header-glass`, `footer-strip` + `hairline-gradient` ở footer. **Còn lại:** gắn `btn-gradient` cho các nút CTA đứng riêng (VatAdvantage, PriceStudio, SystemBuilder, FreedomCalculator, BookingStudio, ContactForm, FounderJourney, trang dịch vụ) và eyebrow tự viết ngoài SectionHeading |
 | F10 | Token bóng (3 cấp) + gradient chung trong `app/globals.css` | P3 | Nhanh | — | ☑ | 06/11 · `shadow-lift-1/2/3` + 5 biến `--gradient-*`, ghi ở mục 3b `docs/color-system.md`; đã dùng từ 08/11 (F2, F3) |
 
 ## G. Đo hiệu quả
@@ -88,6 +88,8 @@
 ---
 
 ## Nhật ký cập nhật file này
+
+- **09/11/2026 (Claude Code, phiên logo):** F9 phần nền đã lên web (584510a, do phiên redesign gom commit); đánh dấu ◐ kèm danh sách còn lại. F2/F3 cho trang con chưa làm, chờ anh Đức chọn phiên làm tiếp.
 
 - **06/11/2026 (Claude Code):** tạo file; tick B1–B4, B6–B8, B10, C1, D1, E1, F10, G1. Chưa đưa gì lên website (đợi reset Cloudflare 07:00 và xử lý A1).
 - **08/11/2026 (Claude Code):** tick A1 (phiên khác làm), F2, F3 (trang chủ + thẻ dùng chung).
