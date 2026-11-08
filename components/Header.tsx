@@ -53,7 +53,7 @@ export function Header() {
       }`}
     >
       <Container className="flex h-18 items-center justify-between py-3">
-        <Link href="/" onClick={() => setOpen(false)} className="relative block" aria-label="Trí Đức Media">
+        <Link href="/" onClick={() => setOpen(false)} className="relative block shrink-0" aria-label="Trí Đức Media">
           {/* Logo v12 bản A (design/logo-tri-duc-media): animated SVG — the Đ-leaf grows
               from its root once on page load. Both variants are mounted and
               cross-faded, so switching light/dark on scroll never replays it. */}
@@ -77,7 +77,8 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
+        {/* Text links need ~1000px (EN labels are long): from xl only; below that they live in the menu panel. */}
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Main">
           {navItems.map((item) => {
             const active = pathname === item.href;
             return (
@@ -85,7 +86,7 @@ export function Header() {
                 key={item.key}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-150 ${
+                className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-150 ${
                   active
                     ? transparent
                       ? "text-brand-400"
@@ -101,11 +102,11 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="ml-auto hidden items-center gap-2 lg:flex xl:ml-0 xl:gap-3">
           <Link
             href="/check"
             aria-current={pathname === "/check" ? "page" : undefined}
-            className={`flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-bold ring-1 transition-colors ${
+            className={`flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-2 text-sm font-bold ring-1 transition-colors xl:px-3.5 ${
               transparent ? "text-brand-400 ring-brand-400/50 hover:bg-white/10" : "text-ink ring-brand-500/50 hover:bg-brand-500/10"
             }`}
           >
@@ -119,7 +120,7 @@ export function Header() {
           <Button
             href="/booking"
             variant="primary"
-            className={transparent ? "!bg-brand-500 !text-ink hover:!bg-brand-400" : ""}
+            className={`whitespace-nowrap lg:max-xl:px-4 ${transparent ? "!bg-brand-500 !text-ink hover:!bg-brand-400" : ""}`}
           >
             {t("bookingCta")}
           </Button>
@@ -127,7 +128,7 @@ export function Header() {
 
         <button
           type="button"
-          className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-300 lg:hidden ${
+          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors duration-300 lg:ml-2 xl:hidden ${
             transparent ? "text-white" : "text-ink"
           }`}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -139,12 +140,12 @@ export function Header() {
       </Container>
 
       {open ? (
-        <div className="border-t border-black/5 bg-white lg:hidden">
+        <div className="border-t border-black/5 bg-white xl:hidden">
           <Container className="flex flex-col gap-1 py-4">
             <Link
               href="/check"
               onClick={() => setOpen(false)}
-              className="mb-1 flex items-center gap-2 rounded-lg bg-brand-500/10 px-3 py-3 text-base font-bold text-ink ring-1 ring-brand-500/40"
+              className="mb-1 flex items-center gap-2 rounded-lg bg-brand-500/10 lg:hidden px-3 py-3 text-base font-bold text-ink ring-1 ring-brand-500/40"
             >
               <span className="h-2 w-2 rounded-full bg-brand-500" aria-hidden />
               {t("check")}
@@ -159,7 +160,8 @@ export function Header() {
                 {t(item.key)}
               </Link>
             ))}
-            <div className="mt-2 flex items-center justify-between gap-3 px-3">
+            {/* lg–xl: check, language and booking already sit in the bar */}
+            <div className="mt-2 flex items-center justify-between gap-3 px-3 lg:hidden">
               <LanguageSwitcher />
               <Button href="/booking" variant="primary" onClick={() => setOpen(false)}>
                 {t("bookingCta")}

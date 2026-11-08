@@ -6,12 +6,12 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About the Founder",
+    "about": "The Founder",
     "services": "Services",
     "caseStudies": "Case Studies",
     "blog": "Insights",
     "contact": "Contact",
-    "bookingCta": "Book a Consultation",
+    "bookingCta": "Book a call",
     "check": "60s check"
   },
   "footer": {
