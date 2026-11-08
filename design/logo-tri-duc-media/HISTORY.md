@@ -383,3 +383,12 @@
 - **Tự kiểm tra:** chân chữ Đ-lá liền với thân (bản dựng đầu có vệt hở, đã sửa bằng cách cho chân chữ chồng vào thân 3 đơn vị); slogan nhỏ hơn MEDIA; bảng xem trước đủ bản màu, nền tối, mono, danh thiếp, xe; logo động chạy đúng.
 - **Chưa làm / cần lưu ý:** ở chữ Ứ, móc chữ Ư của Playfair là một chấm tròn nằm cạnh lá non, nhìn hơi dày đặc; bản dọc vẫn dùng chữ Đ thường của Playfair dưới biểu tượng lớn (như các bản trước).
 - **Commit:** `85906c8` · **Trạng thái:** đã dựng, CHƯA thay lên web (chờ anh Đức yêu cầu; khi đó chạy `export-web.cjs`).
+
+## v12a — v12 theo bản A: chữ "media" viết tay như chữ ký (2026-11-08) — PUBLISHED
+- **Yêu cầu anh Đức:** "a muốn thực hiện Bản A Editorial — Playfair Display 900 + thư pháp Great Vibes … tiến hành đưa lên web logo v12 theo bản A này"
+- **Ảnh:** [history/v12a/preview.png](history/v12a/preview.png) · logo động [history/v12a/intro-9x16-navy.gif](history/v12a/intro-9x16-navy.gif)
+- **Thay đổi so với v12 (bản C):** bỏ MEDIA in hoa + 2 đường kẻ; thay bằng chữ **media** Great Vibes màu xanh dương (nền tối: xanh lá sáng), canh phải dưới cuối chữ ĐỨC như chữ ký. Nét cao nhất ("d") = 0,30 chiều cao chữ in hoa của tên (quy tắc V1). Slogan nhỏ lại còn 0,66 cỡ cũ của MEDIA để không lấn chữ media. Tên Playfair 900, Đ-lá có chân, 2 lá non, màu, logo động giữ như v12. Biểu tượng, app icon, favicon không đổi.
+- **Đưa lên web:** `export-web.cjs` → `public/brand/*` (logo header/footer động, bản tĩnh, PNG cho JSON-LD, video logo động). Header: logo cao 40px / 42px (trước 48/52px) để bề ngang giữ ~121px như cũ, menu không rớt dòng ở 1280px. Footer, thẻ bài viết: cập nhật tỷ lệ khung.
+- **Lưu ý trung thực:** theo quy tắc 0,3, chữ media trên logo ở header chỉ cao vài pixel, gần như chỉ còn là một nét chữ ký; đọc rõ ở logo lớn (footer, slide, biển hiệu, video). Ở 1024px menu header vẫn rớt dòng — lỗi có sẵn từ trước (đã kiểm trên web thật với logo v11), không do logo mới.
+- **Font:** lưu sẵn ở `fonts/` (Playfair Display Black, Great Vibes, Be Vietnam Pro SemiBold).
+- **Commit:** `cbfb793` · **Trạng thái:** ĐANG CHẠY TRÊN WEB.
