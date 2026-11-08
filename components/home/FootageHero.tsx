@@ -196,7 +196,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
       <p className="font-display text-sm font-semibold text-brand-400">
         {String(step + 1).padStart(2, "0")} / {String(STEPS).padStart(2, "0")}
       </p>
-      <p className="font-display text-2xl font-bold sm:text-3xl">{s.title}</p>
+      <p className="font-serif text-2xl font-bold sm:text-3xl">{s.title}</p>
       <p className="text-white/70 sm:text-lg">{s.text}</p>
     </div>
   );

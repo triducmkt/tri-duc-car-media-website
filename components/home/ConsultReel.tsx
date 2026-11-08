@@ -323,7 +323,7 @@ export function ConsultReel() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {t("eyebrow")}
             </p>
-            <h2 className="font-display text-[26px] font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="font-serif text-[26px] font-bold leading-tight sm:text-4xl lg:text-5xl">
               {t("heading")}
             </h2>
           </div>
@@ -333,7 +333,7 @@ export function ConsultReel() {
               <p className="font-display text-sm font-semibold text-brand-400">
                 {String(step + 1).padStart(2, "0")} / {String(STEPS).padStart(2, "0")}
               </p>
-              <p className="font-display text-2xl font-bold sm:text-3xl">{s.title}</p>
+              <p className="font-serif text-2xl font-bold sm:text-3xl">{s.title}</p>
               <p className="text-white/75 sm:text-lg">{s.text}</p>
             </div>
 

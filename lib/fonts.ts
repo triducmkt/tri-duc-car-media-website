@@ -1,66 +1,59 @@
-import { Great_Vibes, Mona_Sans, Playfair_Display, Source_Serif_4 } from "next/font/google";
+import { Commissioner, Great_Vibes, Playfair_Display } from "next/font/google";
 
 /**
  * MASTER FONT SYSTEM — the only place font families are chosen.
  *
  * Every component reaches a font through its ROLE, never its family name:
  *   Tailwind      `font-sans` (default body) · `font-display` · `font-serif`
+ *                 · `font-lockup` · `font-script`
  *   CSS / canvas  var(--tdcm-font-body) · var(--tdcm-font-display) · var(--tdcm-font-serif)
  * Swapping a family = change the loader below + its FONT_ROLES row; nothing else.
  * Rules, the vetted Vietnamese bench and how to audit: docs/font-system.md.
  * Audit: `npm run fonts:check` (fails on hard-coded families / old variables /
  * fonts without the `vietnamese` subset).
  *
+ * v3 (2026-11-08, anh Đức: "dàn font phụ mới, premium, không giống trang AI"):
+ * the whole site is built from the two voices chốt in logo v12a + the hero
+ * lockup — Playfair Display (first voice) and Great Vibes (second voice) — plus
+ * ONE quiet sans for reading and UI. Three families in total (was four).
+ *
  * next/font needs literal options at module scope, so the loaders and the
  * FONT_ROLES table are kept side by side — keep them in sync.
  */
 
-// Body & UI — paragraphs, forms, buttons, nav. Mona Sans: crisp grotesque with
-// firm 600–800 weights for nav and buttons; clean stacked Vietnamese diacritics.
-// Variable (wght 200–900, wdth 75–125) so every weight is available.
-export const fontBody = Mona_Sans({
+// Body & UI — paragraphs, forms, buttons, nav. Commissioner: low-contrast
+// grotesk with a faint classical stress that sits well next to Playfair's
+// transitional forms; designed with full Vietnamese stacked diacritics; rarely
+// used, so the site does not read as a template. Variable wght 100–900.
+export const fontBody = Commissioner({
   variable: "--tdcm-font-body",
   subsets: ["latin", "vietnamese"],
-  axes: ["wdth"],
   display: "swap",
 });
 
-// Display — H1–H3, numbers, labels, eyebrows. Same family as body (one premium
-// sans voice site-wide); headings get weight 700–800 and the serif does the
-// contrast. Identical files to fontBody, so the browser downloads them once.
-export const fontDisplay = Mona_Sans({
+// Display — numbers, prices, stats, eyebrows, labels, badges, small UI titles.
+// Same family as body (identical files, downloaded once); weights 600–800.
+// Real headings (h1–h3) use the serif role, not this one.
+export const fontDisplay = Commissioner({
   variable: "--tdcm-font-display",
   subsets: ["latin", "vietnamese"],
-  axes: ["wdth"],
   display: "swap",
 });
 
-// Serif accent — brand statements & pull quotes only (hero line, founder name,
-// section headings with `serif`). Source Serif 4: sturdy, low-contrast,
-// optical sizes keep diacritics solid at 60 px+. Loaded as a variable font
-// (no `weight`): next/font only allows `axes` on variable fonts.
-export const fontSerif = Source_Serif_4({
+// Serif — ALL page / section / card headings (h1–h3, sentence case, 600–700),
+// brand statements, pull quotes (italic). Playfair Display = the first voice of
+// lockup C and of the logo, so headings and lockups speak one serif language.
+// Variable wght 400–900 + italic; the lockup role reuses these same files at 900.
+export const fontSerif = Playfair_Display({
   variable: "--tdcm-font-serif",
   subsets: ["latin", "vietnamese"],
   style: ["normal", "italic"],
-  axes: ["opsz"],
   display: "swap",
 });
 
-// Lockup C (docs/typography-lockup.md, anh Đức chốt 05/11/2026) — used ONLY
-// through <Lockup> (components/Lockup.tsx) on hero / page / 2–3 section
-// headings. Anchor line: Playfair Display 900, uppercase. Accent line: Great
-// Vibes calligraphy, lowercase as written. preload: false — pages without a
-// lockup never download these files; with display: swap the heading shows in
-// the fallback serif / cursive for a moment, then swaps.
-export const fontLockup = Playfair_Display({
-  variable: "--tdcm-font-lockup",
-  subsets: ["latin", "vietnamese"],
-  weight: ["900"],
-  display: "swap",
-  preload: false,
-});
-
+// Script — the second voice of lockup C (components/Lockup.tsx) and the logo's
+// "media". Only through <Lockup>. preload: false — pages without a lockup never
+// download it.
 export const fontScript = Great_Vibes({
   variable: "--tdcm-font-script",
   subsets: ["latin", "vietnamese"],
@@ -70,41 +63,41 @@ export const fontScript = Great_Vibes({
 });
 
 /** Put on <html> so every role variable is defined site-wide. */
-export const fontVariables = `${fontBody.variable} ${fontDisplay.variable} ${fontSerif.variable} ${fontLockup.variable} ${fontScript.variable}`;
+export const fontVariables = `${fontBody.variable} ${fontDisplay.variable} ${fontSerif.variable} ${fontScript.variable}`;
 
 /** FIELD_MAP-style registry read by scripts/check-fonts.mjs and the docs. */
 export const FONT_ROLES = {
   body: {
-    family: "Mona Sans",
+    family: "Commissioner",
     cssVar: "--tdcm-font-body",
     tailwind: "font-sans",
-    weights: ["variable 200–900", "wdth 75–125"],
+    weights: ["variable 100–900"],
     use: "Đoạn văn 400, nhãn/menu 600, nút 700",
     leading: "1.6 (đoạn văn) · 1.4 (UI)",
   },
   display: {
-    family: "Mona Sans",
+    family: "Commissioner",
     cssVar: "--tdcm-font-display",
     tailwind: "font-display",
-    weights: ["variable 200–900", "wdth 75–125"],
-    use: "H1–H3 700–800, con số lớn, eyebrow 700, badge",
-    leading: "≥ 1.15 (tiếng Việt có dấu chồng — không dùng leading-none cho chữ có dấu)",
+    weights: ["variable 100–900"],
+    use: "Con số, giá, chỉ số, eyebrow, nhãn, badge, tiêu đề UI nhỏ (600–800). KHÔNG dùng cho h1–h3",
+    leading: "1.2–1.4",
   },
   serif: {
-    family: "Source Serif 4",
+    family: "Playfair Display",
     cssVar: "--tdcm-font-serif",
     tailwind: "font-serif",
-    weights: ["variable 200–900", "opsz 8–60"],
-    use: "Câu tuyên ngôn thương hiệu, tên founder, heading `serif`, trích dẫn",
-    leading: "1.1–1.2",
+    weights: ["variable 400–900", "italic"],
+    use: "Mọi tiêu đề h1–h3 (chữ thường đầu câu, 600–700), câu tuyên ngôn, trích dẫn (italic)",
+    leading: "≥ 1.15 (dấu chồng tiếng Việt)",
   },
   lockup: {
     family: "Playfair Display",
-    cssVar: "--tdcm-font-lockup",
+    cssVar: "--tdcm-font-serif",
     tailwind: "font-lockup",
     weights: ["900"],
-    use: "Dòng chính của lockup C (in hoa, giãn chữ +3%) — chỉ qua <Lockup>",
-    leading: "1.18 (đủ chỗ cho dấu chồng Ẫ, Ô)",
+    use: "Dòng chính của lockup C (IN HOA, giãn chữ +3%) — chỉ qua <Lockup>; dùng chung file với vai trò serif",
+    leading: "1.18",
   },
   script: {
     family: "Great Vibes",

@@ -23,8 +23,15 @@ export function Footer() {
   const locale = useLocale() as Locale;
 
   return (
-    <footer className="bg-ink text-white">
-      <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+    <footer className="relative overflow-hidden bg-ink text-white">
+      {/* F9: brand-gradient strip on top + a soft blue glow behind the columns */}
+      <div aria-hidden className="footer-strip" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-48 opacity-60"
+        style={{ backgroundImage: "radial-gradient(60% 100% at 50% 0%, rgba(66, 133, 244, 0.16), transparent 70%)" }}
+      />
+      <Container className="relative grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div className="flex flex-col gap-4 lg:col-span-1">
           {/* Logo v12 bản A with the slogan "Chủ vắng, khách vẫn đông." (animated SVG). */}
           <Image
@@ -125,7 +132,9 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-white/10">
+      <div className="relative">
+        {/* F9: glowing gradient hairline instead of a flat border */}
+        <div aria-hidden className="hairline-gradient opacity-50" />
         <Container className="flex flex-col gap-2 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1">
             <p className="font-semibold text-white/70">

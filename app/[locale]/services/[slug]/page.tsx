@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         <Container className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-4">
-              <h2 className="font-display text-2xl font-bold text-ink">{t("includes")}</h2>
+              <h2 className="font-serif text-2xl font-bold text-ink">{t("includes")}</h2>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {s.includes[locale].map((x) => (
                   <li key={x} className="flex items-start gap-3 rounded-2xl bg-paper-soft p-4 text-sm text-ink ring-1 ring-black/5">
@@ -108,7 +108,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
             </div>
 
             <div className="flex flex-col gap-4">
-              <h2 className="font-display text-2xl font-bold text-ink">{t("steps")}</h2>
+              <h2 className="font-serif text-2xl font-bold text-ink">{t("steps")}</h2>
               <ol className="flex flex-col gap-0">
                 {s.steps[locale].map((x, i) => (
                   <li key={x} className="relative flex gap-4 pb-6 last:pb-0">
@@ -136,7 +136,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
           <aside className="flex flex-col gap-6">
             {inCombos.length ? (
               <div className="flex flex-col gap-3 rounded-3xl bg-ink p-6 text-white">
-                <h2 className="font-display text-lg font-bold">{t("inCombos")}</h2>
+                <h2 className="font-serif text-lg font-bold">{t("inCombos")}</h2>
                 {inCombos.map((c) => (
                   <Link
                     key={c.key}

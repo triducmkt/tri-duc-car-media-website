@@ -249,7 +249,7 @@ export function PriceStudio() {
       <Container className="relative flex flex-col gap-10">
         <div className="flex max-w-3xl flex-col gap-3">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
-          <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
+          <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
           <p className="text-white/70 sm:text-lg">{t("sub")}</p>
         </div>
 

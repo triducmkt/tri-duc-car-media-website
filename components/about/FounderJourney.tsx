@@ -346,7 +346,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
         <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-between px-4 pb-24 pt-24 sm:px-6 lg:px-8 lg:pb-10">
           <div className="max-w-md">
             <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</p>
-            <h2 className="mt-2 font-display text-2xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
+            <h2 className="mt-2 font-serif text-2xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
             <p className="mt-2 hidden text-sm text-white/65 sm:block">{t("sub")}</p>
           </div>
 
@@ -393,7 +393,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
                       <img src={stops[i].image} alt={c.place} loading="lazy" className="hidden h-24 w-20 shrink-0 rounded-xl object-cover ring-1 ring-white/10 sm:block" />
                     )}
                     <div className="min-w-0">
-                      <h3 className="font-display text-lg font-bold leading-snug sm:text-xl">{c.title}</h3>
+                      <h3 className="font-serif text-lg font-bold leading-snug sm:text-xl">{c.title}</h3>
                       <p className="mt-0.5 flex items-center gap-1 text-xs text-white/55">
                         <MapPin size={12} aria-hidden /> {c.place}
                       </p>
@@ -424,7 +424,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
                   <span className="rounded-full bg-ink px-2.5 py-1 text-white">{t("next.date")}</span>
                   <span className="text-ink-muted">{t("stopLabel", { n: total, total })}</span>
                 </div>
-                <h3 className="font-display text-2xl font-bold leading-tight">{t("next.title")}</h3>
+                <h3 className="font-serif text-2xl font-bold leading-tight">{t("next.title")}</h3>
                 <p className="text-sm leading-relaxed text-ink-muted">{t("next.body")}</p>
                 <div className="flex flex-wrap gap-3">
                   <Link

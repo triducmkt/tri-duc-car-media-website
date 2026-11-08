@@ -63,7 +63,7 @@ export function BlogPostCard({
             ) : null}
           </p>
         ) : null}
-        <h3 className="font-display text-lg font-bold leading-snug text-ink">{title}</h3>
+        <h3 className="font-serif text-lg font-bold leading-snug text-ink">{title}</h3>
         <p className="line-clamp-2 text-sm leading-relaxed text-ink-muted">{item.excerpt[locale] || item.excerpt.vi}</p>
         <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-bold text-brand-600">
           {readMoreLabel}

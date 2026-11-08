@@ -56,7 +56,7 @@ export function CaseStudyCard({
             {item.industry[locale] || item.industry.vi}
           </span>
         ) : null}
-        <h3 className="font-display text-lg font-semibold text-ink">
+        <h3 className="font-serif text-lg font-semibold text-ink">
           {item.title[locale] || item.title.vi}
         </h3>
         <p className="line-clamp-2 text-sm leading-relaxed text-ink-muted">

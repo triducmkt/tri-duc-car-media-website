@@ -27,12 +27,11 @@ export function SectionHeading({
 }) {
   const alignClass = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
   const subColor = tone === "dark" ? "text-white/70" : "text-ink-muted";
-  const eyebrowColor = tone === "dark" ? "text-brand-300" : "text-brand-600";
-
   return (
     <div className={`flex max-w-2xl flex-col gap-3 ${alignClass}`}>
       {eyebrow ? (
-        <span className={`text-sm font-bold uppercase tracking-[0.14em] ${eyebrowColor}`}>
+        // F9: eyebrow as a pill (.eyebrow-pill in app/globals.css)
+        <span className="eyebrow-pill" data-tone={tone}>
           {eyebrow}
         </span>
       ) : null}
@@ -40,7 +39,7 @@ export function SectionHeading({
         <Lockup accent={accent} anchor={heading} as={Tag} tone={tone} align={align} />
       ) : (
         <Tag
-          className={`${serif ? "font-serif" : "font-display"} text-3xl font-bold tracking-tight sm:text-4xl`}
+          className={`font-serif text-3xl font-bold sm:text-4xl ${serif ? "" : ""}`.trim()}
         >
           {heading}
         </Tag>

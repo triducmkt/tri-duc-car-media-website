@@ -78,7 +78,7 @@ export function ServicesPageContent() {
                     <span className="font-serif text-xs font-semibold uppercase tracking-[0.14em] text-brand-400">
                       0{index + 1}
                     </span>
-                    <h2 className="font-display text-xl font-semibold text-white">{service.title}</h2>
+                    <h2 className="font-serif text-xl font-semibold text-white">{service.title}</h2>
                     <p className="text-sm leading-relaxed text-white/65 sm:text-base">
                       {service.description}
                     </p>

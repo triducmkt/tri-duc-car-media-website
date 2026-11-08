@@ -33,7 +33,7 @@ export function Process() {
                 <span className="font-serif text-3xl font-bold text-brand-400">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display text-base font-semibold">{step.title}</h3>
+                <h3 className="font-serif text-base font-semibold">{step.title}</h3>
                 <p className="text-sm leading-relaxed text-white/65">{step.body}</p>
               </Reveal>
             </li>

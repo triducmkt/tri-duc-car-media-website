@@ -389,7 +389,7 @@ function PanelHeader({ channel, title, note }: { channel: ChannelKey; title: str
         <Icon size={20} aria-hidden />
       </span>
       <div>
-        <h3 className="font-display text-xl font-bold leading-tight sm:text-2xl">{title}</h3>
+        <h3 className="font-serif text-xl font-bold leading-tight sm:text-2xl">{title}</h3>
         <p className="mt-1 text-sm text-white/65">{note}</p>
       </div>
     </div>

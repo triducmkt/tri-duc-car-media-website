@@ -49,7 +49,7 @@ export function Header() {
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         transparent
           ? "border-b border-transparent bg-transparent"
-          : "border-b border-black/5 bg-white/85 backdrop-blur-md"
+          : "header-glass border-b border-black/5" /* F9: frosted glass (app/globals.css) */
       }`}
     >
       <Container className="flex h-18 items-center justify-between py-3">

@@ -30,7 +30,7 @@ export function ServicesGrid() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                     <Icon size={22} aria-hidden />
                   </span>
-                  <h3 className="font-display text-lg font-semibold text-ink">{service.title}</h3>
+                  <h3 className="font-serif text-lg font-semibold text-ink">{service.title}</h3>
                   <p className="text-sm leading-relaxed text-ink-muted">{service.description}</p>
                 </div>
               </Reveal>

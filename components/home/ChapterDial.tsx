@@ -272,7 +272,7 @@ export function ChapterDial() {
             <div className="flex items-start justify-between gap-4 border-b border-white/10 px-5 pb-4 pt-5">
               <div className="flex flex-col gap-1">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-400">{t("eyebrow")}</p>
-                <h2 id="chapter-sheet-title" className="font-display text-xl font-bold">
+                <h2 id="chapter-sheet-title" className="font-serif text-xl font-bold">
                   {t("heading")}
                 </h2>
                 <p className="flex items-center gap-1.5 text-xs text-white/60">

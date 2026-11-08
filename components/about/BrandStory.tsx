@@ -47,7 +47,7 @@ export async function BrandStory() {
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           {/* The name */}
           <div className="flex flex-col gap-6">
-            <h3 className="font-display text-2xl font-semibold text-ink">{t("name.heading")}</h3>
+            <h3 className="font-serif text-2xl font-semibold text-ink">{t("name.heading")}</h3>
             {nameItems.map((item, i) => {
               const Icon = NAME_ICONS[i] ?? PenLine;
               return (
@@ -69,7 +69,7 @@ export async function BrandStory() {
             <div className="flex items-center gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element -- small static SVG mark */}
               <img src="/brand/mark.svg" alt="" aria-hidden className="h-14 w-14" />
-              <h3 className="font-display text-2xl font-semibold text-ink">{t("logo.heading")}</h3>
+              <h3 className="font-serif text-2xl font-semibold text-ink">{t("logo.heading")}</h3>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {logoItems.map((item, i) => {

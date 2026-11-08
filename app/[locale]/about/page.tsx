@@ -119,7 +119,7 @@ export default async function AboutPage({
                 {String(index + 1).padStart(2, "0")}
               </span>
               <div className="flex flex-col gap-3 border-l border-black/10 pl-5">
-                <h2 className="font-display text-2xl font-semibold text-ink">{block.heading}</h2>
+                <h2 className="font-serif text-2xl font-semibold text-ink">{block.heading}</h2>
                 <p className="text-base leading-relaxed text-ink-muted">{block.body}</p>
               </div>
             </Reveal>
@@ -137,7 +137,7 @@ export default async function AboutPage({
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                     <Icon size={22} aria-hidden />
                   </span>
-                  <h3 className="font-display text-base font-semibold text-ink">{title}</h3>
+                  <h3 className="font-serif text-base font-semibold text-ink">{title}</h3>
                   <p className="text-sm leading-relaxed text-ink-muted">{body}</p>
                 </div>
               </Reveal>

@@ -271,7 +271,7 @@ export function ProofEngine() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {t("eyebrow")}
             </p>
-            <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">
               {t("heading")}
             </h2>
           </div>

@@ -80,7 +80,7 @@
   --font-display: var(--tdcm-font-display), var(--tdcm-font-body), system-ui, sans-serif;
   --font-serif: var(--tdcm-font-serif), Georgia, serif;
   /* Lockup C only (components/Lockup.tsx) — never for body copy. */
-  --font-lockup: var(--tdcm-font-lockup), var(--tdcm-font-serif), Georgia, serif;
+  --font-lockup: var(--tdcm-font-serif), Georgia, serif;
   --font-script: var(--tdcm-font-script), cursive;
 }
 
@@ -122,6 +122,86 @@ body {
 .card-premium:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lift-3);
+}
+
+/* F9 (docs/brand-backlog.md) — primary button: blue gradient + brand-tinted
+   shadow; hover lifts 1px and brightens. Used by <Button variant="primary">
+   and the stand-alone CTA buttons (add next to their bg-brand-500). */
+.btn-gradient {
+  background-image: var(--gradient-button);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 10px 24px -10px rgba(66, 133, 244, 0.7);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    filter 200ms ease;
+}
+.btn-gradient:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 14px 30px -10px rgba(66, 133, 244, 0.8);
+}
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+/* F9 — eyebrow as a pill with a small brand-gradient dot.
+   <span className="eyebrow-pill" data-tone="light|dark">…</span> */
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.eyebrow-pill::before {
+  content: "";
+  height: 0.375rem;
+  width: 0.375rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-image: var(--gradient-brand);
+}
+.eyebrow-pill[data-tone="light"] {
+  background-color: var(--color-brand-50);
+  color: var(--color-brand-700);
+  box-shadow: inset 0 0 0 1px rgba(66, 133, 244, 0.22);
+}
+.eyebrow-pill[data-tone="dark"] {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-brand-300);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+/* F9 — glowing gradient hairline used as a divider. */
+.hairline-gradient {
+  height: 1px;
+  background-image: var(--gradient-hairline);
+}
+
+/* F9 — frosted-glass header once it leaves the dark hero. */
+.header-glass {
+  background-color: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  backdrop-filter: blur(16px) saturate(1.6);
+  box-shadow:
+    0 1px 0 rgba(11, 18, 32, 0.05),
+    0 10px 30px -18px rgba(11, 18, 32, 0.3);
+}
+
+/* F9 — brand-gradient strip on top of the footer, with a soft glow. */
+.footer-strip {
+  height: 3px;
+  background-image: var(--gradient-brand);
+  box-shadow: 0 0 24px 2px rgba(66, 133, 244, 0.45);
 }
 
 /* Lockup C — components/Lockup.tsx · rules V1–V10 in docs/DESIGN-CORE-RULES.md.

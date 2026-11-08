@@ -474,7 +474,7 @@ export function HouseCallMap() {
       <Container className="relative grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-12">
         <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
-          <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px]">{t("heading")}</h2>
+          <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px]">{t("heading")}</h2>
           <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
         </div>
 

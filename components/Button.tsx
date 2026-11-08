@@ -16,11 +16,11 @@ type StaticPathname =
   | "/check";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold tracking-[0.01em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--color-brand-500] min-h-11";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold tracking-[0.01em] transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--color-brand-500] min-h-11";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-brand-500 text-white hover:bg-brand-600 shadow-[0_8px_24px_-8px_rgba(66,133,244,0.6)]",
+  // F9: gradient + brand shadow (.btn-gradient in app/globals.css)
+  primary: "bg-brand-500 btn-gradient text-white",
   secondary:
     "bg-ink text-white hover:bg-ink-soft",
   ghost:
