@@ -56,7 +56,13 @@
     "testimonialsHeading": "Được tin tưởng bởi các chủ doanh nghiệp SME",
     "ctaBannerHeading": "Sẵn sàng giải phóng bản thân khỏi việc vận hành thủ công?",
     "ctaBannerBody": "Đặt lịch tư vấn 1-1 cùng Tăng Trí Đức để đánh giá thực trạng và lộ trình tăng trưởng phù hợp cho doanh nghiệp bạn.",
-    "ctaBannerButton": "Đặt lịch tư vấn ngay"
+    "ctaBannerButton": "Đặt lịch tư vấn ngay",
+    "servicesAccent": "để doanh nghiệp tăng trưởng bền vững",
+    "servicesAnchor": "5 trụ cột",
+    "founderAccent": "không chỉ là một agency,",
+    "founderAnchor": "Một đối tác chiến lược.",
+    "ctaBannerAccent": "chủ vắng,",
+    "ctaBannerAnchor": "Khách vẫn đông."
   },
   "systemHero": {
     "ariaLabel": "Giới thiệu",
@@ -66,7 +72,8 @@
       "eyebrow": "TƯ VẤN MARKETING – SALES CHO SME",
       "title": "Giải phóng người chủ",
       "sub": "Hệ thống Marketing – Sales – CSKH bài bản, để doanh nghiệp chạy được khi bạn vắng mặt.",
-      "scrollHint": "CUỘN ĐỂ XEM"
+      "scrollHint": "CUỘN ĐỂ XEM",
+      "accent": "để doanh nghiệp tự chạy,"
     },
     "caps": [
       {
@@ -536,7 +543,8 @@
     "visionEyebrow": "Tầm nhìn 2031",
     "visionHeading": "1.000 người chủ vắng mặt 30 ngày, cơ sở vẫn tăng trưởng.",
     "vision": "Đến năm 2031, Trí Đức Media giúp 1.000 người chủ cơ sở, trung tâm, cửa hàng dịch vụ Việt Nam trên toàn quốc nghỉ ngơi, vắng mặt 30 ngày mà cơ sở vẫn tăng trưởng. Người chủ chuyển từ người làm, người vận hành thành người sở hữu — cơ sở tự tăng trưởng mà không cần chủ có mặt.",
-    "visionCta": "Xem Thang Tự Do"
+    "visionCta": "Xem Thang Tự Do",
+    "nameAccent": "hành trình giải phóng người chủ cùng"
   },
   "caseMap": {
     "eyebrow": "Bản đồ đồng hành",

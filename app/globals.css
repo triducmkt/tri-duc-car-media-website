@@ -79,6 +79,9 @@
   --font-sans: var(--tdcm-font-body), system-ui, sans-serif;
   --font-display: var(--tdcm-font-display), var(--tdcm-font-body), system-ui, sans-serif;
   --font-serif: var(--tdcm-font-serif), Georgia, serif;
+  /* Lockup C only (components/Lockup.tsx) — never for body copy. */
+  --font-lockup: var(--tdcm-font-lockup), var(--tdcm-font-serif), Georgia, serif;
+  --font-script: var(--tdcm-font-script), cursive;
 }
 
 body {
@@ -119,6 +122,81 @@ body {
 .card-premium:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lift-3);
+}
+
+/* Lockup C — components/Lockup.tsx, docs/typography-lockup.md (backlog F4–F7).
+   Font size is set on the heading (= anchor size); the accent is 1.02em of it,
+   tucked 0.17em onto the anchor's cap line, like video template #12. */
+.lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-wrap: balance;
+}
+.lockup[data-align="center"] {
+  align-items: center;
+  text-align: center;
+}
+.lockup[data-tone="dark"] {
+  color: var(--color-paper);
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.4);
+}
+.lockup[data-tone="light"] {
+  color: var(--color-ink);
+}
+.lockup-accent {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.02em;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-inline-start: 0.12em;
+  margin-bottom: -0.17em;
+}
+.lockup[data-align="center"] .lockup-accent {
+  margin-inline-start: 0;
+}
+.lockup-anchor {
+  font-family: var(--font-lockup);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.18;
+}
+.lockup-hero {
+  font-size: clamp(2.35rem, 1.2rem + 4.6vw, 4.25rem);
+}
+.lockup-page {
+  font-size: clamp(1.9rem, 1.1rem + 2.9vw, 3.25rem);
+}
+.lockup-section {
+  font-size: clamp(1.85rem, 1.15rem + 2.4vw, 3rem);
+}
+.lockup-title {
+  font-size: clamp(1.6rem, 1.05rem + 1.8vw, 2.55rem);
+}
+/* Long accents (page titles) read better a touch smaller than the anchor. */
+.lockup-page .lockup-accent {
+  font-size: 0.9em;
+}
+@keyframes lockup-rise {
+  from { opacity: 0; transform: translateY(0.22em); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes lockup-write {
+  from { clip-path: inset(-25% 100% -25% -5%); }
+  to { clip-path: inset(-25% -5% -25% -5%); }
+}
+.lockup[data-armed] .lockup-anchor { opacity: 0; }
+.lockup[data-armed] .lockup-accent { clip-path: inset(-25% 100% -25% -5%); }
+.lockup[data-play] .lockup-anchor {
+  animation: lockup-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+.lockup[data-play] .lockup-accent {
+  animation: lockup-write 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.65s both;
 }
 
 /* Slow ambient rotation for FounderAura (About page) — the site-wide

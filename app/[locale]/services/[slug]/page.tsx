@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, MessageCircle } from "lucide-react";
 import { Container } from "@/components/Container";
+import { Lockup } from "@/components/Lockup";
 import { Link } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
 import { COMBOS, HAS_ESTIMATES, SERVICES, formatVnd, serviceBySlug, shortVnd, type Locale } from "@/lib/servicesCatalog";
@@ -46,7 +47,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {t("pillar", { n: index + 1 })}
             </p>
-            <h1 className="font-display text-3xl font-bold leading-tight sm:text-5xl">{s.name[locale]}</h1>
+            <Lockup as="h1" size="title" reveal="load" accent={s.accent[locale]} anchor={s.name[locale]} />
             <p className="max-w-2xl text-white/75 sm:text-lg">{s.pitch[locale]}</p>
           </div>
 

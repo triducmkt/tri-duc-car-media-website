@@ -6,6 +6,7 @@ import { MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { trackEvent } from "@/lib/tracking/grid";
 import { HERO_FRAME_COUNT, HERO_STEP_STARTS } from "@/lib/heroFrames";
+import { Lockup } from "@/components/Lockup";
 
 /** Home hero: scroll-scrubbed real footage of a Trí Đức working session
  *  (AP Car Care visit + AP Education work session, 12/09/2025). Frames are
@@ -284,9 +285,13 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
                 {tHero("open.eyebrow")}
               </p>
-              <h1 className="font-display text-[40px] font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
-                {tHero("open.title")}
-              </h1>
+              <Lockup
+                as="h1"
+                size="hero"
+                reveal="load"
+                accent={tHero("open.accent")}
+                anchor={tHero("open.title")}
+              />
               <p className="max-w-lg text-white/70 sm:text-lg">{tHero("open.sub")}</p>
             </div>
 

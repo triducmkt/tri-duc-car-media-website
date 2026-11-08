@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
+import { Lockup } from "@/components/Lockup";
 
 export function CtaBanner() {
   const t = useTranslations("home");
@@ -17,11 +18,9 @@ export function CtaBanner() {
         className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-500/10 blur-3xl"
       />
       <Container className="relative flex flex-col items-center gap-6 text-center">
-        <h2 className="font-serif max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          {t("ctaBannerHeading")}
-        </h2>
+        <Lockup accent={t("ctaBannerAccent")} anchor={t("ctaBannerAnchor")} align="center" />
         <p className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-          {t("ctaBannerBody")}
+          <span className="font-semibold text-white">{t("ctaBannerHeading")}</span> {t("ctaBannerBody")}
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Button

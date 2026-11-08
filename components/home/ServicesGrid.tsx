@@ -16,7 +16,8 @@ export function ServicesGrid() {
       <Container className="flex flex-col gap-12">
         <SectionHeading
           eyebrow={t("servicesEyebrow")}
-          heading={t("servicesHeading")}
+          accent={t("servicesAccent")}
+          heading={t("servicesAnchor")}
           sub={t("servicesSub")}
         />
 

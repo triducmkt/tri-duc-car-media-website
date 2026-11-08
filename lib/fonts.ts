@@ -1,4 +1,4 @@
-import { Mona_Sans, Source_Serif_4 } from "next/font/google";
+import { Great_Vibes, Mona_Sans, Playfair_Display, Source_Serif_4 } from "next/font/google";
 
 /**
  * MASTER FONT SYSTEM — the only place font families are chosen.
@@ -47,8 +47,30 @@ export const fontSerif = Source_Serif_4({
   display: "swap",
 });
 
+// Lockup C (docs/typography-lockup.md, anh Đức chốt 05/11/2026) — used ONLY
+// through <Lockup> (components/Lockup.tsx) on hero / page / 2–3 section
+// headings. Anchor line: Playfair Display 900, uppercase. Accent line: Great
+// Vibes calligraphy, lowercase as written. preload: false — pages without a
+// lockup never download these files; with display: swap the heading shows in
+// the fallback serif / cursive for a moment, then swaps.
+export const fontLockup = Playfair_Display({
+  variable: "--tdcm-font-lockup",
+  subsets: ["latin", "vietnamese"],
+  weight: ["900"],
+  display: "swap",
+  preload: false,
+});
+
+export const fontScript = Great_Vibes({
+  variable: "--tdcm-font-script",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400"],
+  display: "swap",
+  preload: false,
+});
+
 /** Put on <html> so every role variable is defined site-wide. */
-export const fontVariables = `${fontBody.variable} ${fontDisplay.variable} ${fontSerif.variable}`;
+export const fontVariables = `${fontBody.variable} ${fontDisplay.variable} ${fontSerif.variable} ${fontLockup.variable} ${fontScript.variable}`;
 
 /** FIELD_MAP-style registry read by scripts/check-fonts.mjs and the docs. */
 export const FONT_ROLES = {
@@ -75,5 +97,21 @@ export const FONT_ROLES = {
     weights: ["variable 200–900", "opsz 8–60"],
     use: "Câu tuyên ngôn thương hiệu, tên founder, heading `serif`, trích dẫn",
     leading: "1.1–1.2",
+  },
+  lockup: {
+    family: "Playfair Display",
+    cssVar: "--tdcm-font-lockup",
+    tailwind: "font-lockup",
+    weights: ["900"],
+    use: "Dòng chính của lockup C (in hoa, giãn chữ +3%) — chỉ qua <Lockup>",
+    leading: "1.18 (đủ chỗ cho dấu chồng Ẫ, Ô)",
+  },
+  script: {
+    family: "Great Vibes",
+    cssVar: "--tdcm-font-script",
+    tailwind: "font-script",
+    weights: ["400"],
+    use: "Dòng thư pháp của lockup C (chữ thường như gõ) — chỉ qua <Lockup>",
+    leading: "1",
   },
 } as const;

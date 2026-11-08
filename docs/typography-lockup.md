@@ -96,3 +96,12 @@ Không nảy, không rung, không âm thanh gắt. Website dùng cùng chuyển 
 - [ ] Số liệu (nếu có) là số thật, có nguồn
 - [ ] Cỡ chữ ≥ mức tối thiểu ở mục 6
 - [ ] Render thử 1 khung bằng đúng công cụ xuất (libass / CapCut) so với bản đã duyệt
+
+## 11. Lockup trên website (08/11/2026, backlog F4–F7)
+
+- Component duy nhất: `components/Lockup.tsx` (CSS `.lockup*` trong `app/globals.css`). Font qua 2 vai trò `lockup` / `script` ở `lib/fonts.ts`. Không tự viết lại kiểu chữ này ở chỗ khác.
+- Cùng thông số với template video #12: thư pháp 1,02 lần cỡ chữ chính (0,9 ở tiêu đề trang), nép lên đỉnh chữ chính 0,17em, chữ chính in hoa, giãn chữ +3%, giãn dòng 1,18. Trên nền tối: trắng + bóng mờ 40%. Trên nền sáng: màu ink, không bóng.
+- Chuyển động như video: chữ chính hiện + nâng + bỏ mờ, rồi thư pháp viết ra. Hero và tiêu đề trang chạy khi tải trang; section chạy lần đầu cuộn tới (chỉ khi nằm dưới màn hình lúc mở trang). Người bật giảm chuyển động thấy chữ đứng yên.
+- Cỡ: `hero` (trang chủ) · `page` (tiêu đề ngắn: Về Founder) · `title` (tên dịch vụ dài) · `section`.
+- Đang dùng ở: hero trang chủ · 3 section trang chủ (5 trụ cột, Người đồng hành, CTA cuối) · Về Founder · 5 trang dịch vụ. **Tiết chế:** không thêm section mới nếu chưa hỏi anh Đức; mỗi trang tối đa 1 lockup ở đầu trang + vài section chọn lọc.
+- Chữ: `messages/*.json` (`systemHero.open.accent`, `home.*Accent/*Anchor`, `about.nameAccent`) và `accent` của từng dịch vụ trong `lib/servicesCatalog.ts`. Thư pháp viết chữ thường, ngắn (≤ 6–7 chữ).

@@ -19,7 +19,7 @@ const families = new Set(Object.keys(fontData));
 const MASTER = path.join(root, "lib", "fonts.ts");
 const ALLOWED_FILES = new Set([MASTER, path.join(root, "lib", "fontStack.ts")]);
 const LEGACY_VARS = ["--font-inter", "--font-be-vietnam-pro", "--font-playfair", "--td-sans", "--td-serif"];
-const ROLE_VAR = /^--tdcm-font-(body|display|serif)$/;
+const ROLE_VAR = /^--tdcm-font-(body|display|serif|lockup|script)$/;
 const errors = [];
 const rel = (f) => path.relative(root, f).replaceAll("\\", "/");
 
@@ -46,7 +46,7 @@ for (const { loader, body } of calls) {
   if (!data) errors.push(`lib/fonts.ts: "${family}" is not a Google font known to next/font`);
   if (!subsets.includes("vietnamese")) errors.push(`lib/fonts.ts: ${family} must load the "vietnamese" subset`);
   if (data && !data.subsets.includes("vietnamese")) errors.push(`lib/fonts.ts: ${family} has no Vietnamese glyphs on Google Fonts`);
-  if (!ROLE_VAR.test(variable)) errors.push(`lib/fonts.ts: ${family} variable "${variable}" must be --tdcm-font-body|display|serif`);
+  if (!ROLE_VAR.test(variable)) errors.push(`lib/fonts.ts: ${family} variable "${variable}" must be --tdcm-font-body|display|serif|lockup|script`);
   for (const w of weights) if (data && !data.weights.includes(w)) errors.push(`lib/fonts.ts: ${family} has no weight ${w}`);
   const axes = [...(body.match(/axes:\s*\[([^\]]*)\]/)?.[1] ?? "").matchAll(/["']([^"']+)["']/g)].map((m) => m[1]);
   if (axes.length && weights.length && !weights.includes("variable"))

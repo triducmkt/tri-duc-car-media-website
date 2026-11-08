@@ -9,7 +9,12 @@
 |---|---|---|---|---|---|
 | **body** | Mona Sans (variable, trục `wdth`) | `--tdcm-font-body` | `font-sans` (mặc định của `<body>`) | đoạn văn 400 · menu/nhãn 600 · nút 700 | Đoạn văn, form, nút, menu, nhãn nhỏ |
 | **display** | Mona Sans (cùng họ với body) | `--tdcm-font-display` | `font-display` | tiêu đề 700–800 · eyebrow 700 | H1–H3, con số lớn, eyebrow, badge, canvas/three.js |
-| **serif** | Source Serif 4 (variable, trục `opsz`) — **giữ nguyên, anh Đức đã duyệt** | `--tdcm-font-serif` | `font-serif` | variable 200–900 (+ italic) | Câu tuyên ngôn thương hiệu, tên founder, `SectionHeading serif`, trích dẫn |
+| **serif** | Source Serif 4 (variable, trục `opsz`) — **giữ nguyên, anh Đức đã duyệt** | `--tdcm-font-serif` | `font-serif` | variable 200–900 (+ italic) | Câu tuyên ngôn thương hiệu, `SectionHeading serif`, trích dẫn |
+| **lockup** (từ 08/11/2026) | Playfair Display 900 | `--tdcm-font-lockup` | `font-lockup` | 900 | **Chỉ** dòng chính của lockup C, qua `<Lockup>` (`components/Lockup.tsx`) |
+| **script** (từ 08/11/2026) | Great Vibes | `--tdcm-font-script` | `font-script` | 400 | **Chỉ** dòng thư pháp của lockup C, qua `<Lockup>` |
+
+Hai vai trò lockup/script tải với `preload: false`: trang không có lockup không tải file font này.
+Quy cách lockup và chỗ được dùng: `docs/typography-lockup.md` mục 11.
 
 Cả 3 font đều **có subset `vietnamese`** trên Google Fonts, tự host qua `next/font`
 (không gọi Google lúc chạy, không nháy font).

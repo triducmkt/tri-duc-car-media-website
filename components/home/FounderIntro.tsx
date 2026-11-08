@@ -18,7 +18,8 @@ export function FounderIntro() {
         <Reveal delay={120} className="flex flex-col items-start gap-6">
           <SectionHeading
             eyebrow={t("founderEyebrow")}
-            heading={t("founderHeading")}
+            accent={t("founderAccent")}
+            heading={t("founderAnchor")}
             sub={t("founderBody")}
           />
           <Button href="/about" variant="secondary">

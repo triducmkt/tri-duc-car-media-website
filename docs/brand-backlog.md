@@ -68,10 +68,10 @@
 | F1 | Font chữ nhỏ đậm hơn (đề xuất Be Vietnam Pro 500), tăng độ tương phản chữ mờ | P1 | Vừa | Chọn font | ☐ | Bản nháp: https://claude.ai/artifact/QaUvuddUDzdfRdKLU3sEbL |
 | F2 | Thẻ premium trên nền sáng (viền gradient xanh dương → xanh lá, bóng nhiều lớp luôn hiện) | P1 | Vừa | Duyệt hướng | ☑ | 08/11 · class `card-premium` (app/globals.css) cho thẻ 5 trụ cột, dự án, bài viết, lời khách. Còn lại: Về Founder, Liên hệ, trang từng dịch vụ |
 | F3 | Chuyển section sáng/tối bằng gradient; nền sáng có gradient loang nhẹ | P1 | Vừa | — | ☑ | 08/11 · `components/SectionSeam.tsx` (6 chỗ trang chủ) + nền `surface-light` / `surface-light-soft`. Còn lại: áp cho các trang con |
-| F4 | Lockup chữ trên hero trang chủ | P2 | Vừa | Duyệt | ☐ | Dùng quy cách `docs/typography-lockup.md` |
-| F5 | Lockup chữ cho tiêu đề các section chính | P3 | Vừa | — | ☐ | Tiết chế: chỉ 2–3 section |
-| F6 | Lockup chữ trên trang Về Founder | P2 | Vừa | — | ☐ | Khớp series "Hành trình giải phóng người chủ" và con đường 3D |
-| F7 | Lockup chữ trên trang từng dịch vụ | P3 | Vừa | — | ☐ | |
+| F4 | Lockup chữ trên hero trang chủ | P2 | Vừa | Duyệt | ☑ | 08/11 · *để doanh nghiệp tự chạy,* / GIẢI PHÓNG NGƯỜI CHỦ — `components/Lockup.tsx` |
+| F5 | Lockup chữ cho tiêu đề các section chính | P3 | Vừa | — | ☑ | 08/11 · đúng 3 section: 5 trụ cột, Người đồng hành, CTA cuối (*chủ vắng,* / KHÁCH VẪN ĐÔNG.) |
+| F6 | Lockup chữ trên trang Về Founder | P2 | Vừa | — | ☑ | 08/11 · lockup A: *hành trình giải phóng người chủ cùng* / TĂNG TRÍ ĐỨC |
+| F7 | Lockup chữ trên trang từng dịch vụ | P3 | Vừa | — | ☑ | 08/11 · câu thư pháp riêng từng dịch vụ ở `accent` trong `lib/servicesCatalog.ts` |
 | F8 | 3D cho khu vực số liệu: 4 bước Quy trình, Tầm nhìn 2031, ô "Kết quả nổi bật" | P2 | Lớn | — | ☐ | |
 | F9 | Nút gradient + bóng màu; eyebrow dạng viên; đường kẻ gradient; header kính mờ; footer dải gradient | P2 | Vừa | — | ☐ | |
 | F10 | Token bóng (3 cấp) + gradient chung trong `app/globals.css` | P3 | Nhanh | — | ☑ | 06/11 · `shadow-lift-1/2/3` + 5 biến `--gradient-*`, ghi ở mục 3b `docs/color-system.md`; đã dùng từ 08/11 (F2, F3) |
@@ -90,3 +90,4 @@
 
 - **06/11/2026 (Claude Code):** tạo file; tick B1–B4, B6–B8, B10, C1, D1, E1, F10, G1. Chưa đưa gì lên website (đợi reset Cloudflare 07:00 và xử lý A1).
 - **08/11/2026 (Claude Code):** tick A1 (phiên khác làm), F2, F3 (trang chủ + thẻ dùng chung).
+- **08/11/2026 (Claude Code):** tick F4–F7 — lockup C lên website (hero, 3 section trang chủ, Về Founder, 5 trang dịch vụ).
