@@ -369,3 +369,17 @@
 - **Điểm (cùng 7 tiêu chí):** v11 61,0 · A Editorial 70,1 · B Lai giữ gốc 77,0 · **C Có chân + nhãn 77,3 (đề xuất, sát nút với B)**. Ở 0,3, chữ "media" viết tay chỉ ~7px ở logo header nên A/B tụt điểm "đọc rõ cỡ nhỏ".
 - **Bản trình bày:** https://claude.ai/artifact/AGKWQQz4jxxNyqHQNdS4P9 (bản 2) · ảnh [proposals/2026-11-08-font-lockup/preview.png](proposals/2026-11-08-font-lockup/preview.png)
 - **Trạng thái:** logo trên web KHÔNG đổi (quy trình logo: chỉ thay khi anh Đức chọn bản và yêu cầu). Chưa sửa build.mjs.
+
+## v12 — Bản C: tên Playfair Display 900, MEDIA 0,30, Đ-lá có chân (2026-11-08) — CHƯA LÊN WEB
+- **Yêu cầu anh Đức:** "Chọn bản C" (đề xuất font logo lần 2, https://claude.ai/artifact/AGKWQQz4jxxNyqHQNdS4P9).
+- **Ảnh:** [history/v12/preview.png](history/v12/preview.png) · logo động [history/v12/intro-9x16-navy.gif](history/v12/intro-9x16-navy.gif)
+- **Thay đổi so với v11:**
+  - Tên **TRÍ ĐỨC**: Be Vietnam Pro ExtraBold → **Playfair Display Black**, giãn chữ +3% (giọng chính của lockup C trên web).
+  - **MEDIA** cao **0,30** lần chữ in hoa của tên (v11: 0,40), theo quy tắc V1 trong `docs/DESIGN-CORE-RULES.md`. Vẫn Be Vietnam Pro SemiBold giãn rộng, giữa 2 đường kẻ.
+  - **Chữ Đ-lá trong tên vẽ lại theo nét chữ có chân**, số đo lấy từ chính font Playfair: thân dày 24/84 (Playfair 0,203em), nét trên dưới mảnh 6/84, phía phải dày 25/84, lòng chữ lệch như chữ D của Playfair, thêm 2 chân chữ bên trái (nhô 8,4/84). Nét mảnh để 6 thay vì ~3 của Playfair để còn thấy khi in nhỏ và khi thêu.
+  - **Slogan** "Chủ vắng, khách vẫn đông." nhỏ lại (0,78 lần cỡ MEDIA, v11: 0,92) để luôn nhỏ hơn MEDIA (giọng thứ ba, V7).
+  - **Giữ nguyên:** màu, gradient, gân lá, 2 lá non trên dấu sắc, biểu tượng đứng riêng + app icon + favicon (vẫn Đ-lá hình học: ở 32px chân chữ sẽ nhòe), kịch bản logo động.
+- **Lý do:** logo nói cùng giọng với chữ lockup trên web (Playfair 900), đúng quy tắc 0,3 mà anh Đức chốt; bản C điểm cao nhất (77,3) vì MEDIA in hoa nhỏ vẫn đọc được, in 1 màu và thêu tốt.
+- **Tự kiểm tra:** chân chữ Đ-lá liền với thân (bản dựng đầu có vệt hở, đã sửa bằng cách cho chân chữ chồng vào thân 3 đơn vị); slogan nhỏ hơn MEDIA; bảng xem trước đủ bản màu, nền tối, mono, danh thiếp, xe; logo động chạy đúng.
+- **Chưa làm / cần lưu ý:** ở chữ Ứ, móc chữ Ư của Playfair là một chấm tròn nằm cạnh lá non, nhìn hơi dày đặc; bản dọc vẫn dùng chữ Đ thường của Playfair dưới biểu tượng lớn (như các bản trước).
+- **Commit:** `85906c8` · **Trạng thái:** đã dựng, CHƯA thay lên web (chờ anh Đức yêu cầu; khi đó chạy `export-web.cjs`).
