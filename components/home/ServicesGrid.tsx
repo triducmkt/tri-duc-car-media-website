@@ -18,6 +18,7 @@ export function ServicesGrid() {
           eyebrow={t("servicesEyebrow")}
           accent={t("servicesAccent")}
           heading={t("servicesAnchor")}
+          accentScale={t.raw("servicesAccentScale") as number}
           sub={t("servicesSub")}
         />
 

@@ -19,6 +19,8 @@ File `hq/00-INDEX.md` là HQ của riêng dự án này (liên kết trực ti�
 
 **Sau khi hoàn thành một phần việc đáng kể** (bất kể bạn là agent nào — Claude, Codex, Antigravity...): cập nhật mục "TRẠNG THÁI HIỆN TẠI" trong `hq/00-INDEX.md` ở trên + thêm 1 mục mới vào `hq/01-REQUIREMENTS-LOG.md` (cùng thư mục) — để agent tiếp theo tiếp tục ngay lập tức mà không mất ngữ cảnh.
 
+**🔴 BỘ QUY TẮC CỐT LÕI THIẾT KẾ — ĐỌC ĐẦU TIÊN mỗi lần sửa / cải thiện website (anh Đức chốt 2026-11-08):** `docs/DESIGN-CORE-RULES.md`. Đọc hết rồi mới suy nghĩ, đánh giá và thực thi. Gồm quy tắc trọng lượng thị giác 2 giọng **chính 75% / phụ 25%** (đo bằng `npm run lockup:check`), màu, chữ, bố cục, lệnh kiểm trước khi commit.
+
 **Việc dang dở (đọc mỗi lần review / cải tiến website):** `docs/brand-backlog.md` — bảng checklist theo ưu tiên, chỉ là đề xuất tham khảo; làm xong việc nào thì tick ☑ + ghi ngày/commit. Chữ trên video, thumbnail, tiêu đề lớn: `docs/typography-lockup.md`.
 
 **Màu sắc (quy cách chung toàn dự án, anh Đức chốt 2026-11-05 — bắt buộc):** xanh dương `#4285F4` 30% (màu chủ đạo, token `brand-*`) · đen `#0B1220` 30% (`ink`) · trắng 25% (`paper`) · xanh lá `#17A85A` 10% (`leaf-*`, chỉ cho nghĩa tích cực: tăng trưởng, tiết kiệm, thành công, dấu tích) · màu khác 5% (trang trí / điểm nhấn cần thiết; đỏ chỉ cho cảnh báo). Token ở `app/globals.css`, quy tắc chi tiết: `docs/color-system.md`. Chạy `npm run colors:check` trước khi commit. Không dùng bảng màu mặc định Tailwind (amber, emerald, sky…).

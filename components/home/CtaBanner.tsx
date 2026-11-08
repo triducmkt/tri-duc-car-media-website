@@ -18,7 +18,9 @@ export function CtaBanner() {
         className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-500/10 blur-3xl"
       />
       <Container className="relative flex flex-col items-center gap-6 text-center">
-        <Lockup accent={t("ctaBannerAccent")} anchor={t("ctaBannerAnchor")} align="center" />
+        <Lockup accent={t("ctaBannerAccent")} anchor={t("ctaBannerAnchor")}
+          accentScale={t.raw("ctaBannerAccentScale") as number}
+          align="center" />
         <p className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
           <span className="font-semibold text-white">{t("ctaBannerHeading")}</span> {t("ctaBannerBody")}
         </p>

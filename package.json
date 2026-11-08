@@ -20,7 +20,8 @@
     "fonts:check": "node scripts/check-fonts.mjs",
     "blog:check": "node scripts/import-fanpage-posts.mjs --dry-run",
     "blog:import": "node --env-file=.env.local scripts/import-fanpage-posts.mjs",
-    "colors:check": "node scripts/check-colors.mjs"
+    "colors:check": "node scripts/check-colors.mjs",
+    "lockup:check": "node scripts/check-lockup-weight.mjs"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

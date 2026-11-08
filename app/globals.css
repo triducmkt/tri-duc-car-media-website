@@ -149,12 +149,14 @@ body {
   z-index: 1;
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: 1.02em;
+  font-size: calc(var(--accent-scale, 1) * 1em);
   line-height: 1.1;
   letter-spacing: 0;
   text-transform: none;
   margin-inline-start: 0.12em;
-  margin-bottom: -0.17em;
+  /* Overlap fixed in ANCHOR em (divide by the scale) so a bigger accent does
+     not drop its descenders onto the anchor diacritics (rule V3). */
+  margin-bottom: calc(-0.08em / var(--accent-scale, 1));
 }
 .lockup[data-align="center"] .lockup-accent {
   margin-inline-start: 0;
@@ -177,10 +179,6 @@ body {
 }
 .lockup-title {
   font-size: clamp(1.6rem, 1.05rem + 1.8vw, 2.55rem);
-}
-/* Long accents (page titles) read better a touch smaller than the anchor. */
-.lockup-page .lockup-accent {
-  font-size: 0.9em;
 }
 @keyframes lockup-rise {
   from { opacity: 0; transform: translateY(0.22em); filter: blur(4px); }

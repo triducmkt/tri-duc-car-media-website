@@ -76,7 +76,9 @@ export default async function AboutPage({
             <span className="rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand-300 ring-1 ring-white/15">
               {t("eyebrow")}
             </span>
-            <Lockup as="h1" size="page" reveal="load" accent={t("nameAccent")} anchor={t("name")} />
+            <Lockup as="h1" size="page" reveal="load" accent={t("nameAccent")}
+              anchor={t("name")}
+              accentScale={t.raw("nameAccentScale") as number} />
             <p className="text-lg font-medium text-white/80">{t("roleLine")}</p>
             <p className="font-serif bg-gradient-to-r from-brand-400 to-brand-600 bg-clip-text text-2xl font-semibold text-transparent">
               {t("quote")}

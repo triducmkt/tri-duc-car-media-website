@@ -11,6 +11,7 @@ export function SectionHeading({
   serif = false,
   as: Tag = "h2",
   accent,
+  accentScale,
 }: {
   eyebrow?: string;
   heading: string;
@@ -24,6 +25,8 @@ export function SectionHeading({
   /** Calligraphy line → renders `heading` as a Lockup C (components/Lockup.tsx).
    *  Only for 2–3 key sections (docs/typography-lockup.md). */
   accent?: string;
+  /** Lockup accent size ÷ anchor size (see components/Lockup.tsx). */
+  accentScale?: number;
 }) {
   const alignClass = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
   const subColor = tone === "dark" ? "text-white/70" : "text-ink-muted";
@@ -37,7 +40,7 @@ export function SectionHeading({
         </span>
       ) : null}
       {accent ? (
-        <Lockup accent={accent} anchor={heading} as={Tag} tone={tone} align={align} />
+        <Lockup accent={accent} anchor={heading} as={Tag} tone={tone} align={align} accentScale={accentScale} />
       ) : (
         <Tag
           className={`${serif ? "font-serif" : "font-display"} text-3xl font-bold tracking-tight sm:text-4xl`}

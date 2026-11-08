@@ -20,6 +20,7 @@ export function FounderIntro() {
             eyebrow={t("founderEyebrow")}
             accent={t("founderAccent")}
             heading={t("founderAnchor")}
+            accentScale={t.raw("founderAccentScale") as number}
             sub={t("founderBody")}
           />
           <Button href="/about" variant="secondary">

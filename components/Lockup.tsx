@@ -30,6 +30,7 @@ export function Lockup({
   tone = "dark",
   align = "left",
   reveal = "view",
+  accentScale = 1,
   className = "",
 }: {
   accent: string;
@@ -42,6 +43,10 @@ export function Lockup({
   tone?: "dark" | "light";
   align?: "left" | "center";
   reveal?: "load" | "view";
+  /** Accent size ÷ anchor size. Tune per copy so the lockup reads 75/25 by
+   *  ink area (docs/DESIGN-CORE-RULES.md V1); allowed 0.9–1.7. Verify with
+   *  `npm run lockup:check`. */
+  accentScale?: number;
   className?: string;
 }) {
   const ref = useRef<HTMLHeadingElement | null>(null);
@@ -73,6 +78,7 @@ export function Lockup({
       data-tone={tone}
       data-align={align}
       data-play={reveal === "load" ? "" : undefined}
+      style={{ ["--accent-scale" as string]: accentScale }}
     >
       <span className="lockup-accent">{accent}</span>
       <span className="sr-only"> </span>

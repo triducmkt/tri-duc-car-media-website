@@ -291,6 +291,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
                 reveal="load"
                 accent={tHero("open.accent")}
                 anchor={tHero("open.title")}
+                accentScale={tHero.raw("open.accentScale") as number}
               />
               <p className="max-w-lg text-white/70 sm:text-lg">{tHero("open.sub")}</p>
             </div>

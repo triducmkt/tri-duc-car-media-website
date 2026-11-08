@@ -28,6 +28,7 @@
 | B3 | Quy tắc B2B: chữ viết tay chỉ làm điểm nhấn 3–6 chữ, không câu dài; bớt chất "food vlog" | P1 | Nhanh | — | ☑ | 06/11 · mục 3 |
 | B4 | Điểm nhấn màu thương hiệu rất ít, cố định vị trí (chấm hoặc gạch #4285F4 / #17A85A), trắng vẫn là chủ đạo — **quy cách** | P1 | Nhanh | — | ☑ | 06/11 · mục 4 |
 | B5 | Điểm nhấn màu (B4) — **đưa vào template video** (biến thể có chấm/gạch của TPL #12) | P2 | Vừa | Duyệt mẫu | ☐ | Lockup C hiện trắng tinh theo spec; biến thể có điểm nhấn là tùy chọn |
+| B12 | Cân lại template video `TPL_EDITORIAL_DUAL_TYPE_12` theo quy tắc 75/25 (V1): bản chốt *chủ vắng,* / KHÁCH VẪN ĐÔNG. đo được thư pháp chỉ ~12% mực (cùng câu trên web cần accentScale 1,59) | P1 | Nhanh | Duyệt | ☐ | Phát hiện 08/11 khi viết `docs/DESIGN-CORE-RULES.md`; web đã cân, video chưa |
 | B6 | Lockup C chốt: Playfair Display 900 + Great Vibes, template `TPL_EDITORIAL_DUAL_TYPE_12` | P1 | Vừa | — | ☑ | 05–06/11 · đã render thử libass, font ở `ai-video-editor/assets/fonts/Editorial` |
 | B7 | Tên series cố định "Hành trình giải phóng người chủ" + cách đặt tên tập | P1 | Nhanh | Duyệt tên | ☑ | 06/11 · quy cách ở mục 7 (tên chờ anh Đức xác nhận chính thức) |
 | B8 | Giọng thứ ba "nhãn số liệu" (số thật, kiểu chữ số đều) — **quy cách** | P1 | Nhanh | — | ☑ | 06/11 · mục 5 |
@@ -90,4 +91,5 @@
 
 - **06/11/2026 (Claude Code):** tạo file; tick B1–B4, B6–B8, B10, C1, D1, E1, F10, G1. Chưa đưa gì lên website (đợi reset Cloudflare 07:00 và xử lý A1).
 - **08/11/2026 (Claude Code):** tick A1 (phiên khác làm), F2, F3 (trang chủ + thẻ dùng chung).
+- **08/11/2026 (Claude Code):** chỉnh F4–F7 theo quy tắc 75/25 (`docs/DESIGN-CORE-RULES.md`): 40/40 lockup đạt, đo bằng `npm run lockup:check`. Đổi câu section 5 trụ cột (*một hệ thống,* / 5 TRỤ CỘT TĂNG TRƯỞNG) và Về Founder (*hành trình cùng* / TĂNG TRÍ ĐỨC).
 - **08/11/2026 (Claude Code):** tick F4–F7 — lockup C lên website (hero, 3 section trang chủ, Về Founder, 5 trang dịch vụ).
