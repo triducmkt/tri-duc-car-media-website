@@ -5,6 +5,7 @@
 // works from the font files and writes lib/lockupMetrics.json.
 //
 //   V1  accent tallest stroke ÷ anchor cap height = 0.30 (pass 0.27–0.33).
+//   V1b anchor on 2+ lines: ÷ the whole anchor block (cap + (n-1) × leading).
 //       Measured by rasterising the accent (diacritics removed — marks, not
 //       strokes) and the letter H in the anchor font, ink top above baseline.
 //   V2  accent line not wider than the anchor's widest line.
@@ -98,7 +99,8 @@ const MEASURE = `(async () => {
     const clipped = widest > box + 1;
     return {
       accent: a.textContent, anchor: lines.map((s) => s.textContent).join(" ⏎ "),
-      ratio: tall / cap, lines: lines.length, wrapped, clipped,
+      // V1b: on 2+ anchor lines the reference is the whole block
+      ratio: tall / (cap + (lines.length - 1) * lineH), lines: lines.length, wrapped, clipped,
       accentW: a.getBoundingClientRect().width, anchorW: widest,
       accentPx: parseFloat(acs.fontSize), anchorPx: parseFloat(bcs.fontSize),
     };

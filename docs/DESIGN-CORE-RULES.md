@@ -33,12 +33,14 @@ thumbnail (`docs/typography-lockup.md`), và **chữ của logo** (tên chính s
 
 | Mã | Quy tắc |
 |---|---|
+| **V1b** | *(anh Đức chốt 08/11/2026)* **Dòng chính có từ 2 dòng** (ngoại lệ V8): nét cao nhất của dòng phụ = **0,30 × chiều cao CẢ KHỐI dòng chính**, tính từ đỉnh chữ in hoa dòng đầu tới chân dòng cuối (= chữ in hoa + (số dòng − 1) × giãn dòng). Với 2 dòng ≈ 0,8 × chữ in hoa, dòng phụ dàn gần hết bề ngang (~96%). Vẫn giữ V2. Không dàn ngang bằng giãn chữ hay kéo khoảng trắng (chữ viết tay bị đứt nét). Hệ thống tự áp dụng (`lockup:qc`, `lockup:check`). |
 | **V2** | Dòng phụ **không rộng hơn** dòng dài nhất của dòng chính. |
 | **V3** | Nét móc của dòng phụ (g, y…) **không chạm dấu** của dòng chính (Ẫ, Ể, Ố…). Khoảng cách 2 dòng tính theo cỡ dòng chính. |
 | **V4** | Dòng chính: Playfair Display 900, IN HOA, giãn chữ +3%, giãn dòng 1,18, ưu tiên ≤ 15 ký tự. Dòng phụ: Great Vibes, chữ thường như gõ, **≤ 5 chữ**, tắt ghép chữ (ligature) để nét không vượt số đo. Một màu cho cả 2 (trắng + bóng mờ 40% trên nền tối, ink trên nền sáng). |
 | **V6** | Tiết chế: mỗi màn hình tối đa 1 lockup. Trang chủ = hero + đúng 3 section. Trang con = 1 lockup ở đầu trang. Thêm chỗ mới phải hỏi anh Đức. |
 | **V7** | Giọng thứ ba (nhãn số liệu, slogan dưới logo, tên đầy đủ của dịch vụ dưới lockup) không tính vào cặp 2 giọng; dùng chữ không chân của web. |
 | **V10** | Dòng phụ trên điện thoại **≥ 12px**. Nếu không đạt → dòng chính phải ngắn lại để được to hơn (V9). Lưu ý: theo V1, thư pháp rất nhỏ; 12–15px trên điện thoại là mức tối thiểu còn đọc được. |
+| **V11** | *(logo, anh Đức chốt 08/11/2026 — phương án B "sàn 12px")* Chữ **media** của logo **không bao giờ nhỏ hơn 12px** khi hiển thị. Logo đủ lớn (chữ in hoa TRÍ ĐỨC ≥ 25px, tức logo không slogan cao ≥ 59px / rộng ≥ 171px: footer, thẻ bài viết, slide, video) giữ đúng 0,3. Logo nhỏ hơn (header web, chữ ký email) dùng **bản sàn 12px**: chữ media phóng tới 12px, tỷ lệ thành ~0,44 — được phép bỏ qua V1 có chủ đích. File: `public/brand/logo.svg` / `logo-light.svg` = bản sàn 12px cho header (đặt rộng 116–121px); `logo-full*.svg` = bản 0,3. |
 
 **Cách hệ thống làm:** `npm run lockup:qc` đọc câu chữ (`messages/*.json`, `lib/servicesCatalog.ts`), đo bằng file font thật
 (`scripts/fonts/`), ghi `lib/lockupMetrics.json` (bề ngang dòng chính + tỷ lệ cỡ dòng phụ cho từng câu). `<Lockup>` đọc file

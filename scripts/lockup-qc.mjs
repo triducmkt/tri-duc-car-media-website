@@ -21,6 +21,7 @@ const opentype = require("opentype.js");
 // ── rule constants (keep in sync with docs/DESIGN-CORE-RULES.md + Lockup.tsx) ──
 export const TALLEST_RATIO = 0.3; // V1: accent tallest stroke ÷ anchor cap height
 const TRACKING = 0.03; // anchor letter-spacing, em
+const LINE_HEIGHT = 1.18; // anchor line-height (V4)
 const FIT_SAFETY = 0.97; // CSS uses the same factor (rounding, kerning drift)
 const MIN_SCRIPT_PX = 12; // V10: smallest accent font-size allowed (phone)
 const SINGLE_LINE_SHARE = 0.9; // V8
@@ -83,10 +84,13 @@ for (const it of items) {
   const lines = it.anchor.toUpperCase().split("\n");
   const anchorEm = Math.max(...lines.map((ln) => widthEm(anchorFont, ln, TRACKING)));
   const tall = tallestEm(accentFont, it.accent);
-  const scale = (TALLEST_RATIO * CAP) / tall;
+  // V1: 0.30 × cap height. V1b: anchor on 2+ lines → 0.30 × the whole anchor
+  // block (cap of line 1 to baseline of the last line = cap + (n-1) × leading).
+  const block = CAP + (lines.length - 1) * LINE_HEIGHT;
+  const scale = (TALLEST_RATIO * block) / tall;
   const accentEm = widthEm(accentFont, it.accent) * scale;
   metrics.anchors[it.anchor.toUpperCase()] = +anchorEm.toFixed(4);
-  metrics.accents[it.accent] = { scale: +scale.toFixed(4), em: +accentEm.toFixed(4) };
+  metrics.accents[`${it.accent}||${it.anchor.toUpperCase()}`] = { scale: +scale.toFixed(4), em: +accentEm.toFixed(4) };
   const problems = [];
   const px = {};
   for (const dev of ["desktop", "phone"]) {

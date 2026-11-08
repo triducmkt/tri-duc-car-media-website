@@ -10,9 +10,13 @@ const PUB = "public/brand";
 fs.mkdirSync(path.join(PUB, "motion"), { recursive: true });
 const cp = (from, to) => fs.copyFileSync(path.join(D, from), to);
 
-// Header / footer / blog fallback: animated (SMIL, plays once on load)
-cp("svg/tri-duc-media-animated-notag-color.svg", `${PUB}/logo.svg`);
-cp("svg/tri-duc-media-animated-notag-reverse.svg", `${PUB}/logo-light.svg`);
+// Header: animated, "media" floored at 12px for the ~116–121px header width
+// (rule V11, docs/DESIGN-CORE-RULES.md)
+cp("svg/tri-duc-media-animated-notag-header-color.svg", `${PUB}/logo.svg`);
+cp("svg/tri-duc-media-animated-notag-header-reverse.svg", `${PUB}/logo-light.svg`);
+// Larger placements (blog card fallback…): rule V1 proportions (media = 0.30)
+cp("svg/tri-duc-media-animated-notag-color.svg", `${PUB}/logo-full.svg`);
+cp("svg/tri-duc-media-animated-notag-reverse.svg", `${PUB}/logo-full-light.svg`);
 // With the slogan "Chủ vắng, khách vẫn đông."
 cp("svg/tri-duc-media-animated-color.svg", `${PUB}/logo-slogan.svg`);
 cp("svg/tri-duc-media-animated-reverse.svg", `${PUB}/logo-slogan-light.svg`);

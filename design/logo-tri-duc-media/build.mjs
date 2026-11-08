@@ -177,11 +177,20 @@ const scriptBox = inkBox(script, SCRIPT_TEXT, sScript);
 // baseline; ink ends this far inside the name's right edge.
 const SIG_GAP = cap1 * 0.1;
 const SIG_INSET = cap1 * 0.04;
-function signature(nameRight, nameBase) {
-  const base = nameBase + SIG_GAP + MEDIA_RATIO * cap1;
-  const x = nameRight - SIG_INSET - scriptBox.x2;
-  return { d: textPath(script, SCRIPT_TEXT, x, base, sScript), bottom: base + scriptBox.y2, base };
+// size = script font size in logo units (default: rule V1, 0.30 of the caps).
+function signature(nameRight, nameBase, size = sScript) {
+  const box = size === sScript ? scriptBox : inkBox(script, SCRIPT_TEXT, size);
+  const base = nameBase + SIG_GAP + scriptTall * size;
+  const x = nameRight - SIG_INSET - box.x2;
+  return { d: textPath(script, SCRIPT_TEXT, x, base, size), bottom: base + box.y2, base };
 }
+// V11 (anh Đức, phương án B "sàn 12px"): the web header shows the logo ~116–121px
+// wide, where 0.30 would make "media" ~8px. The header variant sets "media" so it
+// renders at ≥ 12px at 116px width (ratio ≈ 0.44 — a deliberate exception to V1).
+const HEADER_MIN_WIDTH_PX = 116;
+const MEDIA_MIN_PX = 12;
+const logoViewW = () => nameBox.w + 2 * 16; // = horizontal() width (PAD 16)
+const sScriptHeader = () => (MEDIA_MIN_PX * logoViewW()) / HEADER_MIN_WIDTH_PX;
 
 // v6: the two acute accents (Í, Ứ) are redrawn as young leaves in the leaf colour.
 // Vietnamese diacritics become the brand's signature detail: the name itself sprouts.
@@ -315,9 +324,9 @@ const TAGLINE = "Chủ vắng, khách vẫn đông.";
 // is centred below. "TRÍ ĐỨC" itself is unchanged since v8.
 // v12 (bản A): MEDIA caps + hairlines replaced by the "media" calligraphy
 // signature under the end of the name; no rules.
-function lowerBlock(nm, withTag) {
+function lowerBlock(nm, withTag, mediaSize) {
   const center = (nm.x1 + nm.x2) / 2;
-  const sig = signature(nm.x2, nm.base);
+  const sig = signature(nm.x2, nm.base, mediaSize);
   const media = sig.d;
   const rules = [];
   const base2 = sig.bottom;
@@ -404,9 +413,9 @@ const RIB_HW = 4.6 * (20 / 14);
 const RIB_TAIL = along(-16 - RIB_HW);
 const RIB_DEG = (Math.atan2(dir[1], dir[0]) * 180) / Math.PI;
 
-function animatedPieces(t, id, withTag = true) {
+function animatedPieces(t, id, withTag = true, mediaSize) {
   const nm = leafName(0, 18, t, id);
-  const L = lowerBlock(nm, withTag);
+  const L = lowerBlock(nm, withTag, mediaSize);
   const view = { minX: nm.x1 - PAD, minY: nm.top - PAD, w: nm.x2 - nm.x1 + 2 * PAD, h: L.bottom + PAD - (nm.top - PAD) };
   const gradId = `${id}-g`;
   const dark = t.spine === C.white;
@@ -440,8 +449,8 @@ function animFrame(t, id, sec) {
 }
 
 // SMIL animated SVG (plays once, holds the final frame; also works inside <img>).
-function animatedSVG(t, id, withTag = true) {
-  const P = animatedPieces(t, id, withTag);
+function animatedSVG(t, id, withTag = true, mediaSize) {
+  const P = animatedPieces(t, id, withTag, mediaSize);
   const { nm } = P;
   const spl = 'calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1" fill="freeze"';
   const dur = (k) => `begin="${TL[k][0]}s" dur="${f(TL[k][1] - TL[k][0])}s"`;
@@ -465,6 +474,9 @@ files["tri-duc-media-animated-reverse.svg"] = animatedSVG(themes.reverse, "an-r"
 // web header/footer: same animation, name + MEDIA only
 files["tri-duc-media-animated-notag-color.svg"] = animatedSVG(themes.color, "an-nc", false);
 files["tri-duc-media-animated-notag-reverse.svg"] = animatedSVG(themes.reverse, "an-nr", false);
+// V11 header variants: "media" floored at 12px at the header width
+files["tri-duc-media-animated-notag-header-color.svg"] = animatedSVG(themes.color, "an-hc", false, sScriptHeader());
+files["tri-duc-media-animated-notag-header-reverse.svg"] = animatedSVG(themes.reverse, "an-hr", false, sScriptHeader());
 
 
 const svgDir = path.join(OUT, "svg");

@@ -1,0 +1,201 @@
+<title>Tối ưu 2 giọng Trí Đức</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@900&family=Great+Vibes&display=swap">
+<style>
+/* Layout: proposal sheet in two parts (logo "media", hero lockup). Each part: numbers first, then options rendered with the real fonts on the site's navy, then the recommendation. Brand palette only. */
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --fg: #0b1220;
+  --muted: #4b5568;
+  --line: rgba(11, 18, 32, 0.1);
+  --blue: #4285f4;
+  --blue-text: #2f6fe0;
+  --green: #17a85a;
+  --green-text: #11864a;
+  --warn: #c2410c;
+  --ink: #0b1220;
+  --ink-soft: #131d33;
+  --ui: "Be Vietnam Pro", system-ui, sans-serif;
+  --anchor: "Playfair Display", Georgia, serif;
+  --script: "Great Vibes", "Segoe Script", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #070c16; --surface: #0f1729; --fg: #eef2f7; --muted: #9ba4b2; --line: rgba(255,255,255,0.1); --blue-text: #6ea6f7; --green-text: #45d17f; --warn: #fb923c; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #070c16; --surface: #0f1729; --fg: #eef2f7; --muted: #9ba4b2; --line: rgba(255,255,255,0.1); --blue-text: #6ea6f7; --green-text: #45d17f; --warn: #fb923c; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.6; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px; }
+h1, h2, h3 { margin: 0; line-height: 1.2; text-wrap: balance; }
+p { margin: 0; }
+code { font-size: 13px; background: var(--line); padding: 1px 6px; border-radius: 5px; }
+.hero { padding-block: 34px 10px; display: grid; gap: 10px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-text); }
+.hero h1 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; }
+.hero p { color: var(--muted); max-width: 78ch; }
+section { padding-block: 26px 4px; display: grid; gap: 14px; }
+section > h2 { font-size: 22px; font-weight: 800; }
+section > p, .note { color: var(--muted); max-width: 80ch; }
+.note { font-size: 13px; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.ok { color: var(--green-text); font-weight: 800; }
+.bad { color: var(--warn); font-weight: 800; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.grid.g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grid, .grid.g4 { grid-template-columns: 1fr; } }
+.card { display: grid; grid-template-rows: auto 1fr auto; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; min-width: 0; }
+.card.pick { border-color: var(--green); box-shadow: 0 0 0 2px color-mix(in srgb, var(--green) 35%, transparent); }
+.card-head { display: grid; gap: 4px; padding: 14px 16px 10px; }
+.card-head .k { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-text); }
+.card-head h3 { font-size: 17px; font-weight: 800; }
+.card-head p { font-size: 13.5px; color: var(--muted); }
+.badge { justify-self: start; font-size: 11px; font-weight: 800; padding: 2px 9px; border-radius: 999px; background: color-mix(in srgb, var(--green) 16%, transparent); color: var(--green-text); }
+.card-foot { padding: 10px 16px 14px; font-size: 13.5px; display: grid; gap: 4px; border-top: 1px solid var(--line); }
+
+/* Navy plates = the site's dark header/hero */
+.plate { background: var(--ink); color: #fff; padding: 14px 16px; display: grid; gap: 12px; align-content: start; }
+.bar { display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 12px; border-radius: 10px; background: var(--ink-soft); overflow: hidden; }
+.bar .nav { display: flex; gap: 12px; font: 600 12px/1 var(--ui); color: rgba(255,255,255,.7); white-space: nowrap; }
+.zoom { border-radius: 10px; background: var(--ink-soft); padding: 10px 12px; overflow: hidden; }
+.zoom .lbl, .bar-lbl { font: 600 11px/1.2 var(--ui); color: rgba(255,255,255,.55); }
+.zoom .inner { transform-origin: left top; }
+/* Logo mock: name (Playfair 900) + "media" signature right-aligned under it */
+.logo { display: inline-grid; justify-items: end; line-height: 1; color: #fff; }
+.logo .nm { font-family: var(--anchor); font-weight: 900; letter-spacing: .03em; white-space: nowrap; }
+.logo .nm b { font-weight: 900; background: linear-gradient(35deg, #ffffff 10%, #4285f4 50%, #45d17f 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.logo .md { font-family: var(--script); color: #45d17f; white-space: nowrap; font-variant-ligatures: none; margin-top: .1em; margin-right: .04em; }
+
+/* Hero lockup mock */
+.hero-box { container-type: inline-size; background: var(--ink); padding: 22px 18px 24px; }
+.lk { --em: 6.565; font-size: min(78px, calc(100cqw / var(--em) * .97)); color: #fff; text-shadow: 0 0 .2em rgba(0,0,0,.4); display: grid; justify-items: start; }
+.lk .acc { font-family: var(--script); font-weight: 400; line-height: 1.2; white-space: nowrap; font-variant-ligatures: none; margin-left: .04em; margin-bottom: .02em; }
+.lk .anc { font-family: var(--anchor); font-weight: 900; text-transform: uppercase; letter-spacing: .03em; line-height: 1.18; display: grid; }
+.lk .anc span { white-space: nowrap; }
+.lk.justify .acc { width: 100%; text-align: justify; text-align-last: justify; }
+.meas { font: 600 12px/1.3 var(--ui); color: rgba(255,255,255,.6); margin-top: 10px; }
+
+.rec { display: grid; gap: 8px; padding: 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--green); }
+.rec h3 { font-size: 18px; font-weight: 800; }
+.rec ol, .rec ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.rule { font-weight: 700; }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Đề xuất · chưa triển khai · 08/11/2026</span>
+    <h1>Tối ưu trình bày 2 giọng: chữ "media" của logo và lockup đầu trang chủ</h1>
+    <p>Dựa trên <code>docs/DESIGN-CORE-RULES.md</code> (V1: nét cao nhất giọng phụ = 0,30 × chữ in hoa giọng chính; V8: mỗi giọng 1 dòng; V10: giọng phụ ≥ 12px). Mọi minh hoạ dưới đây dựng bằng đúng font của web (Playfair Display 900, Great Vibes) trên nền navy của web; chữ Đ trong logo minh hoạ là chữ thường, không phải Đ-lá.</p>
+  </header>
+
+  <section aria-labelledby="h1">
+    <h2 id="h1">1. Chữ "media" trong logo</h2>
+    <p>Logo co theo chỗ đặt, nên chữ media co theo. Ở header, nó chỉ còn vài pixel:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Chỗ đặt logo</th><th>Logo cao</th><th>Chữ in hoa TRÍ ĐỨC</th><th>Nét cao nhất "media" (0,3)</th><th>Cỡ chữ "media"</th><th>Đọc được (≥ 12px)</th></tr></thead>
+      <tbody>
+        <tr><td>Header điện thoại</td><td class="n">40px</td><td class="n">17,0px</td><td class="n">5,1px</td><td class="n">8,1px</td><td class="bad">Không</td></tr>
+        <tr><td>Header máy tính</td><td class="n">42px</td><td class="n">17,8px</td><td class="n">5,4px</td><td class="n">8,5px</td><td class="bad">Không</td></tr>
+        <tr><td>Footer (có slogan)</td><td class="n">96px</td><td class="n">32,0px</td><td class="n">9,6px</td><td class="n">15,3px</td><td class="ok">Có</td></tr>
+        <tr><td>Thẻ bài viết</td><td class="n">96px</td><td class="n">40,8px</td><td class="n">12,2px</td><td class="n">19,5px</td><td class="ok">Có</td></tr>
+        <tr><td>Slide, biển hiệu, video</td><td class="n">≥ 200px</td><td class="n">≥ 85px</td><td class="n">≥ 25px</td><td class="n">≥ 40px</td><td class="ok">Có</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Ngưỡng tính ra:</b> chữ media đạt 12px khi chữ in hoa TRÍ ĐỨC cao ≥ <b>25px</b>, tức logo (không slogan) cao ≥ <b>59px</b> hoặc rộng ≥ <b>171px</b>. Dưới ngưỡng này, giữ đúng 0,3 thì chữ media không đọc được.</p>
+
+    <div class="grid" id="logo-opts"></div>
+
+    <div class="rec">
+      <h3>Đề xuất: phương án C, logo 2 bậc (thêm quy tắc V11)</h3>
+      <p class="rule">V11 · Logo cao dưới 59px (rộng dưới 171px): dùng bản KHÔNG có chữ media (TRÍ ĐỨC + Đ-lá + 2 lá non). Từ 59px trở lên: bản đầy đủ, chữ media đúng 0,3. Không bao giờ phóng chữ media quá 0,3.</p>
+      <ul>
+        <li>Đây là cách các thương hiệu lớn làm ("logo co giãn" theo cỡ): ở cỡ nhỏ bỏ phần phụ, không làm méo tỷ lệ.</li>
+        <li>Không phá quy tắc V1: chỉ còn 1 giọng thì không có cặp 75/25 để so.</li>
+        <li>Áp dụng: header (40–42px) dùng bản không media; footer, thẻ bài viết, slide, video giữ bản đầy đủ. Favicon/app icon vẫn là Đ-lá.</li>
+        <li>Phương án B (sàn 12px) chỉ nên dùng nếu anh muốn chữ media luôn hiện, chấp nhận ở header nó to ~0,42 thay vì 0,3.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="h2">
+    <h2 id="h2">2. Lockup đầu trang chủ: "để doanh nghiệp tự chạy, / GIẢI PHÓNG NGƯỜI CHỦ"</h2>
+    <p>Giọng chính có 2 dòng (ngoại lệ V8 vì cắt sẽ sai ý). Quy tắc 0,3 hiện tính theo chiều cao chữ in hoa của <b>một</b> dòng, nên khi giọng chính thành khối 2 dòng, giọng phụ chỉ còn rộng 36% khối và trông lạc lõng (ảnh anh gửi).</p>
+
+    <div class="grid g4" id="hero-opts"></div>
+
+    <div class="rec">
+      <h3>Đề xuất: phương án 3, thêm quy tắc V1b "tính theo khối"</h3>
+      <p class="rule">V1b · Khi giọng chính có từ 2 dòng: nét cao nhất giọng phụ = 0,30 × chiều cao CẢ KHỐI giọng chính (từ đỉnh chữ in hoa dòng đầu tới chân dòng cuối). Vẫn giữ V2: giọng phụ không rộng hơn dòng dài nhất.</p>
+      <ul>
+        <li>Khối 2 dòng cao ≈ 2,67 lần chữ in hoa, nên giọng phụ ≈ 0,8 lần chữ in hoa (cỡ chữ ≈ 0,9 lần giọng chính).</li>
+        <li>Kết quả tự nhiên: giọng phụ rộng ≈ 96% dòng chính, đúng ý "dàn bằng chiều ngang giọng chính", mà vẫn tính từ cùng một con số 0,3 (giống mẫu GANDHI'S: chữ phụ dàn hết bề ngang chữ chính).</li>
+        <li>Trọng lượng: khối chính 2 dòng vẫn áp đảo (2 dòng chữ đậm cao so với 1 dòng chữ viết tay nét mảnh).</li>
+        <li><b>Không nên</b> giãn đều bằng khoảng trắng hay giãn chữ (phương án 4): chữ viết tay bị đứt nét nối, khoảng trống giữa các chữ lổn nhổn.</li>
+        <li>Ảnh hưởng: chỉ 2 lockup có giọng chính 2 dòng, là hero tiếng Việt và khung cuối trang "chủ vắng, / KHÁCH VẪN / ĐÔNG.". Hero tiếng Anh (1 dòng) giữ nguyên 0,3. Sẽ thêm V1b vào core rules, <code>lockup:qc</code> và <code>lockup:check</code>.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+// ---------- Logo options ----------
+const capToFont = (cap) => cap / 0.708; // Playfair cap height 0.708em
+const scriptFontForRatio = (cap, r) => (r * cap) / 0.629; // Great Vibes "d" 0.629em
+const logo = (cap, mediaPx) => {
+  const md = mediaPx ? `<span class="md" style="font-size:${mediaPx}px">media</span>` : "";
+  return `<span class="logo"><span class="nm" style="font-size:${capToFont(cap)}px">TRÍ <b>Đ</b>ỨC</span>${md}</span>`;
+};
+const HEADER_CAP = 17.8, FOOTER_CAP = 32;
+const OPTS = [
+  { k: "A", t: "Giữ 0,3 ở mọi cỡ", d: "Như hiện tại. Đúng quy tắc nhưng ở header chữ media chỉ 8,5px.", head: scriptFontForRatio(HEADER_CAP, 0.3), foot: scriptFontForRatio(FOOTER_CAP, 0.3), note: ["Header: media 8,5px — chỉ còn một nét lăn tăn", "Footer: 15,3px, đúng 0,3"] },
+  { k: "B", t: "Sàn 12px (tạm bỏ qua 0,3)", d: "Dưới ngưỡng, chữ media không nhỏ hơn 12px; tỷ lệ ở header thành ~0,42.", head: 12, foot: scriptFontForRatio(FOOTER_CAP, 0.3), note: ["Header: media 12px, đọc được nhưng lệch quy tắc (0,42)", "Footer: giữ 0,3"] },
+  { k: "C", t: "Logo 2 bậc (đề xuất)", d: "Dưới 59px bỏ chữ media; từ 59px trở lên đầy đủ, đúng 0,3.", head: 0, foot: scriptFontForRatio(FOOTER_CAP, 0.3), note: ["Header: gọn, chỉ TRÍ ĐỨC + Đ-lá", "Footer, slide, video: đầy đủ media, đúng 0,3"], pick: true },
+];
+document.getElementById("logo-opts").innerHTML = OPTS.map((o) => `
+  <article class="card${o.pick ? " pick" : ""}">
+    <div class="card-head"><span class="k">Phương án ${o.k}</span><h3>${o.t}</h3><p>${o.d}</p>${o.pick ? '<span class="badge">Đề xuất</span>' : ""}</div>
+    <div class="plate">
+      <span class="bar-lbl">Header 42px, đúng cỡ thật</span>
+      <div class="bar">${logo(HEADER_CAP, o.head)}<span class="nav">Trang chủ · Về Founder · Dịch vụ</span></div>
+      <div class="zoom"><div class="lbl">Header phóng to ×2 để xem chữ media</div><div class="inner" style="transform:scale(2);height:${HEADER_CAP * 2 * 2.2}px">${logo(HEADER_CAP, o.head)}</div></div>
+      <div class="zoom"><div class="lbl">Footer 96px, đúng cỡ thật</div>${logo(FOOTER_CAP, o.foot)}</div>
+    </div>
+    <div class="card-foot">${o.note.map((n) => `<span>${n}</span>`).join("")}</div>
+  </article>`).join("");
+
+// ---------- Hero options ----------
+const ACC = "để doanh nghiệp tự chạy,";
+const HOPTS = [
+  { k: "1", t: "Hiện tại: 0,3 × chữ in hoa", d: "Giọng phụ rộng ~36% khối, lọt thỏm phía trên.", em: 0.338 },
+  { k: "2", t: "0,5 × chữ in hoa", d: "Bước giữa: rộng ~60%, vẫn hụt so với bề ngang khối.", em: 0.563 },
+  { k: "3", t: "V1b: 0,3 × cả khối 2 dòng (≈ 0,8 chữ in hoa)", d: "Giọng phụ dàn gần hết bề ngang (~96%), khối 2 dòng vẫn áp đảo.", em: 0.9, pick: true },
+  { k: "4", t: "Giãn đều ở cỡ 0,3", d: "Kéo khoảng trắng cho bằng bề ngang: chữ viết tay rời rạc, không nên.", em: 0.338, justify: true },
+];
+document.getElementById("hero-opts").innerHTML = HOPTS.map((o) => `
+  <article class="card${o.pick ? " pick" : ""}">
+    <div class="card-head"><span class="k">Phương án ${o.k}</span><h3>${o.t}</h3><p>${o.d}</p>${o.pick ? '<span class="badge">Đề xuất</span>' : ""}</div>
+    <div class="hero-box">
+      <div class="lk${o.justify ? " justify" : ""}"><span class="acc" style="font-size:${o.em}em">${ACC}</span><span class="anc"><span>Giải phóng</span><span>người chủ</span></span></div>
+      <div class="meas" data-meas></div>
+    </div>
+    <div class="card-foot"><span>Cỡ giọng phụ = ${o.em.toString().replace(".", ",")} × cỡ giọng chính</span></div>
+  </article>`).join("");
+
+// Measure the real rendered widths once fonts are in.
+document.fonts.ready.then(() => {
+  document.querySelectorAll("#hero-opts .card").forEach((card) => {
+    const acc = card.querySelector(".acc"), lines = [...card.querySelectorAll(".anc span")];
+    const range = document.createRange(); range.selectNodeContents(acc);
+    const aw = card.querySelector(".lk").classList.contains("justify") ? acc.getBoundingClientRect().width : range.getBoundingClientRect().width;
+    const bw = Math.max(...lines.map((l) => { const r = document.createRange(); r.selectNodeContents(l); return r.getBoundingClientRect().width; }));
+    card.querySelector("[data-meas]").textContent = `Đo trên trang: giọng phụ rộng ${Math.round((aw / bw) * 100)}% dòng chính dài nhất`;
+  });
+});
+</script>

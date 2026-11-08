@@ -41,7 +41,7 @@ export function BlogPostCard({
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink-soft to-ink">
             <Image
-              src="/brand/logo-light.svg"
+              src="/brand/logo-full-light.svg"
               alt="Trí Đức Media"
               width={357}
               height={124}

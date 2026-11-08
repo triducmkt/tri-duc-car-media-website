@@ -54,26 +54,26 @@ export function Header() {
     >
       <Container className="flex h-18 items-center justify-between py-3">
         <Link href="/" onClick={() => setOpen(false)} className="relative block shrink-0" aria-label="Trí Đức Media">
-          {/* Logo v12 bản A (design/logo-tri-duc-media): animated SVG — the Đ-leaf grows
+          {/* Logo v12 bản A, header variant ("media" ≥ 12px, rule V11 in docs/DESIGN-CORE-RULES.md): animated SVG — the Đ-leaf grows
               from its root once on page load. Both variants are mounted and
               cross-faded, so switching light/dark on scroll never replays it. */}
           <Image
             src="/brand/logo-light.svg"
             alt=""
             width={357}
-            height={124}
+            height={131}
             priority
             unoptimized
-            className={`h-10 w-auto transition-opacity duration-300 sm:h-[42px] ${transparent ? "opacity-100" : "opacity-0"}`}
+            className={`h-auto w-[116px] transition-opacity duration-300 sm:w-[121px] ${transparent ? "opacity-100" : "opacity-0"}`}
           />
           <Image
             src="/brand/logo.svg"
             alt="Trí Đức Media"
             width={357}
-            height={124}
+            height={131}
             priority
             unoptimized
-            className={`absolute inset-0 h-10 w-auto transition-opacity duration-300 sm:h-[42px] ${transparent ? "opacity-0" : "opacity-100"}`}
+            className={`absolute inset-0 h-auto w-[116px] transition-opacity duration-300 sm:w-[121px] ${transparent ? "opacity-0" : "opacity-100"}`}
           />
         </Link>
 

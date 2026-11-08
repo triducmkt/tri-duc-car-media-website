@@ -6,7 +6,8 @@ import metrics from "@/lib/lockupMetrics.json";
 /**
  * Lockup C — "2 giọng" heading. Rules: docs/DESIGN-CORE-RULES.md (V1–V10).
  *   accent  — Great Vibes calligraphy, lowercase as written. Its TALLEST
- *             stroke is 0.30 × the anchor's cap height (V1).
+ *             stroke is 0.30 × the anchor's cap height (V1), or 0.30 × the
+ *             whole anchor block when the anchor has 2+ lines (V1b).
  *   anchor  — Playfair Display 900, uppercase, +3% tracking. One line (V8),
  *             fitted to the column: font-size = min(size max, column ÷ width).
  *             A "\n" in the copy is an intentional break (counted as an
@@ -50,7 +51,7 @@ export function Lockup({
 }) {
   const ref = useRef<HTMLHeadingElement | null>(null);
   const anchorEm = M.anchors[anchor.toUpperCase()];
-  const accentScale = M.accents[accent]?.scale;
+  const accentScale = M.accents[`${accent}||${anchor.toUpperCase()}`]?.scale;
   if (process.env.NODE_ENV !== "production" && (!anchorEm || !accentScale)) {
     console.warn(`[Lockup] "${accent} / ${anchor}" chưa có số đo — chạy npm run lockup:qc (V9).`);
   }

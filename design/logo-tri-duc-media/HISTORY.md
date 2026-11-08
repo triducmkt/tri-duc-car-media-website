@@ -392,3 +392,9 @@
 - **Lưu ý trung thực:** theo quy tắc 0,3, chữ media trên logo ở header chỉ cao vài pixel, gần như chỉ còn là một nét chữ ký; đọc rõ ở logo lớn (footer, slide, biển hiệu, video). Ở 1024px menu header vẫn rớt dòng — lỗi có sẵn từ trước (đã kiểm trên web thật với logo v11), không do logo mới.
 - **Font:** lưu sẵn ở `fonts/` (Playfair Display Black, Great Vibes, Be Vietnam Pro SemiBold).
 - **Commit:** `cbfb793` · **Trạng thái:** ĐANG CHẠY TRÊN WEB.
+
+## v12a — biến thể header "sàn 12px" (2026-11-08) — PUBLISHED
+- **Yêu cầu anh Đức:** "logo phương án B sàn 12px" (đề xuất https://claude.ai/artifact/6C4Kugkoem97z4V3FtDFiV).
+- **Quy tắc mới V11** (docs/DESIGN-CORE-RULES.md): chữ media không bao giờ nhỏ hơn 12px. Logo đủ lớn (chữ in hoa ≥ 25px, logo cao ≥ 59px) giữ 0,3; logo nhỏ dùng bản sàn 12px.
+- **Thay đổi:** build.mjs thêm `tri-duc-media-animated-notag-header-{color,reverse}.svg`: chữ media cỡ 12px khi logo rộng 116px (tỷ lệ ≈ 0,44). export-web: `public/brand/logo.svg` + `logo-light.svg` = bản header; `logo-full.svg` + `logo-full-light.svg` = bản 0,3 (thẻ bài viết dùng bản này). Header đặt logo theo bề ngang 116px / 121px.
+- **Trạng thái:** ĐANG CHẠY TRÊN WEB.
