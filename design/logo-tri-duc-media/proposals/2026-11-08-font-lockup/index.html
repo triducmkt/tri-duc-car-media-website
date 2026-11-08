@@ -59,7 +59,7 @@ section > h2 { font-size: 20px; font-weight: 800; }
 .plate.dark .tag { color: rgba(255,255,255,.75); }
 /* script accent tucked under the end of the name, like a signature */
 .lk-script { display: grid; justify-items: end; }
-.lk-script .media-script { margin-top: -0.32em; margin-right: -0.1em; }
+.lk-script .media-script { margin-top: 0.08em; margin-right: 0.02em; font-variant-ligatures: none; }
 .lk-script .tag { justify-self: center; }
 
 /* Cards */
@@ -108,9 +108,9 @@ footer { padding-block: 18px 44px; color: var(--muted); font-size: 13px; }
 
 <div class="wrap">
   <header class="hero">
-    <span class="eyebrow">Đề xuất · chưa thay logo thật · 08/11/2026</span>
-    <h1>Font chữ logo theo lockup C và quy tắc 75 / 25</h1>
-    <p>Giữ nguyên biểu tượng Đ-lá, màu và slogan của logo v11; chỉ đổi kiểu chữ. Chữ logo phải theo quy tắc V trong <code>docs/DESIGN-CORE-RULES.md</code>: tên TRÍ ĐỨC là giọng chính (~75% mực), chữ MEDIA là giọng phụ (~25%). Slogan là giọng thứ ba, không tính vào cặp này. Tỷ lệ % bên dưới đo trực tiếp trên trang bằng font thật.</p>
+    <span class="eyebrow">Đề xuất lần 2 · quy tắc mới · chưa thay logo thật · 08/11/2026</span>
+    <h1>Font chữ logo theo lockup C và quy tắc 0,3 × chữ in hoa</h1>
+    <p>Giữ nguyên biểu tượng Đ-lá, màu và slogan của logo v11; chỉ đổi kiểu chữ. Theo <code>docs/DESIGN-CORE-RULES.md</code> (bản 08/11 lần 2): <b>nét cao nhất của chữ phụ (media) = 0,30 × chiều cao chữ in hoa của tên TRÍ ĐỨC</b> (V1), mỗi giọng nằm trên đúng 1 dòng (V8). Trọng lượng đo bằng chiều cao nét chữ mà mắt thấy, không đo bằng mực. Số đo bên dưới lấy trực tiếp trên trang bằng font thật. Bản đề xuất lần 1 (đo bằng mực) đã bỏ.</p>
   </header>
 
   <section aria-labelledby="h-base">
@@ -119,7 +119,7 @@ footer { padding-block: 18px 44px; color: var(--muted); font-size: 13px; }
       <div class="plate light" id="v11-plate"></div>
       <div class="base-info">
         <p><b>Be Vietnam Pro ExtraBold</b> cho TRÍ ĐỨC, <b>Be Vietnam Pro SemiBold</b> giãn rộng cho MEDIA.</p>
-        <p>MEDIA chiếm <b id="v11-share">…</b> mực của cặp tên + MEDIA. <span id="v11-verdict"></span></p>
+        <p>Chữ in hoa MEDIA cao <b id="v11-share">…</b> chữ in hoa của tên (quy tắc: 0,30). <span id="v11-verdict"></span></p>
         <p class="note">Rõ, chắc, đọc tốt ở cỡ nhỏ. Nhưng chưa có giọng thư pháp / có chân của lockup C, nên logo và chữ trên video, website đang nói 2 giọng khác nhau.</p>
       </div>
     </div>
@@ -128,13 +128,13 @@ footer { padding-block: 18px 44px; color: var(--muted); font-size: 13px; }
   <section aria-labelledby="h-drafts">
     <h2 id="h-drafts">3 bản đề xuất</h2>
     <div class="grid" id="drafts"></div>
-    <p class="note">Chữ Đ trong tên dùng đúng biểu tượng Đ-lá hiện tại. Ở bản dùng Playfair, Đ-lá cần vẽ lại cho hợp nét có chân nếu được chọn. Cỡ MEDIA của 3 bản được tự cân để đạt 25% mực. Hàng dưới mỗi bản là cỡ nhỏ: logo header website (~22px) và chữ ký email (~13px).</p>
+    <p class="note">Chữ Đ trong tên dùng đúng biểu tượng Đ-lá hiện tại. Ở bản dùng Playfair, Đ-lá cần vẽ lại cho hợp nét có chân nếu được chọn. Cỡ chữ media của 3 bản được tính để nét cao nhất đúng 0,30 chữ in hoa của tên. Hàng dưới mỗi bản là cỡ logo trên header website (~22px).</p>
   </section>
 
   <section aria-labelledby="h-score">
     <h2 id="h-score">Bảng chấm điểm</h2>
     <div class="tbl"><table id="score"></table></div>
-    <p class="note">Mỗi tiêu chí chấm 0–10, nhân trọng số, tổng 100. Tiêu chí 2 tính từ số đo: 10 điểm khi đúng 25%, mỗi điểm % lệch trừ 0,8. Các tiêu chí còn lại là đánh giá của Claude theo brief logo; anh Đức duyệt lại.</p>
+    <p class="note">Mỗi tiêu chí chấm 0–10, nhân trọng số, tổng 100. Tiêu chí 2 tính từ số đo: 10 điểm khi đúng 0,30, mỗi 0,01 lệch trừ 1 điểm. Các tiêu chí còn lại là đánh giá của Claude theo brief logo; anh Đức duyệt lại.</p>
   </section>
 
   <div class="rec" id="rec"></div>
@@ -152,30 +152,30 @@ const DRAFTS = [
     key: "A", title: "Editorial", sub: "Playfair Display 900 + thư pháp Great Vibes",
     desc: "Đúng nguyên bộ lockup C: tên có chân rất đậm, chữ media viết tay nép dưới cuối tên như chữ ký.",
     nameCls: "f-pf", accent: "script", wrap: "lk-script",
-    pros: ["Đồng bộ 100% với video #12 và lockup trên web", "Sang, khác hẳn logo agency chữ không chân"],
-    cons: ["Đ-lá hình học lệch với chữ có chân, phải vẽ lại", "Nét mảnh Playfair và chữ viết tay khó thêu, khó in dấu", "Hơi hướng thời trang / nhà hàng hơn tư vấn vận hành"],
-    s: { c1: 10, c3: 6, c4: 7, c5: 5, c6: 6, c7: 9 },
+    pros: ["Đồng bộ 100% với lockup trên web", "Sang, khác hẳn logo agency chữ không chân"],
+    cons: ["Ở quy tắc 0,3, chữ media viết tay rất nhỏ: ở logo header gần như biến mất", "Đ-lá hình học lệch với chữ có chân, phải vẽ lại", "Nét mảnh khó thêu, khó in dấu"],
+    s: { c1: 10, c3: 4, c4: 7, c5: 5, c6: 5, c7: 9 },
   },
   {
     key: "B", title: "Lai giữ gốc", sub: "Be Vietnam Pro 800 + thư pháp Great Vibes",
     desc: "Giữ tên TRÍ ĐỨC chữ không chân đậm như v11, chỉ thay MEDIA bằng chữ viết tay của lockup C.",
     nameCls: "f-bvp", accent: "script", wrap: "lk-script",
-    pros: ["Giữ trọn nhận diện, Đ-lá khớp sẵn với chữ", "Thêm giọng người thật, gần gũi đúng brief", "Tên vẫn đọc rõ ở 22px; chuyển đổi rẻ nhất"],
-    cons: ["Dưới ~14px chữ media viết tay mất nét: cỡ nhỏ chỉ dùng tên hoặc biểu tượng", "Chỉ nửa lockup C (giọng chính khác Playfair)"],
-    s: { c1: 8, c3: 8, c4: 9, c5: 10, c6: 8, c7: 7 },
+    pros: ["Giữ trọn nhận diện, Đ-lá khớp sẵn với chữ", "Tên vẫn đọc rõ ở mọi cỡ; chuyển đổi rẻ nhất"],
+    cons: ["Ở quy tắc 0,3, chữ media viết tay rất nhỏ, mất nét ở header, chữ ký email, thêu áo", "Chỉ nửa lockup C (giọng chính khác Playfair)"],
+    s: { c1: 8, c3: 5, c4: 8, c5: 10, c6: 7, c7: 7 },
   },
   {
     key: "C", title: "Có chân + nhãn", sub: "Playfair Display 900 + Be Vietnam Pro 600",
     desc: "Tên TRÍ ĐỨC theo giọng chính của lockup C, MEDIA giữ kiểu nhãn giãn rộng giữa 2 đường kẻ như v11.",
     nameCls: "f-pf", accent: "caps", wrap: "",
-    pros: ["Giọng chính trùng lockup C, đọc rõ ở mọi cỡ", "MEDIA kiểu nhãn dễ in 1 màu, dễ thêu", "Uy tín, kiểu tư vấn chuyên nghiệp"],
-    cons: ["Đ-lá cần vẽ lại cho hợp chữ có chân", "Thiếu giọng viết tay nên bớt gần gũi"],
-    s: { c1: 8, c3: 9, c4: 8, c5: 6, c6: 8, c7: 8 },
+    pros: ["Giọng chính trùng lockup C (Playfair 900)", "MEDIA in hoa nhỏ vẫn đọc được hơn chữ viết tay cùng cỡ; dễ in 1 màu, dễ thêu", "Uy tín, kiểu tư vấn chuyên nghiệp"],
+    cons: ["Đ-lá cần vẽ lại cho hợp chữ có chân", "Thiếu giọng viết tay nên bớt gần gũi", "MEDIA nhỏ hơn v11 nhiều (0,30 thay vì ~0,43)"],
+    s: { c1: 8, c3: 7, c4: 8, c5: 6, c6: 8, c7: 8 },
   },
 ];
 const CRIT = [
   ["c1", "Đồng bộ lockup C (video, web)", 20],
-  ["c2", "Trọng lượng 75/25 (đo)", 15],
+  ["c2", "Quy tắc V1 0,3 + V8 một dòng (đo)", 15],
   ["c3", "Đọc rõ cỡ nhỏ, dấu tiếng Việt", 20],
   ["c4", "Hợp brief: chắc chắn, đáng tin, gần gũi", 15],
   ["c5", "Giữ Đ-lá, chi phí chuyển đổi", 10],
@@ -197,7 +197,7 @@ document.getElementById("drafts").innerHTML = DRAFTS.map((d) => `
     <div class="plate dark">${logoHTML(d, true)}</div>
     <div class="small-row">${logoHTML(d, false).replace('class="logo', 'class="logo')}<span class="cap">header web</span></div>
     <div>
-      <div class="meter"><div class="row"><span>MEDIA chiếm</span><span data-share>…</span></div><div class="bar"><i data-i></i><b data-b></b><span class="band" title="vùng đạt 20–30%"></span></div></div>
+      <div class="meter"><div class="row"><span>Nét cao nhất media ÷ chữ in hoa tên</span><span data-share>…</span></div><div class="row note"><span>Ở logo header ~22px</span><span data-small>…</span></div></div>
       <div class="pros"><h4>Được</h4><ul>${d.pros.map((x) => `<li>${x}</li>`).join("")}</ul><h4>Chưa được</h4><ul>${d.cons.map((x) => `<li>${x}</li>`).join("")}</ul></div>
     </div>
   </article>`).join("");
@@ -205,62 +205,64 @@ document.getElementById("drafts").innerHTML = DRAFTS.map((d) => `
 // v11 baseline (real v11 structure: Be Vietnam 800 name, MEDIA 600 caps ~0.43 of name size)
 document.getElementById("v11-plate").innerHTML = `<div class="logo" id="v11">${nameHTML("f-bvp", false)}<span class="media-caps" data-acc style="font-size:.43em"><span class="rule"></span><span class="mtxt">MEDIA</span><span class="rule"></span></span><span class="tag">Chủ vắng, khách vẫn đông.</span></div>`;
 
-// Ink area of a text run with the element's computed font (same method as npm run lockup:check).
-function ink(text, cs, sizePx) {
+// Ink height above the baseline (px) — same method as npm run lockup:check.
+const strip = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D");
+function inkTop(text, cs, sizePx) {
   const c = document.createElement("canvas");
   const ctx = c.getContext("2d", { willReadFrequently: true });
   const font = `${cs.fontStyle} ${cs.fontWeight} ${sizePx}px ${cs.fontFamily}`;
   ctx.font = font;
-  const ls = cs.letterSpacing === "normal" ? "0px" : (parseFloat(cs.letterSpacing) / parseFloat(cs.fontSize) * sizePx) + "px";
-  ctx.letterSpacing = ls;
   c.width = Math.ceil(ctx.measureText(text).width + sizePx * 2);
-  c.height = Math.ceil(sizePx * 2.6);
-  ctx.font = font; ctx.letterSpacing = ls; ctx.textBaseline = "middle";
-  ctx.fillText(text, sizePx, c.height / 2);
-  const px = ctx.getImageData(0, 0, c.width, c.height).data;
-  let n = 0;
-  for (let i = 3; i < px.length; i += 4) n += px[i] / 255;
-  return n;
+  c.height = Math.ceil(sizePx * 3);
+  ctx.font = font; ctx.letterSpacing = "0.01px"; ctx.textBaseline = "alphabetic";
+  const base = Math.round(sizePx * 2);
+  ctx.fillText(text, sizePx, base);
+  const px = ctx.getImageData(0, 0, c.width, base).data;
+  for (let y = 0; y < base; y++) for (let x = 0; x < c.width; x++) if (px[(y * c.width + x) * 4 + 3] > 96) return base - y;
+  return 0;
 }
-function measure(logo, scaleToTarget) {
+// fit=true: size the accent so its tallest stroke = 0.30 × the name's cap height (V1).
+function measure(logo, fit) {
   const nameEl = logo.querySelector(".name");
   const acc = logo.querySelector("[data-acc]");
   const accTextEl = acc.querySelector(".mtxt") || acc;
   const ncs = getComputedStyle(nameEl), acs = getComputedStyle(accTextEl);
   const N = parseFloat(ncs.fontSize);
-  const nameInk = ink("TRÍ ĐỨC", ncs, N);
-  const accInk = (s) => ink(accTextEl.textContent.trim(), acs, s);
-  if (scaleToTarget) {
-    // ink grows with size²: solve for 25 % then apply as em of the logo size
-    const s0 = N * 0.6, a0 = accInk(s0);
-    const target = nameInk / 3;
-    const s = s0 * Math.sqrt(target / a0);
+  const cap = inkTop("H", ncs, N);
+  const text = strip(accTextEl.textContent.trim());
+  if (fit) {
+    const s0 = 100, t0 = inkTop(text, acs, s0);
+    const s = s0 * (0.3 * cap) / t0;
     acc.style.fontSize = (s / N) + "em";
-    return { share: accInk(s) / (accInk(s) + nameInk), em: s / N };
+    return { ratio: inkTop(text, acs, s) / cap, em: s / N };
   }
-  const a = accInk(parseFloat(acs.fontSize));
-  return { share: a / (a + nameInk) };
+  return { ratio: inkTop(text, acs, parseFloat(acs.fontSize)) / cap };
 }
-const vScore = (share) => Math.max(0, Math.min(10, 10 - Math.abs(share * 100 - 25) * 0.8));
+const vScore = (r) => Math.max(0, Math.min(10, 10 - Math.abs(r - 0.3) * 100));
+const REC = {
+  A: ["Đồng bộ tuyệt đối với lockup trên web: cùng Playfair 900 + Great Vibes.", "Đổi lại: chữ media rất nhỏ ở cỡ nhỏ; cần vẽ lại Đ-lá và làm bản thêu riêng."],
+  B: ["Giữ tên TRÍ ĐỨC và Đ-lá như v11, chuyển đổi rẻ nhất.", "Đổi lại: chữ media viết tay ở 0,3 rất nhỏ, ở header và thêu áo gần như không đọc được."],
+  C: ["Tên TRÍ ĐỨC dùng đúng giọng chính của lockup C (Playfair 900), nên logo và chữ trên web cùng một giọng.", "MEDIA in hoa giữa 2 đường kẻ: ở cỡ 0,3 vẫn đọc được hơn chữ viết tay, in 1 màu và thêu áo tốt.", "Cần một vòng logo để vẽ lại Đ-lá theo nét chữ có chân, rồi mới thay lên web khi anh yêu cầu."],
+};
 
 document.fonts.ready.then(() => {
   const v = measure(document.querySelector("#v11"), false);
-  const pass = v.share >= 0.2 && v.share <= 0.3;
-  document.getElementById("v11-share").textContent = (v.share * 100).toFixed(1) + "%";
-  document.getElementById("v11-verdict").innerHTML = pass ? `<span class="ok">Đạt 20–30%.</span>` : `<span class="bad">Ngoài vùng 20–30%.</span>`;
+  const pass = Math.abs(v.ratio - 0.3) <= 0.03;
+  document.getElementById("v11-share").textContent = v.ratio.toFixed(2) + " lần";
+  document.getElementById("v11-verdict").innerHTML = pass ? `<span class="ok">Đạt.</span>` : `<span class="bad">Chưa đạt quy tắc 0,30 (MEDIA to quá).</span>`;
   const totals = {};
   DRAFTS.forEach((d) => {
     const card = document.getElementById("card-" + d.key);
     let m;
     card.querySelectorAll(".logo").forEach((lg, i) => { const r = measure(lg, true); if (i === 0) m = r; });
-    d.s.c2 = +vScore(m.share).toFixed(1);
-    d.share = m.share;
-    card.querySelector("[data-share]").innerHTML = `<span class="${m.share >= .2 && m.share <= .3 ? "ok" : "bad"}">${(m.share * 100).toFixed(1)}%</span> · cỡ ${(m.em).toFixed(2)} lần tên`;
-    card.querySelector("[data-i]").style.width = ((1 - m.share) * 100) + "%";
-    card.querySelector("[data-b]").style.width = (m.share * 100) + "%";
+    d.s.c2 = +vScore(m.ratio).toFixed(1);
+    const small = card.querySelector(".small-row .logo");
+    const smallPx = parseFloat(getComputedStyle(small).fontSize) * m.em;
+    card.querySelector("[data-share]").innerHTML = `<span class="${Math.abs(m.ratio - 0.3) <= 0.03 ? "ok" : "bad"}">${m.ratio.toFixed(2)}</span> · 1 dòng ✓`;
+    card.querySelector("[data-small]").textContent = `chữ media cỡ ${smallPx.toFixed(1)}px`;
     totals[d.key] = CRIT.reduce((t, [k, , w]) => t + d.s[k] * w / 10, 0);
   });
-  const v11s = { c1: 3, c2: +vScore(v.share).toFixed(1), c3: 9, c4: 8, c5: 10, c6: 9, c7: 6 };
+  const v11s = { c1: 3, c2: +vScore(v.ratio).toFixed(1), c3: 9, c4: 8, c5: 10, c6: 9, c7: 6 };
   const v11t = CRIT.reduce((t, [k, , w]) => t + v11s[k] * w / 10, 0);
   const best = Object.entries(totals).sort((a, b) => b[1] - a[1])[0][0];
   document.getElementById("card-" + best).classList.add("pick");
@@ -273,11 +275,6 @@ document.fonts.ready.then(() => {
   const bd = DRAFTS.find((d) => d.key === best);
   document.getElementById("rec").innerHTML = `<h2>Đề xuất: Bản ${best}, ${bd.title}</h2>
     <p>Xếp hạng: ${rank} · v11 hiện tại ${v11t.toFixed(1)}.</p>
-    <ol>
-      <li>Giữ tên TRÍ ĐỨC và Đ-lá như v11, nên logo đang chạy trên áo, xe, danh thiếp gần như không phải làm lại.</li>
-      <li>Chữ media viết tay Great Vibes mang giọng lockup C vào logo, cỡ cân đúng 25% mực.</li>
-      <li>Quy tắc cỡ nhỏ: dưới ~14px (favicon, avatar, chữ ký email) dùng biểu tượng Đ-lá hoặc chỉ tên, bỏ chữ media viết tay.</li>
-      <li>Nếu anh muốn đồng bộ tuyệt đối với video và web, chọn Bản A và chấp nhận vẽ lại Đ-lá + bản thêu riêng.</li>
-    </ol>`;
+    <ol>${REC[best].map((x) => `<li>${x}</li>`).join("")}</ol>`;
 });
 </script>

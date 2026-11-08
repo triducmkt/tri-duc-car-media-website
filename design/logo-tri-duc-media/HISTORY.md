@@ -361,3 +361,11 @@
   - **C. Có chân + nhãn:** Playfair Display 900 + MEDIA Be Vietnam Pro 600 giãn rộng giữa 2 đường kẻ.
 - **Điểm (trọng số: đồng bộ lockup 20 · 75/25 15 · đọc rõ cỡ nhỏ 20 · hợp brief 15 · giữ Đ-lá 10 · in 1 màu 10 · khác biệt 10):** v11 61,0 · A 76,5 · **B 85,0** · C 81,5.
 - **Trạng thái:** chờ anh Đức chọn. Chưa sửa `build.mjs`, chưa có vòng vN mới, logo trên web không đổi.
+
+## Đề xuất font logo — lần 2 theo quy tắc mới (2026-11-08) — CHƯA ÁP DỤNG
+- **Yêu cầu anh Đức:** "bổ sung 3 quy tắc quan trọng của cách đo mới … tiến hành sửa toàn diện logo, lockup và bộ font hiển thị trên website theo quy tắc mới."
+- **Lý do làm lại:** bản lần 1 đo 75/25 bằng mực nên phóng chữ "media" 1,3–1,45 lần cỡ tên — sai (anh Đức bác cách đo mực).
+- **Quy tắc áp dụng:** nét cao nhất của chữ phụ = 0,30 × chữ in hoa của tên (V1), mỗi giọng 1 dòng (V8). v11 hiện tại: MEDIA in hoa cao ~0,43 lần chữ in hoa của tên → chưa đạt.
+- **Điểm (cùng 7 tiêu chí):** v11 61,0 · A Editorial 70,1 · B Lai giữ gốc 77,0 · **C Có chân + nhãn 77,3 (đề xuất, sát nút với B)**. Ở 0,3, chữ "media" viết tay chỉ ~7px ở logo header nên A/B tụt điểm "đọc rõ cỡ nhỏ".
+- **Bản trình bày:** https://claude.ai/artifact/AGKWQQz4jxxNyqHQNdS4P9 (bản 2) · ảnh [proposals/2026-11-08-font-lockup/preview.png](proposals/2026-11-08-font-lockup/preview.png)
+- **Trạng thái:** logo trên web KHÔNG đổi (quy trình logo: chỉ thay khi anh Đức chọn bản và yêu cầu). Chưa sửa build.mjs.
