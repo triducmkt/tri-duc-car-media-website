@@ -154,7 +154,7 @@ export default async function CaseStudyDetailPage({
                   {item.stats.map((stat, index) => (
                     <div
                       key={index}
-                      className="flex flex-col gap-1.5 rounded-2xl bg-paper-soft p-4 ring-1 ring-black/5"
+                      className="card-premium flex flex-col gap-1.5 rounded-2xl p-4"
                     >
                       <span className="font-display text-2xl font-bold text-ink sm:text-3xl">{stat.value}</span>
                       <span className="text-xs leading-snug text-ink-muted">

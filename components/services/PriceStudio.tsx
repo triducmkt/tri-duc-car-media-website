@@ -442,7 +442,7 @@ export function PriceStudio() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("price_cta", { channel: "zalo", pick: pick.kind === "combo" ? pick.key : pick.slug })}
-                className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-400"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-500 btn-gradient px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-400"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
               </a>

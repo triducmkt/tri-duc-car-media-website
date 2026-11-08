@@ -289,7 +289,7 @@ export function FreedomCalculator() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="min-h-12 rounded-full bg-brand-500 px-6 text-[15px] font-bold text-ink transition-colors hover:bg-brand-400 disabled:opacity-60"
+                    className="min-h-12 rounded-full bg-brand-500 btn-gradient px-6 text-[15px] font-bold text-ink transition-colors hover:bg-brand-400 disabled:opacity-60"
                   >
                     {status === "sending" ? t("sending") : t("submit")}
                   </button>

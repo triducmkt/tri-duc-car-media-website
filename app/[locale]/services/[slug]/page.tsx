@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, MessageCircle } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Lockup } from "@/components/Lockup";
+import { SectionSeam } from "@/components/SectionSeam";
 import { Link } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
 import { COMBOS, HAS_ESTIMATES, SERVICES, formatVnd, serviceBySlug, shortVnd, type Locale } from "@/lib/servicesCatalog";
@@ -75,7 +76,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                 href={COMPANY.zalo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-400"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-500 btn-gradient px-5 py-3 text-sm font-bold text-ink transition hover:bg-brand-400"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden /> {t("ctaZalo")}
               </a>
@@ -90,14 +91,15 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         </Container>
       </section>
 
-      <section className="bg-paper py-16 sm:py-20">
+      <SectionSeam to="light" />
+      <section className="surface-light py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-4">
               <h2 className="font-serif text-2xl font-bold text-ink">{t("includes")}</h2>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {s.includes[locale].map((x) => (
-                  <li key={x} className="flex items-start gap-3 rounded-2xl bg-paper-soft p-4 text-sm text-ink ring-1 ring-black/5">
+                  <li key={x} className="card-premium flex items-start gap-3 rounded-2xl p-4 text-sm text-ink">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-leaf-500/15 text-leaf-600">
                       <Check className="h-4 w-4" aria-hidden />
                     </span>
@@ -122,11 +124,11 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="flex flex-col gap-2 rounded-2xl bg-paper-soft p-5 ring-1 ring-black/5">
+              <div className="card-premium flex flex-col gap-2 rounded-2xl p-5">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">{t("fit")}</h3>
                 <p className="text-sm text-ink">{s.fit[locale]}</p>
               </div>
-              <div className="flex flex-col gap-2 rounded-2xl bg-paper-soft p-5 ring-1 ring-black/5">
+              <div className="card-premium flex flex-col gap-2 rounded-2xl p-5">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">{t("measure")}</h3>
                 <p className="text-sm text-ink">{s.measure[locale]}</p>
               </div>
@@ -157,7 +159,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
             ) : null}
 
             {s.price.estimated ? (
-              <div className="flex flex-col gap-2 rounded-2xl bg-paper-soft p-5 ring-1 ring-black/5">
+              <div className="card-premium flex flex-col gap-2 rounded-2xl p-5">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">{t("basis")}</h3>
                 <p className="text-sm text-ink">{s.basis[locale]}</p>
               </div>

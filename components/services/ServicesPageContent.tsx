@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import Diagnostic from "@/components/services/Diagnostic";
 import { SystemBuilder } from "@/components/services/SystemBuilder";
 import { VatAdvantage } from "@/components/VatAdvantage";
+import { SectionSeam } from "@/components/SectionSeam";
 import { FreedomLadder } from "@/components/home/FreedomLadder";
 import { PriceStudio } from "@/components/services/PriceStudio";
 import { SERVICES, formatVnd, type Locale } from "@/lib/servicesCatalog";
@@ -44,9 +45,11 @@ export function ServicesPageContent() {
       <FreedomLadder variant="full" />
       <PriceStudio />
       <SystemBuilder />
+      <SectionSeam to="light" light="paper-soft" />
       <VatAdvantage id="hoa-don-vat" />
+      <SectionSeam to="dark" light="paper-soft" />
 
-      <section className="border-t border-white/5 bg-ink py-20 text-white sm:py-24">
+      <section className="bg-ink py-20 text-white sm:py-24">
         <Container>
           <h2 className="sr-only">{tDiag("pageHeading")}</h2>
           <Diagnostic onSubmitLead={sendLead} onResult={setRecommended} />

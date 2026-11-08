@@ -431,7 +431,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
                     href="/booking"
                     tabIndex={isLast ? 0 : -1}
                     onClick={() => trackEvent("journey_cta", { to: "booking" })}
-                    className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 text-sm font-bold text-white hover:bg-brand-600"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand-500 btn-gradient px-5 py-3 text-sm font-bold text-white hover:bg-brand-600"
                   >
                     <CalendarCheck size={18} aria-hidden /> {t("next.book")}
                   </Link>

@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/Container";
+import { SectionSeam } from "@/components/SectionSeam";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { Reveal } from "@/components/Reveal";
@@ -30,7 +31,8 @@ export default async function CaseStudiesPage({
     <>
       <CaseMap />
 
-      <section className="bg-paper py-20 sm:py-24">
+      <SectionSeam to="light" />
+      <section className="surface-light py-20 sm:py-24">
         <Container className="flex flex-col gap-10">
           <SectionHeading eyebrow={t("eyebrow")} heading={t("heading")} serif />
           {items.length === 0 ? (

@@ -29,7 +29,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
     <section id={id} className={`scroll-mt-24 py-20 sm:py-24 ${dark ? "bg-ink text-white" : "surface-light-soft text-ink"}`}>
       <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-5">
-          <p className={`text-xs font-bold uppercase tracking-[0.2em] ${dark ? "text-brand-400" : "text-brand-600"}`}>
+          <p className="eyebrow-pill self-start" data-tone={dark ? "dark" : "light"}>
             {t("eyebrow")}
           </p>
           <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
@@ -73,7 +73,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
             <Link
               href="/booking"
               onClick={() => trackEvent("vat_cta", { channel: "booking" })}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-bold text-ink transition-colors hover:bg-brand-400"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-500 btn-gradient px-6 py-3 text-sm font-bold text-ink transition-colors hover:bg-brand-400"
             >
               <FileCheck2 className="h-4 w-4" aria-hidden /> {t("cta")}
             </Link>

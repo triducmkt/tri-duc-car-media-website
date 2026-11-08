@@ -2,6 +2,7 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SectionSeam } from "@/components/SectionSeam";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { CompanyLegalCard } from "@/components/contact/CompanyLegalCard";
 import { FacebookIcon } from "@/components/icons/FacebookIcon";
@@ -38,7 +39,7 @@ export default async function ContactPage({
 
   return (
     <>
-      <section className="bg-paper-soft pb-16 pt-28 sm:pb-24 sm:pt-32">
+      <section className="surface-light-soft pb-16 pt-28 sm:pb-24 sm:pt-32">
         <Container className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div className="flex flex-col gap-8">
             <SectionHeading as="h1" eyebrow={t("eyebrow")} heading={t("heading")} sub={t("intro")} />
@@ -49,7 +50,7 @@ export default async function ContactPage({
                   key={label}
                   href={href}
                   {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="flex items-center gap-3 rounded-xl bg-paper p-4 text-sm font-semibold text-ink ring-1 ring-black/5 transition-colors hover:ring-brand-500/40"
+                  className="card-premium flex items-center gap-3 rounded-xl p-4 text-sm font-semibold text-ink"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-500/10 text-brand-600">
                     <Icon size={18} aria-hidden />
@@ -65,11 +66,12 @@ export default async function ContactPage({
             <CompanyLegalCard />
           </div>
   
-          <div className="rounded-2xl bg-paper p-6 ring-1 ring-black/5 sm:p-10 lg:sticky lg:top-24">
+          <div className="card-premium is-static rounded-2xl p-6 sm:p-10 lg:sticky lg:top-24">
             <ContactForm />
           </div>
         </Container>
       </section>
+      <SectionSeam to="dark" light="paper-soft" />
       <ChannelOrbit videos={videos} />
     </>
   );

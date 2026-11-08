@@ -17,10 +17,10 @@ export async function BrandStory() {
   const logoItems = t.raw("logo.items") as { title: string; body: string }[];
 
   return (
-    <section id="thuong-hieu" className="bg-paper py-20 sm:py-28">
+    <section id="thuong-hieu" className="surface-light py-20 sm:py-28">
       <Container className="flex flex-col gap-14">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
-          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-600">{t("eyebrow")}</span>
+          <span className="eyebrow-pill" data-tone="light">{t("eyebrow")}</span>
           <h2 className="font-serif text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">{t("heading")}</h2>
           <p className="text-lg leading-relaxed text-ink-muted">{t("sub")}</p>
         </div>
@@ -76,7 +76,7 @@ export async function BrandStory() {
                 const Icon = LOGO_ICONS[i] ?? Leaf;
                 return (
                   <Reveal key={item.title} delay={i * 80}>
-                    <div className="flex h-full flex-col gap-2.5 rounded-2xl bg-paper-soft p-6 ring-1 ring-black/5">
+                    <div className="card-premium flex h-full flex-col gap-2.5 rounded-2xl p-6">
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                         <Icon size={19} aria-hidden />
                       </span>

@@ -3,6 +3,7 @@ import { BondIcon, ReplicateIcon, AscendIcon } from "@/components/icons";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Lockup } from "@/components/Lockup";
+import { SectionSeam } from "@/components/SectionSeam";
 import { Button } from "@/components/Button";
 import { FounderPortrait } from "@/components/FounderPortrait";
 import { FounderAura } from "@/components/about/FounderAura";
@@ -73,7 +74,7 @@ export default async function AboutPage({
             />
           </div>
           <div className="flex flex-col items-start gap-4">
-            <span className="rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand-300 ring-1 ring-white/15">
+            <span className="eyebrow-pill" data-tone="dark">
               {t("eyebrow")}
             </span>
             <Lockup as="h1" size="page" reveal="load" accent={t("nameAccent")}
@@ -91,18 +92,20 @@ export default async function AboutPage({
       </section>
 
       <FounderJourney stops={journey} />
+      <SectionSeam to="light" />
 
       {/* Brand story: animated logo, meaning of the name + logo, slogan, mission.
           Vision (#tam-nhin) and core values (#gia-tri) follow. */}
       <BrandStory />
 
+      <SectionSeam to="dark" />
       <section id="tam-nhin" className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_0%,rgba(110,166,247,0.16),transparent)]"
         />
         <Container className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-400">{t("visionEyebrow")}</span>
+          <span className="eyebrow-pill" data-tone="dark">{t("visionEyebrow")}</span>
           <h2 className="font-serif text-3xl font-bold leading-tight tracking-tight sm:text-5xl">{t("visionHeading")}</h2>
           <p className="text-lg leading-relaxed text-white/75 sm:text-xl">{t("vision")}</p>
           <Button href="/services" variant="primary" className="mt-2">
@@ -111,7 +114,8 @@ export default async function AboutPage({
         </Container>
       </section>
 
-      <section className="bg-paper py-20 sm:py-28">
+      <SectionSeam to="light" />
+      <section className="surface-light py-20 sm:py-28">
         <Container className="mx-auto flex max-w-3xl flex-col gap-10">
           {bodyBlocks.map((block, index) => (
             <Reveal key={block.heading} delay={index * 100} className="flex gap-5">
@@ -127,13 +131,13 @@ export default async function AboutPage({
         </Container>
       </section>
 
-      <section id="gia-tri" className="bg-paper-soft py-20 sm:py-28">
+      <section id="gia-tri" className="surface-light-soft py-20 sm:py-28">
         <Container className="flex flex-col gap-12">
           <SectionHeading heading={t("valuesHeading")} align="center" />
           <div className="grid gap-6 sm:grid-cols-3">
             {values.map(({ Icon, title, body }, index) => (
               <Reveal key={title} delay={index * 90}>
-                <div className="flex h-full flex-col items-center gap-3 rounded-2xl bg-paper p-7 text-center ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 hover:ring-brand-500/30">
+                <div className="card-premium flex h-full flex-col items-center gap-3 rounded-2xl p-7 text-center">
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
                     <Icon size={22} aria-hidden />
                   </span>

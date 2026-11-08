@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/Container";
+import { SectionSeam } from "@/components/SectionSeam";
 import { SectionHeading } from "@/components/SectionHeading";
 import { BlogPostCard } from "@/components/BlogPostCard";
 import { getBlogPosts } from "@/lib/sanity/queries";
@@ -55,7 +56,8 @@ export default async function BlogPage({
         </section>
       )}
 
-      <section className="bg-paper py-20 sm:py-24">
+      <SectionSeam to="light" />
+      <section className="surface-light py-20 sm:py-24">
         <Container className="flex flex-col gap-10">
           {items.length > 0 ? <SectionHeading heading={t("allHeading")} sub={t("intro")} /> : null}
           {items.length === 0 ? (

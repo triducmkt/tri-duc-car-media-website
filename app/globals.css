@@ -123,6 +123,12 @@ body {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lift-3);
 }
+/* Large containers (forms, legal block, FAQ rows) keep the look but do not lift. */
+.card-premium.is-static:hover,
+.card-premium.is-static:focus-within {
+  transform: none;
+  box-shadow: var(--shadow-lift-2);
+}
 
 /* F9 (docs/brand-backlog.md) — primary button: blue gradient + brand-tinted
    shadow; hover lifts 1px and brightens. Used by <Button variant="primary">

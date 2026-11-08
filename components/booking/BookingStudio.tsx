@@ -600,7 +600,7 @@ export function BookingStudio() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="min-h-13 rounded-full bg-brand-500 px-6 py-3.5 text-base font-bold text-ink transition-colors hover:bg-brand-400 disabled:opacity-60"
+                  className="min-h-13 rounded-full bg-brand-500 btn-gradient px-6 py-3.5 text-base font-bold text-ink transition-colors hover:bg-brand-400 disabled:opacity-60"
                 >
                   {status === "sending" ? t("sending") : t("submit")}
                 </button>

@@ -83,7 +83,7 @@ export function CompanyLegalCard() {
   ];
 
   return (
-    <div id="phap-ly" className="scroll-mt-28 overflow-hidden rounded-2xl bg-paper ring-1 ring-black/5">
+    <div id="phap-ly" className="card-premium is-static scroll-mt-28 overflow-hidden rounded-2xl">
       <div className="flex flex-wrap items-center justify-between gap-3 bg-ink px-5 py-4 text-white">
         <p className="flex items-center gap-2 text-sm font-bold">
           <BadgeCheck className="h-5 w-5 text-leaf-400" aria-hidden />
