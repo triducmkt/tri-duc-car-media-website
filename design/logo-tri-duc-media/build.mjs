@@ -1,7 +1,10 @@
 // Builds the "Đ kim đo" logo set for Trí Đức Media (vector SVG + PNG exports).
 // Not part of the website build. Run:
 //   NODE_PATH=<dir with opentype.js> node design/logo-tri-duc-media/build.mjs <fonts dir>
-// Fonts: Be Vietnam Pro ExtraBold + SemiBold (OFL, github.com/google/fonts/ofl/bevietnampro).
+// Fonts (v12, anh Đức chọn bản C 2026-11-08): name "TRÍ ĐỨC" in Playfair Display
+// Black (= lockup C anchor, docs/DESIGN-CORE-RULES.md), MEDIA + slogan in Be Vietnam
+// Pro SemiBold. The fonts dir must hold PlayfairDisplay-Black.ttf and
+// BeVietnamPro-SemiBold.ttf (OFL; google/fonts ofl/playfairdisplay, ofl/bevietnampro).
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
@@ -15,7 +18,9 @@ const sharp = require(path.resolve("node_modules/sharp"));
 const OUT = path.dirname(fileURLToPath(import.meta.url));
 const FONTS = process.argv[2];
 if (!FONTS) throw new Error("Usage: node build.mjs <fonts dir>");
-const heavy = opentype.loadSync(path.join(FONTS, "BeVietnamPro-ExtraBold.ttf"));
+const heavy = opentype.loadSync(path.join(FONTS, "PlayfairDisplay-Black.ttf"));
+// Name tracking +3% (lockup C anchor, rule V4).
+const NAME_TRACK = 0.03;
 const semi = opentype.loadSync(path.join(FONTS, "BeVietnamPro-SemiBold.ttf"));
 
 // v5 (2026-11-04): new palette from the founder's element — Mộc (Đại Lâm Mộc).
@@ -72,17 +77,43 @@ const ribPath = (hw = 4.6) => {
 };
 const RIB = ribPath();
 
-function mark({ spine, needle, arc, id, ticks = true, w = 14 }) {
+// v12: serif Đ-leaf for the name set in Playfair Display Black. Measured on the
+// font (1 mark unit = cap/84): stem 0.203em ≈ 24 units, bowl at its thickest
+// 0.21em ≈ 25 units, hairlines thin; left serifs overhang 0.071em ≈ 8.4 units.
+// Hairlines are kept at 6 units (not Playfair's ~3) so the leaf survives small
+// sizes and embroidery. The counter is offset like a Playfair D: thin top/bottom,
+// heavy right side.
+const SERIF = { stem: 24, bowl: 25, hair: 6, over: 8.4, foot: 5.5 };
+const leafInnerSerif = () => {
+  const t = 18 + SERIF.hair, b = 102 - SERIF.hair, r = 103 - SERIF.bowl, l = 22 + SERIF.stem;
+  return `M${l} ${t}H60C${r - 9} ${t} ${r} ${t + 14} ${r} 60C${r} ${b - 14} ${r - 10} ${b} 60 ${b}H${l}Z`;
+};
+// Bracketed left serifs (top + bottom), like Playfair's D / I.
+const serifFeet = () => {
+  // feet run 3 units INTO the stem so the two shapes overlap (no anti-alias seam)
+  const x0 = 22 - SERIF.over, h = SERIF.foot, xi = 25;
+  const top = `M${f(x0)} 18H${xi}V${f(18 + h + 6)}H22C22 ${f(18 + h + 1)} ${f(22 - 2.5)} ${f(18 + h)} ${f(x0 + 1.5)} ${f(18 + h)}H${f(x0)}Z`;
+  const bot = `M${f(x0)} 102H${xi}V${f(102 - h - 6)}H22C22 ${f(102 - h - 1)} ${f(22 - 2.5)} ${f(102 - h)} ${f(x0 + 1.5)} ${f(102 - h)}H${f(x0)}Z`;
+  return top + bot;
+};
+
+function mark({ spine, needle, arc, id, ticks = true, w = 14, serif = false }) {
   const leafFill = arc === "gradient" ? `url(#${id}-g)` : arc;
   const light = spine !== C.white;
   const defs =
     arc === "gradient"
       ? `<linearGradient id="${id}-g" gradientUnits="userSpaceOnUse" x1="22" y1="102" x2="97" y2="4"><stop offset="0.12" stop-color="${light ? C.navy : C.white}"/><stop offset="0.5" stop-color="${light ? C.sea : C.seaLight}"/><stop offset="0.95" stop-color="${light ? C.leaf : C.leafLight}"/></linearGradient>`
       : "";
-  const body = [
-    `<path fill="${leafFill}" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(w)}"/>`,
-    `<path fill="${needle}" d="${w === 14 ? RIB : ribPath(4.6 * (w / 14))}"/>`,
-  ].join("");
+  const body = serif
+    ? [
+        `<path fill="${leafFill}" fill-rule="evenodd" d="${LEAF_OUTER}${leafInnerSerif()}"/>`,
+        `<path fill="${leafFill}" d="${serifFeet()}"/>`,
+        `<path fill="${needle}" d="${ribPath(4.6 * (20 / 14))}"/>`,
+      ].join("")
+    : [
+        `<path fill="${leafFill}" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(w)}"/>`,
+        `<path fill="${needle}" d="${w === 14 ? RIB : ribPath(4.6 * (w / 14))}"/>`,
+      ].join("");
   return { defs, body };
 }
 
@@ -121,12 +152,15 @@ const capRatio = (font) => font.tables.os2.sCapHeight / font.unitsPerEm;
 // Block: cap of line 1 to baseline of line 2 = 84 units (matches mark ink height).
 const NAME = "TRÍ ĐỨC";
 const SUB = "MEDIA";
-const c1Share = 1 / (1 + 0.3 + 0.4); // cap1 : gap : cap2 = 1 : 0.30 : 0.40
+// v12: MEDIA cap = 0.30 × name cap (rule V1: the second voice's tallest stroke
+// is 0.30 of the first voice's capitals). Was 0.40 up to v11.
+const MEDIA_RATIO = 0.3;
+const c1Share = 1 / (1 + 0.3 + MEDIA_RATIO); // cap1 : gap : cap2
 const cap1 = 84 * c1Share;
 const s1 = cap1 / capRatio(heavy);
-const cap2 = cap1 * 0.4;
+const cap2 = cap1 * MEDIA_RATIO;
 const s2 = cap2 / capRatio(semi);
-const nameBox = inkBox(heavy, NAME, s1);
+const nameBox = inkBox(heavy, NAME, s1, s1 * NAME_TRACK);
 // MEDIA: open tracking (0.34em), aligned to the name's left edge.
 const subTracking = s2 * 0.34;
 const subBox = inkBox(semi, SUB, s2, subTracking);
@@ -154,7 +188,7 @@ function accentBoxes(x, y, size) {
       boxes.push({ x1: Math.min(...xs), x2: Math.max(...xs), y1: Math.min(...ys), y2: Math.max(...ys) });
     }
     let adv = g.advanceWidth * scale;
-    if (i < glyphs.length - 1) adv += heavy.getKerningValue(g, glyphs[i + 1]) * scale;
+    if (i < glyphs.length - 1) adv += heavy.getKerningValue(g, glyphs[i + 1]) * scale + size * NAME_TRACK;
     cx += adv;
   });
   // Ứ: the horn of Ư also rises above the cap line, so its raw box is too wide.
@@ -180,7 +214,7 @@ function wordmark(x, capTop, { name, sub, accent, align = "left" }) {
   const base2 = base1 + cap1 * 0.3 + cap2;
   const left = align === "center" ? x - nameBox.w / 2 : x;
   const subLeft = align === "center" ? x - subBox.w / 2 : x;
-  const n = textPath(heavy, NAME_PLAIN, left - nameBox.x1, base1, s1);
+  const n = textPath(heavy, NAME_PLAIN, left - nameBox.x1, base1, s1, s1 * NAME_TRACK);
   const leaves = accentBoxes(left - nameBox.x1, base1, s1).map(leafAccent).join("");
   const m = textPath(semi, SUB, subLeft - subBox.x1, base2, s2, subTracking);
   return {
@@ -216,7 +250,7 @@ function leafName(x0, capTop, t, id) {
       const b = gp.getBoundingBox();
       if (b.x1 !== b.x2) { x1 = Math.min(x1, b.x1); x2 = Math.max(x2, b.x2); }
       d += gp.toPathData(2);
-      pen += g.advanceWidth * scale + (i < gl.length - 1 ? heavy.getKerningValue(g, gl[i + 1]) * scale : 0);
+      pen += g.advanceWidth * scale + (i < gl.length - 1 ? heavy.getKerningValue(g, gl[i + 1]) * scale : 0) + s1 * NAME_TRACK;
     });
   };
   put("TR");
@@ -224,10 +258,11 @@ function leafName(x0, capTop, t, id) {
   put("I ");
   // the mark, scaled so its stem (84 units) equals the cap height
   const k = cap1 / 84;
-  const stemX = pen + 0.02 * s1;
-  const m = mark({ ...t, id, w: 20 }); // stroke ≈ ExtraBold stem at this scale
+  // v12: serif Đ-leaf; leave room for its left serifs (+ Playfair side bearing)
+  const stemX = pen + SERIF.over * k + 0.02 * s1;
+  const m = mark({ ...t, id, serif: true });
   const g = `<g transform="translate(${f(stemX - 22 * k)} ${f(capTop - 18 * k)}) scale(${f(k)})">${m.body}</g>`;
-  pen = stemX + (103 - 22) * k + 0.07 * s1;
+  pen = stemX + (103 - 22) * k + 0.05 * s1 + s1 * NAME_TRACK;
   const rawU = accentAt("Ứ", pen, base);
   const accU = { x1: rawU.x1, x2: rawU.x1 + (accI.x2 - accI.x1), y1: rawU.y1, y2: rawU.y1 + (accI.y2 - accI.y1) };
   put("ƯC");
@@ -275,7 +310,8 @@ function lowerBlock(nm, withTag) {
   let tag = "", bottom = base2;
   if (withTag) {
     const width = nm.x2 - nm.x1;
-    let size = s2 * 0.92;
+    // v12: third voice (rule V7) stays visibly below MEDIA (was 0.92 × MEDIA size)
+    let size = s2 * 0.78;
     const w0 = inkBox(semi, TAGLINE, size, size * 0.01).w;
     if (w0 > width * 0.96) size *= (width * 0.96) / w0;
     const tracking = size * 0.01;
@@ -380,7 +416,7 @@ function animFrame(t, id, sec) {
   const body =
     `<g opacity="${f(e("text"))}" transform="translate(0 ${f(ty)})"><path fill="${t.name}" d="${nm.parts.textD}"/></g>` +
     `<g transform="${nm.parts.markT}"><clipPath id="${id}-c"><rect x="-10" y="${f(clipTop)}" width="140" height="${f(110 - clipTop)}"/></clipPath>` +
-    `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(20)}"/>` +
+    `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInnerSerif()}"/><path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" d="${serifFeet()}"/>` +
     `<g transform="translate(${f(RIB_TAIL[0])} ${f(RIB_TAIL[1])}) rotate(${f(RIB_DEG)}) scale(${f(rib)} 1) rotate(${f(-RIB_DEG)}) translate(${f(-RIB_TAIL[0])} ${f(-RIB_TAIL[1])})"><path fill="${t.needle}" d="${ribPath(RIB_HW)}"/></g></g>` +
     pop("accI", nm.parts.acc[0]) + pop("accU", nm.parts.acc[1]) +
     `<path opacity="${f(e("media"))}" fill="${t.sub}" d="${P.L.media}"/>` +
@@ -402,7 +438,7 @@ function animatedSVG(t, id, withTag = true) {
   const body =
     `<g opacity="0"><animate attributeName="opacity" from="0" to="1" ${dur("text")} ${spl}/><animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" ${dur("text")} ${spl}/><path fill="${t.name}" d="${nm.parts.textD}"/></g>` +
     `<g transform="${nm.parts.markT}"><clipPath id="${id}-c"><rect x="-10" y="104" width="140" height="6"><animate attributeName="y" from="104" to="${MARK_TOP - 2}" ${dur("leaf")} ${spl}/><animate attributeName="height" from="6" to="${110 - (MARK_TOP - 2)}" ${dur("leaf")} ${spl}/></rect></clipPath>` +
-    `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInner(20)}"/>` +
+    `<path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" fill-rule="evenodd" d="${LEAF_OUTER}${leafInnerSerif()}"/><path clip-path="url(#${id}-c)" fill="url(#${P.gradId})" d="${serifFeet()}"/>` +
     `<g transform="translate(${f(RIB_TAIL[0])} ${f(RIB_TAIL[1])}) rotate(${f(RIB_DEG)})"><g transform="scale(0 1)"><animateTransform attributeName="transform" type="scale" from="0 1" to="1 1" ${dur("rib")} ${spl}/><g transform="rotate(${f(-RIB_DEG)}) translate(${f(-RIB_TAIL[0])} ${f(-RIB_TAIL[1])})"><path fill="${t.needle}" d="${ribPath(RIB_HW)}"/></g></g></g></g>` +
     pop("accI", nm.parts.acc[0]) + pop("accU", nm.parts.acc[1]) +
     `<path opacity="0" fill="${t.sub}" d="${P.L.media}"><animate attributeName="opacity" from="0" to="1" ${dur("media")} ${spl}/></path>` +

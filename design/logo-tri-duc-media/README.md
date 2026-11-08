@@ -51,5 +51,5 @@ Cam và vàng (v1–v4) đã thôi dùng. Theo anh Đức, đó chỉ là ý tư
 - **Tên thương hiệu là "Trí Đức Media".** Tên pháp lý "Công ty TNHH Trí Đức Car Media" chỉ dùng ở hóa đơn, hợp đồng và dòng pháp lý.
 
 ## Dựng lại
-Font: Be Vietnam Pro ExtraBold (dòng TRÍ ĐỨC) và SemiBold (dòng MEDIA), giấy phép OFL.
+Font (từ v12): **Playfair Display Black** (dòng TRÍ ĐỨC, giãn chữ +3%) và **Be Vietnam Pro SemiBold** (MEDIA, slogan), giấy phép OFL. Thư mục font truyền vào phải có `PlayfairDisplay-Black.ttf` (bản sao ở `scripts/fonts/`) và `BeVietnamPro-SemiBold.ttf` (tải từ github.com/google/fonts, thư mục `ofl/bevietnampro`). MEDIA cao 0,30 lần chữ in hoa của tên (quy tắc V1, `docs/DESIGN-CORE-RULES.md`). Bản v1–v11 dùng Be Vietnam Pro ExtraBold cho tên.
 `NODE_PATH=<thư mục có opentype.js> node design/logo-tri-duc-media/build.mjs <thư mục font>`
