@@ -14,23 +14,36 @@
 
 ## 1. Trọng lượng thị giác 2 giọng: chính 75% / phụ 25% (quy tắc V)
 
-Mọi cụm chữ có **2 giọng** — giọng chính (anchor) và giọng phụ (accent) — phải đọc ra **chính ≈ 75%, phụ ≈ 25%**
-trọng lượng thị giác. Áp dụng cho: lockup trên web (`components/Lockup.tsx`), chữ trên video / thumbnail
-(`docs/typography-lockup.md`), và **chữ của logo** (tên chính so với chữ phụ như MEDIA).
+Mọi cụm chữ có **2 giọng** — giọng chính (anchor, chữ IN HOA) và giọng phụ (accent, thư pháp) — phải đọc ra **chính áp đảo,
+phụ như lời chú thích** (chính ≈ 75%, phụ ≈ 25%). Áp dụng cho: lockup trên web (`components/Lockup.tsx`), chữ trên video /
+thumbnail (`docs/typography-lockup.md`), và **chữ của logo** (tên chính so với chữ phụ như MEDIA).
+
+**Trọng lượng thị giác đo bằng KÍCH THƯỚC mà mắt nhìn thấy: chiều cao + bề ngang + số dòng. KHÔNG đo bằng diện tích mực**
+(đã thử 08/11/2026: thư pháp nét mảnh nên muốn "đủ mực" phải phóng to ngang chữ chính, kết quả nhìn ra 50/50 — anh Đức bác).
+
+### 3 quy tắc cốt lõi (anh Đức chốt 08/11/2026)
 
 | Mã | Quy tắc | Cách kiểm |
 |---|---|---|
-| **V1** | **Trọng lượng thị giác = diện tích mực**: số điểm ảnh mà nét chữ thật sự phủ, đo bằng font thật, cỡ thật, chữ hoa/thường thật. Giọng phụ chiếm **25%** tổng mực của 2 giọng, **được phép 20–30%**. Cả 2 giọng cùng một màu nên chỉ cần đo mực. | `npm run lockup:check` (đo trên trình duyệt, máy tính + điện thoại) |
-| **V2** | Dòng giọng phụ **không rộng hơn** dòng dài nhất của giọng chính. | `lockup:check` (cột width) |
-| **V3** | Nét móc của giọng phụ (g, y, đ…) **không chạm dấu** của giọng chính (Ẫ, Ể, Ố…). Độ chồng 2 dòng tính theo cỡ giọng chính (`-0.08em`), không theo cỡ giọng phụ. | Chụp màn hình, nhìn tận mắt |
-| **V4** | Giọng chính: Playfair Display 900, IN HOA, giãn chữ +3%, giãn dòng 1,18. Giọng phụ: Great Vibes, chữ thường như gõ, **ngắn (≤ 7 chữ)**. Một màu cho cả 2 (trắng + bóng mờ 40% trên nền tối, ink trên nền sáng). | Đọc code |
-| **V5** | Cân 75/25 bằng **`accentScale`** (cỡ giọng phụ ÷ cỡ giọng chính), cho phép **0,9–1,7**. Ngoài khoảng này → **viết lại câu** (giọng phụ ngắn hơn hoặc giọng chính dài hơn), không ép cỡ. Đổi câu là phải đo lại. | `lockup:check` |
-| **V6** | Tiết chế: mỗi màn hình tối đa 1 lockup. Trang chủ = hero + đúng 3 section. Trang con = 1 lockup ở đầu trang. Thêm chỗ mới phải hỏi anh Đức. | Đọc code |
-| **V7** | Giọng thứ ba (nhãn số liệu, slogan dưới logo) **không tính** vào cặp 75/25. Nó phải nhỏ hơn hẳn giọng phụ và chỉ dùng chữ không chân của web. | Nhìn |
+| **V1** | **Nét cao nhất của dòng phụ = 0,30 × chiều cao chữ in hoa của dòng chính** (cho phép 0,27–0,33). "Nét cao nhất" = nét chữ cao nhất của thư pháp (h, l, đ, k, b, chữ hoa…), tính từ chân chữ; **không tính dấu** (sắc, huyền, mũ… là dấu, không phải nét). Ví dụ: chữ in hoa cao 60px → nét cao nhất thư pháp 18px. | `npm run lockup:qc` (tính từ file font) + `npm run lockup:check` (đo trên trang thật) |
+| **V8** | **Dòng chính và dòng phụ mỗi dòng nằm trên ĐÚNG 1 DÒNG ở ≥ 90% số lockup** (đếm trên máy tính 1280px và điện thoại 390px). Chỉ được xuống dòng khi cắt câu sẽ sai ý, lệch ý hoặc tối nghĩa; khi đó ngắt dòng có chủ đích bằng ký tự xuống dòng (viết `\n`) trong câu chữ. Dòng chính tự co cỡ cho vừa khung, không bao giờ tràn hay tự rớt dòng. | `lockup:qc` + `lockup:check` |
+| **V9** | **Bắt buộc loop QC:** đo → nếu bất kỳ quy tắc nào chưa đạt → **viết lại cả 2 giọng** (rút gọn dòng chính, đổi chữ dòng phụ) → đo lại → lặp tới khi `lockup:qc` và `lockup:check` đều báo đạt. **Không** sửa bằng cách ép cỡ chữ, giảm giãn chữ hay thêm ngoại lệ. Ghi số vòng lặp vào log. | 2 lệnh trên phải ra ✓ trước khi commit |
 
-Nơi đặt cỡ: `accentScale` nằm cạnh câu chữ, gồm `messages/*.json` (`*AccentScale`) và `lib/servicesCatalog.ts`
-(`accentScale`). Lý do: cùng một tỷ lệ cỡ nhưng câu dài ngắn khác nhau thì trọng lượng khác nhau, nên mỗi câu có số riêng.
-Bài học 08/11/2026: tỷ lệ cỡ cố định (1,02) cho ra phụ 11–53% tùy câu, chỉ 9/40 lockup đạt.
+### Quy tắc đi kèm
+
+| Mã | Quy tắc |
+|---|---|
+| **V2** | Dòng phụ **không rộng hơn** dòng dài nhất của dòng chính. |
+| **V3** | Nét móc của dòng phụ (g, y…) **không chạm dấu** của dòng chính (Ẫ, Ể, Ố…). Khoảng cách 2 dòng tính theo cỡ dòng chính. |
+| **V4** | Dòng chính: Playfair Display 900, IN HOA, giãn chữ +3%, giãn dòng 1,18, ưu tiên ≤ 15 ký tự. Dòng phụ: Great Vibes, chữ thường như gõ, **≤ 5 chữ**, tắt ghép chữ (ligature) để nét không vượt số đo. Một màu cho cả 2 (trắng + bóng mờ 40% trên nền tối, ink trên nền sáng). |
+| **V6** | Tiết chế: mỗi màn hình tối đa 1 lockup. Trang chủ = hero + đúng 3 section. Trang con = 1 lockup ở đầu trang. Thêm chỗ mới phải hỏi anh Đức. |
+| **V7** | Giọng thứ ba (nhãn số liệu, slogan dưới logo, tên đầy đủ của dịch vụ dưới lockup) không tính vào cặp 2 giọng; dùng chữ không chân của web. |
+| **V10** | Dòng phụ trên điện thoại **≥ 12px**. Nếu không đạt → dòng chính phải ngắn lại để được to hơn (V9). Lưu ý: theo V1, thư pháp rất nhỏ; 12–15px trên điện thoại là mức tối thiểu còn đọc được. |
+
+**Cách hệ thống làm:** `npm run lockup:qc` đọc câu chữ (`messages/*.json`, `lib/servicesCatalog.ts`), đo bằng file font thật
+(`scripts/fonts/`), ghi `lib/lockupMetrics.json` (bề ngang dòng chính + tỷ lệ cỡ dòng phụ cho từng câu). `<Lockup>` đọc file
+này: dòng chính co vừa khung trên 1 dòng, dòng phụ đúng 0,30. **Đổi câu nào cũng phải chạy lại `lockup:qc`** (thiếu số đo thì
+lockup hiện cỡ dự phòng và cảnh báo ở môi trường dev).
 
 ## 2. Màu (tóm tắt — chi tiết `docs/color-system.md`)
 
@@ -56,7 +69,7 @@ khác 5% (đỏ chỉ cho cảnh báo). Không dùng bảng màu mặc định T
 |---|---|
 | `npm run colors:check` | Luôn luôn |
 | `npm run fonts:check` | Luôn luôn |
-| `npm run lockup:check` (cần `npm run dev` đang chạy, hoặc truyền URL website) | Khi sửa lockup, câu chữ của lockup, font, cỡ chữ |
+| `npm run lockup:qc` rồi `npm run lockup:check` (cần `npm run dev` đang chạy, hoặc truyền URL website) | Khi sửa lockup, câu chữ của lockup, font, cỡ chữ (loop V9 tới khi cả 2 ✓) |
 | `npx tsc --noEmit` + eslint file đã sửa | Khi sửa code |
 | Chụp màn hình 1280px + 390px | Khi sửa giao diện |
 

@@ -1,27 +1,31 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import metrics from "@/lib/lockupMetrics.json";
 
 /**
- * Lockup C — "2 giọng" heading (docs/typography-lockup.md, anh Đức chốt
- * 05/11/2026; backlog F4–F7). Same build as video template
- * TPL_EDITORIAL_DUAL_TYPE_12:
- *   accent  — Great Vibes calligraphy, lowercase as written, tucked onto the
- *             top of the anchor (≈ 25% visual weight)
- *   anchor  — Playfair Display 900, uppercase, +3% tracking, leading 1.18
- *             (≈ 75%)
- * One colour for both lines (white on dark with a soft 40% diffused shadow;
- * ink on light, no shadow). No stroke, no box, no brand colour.
+ * Lockup C — "2 giọng" heading. Rules: docs/DESIGN-CORE-RULES.md (V1–V10).
+ *   accent  — Great Vibes calligraphy, lowercase as written. Its TALLEST
+ *             stroke is 0.30 × the anchor's cap height (V1).
+ *   anchor  — Playfair Display 900, uppercase, +3% tracking. One line (V8),
+ *             fitted to the column: font-size = min(size max, column ÷ width).
+ *             A "\n" in the copy is an intentional break (counted as an
+ *             exception to V8 — max 10% of lockups).
+ * Both numbers come from lib/lockupMetrics.json, generated from the real font
+ * files by `npm run lockup:qc` — run it after ANY copy change (V9 QC loop).
+ * One colour for both lines; no stroke, box or brand colour.
  *
- * Motion (same as video): anchor fades + rises + unblurs (700 ms, delay
- * 350 ms), then the accent writes on left → right (900 ms, delay 650 ms).
- * `reveal="load"` plays on page load (hero); `reveal="view"` plays the first
- * time the heading scrolls into view — only if it starts below the fold, so
- * nothing ever disappears in front of the reader. prefers-reduced-motion:
- * shown at rest, no motion. Styles: `.lockup*` in app/globals.css.
- *
- * Use sparingly: hero, page titles and at most 2–3 home sections.
+ * Motion (same as video #12): anchor fades + rises + unblurs, then the accent
+ * writes on left → right. reveal="load" plays on page load; reveal="view" the
+ * first time it scrolls in (only if it starts below the fold).
  */
+type Metrics = {
+  fitSafety: number;
+  anchors: Record<string, number>;
+  accents: Record<string, { scale: number; em: number }>;
+};
+const M = metrics as Metrics;
+
 export function Lockup({
   accent,
   anchor,
@@ -30,32 +34,31 @@ export function Lockup({
   tone = "dark",
   align = "left",
   reveal = "view",
-  accentScale = 1,
   className = "",
 }: {
   accent: string;
+  /** Copy as written; rendered uppercase. "\n" = intentional line break. */
   anchor: string;
   as?: "h1" | "h2";
-  /** hero: home hero · page: short page titles (about) · title: long page
-   *  titles (service names) · section: home sections. */
+  /** Largest anchor size: hero 96px · page 72px · title 64px · section 64px. */
   size?: "hero" | "page" | "title" | "section";
   /** Background the lockup sits on. */
   tone?: "dark" | "light";
   align?: "left" | "center";
   reveal?: "load" | "view";
-  /** Accent size ÷ anchor size. Tune per copy so the lockup reads 75/25 by
-   *  ink area (docs/DESIGN-CORE-RULES.md V1); allowed 0.9–1.7. Verify with
-   *  `npm run lockup:check`. */
-  accentScale?: number;
   className?: string;
 }) {
   const ref = useRef<HTMLHeadingElement | null>(null);
+  const anchorEm = M.anchors[anchor.toUpperCase()];
+  const accentScale = M.accents[accent]?.scale;
+  if (process.env.NODE_ENV !== "production" && (!anchorEm || !accentScale)) {
+    console.warn(`[Lockup] "${accent} / ${anchor}" chưa có số đo — chạy npm run lockup:qc (V9).`);
+  }
 
   useEffect(() => {
     const el = ref.current;
     if (!el || reveal !== "view") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    // Already on screen at hydration → leave it at rest (no flash).
     if (el.getBoundingClientRect().top < window.innerHeight) return;
     el.dataset.armed = "";
     const io = new IntersectionObserver(
@@ -71,18 +74,31 @@ export function Lockup({
     return () => io.disconnect();
   }, [reveal]);
 
+  const lines = anchor.split("\n");
   return (
-    <Tag
-      ref={ref}
-      className={`lockup lockup-${size} ${className}`}
-      data-tone={tone}
-      data-align={align}
-      data-play={reveal === "load" ? "" : undefined}
-      style={{ ["--accent-scale" as string]: accentScale }}
-    >
-      <span className="lockup-accent">{accent}</span>
-      <span className="sr-only"> </span>
-      <span className="lockup-anchor">{anchor}</span>
-    </Tag>
+    <div className="lockup-box" data-align={align}>
+      <Tag
+        ref={ref}
+        className={`lockup lockup-${size} ${className}`}
+        data-tone={tone}
+        data-fit={anchorEm ? "" : undefined}
+        data-play={reveal === "load" ? "" : undefined}
+        style={{
+          ["--anchor-em" as string]: anchorEm ?? undefined,
+          ["--fit-safety" as string]: M.fitSafety,
+          ["--accent-scale" as string]: accentScale ?? 0.34,
+        }}
+      >
+        <span className="lockup-accent">{accent}</span>
+        <span className="sr-only"> </span>
+        <span className="lockup-anchor">
+          {lines.map((ln, i) => (
+            <span key={i} className="lockup-line">
+              {ln}
+            </span>
+          ))}
+        </span>
+      </Tag>
+    </div>
   );
 }

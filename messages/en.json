@@ -58,14 +58,11 @@
     "ctaBannerBody": "Book a 1-1 consultation with Tang Tri Duc to assess your current state and design the right growth roadmap for your business.",
     "ctaBannerButton": "Book a consultation now",
     "servicesAccent": "one system,",
-    "servicesAnchor": "5 pillars of growth",
-    "founderAccent": "not just an agency,",
-    "founderAnchor": "A strategic partner.",
+    "servicesAnchor": "5 pillars",
+    "founderAccent": "not an agency,",
+    "founderAnchor": "A true partner",
     "ctaBannerAccent": "owner away,",
-    "ctaBannerAnchor": "Customers still come.",
-    "servicesAccentScale": 1.66,
-    "founderAccentScale": 1.29,
-    "ctaBannerAccentScale": 1.68
+    "ctaBannerAnchor": "Still busy."
   },
   "systemHero": {
     "ariaLabel": "Introduction",
@@ -76,8 +73,8 @@
       "title": "Free the owner",
       "sub": "A real Marketing – Sales – Customer Care system, so your business keeps running when you're not there.",
       "scrollHint": "SCROLL TO EXPLORE",
-      "accent": "so the business runs itself,",
-      "accentScale": 1
+      "accent": "so you can rest,",
+      "lockupAnchor": "Free the owner"
     },
     "caps": [
       {
@@ -548,8 +545,7 @@
     "visionHeading": "1,000 owners away for 30 days, businesses still growing.",
     "vision": "By 2031, Trí Đức Media helps 1,000 owners of service businesses, centers and shops across Vietnam rest and be away for 30 days while their business keeps growing. The owner moves from doer and operator to owner — a business that grows without them being there.",
     "visionCta": "See the Freedom Ladder",
-    "nameAccent": "the journey with",
-    "nameAccentScale": 1
+    "nameAccent": "the journey with"
   },
   "caseMap": {
     "eyebrow": "Where we work",

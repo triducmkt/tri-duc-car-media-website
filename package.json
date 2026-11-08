@@ -21,7 +21,8 @@
     "blog:check": "node scripts/import-fanpage-posts.mjs --dry-run",
     "blog:import": "node --env-file=.env.local scripts/import-fanpage-posts.mjs",
     "colors:check": "node scripts/check-colors.mjs",
-    "lockup:check": "node scripts/check-lockup-weight.mjs"
+    "lockup:check": "node scripts/check-lockup-weight.mjs",
+    "lockup:qc": "node scripts/lockup-qc.mjs"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
@@ -46,6 +47,7 @@
     "@types/three": "^0.170.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
+    "opentype.js": "^1.3.4",
     "sanity": "^6.10.1",
     "styled-components": "^6.5.3",
     "tailwindcss": "^4",

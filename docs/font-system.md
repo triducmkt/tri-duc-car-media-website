@@ -14,7 +14,7 @@
 | **script** (từ 08/11/2026) | Great Vibes | `--tdcm-font-script` | `font-script` | 400 | **Chỉ** dòng thư pháp của lockup C, qua `<Lockup>` |
 
 Hai vai trò lockup/script tải với `preload: false`: trang không có lockup không tải file font này.
-Quy cách lockup và chỗ được dùng: `docs/typography-lockup.md` mục 11.
+Quy cách lockup và chỗ được dùng: `docs/typography-lockup.md` mục 11. Cỡ của 2 vai trò này không đặt tay: theo quy tắc V1/V8 trong `docs/DESIGN-CORE-RULES.md`, sinh bởi `npm run lockup:qc`.
 
 Cả 3 font đều **có subset `vietnamese`** trên Google Fonts, tự host qua `next/font`
 (không gọi Google lúc chạy, không nháy font).

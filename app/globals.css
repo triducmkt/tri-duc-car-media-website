@@ -124,18 +124,35 @@ body {
   box-shadow: var(--shadow-lift-3);
 }
 
-/* Lockup C — components/Lockup.tsx, docs/typography-lockup.md (backlog F4–F7).
-   Font size is set on the heading (= anchor size); the accent is 1.02em of it,
-   tucked 0.17em onto the anchor's cap line, like video template #12. */
+/* Lockup C — components/Lockup.tsx · rules V1–V10 in docs/DESIGN-CORE-RULES.md.
+   The heading's font-size IS the anchor size: fitted to the column so the
+   anchor stays on one line (--anchor-em from lib/lockupMetrics.json), capped
+   per size class. The accent is --accent-scale em of it, so its tallest
+   stroke = 0.30 × the anchor cap height. */
+.lockup-box {
+  container-type: inline-size;
+  width: 100%;
+  align-self: stretch;
+}
+.lockup-box[data-align="center"] {
+  text-align: center;
+}
 .lockup {
+  --lk-max: 4rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-wrap: balance;
+  font-size: var(--lk-max);
 }
-.lockup[data-align="center"] {
+.lockup[data-fit] {
+  font-size: min(var(--lk-max), calc(100cqw / var(--anchor-em) * var(--fit-safety, 0.97)));
+}
+.lockup-hero { --lk-max: 6rem; }
+.lockup-page { --lk-max: 4.5rem; }
+.lockup-title,
+.lockup-section { --lk-max: 4rem; }
+.lockup-box[data-align="center"] .lockup {
   align-items: center;
-  text-align: center;
 }
 .lockup[data-tone="dark"] {
   color: var(--color-paper);
@@ -149,36 +166,35 @@ body {
   z-index: 1;
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: calc(var(--accent-scale, 1) * 1em);
-  line-height: 1.1;
+  font-size: calc(var(--accent-scale, 0.34) * 1em);
+  line-height: 1.25;
   letter-spacing: 0;
   text-transform: none;
-  margin-inline-start: 0.12em;
-  /* Overlap fixed in ANCHOR em (divide by the scale) so a bigger accent does
-     not drop its descenders onto the anchor diacritics (rule V3). */
-  margin-bottom: calc(-0.08em / var(--accent-scale, 1));
+  /* No ligatures / contextual swashes: Great Vibes "th", "ht"… rise above
+     the measured tallest stroke and would break V1. */
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0, "calt" 0, "dlig" 0;
+  white-space: nowrap;
+  margin-inline-start: 0.06em;
+  /* Small gap above the anchor, fixed in ANCHOR em so descenders never touch
+     the anchor's diacritics (V3). */
+  margin-bottom: calc(0.02em / var(--accent-scale, 0.34));
 }
-.lockup[data-align="center"] .lockup-accent {
+.lockup-box[data-align="center"] .lockup-accent {
   margin-inline-start: 0;
 }
 .lockup-anchor {
+  display: flex;
+  flex-direction: column;
+  align-items: inherit;
   font-family: var(--font-lockup);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   line-height: 1.18;
 }
-.lockup-hero {
-  font-size: clamp(2.35rem, 1.2rem + 4.6vw, 4.25rem);
-}
-.lockup-page {
-  font-size: clamp(1.9rem, 1.1rem + 2.9vw, 3.25rem);
-}
-.lockup-section {
-  font-size: clamp(1.85rem, 1.15rem + 2.4vw, 3rem);
-}
-.lockup-title {
-  font-size: clamp(1.6rem, 1.05rem + 1.8vw, 2.55rem);
+.lockup-line {
+  white-space: nowrap;
 }
 @keyframes lockup-rise {
   from { opacity: 0; transform: translateY(0.22em); filter: blur(4px); }

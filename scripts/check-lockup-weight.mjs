@@ -1,14 +1,15 @@
 #!/usr/bin/env node
-// Lockup visual-weight audit — rule V1 in docs/DESIGN-CORE-RULES.md.
-// Every <Lockup> must read as anchor ≈ 75% / accent ≈ 25% of visual weight.
+// Lockup render audit — rules V1, V2, V8, V10 in docs/DESIGN-CORE-RULES.md,
+// checked on the REAL rendered page (real web fonts, real computed sizes),
+// at desktop 1280px and phone 390px. Companion of `npm run lockup:qc`, which
+// works from the font files and writes lib/lockupMetrics.json.
 //
-// Visual weight = INK AREA: the number of pixels the glyphs actually fill,
-// rasterised in the page with the real web fonts, real computed font-size,
-// weight, letter-spacing and case. Both lines share one colour, so ink area
-// alone decides the balance. Line wrapping does not change ink area.
-//
-// Pass band: accent share 20–30 % of (accent + anchor) ink. Also checks the
-// accent line is not wider than the anchor's widest line (rule V2).
+//   V1  accent tallest stroke ÷ anchor cap height = 0.30 (pass 0.27–0.33).
+//       Measured by rasterising the accent (diacritics removed — marks, not
+//       strokes) and the letter H in the anchor font, ink top above baseline.
+//   V2  accent line not wider than the anchor's widest line.
+//   V8  anchor on ONE line, nothing clipped; ≥ 90% of all lockup instances.
+//   V10 accent font-size ≥ 12px on the phone.
 //
 // Usage (needs Chrome + a running site):
 //   npm run lockup:check                         → http://localhost:3000
@@ -28,7 +29,7 @@ const PAGES = [
   ...["he-thong-marketing-sales-cskh", "thuong-hieu-ca-nhan-chu-doanh-nghiep", "chuan-hoa-sop-dao-tao-doi-ngu", "setup-phong-marketing-in-house", "nen-tang-so-sme-os"].flatMap((s) => [`/vi/services/${s}`, `/en/services/${s}`]),
 ];
 const WIDTHS = [1280, 390];
-const MIN = 0.2, MAX = 0.3;
+const RATIO = 0.3, TOL = 0.03, MIN_SCRIPT_PX = 12, SINGLE_SHARE = 0.9;
 
 const chromePath =
   process.env.CHROME ||
@@ -59,39 +60,52 @@ ws.onmessage = (m) => {
 const send = (method, params = {}) => new Promise((r) => { const i = ++id; pending.set(i, r); ws.send(JSON.stringify({ id: i, method, params })); });
 const evaluate = async (expression) => (await send("Runtime.evaluate", { expression, awaitPromise: true, returnByValue: true })).result?.result?.value;
 
-// Runs in the page: rasterise each line's text with its computed style.
+// Runs in the page.
 const MEASURE = `(async () => {
   await document.fonts.ready;
-  const ink = (el, upper) => {
-    const cs = getComputedStyle(el);
-    const text = upper ? el.textContent.toUpperCase() : el.textContent;
+  const strip = (s) => s.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D");
+  // Ink height above the alphabetic baseline, px.
+  const top = (text, cs) => {
     const size = parseFloat(cs.fontSize);
     const c = document.createElement("canvas");
     const ctx = c.getContext("2d", { willReadFrequently: true });
     const font = cs.fontStyle + " " + cs.fontWeight + " " + cs.fontSize + " " + cs.fontFamily;
     ctx.font = font;
-    if (cs.letterSpacing !== "normal") ctx.letterSpacing = cs.letterSpacing;
     c.width = Math.ceil(ctx.measureText(text).width + size * 2);
-    c.height = Math.ceil(size * 2.6);
+    c.height = Math.ceil(size * 3);
     ctx.font = font;
-    if (cs.letterSpacing !== "normal") ctx.letterSpacing = cs.letterSpacing;
-    ctx.textBaseline = "middle";
-    ctx.fillText(text, size, c.height / 2);
-    const px = ctx.getImageData(0, 0, c.width, c.height).data;
-    let n = 0;
-    for (let i = 3; i < px.length; i += 4) n += px[i] / 255;
-    return n;
+    // Non-zero spacing turns canvas ligatures off, matching the page CSS
+    // (font-variant-ligatures: none on the accent).
+    ctx.letterSpacing = "0.01px";
+    ctx.textBaseline = "alphabetic";
+    const base = Math.round(size * 2);
+    ctx.fillText(text, size, base);
+    const px = ctx.getImageData(0, 0, c.width, base).data;
+    for (let y = 0; y < base; y++)
+      for (let x = 0; x < c.width; x++) if (px[(y * c.width + x) * 4 + 3] > 96) return base - y;
+    return 0;
   };
   return [...document.querySelectorAll(".lockup")].map((l) => {
     const a = l.querySelector(".lockup-accent"), b = l.querySelector(".lockup-anchor");
-    const ia = ink(a, false), ib = ink(b, true);
-    const aw = a.getBoundingClientRect().width;
-    const bw = Math.max(...[...b.getClientRects()].map((r) => r.width));
-    return { accent: a.textContent, anchor: b.textContent, share: ia / (ia + ib), accentW: Math.round(aw), anchorW: Math.round(bw) };
+    const acs = getComputedStyle(a), bcs = getComputedStyle(b);
+    const tall = top(strip(a.textContent), acs);
+    const cap = top("H", bcs);
+    const lines = [...b.querySelectorAll(".lockup-line")];
+    const box = l.parentElement.getBoundingClientRect().width;
+    const widest = Math.max(...lines.map((s) => s.getBoundingClientRect().width));
+    const lineH = parseFloat(bcs.fontSize) * 1.18;
+    const wrapped = lines.some((s) => s.getBoundingClientRect().height > lineH * 1.5);
+    const clipped = widest > box + 1;
+    return {
+      accent: a.textContent, anchor: lines.map((s) => s.textContent).join(" ⏎ "),
+      ratio: tall / cap, lines: lines.length, wrapped, clipped,
+      accentW: a.getBoundingClientRect().width, anchorW: widest,
+      accentPx: parseFloat(acs.fontSize), anchorPx: parseFloat(bcs.fontSize),
+    };
   });
 })()`;
 
-let fails = 0;
+let fails = 0, instances = 0, single = 0;
 const rows = [];
 for (const W of WIDTHS) {
   await send("Emulation.setDeviceMetricsOverride", { width: W, height: 900, deviceScaleFactor: 1, mobile: W < 600 });
@@ -103,28 +117,37 @@ for (const W of WIDTHS) {
       res = await evaluate(`document.readyState === "complete" && document.querySelector(".lockup") ? ${MEASURE} : null`);
       if (res) break;
     }
-    if (!res) { rows.push({ page: p, w: W, lockup: "(none found)", share: "-", width: "-", ok: "✗" }); fails++; continue; }
+    if (!res) { rows.push({ page: p, w: W, lockup: "(không thấy lockup)", ok: "✗" }); fails++; continue; }
     for (const r of res) {
-      const shareOk = r.share >= MIN && r.share <= MAX;
-      const widthOk = r.accentW <= r.anchorW * 1.0 + 2;
-      if (!shareOk || !widthOk) fails++;
+      instances++;
+      const one = r.lines === 1 && !r.wrapped && !r.clipped;
+      if (one) single++;
+      const bad = [];
+      if (Math.abs(r.ratio - RATIO) > TOL) bad.push(`V1 ${r.ratio.toFixed(2)}`);
+      if (r.accentW > r.anchorW + 2) bad.push("V2 rộng");
+      if (r.wrapped || r.clipped) bad.push(r.clipped ? "V8 tràn" : "V8 xuống dòng");
+      if (W < 600 && r.accentPx < MIN_SCRIPT_PX) bad.push(`V10 ${r.accentPx.toFixed(1)}px`);
+      if (bad.length) fails++;
       rows.push({
-        page: p,
-        w: W,
-        lockup: `${r.accent} / ${r.anchor}`.slice(0, 58),
-        share: `${(r.share * 100).toFixed(1)}%`,
-        width: `${r.accentW}/${r.anchorW}`,
-        ok: shareOk && widthOk ? "✓" : shareOk ? "✗ width" : "✗ weight",
+        page: p, w: W,
+        lockup: `${r.accent} / ${r.anchor}`.slice(0, 48),
+        "nét/cap": r.ratio.toFixed(3),
+        "dòng": r.lines + (r.wrapped ? "+" : ""),
+        "px chính/phụ": `${r.anchorPx.toFixed(0)}/${r.accentPx.toFixed(1)}`,
+        ok: bad.length ? "✗ " + bad.join(", ") : "✓",
       });
     }
   }
 }
 ws.close();
 chrome.kill();
-console.log(`\nLockup visual weight — accent share target ${MIN * 100}–${MAX * 100}% (docs/DESIGN-CORE-RULES.md V1), accent width ≤ anchor (V2)\n`);
+console.log(`\nLockup render — V1 nét cao nhất thư pháp = ${RATIO}±${TOL} × chữ in hoa · V2 · V8 một dòng ≥ ${SINGLE_SHARE * 100}% · V10 ≥ ${MIN_SCRIPT_PX}px\n`);
 console.table(rows);
+const share = single / (instances || 1);
+console.log(`Một dòng: ${single}/${instances} (${(share * 100).toFixed(0)}%)`);
+if (share < SINGLE_SHARE) fails++;
 if (fails) {
-  console.error(`✗ ${fails} lockup(s) outside the 75/25 rule`);
+  console.error(`✗ ${fails} lỗi — viết lại câu, chạy npm run lockup:qc rồi kiểm lại (V9)`);
   process.exit(1);
 }
-console.log("✓ Every lockup reads 75 / 25.");
+console.log("✓ Mọi lockup đạt core rules khi hiển thị thật.");

@@ -48,8 +48,8 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
               {t("pillar", { n: index + 1 })}
             </p>
             <Lockup as="h1" size="title" reveal="load" accent={s.accent[locale]}
-              anchor={s.name[locale]}
-              accentScale={s.accentScale[locale]} />
+              anchor={s.lockupAnchor[locale]} />
+            <p className="font-display text-base font-semibold text-white/80 sm:text-lg">{s.name[locale]}</p>
             <p className="max-w-2xl text-white/75 sm:text-lg">{s.pitch[locale]}</p>
           </div>
 

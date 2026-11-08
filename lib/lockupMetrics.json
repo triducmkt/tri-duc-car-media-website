@@ -1,0 +1,107 @@
+{
+  "tallestRatio": 0.3,
+  "fitSafety": 0.97,
+  "anchors": {
+    "GIẢI PHÓNG\nNGƯỜI CHỦ": 6.565,
+    "5 TRỤ CỘT": 5.531,
+    "ĐỐI TÁC THẬT": 7.842,
+    "KHÁCH VẪN\nĐÔNG.": 6.401,
+    "TĂNG TRÍ ĐỨC": 7.697,
+    "MKT SALES CSKH": 9.361,
+    "THƯƠNG HIỆU": 7.632,
+    "SOP & ĐÀO TẠO": 8.633,
+    "PHÒNG MKT": 6.703,
+    "SME OS": 4.041,
+    "FREE THE OWNER": 9.583,
+    "5 PILLARS": 5.309,
+    "A TRUE PARTNER": 9.184,
+    "STILL BUSY.": 6.424,
+    "TANG TRI DUC": 7.697,
+    "MKT · SALES · CS": 8.86,
+    "OWNER BRAND": 8.123,
+    "SOP & TRAINING": 9.026,
+    "IN-HOUSE TEAM": 8.803
+  },
+  "accents": {
+    "để doanh nghiệp tự chạy,": {
+      "scale": 0.3377,
+      "em": 2.3644
+    },
+    "một hệ thống,": {
+      "scale": 0.3482,
+      "em": 1.3252
+    },
+    "không phải agency,": {
+      "scale": 0.3482,
+      "em": 1.9231
+    },
+    "chủ vắng,": {
+      "scale": 0.3482,
+      "em": 0.9548
+    },
+    "hành trình cùng": {
+      "scale": 0.3482,
+      "em": 1.5227
+    },
+    "khách cũ quay về,": {
+      "scale": 0.3482,
+      "em": 1.7539
+    },
+    "của chính người chủ,": {
+      "scale": 0.3482,
+      "em": 1.9892
+    },
+    "đúng cả khi chủ vắng,": {
+      "scale": 0.3377,
+      "em": 2.097
+    },
+    "đội ngũ của riêng bạn,": {
+      "scale": 0.3377,
+      "em": 2.1274
+    },
+    "nắm mọi con số,": {
+      "scale": 0.4379,
+      "em": 1.9707
+    },
+    "so you can rest,": {
+      "scale": 0.4023,
+      "em": 1.7499
+    },
+    "one system,": {
+      "scale": 0.4023,
+      "em": 1.2869
+    },
+    "not an agency,": {
+      "scale": 0.4023,
+      "em": 1.6582
+    },
+    "owner away,": {
+      "scale": 0.4699,
+      "em": 1.7218
+    },
+    "the journey with": {
+      "scale": 0.3482,
+      "em": 1.577
+    },
+    "customers come back,": {
+      "scale": 0.342,
+      "em": 2.034
+    },
+    "people trust people,": {
+      "scale": 0.3377,
+      "em": 1.7934
+    },
+    "right without you,": {
+      "scale": 0.3482,
+      "em": 1.7768
+    },
+    "a team of your own,": {
+      "scale": 0.3377,
+      "em": 1.8971
+    },
+    "every number, one screen,": {
+      "scale": 0.342,
+      "em": 2.4113
+    }
+  }
+}

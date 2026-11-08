@@ -33,9 +33,9 @@ export type Service = {
   name: L;
   /** Calligraphy line of the page-title lockup (components/Lockup.tsx). */
   accent: L;
-  /** Accent size ÷ anchor size, tuned so the lockup reads 75/25 by ink
-   *  (docs/DESIGN-CORE-RULES.md V1, verified by `npm run lockup:check`). */
-  accentScale: { vi: number; en: number };
+  /** Short anchor of the page-title lockup (≤ ~15 chars, one line — V8). The
+   *  full official `name` is still shown under it and used for metadata. */
+  lockupAnchor: L;
   pitch: L; // one line under the name
   fit: L;
   includes: LL;
@@ -53,8 +53,8 @@ export const SERVICES: Service[] = [
       vi: "Tư vấn & Triển khai Hệ thống Marketing – Sales – CSKH",
       en: "Marketing – Sales – Customer Care System",
     },
-    accent: { vi: "khách tự tìm đến, tự quay lại,", en: "customers find you and come back," },
-    accentScale: { vi: 1.62, en: 1.34 },
+    accent: { vi: "khách cũ quay về,", en: "customers come back," },
+    lockupAnchor: { vi: "MKT Sales CSKH", en: "MKT · Sales · CS" },
     pitch: {
       vi: "Khách tìm thấy, được tư vấn đúng kịch bản, rồi quay lại — chạy đều mỗi tuần mà không cần chủ cầm tay.",
       en: "Customers find you, get consistent advice, and come back — every week, without the owner holding every hand.",
@@ -100,8 +100,8 @@ export const SERVICES: Service[] = [
       vi: "Xây dựng Thương hiệu Cá nhân cho Chủ doanh nghiệp",
       en: "Personal Brand for the Business Owner",
     },
-    accent: { vi: "khách tin người trước khi tin tiệm,", en: "people trust people first," },
-    accentScale: { vi: 1.52, en: 1.56 },
+    accent: { vi: "của chính người chủ,", en: "people trust people," },
+    lockupAnchor: { vi: "Thương hiệu", en: "Owner brand" },
     pitch: {
       vi: "Khách tin người trước khi tin tiệm. Người chủ có câu chuyện, có video, có mặt đều đặn trên mạng.",
       en: "Customers trust people before shops. The owner gets a story, videos and a steady online presence.",
@@ -144,8 +144,8 @@ export const SERVICES: Service[] = [
     slug: "chuan-hoa-sop-dao-tao-doi-ngu",
     short: { vi: "SOP & đào tạo đội ngũ", en: "SOPs & team training" },
     name: { vi: "Chuẩn hóa SOP & Đào tạo Đội ngũ", en: "SOPs & Team Training" },
-    accent: { vi: "đội ngũ làm đúng cả khi chủ vắng,", en: "the team gets it right without you," },
-    accentScale: { vi: 1.16, en: 0.95 },
+    accent: { vi: "đúng cả khi chủ vắng,", en: "right without you," },
+    lockupAnchor: { vi: "SOP & Đào tạo", en: "SOP & Training" },
     pitch: {
       vi: "Ai vào cũng làm được: mỗi vị trí có quy trình, có bài kiểm tra, chủ không phải nhắc lại.",
       en: "Anyone can do the job: every role has a procedure and a check, so the owner stops repeating himself.",
@@ -188,8 +188,8 @@ export const SERVICES: Service[] = [
     slug: "setup-phong-marketing-in-house",
     short: { vi: "Phòng Marketing in-house", en: "In-house marketing team" },
     name: { vi: "Setup & Đồng hành Phòng Marketing In-house", en: "In-house Marketing Team Setup" },
-    accent: { vi: "một phòng marketing của riêng bạn,", en: "a marketing team of your own," },
-    accentScale: { vi: 1.37, en: 1.25 },
+    accent: { vi: "đội ngũ của riêng bạn,", en: "a team of your own," },
+    lockupAnchor: { vi: "Phòng MKT", en: "In-house team" },
     pitch: {
       vi: "Dựng đội marketing của riêng anh chị: tuyển đúng người, giao đúng việc, có quy trình phối hợp.",
       en: "Build your own marketing team: the right hires, clear roles and a working rhythm.",
@@ -232,8 +232,8 @@ export const SERVICES: Service[] = [
     slug: "nen-tang-so-sme-os",
     short: { vi: "Nền tảng số SME OS", en: "SME OS platform" },
     name: { vi: "Triển khai nền tảng số SME OS", en: "SME OS Digital Platform" },
-    accent: { vi: "mọi con số trên một màn hình,", en: "every number on one screen," },
-    accentScale: { vi: 1.28, en: 1.23 },
+    accent: { vi: "nắm mọi con số,", en: "every number, one screen," },
+    lockupAnchor: { vi: "SME OS", en: "SME OS" },
     pitch: {
       vi: "Khách, lịch hẹn, doanh thu về một chỗ. Chủ xem báo cáo trên điện thoại, ở đâu cũng biết tiệm đang thế nào.",
       en: "Customers, bookings and revenue in one place. The owner checks the report on the phone, from anywhere.",

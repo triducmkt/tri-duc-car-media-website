@@ -58,14 +58,11 @@
     "ctaBannerBody": "Đặt lịch tư vấn 1-1 cùng Tăng Trí Đức để đánh giá thực trạng và lộ trình tăng trưởng phù hợp cho doanh nghiệp bạn.",
     "ctaBannerButton": "Đặt lịch tư vấn ngay",
     "servicesAccent": "một hệ thống,",
-    "servicesAnchor": "5 trụ cột tăng trưởng",
-    "founderAccent": "không chỉ là một agency,",
-    "founderAnchor": "Một đối tác chiến lược.",
+    "servicesAnchor": "5 trụ cột",
+    "founderAccent": "không phải agency,",
+    "founderAnchor": "Đối tác thật",
     "ctaBannerAccent": "chủ vắng,",
-    "ctaBannerAnchor": "Khách vẫn đông.",
-    "servicesAccentScale": 1.46,
-    "founderAccentScale": 1.16,
-    "ctaBannerAccentScale": 1.59
+    "ctaBannerAnchor": "Khách vẫn\nđông."
   },
   "systemHero": {
     "ariaLabel": "Giới thiệu",
@@ -77,7 +74,7 @@
       "sub": "Hệ thống Marketing – Sales – CSKH bài bản, để doanh nghiệp chạy được khi bạn vắng mặt.",
       "scrollHint": "CUỘN ĐỂ XEM",
       "accent": "để doanh nghiệp tự chạy,",
-      "accentScale": 1.09
+      "lockupAnchor": "Giải phóng\nngười chủ"
     },
     "caps": [
       {
@@ -548,8 +545,7 @@
     "visionHeading": "1.000 người chủ vắng mặt 30 ngày, cơ sở vẫn tăng trưởng.",
     "vision": "Đến năm 2031, Trí Đức Media giúp 1.000 người chủ cơ sở, trung tâm, cửa hàng dịch vụ Việt Nam trên toàn quốc nghỉ ngơi, vắng mặt 30 ngày mà cơ sở vẫn tăng trưởng. Người chủ chuyển từ người làm, người vận hành thành người sở hữu — cơ sở tự tăng trưởng mà không cần chủ có mặt.",
     "visionCta": "Xem Thang Tự Do",
-    "nameAccent": "hành trình cùng",
-    "nameAccentScale": 1.06
+    "nameAccent": "hành trình cùng"
   },
   "caseMap": {
     "eyebrow": "Bản đồ đồng hành",
