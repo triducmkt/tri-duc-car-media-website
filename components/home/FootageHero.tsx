@@ -197,7 +197,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
         {String(step + 1).padStart(2, "0")} / {String(STEPS).padStart(2, "0")}
       </p>
       <p className="font-serif text-2xl font-bold sm:text-3xl">{s.title}</p>
-      <p className="text-white/70 sm:text-lg">{s.text}</p>
+      <p className="text-white/80 sm:text-lg">{s.text}</p>
     </div>
   );
 
@@ -282,7 +282,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
               ref={openRef}
               className="flex max-w-xl flex-col gap-4 [--open:1] max-lg:opacity-[var(--open)] max-lg:[transform:translateY(calc((1-var(--open))*-24px))]"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+              <p className="eyebrow-pill" data-tone="dark">
                 {tHero("open.eyebrow")}
               </p>
               <Lockup
@@ -292,7 +292,7 @@ export function FootageHero({ skipHref = "#tinh-gio" }: Props) {
                 accent={tHero("open.accent")}
                 anchor={tHero("open.lockupAnchor")}
               />
-              <p className="max-w-lg text-white/70 sm:text-lg">{tHero("open.sub")}</p>
+              <p className="max-w-lg text-white/80 sm:text-lg">{tHero("open.sub")}</p>
             </div>
 
             <div className="flex max-w-xl flex-col gap-6">

@@ -300,11 +300,11 @@ export function SystemBuilder() {
       />
       <Container className="relative grid gap-10 lg:grid-cols-2 lg:gap-x-14">
         <div className="flex flex-col gap-4 lg:col-start-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
+          <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
           <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px]">
             {t("heading")}
           </h1>
-          <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
+          <p className="max-w-xl text-white/80 sm:text-lg">{t("sub")}</p>
         </div>
 
         <div className="flex flex-wrap gap-2.5 lg:col-start-1" role="group" aria-label={t("painsLabel")}>

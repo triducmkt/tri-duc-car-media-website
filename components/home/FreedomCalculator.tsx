@@ -222,7 +222,7 @@ export function FreedomCalculator() {
 
               <div>
                 <div className="mb-3 flex items-baseline justify-between gap-4">
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-white/80">
                     {t.rich("resultDays", {
                       n: filled,
                       b: (chunks) => <strong className="font-semibold text-white">{chunks}</strong>,

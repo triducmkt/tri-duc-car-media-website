@@ -322,7 +322,7 @@ export function CaseTwin({ slug, client, others }: { slug: string; client: strin
       <Container className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <span className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</span>
+            <span className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</span>
             <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("heading", { client })}</h2>
             <p className="text-base text-white/65">{t("sub", { client })}</p>
           </div>

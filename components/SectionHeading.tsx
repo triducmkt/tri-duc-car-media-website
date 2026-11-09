@@ -26,7 +26,7 @@ export function SectionHeading({
   accent?: string;
 }) {
   const alignClass = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
-  const subColor = tone === "dark" ? "text-white/70" : "text-ink-muted";
+  const subColor = tone === "dark" ? "text-white/80" : "text-ink-muted";
   return (
     <div className={`flex max-w-2xl flex-col gap-3 ${alignClass}`}>
       {eyebrow ? (

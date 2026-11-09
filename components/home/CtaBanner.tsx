@@ -20,7 +20,7 @@ export function CtaBanner() {
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <Lockup accent={t("ctaBannerAccent")} anchor={t("ctaBannerAnchor")}
           align="center" />
-        <p className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+        <p className="max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
           <span className="font-semibold text-white">{t("ctaBannerHeading")}</span> {t("ctaBannerBody")}
         </p>
         <div className="flex flex-wrap justify-center gap-3">

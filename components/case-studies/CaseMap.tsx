@@ -331,9 +331,9 @@ export function CaseMap() {
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
+          <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
           <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">{t("heading")}</h1>
-          <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
+          <p className="max-w-xl text-white/80 sm:text-lg">{t("sub")}</p>
         </div>
 
         <div className="relative mx-auto aspect-square w-full max-w-[640px] lg:col-start-1 lg:row-span-2 lg:row-start-1">
@@ -383,7 +383,7 @@ export function CaseMap() {
                 >
                   <span
                     className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                      i === active ? "bg-brand-400 text-ink" : "bg-white/10 text-white/70"
+                      i === active ? "bg-brand-400 text-ink" : "bg-white/10 text-white/80"
                     }`}
                   >
                     {i + 1}
@@ -404,7 +404,7 @@ export function CaseMap() {
                     href={{ pathname: "/case-studies/[slug]", params: { slug: PLACES[i].slug } }}
                     onClick={() => trackEvent("casemap_read", { place: PLACES[i].slug })}
                     aria-label={`${t("read")}: ${p.client}`}
-                    className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-400 hover:text-brand-400"
+                    className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-brand-400 hover:text-brand-400"
                   >
                     <ArrowUpRight size={16} aria-hidden />
                   </Link>

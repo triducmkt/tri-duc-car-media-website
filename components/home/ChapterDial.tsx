@@ -67,7 +67,10 @@ export function ChapterDial() {
       state.current.seen = Math.max(state.current.seen, a + 1);
       setActive(a);
       setSeen(state.current.seen);
-      setShown(y > vh * 0.6);
+      // F11: on phones the bubble waits until the hero is over (it used to
+      // cover the hero copy); desktop shows it after 60% of a screen.
+      const desktop = window.matchMedia("(min-width: 900px)").matches;
+      setShown(desktop ? y > vh * 0.6 : a >= 1);
     };
     const onScroll = () => {
       if (!raf) raf = requestAnimationFrame(measure);
@@ -245,12 +248,13 @@ export function ChapterDial() {
           shown && !open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
-        <div ref={canvasHost} aria-hidden className="h-14 w-14 shrink-0 [&>canvas]:h-full [&>canvas]:w-full" />
+        <div ref={canvasHost} aria-hidden className="h-11 w-11 shrink-0 min-[900px]:h-14 min-[900px]:w-14 [&>canvas]:h-full [&>canvas]:w-full" />
+        {/* F11: number = sans tabular 13–14px; chapter title = Playfair italic 15px (desktop only — phones get the compact orb + number) */}
         <span className="flex flex-col leading-tight">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-400">
+          <span className="font-display text-[13px] font-bold tabular-nums text-brand-300 min-[900px]:text-sm">
             {t("label", { n: active + 1, total: N })}
           </span>
-          <span className="max-w-[9.5rem] truncate text-[13px] font-semibold">{items[active].t}</span>
+          <span className="hidden max-w-[10rem] truncate font-serif text-[15px] italic text-white/90 min-[900px]:block">{items[active].t}</span>
         </span>
       </button>
 
@@ -271,7 +275,7 @@ export function ChapterDial() {
           >
             <div className="flex items-start justify-between gap-4 border-b border-white/10 px-5 pb-4 pt-5">
               <div className="flex flex-col gap-1">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-400">{t("eyebrow")}</p>
+                <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
                 <h2 id="chapter-sheet-title" className="font-serif text-xl font-bold">
                   {t("heading")}
                 </h2>
@@ -284,7 +288,7 @@ export function ChapterDial() {
                 type="button"
                 onClick={close}
                 aria-label={t("close")}
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 hover:text-white"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/80 hover:text-white"
               >
                 <X className="h-4 w-4" aria-hidden />
               </button>

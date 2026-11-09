@@ -290,7 +290,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
       />
       <div className="relative flex flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-400">{t("eyebrow")}</p>
+          <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
           <h2 className="font-serif text-2xl font-bold leading-tight sm:text-3xl">
             {s[locale]}: <span className="text-leaf-400">{headline}</span>
           </h2>
@@ -311,7 +311,7 @@ export function GrowthSkyline({ slug, client }: { slug: string; client: string }
                   trackEvent("growth_metric", { slug, metric: x.key });
                 }}
                 className={`rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
-                  i === metric ? "border-brand-400 bg-brand-400 text-ink" : "border-white/20 text-white/70 hover:border-brand-400/60"
+                  i === metric ? "border-brand-400 bg-brand-400 text-ink" : "border-white/20 text-white/80 hover:border-brand-400/60"
                 }`}
               >
                 {x[locale]}

@@ -62,7 +62,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
       <Container className="relative flex flex-col gap-14">
         {/* ── Promise ── */}
         <div className="flex max-w-3xl flex-col gap-5">
-          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-400">{t("eyebrow")}</span>
+          <span className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</span>
           <h2 className="font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl">{t("heading")}</h2>
           <p className="text-lg leading-relaxed text-white/75 sm:text-xl">{t("sub")}</p>
           <p className="text-sm font-semibold text-brand-400/90">{t("goal")}</p>
@@ -224,9 +224,9 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
             {/* ── 5 criteria: why 30 days ── */}
             <div className="flex flex-col gap-8 border-t border-white/10 pt-14">
               <div className="flex max-w-2xl flex-col gap-3">
-                <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-400">{t("whyEyebrow")}</span>
+                <span className="eyebrow-pill" data-tone="dark">{t("whyEyebrow")}</span>
                 <h3 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">{t("whyHeading")}</h3>
-                <p className="text-base leading-relaxed text-white/70 sm:text-lg">{t("whySub")}</p>
+                <p className="text-base leading-relaxed text-white/80 sm:text-lg">{t("whySub")}</p>
               </div>
               <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                 {why.map((w, i) => (
@@ -244,7 +244,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
             {/* ── Absence test ── */}
             <div className="grid gap-8 rounded-3xl bg-brand-500 p-7 text-ink sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
               <div className="flex flex-col gap-3">
-                <span className="text-sm font-bold uppercase tracking-[0.14em] text-ink/60">{t("testEyebrow")}</span>
+                <span className="eyebrow-pill" data-tone="light">{t("testEyebrow")}</span>
                 <h3 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("testHeading")}</h3>
                 <p className="text-base leading-relaxed text-ink/75">{t("testSub")}</p>
               </div>

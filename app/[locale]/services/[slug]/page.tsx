@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
               </span>
             </p>
             {s.price.plus ? (
-              <p className="text-sm text-white/70">
+              <p className="text-sm text-white/80">
                 {t("plus", { amount: formatVnd(s.price.plus.amount, locale) })}
                 {star}
               </p>

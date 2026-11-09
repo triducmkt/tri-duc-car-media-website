@@ -33,7 +33,7 @@ export function VatAdvantage({ id, tone = "light" }: { id?: string; tone?: "ligh
             {t("eyebrow")}
           </p>
           <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
-          <p className={`text-base leading-relaxed sm:text-lg ${dark ? "text-white/70" : "text-ink-muted"}`}>{t("sub")}</p>
+          <p className={`text-base leading-relaxed sm:text-lg ${dark ? "text-white/80" : "text-ink-muted"}`}>{t("sub")}</p>
 
           <div
             className={`flex flex-col gap-3 rounded-2xl p-5 ring-1 ${

@@ -473,9 +473,9 @@ export function HouseCallMap() {
       />
       <Container className="relative grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-12">
         <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
+          <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
           <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px]">{t("heading")}</h2>
-          <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
+          <p className="max-w-xl text-white/80 sm:text-lg">{t("sub")}</p>
         </div>
 
         <div className="relative mx-auto aspect-square w-full max-w-[640px] lg:col-start-1 lg:row-span-2 lg:row-start-1">
@@ -519,7 +519,7 @@ export function HouseCallMap() {
                       ? picked
                         ? "border-brand-400 bg-brand-400 text-ink"
                         : "border-brand-400/70 text-brand-400"
-                      : "border-white/15 text-white/70 hover:border-brand-400/60 hover:text-white"
+                      : "border-white/15 text-white/80 hover:border-brand-400/60 hover:text-white"
                   }`}
                 >
                   {nameOf(x)}
@@ -555,7 +555,7 @@ export function HouseCallMap() {
                     trackEvent("housecall_industry", { industry: i });
                   }}
                   className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors ${
-                    industry === i ? "border-white bg-white text-ink" : "border-white/15 text-white/70 hover:border-white/50"
+                    industry === i ? "border-white bg-white text-ink" : "border-white/15 text-white/80 hover:border-white/50"
                   }`}
                 >
                   {x.label}

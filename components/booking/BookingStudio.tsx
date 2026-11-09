@@ -452,9 +452,9 @@ export function BookingStudio() {
       />
       <Container className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         <div className="flex flex-col gap-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
+          <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
           <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px]">{t("heading")}</h1>
-          <p className="max-w-xl text-white/70 sm:text-lg">{t("sub")}</p>
+          <p className="max-w-xl text-white/80 sm:text-lg">{t("sub")}</p>
         </div>
 
         {/* Ticket — beside the form on desktop, right under the heading on mobile. */}
@@ -465,7 +465,7 @@ export function BookingStudio() {
               aria-hidden
               className="relative aspect-[16/10] w-full touch-pan-y [&>canvas]:h-full [&>canvas]:w-full"
             />
-            <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-white/70">
+            <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-white/80">
               {trust.map((item) => (
                 <li key={item} className="inline-flex items-center gap-1.5">
                   <Check size={15} className="text-leaf-400" aria-hidden />
@@ -571,7 +571,7 @@ export function BookingStudio() {
                     className="min-h-12 rounded-xl bg-white px-4 text-[15px] text-ink outline-none placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-400"
                   />
                 </div>
-                <details className="group rounded-xl border border-white/10 px-4 py-3 text-sm text-white/70">
+                <details className="group rounded-xl border border-white/10 px-4 py-3 text-sm text-white/80">
                   <summary className="cursor-pointer font-semibold text-white/80">{t("more")}</summary>
                   <div className="mt-3 flex flex-col gap-3">
                     <input

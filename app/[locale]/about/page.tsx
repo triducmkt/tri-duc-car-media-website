@@ -83,7 +83,7 @@ export default async function AboutPage({
             <p className="font-serif bg-gradient-to-r from-brand-400 to-brand-600 bg-clip-text text-2xl font-semibold text-transparent">
               {t("quote")}
             </p>
-            <p className="max-w-xl text-base leading-relaxed text-white/70">{t("bodyIntro")}</p>
+            <p className="max-w-xl text-base leading-relaxed text-white/80">{t("bodyIntro")}</p>
             <Button href="/contact" variant="primary" className="mt-2">
               {t("contactCta")}
             </Button>

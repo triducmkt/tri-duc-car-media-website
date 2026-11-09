@@ -248,9 +248,9 @@ export function PriceStudio() {
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_45%_at_25%_40%,rgba(66,133,244,0.22),transparent_70%),radial-gradient(35%_35%_at_80%_80%,rgba(66,133,244,0.12),transparent_70%)]" />
       <Container className="relative flex flex-col gap-10">
         <div className="flex max-w-3xl flex-col gap-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{t("eyebrow")}</p>
+          <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
           <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
-          <p className="text-white/70 sm:text-lg">{t("sub")}</p>
+          <p className="text-white/80 sm:text-lg">{t("sub")}</p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -365,7 +365,7 @@ export function PriceStudio() {
                       {c.parts.length ? (
                         <ul className="flex flex-col gap-1">
                           {c.parts.map((p) => (
-                            <li key={p.slug} className="flex items-start gap-1.5 text-xs text-white/70">
+                            <li key={p.slug} className="flex items-start gap-1.5 text-xs text-white/80">
                               <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-leaf-400" aria-hidden />
                               {serviceBySlug(p.slug)!.short[locale]}
                               {p.months && serviceBySlug(p.slug)!.price.unit === "month" ? ` · ${t("months", { n: p.months })}` : ""}
@@ -402,7 +402,7 @@ export function PriceStudio() {
                         }`}
                       >
                         <button type="button" aria-pressed={on} onClick={() => choose({ kind: "single", slug: s.slug })} className="flex flex-1 items-start gap-3 text-left">
-                          <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold text-white/70">
+                          <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold text-white/80">
                             {i + 1}
                           </span>
                           <span className="flex flex-col gap-0.5">

@@ -69,7 +69,7 @@
     "skip": "Bỏ qua, tính thử ngay",
     "footageNote": "Tư liệu thật · làm việc tại AP Car Care & AP Education, 09/2025",
     "open": {
-      "eyebrow": "TƯ VẤN MARKETING – SALES CHO SME",
+      "eyebrow": "Tư vấn Marketing – Sales cho SME",
       "title": "Giải phóng người chủ",
       "sub": "Hệ thống Marketing – Sales – CSKH bài bản, để doanh nghiệp chạy được khi bạn vắng mặt.",
       "scrollHint": "CUỘN ĐỂ XEM",
@@ -1547,7 +1547,7 @@
     "bubbleLabel": "Lời nhắn Zalo soạn sẵn cho anh chị"
   },
   "chapters": {
-    "label": "Chương {n}/{total}",
+    "label": "{n}/{total}",
     "open": "Mục lục trang, đang ở chương {n}/{total}: {title}",
     "eyebrow": "Trang này có 8 chương",
     "heading": "Anh chị muốn xem phần nào?",

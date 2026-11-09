@@ -69,7 +69,7 @@
     "skip": "Skip, try the calculator",
     "footageNote": "Real footage · on site at AP Car Care & AP Education, 09/2025",
     "open": {
-      "eyebrow": "MARKETING – SALES CONSULTING FOR SMES",
+      "eyebrow": "Marketing – Sales consulting for SMEs",
       "title": "Free the owner",
       "sub": "A real Marketing – Sales – Customer Care system, so your business keeps running when you're not there.",
       "scrollHint": "SCROLL TO EXPLORE",
@@ -1547,7 +1547,7 @@
     "bubbleLabel": "Your Zalo message, pre-written"
   },
   "chapters": {
-    "label": "Chapter {n}/{total}",
+    "label": "{n}/{total}",
     "open": "Page contents, chapter {n}/{total}: {title}",
     "eyebrow": "This page has 8 chapters",
     "heading": "Which part do you want to see?",

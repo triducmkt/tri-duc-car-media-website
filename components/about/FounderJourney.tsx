@@ -345,7 +345,7 @@ export function FounderJourney({ stops }: { stops: JourneyStop[] }) {
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-between px-4 pb-24 pt-24 sm:px-6 lg:px-8 lg:pb-10">
           <div className="max-w-md">
-            <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</p>
+            <p className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</p>
             <h2 className="mt-2 font-serif text-2xl font-bold leading-tight sm:text-4xl">{t("heading")}</h2>
             <p className="mt-2 hidden text-sm text-white/65 sm:block">{t("sub")}</p>
           </div>

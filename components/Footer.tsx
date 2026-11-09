@@ -137,7 +137,7 @@ export function Footer() {
         <div aria-hidden className="hairline-gradient opacity-50" />
         <Container className="flex flex-col gap-2 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1">
-            <p className="font-semibold text-white/70">
+            <p className="font-semibold text-white/80">
               {COMPANY.legalNameVi} · {t("taxCode")} {COMPANY.taxCode} · {t("vatLine")}
             </p>
             <p>

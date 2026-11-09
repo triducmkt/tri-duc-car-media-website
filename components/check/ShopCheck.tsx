@@ -168,9 +168,9 @@ export function ShopCheck() {
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_35%,rgba(66,133,244,0.2),transparent_60%)]" />
       <Container className="relative grid gap-5 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 sm:gap-5">
-          <span className="text-sm font-bold uppercase tracking-[0.14em] text-brand-300">{t("eyebrow")}</span>
+          <span className="eyebrow-pill" data-tone="dark">{t("eyebrow")}</span>
           <h1 className="font-serif text-3xl font-bold leading-tight sm:text-5xl">{heading}</h1>
-          <p className="hidden max-w-xl text-lg text-white/70 sm:block">{t("sub")}</p>
+          <p className="hidden max-w-xl text-lg text-white/80 sm:block">{t("sub")}</p>
           <p className="flex items-center gap-2 text-sm font-semibold text-brand-400">
             <ShieldCheck size={16} aria-hidden /> {t("free")}
           </p>
@@ -266,7 +266,7 @@ export function ShopCheck() {
                   <div className="flex items-center gap-4 rounded-xl bg-brand-400/10 p-3 ring-1 ring-brand-400/35">
                     <GiftBox open={done} className="h-24 w-24 shrink-0 sm:h-28 sm:w-28" />
                     <div className="min-w-0">
-                      <p className="text-xs font-bold uppercase tracking-[0.12em] text-brand-400">{giftPick ? tg("chosen") : tg("eyebrow")}</p>
+                      <p className="eyebrow-pill" data-tone="dark">{giftPick ? tg("chosen") : tg("eyebrow")}</p>
                       <h2 className="font-serif text-lg font-bold leading-snug sm:text-xl">{tg(`items.${gift}.title`)}</h2>
                       <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-white/60">
                         <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold text-white/80">{tg(`formats.${GIFT_MAP[gift].format}`)}</span>

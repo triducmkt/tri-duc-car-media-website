@@ -16,7 +16,7 @@ const ANGLE = (k: number) => Math.PI / 2 - (k * Math.PI * 2) / AXIS_KEYS.length;
 export type RadarLabel = { text: string; tone: "idle" | "done" | "weak" | "focus" };
 
 const TONE: Record<RadarLabel["tone"], string> = {
-  idle: "bg-white/10 text-white/70 ring-1 ring-white/15",
+  idle: "bg-white/10 text-white/80 ring-1 ring-white/15",
   done: "bg-brand-400 text-ink",
   weak: "bg-[#ff6b59] text-white",
   focus: "bg-white text-ink shadow-lg",

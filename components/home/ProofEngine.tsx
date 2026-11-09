@@ -286,7 +286,7 @@ export function ProofEngine() {
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                   i === active
                     ? "border-brand-400 bg-brand-400 text-ink"
-                    : "border-white/15 text-white/70 hover:border-white/40 hover:text-white"
+                    : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
                 }`}
               >
                 {item.client}

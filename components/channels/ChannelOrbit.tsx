@@ -648,7 +648,7 @@ function PhonePanel({ onZalo }: { onZalo: () => void }) {
         <Phone size={30} className="text-brand-400" aria-hidden />
         <span className="font-display text-3xl font-bold tracking-wide text-brand-400 sm:text-4xl">{COMPANY.phoneDisplay}</span>
       </a>
-      <p className="text-sm text-white/70">{t("phoneNote")}</p>
+      <p className="text-sm text-white/80">{t("phoneNote")}</p>
       <div className="flex flex-wrap gap-3">
         <button
           type="button"

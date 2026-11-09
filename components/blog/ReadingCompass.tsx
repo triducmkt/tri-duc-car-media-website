@@ -382,7 +382,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
       <Container className="relative grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-12">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">{eyebrow}</p>
+            <p className="eyebrow-pill" data-tone="dark">{eyebrow}</p>
             <h1 className="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">{heading}</h1>
           </div>
           <fieldset className="flex flex-col gap-3">
@@ -500,7 +500,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
             </p>
           ) : (
             <form onSubmit={submit} className="flex flex-col gap-3">
-              <p className="text-sm text-white/70">{t("leadBody", { pain: pains[active]?.label ?? "" })}</p>
+              <p className="text-sm text-white/80">{t("leadBody", { pain: pains[active]?.label ?? "" })}</p>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                 <input
                   required
