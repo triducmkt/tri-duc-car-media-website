@@ -19,6 +19,8 @@
 Mã xanh lá: anh Đức quên mã nên dùng xanh lá của logo v10 (`#17A85A`). Anh Đức có thể đổi —
 chỉ cần sửa `--color-leaf-*` trong `app/globals.css`.
 
+> **12/11/2026:** anh Đức chọn hướng nền sáng (hero trang chủ + footer mesh pastel, `docs/DESIGN-BRIEF.md`). Tỷ lệ "đen 30%" ở trên giờ là **tối đa**, không còn là mục tiêu: đen dùng cho chữ và các khối tối xen kẽ giữa trang, không cho hero/footer.
+
 ## 2. Chọn sắc độ
 
 | Nền | Chữ / icon xanh dương | Chữ / icon xanh lá |

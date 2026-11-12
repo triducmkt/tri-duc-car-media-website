@@ -23,26 +23,15 @@ export function Header() {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  // The home hero (SystemHero) is a full-bleed dark canvas — the header
-  // floats transparent over its opening frame and solidifies once scrolled
-  // past it, instead of cutting a white bar across the cinematic intro.
-  const isHome = pathname === "/";
-  const transparent = isHome && !scrolled;
+  // 12/11/2026 (anh Đức chọn nền sáng): the home hero is now the light mesh
+  // LightHero, so the header is always the frosted-glass light bar. The dark
+  // transparent styling is kept (transparent = false) in case a dark hero returns.
+  const transparent = false as boolean;
 
   // Remember the visit's first external referrer (organic vs ads) for lead emails.
   useEffect(() => {
     entryReferrer();
   }, []);
-
-  useEffect(() => {
-    if (!isHome) return;
-    const onScroll = () => setScrolled(window.scrollY > 48);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
 
   return (
     <header

@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { FootageHero } from "@/components/home/FootageHero";
+import { LightHero } from "@/components/home/LightHero";
 import { ChapterDial } from "@/components/home/ChapterDial";
 import { HouseCallMap } from "@/components/home/HouseCallMap";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
@@ -32,7 +32,8 @@ export default async function HomePage({
 
   return (
     <>
-      <FootageHero skipHref="#tinh-gio" />
+      <LightHero />
+      <SectionSeam to="dark" />
       <HouseCallMap />
       <SectionSeam to="light" />
       <FreedomCalculator />

@@ -4,10 +4,10 @@ import { Link } from "@/i18n/navigation";
 import { Lockup } from "@/components/Lockup";
 
 /**
- * TRIAL light hero (docs/DESIGN-BRIEF.md, brief 12/11/2026): pastel mesh
- * background, centred dark lockup, gradient CTA, real footage stills as
- * floating white "app cards". Shown only on /preview/hero-light — the live
- * homepage still uses FootageHero (dark). Same copy and lockup rules (V1b).
+ * Home hero since 12/11/2026 (anh Đức chọn nền sáng, docs/DESIGN-BRIEF.md):
+ * pastel mesh background, centred dark lockup, gradient CTA, real footage
+ * stills as floating white "app cards". Same copy and lockup rules (V1b).
+ * The previous dark scroll-footage hero is components/home/FootageHero.tsx.
  */
 const ZALO_URL = "https://zalo.me/0769918685";
 // Real stills of the 12/09/2025 working session (scripts/build-hero-frames.mjs).

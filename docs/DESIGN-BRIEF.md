@@ -53,8 +53,9 @@ Phong cách hợp với triduccar.media: hơi hướng công nghệ, hiện đ�
 | Chữ tiêu đề | Đen `#1A1A1A` | Ink `#0B1220` (đen ám xanh navy) | ✓ Giữ ink: gần như đen, đồng bộ logo |
 | Chữ phụ | `#4A4A4A` / `#6B7280` | `#4B5568` | ✓ Giữ, đã trong khoảng |
 | Khoảng trắng | Lớn | Section 80–112px | ✓ Giữ |
-| **Hero** | Nền mesh sáng, chữ đen giữa trang | **Nền navy tối + video tư liệu**, chữ trắng, lockup Playfair + thư pháp | ⏳ **Chờ anh Đức chốt.** Đổi hero sang nền sáng là thay đổi lớn: lockup đang tối ưu cho nền tối, và quy cách màu có "đen 30%" |
-| Footer | Có thể mesh pastel | Navy tối + dải gradient | ⏳ Chờ chốt cùng hero |
+| **Hero** | Nền mesh sáng, chữ đen giữa trang | Nền navy tối + video tư liệu cuộn, chữ trắng | ✅ **12/11 anh Đức chọn "Áp nền sáng"** (sau bản thử): `components/home/LightHero.tsx`, nền `.hero-mesh`, lockup chữ đen căn giữa, 3 ảnh tư liệu trong thẻ trắng. Hero tối cũ giữ ở `FootageHero.tsx` |
+| Footer | Có thể mesh pastel | Navy tối + dải gradient | ✅ 12/11: footer toàn site nền mesh sáng (`<Footer>` mặc định `tone="light"`, `.footer-mesh`), logo bản màu |
+| Header | Kính mờ | Trong suốt chữ trắng trên hero tối, kính mờ khi cuộn | ✅ 12/11: luôn kính mờ sáng |
 | Font | (brief không nêu) | Playfair Display + Great Vibes + Commissioner | ✓ Giữ (đã chốt 08/11) |
 
 **Màu mới được phép** (thêm vào `docs/color-system.md`, `scripts/check-colors.mjs`):

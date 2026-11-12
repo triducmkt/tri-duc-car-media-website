@@ -17,8 +17,8 @@ const navItems = [
   { href: "/contact" as const, key: "contact" as const },
 ];
 
-/** tone="light" = trial light version (docs/DESIGN-BRIEF.md, 12/11/2026),
- *  shown only on the /preview/hero-light page; the live site uses "dark". */
+/** Footer tone. Since 12/11/2026 (anh Đức chọn nền sáng, docs/DESIGN-BRIEF.md)
+ *  the site uses "light" (pastel mesh); "dark" is the previous navy footer. */
 const TONE = {
   dark: {
     root: "relative overflow-hidden bg-ink text-white",
@@ -44,7 +44,7 @@ const TONE = {
   },
 } as const;
 
-export function Footer({ tone = "dark" }: { tone?: "dark" | "light" } = {}) {
+export function Footer({ tone = "light" }: { tone?: "dark" | "light" } = {}) {
   const c = TONE[tone];
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
