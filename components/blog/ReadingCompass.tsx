@@ -374,7 +374,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
   };
 
   return (
-    <section ref={sectionRef} id="la-ban" className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
+    <section ref={sectionRef} id="la-ban" className="hero-mesh on-light relative overflow-hidden pb-16 pt-28 text-ink sm:pb-20 sm:pt-32">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_50%_at_70%_40%,rgba(110,166,247,0.10),transparent_70%),radial-gradient(45%_55%_at_25%_60%,rgba(66,133,244,0.14),transparent_70%)]"
@@ -412,7 +412,7 @@ export function ReadingCompass({ posts, heading, eyebrow }: { posts: CompassPost
           </fieldset>
         </div>
 
-        <div className="relative mx-auto aspect-[4/3] w-full max-w-[680px] lg:aspect-square">
+        <div className="keep-dark relative mx-auto aspect-[4/3] w-full max-w-[680px] lg:aspect-square">
           <div ref={canvasHost} aria-hidden className="absolute inset-0 [&>canvas]:h-full [&>canvas]:w-full" />
           <div className="pointer-events-none absolute inset-0">
             {usedCats.map((cat, k) => (

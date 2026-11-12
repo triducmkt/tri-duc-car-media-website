@@ -64,7 +64,7 @@ export default async function AboutPage({
 
   return (
     <>
-      <section className="overflow-hidden bg-ink py-20 text-white sm:py-28">
+      <section className="hero-mesh on-light overflow-hidden pb-20 pt-28 text-ink sm:pb-28 sm:pt-32">
         <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative mx-auto w-full max-w-sm">
             <FounderAura />
@@ -77,7 +77,7 @@ export default async function AboutPage({
             <span className="eyebrow-pill" data-tone="dark">
               {t("eyebrow")}
             </span>
-            <Lockup as="h1" size="page" reveal="load" accent={t("nameAccent")}
+            <Lockup as="h1" size="page" tone="light" reveal="load" accent={t("nameAccent")}
               anchor={t("name")} />
             <p className="text-lg font-medium text-white/80">{t("roleLine")}</p>
             <p className="font-serif bg-gradient-to-r from-brand-400 to-brand-600 bg-clip-text text-2xl font-semibold text-transparent">
@@ -91,6 +91,7 @@ export default async function AboutPage({
         </Container>
       </section>
 
+      <SectionSeam to="dark" />
       <FounderJourney stops={journey} />
       <SectionSeam to="light" />
 

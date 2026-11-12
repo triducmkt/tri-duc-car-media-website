@@ -324,7 +324,7 @@ export function CaseMap() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="ban-do" className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
+    <section ref={sectionRef} id="ban-do" className="hero-mesh on-light relative overflow-hidden pb-16 pt-28 text-ink sm:pb-20 sm:pt-32">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_50%_at_30%_55%,rgba(66,133,244,0.16),transparent_70%)]"
@@ -336,7 +336,7 @@ export function CaseMap() {
           <p className="max-w-xl text-white/80 sm:text-lg">{t("sub")}</p>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-[640px] lg:col-start-1 lg:row-span-2 lg:row-start-1">
+        <div className="keep-dark relative mx-auto aspect-square w-full max-w-[640px] lg:col-start-1 lg:row-span-2 lg:row-start-1">
           <div ref={canvasHost} aria-hidden className="absolute inset-0 [&>canvas]:h-full [&>canvas]:w-full" />
           <div className="pointer-events-none absolute inset-0">
             {places.map((p, i) => (

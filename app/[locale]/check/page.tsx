@@ -60,7 +60,6 @@ export default async function CheckPage({
       <ShopCheck />
 
       {/* Gift library: every gift leads into the check (?qua=…) or straight to booking. */}
-      <SectionSeam to="light" light="paper-soft" />
       <section id="thu-vien-qua" className="surface-light-soft py-16 sm:py-20">
         <Container className="flex flex-col gap-8">
           <SectionHeading eyebrow={tg("eyebrow")} heading={tg("libraryTitle")} sub={tg("librarySub")} align="center" />

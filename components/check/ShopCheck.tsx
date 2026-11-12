@@ -164,7 +164,7 @@ export function ShopCheck() {
   }));
 
   return (
-    <section id="kiem-tra" className="relative overflow-hidden bg-ink pb-16 pt-24 text-white sm:pb-24 sm:pt-32">
+    <section id="kiem-tra" className="hero-mesh on-light relative overflow-hidden pb-16 pt-24 text-ink sm:pb-24 sm:pt-32">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_35%,rgba(66,133,244,0.2),transparent_60%)]" />
       <Container className="relative grid gap-5 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-14">
         <div className="flex flex-col gap-4 sm:gap-5">
@@ -179,7 +179,7 @@ export function ShopCheck() {
             weakest={done ? AXIS_KEYS.indexOf(weakest) : -1}
             focus={done ? -1 : AXIS_KEYS.indexOf(axis)}
             labels={labels}
-            className="mx-auto aspect-[16/11] w-full max-w-[520px] sm:aspect-[4/3]"
+            className="keep-dark mx-auto aspect-[16/11] w-full max-w-[520px] sm:aspect-[4/3]"
           >
             {done && (
               <div className="pointer-events-none absolute right-0 top-0 flex flex-col items-end">

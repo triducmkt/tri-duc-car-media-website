@@ -43,6 +43,7 @@ export function ServicesPageContent() {
   return (
     <>
       <FreedomLadder variant="full" />
+      <SectionSeam to="dark" />
       <PriceStudio />
       <SystemBuilder />
       <SectionSeam to="light" light="paper-soft" />

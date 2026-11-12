@@ -54,7 +54,7 @@ export function FreedomLadder({ variant = "full" }: { variant?: "full" | "teaser
   }
 
   return (
-    <section id={variant === "full" ? "thang-tu-do" : "loi-hua"} className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
+    <section id={variant === "full" ? "thang-tu-do" : "loi-hua"} className={`relative overflow-hidden ${variant === "full" ? "hero-mesh on-light pb-20 pt-28 text-ink sm:pb-28 sm:pt-32" : "bg-ink py-20 text-white sm:py-28"}`}>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_15%_0%,rgba(110,166,247,0.14),transparent),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(66,133,244,0.12),transparent)]"

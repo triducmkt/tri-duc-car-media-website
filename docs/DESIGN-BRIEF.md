@@ -55,6 +55,7 @@ Phong cách hợp với triduccar.media: hơi hướng công nghệ, hiện đ�
 | Khoảng trắng | Lớn | Section 80–112px | ✓ Giữ |
 | **Hero** | Nền mesh sáng, chữ đen giữa trang | Nền navy tối + video tư liệu cuộn, chữ trắng | ✅ **12/11 anh Đức chọn "Áp nền sáng"** (sau bản thử): `components/home/LightHero.tsx`, nền `.hero-mesh`, lockup chữ đen căn giữa, 3 ảnh tư liệu trong thẻ trắng. Hero tối cũ giữ ở `FootageHero.tsx` |
 | Footer | Có thể mesh pastel | Navy tối + dải gradient | ✅ 12/11: footer toàn site nền mesh sáng (`<Footer>` mặc định `tone="light"`, `.footer-mesh`), logo bản màu |
+| Hero trang con | Nền sáng | Navy tối | ✅ 12/11 ("Đổi luôn"): Về Founder, Dịch vụ (Thang tự do), trang dịch vụ, Dự án, Kiến thức, Đặt lịch, Kiểm tra 60s → nền `.hero-mesh` + lớp `.on-light` (đổi chữ trắng → ink tự động). Hình 3D (bản đồ, la bàn, vé, radar) giữ nền navy trong thẻ bo tròn `.keep-dark` |
 | Header | Kính mờ | Trong suốt chữ trắng trên hero tối, kính mờ khi cuộn | ✅ 12/11: luôn kính mờ sáng |
 | Font | (brief không nêu) | Playfair Display + Great Vibes + Commissioner | ✓ Giữ (đã chốt 08/11) |
 

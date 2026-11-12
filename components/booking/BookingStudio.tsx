@@ -445,7 +445,7 @@ export function BookingStudio() {
     }`;
 
   return (
-    <section ref={sectionRef} id="dat-lich" className="relative overflow-hidden bg-ink pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
+    <section ref={sectionRef} id="dat-lich" className="hero-mesh on-light relative overflow-hidden pb-20 pt-28 text-ink sm:pb-24 sm:pt-32">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_45%_at_78%_35%,rgba(110,166,247,0.13),transparent_70%)]"
@@ -463,7 +463,7 @@ export function BookingStudio() {
             <div
               ref={canvasHost}
               aria-hidden
-              className="relative aspect-[16/10] w-full touch-pan-y [&>canvas]:h-full [&>canvas]:w-full"
+              className="keep-dark relative aspect-[16/10] w-full touch-pan-y [&>canvas]:h-full [&>canvas]:w-full"
             />
             <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-white/80">
               {trust.map((item) => (

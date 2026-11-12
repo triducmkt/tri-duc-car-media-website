@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, MessageCircle } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Lockup } from "@/components/Lockup";
-import { SectionSeam } from "@/components/SectionSeam";
 import { Link } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/company";
 import { COMBOS, HAS_ESTIMATES, SERVICES, formatVnd, serviceBySlug, shortVnd, type Locale } from "@/lib/servicesCatalog";
@@ -35,7 +34,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <section className="relative overflow-hidden bg-ink pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
+      <section className="hero-mesh on-light relative overflow-hidden pb-16 pt-28 text-ink sm:pb-20 sm:pt-32">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_60%_at_80%_30%,rgba(66,133,244,0.25),transparent_70%),radial-gradient(35%_40%_at_10%_90%,rgba(66,133,244,0.14),transparent_70%)]"
@@ -48,7 +47,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {t("pillar", { n: index + 1 })}
             </p>
-            <Lockup as="h1" size="title" reveal="load" accent={s.accent[locale]}
+            <Lockup as="h1" size="title" tone="light" reveal="load" accent={s.accent[locale]}
               anchor={s.lockupAnchor[locale]} />
             <p className="font-display text-base font-semibold text-white/80 sm:text-lg">{s.name[locale]}</p>
             <p className="max-w-2xl text-white/75 sm:text-lg">{s.pitch[locale]}</p>
@@ -91,7 +90,6 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         </Container>
       </section>
 
-      <SectionSeam to="light" />
       <section className="surface-light py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="flex flex-col gap-10">
