@@ -17,13 +17,41 @@ const navItems = [
   { href: "/contact" as const, key: "contact" as const },
 ];
 
-export function Footer() {
+/** tone="light" = trial light version (docs/DESIGN-BRIEF.md, 12/11/2026),
+ *  shown only on the /preview/hero-light page; the live site uses "dark". */
+const TONE = {
+  dark: {
+    root: "relative overflow-hidden bg-ink text-white",
+    logo: "/brand/logo-slogan-light.svg",
+    muted: "text-white/60",
+    label: "text-white/50",
+    link: "text-white/75 hover:text-white",
+    accentLink: "text-leaf-400 hover:text-white",
+    price: "text-brand-400 hover:text-white",
+    bottom: "text-white/45",
+    legal: "text-white/80",
+  },
+  light: {
+    root: "relative overflow-hidden footer-mesh text-ink",
+    logo: "/brand/logo-slogan.svg",
+    muted: "text-ink-muted",
+    label: "text-ink-muted",
+    link: "text-ink/80 hover:text-brand-700",
+    accentLink: "text-leaf-600 hover:text-brand-700",
+    price: "text-brand-700 hover:text-ink",
+    bottom: "text-ink-muted",
+    legal: "text-ink",
+  },
+} as const;
+
+export function Footer({ tone = "dark" }: { tone?: "dark" | "light" } = {}) {
+  const c = TONE[tone];
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
   const locale = useLocale() as Locale;
 
   return (
-    <footer className="relative overflow-hidden bg-ink text-white">
+    <footer className={c.root}>
       {/* F9: brand-gradient strip on top + a soft blue glow behind the columns */}
       <div aria-hidden className="footer-strip" />
       <div
@@ -35,24 +63,24 @@ export function Footer() {
         <div className="flex flex-col gap-4 lg:col-span-1">
           {/* Logo v12 bản A with the slogan "Chủ vắng, khách vẫn đông." (animated SVG). */}
           <Image
-            src="/brand/logo-slogan-light.svg"
+            src={c.logo}
             alt={t("companyName")}
             width={357}
             height={157}
             unoptimized
             className="h-24 w-auto self-start"
           />
-          <p className="text-sm leading-relaxed text-white/60">{t("tagline")}</p>
+          <p className={`text-sm leading-relaxed ${c.muted}`}>{t("tagline")}</p>
           <Link
             href={{ pathname: "/about", hash: "thuong-hieu" }}
-            className="self-start text-sm font-semibold text-leaf-400 underline-offset-4 hover:text-white hover:underline"
+            className={`self-start text-sm font-semibold underline-offset-4 hover:underline ${c.accentLink}`}
           >
             {t("brandStory")} →
           </Link>
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-white/50">
+          <h3 className={`text-sm font-semibold uppercase tracking-[0.12em] ${c.label}`}>
             {t("linksHeading")}
           </h3>
           <ul className="flex flex-col gap-2">
@@ -60,7 +88,7 @@ export function Footer() {
               <li key={item.key}>
                 <Link
                   href={item.href}
-                  className="text-sm text-white/75 transition-colors hover:text-white"
+                  className={`text-sm transition-colors ${c.link}`}
                 >
                   {tNav(item.key)}
                 </Link>
@@ -70,7 +98,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-white/50">
+          <h3 className={`text-sm font-semibold uppercase tracking-[0.12em] ${c.label}`}>
             {t("servicesHeading")}
           </h3>
           <ul className="flex flex-col gap-2">
@@ -78,7 +106,7 @@ export function Footer() {
               <li key={service.slug}>
                 <Link
                   href={{ pathname: "/services/[slug]", params: { slug: service.slug } }}
-                  className="text-sm text-white/75 transition-colors hover:text-brand-400"
+                  className={`text-sm transition-colors ${c.link}`}
                 >
                   {service.name[locale]}
                 </Link>
@@ -87,7 +115,7 @@ export function Footer() {
             <li>
               <Link
                 href={{ pathname: "/services", hash: "bang-gia" }}
-                className="text-sm font-semibold text-brand-400 transition-colors hover:text-white"
+                className={`text-sm font-semibold transition-colors ${c.price}`}
               >
                 {t("priceList")}
               </Link>
@@ -96,19 +124,19 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-white/50">
+          <h3 className={`text-sm font-semibold uppercase tracking-[0.12em] ${c.label}`}>
             {t("addressLabel")}
           </h3>
           <a
             href={`tel:${t("phone").replace(/\./g, "")}`}
-            className="flex items-center gap-2 text-sm text-white/75 transition-colors hover:text-white"
+            className={`flex items-center gap-2 text-sm transition-colors ${c.link}`}
           >
             <Phone size={16} aria-hidden />
             {t("phone")}
           </a>
           <a
             href={`mailto:${t("email")}`}
-            className="flex items-center gap-2 text-sm text-white/75 transition-colors hover:text-white"
+            className={`flex items-center gap-2 text-sm transition-colors ${c.link}`}
           >
             <Mail size={16} aria-hidden />
             {t("email")}
@@ -117,14 +145,14 @@ export function Footer() {
             href={COMPANY.fanpage}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-white/75 transition-colors hover:text-white"
+            className={`flex items-center gap-2 text-sm transition-colors ${c.link}`}
           >
             <FacebookIcon size={16} aria-hidden />
             {t("fanpage")}
           </a>
           <Link
             href={{ pathname: "/contact", hash: "phap-ly" }}
-            className="flex items-start gap-2 text-sm text-white/75 transition-colors hover:text-white"
+            className={`flex items-start gap-2 text-sm transition-colors ${c.link}`}
           >
             <MapPin size={16} className="mt-0.5 shrink-0" aria-hidden />
             {companyAddressLine}
@@ -135,9 +163,9 @@ export function Footer() {
       <div className="relative">
         {/* F9: glowing gradient hairline instead of a flat border */}
         <div aria-hidden className="hairline-gradient opacity-50" />
-        <Container className="flex flex-col gap-2 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <Container className={`flex flex-col gap-2 py-6 text-xs sm:flex-row sm:items-center sm:justify-between ${c.bottom}`}>
           <div className="flex flex-col gap-1">
-            <p className="font-semibold text-white/80">
+            <p className={`font-semibold ${c.legal}`}>
               {COMPANY.legalNameVi} · {t("taxCode")} {COMPANY.taxCode} · {t("vatLine")}
             </p>
             <p>
