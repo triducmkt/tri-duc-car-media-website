@@ -77,7 +77,7 @@ export async function BrandStory() {
                 return (
                   <Reveal key={item.title} delay={i * 80}>
                     <div className="card-premium flex h-full flex-col gap-2.5 rounded-2xl p-6">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl icon-gradient">
                         <Icon size={19} aria-hidden />
                       </span>
                       <p className="font-display text-base font-semibold text-ink">{item.title}</p>

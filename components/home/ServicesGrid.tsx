@@ -27,7 +27,7 @@ export function ServicesGrid() {
             return (
               <Reveal key={service.title} delay={index * 80}>
                 <div className="card-premium group flex h-full flex-col gap-4 rounded-2xl p-7">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl icon-gradient">
                     <Icon size={22} aria-hidden />
                   </span>
                   <h3 className="font-serif text-lg font-semibold text-ink">{service.title}</h3>

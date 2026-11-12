@@ -17,6 +17,13 @@
   --color-brand-500: #4285f4;
   --color-brand-600: #2f6fe0; /* text on white (AA) */
   --color-brand-700: #2557b3;
+  --color-brand-800: #015ce0; /* Deep Royal Blue — tail of the CTA / icon gradient (brief 12/11) */
+
+  /* MESH — pastel decoration only ("other 5%"): ambient backgrounds of light
+     sections. Never for text, buttons or icons. docs/DESIGN-BRIEF.md */
+  --color-mesh-sky: #e6eeff;
+  --color-mesh-lilac: #eee8ff;
+  --color-mesh-blush: #fdeaf2;
 
   /* BLACK — dark sections, body text. */
   --color-ink: #0b1220;
@@ -33,11 +40,14 @@
   --gradient-brand: linear-gradient(135deg, #4285f4, #17a85a);
   --gradient-border: linear-gradient(135deg, rgba(66, 133, 244, 0.65), rgba(23, 168, 90, 0.45) 60%, rgba(11, 18, 32, 0.08));
   --gradient-hairline: linear-gradient(90deg, transparent, rgba(110, 166, 247, 0.9), rgba(69, 209, 127, 0.7), transparent);
-  --gradient-button: linear-gradient(180deg, #6ea6f7 -40%, #4285f4 45%, #2f6fe0);
+  /* Brief 12/11: bright tech blue → deep royal blue, light to dark. */
+  --gradient-button: linear-gradient(135deg, #4285f4 0%, #015ce0 100%);
+  --gradient-icon: linear-gradient(135deg, #4285f4 0%, #015ce0 100%);
   /* Soft color pools only (no base color) so .surface-light / .surface-light-soft
      keep their edge color exactly paper / paper-soft — section seams then
      blend without a visible step. */
-  --gradient-surface-light: radial-gradient(45% 60% at 8% 12%, rgba(66, 133, 244, 0.1), transparent 70%), radial-gradient(40% 55% at 92% 88%, rgba(23, 168, 90, 0.07), transparent 70%);
+  /* Brief 12/11: soft pastel mesh (sky / lilac / blush) instead of blue + green pools. */
+  --gradient-surface-light: radial-gradient(50% 65% at 6% 10%, rgba(230, 238, 255, 0.95), transparent 70%), radial-gradient(45% 60% at 96% 18%, rgba(238, 232, 255, 0.85), transparent 70%), radial-gradient(45% 55% at 88% 96%, rgba(253, 234, 242, 0.75), transparent 70%);
 
   --background: var(--color-paper);
   --foreground: var(--color-ink);
@@ -105,29 +115,45 @@ body {
   background-image: var(--gradient-surface-light);
 }
 
-/* F2 — premium card on light backgrounds: gradient hairline border (blue →
-   green → near-transparent) + always-visible layered shadow; hover lifts to
-   shadow level 3. Layout/padding stay in the component's className. */
+/* F2 + brief 12/11 — crisp white card "floating" on the mesh: hairline
+   neutral border, wide soft shadow (0 10px 30px, ~5%). On hover it lifts and the
+   border turns brand blue (the "highlighted border" of the brief).
+   Layout / padding / radius stay in the component's className. */
 .card-premium {
-  border: 1px solid transparent;
-  background:
-    linear-gradient(var(--color-paper), var(--color-paper)) padding-box,
-    var(--gradient-border) border-box;
-  box-shadow: var(--shadow-lift-2);
+  background-color: var(--color-paper);
+  border: 1px solid rgba(11, 18, 32, 0.06);
+  box-shadow:
+    0 1px 2px rgba(11, 18, 32, 0.04),
+    0 10px 30px rgba(11, 18, 32, 0.06);
   transition:
     transform 300ms ease,
-    box-shadow 300ms ease;
+    box-shadow 300ms ease,
+    border-color 300ms ease;
 }
 .card-premium:hover,
 .card-premium:focus-visible {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lift-3);
+  border-color: rgba(66, 133, 244, 0.35);
+  box-shadow:
+    0 2px 4px rgba(11, 18, 32, 0.04),
+    0 18px 40px -8px rgba(1, 92, 224, 0.18);
 }
 /* Large containers (forms, legal block, FAQ rows) keep the look but do not lift. */
 .card-premium.is-static:hover,
 .card-premium.is-static:focus-within {
   transform: none;
-  box-shadow: var(--shadow-lift-2);
+  border-color: rgba(11, 18, 32, 0.06);
+  box-shadow:
+    0 1px 2px rgba(11, 18, 32, 0.04),
+    0 10px 30px rgba(11, 18, 32, 0.06);
+}
+/* Brief 12/11 — service / feature icon tile: blue gradient, white glyph. */
+.icon-gradient {
+  background-image: var(--gradient-icon);
+  color: var(--color-paper);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 8px 18px -8px rgba(1, 92, 224, 0.55);
 }
 
 /* F9 (docs/brand-backlog.md) — primary button: blue gradient + brand-tinted

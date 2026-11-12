@@ -12,7 +12,9 @@
 | **Đen** | `#0B1220` (ink) | **30%** | `ink`, `ink-soft`, `ink-muted` | Section nền tối, chữ chính |
 | **Trắng** | `#FFFFFF` | **25%** | `paper`, `paper-soft` | Section nền sáng, chữ trên nền tối |
 | **Xanh lá** | `#17A85A` | **10%** | `leaf-400/500/600` | Chỉ khi mang nghĩa **tích cực**: tăng trưởng, tiết kiệm, thành công, đang hoạt động, dấu tích |
-| **Màu khác** | — | **5%** | (không có token chung) | Trang trí hoặc điểm nhấn thật cần thiết. Đỏ chỉ cho cảnh báo / lỗi / điểm yếu |
+| **Màu khác** | — | **5%** | `mesh-sky #E6EEFF` · `mesh-lilac #EEE8FF` · `mesh-blush #FDEAF2` (từ 12/11/2026) | Trang trí hoặc điểm nhấn thật cần thiết. 3 màu mesh pastel **chỉ** làm nền loang của khối sáng. Đỏ chỉ cho cảnh báo / lỗi / điểm yếu |
+
+**Bổ sung 12/11/2026 (brief anh Đức, `docs/DESIGN-BRIEF.md`):** `brand-800 #015CE0` (Deep Royal Blue) là đuôi của dải gradient nút CTA và icon: `--gradient-button` / `--gradient-icon` = `#4285F4 → #015CE0` (135°).
 
 Mã xanh lá: anh Đức quên mã nên dùng xanh lá của logo v10 (`#17A85A`). Anh Đức có thể đổi —
 chỉ cần sửa `--color-leaf-*` trong `app/globals.css`.
@@ -42,8 +44,9 @@ Khai báo ở `app/globals.css`. Từ 08/11/2026 đã dùng cho F2/F3 (`docs/bra
 
 | Class / component | Dùng cho |
 |---|---|
-| `card-premium` | Thẻ trên nền sáng: viền gradient + bóng `lift-2`, rê chuột nâng lên `lift-3`. Thay cho `bg-paper-soft ring-1 ring-black/5 hover:shadow-…`. Giữ bo góc, padding trong className của component. |
-| `surface-light` · `surface-light-soft` | Nền section sáng (trắng / xám rất nhạt) có loang xanh dương góc trên trái, xanh lá góc dưới phải. Mép trên/dưới vẫn đúng màu nền nên ghép với `SectionSeam` không lộ vạch. |
+| `card-premium` | Thẻ trắng trên nền sáng (cập nhật 12/11): viền mảnh trung tính, bóng mềm rộng `0 10px 30px` ~6%; rê chuột nâng lên và viền chuyển xanh. `is-static` = không nâng (form, khối lớn). Giữ bo góc, padding trong className của component. |
+| `icon-gradient` | Ô icon dịch vụ / tính năng: nền gradient `#4285F4 → #015CE0`, icon trắng (12/11). |
+| `surface-light` · `surface-light-soft` | Nền section sáng (trắng / xám rất nhạt) có mesh pastel (12/11): xanh nhạt góc trên trái, tím nhạt góc trên phải, hồng phấn góc dưới phải. Mép trên/dưới vẫn đúng màu nền nên ghép với `SectionSeam` không lộ vạch. |
 | `<SectionSeam to="light"/"dark" light="paper"/"paper-soft" />` (`components/SectionSeam.tsx`) | Chèn giữa section tối và section sáng: nửa tối ink → ink-soft, nửa sáng ửng xanh nhạt, ở giữa có đường kẻ phát sáng. Không dùng dải chuyển xám (đã thử 08/11, nhìn đục). |
 
 | Token | Dùng cho |

@@ -7,7 +7,7 @@
 
 ## 0. Quy trình 4 bước (không bỏ bước)
 
-1. **Đọc:** file này + `docs/brand-backlog.md` (việc dang dở) + file quy cách liên quan (bảng ở mục 6).
+1. **Đọc:** file này + `docs/DESIGN-BRIEF.md` (phong cách anh Đức mong muốn) + `docs/brand-backlog.md` (việc dang dở) + file quy cách liên quan (bảng ở mục 6).
 2. **Nghĩ:** yêu cầu chạm tới quy tắc nào dưới đây? Ghi ra trước khi viết code.
 3. **Đánh giá:** so phương án với từng quy tắc. Quy tắc nào đo được thì đo (mục 5), không ước bằng mắt.
 4. **Làm & kiểm:** sửa, chạy đủ lệnh kiểm ở mục 5, chụp màn hình máy tính 1280px + điện thoại 390px, rồi mới commit.
@@ -80,6 +80,7 @@ khác 5% (đỏ chỉ cho cảnh báo). Không dùng bảng màu mặc định T
 
 | Mảng | File |
 |---|---|
+| **Nhu cầu & phong cách anh Đức mong muốn (đối chiếu mỗi lần cải tiến)** | `docs/DESIGN-BRIEF.md` |
 | Việc dang dở | `docs/brand-backlog.md` |
 | Màu | `docs/color-system.md` |
 | Font web | `docs/font-system.md` |

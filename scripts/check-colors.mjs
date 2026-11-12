@@ -13,10 +13,12 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 // r,g,b of every allowed color.
 const PALETTE = {
-  blue: ["#4285f4", "#2f6fe0", "#2557b3", "#6ea6f7", "#8fb6f9", "#d3e3fd", "#eaf1fe", "#bfd2ff", "#8aa6dc", "#5b7fc4"],
+  blue: ["#015ce0", "#4285f4", "#2f6fe0", "#2557b3", "#6ea6f7", "#8fb6f9", "#d3e3fd", "#eaf1fe", "#bfd2ff", "#8aa6dc", "#5b7fc4"],
   black: ["#0b1220", "#131d33", "#4b5568", "#0b0f19", "#000000", "#18233d", "#1b2747", "#1b3c7a", "#070c16"],
   white: ["#ffffff", "#f5f7fb", "#eef2f7", "#9ba4b2", "#c3cad6"],
   green: ["#17a85a", "#45d17f", "#11864a"],
+  // Pastel mesh — decoration only, light-section backgrounds (docs/DESIGN-BRIEF.md, 12/11/2026).
+  mesh: ["#e6eeff", "#eee8ff", "#fdeaf2"],
   red: ["#c7452f", "#ff6b59", "#ff4d4d", "#ff9b8e", "#e07864"],
 };
 const toRgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)).join(",");
